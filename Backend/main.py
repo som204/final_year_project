@@ -1,5 +1,10 @@
-from Database.db import SessionLocal, create_tables,engine
+from fastapi import FastAPI
+from Routes.user_routes import router as user_router
 
-# Create tables in the database
-create_tables()
+app=FastAPI()
 
+@app.get("/")
+def root():
+    return {"message": "Hello FastAPI!"}
+
+app.include_router(user_router)
