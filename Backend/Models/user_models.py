@@ -52,8 +52,8 @@ class User(Base):
     full_name: Mapped[Optional[str]] = mapped_column(String(255))
     phone: Mapped[Optional[str]] = mapped_column(String(20))
     is_approved: Mapped[bool] = mapped_column(Boolean, default=False)  # auto-True if VIEWER
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.now())
-    last_login: Mapped[Optional[datetime]] = mapped_column(DateTime)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=datetime.now())
+    last_login: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True))
 
     institute_id: Mapped[Optional[int]] = mapped_column(ForeignKey("institutes.id"))
     department_id: Mapped[Optional[int]] = mapped_column(ForeignKey("departments.id"))

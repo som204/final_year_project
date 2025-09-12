@@ -1,18 +1,13 @@
-import asyncio
-from Models import Base
-from Database.db import engine
+# from Models import Base
+# from Database.db import engine
 
+# def create_tables():
+#     print("Starting to create tables...")
+#     Base.metadata.create_all(engine)
+#     print("Tables created successfully.")
 
-async def create_tables():
-    """
-    Asynchronously creates all database tables.
-    """
-    print("Starting to create tables...")
+# if __name__ == "__main__":
+#     create_tables()
 
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
-    print("Tables created successfully.")
+from Database.db import init_db
 
-# Run the async function
-if __name__ == "__main__":
-    asyncio.run(create_tables())
