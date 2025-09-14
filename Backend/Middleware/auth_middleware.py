@@ -11,7 +11,7 @@ dotenv.load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = os.getenv("ALGORITHM","HS256")
 
-EXEMPT_PATHS = {"/user/login", "/user/register", "/docs","/openapi.json"}
+EXEMPT_PATHS = {"/user/login", "/user/register", "/docs","/openapi.json","/"}
 
 
 class AuthMiddleware(BaseHTTPMiddleware):
