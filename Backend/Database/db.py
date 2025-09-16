@@ -7,13 +7,27 @@ from sqlalchemy.ext.asyncio import (
     async_sessionmaker
 )
 from sqlalchemy.orm import DeclarativeBase
+from dotenv import load_dotenv
+import os
 
-DATABASE_URL = "postgresql+asyncpg://postgres:som@localhost:5432/finalyearproject"
+# Load environment variables from .env
+load_dotenv()
+
+# Fetch variables
+USER = os.getenv("USER")
+PASSWORD = os.getenv("PASSWORD")
+HOST = os.getenv("HOST")
+PORT = os.getenv("PORT")
+DBNAME = os.getenv("DBNAME")
+
+# print(f"Connecting to database at {HOST}:{PORT} with user {USER} and db {DBNAME}")
+
+# Construct the SQLAlchemy connection string
+DATABASE_URL = f"postgresql+asyncpg://{USER}:{PASSWORD}@{HOST}:{PORT}/{DBNAME}?ssl=prefer"
 
 engine = create_async_engine(
     DATABASE_URL,
     echo=True,
-    future=True
 )
 
 SessionLocal = async_sessionmaker(
