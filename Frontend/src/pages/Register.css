@@ -1,0 +1,90 @@
+/* ===== Top-aligned Simple Glass Registration Page ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: flex-start; /* align to top */
+  min-height: 100vh;
+  padding-top: 50px; /* space from top */
+  background: #f0f0f0; /* neutral background */
+  font-family: "Poppins", sans-serif;
+}
+
+.register-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  color: #333;
+}
+
+.register-card h2 {
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  color: #333;
+}
+
+.register-form input::placeholder {
+  color: #666;
+}
+
+.register-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background:#00796B; /* simple orange button */
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.register-form button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.message.success {
+  color: #2e7d32;
+  background: #d4edda;
+}
+
+.message.error {
+  color: #00796B;
+  background: #f8d7da;
+}
+
+.register-card .login-link {
+  display: block;
+  margin-top: 12px;
+  font-size: 12px;
+  color: #00796B;
+  text-decoration: none;
+}
+
+.register-card .login-link:hover {
+  text-decoration: underline;
+}

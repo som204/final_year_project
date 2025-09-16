@@ -1,0 +1,88 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 20px;
+  background: #f5f7fb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-card {
+  background: #fff;
+  padding: 35px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  width: 400px;
+  text-align: center;
+}
+
+.portal-title {
+  color: #00897B;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.subtitle {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 12px;
+}
+.input-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #333;
+  font-weight: 500;
+}
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #00897B;
+  box-shadow: 0 0 6px rgba(0,137,123,0.2);
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: #00897B;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+.login-btn:hover {
+  background: #00796B;
+}
+
+.response-box {
+  margin-top: 20px;
+  text-align: left;
+  background: #e0f7f1;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #b2dfdb;
+  font-size: 13px;
+  color: #004d40;
+}
+.response-box pre {
+  overflow-x: auto;
+}
