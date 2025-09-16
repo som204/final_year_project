@@ -1,68 +1,114 @@
 import React, { useState } from "react";
-import "./Register.css";
+import "./Register.css"; 
+import { registerUser } from "../api/userApi"; // ✅ correct path
 
-function Register() {
-  const [formData, setFormData] = useState({ name: "", email: "", password: "" });
-  const [message, setMessage] = useState("");
+
+const Register = () => {
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    role: "SUPER_ADMIN",
+    full_name: "",
+    phone: "",
+    institute_id: "",
+    department_id: "",
+  });
+
+  const [responseData, setResponseData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setErrorMsg("");
+    setResponseData(null);
 
-    if (!formData.name || !formData.email || !formData.password) {
-      setMessage("❌ Please fill in all fields.");
-      return;
+    try {
+      const response = await registerUser({
+        ...formData,
+        institute_id: Number(formData.institute_id),
+        department_id: Number(formData.department_id),
+      });
+
+      setResponseData(response);
+      console.log("✅ Registered User:", response);
+    } catch (error) {
+      console.error("Registration Error:", error);
+      setErrorMsg(
+        error.response?.data?.message || "Registration failed. Please try again."
+      );
+    } finally {
+      setLoading(false);
     }
-
-    setMessage(`✅ ${formData.name}, you have registered successfully!`);
-    setFormData({ name: "", email: "", password: "" });
   };
 
   return (
-    <div className="register-container">
-      <div className="register-card">
-        <h2>Registration</h2>
-        <form onSubmit={handleSubmit} className="register-form">
-          <input
-            type="text"
-            name="name"
-            placeholder="Full Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-          <button type="submit">Register</button>
+    <div className="Register-container">
+      <div className="Register-card">
+        <h2 className="portal-title">Annual Report Portal</h2>
+        <p className="subtitle">Enter your details</p>
+
+        <form onSubmit={handleSubmit} className="Register-form">
+          {[
+            { label: "Username", name: "username", type: "text" },
+            { label: "Email", name: "email", type: "email" },
+            { label: "Password", name: "password", type: "password" },
+            { label: "Full Name", name: "full_name", type: "text" },
+            { label: "Phone", name: "phone", type: "text" },
+            { label: "Institute ID", name: "institute_id", type: "number" },
+            { label: "Department ID", name: "department_id", type: "number" },
+          ].map(({ label, name, type }) => (
+            <div className="input-group" key={name}>
+              <label>{label}</label>
+              <input
+                type={type}
+                name={name}
+                value={formData[name]}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          ))}
+
+          <div className="input-group">
+            <label>Role</label>
+            <select
+              name="role"
+              value={formData.role}
+              onChange={handleChange}
+              required
+            >
+              <option value="SUPER_ADMIN">SUPER_ADMIN</option>
+              <option value="ADMIN">ADMIN</option>
+              <option value="FACULTY">FACULTY</option>
+              <option value="STUDENT">STUDENT</option>
+              <option value="GUEST">GUEST</option>
+            </select>
+          </div>
+
+          <button type="submit" className="submit-btn" disabled={loading}>
+            {loading ? "Submitting..." : "Submit"}
+          </button>
         </form>
 
-        {message && (
-          <p className={message.startsWith("✅") ? "success" : "error"}>{message}</p>
-        )}
+        {errorMsg && <p className="error">{errorMsg}</p>}
 
-        <a href="/login" className="login-link">
-          Already have an account? Login
-        </a>
+        {responseData && (
+          <div className="response-box">
+            <h3>Response:</h3>
+            <pre>{JSON.stringify(responseData, null, 2)}</pre>
+          </div>
+        )}
       </div>
     </div>
   );
-}
+};
 
 export default Register;

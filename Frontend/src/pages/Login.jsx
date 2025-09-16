@@ -1,158 +1,95 @@
 import React, { useState } from "react";
+import { loginUser } from "../api/express";
 import "./Login.css";
 
-const Login = () => {
+function Login() {
   const [formData, setFormData] = useState({
-    username: "",
-    email: "",
+    email: "",      // 👈 email instead of username
     password: "",
-    role: "SUPER_ADMIN",
-    full_name: "",
-    phone: "",
-    institute_id: "",
-    department_id: "",
   });
 
-  const [responseData, setResponseData] = useState(null);
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
+  // Input change handler
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  // Form submit handler
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Generate response object
-    const response = {
-      id: Math.floor(Math.random() * 1000), // random ID
-      username: formData.username,
-      email: formData.email,
-      role: formData.role,
-      full_name: formData.full_name,
-      phone: formData.phone,
-      created_at: new Date().toISOString(),
-      last_login: new Date().toISOString(),
-      institute_id: Number(formData.institute_id),
-      department_id: Number(formData.department_id),
-    };
+    if (!formData.email || !formData.password) {
+      setMessage("❌ Please fill in email and password.");
+      return;
+    }
 
-    setResponseData(response);
-    console.log("Response Object:", response);
-    alert("Form submitted! Check console for response.");
+    try {
+      setLoading(true);
+      setMessage("");
+
+      // Call API
+      const { status, data, error } = await loginUser(formData);
+
+      console.log("🔍 Backend Response:", data); // Debug print
+
+      if (status) {
+        setMessage("✅ Login successful!");
+        if (data.access_token) {
+          localStorage.setItem("token", data.access_token);
+        }
+        setFormData({ email: "", password: "" });
+      } else {
+        setMessage(`❌ ${data?.detail || error || "Login failed."}`);
+      }
+    } catch (err) {
+      console.error("Unexpected Error:", err);
+      setMessage("❌ Unexpected error occurred.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="login-container">
       <div className="login-card">
-        <h2 className="portal-title">Annual Report Portal</h2>
-        <p className="subtitle">Enter your details</p>
-
+        <h2>Login</h2>
         <form onSubmit={handleSubmit} className="login-form">
-          <div className="input-group">
-            <label>Username</label>
-            <input
-              type="text"
-              name="username"
-              value={formData.username}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="input-group">
-            <label>Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="input-group">
-            <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="input-group">
-            <label>Role</label>
-            <select
-              name="role"
-              value={formData.role}
-              onChange={handleChange}
-              required
-            >
-              <option value="SUPER_ADMIN">SUPER_ADMIN</option>
-              <option value="ADMIN">ADMIN</option>
-              <option value="FACULTY">FACULTY</option>
-              <option value="STUDENT">STUDENT</option>
-              <option value="GUEST">GUEST</option>
-            </select>
-          </div>
-
-          <div className="input-group">
-            <label>Full Name</label>
-            <input
-              type="text"
-              name="full_name"
-              value={formData.full_name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="input-group">
-            <label>Phone</label>
-            <input
-              type="text"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="input-group">
-            <label>Institute ID</label>
-            <input
-              type="number"
-              name="institute_id"
-              value={formData.institute_id}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="input-group">
-            <label>Department ID</label>
-            <input
-              type="number"
-              name="department_id"
-              value={formData.department_id}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <button type="submit" className="login-btn">Submit</button>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+          <button type="submit" disabled={loading}>
+            {loading ? "Logging in..." : "Login"}
+          </button>
         </form>
 
-        {responseData && (
-          <div className="response-box">
-            <h3>Response:</h3>
-            <pre>{JSON.stringify(responseData, null, 2)}</pre>
-          </div>
+        {message && (
+          <p className={message.startsWith("✅") ? "success" : "error"}>
+            {message}
+          </p>
         )}
+
+        <a href="/register" className="register-link">
+          Don’t have an account? Register
+        </a>
       </div>
     </div>
   );
-};
+}
 
 export default Login;
