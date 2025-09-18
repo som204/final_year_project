@@ -15,12 +15,12 @@ if TYPE_CHECKING:
 
 import bcrypt
 
+from Database.db import Base
+
 
 # ========================
 # Base Class
 # ========================
-class Base(DeclarativeBase):
-    pass
 
 
 # ========================
