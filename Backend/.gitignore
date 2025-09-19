@@ -1,12 +1,11 @@
+# Virtual Environments
 venv/
-.env/
 .venv/
 env/
+
+# Environment Variables - VERY IMPORTANT
 .env
 
+# Python Artifacts
 __pycache__/
 *.pyc
-
-__pycache__
-venv
-.venv
