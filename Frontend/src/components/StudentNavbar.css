@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1976d2;
+  padding: 12px 20px;
+  color: white;
+}
+
+.nav-left h2 {
+  margin: 0;
+  color: pink;
+  
+}
+
+.nav-right a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  align-items: center;
+  
+}
+
+.nav-right a:hover {
+  text-decoration: underline;
+}
