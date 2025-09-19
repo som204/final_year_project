@@ -39,15 +39,11 @@ SessionLocal = async_sessionmaker(
 class Base(DeclarativeBase):
     pass
 
-async def init_db() -> None:
-    """Call this at startup to create tables (or via Alembic)."""
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
+
 
 async def get_db() -> AsyncGenerator[AsyncSession, None]:
     async with SessionLocal() as session:
         try:
             yield session
         finally:
-            # `async with` ensures close, but explicit is okay
             await session.close()
