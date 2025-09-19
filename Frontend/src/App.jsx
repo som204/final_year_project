@@ -5,6 +5,7 @@ import DataUpload from "./pages/DataUpload";
 import Dashboard from "./components/Dashboard";
 import Register from "./pages/Register";
 import FacultyDashboard from "./pages/FacultyDashboard";
+import StudentDashboard from "./pages/StudentDashboard";
 
 function App() {
   return (
@@ -15,10 +16,11 @@ function App() {
       {/* Later, you will show Login first, then after success -> Dashboard */}
        {/* <Login />  */}
        {/* <Signup />  */}
-      <DataUpload /> 
+      {/* <DataUpload />  */}
       {/* <Dashboard /> */}
       {/* <Register /> */}
-      <FacultyDashboard/>
+      {/* <FacultyDashboard/> */}
+      <StudentDashboard/>
     </>
   );
 }
