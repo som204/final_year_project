@@ -11,12 +11,7 @@ import FacultyDashboard from "./pages/FacultyDashboard";
 import StudentDashboard from "./pages/StudentDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import SuperAdmin from "./pages/SuperAdmin";
-import Login from "./pages/Login";
-import DataUpload from "./pages/DataUpload";
-import Register from "./pages/Register";
-import FacultyDashboard from "./pages/FacultyDashboard";
-import RegisterStaff from "./pages/RegisterStaff";
-import RegisterStudent from "./pages/RegisterStudent";
+
 
 function App() {
   return (
@@ -37,7 +32,6 @@ function App() {
         <Route path="/home" element={<HomePage />} />
       </Routes>
     </Router>
-    
   );
 }
 
