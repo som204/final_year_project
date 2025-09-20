@@ -1,0 +1,236 @@
+/* --- Basic Reset and Variables --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+:root {
+  --slate-blue: #0A2540;
+  --teal-accent: #00C49A;
+  --light-gray-bg: #F8F9FA;
+  --border-color: #EAECEF;
+  --dark-text: #333333;
+  --light-text: #555555;
+  --white-text: #FFFFFF;
+}
+
+/* --- Page Layout --- */
+.login-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--light-gray-bg);
+  font-family: 'Poppins', sans-serif;
+  padding: 1rem;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 900px;
+  background-color: var(--white-text);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: grid;
+  overflow: hidden;
+}
+
+/* Creates the two-column layout on wider screens */
+@media (min-width: 768px) {
+  .login-box {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+
+/* --- Branding Panel (Left) --- */
+.login-branding {
+  background-color: var(--slate-blue);
+  color: var(--white-text);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.login-branding .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--white-text);
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+}
+
+.login-branding .logo-icon {
+  color: var(--teal-accent);
+}
+
+.branding-quote {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #c0c8d1;
+}
+
+/* Hides the branding panel on smaller screens */
+@media (max-width: 767px) {
+  .login-branding {
+    display: none;
+  }
+}
+
+/* --- Form Panel (Right) --- */
+.login-form-section {
+  padding: 2.5rem;
+}
+@media (min-width: 768px) {
+  .login-form-section {
+    padding: 3.5rem;
+  }
+}
+
+.login-form-section h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--dark-text);
+  margin: 0 0 0.5rem 0;
+}
+
+.form-intro {
+  color: var(--light-text);
+  margin-bottom: 2rem;
+}
+
+/* --- Form Input Fields --- */
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none;
+}
+
+.password-toggle-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  padding: 0;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.8rem 3.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--teal-accent);
+  box-shadow: 0 0 0 3px rgba(0, 196, 154, 0.2);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* --- Links and Buttons --- */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.forgot-password-link {
+  color: var(--slate-blue);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.signup-prompt {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--light-text);
+}
+.signup-prompt a {
+  color: var(--slate-blue);
+  font-weight: 500;
+  text-decoration: none;
+}
+.signup-prompt a:hover {
+  text-decoration: underline;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button-accent {
+  background-color: var(--teal-accent);
+  color: var(--white-text);
+}
+
+.button-accent:hover {
+  background-color: #00a986;
+}
+
+/* --- Feedback Styles --- */
+.error-message {
+  color: #d93025;
+  background-color: #fce8e6;
+  border: 1px solid #f9c6c2;
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.login-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

@@ -5,6 +5,7 @@ from Database.db import Base, engine
 from Models.user_models import User
 from Models.institute_models import Institute
 from Models.department_models import Department
+from Models.dataUpload_models import DataUploaded
 
 
 async def create_all_tables():

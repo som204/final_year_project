@@ -4,14 +4,15 @@ from sqlalchemy import (
     String, Integer, ForeignKey, Text,
     DateTime, Boolean, func
 )
-from typing import Optional, List
+from typing import Optional, List,TYPE_CHECKING
 from Database.db import Base
 from datetime import datetime
 
 # You will need to import your other models
-from .user_models import User
-from .institute_models import Institute
-from .department_models import Department
+if TYPE_CHECKING:
+    from .user_models import User
+    from .institute_models import Institute
+    from .department_models import Department
 
 class DataUploaded(Base):
     __tablename__ = "data_uploaded"

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./DataUpload.css";
-import Navbar from "../components/Navbar";// importing your navbar
+import Navbar from "../../components/Navbar";// importing your navbar
 
 export default function DataUpload() {
   const [file, setFile] = useState(null);

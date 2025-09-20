@@ -1,19 +1,19 @@
-// src/pages/RegisterStudent.jsx
+// src/pages/RegisterStaff.jsx
 import React, { useState } from "react";
-import { registerUser } from "../api/userApi";
-import "./RegisterStudent.css";
+import { registerUser } from "../../api/userApi";
+import "./RegisterStaff.css";
 
-const RegisterStudent = () => {
-  const role = "STUDENT";
+const RegisterStaff = () => {
+  const role = "STAFF";
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
     full_name: "",
     phone: "",
-    roll_no: "",
-    course: "",
-    year: "",
+    designation: "",
+    department: "",
+    joining_date: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -42,7 +42,7 @@ const RegisterStudent = () => {
   return (
     <div className="Register-container">
       <div className="Register-card">
-        <h2 className="portal-title">Student Registration</h2>
+        <h2 className="portal-title">Staff Registration</h2>
         <form onSubmit={handleSubmit} className="Register-form">
           {[
             { label: "Username", name: "username", type: "text" },
@@ -50,9 +50,9 @@ const RegisterStudent = () => {
             { label: "Password", name: "password", type: "password" },
             { label: "Full Name", name: "full_name", type: "text" },
             { label: "Phone", name: "phone", type: "text" },
-            { label: "Roll No", name: "roll_no", type: "text" },
-            { label: "Course", name: "course", type: "text" },
-            { label: "Year", name: "year", type: "number" },
+            { label: "Designation", name: "designation", type: "text" },
+            { label: "Department", name: "department", type: "text" },
+            { label: "Joining Date", name: "joining_date", type: "date" },
           ].map(({ label, name, type }) => (
             <div className="input-group" key={name}>
               <label>{label}</label>
@@ -77,4 +77,4 @@ const RegisterStudent = () => {
   );
 };
 
-export default RegisterStudent;
+export default RegisterStaff;
