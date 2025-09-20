@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/FacultyNavbar";
+import Navbar from "../components/Navbar";
 import "./FacultyDashboard.css";
 
 export default function FacultyDashboard() {
@@ -84,4 +84,4 @@ export default function FacultyDashboard() {
       </div>
     </div>
   );
-}
+}  
