@@ -1,0 +1,80 @@
+/* src/styles/RegisterStudent.css */
+
+.Register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff4e6; /* light orange for students */
+  padding: 20px;
+}
+
+.Register-card {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.portal-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #e65c00; /* dark orange title */
+}
+
+.Register-form .input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.Register-form .input-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+.Register-form .input-group input {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.Register-form .input-group input:focus {
+  border-color: #e65c00;
+  outline: none;
+  box-shadow: 0 0 5px rgba(230, 92, 0, 0.3);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #e65c00;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #b34700;
+}
+
+.submit-btn:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 500;
+}

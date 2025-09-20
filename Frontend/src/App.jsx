@@ -1,3 +1,6 @@
+// src/App.jsx
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
 import Login from "./pages/Login";
 import HomePage from "./pages/HomePage";
@@ -9,26 +12,26 @@ import StudentDashboard from "./pages/StudentDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import SuperAdmin from "./pages/SuperAdmin";
 
+
 function App() {
   return (
-    <>
-      {/* Temporary: Show Dashboard directly */}
-     
+    <Router>
+      <Routes>
+        {/* Default route -> Student Registration */}
+        <Route path="/" element={<RegisterStudent />} />
 
-      {/* Later, you will show Login first, then after success -> Dashboard */}
-       {/* <Login />  */}
-            
-      
-       {/* <Signup />  */}
-      {/* <DataUpload />  */}
-      {/* <Dashboard /> */}
-      {/* <Register /> */}
-      {/* <FacultyDashboard/> */}
-      {/* <StudentDashboard/> */}
-      {/* <AdminDashboard/> */}
-      {/* <HomePage/> */}
-      <SuperAdmin/>
-    </>
+        <Route path="/login" element={<Login />} />
+        <Route path="/data-upload" element={<DataUpload />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/faculty-dashboard" element={<FacultyDashboard />} />
+        <Route path="/register-staff" element={<RegisterStaff />} />
+        <Route path="/register-student" element={<RegisterStudent />} />
+        <Route path="/student-dashboard" element={<StudentDashboard />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/super-admin" element={<SuperAdmin />} />
+        <Route path="/home" element={<HomePage />} />
+      </Routes>
+    </Router>
   );
 }
 
