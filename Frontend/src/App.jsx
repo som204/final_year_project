@@ -1,27 +1,29 @@
+// src/App.jsx
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Login from "./pages/Login";
-import Home from "./components/Home";
 import DataUpload from "./pages/DataUpload";
-import Dashboard from "./components/Dashboard";
 import Register from "./pages/Register";
 import FacultyDashboard from "./pages/FacultyDashboard";
-import StudentDashboard from "./pages/StudentDashboard";
+import RegisterStaff from "./pages/RegisterStaff";
+import RegisterStudent from "./pages/RegisterStudent";
 
 function App() {
   return (
-    <>
-      {/* Temporary: Show Dashboard directly */}
-      {/* <Home /> */}
+    <Router>
+      <Routes>
+        {/* Default route -> Student Registration */}
+        <Route path="/" element={<RegisterStudent />} />
 
-      {/* Later, you will show Login first, then after success -> Dashboard */}
-       {/* <Login />  */}
-       {/* <Signup />  */}
-      {/* <DataUpload />  */}
-      {/* <Dashboard /> */}
-      {/* <Register /> */}
-      {/* <FacultyDashboard/> */}
-      <StudentDashboard/>
-    </>
+        <Route path="/login" element={<Login />} />
+        <Route path="/data-upload" element={<DataUpload />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/faculty-dashboard" element={<FacultyDashboard />} />
+        <Route path="/register-staff" element={<RegisterStaff />} />
+        <Route path="/register-student" element={<RegisterStudent />} />
+      </Routes>
+    </Router>
   );
 }
 
