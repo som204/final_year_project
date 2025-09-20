@@ -2,65 +2,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 30px;
-  background-color: #007bff;
+ background: linear-gradient(to right, #457b9d, #1d3557);
   color: white;
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+  padding: 12px 20px;
+  
 }
 
-/* Logo (Left) */
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  flex: 1;
-}
-
-/* Nav Links (Center) */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
+.nav-left h2 {
   margin: 0;
-  padding: 0;
-  flex: 1;
-  justify-content: center;
-}
-
-.nav-links li {
-  display: inline-block;
-}
-
-.nav-links a {
-  text-decoration: none;
   color: white;
-  font-size: 16px;
-  transition: color 0.3s ease;
+  
 }
 
-.nav-links a:hover {
-  color: #ffdd57;
-}
-
-/* Profile (Right) */
-.profile {
-  display: flex;
+.nav-right a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
   align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  flex: 1;
-  justify-content: flex-end;
+  
 }
 
-.profile-img {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  border: 2px solid white;
-  object-fit: cover;
-}
-
-.profile-text {
-  font-size: 16px;
-  font-weight: 500;
+.nav-right a:hover {
+  text-decoration: underline;
 }
