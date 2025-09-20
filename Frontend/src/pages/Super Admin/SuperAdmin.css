@@ -1,0 +1,205 @@
+/* --- Admin Layout & Sidebar --- */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+  width: 260px;
+  background-color: #0A2540; /* Slate Blue */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #1a3a5a;
+}
+
+.sidebar-title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  color: #c0c8d1;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar-link:hover {
+  background-color: #1a3a5a;
+  color: #fff;
+}
+
+/* Active link style */
+.sidebar-link.active {
+  background-color: #00C49A; /* Teal Accent */
+  color: #fff;
+  font-weight: 500;
+}
+
+.admin-content {
+  flex-grow: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.admin-content h1 {
+  font-size: 2rem;
+  color: #0A2540;
+  margin-bottom: 2rem;
+}
+
+/* --- Dashboard Page --- */
+.stats-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.stat-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 50%;
+  color: #fff;
+}
+.stat-card-icon.institutes { background-color: #4A90E2; }
+.stat-card-icon.students { background-color: #50E3C2; }
+.stat-card-icon.viewers { background-color: #F5A623; }
+
+.stat-card-info p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0 0 0.25rem 0;
+}
+.stat-card-info span {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.recent-institutes-container h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.recent-institutes-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.recent-institutes-table th, .recent-institutes-table td {
+  padding: 1rem;
+  text-align: left;
+}
+.recent-institutes-table thead {
+  background-color: #f1f5f9;
+}
+.recent-institutes-table tbody tr:not(:last-child) {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* --- Institute Registration Page --- */
+.institute-reg-form {
+  max-width: 800px;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.form-section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+.form-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 1rem;
+}
+
+.form-section h3 {
+  font-size: 1.2rem;
+  color: #0A2540;
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .form-row { grid-template-columns: 1fr 1fr; }
+}
+
+.institute-reg-form input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.institute-reg-form input:focus {
+  outline: none;
+  border-color: #00C49A;
+  box-shadow: 0 0 0 3px rgba(0, 196, 154, 0.2);
+}
+
+.form-message {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  text-align: center;
+}
+.form-message.error {
+  background-color: #fce8e6;
+  color: #d93025;
+}
+.form-message.success {
+  background-color: #e6f4ea;
+  color: #1e8e3e;
+}
+
+/* Button styles (re-declared for consistency) */
+.button { display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; font-weight: 500; border: 1px solid transparent; cursor: pointer; transition: background-color 0.2s; }
+.button-accent { background-color: #00C49A; color: #fff; width: 100%; padding: 0.8rem; font-size: 1.1rem; }
+.button-accent:hover { background-color: #00a986; }
+.button:disabled { background-color: #cccccc; cursor: not-allowed; }

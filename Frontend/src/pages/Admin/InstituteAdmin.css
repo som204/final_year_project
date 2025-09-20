@@ -1,0 +1,69 @@
+/* --- Institute Admin Layout & Sidebar --- */
+.ia-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ia-sidebar {
+  width: 260px;
+  background-color: #343a40; /* Darker sidebar for distinction */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.ia-sidebar-header { padding: 1.5rem; border-bottom: 1px solid #495057; }
+.ia-sidebar-title { font-size: 1.5rem; text-align: center; }
+.ia-sidebar-nav { display: flex; flex-direction: column; gap: 0.5rem; padding: 1rem; }
+.ia-sidebar-link { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 1rem; border-radius: 8px; color: #ced4da; text-decoration: none; transition: background-color 0.2s, color 0.2s; }
+.ia-sidebar-link:hover { background-color: #495057; color: #fff; }
+.ia-sidebar-link.active { background-color: #007bff; color: #fff; font-weight: 500; }
+
+.ia-content { flex-grow: 1; padding: 2rem; overflow-y: auto; }
+.ia-content h1, .ia-page-content h1 { font-size: 2rem; color: #343a40; margin-bottom: 2rem; }
+
+/* --- Dashboard Page --- */
+.ia-stats-cards-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.ia-stat-card { display: flex; align-items: center; gap: 1.5rem; background-color: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.ia-stat-card-icon { display: flex; align-items: center; justify-content: center; padding: 1rem; border-radius: 50%; color: #fff; }
+.ia-stat-card-icon.departments { background-color: #fd7e14; }
+.ia-stat-card-icon.faculty { background-color: #20c997; }
+.ia-stat-card-icon.students { background-color: #6610f2; }
+.ia-stat-card-info p { font-size: 1rem; color: #555; margin: 0 0 0.25rem 0; }
+.ia-stat-card-info span { font-size: 2rem; font-weight: 600; color: #333; }
+
+/* --- Forms (Dept & Faculty) --- */
+.ia-page-content { width: 100%; }
+.ia-form { max-width: 800px; background-color: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.ia-form .form-row { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+@media (min-width: 768px) { .ia-form .form-row { grid-template-columns: 1fr 1fr; } }
+
+.ia-form input, .ia-form select, .ia-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+.ia-form textarea { min-height: 100px; resize: vertical; }
+
+.ia-form input:focus, .ia-form select:focus, .ia-form textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.form-message { padding: 1rem; margin: 1rem 0; border-radius: 8px; text-align: center; }
+.form-message.error { background-color: #f8d7da; color: #721c24; }
+.form-message.success { background-color: #d4edda; color: #155724; }
+
+/* Buttons */
+.button { display: inline-flex; justify-content: center; border-radius: 8px; font-weight: 500; border: 1px solid transparent; cursor: pointer; transition: background-color 0.2s; }
+.button-accent { background-color: #007bff; color: #fff; width: 100%; padding: 0.8rem; font-size: 1.1rem; }
+.button-accent:hover { background-color: #0069d9; }
+.button:disabled { background-color: #cccccc; cursor: not-allowed; }

@@ -1,35 +1,38 @@
 // src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import React from "react";
-import Login from "./pages/Login";
-import HomePage from "./pages/HomePage";
-import DataUpload from "./pages/DataUpload";
-import Dashboard from "./components/Dashboard";
-import Register from "./pages/Register";
-import FacultyDashboard from "./pages/FacultyDashboard";
-import StudentDashboard from "./pages/StudentDashboard";
-import AdminDashboard from "./pages/AdminDashboard";
-import SuperAdmin from "./pages/SuperAdmin";
+import Login from "./pages/Login/Login";
+import HomePage from "./pages/Home/HomePage";
+import Register from "../src/pages/Register";
+import SuperAdmin from "./pages/Super Admin/SuperAdmin";
+import DashboardPage from "./components/DashboardPage";
+import InstituteRegPage from "./components/InstituteRegPage";
+import InstituteAdminLayout from "./pages/Admin/InstituteAdmin";
+import InstituteDashboard from "./components/InstituteDashboard";
+import DeptRegPage from "./components/DeptRegPage";
+import FacultyRegPage from "./components/FacultyRegPage";
+import { Navigate } from "react-router-dom";
 
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Default route -> Student Registration */}
-        <Route path="/" element={<RegisterStudent />} />
-
+        <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/data-upload" element={<DataUpload />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/faculty-dashboard" element={<FacultyDashboard />} />
-        <Route path="/register-staff" element={<RegisterStaff />} />
-        <Route path="/register-student" element={<RegisterStudent />} />
-        <Route path="/student-dashboard" element={<StudentDashboard />} />
-        <Route path="/admin-dashboard" element={<AdminDashboard />} />
-        <Route path="/super-admin" element={<SuperAdmin />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/admin" element={<SuperAdmin />}>
+          {/* The index route redirects /admin to /admin/dashboard */}
+          <Route index element={<Navigate to="dashboard" />} />
+          <Route path="dashboard" element={<DashboardPage />} />
+          <Route path="register-institute" element={<InstituteRegPage />} />
+        </Route>
+         <Route path="/institute-admin" element={<InstituteAdminLayout />}>
+          <Route index element={<Navigate to="dashboard" />} />
+          <Route path="dashboard" element={<InstituteDashboard />} />
+          <Route path="register-department" element={<DeptRegPage />} />
+          <Route path="register-faculty" element={<FacultyRegPage />} />
+        </Route>
       </Routes>
     </Router>
   );
