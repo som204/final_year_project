@@ -8,6 +8,7 @@ import Register from "./pages/Register";
 import FacultyDashboard from "./pages/FacultyDashboard";
 import RegisterStaff from "./pages/RegisterStaff";
 import RegisterStudent from "./pages/RegisterStudent";
+import Reginstitute from "./pages/Reginstitute"; // ✅ fixed import (match file name)
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
         <Route path="/faculty-dashboard" element={<FacultyDashboard />} />
         <Route path="/register-staff" element={<RegisterStaff />} />
         <Route path="/register-student" element={<RegisterStudent />} />
+
+        {/* ✅ Added Reginstitute route */}
+        <Route path="/register-institute" element={<Reginstitute />} />
       </Routes>
     </Router>
   );
