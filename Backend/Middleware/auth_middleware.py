@@ -11,18 +11,22 @@ dotenv.load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = os.getenv("ALGORITHM","HS256")
 
-EXEMPT_PATHS = {"/user/login", "/user/register", "/docs","/openapi.json","/"}
+EXEMPT_PATHS = {"/user/login", "/user/register", "/docs","/openapi.json","/","institute/all"}
 
 
 class AuthMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
+        if request.method == "OPTIONS":
+            return await call_next(request)
+
         if request.url.path in EXEMPT_PATHS:
             return await call_next(request)
 
 
         auth_header = request.headers.get("Authorization")
         cookie_token = request.cookies.get("token")
-
+        # print("Auth Header:", auth_header)
+        # print("Cookie Token:", cookie_token)
         token = None
         if auth_header and auth_header.startswith("Bearer "):
             token = auth_header.split(" ", 1)[1]

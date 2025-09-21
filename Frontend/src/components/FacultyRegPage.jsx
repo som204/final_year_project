@@ -6,7 +6,7 @@ const FacultyRegPage = () => {
     full_name: '',
     email: '',
     phone: '',
-    department_name: '',
+    department_id: '',
   });
   const [departments, setDepartments] = useState([]);
   const [isLoading, setIsLoading] = useState({ departments: true, submitting: false });
@@ -17,22 +17,14 @@ const FacultyRegPage = () => {
   useEffect(() => {
     const fetchDepartments = async () => {
       try {
-        /*
-        // --- REAL API CALL (Commented out) ---
-        // const response = await fetch('/api/institute/departments');
-        // const data = await response.json();
-        // if (!response.ok) throw new Error('Failed to fetch departments.');
-        // setDepartments(data);
-        */
-
-        // Using dummy data for now
-        const mockData = [
-          { id: 101, name: "Computer Science" },
-          { id: 102, name: "Mechanical Engineering" },
-          { id: 103, name: "Civil Engineering" },
-        ];
-        await new Promise(resolve => setTimeout(resolve, 500)); // Simulate delay
-        setDepartments(mockData);
+        const response = await fetch('http://localhost:8000/department/all',{
+          credentials:"include",
+          method:"GET"
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error('Failed to fetch departments.');
+        // console.log(data)
+        setDepartments(data);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -50,27 +42,30 @@ const FacultyRegPage = () => {
     setError(null);
     setSuccess(null);
 
-    const payload = { ...formData, role: 'Faculty' };
+    const payload = { ...formData, role: 'FACULTY', username: formData.email, password: formData.full_name.split(' ')[0] + '123' ,institute_id: user.institute_id};
     console.log("Submitting faculty data:", JSON.stringify(payload, null, 2));
-
+    // "username": "som@cse.com",
+    // "password": "Som123"
     try {
-      /*
-      // --- REAL API CALL (Commented out) ---
-      // const response = await fetch('/api/institute/faculty', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(payload),
-      // });
-      // const data = await response.json();
-      // if (!response.ok) throw new Error(data.message || 'Failed to register faculty.');
-      */
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch('http://localhost:8000/user/register', {
+        credentials: "include",
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        console.log(data);
+        throw new Error(data.message || 'Failed to register faculty.');}
       setSuccess(`Faculty member "${formData.full_name}" registered successfully!`);
-      setFormData({ full_name: '', email: '', phone: '', department_name: '' }); // Clear form
+      setFormData({ full_name: '', email: '', phone: '', department_id: '' }); // Clear form
     } catch (err) {
       setError(err.message);
     } finally {
       setIsLoading(prev => ({ ...prev, submitting: false }));
+      setTimeout(() => {
+        setSuccess(null);
+      },5000);
     }
   };
 
@@ -80,9 +75,9 @@ const FacultyRegPage = () => {
       <form onSubmit={handleSubmit} className="ia-form">
         <div className="form-row">
           <input type="text" name="full_name" placeholder="Full Name" value={formData.full_name} onChange={handleChange} required />
-          <select name="department_name" value={formData.department_name} onChange={handleChange} disabled={isLoading.departments} required>
+          <select name="department_id" value={formData.department_id} onChange={handleChange} disabled={isLoading.departments} required>
             <option value="" disabled>{isLoading.departments ? 'Loading...' : 'Select Department'}</option>
-            {departments.map(dept => <option key={dept.id} value={dept.name}>{dept.name}</option>)}
+            {departments.map(dept => <option key={dept.id} value={dept.id}>{dept.name}</option>)}
           </select>
         </div>
         <div className="form-row">

@@ -1,6 +1,6 @@
 from enum import Enum
 from typing import List, Optional, TYPE_CHECKING
-from datetime import datetime
+from datetime import datetime,timezone
 
 from sqlalchemy import (
     String, Integer, ForeignKey, Text, Enum as SqlEnum,
@@ -45,7 +45,9 @@ class User(Base):
     phone: Mapped[Optional[str]] = mapped_column(String(20), nullable=True)
     is_approved: Mapped[bool] = mapped_column(Boolean, default=False)
     
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    created_at: Mapped[datetime] = mapped_column(
+    DateTime(timezone=True), nullable=False,default=lambda: datetime.now(timezone.utc)
+)
     last_login: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True), nullable=True)
 
     institute_id: Mapped[Optional[int]] = mapped_column(ForeignKey("institutes.id"), nullable=True)

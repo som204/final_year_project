@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
+import { UserContext } from '../../Context/user.context';
 import { BookOpenCheck, Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import './Login.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -9,13 +10,18 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
+  const { setUser } = useContext(UserContext);
+
+  const navigate = useNavigate();
 
   const handleLogin = async (event) => {
     event.preventDefault();
     setIsLoading(true);
     setError(null);
+    // console.log(email, password);
     try {
-      const response = await fetch('https://api.example.com/auth/login', {
+      const response = await fetch('http://localhost:8000/user/login', {
+        credentials: 'include',
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -25,6 +31,14 @@ const Login = () => {
         throw new Error(data.message || 'Invalid credentials.');
       }
       console.log('Login successful!', data);
+      setUser(data.user);
+      if (data.user.role === 'SUPER_ADMIN') {
+        navigate('/admin');
+      }else if (data.user.role === 'ADMIN') {
+        navigate('/institute-admin');
+      }else if (data.user.role === 'FACULTY') {
+        navigate('/faculty');
+      }
     } catch (err) {
       setError(err.message);
     } finally {

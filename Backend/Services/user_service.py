@@ -39,6 +39,7 @@ class UserService:
         except SQLAlchemyError as e:
             await db.rollback()
             # In production, you might want to log the actual error `e`
+            print("Hello", e)
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Could not create user due to a database error.")
 
     @staticmethod
