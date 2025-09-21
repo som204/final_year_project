@@ -1,5 +1,5 @@
 from typing import List, Optional, TYPE_CHECKING
-from datetime import datetime
+from datetime import datetime,timezone
 
 from sqlalchemy import (
     String, Integer, ForeignKey, Text, DateTime, Boolean,
@@ -32,8 +32,7 @@ class Department(Base):
     description: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
     is_approved: Mapped[bool] = mapped_column(Boolean, default=False)
     created_at: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True), 
-        server_default=func.now()
+        DateTime(timezone=True), nullable=False, default=lambda: datetime.now(timezone.utc)
     )
 
     institute_id: Mapped[int] = mapped_column(ForeignKey("institutes.id"), nullable=False)

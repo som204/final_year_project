@@ -8,6 +8,7 @@ router = APIRouter(prefix="/user", tags=["user"])
 
 @router.post("/login")
 async def login(data: LoginSchema, response: Response, db: AsyncSession = Depends(get_db)):
+    print(data)
     result= await UserService.login_user_service(data, db)
     response.set_cookie(
         key="token",

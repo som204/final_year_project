@@ -1,0 +1,58 @@
+/* --- Faculty Layout & Sidebar --- */
+.faculty-layout { display: flex; min-height: 100vh; background-color: #f8f9fa; font-family: 'Poppins', sans-serif; }
+.faculty-sidebar { width: 260px; background-color: #563D7C; /* A professional purple */ color: #fff; display: flex; flex-direction: column; flex-shrink: 0; }
+.faculty-sidebar-header { padding: 1.5rem; border-bottom: 1px solid #6f5a91; }
+.faculty-sidebar-title { font-size: 1.5rem; text-align: center; }
+.faculty-sidebar-nav { display: flex; flex-direction: column; gap: 0.5rem; padding: 1rem; }
+.faculty-sidebar-link { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 1rem; border-radius: 8px; color: #e9ecef; text-decoration: none; transition: background-color 0.2s, color 0.2s; }
+.faculty-sidebar-link:hover { background-color: #6f5a91; color: #fff; }
+.faculty-sidebar-link.active { background-color: #8A4BFF; color: #fff; font-weight: 500; }
+
+.faculty-content { flex-grow: 1; padding: 2rem; overflow-y: auto; }
+.faculty-content h1, .faculty-page-content h1 { font-size: 2rem; color: #343a40; margin-bottom: 0.5rem; }
+.dashboard-subheading, .page-subheading { color: #6c757d; margin-top: 0; margin-bottom: 2rem; }
+
+/* --- Dashboard Page --- */
+.faculty-stats-cards-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+.faculty-stat-card { display: flex; align-items: center; gap: 1.5rem; background-color: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.faculty-stat-card-icon { display: flex; align-items: center; justify-content: center; padding: 1rem; border-radius: 50%; color: #fff; }
+.faculty-stat-card-icon.uploads { background-color: #007bff; }
+.faculty-stat-card-icon.projects { background-color: #28a745; }
+.faculty-stat-card-icon.notifications { background-color: #ffc107; }
+.faculty-stat-card-info p { font-size: 1rem; color: #555; margin: 0 0 0.25rem 0; }
+.faculty-stat-card-info span { font-size: 2rem; font-weight: 600; color: #333; }
+
+.recent-uploads-container h2 { font-size: 1.5rem; color: #333; margin-bottom: 1rem; }
+.recent-uploads-table { width: 100%; border-collapse: collapse; background-color: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.recent-uploads-table th, .recent-uploads-table td { padding: 1rem; text-align: left; }
+.recent-uploads-table thead { background-color: #f1f5f9; }
+.recent-uploads-table tbody tr:not(:last-child) { border-bottom: 1px solid #e2e8f0; }
+
+/* --- Data Upload Form --- */
+.faculty-page-content { width: 100%; }
+.faculty-form { max-width: 800px; background-color: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.faculty-form textarea { width: 100%; min-height: 120px; resize: vertical; padding: 0.8rem 1rem; margin-bottom: 1.5rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; font-family: 'Poppins', sans-serif; }
+.faculty-form textarea:focus { outline: none; border-color: #8A4BFF; box-shadow: 0 0 0 3px rgba(138, 75, 255, 0.2); }
+
+.file-input-container {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.file-input-container:hover { border-color: #8A4BFF; }
+.file-input-container input[type="file"] { display: none; }
+.file-input-container label { color: #563D7C; font-weight: 500; display: block; margin-bottom: 0.5rem; cursor: pointer; }
+.file-input-label { color: #6c757d; font-size: 0.9rem; }
+
+.form-message { padding: 1rem; margin: 1rem 0; border-radius: 8px; text-align: center; }
+.form-message.error { background-color: #f8d7da; color: #721c24; }
+.form-message.success { background-color: #d4edda; color: #155724; }
+
+.button { display: inline-flex; justify-content: center; border-radius: 8px; font-weight: 500; border: 1px solid transparent; cursor: pointer; transition: background-color 0.2s; }
+.button-accent { background-color: #563D7C; color: #fff; width: 100%; padding: 0.8rem; font-size: 1.1rem; }
+.button-accent:hover { background-color: #443063; }
+.button:disabled { background-color: #cccccc; cursor: not-allowed; }

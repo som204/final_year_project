@@ -12,6 +12,9 @@ class InstituteCreateSchema(BaseModel):
     contact_email: Optional[EmailStr] = None
     contact_phone: Optional[str] = None
     is_approved: bool = False
+    admin_name: str
+    admin_email: EmailStr
+    admin_phone: Optional[str] = None
 
 
 class InstituteResponseSchema(BaseModel):

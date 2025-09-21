@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState , useContext} from 'react';
 import '../pages/Super Admin/SuperAdmin.css'; // CSS for the page
+import { UserContext } from '../Context/user.context';
 
 const InstituteRegPage = () => {
+  const { user } = useContext(UserContext);
   const [formData, setFormData] = useState({
-    institute_name: '',
+    name: '',
     code: '',
     address: '',
     contact_email: '',
     contact_phone: '',
     admin_email: '',
-    admin_full_name: '',
+    admin_name: '',
     admin_phone: '',
   });
 
@@ -21,7 +23,6 @@ const InstituteRegPage = () => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -29,42 +30,37 @@ const InstituteRegPage = () => {
     setSuccess(null);
     
     // The data payload is already in the correct format
-    const payload = { ...formData };
-    console.log("Submitting institute data:", JSON.stringify(payload, null, 2));
-
+    const payload = { ...formData};
+    console.log("Submitting institute data:", JSON.stringify(payload));
+    const token = user?.access_token; // Assuming user object has a token property
+    console.log(token)
     try {
-      /*
-      // --- REAL API CALL (Commented out) ---
-      // const response = await fetch('/api/superadmin/register-institute', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(payload),
-      // });
-      // const data = await response.json();
-      // if (!response.ok) {
-      //   throw new Error(data.message || 'Failed to register institute.');
-      // }
-      // --- END OF REAL API CALL ---
-      */
-      
-      // Using dummy data logic for now
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate network delay
-      
-      // Simulate a potential error for testing
-      if (formData.institute_name.toLowerCase().includes('fail')) {
-          throw new Error('This is a simulated registration failure.');
+      const response = await fetch('http://localhost:8000/institute/create', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        credentials: "include",
+        body: JSON.stringify(payload),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        console.log('Error response data:', data);
+        throw new Error(data.message || 'Failed to register institute.');
       }
       
-      setSuccess(`Institute "${formData.institute_name}" registered successfully!`);
+      console.log('Institute registered successfully:', data);
+      setSuccess(`Institute "${formData.name}" registered successfully!`);
       setFormData({ // Clear form on success
-        institute_name: '', code: '', address: '', contact_email: '',
-        contact_phone: '', admin_email: '', admin_full_name: '', admin_phone: '',
+        name: '', code: '', address: '', contact_email: '',
+        contact_phone: '', admin_email: '', admin_name: '', admin_phone: '',
       });
 
     } catch (err) {
       setError(err.message);
     } finally {
       setIsLoading(false);
+      setTimeout(() => {
+        setSuccess(null);
+      }, 5000); // Clear success message after 5 seconds
     }
   };
 
@@ -75,7 +71,7 @@ const InstituteRegPage = () => {
         <div className="form-section">
           <h3>Institute Details</h3>
           <div className="form-row">
-            <input type="text" name="institute_name" placeholder="Institute Name" value={formData.institute_name} onChange={handleChange} required />
+            <input type="text" name="name" placeholder="Institute Name" value={formData.name} onChange={handleChange} required />
             <input type="text" name="code" placeholder="Institute Code (e.g., GIT)" value={formData.code} onChange={handleChange} required />
           </div>
           <input type="text" name="address" placeholder="Full Address" value={formData.address} onChange={handleChange} required />
@@ -87,7 +83,7 @@ const InstituteRegPage = () => {
         
         <div className="form-section">
           <h3>Primary Admin Account</h3>
-          <input type="text" name="admin_full_name" placeholder="Admin Full Name" value={formData.admin_full_name} onChange={handleChange} required />
+          <input type="text" name="admin_name" placeholder="Admin Name" value={formData.admin_name} onChange={handleChange} required />
           <div className="form-row">
             <input type="email" name="admin_email" placeholder="Admin Account Email" value={formData.admin_email} onChange={handleChange} required />
             <input type="tel" name="admin_phone" placeholder="Admin Phone" value={formData.admin_phone} onChange={handleChange} required />

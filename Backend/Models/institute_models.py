@@ -1,6 +1,6 @@
 from enum import Enum
 from typing import List, Optional, TYPE_CHECKING
-from datetime import datetime
+from datetime import datetime,timezone
 
 from sqlalchemy import (
     String, Integer, ForeignKey, Text, Enum as SqlEnum,
@@ -34,9 +34,8 @@ class Institute(Base):
     
     # FIXED: Use server_default and a timezone-aware DateTime
     created_at: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True), 
-        server_default=func.now()
-    )
+    DateTime(timezone=True), nullable=False,default=lambda: datetime.now(timezone.utc)
+)
 
     # Relationships are correct
     departments: Mapped[List["Department"]] = relationship(back_populates="institute")
