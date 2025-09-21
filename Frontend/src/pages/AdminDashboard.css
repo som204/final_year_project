@@ -1,0 +1,97 @@
+.dashboard {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #f8f9fc;
+  min-height: 100vh;
+}
+
+.welcome-section {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.welcome-section h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.welcome-section p {
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Stats Cards */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: default; /* makes it not look clickable */
+}
+
+.card h3 {
+  font-size: 28px;
+  margin: 0;
+  color: #007bff;
+}
+
+.card p {
+  color: #666;
+}
+
+/* ✅ Remove hover/click color change */
+.card:hover,
+.card:active,
+.card:focus {
+  background: white !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1) !important;
+}
+
+/* Add Department & Faculty Section */
+.manage-section {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.manage-card {
+  flex: 1;
+  min-width: 280px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.manage-card h3 {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.manage-card p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.manage-card button {
+  padding: 10px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.manage-card button:hover {
+  background: #0056b3;
+}

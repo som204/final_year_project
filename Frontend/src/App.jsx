@@ -8,13 +8,13 @@ import Register from "./pages/Register";
 import FacultyDashboard from "./pages/FacultyDashboard";
 import RegisterStaff from "./pages/RegisterStaff";
 import RegisterStudent from "./pages/RegisterStudent";
-import Reginstitute from "./pages/Reginstitute"; // ✅ fixed import (match file name)
+import RegInstitute from "./pages/RegInstitute"; // ✅ corrected: file name should be RegInstitute.jsx
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Default route -> Student Registration */}
+        {/* ✅ Default route -> Student Registration */}
         <Route path="/" element={<RegisterStudent />} />
 
         <Route path="/login" element={<Login />} />
@@ -24,8 +24,8 @@ function App() {
         <Route path="/register-staff" element={<RegisterStaff />} />
         <Route path="/register-student" element={<RegisterStudent />} />
 
-        {/* ✅ Added Reginstitute route */}
-        <Route path="/register-institute" element={<Reginstitute />} />
+        {/* ✅ Added Register Institute route */}
+        <Route path="/register-institute" element={<RegInstitute />} />
       </Routes>
     </Router>
   );
