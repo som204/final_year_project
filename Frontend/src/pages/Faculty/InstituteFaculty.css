@@ -56,3 +56,33 @@
 .button-accent { background-color: #563D7C; color: #fff; width: 100%; padding: 0.8rem; font-size: 1.1rem; }
 .button-accent:hover { background-color: #443063; }
 .button:disabled { background-color: #cccccc; cursor: not-allowed; }
+
+
+.faculty-sidebar {
+  /* Make the sidebar a flex container to push the footer down */
+  display: flex;
+  flex-direction: column;
+}
+
+.faculty-sidebar-nav {
+  /* Allow the nav to grow and take up available space */
+  flex-grow: 1;
+}
+
+.sidebar-footer {
+  padding: 1rem;
+  border-top: 1px solid #6f5a91;
+}
+
+.logout-button {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: #e9ecef;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #6f5a91;
+  color: #fff;
+}

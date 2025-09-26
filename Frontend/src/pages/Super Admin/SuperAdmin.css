@@ -203,3 +203,289 @@
 .button-accent { background-color: #00C49A; color: #fff; width: 100%; padding: 0.8rem; font-size: 1.1rem; }
 .button-accent:hover { background-color: #00a986; }
 .button:disabled { background-color: #cccccc; cursor: not-allowed; }
+
+.sidebar-nav {
+  /* This allows the navigation section to grow, pushing the footer down */
+  flex-grow: 1;
+}
+
+.sidebar-footer {
+  padding: 1rem;
+  /* Use a border color that matches the super admin theme */
+  border-top: 1px solid #1a3a5a; 
+}
+
+.logout-button {
+  /* Base styles copied from .sidebar-link for consistency */
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: #c0c8d1; /* Matches inactive link color */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  text-align: left;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.logout-button:hover {
+  /* Hover styles to match the active link state */
+  background-color: #00C49A; /* Teal Accent */
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Add these styles to your SuperAdmin.css file */
+
+.management-page {
+  width: 100%;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 1.5rem;
+}
+
+.tab-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #64748b;
+  position: relative;
+  bottom: -2px;
+}
+
+.tab-button.active {
+  color: #0A2540; /* Slate Blue */
+  border-bottom: 2px solid #00C49A; /* Teal Accent */
+}
+
+.list-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-bar, .filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.search-bar input, .filter-bar select {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+.filter-bar select {
+  cursor: pointer;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.data-table th, .data-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.data-table thead {
+  background-color: #f8fafc;
+}
+
+.status-badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-badge.approved {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status-badge.pending {
+  background-color: #fef9c3;
+  color: #854d0e;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-button {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #e2e8f0;
+  background-color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.action-button.edit { color: #007bff; }
+.action-button.delete { color: #dc3545; }
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.management-page {
+  width: 100%;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 1.5rem;
+}
+
+.tab-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #64748b;
+  position: relative;
+  bottom: -2px;
+}
+
+.tab-button.active {
+  color: #0A2540; /* Slate Blue */
+  border-bottom: 2px solid #00C49A; /* Teal Accent */
+}
+
+.list-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-bar, .filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.search-bar input, .filter-bar select {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+.filter-bar select {
+  cursor: pointer;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.data-table th, .data-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.data-table thead {
+  background-color: #f8fafc;
+}
+
+.status-badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.status-badge.approved { background-color: #dcfce7; color: #166534; }
+.status-badge.pending { background-color: #fef9c3; color: #854d0e; }
+
+.actions-cell { display: flex; gap: 0.5rem; }
+.action-button { padding: 0.4rem 0.8rem; border: 1px solid #e2e8f0; background-color: #fff; border-radius: 6px; cursor: pointer; }
+.action-button.edit { color: #007bff; }
+.action-button.delete { color: #dc3545; }
+
+/* --- Improved Form Styles --- */
+.institute-reg-form {
+  max-width: 800px;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.institute-reg-form .form-row { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+@media (min-width: 768px) { .institute-reg-form .form-row { grid-template-columns: 1fr 1fr; } }
+
+.institute-reg-form .input-group { position: relative; margin-bottom: 1.5rem; }
+.institute-reg-form label { display: block; font-weight: 500; margin-bottom: 0.5rem; color: #333; }
+.institute-reg-form .input-icon {
+  position: absolute;
+  left: 1rem;
+  /* Vertically center the icon relative to the input field below it */
+  bottom: 0.5rem;
+  transform: translateY(-50%);
+  top: auto; /* Remove the old top positioning */
+  color: #999;
+  pointer-events: none;
+}
+.institute-reg-form input { margin-bottom: 0; padding-left: 3rem; }
+.institute-reg-form input:focus { outline: none; border-color: #00C49A; box-shadow: 0 0 0 3px rgba(0, 196, 154, 0.2); }
+
+/* --- Toggle Switch --- */
+.toggle-group { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding: 0.75rem; background-color: #f8fafc; border-radius: 8px; }
+.toggle-switch { position: relative; display: inline-block; width: 50px; height: 28px; }
+.toggle-switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 28px; }
+.slider:before { position: absolute; content: ""; height: 20px; width: 20px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
+input:checked + .slider { background-color: #00C49A; }
+input:checked + .slider:before { transform: translateX(22px); }
+
+/* --- Feedback Messages --- */
+.form-message { display: flex; align-items: center; gap: 0.75rem; padding: 1rem; margin: 1rem 0; border-radius: 8px; text-align: left; }
+.form-message.error { background-color: #fce8e6; color: #d93025; }
+.form-message.success { background-color: #e6f4ea; color: #1e8e3e; }
+
+/* --- Buttons --- */
+.button-accent { background-color: #00C49A; color: #fff; width: 100%; padding: 0.8rem; font-size: 1.1rem; }
+.button-accent:hover { background-color: #00a986; }
+.button:disabled { background-color: #cccccc; cursor: not-allowed; }

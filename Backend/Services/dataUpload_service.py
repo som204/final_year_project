@@ -10,6 +10,8 @@ from sqlalchemy.exc import SQLAlchemyError
 from Schemas.dataUpload_schema import DataUploadBase
 from Models.dataUpload_models import DataUploaded
 
+from sqlalchemy.future import select
+
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
@@ -66,5 +68,17 @@ class DataUploadService:
                     os.remove(file_info["path"])
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, 
+                detail=f"Database error: {e}"
+            )
+        
+
+    @staticmethod
+    async def getFiles_by_Userid(db: AsyncSession, user_id: int) -> List[DataUploaded]:
+        try:
+            result = await db.execute(select(DataUploaded).filter(DataUploaded.faculty_id == user_id))
+            return list(result.scalars().all())
+        except SQLAlchemyError as e:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail=f"Database error: {e}"
             )

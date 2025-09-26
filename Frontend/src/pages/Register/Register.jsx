@@ -39,20 +39,20 @@ const RegistrationPage = () => {
   useEffect(() => {
     const fetchInstitutes = async () => {
       try {
-        // Replace with your actual API endpoint
-        const response = await fetch('http://localhost:8000/institute/all',{
-          credentials:"include",
-          method:"GET"
-        });
-        const data = await response.json();
+      //   // Replace with your actual API endpoint
+      //   const response = await fetch('http://localhost:8000/institute/all',{
+      //     credentials:"include",
+      //     method:"GET"
+      //   });
+      //   const data = await response.json();
 
         // Mocking API response for demonstration
-        // const mockData = [
-        //   { id: 1, name: "Global Institute of Technology" },
-        //   { id: 2, name: "National College of Arts" },
-        //   { id: 3, name: "Metro Business School" },
-        // ];
-        setInstitutes(data);
+        const mockData = [
+          { id: 1, name: "Global Institute of Technology" },
+          { id: 2, name: "National College of Arts" },
+          { id: 3, name: "Metro Business School" },
+        ];
+        setInstitutes(mockData);
       } catch (err) {
         setError((prev) => ({
           ...prev,

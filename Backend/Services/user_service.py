@@ -3,6 +3,7 @@ from sqlalchemy.future import select
 from sqlalchemy.exc import SQLAlchemyError
 from fastapi import HTTPException, status
 from Models.user_models import User
+from Models.department_models import Department
 import jwt
 from datetime import datetime, timedelta, timezone
 import os
@@ -10,6 +11,7 @@ import dotenv
 from Schemas.user_schema import UserResponse, LoginSchema
 from Services.redis_service import RedisService
 from fastapi import Response,Request
+from sqlalchemy.orm import joinedload
 dotenv.load_dotenv()
 
 class UserService:
@@ -44,41 +46,50 @@ class UserService:
 
     @staticmethod
     async def login_user_service(data: LoginSchema, db: AsyncSession) -> dict:
-        """Logs in a user and returns a JWT token."""
+        """Logs in a user and returns a JWT, efficiently loading related data."""
         try:
-            result = await db.execute(select(User).filter(User.email == data.email))
+            stmt = (
+                select(User)
+                .options(
+                    joinedload(User.department)
+                    .joinedload(Department.institute)
+                )
+                .filter(User.email == data.email)
+            )
+            result = await db.execute(stmt)
             user = result.scalars().first()
 
             if not user or not user.check_password(data.password):
                 raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid email or password")
-
-            # Create JWT token
+            
+            dept_name = user.department.name if user.department else None
+            institute_name = user.department.institute.name if user.department and user.department.institute else None
             expire = datetime.now(timezone.utc) + timedelta(days=1)
             to_encode = {"sub": str(user.id), "role": user.role.value, "exp": expire}
             
             secret_key = os.getenv('SECRET_KEY')
             algorithm = os.getenv('ALGORITHM')
-            
             if not secret_key or not algorithm:
                 raise ValueError("Server configuration error: JWT secrets are not set.")
                 
             token = jwt.encode(to_encode, secret_key, algorithm=algorithm)
             
-            # Update last_login timestamp
             user.last_login = datetime.now(timezone.utc)
             await db.commit()
-            await db.refresh(user)
+            # print(user)
+            user_response = UserResponse.model_validate(user)
+            user_response_dict = user_response.model_dump()
+            user_response_dict["dept_name"] = dept_name
+            user_response_dict["institute_name"] = institute_name
 
-            return {"access_token": token, "token_type": "bearer", "user": UserResponse.model_validate(user)}
+            return {"access_token": token, "user": user_response_dict}
 
         except SQLAlchemyError as e:
-            print("Database error:", e)
             await db.rollback()
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Database error during login")
         except ValueError as e:
-            # Catches the JWT secret configuration error
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
-        
+            
 
 
 
@@ -89,14 +100,23 @@ class UserService:
             token = request.cookies.get("token")
             if not token:
                 raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="No token provided")
-            
-            # Here you would typically add the token to a blacklist
-            # For simplicity, we'll just delete the cookie
-            client= RedisService.get_client()
+            client = RedisService.get_client()
             await RedisService.set_value(name=token, value="blacklisted", ex=86400)  # Blacklist for 1 day
             response.delete_cookie(key="token")
             return {"message": "Successfully logged out"}
         except Exception as e:
-            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Error during logout")
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Error during logout")  
+
+
+
+    @staticmethod
+    async def get_all_users_service(db: AsyncSession) -> list[User]:
+        """Fetches all users from the database."""
+        try:
+            result = await db.execute(select(User))
+            users = result.scalars().all()
+            return list(users)
+        except SQLAlchemyError as e:
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Could not fetch users due to a database error.")      
 
         

@@ -27,3 +27,8 @@ async def register(user_data: RegisterSchema, db: AsyncSession = Depends(get_db)
 @router.get("/logout")
 async def logout(response: Response, request: Request):
     return await UserService.logout_user_service(response=response, request=request)
+
+
+@router.get("/all", response_model=list[UserResponse])
+async def get_all_users(db: AsyncSession = Depends(get_db)):
+    return await UserService.get_all_users_service(db)
