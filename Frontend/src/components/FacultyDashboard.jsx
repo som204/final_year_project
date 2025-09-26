@@ -8,7 +8,7 @@ const FacultyDashboard = () => {
   // Dummy data for a logged-in faculty member
   const facultyInfo = {
     name: user.full_name,
-    department: user.department,
+    department: user.dept_name,
   };
   
   const stats = {

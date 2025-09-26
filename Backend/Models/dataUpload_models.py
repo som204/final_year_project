@@ -6,7 +6,7 @@ from sqlalchemy import (
 )
 from typing import Optional, List,TYPE_CHECKING
 from Database.db import Base
-from datetime import datetime
+from datetime import datetime, timezone
 
 # You will need to import your other models
 if TYPE_CHECKING:
@@ -21,9 +21,8 @@ class DataUploaded(Base):
     name: Mapped[str] = mapped_column(String(200), nullable=False)
     description: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
     upload_time: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True), 
-        server_default=func.now()
-    )
+    DateTime(timezone=True), nullable=False,default=lambda: datetime.now(timezone.utc)
+)
     file_path: Mapped[str] = mapped_column(String(255), nullable=False)
     is_verified: Mapped[bool] = mapped_column(Boolean, default=False)
 

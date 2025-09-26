@@ -2,6 +2,7 @@
 import React from "react";
 import UserRoutes from "./Routes/userRoutes";
 import { UserProvider } from "./Context/user.context";
+import { BrowserRouter } from "react-router-dom";
 
 
 function App() {

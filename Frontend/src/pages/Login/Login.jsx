@@ -10,7 +10,7 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
-  const { setUser } = useContext(UserContext);
+  const auth = useContext(UserContext);
 
   const navigate = useNavigate();
 
@@ -31,7 +31,7 @@ const Login = () => {
         throw new Error(data.message || 'Invalid credentials.');
       }
       console.log('Login successful!', data);
-      setUser(data.user);
+      auth.login(data.user, data.access_token);
       if (data.user.role === 'SUPER_ADMIN') {
         navigate('/admin');
       }else if (data.user.role === 'ADMIN') {

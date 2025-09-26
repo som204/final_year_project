@@ -67,3 +67,44 @@
 .button-accent { background-color: #007bff; color: #fff; width: 100%; padding: 0.8rem; font-size: 1.1rem; }
 .button-accent:hover { background-color: #0069d9; }
 .button:disabled { background-color: #cccccc; cursor: not-allowed; }
+
+.ia-sidebar {
+  /* This rule was already present, but it's important */
+  display: flex;
+  flex-direction: column;
+}
+
+.ia-sidebar-nav {
+  /* This allows the navigation to grow and push the footer down */
+  flex-grow: 1;
+}
+
+.sidebar-footer {
+  padding: 1rem;
+  border-top: 1px solid #495057; /* Matches the sidebar's border color */
+}
+
+.logout-button {
+  /* Base styles to look like a sidebar link */
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: #ced4da; /* Matches inactive link color */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  text-align: left;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.logout-button:hover {
+
+  background-color: #007bff; 
+  color: #fff;
+  font-weight: 500; 
+}
