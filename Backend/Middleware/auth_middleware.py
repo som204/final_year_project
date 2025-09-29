@@ -5,10 +5,11 @@ import jwt
 import os
 import dotenv
 from Services.redis_service import RedisService
+import traceback
 
 dotenv.load_dotenv()
 
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = os.getenv("SECRET_KEY") or "dogo"
 ALGORITHM = os.getenv("ALGORITHM","HS256")
 
 EXEMPT_PATHS = {"/user/login", "/user/register", "/docs","/openapi.json","/","institute/all"}
@@ -49,7 +50,7 @@ class AuthMiddleware(BaseHTTPMiddleware):
         # Validate token
         try:
             payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-            request.state.user = payload  # attach user claims
+            request.state.user = payload  # attach user claims   
 
         except jwt.ExpiredSignatureError:
             return JSONResponse(
@@ -61,3 +62,6 @@ class AuthMiddleware(BaseHTTPMiddleware):
             )
 
         return await call_next(request)
+
+
+

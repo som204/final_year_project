@@ -4,11 +4,14 @@ from Routes.institute_routes import router as institute_router
 from Routes.department_routes import router as department_router
 from Routes.dataUpload_routes import router as dataupload_router
 from Middleware.auth_middleware import AuthMiddleware
+
 from fastapi.middleware.cors import CORSMiddleware
 
 app=FastAPI()
 
 origins = ["http://localhost:5173","https://localhost:5173","http://localhost:5173/"]
+
+
 
 app.add_middleware(
     CORSMiddleware,

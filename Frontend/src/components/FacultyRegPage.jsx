@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useContext } from 'react';
 import { Search, Edit, Trash2 } from 'lucide-react';
 import '../pages/Admin/InstituteAdmin.css'; // Reusing the same CSS
+import { UserContext } from '../Context/user.context'; // Assuming you have a UserContext for auth
 
 const FacultyManagementPage = () => {
     // State for tabs, data, search, and the form
@@ -14,7 +15,7 @@ const FacultyManagementPage = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formError, setFormError] = useState(null);
     const [formSuccess, setFormSuccess] = useState(null);
-
+    const { user } = useContext(UserContext);
 
     // API call to fetch both faculty and departments for the admin's institute
     const fetchInitialData = async () => {

@@ -73,7 +73,7 @@ const InstituteManagementPage = () => {
         setFormIsLoading(true);
         setFormError(null);
         setFormSuccess(null);
-
+        console.log(formData)
         try {
             const response = await fetch('http://localhost:8000/institute/create', {
                 method: 'POST',
