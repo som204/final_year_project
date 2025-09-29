@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useContext } from 'react';
 import { Search, Edit, Trash2 } from 'lucide-react';
 import '../pages/Admin/InstituteAdmin.css'; // Reusing the same CSS
+import { UserContext } from '../Context/user.context'; // Assuming you have a UserContext for auth
 
 const DepartmentManagementPage = () => {
     // State for tabs, data, search, and the form
@@ -13,7 +14,7 @@ const DepartmentManagementPage = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formError, setFormError] = useState(null);
     const [formSuccess, setFormSuccess] = useState(null);
-
+    const { user } = useContext(UserContext);
 
     // API call to fetch departments for the admin's specific institute
     const fetchDepartments = async () => {
@@ -59,7 +60,7 @@ const DepartmentManagementPage = () => {
         setFormSuccess(null);
         
         // The institute_id is automatically handled by the backend based on the logged-in admin
-        const payload = { ...formData };
+        const payload = { ...formData , "institute_id": user.institute_id};
 
         try {
             const response = await fetch('http://localhost:8000/department/create', {

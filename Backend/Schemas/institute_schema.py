@@ -1,6 +1,6 @@
 
 
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, ConfigDict
 from typing import List, Optional
 from datetime import datetime
 
@@ -16,6 +16,9 @@ class InstituteCreateSchema(BaseModel):
     admin_email: EmailStr
     admin_phone: Optional[str] = None
 
+    model_config = ConfigDict(from_attributes=True)
+
+
 
 class InstituteResponseSchema(BaseModel):
     id: int
@@ -27,5 +30,4 @@ class InstituteResponseSchema(BaseModel):
     is_approved: bool
     created_at: datetime
     
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)

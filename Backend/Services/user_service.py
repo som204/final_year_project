@@ -1,3 +1,4 @@
+import asyncio
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy.exc import SQLAlchemyError
@@ -12,6 +13,8 @@ from Schemas.user_schema import UserResponse, LoginSchema
 from Services.redis_service import RedisService
 from fastapi import Response,Request
 from sqlalchemy.orm import joinedload
+from Services.email_service import send_email
+from Models.institute_models import Institute
 dotenv.load_dotenv()
 
 class UserService:
@@ -35,14 +38,47 @@ class UserService:
             db.add(new_user)
             await db.commit()
             await db.refresh(new_user)
-            
-            return new_user
-            
+
         except SQLAlchemyError as e:
             await db.rollback()
-            # In production, you might want to log the actual error `e`
-            print("Hello", e)
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Could not create user due to a database error.")
+        try:
+            # Query to find the institute name from the institute id
+            institute_name = None
+            if new_user.institute_id:
+                select_institute = select(Institute).filter(Institute.id == new_user.institute_id)
+                result = await db.execute(select_institute)
+                institute = result.scalars().first()
+                if institute:
+                    institute_name = institute.name
+            print("Institute Name:", institute_name)
+            welcome_context = {
+                "faculty_full_name": new_user.full_name,
+                "institute_name": institute_name,
+                "faculty_email": new_user.email,
+                "temporary_password": plaintext_password,
+                "login_url": "http://localhost:5173/login"
+            }
+            
+            # --- 4. Run the blocking email function in a separate thread ---
+            email_sent = await asyncio.to_thread(
+                send_email,
+                "somprasad613@gmail.com",
+                "Welcome to the Platform!",
+                "welcome_faculty.html", # Assuming this is the template name
+                welcome_context
+            )
+            print("Email sent status:", email_sent)
+            if not email_sent:
+                # The user was created, but the email failed. Log this for a retry later.
+                print(f"CRITICAL: Failed to send welcome email to {new_user.email}")
+
+        except Exception as e:
+            # Log the email sending error
+            print(f"CRITICAL: An exception occurred while sending email to {new_user.email}: {e}")
+
+        return new_user
+
 
     @staticmethod
     async def login_user_service(data: LoginSchema, db: AsyncSession) -> dict:
