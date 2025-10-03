@@ -26,7 +26,12 @@
 .ia-content h1, .ia-page-content h1 { font-size: 2rem; color: #343a40; margin-bottom: 2rem; }
 
 /* --- Dashboard Page --- */
-.ia-stats-cards-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.ia-stats-cards-container {
+  display: grid;
+  /* MODIFIED: Explicitly create 5 equal columns */
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
 .ia-stat-card { display: flex; align-items: center; gap: 1.5rem; background-color: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 .ia-stat-card-icon { display: flex; align-items: center; justify-content: center; padding: 1rem; border-radius: 50%; color: #fff; }
 .ia-stat-card-icon.departments { background-color: #fd7e14; }
@@ -57,7 +62,11 @@
   border-color: #007bff;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
 }
-
+@media (max-width: 1200px) {
+  .ia-stats-cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
 .form-message { padding: 1rem; margin: 1rem 0; border-radius: 8px; text-align: center; }
 .form-message.error { background-color: #f8d7da; color: #721c24; }
 .form-message.success { background-color: #d4edda; color: #155724; }
@@ -107,4 +116,86 @@
   background-color: #007bff; 
   color: #fff;
   font-weight: 500; 
+}
+
+.ia-stat-card-icon.files { background-color: #17a2b8; } /* Info Blue */
+.ia-stat-card-icon.reports { background-color: #28a745; } /* Success Green */
+
+
+/* --- New Recent Activity Table --- */
+.ia-recent-activity {
+  margin-top: 2.5rem;
+}
+
+.ia-recent-activity h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  border-bottom: none;
+}
+
+.ia-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.ia-data-table th, .ia-data-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.ia-data-table thead {
+  background-color: #f8fafc;
+}
+
+.ia-data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ia-data-table td:first-child {
+  font-weight: 500;
+  color: #343a40;
+}
+
+/* Add these styles to your InstituteAdmin.css file */
+
+.status-badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.status-ongoing {
+  background-color: #e0f2fe; /* Light Blue */
+  color: #0c4a6e;
+}
+
+.status-badge.status-completed {
+  background-color: #dcfce7; /* Light Green */
+  color: #166534;
+}
+
+.status-badge.status-on_hold {
+  background-color: #fef9c3; /* Light Yellow */
+  color: #854d0e;
+}
+
+.status-badge.status-cancelled {
+  background-color: #fee2e2; /* Light Red */
+  color: #991b1b;
+}
+
+.ia-form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #333;
 }

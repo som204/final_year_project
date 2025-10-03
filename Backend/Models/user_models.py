@@ -13,6 +13,7 @@ if TYPE_CHECKING:
     from .department_models import Department
     from .institute_models import Institute
     from .dataUpload_models import DataUploaded
+    from .report_models import Report
 
 import bcrypt
 
@@ -57,6 +58,7 @@ class User(Base):
     institute: Mapped[Optional["Institute"]] = relationship(back_populates="users")
     department: Mapped[Optional["Department"]] = relationship(back_populates="users")
     data_uploads: Mapped[List["DataUploaded"]] = relationship(back_populates="faculty")
+
 
     @hybrid_property
     def is_effectively_approved(self) -> bool:

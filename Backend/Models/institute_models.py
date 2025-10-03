@@ -10,10 +10,12 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 from Models import Base
 
+
 if TYPE_CHECKING:
     from .user_models import User, Stakeholder
     from .department_models import Department
     from .dataUpload_models import DataUploaded
+    from .project_models import Project
 
 # ========================
 # Institute Model
@@ -42,3 +44,7 @@ class Institute(Base):
     users: Mapped[List["User"]] = relationship(back_populates="institute")
     stakeholders: Mapped[List["Stakeholder"]] = relationship(back_populates="institute")
     data_uploads: Mapped[List["DataUploaded"]] = relationship(back_populates="institute")
+    projects: Mapped[List["Project"]] = relationship(
+    back_populates="institute",
+    cascade="all, delete-orphan"
+)

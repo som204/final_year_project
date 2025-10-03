@@ -17,7 +17,9 @@ export const UserProvider = ({ children }) => {
         if (storedToken && storedUser) {
             setToken(storedToken);
             try {
+                // console.log("Stored User:", storedUser);
                 setUser(JSON.parse(storedUser));
+                // console.log("Parsed User:", JSON.parse(storedUser));
             } catch {
                 setUser(null);
             }

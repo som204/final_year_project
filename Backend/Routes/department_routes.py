@@ -13,3 +13,7 @@ async def get_departments(db: AsyncSession = Depends(get_db)):
 @router.post("/create", response_model=DepartmentResponseSchema)
 async def create_department(department: DepartmentCreate, db: AsyncSession = Depends(get_db)):
     return await DepartmentService.create_department(department.model_dump(), db)
+
+@router.get("/institute/{institute_id}", response_model=list[DepartmentResponseSchema])
+async def get_departments_by_institute(institute_id: int, db: AsyncSession = Depends(get_db)):
+    return await DepartmentService.get_department_by_institute_id(institute_id, db)

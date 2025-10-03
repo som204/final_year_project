@@ -15,6 +15,7 @@ import FacultyDashboard from '../components/FacultyDashboard';
 import DataUploadPage from '../components/DataUpload';
 import { Navigate } from 'react-router-dom';
 import Protected_route from '../Authentication/Protected_route';
+import ProjectManagementPage from '../components/ProjectManagement';
 
 // Import your user-related pages/components
 
@@ -33,8 +34,9 @@ const UserRoutes = () => (
             <Route path="/institute-admin" element={<InstituteAdminLayout />}>
               <Route index element={<Navigate to="dashboard" />} />
               <Route path="dashboard" element={<InstituteDashboard />} />
-              <Route path="register-department" element={<DeptRegPage />} />
-              <Route path="register-faculty" element={<FacultyRegPage />} />
+              <Route path="department" element={<DeptRegPage />} />
+              <Route path="faculty" element={<FacultyRegPage />} />
+              <Route path="project" element={<ProjectManagementPage />} />
             </Route>
             <Route path="/faculty" element={<FacultyLayout />}>
               <Route index element={<Navigate to="dashboard" />} />

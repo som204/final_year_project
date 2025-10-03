@@ -20,15 +20,17 @@ const DepartmentManagementPage = () => {
     const fetchDepartments = async () => {
         setIsLoading(true);
         setError(null);
+        
         try {
             // This endpoint should be protected and return departments only for the logged-in admin's institute
-            const response = await fetch('http://localhost:8000/department/all', {
+            const response = await fetch(`http://localhost:8000/department/institute/${user.institute_id}`, {
                 credentials: 'include',
                 method: 'GET',
             });
             if (!response.ok) throw new Error('Failed to fetch departments.');
             const data = await response.json();
             setDepartments(data);
+            
         } catch (err) {
             setError(err.message);
         } finally {
