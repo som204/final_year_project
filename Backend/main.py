@@ -3,8 +3,9 @@ from Routes.user_routes import router as user_router
 from Routes.institute_routes import router as institute_router
 from Routes.department_routes import router as department_router
 from Routes.dataUpload_routes import router as dataupload_router
+from Routes.project_routes import router as project_router
+from Routes.report_routes import router as report_router
 from Middleware.auth_middleware import AuthMiddleware
-
 from fastapi.middleware.cors import CORSMiddleware
 
 app=FastAPI()
@@ -29,6 +30,8 @@ app.include_router(user_router)
 app.include_router(institute_router)
 app.include_router(department_router)
 app.include_router(dataupload_router)
+app.include_router(project_router)
+app.include_router(report_router)
 
 
 @app.get("/")

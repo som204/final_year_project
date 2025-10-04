@@ -26,3 +26,12 @@ class DepartmentService:
         except SQLAlchemyError as e:
             await db.rollback()
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+
+    @staticmethod
+    async def get_department_by_institute_id(institute_id: int, db: AsyncSession) -> List[Department]:
+        try:
+            result = await db.execute(select(Department).where(Department.institute_id == institute_id))
+            departments = result.scalars().all()
+            return list(departments)
+        except SQLAlchemyError as e:
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))

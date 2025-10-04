@@ -42,40 +42,41 @@ class UserService:
         except SQLAlchemyError as e:
             await db.rollback()
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Could not create user due to a database error.")
-        try:
+        if(new_user.role != "STUDENT"):
+            try:
             # Query to find the institute name from the institute id
-            institute_name = None
-            if new_user.institute_id:
-                select_institute = select(Institute).filter(Institute.id == new_user.institute_id)
-                result = await db.execute(select_institute)
-                institute = result.scalars().first()
-                if institute:
-                    institute_name = institute.name
-            print("Institute Name:", institute_name)
-            welcome_context = {
-                "faculty_full_name": new_user.full_name,
-                "institute_name": institute_name,
-                "faculty_email": new_user.email,
-                "temporary_password": plaintext_password,
-                "login_url": "http://localhost:5173/login"
-            }
-            
-            # --- 4. Run the blocking email function in a separate thread ---
-            email_sent = await asyncio.to_thread(
-                send_email,
-                "somprasad613@gmail.com",
-                "Welcome to the Platform!",
-                "welcome_faculty.html", # Assuming this is the template name
-                welcome_context
-            )
-            print("Email sent status:", email_sent)
-            if not email_sent:
-                # The user was created, but the email failed. Log this for a retry later.
-                print(f"CRITICAL: Failed to send welcome email to {new_user.email}")
+                institute_name = None
+                if new_user.institute_id:
+                    select_institute = select(Institute).filter(Institute.id == new_user.institute_id)
+                    result = await db.execute(select_institute)
+                    institute = result.scalars().first()
+                    if institute:
+                        institute_name = institute.name
+                print("Institute Name:", institute_name)
+                welcome_context = {
+                    "faculty_full_name": new_user.full_name,
+                    "institute_name": institute_name,
+                    "faculty_email": new_user.email,
+                    "temporary_password": plaintext_password,
+                    "login_url": "http://localhost:5173/login"
+                }
+                
+                # --- 4. Run the blocking email function in a separate thread ---
+                email_sent = await asyncio.to_thread(
+                    send_email,
+                    "somprasad613@gmail.com",
+                    "Welcome to the Platform!",
+                    "welcome_faculty.html", # Assuming this is the template name
+                    welcome_context
+                )
+                print("Email sent status:", email_sent)
+                if not email_sent:
+                    # The user was created, but the email failed. Log this for a retry later.
+                    print(f"CRITICAL: Failed to send welcome email to {new_user.email}")
 
-        except Exception as e:
-            # Log the email sending error
-            print(f"CRITICAL: An exception occurred while sending email to {new_user.email}: {e}")
+            except Exception as e:
+                # Log the email sending error
+                print(f"CRITICAL: An exception occurred while sending email to {new_user.email}: {e}")
 
         return new_user
 
@@ -121,9 +122,11 @@ class UserService:
             return {"access_token": token, "user": user_response_dict}
 
         except SQLAlchemyError as e:
+            print(e)
             await db.rollback()
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Database error during login")
         except ValueError as e:
+            print(e)
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
             
 
@@ -155,4 +158,13 @@ class UserService:
         except SQLAlchemyError as e:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Could not fetch users due to a database error.")      
 
+    @staticmethod
+    async def get_user_by_institute_id(institute_id: int, db: AsyncSession) -> list[User]:
+        """Fetches all users from the database by institute id."""
+        try:
+            result = await db.execute(select(User).filter(User.institute_id == institute_id))
+            users = result.scalars().all()
+            return list(users)
+        except SQLAlchemyError as e:
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Could not fetch users due to a database error.")
         

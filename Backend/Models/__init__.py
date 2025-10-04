@@ -7,6 +7,8 @@ from .user_models import Base
 from .institute_models import Institute
 from .department_models import Department
 from .user_models import User, Stakeholder
+from .project_models import Project
+from .report_models import Report
 
 # You can also define what gets imported when someone does "from Models import *"
-__all__ = ["Base", "Institute", "Department", "User", "Stakeholder"]
+__all__ = ["Base", "Institute", "Department", "User", "Stakeholder", "Project", "Report"]

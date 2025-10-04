@@ -23,8 +23,8 @@ const FacultyManagementPage = () => {
         setError(null);
         try {
             const [facultyRes, deptsRes] = await Promise.all([
-                fetch('http://localhost:8000/user/all', { credentials: 'include', method: 'GET' }),
-                fetch('http://localhost:8000/department/all', { credentials: 'include', method: 'GET' })
+                fetch(`http://localhost:8000/user/institute/${user.institute_id}`, { credentials: 'include', method: 'GET' }),
+                fetch(`http://localhost:8000/department/institute/${user.institute_id}`, { credentials: 'include', method: 'GET' })
             ]);
             if (!facultyRes.ok || !deptsRes.ok) throw new Error('Failed to fetch initial page data.');
             let facultyData = await facultyRes.json();
