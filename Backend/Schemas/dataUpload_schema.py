@@ -12,4 +12,10 @@ class DataUploadBase(BaseModel):
     faculty_id: Optional[int] = None
     department_id: Optional[int] = None
     institute_id: Optional[int] = None
-    upload_time: Optional[datetime] = None 
+    project_id: int
+    project_name: Optional[str] = None
+    upload_time: Optional[datetime] = None
+
+    model_config = {
+        "from_attributes": True
+    }

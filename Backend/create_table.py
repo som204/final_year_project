@@ -5,9 +5,11 @@ from Database.db import Base, engine
 from Models.user_models import User
 from Models.institute_models import Institute
 from Models.department_models import Department
+from Models.association_models import report_data_association
 from Models.dataUpload_models import DataUploaded
 from Models.project_models import Project
 from Models.report_models import Report
+
 
 
 async def create_all_tables():

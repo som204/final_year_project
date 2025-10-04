@@ -30,9 +30,32 @@
 
 /* --- Data Upload Form --- */
 .faculty-page-content { width: 100%; }
-.faculty-form { max-width: 800px; background-color: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.faculty-form .input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.faculty-form .input-icon {
+  position: absolute;
+  left: 1rem;
+  /* Position relative to the bottom of the group */
+  bottom: auto;
+  top: 90%;
+  transform: translateY(-150%);
+  color: #999;
+  pointer-events: none;
+}
+
+.input-icon {
+  bottom: 0.5rem;
+}
 .faculty-form textarea { width: 100%; min-height: 120px; resize: vertical; padding: 0.8rem 1rem; margin-bottom: 1.5rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; font-family: 'Poppins', sans-serif; }
 .faculty-form textarea:focus { outline: none; border-color: #8A4BFF; box-shadow: 0 0 0 3px rgba(138, 75, 255, 0.2); }
+.faculty-form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
 
 .file-input-container {
   border: 2px dashed #ccc;
@@ -85,4 +108,62 @@
 .logout-button:hover {
   background-color: #6f5a91;
   color: #fff;
+}
+
+.faculty-form select {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 3rem; /* Space for icon */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23999999%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 1rem top 50%;
+  background-size: .65em auto;
+  padding-right: 3rem;
+  cursor: pointer;
+}
+.faculty-form select:disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+/* Add these styles to your InstituteFaculty.css file */
+
+.list-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-bar, .filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.search-bar input, .filter-bar select {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+.filter-bar select {
+  cursor: pointer;
+}
+
+.faculty-stat-card-icon.reports {
+  background-color: #17a2b8; /* A standard success green */
 }

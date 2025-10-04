@@ -9,14 +9,15 @@ from Services.dataUpload_service import DataUploadService
 router = APIRouter(prefix="/uploads", tags=["Uploads"])
 
 @router.post("/", response_model=List[DataUploadBase])
-async def create_new_uploads(description: str = Form(...),faculty_id: int = Form(...),department_id: int = Form(...),institute_id: int = Form(...),files: List[UploadFile] = File(...),db: AsyncSession = Depends(get_db)):
+async def create_new_uploads(description: str = Form(...),faculty_id: int = Form(...),department_id: int = Form(...),institute_id: int = Form(...),files: List[UploadFile] = File(...),project_id: int = Form(...), db: AsyncSession = Depends(get_db)):
     upload_data = DataUploadBase(
         name="placeholder",
         description=description,
         faculty_id=faculty_id,
         department_id=department_id,
         institute_id=institute_id,
-        file_path="placeholder" 
+        file_path="placeholder",
+        project_id=project_id
     )
 
     return await DataUploadService.create_uploads(
