@@ -2,6 +2,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy.exc import SQLAlchemyError
 from Models.report_models import Report
+from Models.project_models import Project
+from Models.institute_models import Institute
 
 
 class ReportService:
@@ -28,4 +30,15 @@ class ReportService:
     async def get_reports_by_project_id(project_id: int, db: AsyncSession) -> list[Report]:
         """Fetches reports associated with a specific project ID."""
         result = await db.execute(select(Report).filter(Report.project_id == project_id))
+        return list(result.scalars().all())
+
+    @staticmethod
+    async def get_report_by_institute_id(institute_id: int, db: AsyncSession) -> list[Report]:
+        """Fetches reports associated with a specific institute ID."""
+        result = await db.execute(
+            select(Report)
+            .join(Project, Report.project_id == Project.id)
+            .join(Institute, Project.institute_id == Institute.id)
+            .filter(Institute.id == institute_id)
+        )
         return list(result.scalars().all())

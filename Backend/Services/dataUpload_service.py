@@ -9,6 +9,8 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from Schemas.dataUpload_schema import DataUploadBase
 from Models.dataUpload_models import DataUploaded
+from Models.project_models import Project
+from sqlalchemy.orm import joinedload
 
 from sqlalchemy.future import select
 
@@ -49,7 +51,8 @@ class DataUploadService:
                     file_path=file_info["path"],
                     faculty_id=upload_data.faculty_id,
                     department_id=upload_data.department_id,
-                    institute_id=upload_data.institute_id
+                    institute_id=upload_data.institute_id,
+                    project_id=upload_data.project_id
                 )
                 new_uploads.append(db_upload)
 
@@ -62,6 +65,7 @@ class DataUploadService:
             return new_uploads
 
         except SQLAlchemyError as e:
+            print(e)
             await db.rollback()
             for file_info in saved_files_info:
                 if os.path.exists(file_info["path"]):
@@ -71,12 +75,32 @@ class DataUploadService:
                 detail=f"Database error: {e}"
             )
         
+        
 
     @staticmethod
-    async def getFiles_by_Userid(db: AsyncSession, user_id: int) -> List[DataUploaded]:
+    async def getFiles_by_Userid(db: AsyncSession, user_id: int) -> List[DataUploadBase]:
         try:
-            result = await db.execute(select(DataUploaded).filter(DataUploaded.faculty_id == user_id))
-            return list(result.scalars().all())
+            # 2. Your query is already efficient and correct, no changes needed here
+            stmt = (
+                select(DataUploaded)
+                .options(joinedload(DataUploaded.project))
+                .filter(DataUploaded.faculty_id == user_id)
+            )
+            result = await db.execute(stmt)
+            uploads = result.scalars().all()
+
+            # 3. Transform the SQLAlchemy objects into Pydantic response models
+            response_data = []
+            for upload in uploads:
+                # Create the response object from the SQLAlchemy model
+                upload_response = DataUploadBase.model_validate(upload)
+                # Manually add the project name from the joined relationship
+                if upload.project:
+                    upload_response.project_name = upload.project.name
+                response_data.append(upload_response)
+            
+            return response_data
+
         except SQLAlchemyError as e:
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,

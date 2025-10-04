@@ -12,6 +12,7 @@ from Models import Base
 if TYPE_CHECKING:
     from .institute_models import Institute
     from .report_models import Report
+    from .dataUpload_models import DataUploaded
 
 # Define an Enum for the project status for better data integrity
 class ProjectStatus(enum.Enum):
@@ -46,6 +47,10 @@ class Project(Base):
     institute: Mapped["Institute"] = relationship(back_populates="projects")
     reports: Mapped[List["Report"]] = relationship(
         back_populates="projects",
+        cascade="all, delete-orphan"
+    )
+    data_uploads: Mapped[List["DataUploaded"]] = relationship(
+        back_populates="project",
         cascade="all, delete-orphan"
     )
 

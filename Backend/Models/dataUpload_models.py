@@ -8,11 +8,15 @@ from typing import Optional, List,TYPE_CHECKING
 from Database.db import Base
 from datetime import datetime, timezone
 
+from Models.association_models import report_data_association
+
 # You will need to import your other models
 if TYPE_CHECKING:
     from .user_models import User
     from .institute_models import Institute
     from .department_models import Department
+    from .project_models import Project
+    from .report_models import Report
 
 class DataUploaded(Base):
     __tablename__ = "data_uploaded"
@@ -30,9 +34,15 @@ class DataUploaded(Base):
     faculty_id: Mapped[int] = mapped_column(Integer, ForeignKey("users.id"), nullable=False)
     department_id: Mapped[int] = mapped_column(Integer, ForeignKey("departments.id"), nullable=False)
     institute_id: Mapped[int] = mapped_column(Integer, ForeignKey("institutes.id"), nullable=False)
+    project_id: Mapped[int] = mapped_column(Integer, ForeignKey("projects.id"), nullable=False)
     
     # --- Relationships ---
     # These allow you to access the full objects, e.g., my_upload.faculty.full_name
     faculty: Mapped["User"] = relationship(back_populates="data_uploads")
     department: Mapped["Department"] = relationship(back_populates="data_uploads")
     institute: Mapped["Institute"] = relationship(back_populates="data_uploads")
+    project: Mapped["Project"] = relationship(back_populates="data_uploads")
+    generated_reports: Mapped[List["Report"]] = relationship(
+        secondary=report_data_association,
+        back_populates="source_files"
+    )

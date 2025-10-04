@@ -15,3 +15,7 @@ async def get_reports_by_project(project_id: int, db: AsyncSession = Depends(get
 @router.post("/create")
 async def create_report(report_data: ReportBase, db: AsyncSession = Depends(get_db)):
     return await ReportService.create_report(report_data.model_dump(), db)
+
+@router.get("/institute/{institute_id}")
+async def get_reports_by_institute(institute_id: int, db: AsyncSession = Depends(get_db)):
+    return await ReportService.get_report_by_institute_id(institute_id, db)
