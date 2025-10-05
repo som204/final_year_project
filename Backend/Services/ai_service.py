@@ -192,43 +192,43 @@ graph.add_edge("compile_data", END)
 app_graph = graph.compile()
 
 
-# --- 5. Manual Test Runner ---
-if __name__ == "__main__":
-    async def main():
-        data_dir = os.path.join(project_root, "uploads")
-        files_to_process = [
-            os.path.join(data_dir, "FSA_Financials_2025.csv"),
-            os.path.join(data_dir, "FSA_Academics_Faculty_Report_2025.docx"),
-            # os.path.join(data_dir, "FSA_Student_Life_Notes_2025.txt"),
-        ]
+# # --- 5. Manual Test Runner ---
+# if __name__ == "__main__":
+#     async def main():
+#         data_dir = os.path.join(project_root, "uploads")
+#         files_to_process = [
+#             os.path.join(data_dir, "FSA_Financials_2025.csv"),
+#             os.path.join(data_dir, "FSA_Academics_Faculty_Report_2025.docx"),
+#             # os.path.join(data_dir, "FSA_Student_Life_Notes_2025.txt"),
+#         ]
 
-        initial_state: GraphState = {"file_paths": files_to_process}
+#         initial_state: GraphState = {"file_paths": files_to_process}
 
-        print("🚀 --- KICKING OFF AGENT BATCH RUN --- 🚀")
-        final_state = app_graph.invoke(initial_state)
-        print("\n✅ --- AGENT RUN COMPLETE --- ✅")
+#         print("🚀 --- KICKING OFF AGENT BATCH RUN --- 🚀")
+#         final_state = app_graph.invoke(initial_state)
+#         print("\n✅ --- AGENT RUN COMPLETE --- ✅")
 
-        if final_state:
-            report_data = final_state.get("final_report_data")
-            if report_data:
-                try:
-                    template_dir = os.path.join(project_root, "Templates")
-                    template_loader = jinja2.FileSystemLoader(searchpath=template_dir)
-                    template_env = jinja2.Environment(loader=template_loader)
-                    template = template_env.get_template("report_template.html")
-                    html_report = template.render(report_data)
+#         if final_state:
+#             report_data = final_state.get("final_report_data")
+#             if report_data:
+#                 try:
+#                     template_dir = os.path.join(project_root, "Templates")
+#                     template_loader = jinja2.FileSystemLoader(searchpath=template_dir)
+#                     template_env = jinja2.Environment(loader=template_loader)
+#                     template = template_env.get_template("report_template.html")
+#                     html_report = template.render(report_data)
                     
-                    report_path = os.path.join(project_root, "generated_report.html")
-                    with open(report_path, "w", encoding="utf-8") as f:
-                        f.write(html_report)
-                    print(f"\n📄 Comprehensive report saved to {report_path}")
+#                     report_path = os.path.join(project_root, "generated_report.html")
+#                     with open(report_path, "w", encoding="utf-8") as f:
+#                         f.write(html_report)
+#                     print(f"\n📄 Comprehensive report saved to {report_path}")
 
-                except Exception as e:
-                    print(f"\n❌ Error rendering or saving HTML template: {e}")
-            else:
-                print("\n❌ Agent did not produce report data. Final state:")
-                pprint.pprint(final_state)
-        else:
-            print("\n❌ Agent run did not complete.")
+#                 except Exception as e:
+#                     print(f"\n❌ Error rendering or saving HTML template: {e}")
+#             else:
+#                 print("\n❌ Agent did not produce report data. Final state:")
+#                 pprint.pprint(final_state)
+#         else:
+#             print("\n❌ Agent run did not complete.")
 
-    asyncio.run(main())
+#     asyncio.run(main())
