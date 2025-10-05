@@ -106,3 +106,28 @@ class DataUploadService:
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail=f"Database error: {e}"
             )
+
+    @staticmethod
+    async def getFiles_by_Project_id(db:AsyncSession,project_id:int) -> List[DataUploadBase]:
+        try:
+            stmt= select(DataUploaded).options(joinedload(DataUploaded.department),joinedload(DataUploaded.faculty)).filter(DataUploaded.project_id==project_id)
+            result=await db.execute(stmt)
+            uploads=result.scalars().all()
+            response_data = []
+            for upload in uploads:
+                upload_response = DataUploadBase.model_validate(upload)
+                if upload.department:
+                    upload_response.department_name=upload.department.name
+                    
+                if upload.faculty:
+                    upload_response.faculty_name=upload.faculty.full_name
+                    
+                response_data.append(upload_response)
+
+            return response_data
+        except SQLAlchemyError as e:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Database error: {e}"
+            )
+                

@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional, List
 from datetime import datetime
 
 class ReportBase(BaseModel):
@@ -8,3 +8,11 @@ class ReportBase(BaseModel):
     description: str
     project_id: int
     
+
+
+
+class GenerateReportRequest(BaseModel):
+    """
+    Defines the request body for triggering a new report generation.
+    """
+    source_file_ids: List[int]

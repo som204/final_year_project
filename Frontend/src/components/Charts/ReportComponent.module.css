@@ -1,0 +1,85 @@
+/* REMOVED: The 'body' selector, as it should be in a global file like index.css */
+
+.reportBody {
+    /* Styles that were on 'body' now apply only to this component's wrapper */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.7;
+    color: #4A4A4A;
+    background-color: #f8f9fa;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.container h1, .container h2, .container h3 {
+    color: #0A2540; /* Dark Slate Blue */
+    font-weight: 700;
+}
+
+.container h1 {
+    font-size: 2.8em;
+    text-align: center;
+    border-bottom: 3px solid #00C49A; /* Teal Accent */
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.container h2 {
+    font-size: 2em;
+    margin-top: 45px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.container p {
+    margin-bottom: 1.2em;
+    font-size: 1.1em;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.statCard {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #00C49A;
+}
+
+.statCard .value {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #0A2540;
+}
+
+.statCard .label {
+    font-size: 1em;
+    color: #6c757d;
+}
+
+.chartContainer {
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .container { padding: 20px; margin: 0; border-radius: 0; }
+    .container h1 { font-size: 2em; }
+    .container h2 { font-size: 1.6em; }
+    .statsGrid { grid-template-columns: 1fr; }
+}

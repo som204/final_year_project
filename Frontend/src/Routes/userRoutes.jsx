@@ -16,6 +16,8 @@ import DataUploadPage from '../components/DataUpload';
 import { Navigate } from 'react-router-dom';
 import Protected_route from '../Authentication/Protected_route';
 import ProjectManagementPage from '../components/ProjectManagement';
+import ReportManagement from '../components/ReportManagement';
+import ReportComponent from '../components/Charts/ReportComponent';
 
 // Import your user-related pages/components
 
@@ -25,6 +27,7 @@ const UserRoutes = () => (
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/report" element={<ReportComponent />} />
         <Route element={<Protected_route />}>
               <Route path="/admin" element={<SuperAdmin />}>
               <Route index element={<Navigate to="dashboard" />} />
@@ -37,12 +40,13 @@ const UserRoutes = () => (
               <Route path="department" element={<DeptRegPage />} />
               <Route path="faculty" element={<FacultyRegPage />} />
               <Route path="project" element={<ProjectManagementPage />} />
+              <Route path="report" element={<ReportManagement />} />
             </Route>
             <Route path="/faculty" element={<FacultyLayout />}>
               <Route index element={<Navigate to="dashboard" />} />
               <Route path="dashboard" element={<FacultyDashboard />} />
               <Route path="upload-data" element={<DataUploadPage />} />
-            </Route>
+            </Route>   
         </Route>
         <Route path="*" element={<Login/>} />
       </Routes>

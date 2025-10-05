@@ -31,4 +31,8 @@ async def create_new_uploads(description: str = Form(...),faculty_id: int = Form
 async def get_uploads_by_user(user_id: int, db: AsyncSession = Depends(get_db)):
     return await DataUploadService.getFiles_by_Userid(db=db, user_id=user_id)
 
+@router.get("/projects/{project_id}",response_model=List[DataUploadBase])
+async def get_uploads_by_Projectid(project_id:int ,db: AsyncSession = Depends(get_db)):
+    return await DataUploadService.getFiles_by_Project_id(db,project_id)
+
    
