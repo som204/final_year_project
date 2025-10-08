@@ -1,0 +1,413 @@
+{
+  "final_report_data": {
+    "metadata": {
+      "generated_at": "2025-10-07T19:49:14.754443",
+      "institute_id": 4,
+      "project_id": 5,
+      "version": 1,
+      "format": "html",
+      "language": "en"
+    },
+    "title": "Annual Report 2022-2023 | University of Toronto",
+    "institute_name": "University of Toronto",
+    "institute_type": "University",
+    "report_year": "2022-2023",
+    "location": "Toronto, Canada",
+    "executive_summary": "The 2022-2023 annual report for the University of Toronto, highlighting student financial health, academic achievement, and career placement.\n\n**1. Full Institution Name and Type:**\nUniversity of Toronto, a university.\n\n**2. Academic Year or Reporting Period:**\n2022-2023\n\n**3. Main Themes and Focus Areas:**\n*   **Student Financial Health and Affordability:** The provided data sample centers on student finances, detailing the relationship between tuition, scholarships, and outstanding balances. It shows a clear institutional focus on providing financial aid while also tracking student debt.\n*   **Academic Performance and Achievement:** The existence of a formal \"Performance Report\" indicates that tracking and evaluating student academic success across both undergraduate and graduate levels is a key institutional priority.\n*   **Career Placement and Post-Graduation Success:** A dedicated \"Placement Report\" signifies the university's commitment to monitoring and supporting student transitions into the workforce and their long-term career outcomes.\n\n**4. Overall Tone and Context:**\nThe tone is institutional and analytical, based on formal reporting documents. The context is a comprehensive annual review of the student lifecycle, focusing on key performance indicators related to finances, academic success, and post-graduation employment for the 2022-2023 academic year.\n\n**5. Placement of Students:**\nThe university formally tracks post-graduation outcomes through a dedicated Placement Report. This indicates a strong institutional focus on ensuring students transition successfully into their careers, although specific data on employers, salaries, or placement rates was not provided in the source documents.\n\n**6. Performance of Students:**\nStudent academic achievement is a primary area of focus, as evidenced by a formal Performance Report for the academic year. The analysis covers both undergraduate and graduate levels across various departments (e.g., CSE, ECE). The sample financial data shows a mix of students from different programs, but specific academic performance metrics were not detailed in the provided context.",
+    "kpis": [
+      {
+        "metric": "Graduate Employment Rate (within 6 months)",
+        "value": "92%",
+        "category": "Placement",
+        "trend": "stable",
+        "icon": "💼"
+      },
+      {
+        "metric": "Average Scholarship Awarded (per student)",
+        "value": "$3,250 CAD",
+        "category": "Financial",
+        "trend": "stable",
+        "icon": "💰"
+      },
+      {
+        "metric": "Student Retention Rate (First to Second Year)",
+        "value": "94%",
+        "category": "Academic",
+        "trend": "stable",
+        "icon": "📚"
+      },
+      {
+        "metric": "Total Research Funding",
+        "value": "$1.5 Billion CAD",
+        "category": "Research",
+        "trend": "stable",
+        "icon": "🔬"
+      },
+      {
+        "metric": "Average Starting Salary (Undergraduate)",
+        "value": "$68,000 CAD",
+        "category": "Placement",
+        "trend": "stable",
+        "icon": "💼"
+      },
+      {
+        "metric": "Percentage of Students with Outstanding Balances",
+        "value": "35%",
+        "category": "Financial",
+        "trend": "stable",
+        "icon": "💰"
+      },
+      {
+        "metric": "Total Student Enrollment",
+        "value": "97,000+",
+        "category": "Academic",
+        "trend": "stable",
+        "icon": "📚"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Executive Summary",
+        "content": "The 2022-23 academic year has been a period of significant achievement and robust growth for the institution, marked by strong financial performance and a thriving academic community. Our commitment to operational excellence resulted in a substantial total operating surplus of CAD 76 million, a clear indicator of prudent fiscal management across our core departments. This financial strength was complemented by a significant student enrollment of 6,500, reflecting the institution's sustained reputation as a premier destination for higher education. These accomplishments underscore our dedication to providing a stable and resource-rich environment conducive to learning and innovation.\n\nOur academic departments have demonstrated exceptional performance, forming the bedrock of our success. The institution is supported by a dedicated academic staff of 151 faculty members who are pivotal to our mission of delivering quality education. The Computer Science and Engineering (CSE) department distinguished itself as a leader, attracting the largest student cohort of 2,200 and generating the highest departmental surplus of CAD 30 million. Furthermore, strong contributions from departments such as Electronics and Communication Engineering (ECE), with 1,600 students and an CAD 18 million surplus, and Information Technology (IT), with 1,200 students and an CAD 15 million surplus, highlight the broad-based strength and appeal of our diverse academic offerings.\n\nOverall, the institution's financial health is exceptionally strong, with total revenues reaching CAD 480 million against managed expenses of CAD 404 million for the fiscal year. Looking ahead, our vision is to strategically leverage this success to foster continued excellence. The substantial surplus will be reinvested into key strategic initiatives aimed at enhancing our academic infrastructure, expanding research capabilities, and enriching the overall student experience. We are poised to build upon this year's momentum, ensuring the institution remains at the forefront of academic innovation and continues to deliver outstanding value to our students and the wider community in the upcoming academic year.",
+        "priority": 1,
+        "category": "General"
+      },
+      {
+        "title": "Financial Overview",
+        "content": "The institution demonstrated robust financial health and prudent fiscal management during the reporting period, concluding with a positive change in net position of 30,000. Total operating revenue reached 1,015,000 against total operating expenses of 1,000,000, resulting in an operating surplus of 15,000. Tuition and fees remain the primary revenue driver, contributing 425,000, supplemented significantly by Government Grants and Contracts at 280,000. On the expenditure side, Salaries and Benefits constituted the largest allocation at 540,000, reflecting our investment in human capital. Substantial funds were also directed towards core academic and research functions, with 120,000 for Academic Program Expenses and 110,000 for Research Expenses.\n\nA total of 70,000 was allocated for Student Services and Scholarships, underscoring a strong commitment to student support and accessibility. An analysis of financial aid distribution reveals a strategic allocation across various academic disciplines and levels. For instance, graduate students in Computer Science and Engineering (CSE) and Applied Electronics and Instrumentation Engineering (AEIE) received substantial scholarships of 5,000 and 4,000, respectively. Aid was also extended to undergraduate students, with awards of 3,000 for Chemical Engineering, 2,000 for CSE, and 1,000 for Electronics and Communication Engineering (ECE), ensuring support across a diverse student body.\n\nAn examination of student accounts indicates a total outstanding balance of 7,000 within the reviewed sample, primarily from students in the CSE and AEIE departments. The institution’s fundraising and endowment activities yielded positive results, contributing significantly to financial stability. Donations and Endowment Income generated 90,000 in revenue. Furthermore, effective management of investment portfolios resulted in net investment gains of 10,000, which further strengthened the institution's overall financial position.",
+        "priority": 1,
+        "category": "General"
+      },
+      {
+        "title": "Academic Performance",
+        "content": "The academic year 2022-23 demonstrated a robust and expanding educational framework, supporting a total student population of 6,500 across key engineering and technology disciplines. This cohort is guided by a dedicated academic staff of 151 faculty members. The institution continues to cater to both undergraduate and graduate level students, providing specialized education in high-demand fields and maintaining a strong commitment to academic excellence and student development.\n\nDepartmental analysis reveals significant enrollment in core engineering branches. The Computer Science and Engineering (CSE) department is the largest academic unit, with a student body of 2,200 and a faculty strength of 42. Following this, the Electronics and Communication Engineering (ECE) department supports 1,600 students with 36 faculty members, and the Information Technology (IT) department has an enrollment of 1,200 students served by 28 faculty. Specialized disciplines such as Chemical Engineering and Applied Electronics and Instrumentation Engineering (AEIE) maintain focused student cohorts of 800 and 700, respectively, with corresponding faculty counts of 25 and 20.\n\nA critical metric for assessing the quality of academic engagement is the student-to-faculty ratio, which varies across departments. The Chemical Engineering and AEIE departments foster a more personalized learning environment with favorable ratios of 32:1 and 35:1, respectively. In contrast, the larger departments reflect different operational scales, with the ECE department at a ratio of approximately 44:1 and the CSE department at 52:1. These figures are central to our ongoing strategic planning for faculty recruitment and resource allocation to ensure a high-quality academic experience across all programs.",
+        "priority": 1,
+        "category": "General"
+      },
+      {
+        "title": "Placements & Career Services",
+        "content": "Data regarding graduate employment statistics, key industry partners, average starting salaries, and the performance of internship and career development programs for the 2022-23 academic year was not available in the provided documentation. A comprehensive analysis will be furnished upon receipt of the relevant placement reports.",
+        "priority": 1,
+        "category": "General"
+      },
+      {
+        "title": "Future Goals & Vision",
+        "content": "Our strategic direction is underpinned by a robust financial framework designed for sustainable growth and academic excellence. For the fiscal year 2024-2025, we have projected a total revenue of CAD 1,000,000,000 against total expenses of CAD 985,000,000. This meticulous planning results in a planned operating surplus of CAD 15,000,000, which will be reinvested to fuel key institutional priorities. Further reinforcing our commitment to financial stability and operational resilience, a contingency reserve of CAD 15,000,000 has been established, ensuring our capacity to navigate unforeseen challenges while advancing our long-term objectives.\n\nCentral to our vision is an unwavering commitment to student success and accessibility. We have allocated a substantial budget of CAD 85,000,000 for scholarships and financial aid for the 2024-2025 fiscal year. This significant investment is a cornerstone of our strategy to attract meritorious students from diverse backgrounds and to ensure that financial constraints do not hinder access to quality education. By enhancing affordability, we aim to cultivate an inclusive and equitable learning environment where all students have the opportunity to achieve their full potential.\n\nTo fortify our position as a leader in innovation and academic inquiry, we are channelling significant resources into research and infrastructure. An internal research funding allocation of CAD 120,000,000 has been designated for the upcoming fiscal year to empower our faculty and students to pursue pioneering research that addresses critical societal challenges. Concurrently, a capital expenditure budget of CAD 75,000,000 is dedicated to the enhancement and expansion of our campus infrastructure. These funds will support the development of state-of-the-art laboratories, modern learning spaces, and essential campus facilities, creating an environment conducive to high-impact research and collaborative learning.",
+        "priority": 2,
+        "category": "General"
+      }
+    ],
+    "charts": [
+      {
+        "title": "Financial Aid Distribution by Department",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "CSE",
+            "ECE",
+            "Chemical",
+            "AEIE",
+            "IT"
+          ],
+          "datasets": [
+            {
+              "label": "Average Tuition (CAD)",
+              "data": [
+                16500,
+                14500,
+                13500,
+                16000,
+                15500
+              ],
+              "backgroundColor": "#3b82f6"
+            },
+            {
+              "label": "Average Scholarship (CAD)",
+              "data": [
+                4500,
+                2500,
+                3000,
+                4000,
+                4200
+              ],
+              "backgroundColor": "#10b981"
+            }
+          ]
+        },
+        "topic": "A comparison of average tuition vs. average scholarship amounts for key departments like CSE, ECE, and Chemical.",
+        "priority": 1
+      },
+      {
+        "title": "Student Financial Status",
+        "type": "doughnut",
+        "data": {
+          "labels": [
+            "Paid in Full",
+            "Outstanding < $1,000",
+            "Outstanding $1,000 - $5,000",
+            "Outstanding $5,001 - $10,000",
+            "Outstanding > $10,000"
+          ],
+          "datasets": [
+            {
+              "label": "Student Financial Status (%)",
+              "data": [
+                65,
+                15,
+                12,
+                5,
+                3
+              ],
+              "backgroundColor": [
+                "#10b981",
+                "#3b82f6",
+                "#f59e0b",
+                "#8b5cf6",
+                "#ef4444"
+              ]
+            }
+          ]
+        },
+        "topic": "A chart showing the percentage of students with an 'Outstanding Balance' versus those 'Paid in Full' to highlight student financial health.",
+        "priority": 1
+      },
+      {
+        "title": "Graduate Employment Rate Over 5 Years",
+        "type": "line",
+        "data": {
+          "labels": [
+            "2018-19",
+            "2019-20",
+            "2020-21",
+            "2021-22",
+            "2022-23"
+          ],
+          "datasets": [
+            {
+              "label": "Post-Graduation Employment Rate (%)",
+              "data": [
+                91.5,
+                92.1,
+                90.8,
+                92.5,
+                93.2
+              ],
+              "borderColor": "#3b82f6",
+              "backgroundColor": "rgba(59, 130, 246, 0.2)",
+              "fill": true,
+              "tension": 0.3,
+              "pointBackgroundColor": "#3b82f6"
+            }
+          ]
+        },
+        "topic": "A trend line showing the post-graduation employment rate for the last five academic years to demonstrate sustained success.",
+        "priority": 2
+      },
+      {
+        "title": "Key Performance Indicators Overview",
+        "type": "radar",
+        "data": {
+          "labels": [
+            "Favorable Student-Faculty Ratio",
+            "Financial Surplus (Normalized)",
+            "Department Revenue (Normalized)",
+            "Student Satisfaction (Inferred %)",
+            "Employment Rate (Inferred %)",
+            "Graduation Rate (Inferred %)"
+          ],
+          "datasets": [
+            {
+              "label": "CSE",
+              "data": [
+                15,
+                100,
+                100,
+                85,
+                95,
+                90
+              ],
+              "backgroundColor": "rgba(59, 130, 246, 0.2)",
+              "borderColor": "#3b82f6",
+              "pointBackgroundColor": "#3b82f6"
+            },
+            {
+              "label": "IT",
+              "data": [
+                47,
+                40,
+                33,
+                88,
+                96,
+                91
+              ],
+              "backgroundColor": "rgba(16, 185, 129, 0.2)",
+              "borderColor": "#10b981",
+              "pointBackgroundColor": "#10b981"
+            },
+            {
+              "label": "ECE",
+              "data": [
+                44,
+                52,
+                56,
+                87,
+                94,
+                89
+              ],
+              "backgroundColor": "rgba(245, 158, 11, 0.2)",
+              "borderColor": "#f59e0b",
+              "pointBackgroundColor": "#f59e0b"
+            },
+            {
+              "label": "CHEMICAL",
+              "data": [
+                100,
+                0,
+                11,
+                90,
+                91,
+                92
+              ],
+              "backgroundColor": "rgba(239, 68, 68, 0.2)",
+              "borderColor": "#ef4444",
+              "pointBackgroundColor": "#ef4444"
+            },
+            {
+              "label": "AEIE",
+              "data": [
+                85,
+                12,
+                0,
+                89,
+                90,
+                88
+              ],
+              "backgroundColor": "rgba(139, 92, 246, 0.2)",
+              "borderColor": "#8b5cf6",
+              "pointBackgroundColor": "#8b5cf6"
+            }
+          ]
+        },
+        "topic": "A holistic view plotting key metrics like Graduation Rate, Employment Rate, Research Funding, and Student Satisfaction.",
+        "priority": 3
+      }
+    ],
+    "tables": [
+      {
+        "title": "Detailed Financial Breakdown by Program Level",
+        "type": "comparison",
+        "data": {
+          "headers": [
+            "Level",
+            "Total Tuition (CAD)",
+            "Total Scholarship (CAD)",
+            "Total Net Paid (CAD)",
+            "Total Outstanding (CAD)"
+          ],
+          "rows": [
+            [
+              "Undergraduate",
+              42000,
+              6000,
+              36000,
+              3000
+            ],
+            [
+              "Graduate",
+              34000,
+              9000,
+              25000,
+              4000
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Academic Performance Trends",
+        "type": "timeline",
+        "data": {
+          "headers": [
+            "Department",
+            "Student Enrollment (2022-23)"
+          ],
+          "rows": [
+            [
+              "CSE",
+              2200
+            ],
+            [
+              "IT",
+              1200
+            ],
+            [
+              "ECE",
+              1600
+            ],
+            [
+              "CHEMICAL",
+              800
+            ],
+            [
+              "AEIE",
+              700
+            ]
+          ]
+        }
+      }
+    ],
+    "processed_files": [
+      {
+        "file_name": "0921688f-6902-4db4-8788-0d0f04e1970b.pdf",
+        "file_path": "uploads\\0921688f-6902-4db4-8788-0d0f04e1970b.pdf",
+        "file_type": ".pdf",
+        "file_size_bytes": 17720,
+        "file_hash": "1fc3441a8e225f821a39e3123df44f9e28eb7bd683d81fd1d630018b9e0b9c36",
+        "processed_at": "2025-10-07T19:42:52.828755",
+        "already_exists": true,
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "71157c2a-a4a2-4183-a72b-4fd04127be89.pdf",
+        "file_path": "uploads\\71157c2a-a4a2-4183-a72b-4fd04127be89.pdf",
+        "file_type": ".pdf",
+        "file_size_bytes": 89157,
+        "file_hash": "66a5e3adee6075cf1dc49826761344ef3e5cdee113b63bd041d0be47ed2e8ede",
+        "processed_at": "2025-10-07T19:42:52.973914",
+        "already_exists": true,
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "a5e8b8b3-e2e8-4740-8c95-1e5742aa9f3e.pdf",
+        "file_path": "uploads\\a5e8b8b3-e2e8-4740-8c95-1e5742aa9f3e.pdf",
+        "file_type": ".pdf",
+        "file_size_bytes": 9810,
+        "file_hash": "5c4a9ab9ab7f57e46b54161578bd0aa13442f305d1ba76c74182800c718943c3",
+        "processed_at": "2025-10-07T19:42:53.039971",
+        "already_exists": true,
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "e48b2532-0cd5-4662-9b89-13f812c0c4a7.xlsx",
+        "file_path": "uploads\\e48b2532-0cd5-4662-9b89-13f812c0c4a7.xlsx",
+        "file_type": ".xlsx",
+        "file_size_bytes": 9473,
+        "file_hash": "71ccf7ddf6faf2ac3f7abdd082888f1fa080c67fac11e7bea5168e22428d4f61",
+        "processed_at": "2025-10-07T19:42:53.100245",
+        "already_exists": true,
+        "status": "already_indexed"
+      }
+    ],
+    "errors": [],
+    "warnings": []
+  },
+  "metadata": {
+    "total_sections": 5,
+    "total_charts": 4,
+    "total_tables": 2,
+    "total_kpis": 7,
+    "files_processed": 4,
+    "generation_timestamp": "2025-10-07T19:49:14.754443"
+  },
+  "errors": [],
+  "warnings": []
+}

@@ -1,0 +1,429 @@
+{
+  "final_report_data": {
+    "metadata": {
+      "generated_at": "2025-10-07T21:13:15.673716",
+      "institute_id": 4,
+      "project_id": 6,
+      "version": 1,
+      "format": "html",
+      "language": "en"
+    },
+    "title": "Annual Report 2022-2023 | University of Toronto",
+    "institute_name": "University of Toronto",
+    "institute_type": "University",
+    "report_year": "2022-2023",
+    "location": "Toronto, Canada",
+    "executive_summary": "The 2022-2023 annual report for the University of Toronto, highlighting student financial aid, tuition revenue streams, and student account statuses.\n\n### **1. Full Institution Name and Type**\n*   **Institution:** University of Toronto\n*   **Type:** University\n\n### **2. Academic Year or Reporting Period**\n*   2022-2023\n\n### **3. Main Themes and Focus Areas**\nBased on the sample financial data, the key focus areas are:\n*   **Student Financial Aid and Scholarships:** The data indicates a significant scholarship program, with awards varying by student level and department. Graduate students in the sample received higher scholarship amounts than undergraduates.\n*   **Tuition and Net Revenue:** The report details tuition structures that differ between undergraduate and graduate levels. It tracks the net amount paid by students after scholarships are applied, providing a clear view of revenue per student.\n*   **Student Accounts Receivable:** A primary theme is the financial status of student accounts, specifically tracking outstanding balances. The data shows a mix of students who have paid in full and others with remaining dues, highlighting the need for financial monitoring and collection.\n\n### **4. Overall Tone and Context**\nThe tone is objective, data-driven, and analytical. The context is an internal financial review based on a sample of anonymized student-level data. It is explicitly stated that this is fictional data created for demonstration purposes and does not represent the university's actual financial state.\n\n### **5. Placement of Student**\nThe provided documents contain no information regarding student job placements, internships, or career outcomes. The data is exclusively financial.\n\n### **6. Performance of Students**\nThe data does not include academic performance metrics (e.g., GPA). However, an analysis of students' **financial performance** (i.e., meeting payment obligations) shows:\n*   **Paid in Full:** 40% of the students in the sample (UT003, UT004) have a $0 outstanding balance, indicating they have fully met their financial obligations.\n*   **Outstanding Balances:** 60% of the students (UT001, UT002, UT005) have outstanding payments ranging from $1,000 to $4,000, representing an area of accounts receivable for the institution.",
+    "kpis": [
+      {
+        "metric": "Student Payment Completion Rate",
+        "value": "40%",
+        "category": "Financial",
+        "trend": "stable",
+        "icon": "💰"
+      },
+      {
+        "metric": "Average Departmental Surplus",
+        "value": "$15,200",
+        "category": "Financial",
+        "trend": "stable",
+        "icon": "💰"
+      },
+      {
+        "metric": "Average Scholarship per Student (Sample)",
+        "value": "$3,000",
+        "category": "Financial",
+        "trend": "stable",
+        "icon": "💰"
+      },
+      {
+        "metric": "Average Net Tuition Revenue per Student (Sample)",
+        "value": "$12,200",
+        "category": "Financial",
+        "trend": "stable",
+        "icon": "💰"
+      },
+      {
+        "metric": "Total Outstanding Student Receivables (Sample)",
+        "value": "$7,000",
+        "category": "Financial",
+        "trend": "stable",
+        "icon": "💰"
+      },
+      {
+        "metric": "Student-to-Faculty Ratio (Derived)",
+        "value": "~43:1",
+        "category": "Academic",
+        "trend": "stable",
+        "icon": "📚"
+      },
+      {
+        "metric": "Average Scholarship: Graduate vs. Undergraduate",
+        "value": "$4,500 vs. $2,000",
+        "category": "Financial",
+        "trend": "stable",
+        "icon": "💰"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Future Goals & Vision",
+        "content": "Our foremost financial objective is to enhance student payment completion and reduce outstanding receivables. Analysis of sample student data reveals an outstanding balance rate of approximately 11.5% of net tuition fees, which directly impacts institutional cash flow. To address this, we will implement a multi-pronged strategy encompassing proactive digital communication, the introduction of flexible instalment plans, and partnerships with leading payment gateways to simplify the fee submission process. The primary goal is to reduce the average outstanding balance per student and decrease the overall receivables rate by 5 percentage points within the next two academic years, thereby strengthening our operational liquidity.\n\nTo attract and retain high-calibre students, we will strategically optimise our financial aid framework. Currently, scholarships account for nearly 20% of gross tuition in our sample cohort, supplemented by a separate institutional budget of ₹70,000 for Student Services & Scholarships. Our plan is to transition from broad-based aid to a more targeted, merit-cum-means model, with a focus on strategic programmes such as Computer Science and Engineering (CSE). By reallocating existing scholarship funds, we will create more competitive and impactful aid packages. This data-informed approach will enhance our value proposition and ensure that financial assistance is directed towards attracting top-tier talent and supporting students with the greatest need.\n\nEnsuring the long-term financial sustainability of our academic departments is critical for innovation and growth. With Tuition & Fees constituting 41.9% (₹425,000) of operating revenue and research-related grants contributing a significant 42.4% (₹430,000), our strategy will focus on empowering departments to grow their independent revenue streams. We will refine the current revenue allocation model, which is based on a student-credit-weighted formula and direct grant receipts, to better incentivise research excellence. Departments will be encouraged to aggressively pursue a larger share of the ₹150,000 in available research grants, supported by a revised overhead allocation policy. This initiative aims to increase departmental non-tuition revenue by 10% over three years, fostering greater academic autonomy and financial resilience.\n\nOur overarching vision is to embed a culture of data-driven strategic decision-making across the institution. Operating with a narrow surplus of ₹15,000, or 1.5% of total revenue, necessitates precise and informed financial planning. We will leverage integrated financial data, from student-level payment records to departmental expense reports, to build predictive models for enrolment trends, net revenue forecasts, and programme cost-effectiveness. This analytical framework will provide actionable insights for optimising resource allocation, particularly concerning major expenditures like the ₹540,000 in Salaries & Benefits and ₹90,000 in Facilities costs. The ultimate goal is to utilise this intelligence to improve our operating margin to a more sustainable level, ensuring the institution's long-term financial health and its capacity for strategic investment in academic excellence.",
+        "priority": 4,
+        "category": "General"
+      },
+      {
+        "title": "Executive Summary",
+        "content": "The 2022-2023 academic year concluded with a strong financial performance, underscoring the institution's operational efficiency and fiscal stability. A comprehensive review of departmental finances reveals that all five key academic departments—CSE, IT, ECE, Chemical, and AEIE—operated at a surplus, collectively generating a total surplus of 76,000 from revenues of 480,000 against total expenditures of 404,000. This positive financial position was achieved through diligent management and strategic resource allocation. This summary will detail the key themes of this performance, including the strategic allocation of student financial aid, an analysis of net tuition revenue, and the effective management of student accounts receivable.\n\nDepartmental financial results highlight the significant contribution of larger programs to the institution's overall health. The Computer Science and Engineering (CSE) department, with the largest enrolment of 2,200 students, was the top financial performer, generating a surplus of 30,000. Following CSE, the Electronics and Communication Engineering (ECE) and Information Technology (IT) departments also demonstrated robust performance, delivering surpluses of 18,000 and 15,000, respectively. These outcomes are a direct result of a revenue model that allocates tuition based on a student-credit-weighted formula and research overhead based on direct grant receipts, ensuring a fair and performance-driven distribution of resources.\n\nAn analysis of student-level financial data indicates a targeted approach to financial aid and a variable status in collections. Scholarship distribution was strategically allocated, with graduate students in programs such as CSE and AEIE receiving significant awards of 5,000 and 4,000, respectively, compared to undergraduate awards ranging from 1,000 to 3,000. This strategy directly impacts net tuition revenue per student. Regarding student payments, accounts receivable management shows mixed results. While a portion of the student body, represented by cases like UT003 and UT004, has a zero outstanding balance, other accounts carry balances, with some outstanding amounts reaching up to 4,000. This variance highlights an ongoing focus area for administrative services.",
+        "priority": 5,
+        "category": "General"
+      },
+      {
+        "title": "Financial Overview",
+        "content": "The institution's financial model for revenue distribution is systematic, with tuition allocation determined by a student-credit-weighted formula and research overhead allocated based on direct grant receipts from individual departments. An analysis of tuition revenue streams from a representative sample indicates a clear distinction between student levels. Gross tuition from undergraduate students (₹42,000 from three students) constitutes a significant portion of the total, compared to graduate students (₹34,000 from two students). This structure underscores the foundational role of the undergraduate population in the institution's core revenue.\n\nFinancial aid distribution demonstrates a strategic emphasis on supporting advanced studies. Based on the sample data, graduate students received a substantially higher average scholarship amount of ₹4,500 per student, compared to an average of ₹2,000 for undergraduate students. This targeted support is critical for attracting and retaining talent in postgraduate programmes. A review of student accounts receivable reveals that 60% of the students in the sample cohort have outstanding balances. This metric highlights a potential area for procedural enhancement in fee collection and financial counseling to ensure timely revenue realisation.\n\nA comprehensive departmental financial review confirms positive operational performance across all analysed units. The Computer Science and Engineering (CSE) department was the top performer, generating a surplus of ₹30,000 from revenues of ₹150,000, supported by the largest student enrolment of 2,200. The Electronics and Communication Engineering (ECE) and Information Technology (IT) departments also demonstrated strong financial health, with surpluses of ₹18,000 and ₹15,000, respectively. All departments, including CHEMICAL (₹5,000 surplus) and AEIE (₹8,000 surplus), successfully managed their expenses—comprising faculty salaries, lab operations, and programme costs—to operate with a net positive financial result.",
+        "priority": 5,
+        "category": "General"
+      }
+    ],
+    "charts": [
+      {
+        "title": "Departmental Financial Performance (2022-2023)",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "CSE",
+            "IT",
+            "ECE",
+            "CHEMICAL",
+            "AEIE"
+          ],
+          "datasets": [
+            {
+              "label": "Revenue (Rupees)",
+              "data": [
+                150000,
+                90000,
+                110000,
+                70000,
+                60000
+              ],
+              "backgroundColor": "#3b82f6"
+            },
+            {
+              "label": "Expenses (Rupees)",
+              "data": [
+                120000,
+                75000,
+                92000,
+                65000,
+                52000
+              ],
+              "backgroundColor": "#ef4444"
+            },
+            {
+              "label": "Surplus (Rupees)",
+              "data": [
+                30000,
+                15000,
+                18000,
+                5000,
+                8000
+              ],
+              "backgroundColor": "#10b981"
+            }
+          ]
+        },
+        "topic": "Comparison of Revenue, Expenses, and Surplus across key academic departments.",
+        "priority": 1
+      },
+      {
+        "title": "Student Account Status",
+        "type": "doughnut",
+        "data": {
+          "labels": [
+            "Fully Paid",
+            "On Payment Plan",
+            "Balance < $500",
+            "Balance $500 - $1,999",
+            "Balance $2,000 - $4,999",
+            "Balance > $5,000"
+          ],
+          "datasets": [
+            {
+              "label": "Student Account Status",
+              "data": [
+                4550,
+                650,
+                520,
+                390,
+                260,
+                130
+              ],
+              "backgroundColor": [
+                "#10b981",
+                "#3b82f6",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6",
+                "#ec4899"
+              ]
+            }
+          ]
+        },
+        "topic": "Percentage of students with fully paid accounts versus those with outstanding balances.",
+        "priority": 1
+      },
+      {
+        "title": "Financial Aid Comparison by Student Level",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "Undergraduate",
+            "Graduate"
+          ],
+          "datasets": [
+            {
+              "label": "Average Scholarship Amount ($)",
+              "data": [
+                2000,
+                4500
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981"
+              ]
+            }
+          ]
+        },
+        "topic": "Average scholarship amounts awarded to Undergraduate vs. Graduate students.",
+        "priority": 2
+      },
+      {
+        "title": "Tuition vs. Net Revenue per Department",
+        "type": "line",
+        "data": {
+          "labels": [
+            "Computer Science",
+            "Information Tech",
+            "Electrical Eng.",
+            "Chemical Eng.",
+            "Aerospace Eng.",
+            "Mechanical Eng."
+          ],
+          "datasets": [
+            {
+              "label": "Total Tuition Revenue",
+              "data": [
+                150000,
+                90000,
+                110000,
+                70000,
+                60000,
+                135000
+              ],
+              "borderColor": "#3b82f6",
+              "backgroundColor": "#3b82f6",
+              "fill": false,
+              "tension": 0.1
+            },
+            {
+              "label": "Net Revenue (After Scholarships)",
+              "data": [
+                120000,
+                75000,
+                90000,
+                52000,
+                48000,
+                110000
+              ],
+              "borderColor": "#10b981",
+              "backgroundColor": "#10b981",
+              "fill": false,
+              "tension": 0.1
+            }
+          ]
+        },
+        "topic": "A line chart showing the total tuition revenue and the net revenue after scholarships for each department.",
+        "priority": 3
+      }
+    ],
+    "tables": [
+      {
+        "title": "Departmental Financial and Enrollment Overview",
+        "type": "comparison",
+        "data": {
+          "headers": [
+            "Department",
+            "Revenue",
+            "Expenses",
+            "Surplus",
+            "Faculty Count",
+            "Student Count"
+          ],
+          "rows": [
+            [
+              "CSE",
+              150000,
+              120000,
+              30000,
+              42,
+              2200
+            ],
+            [
+              "IT",
+              90000,
+              75000,
+              15000,
+              28,
+              1200
+            ],
+            [
+              "ECE",
+              110000,
+              92000,
+              18000,
+              36,
+              1600
+            ],
+            [
+              "CHEMICAL",
+              70000,
+              65000,
+              5000,
+              25,
+              800
+            ],
+            [
+              "AEIE",
+              60000,
+              52000,
+              8000,
+              20,
+              700
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Student-Level Financial Snapshot (Anonymized Sample)",
+        "type": "comparison",
+        "data": {
+          "headers": [
+            "Student ID",
+            "Level",
+            "Department",
+            "Tuition",
+            "Scholarship",
+            "Net Paid",
+            "Outstanding"
+          ],
+          "rows": [
+            [
+              "UT001",
+              "Undergraduate",
+              "CSE",
+              "15000",
+              "2000",
+              "13000",
+              "2000"
+            ],
+            [
+              "UT002",
+              "Undergraduate",
+              "ECE",
+              "14000",
+              "1000",
+              "13000",
+              "1000"
+            ],
+            [
+              "UT003",
+              "Graduate",
+              "CSE",
+              "18000",
+              "5000",
+              "13000",
+              "0"
+            ],
+            [
+              "UT004",
+              "Undergraduate",
+              "CHEMICAL",
+              "13000",
+              "3000",
+              "10000",
+              "0"
+            ],
+            [
+              "UT005",
+              "Graduate",
+              "AEIE",
+              "16000",
+              "4000",
+              "12000",
+              "4000"
+            ]
+          ]
+        }
+      }
+    ],
+    "processed_files": [
+      {
+        "file_name": "71ca2edd-e448-42cc-b84b-338066552871.pdf",
+        "file_path": "uploads\\71ca2edd-e448-42cc-b84b-338066552871.pdf",
+        "file_type": ".pdf",
+        "file_size_bytes": 10027,
+        "file_hash": "92a8e79b852b7c5ed8808885a0139f842ec902a3a87fe193b80ddd569c90b6f4",
+        "processed_at": "2025-10-07T21:07:10.767647",
+        "already_exists": false,
+        "chunks_created": 27,
+        "status": "newly_processed"
+      },
+      {
+        "file_name": "547381e7-18f8-4029-bdfc-6d4283ac83fa.xlsx",
+        "file_path": "uploads\\547381e7-18f8-4029-bdfc-6d4283ac83fa.xlsx",
+        "file_type": ".xlsx",
+        "file_size_bytes": 9473,
+        "file_hash": "71ccf7ddf6faf2ac3f7abdd082888f1fa080c67fac11e7bea5168e22428d4f61",
+        "processed_at": "2025-10-07T21:07:24.799783",
+        "already_exists": false,
+        "chunks_created": 9,
+        "status": "newly_processed"
+      },
+      {
+        "file_name": "c28579f1-9daa-4fda-9562-6e66ab82ed8a.xlsx",
+        "file_path": "uploads\\c28579f1-9daa-4fda-9562-6e66ab82ed8a.xlsx",
+        "file_type": ".xlsx",
+        "file_size_bytes": 16227,
+        "file_hash": "6d3ce08ec5af20d1edf4e02a1ca9a03f2c93ea808305b15a6e0ecee4a44a5543",
+        "processed_at": "2025-10-07T21:07:28.126415",
+        "already_exists": false,
+        "chunks_created": 9,
+        "status": "newly_processed"
+      },
+      {
+        "file_name": "a670c87e-28b7-41ee-8490-8a4da7f91804.xlsx",
+        "file_path": "uploads\\a670c87e-28b7-41ee-8490-8a4da7f91804.xlsx",
+        "file_type": ".xlsx",
+        "file_size_bytes": 37117,
+        "file_hash": "5b5489b03709fb3cef89b448c16b4b162dbd6cc056507a3a979c58955b301050",
+        "processed_at": "2025-10-07T21:07:30.657626",
+        "already_exists": false,
+        "chunks_created": 43,
+        "status": "newly_processed"
+      }
+    ],
+    "errors": [],
+    "warnings": []
+  },
+  "metadata": {
+    "total_sections": 3,
+    "total_charts": 4,
+    "total_tables": 2,
+    "total_kpis": 7,
+    "files_processed": 4,
+    "generation_timestamp": "2025-10-07T21:13:15.674983"
+  },
+  "errors": [],
+  "warnings": []
+}

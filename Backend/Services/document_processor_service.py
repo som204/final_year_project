@@ -1,21 +1,41 @@
-from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader, CSVLoader
+
+from langchain_unstructured import UnstructuredLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+import os
+import dotenv
+dotenv.load_dotenv()
+
 
 def load_and_split_document(file_path: str):
-    """Loads a document and splits it into chunks."""
-    file_extension = file_path.split('.')[-1].lower()
+    """
+    Loads any supported document type, sanitizes its metadata,
+    and splits it into chunks.
+    """
+    with open(file_path, "rb") as file_obj:
+        loader = UnstructuredLoader(
+            file=file_obj,
+            api_key=os.getenv("UNSTRUCTURED_API_KEY"),
+            partition_via_api=True,
+        )
+        documents = loader.load()
     
-    if file_extension == 'pdf':
-        loader = PyPDFLoader(file_path)
-    elif file_extension == 'docx':
-        loader = Docx2txtLoader(file_path)
-    elif file_extension == 'csv':
-        loader = CSVLoader(file_path)
-    else:
-        raise ValueError(f"Unsupported file type: {file_extension}")
-
-    documents = loader.load()
+   
+    for doc in documents:
+       
+        if hasattr(doc, "metadata") and isinstance(doc.metadata, dict):
+            sanitized_metadata = {}
+            for key, value in doc.metadata.items():
+               
+                if isinstance(value, list):
+                   
+                    sanitized_metadata[key] = ", ".join(map(str, value))
+                else:
+                    
+                    sanitized_metadata[key] = value
+            
+            doc.metadata = sanitized_metadata
     
+    # The rest of the logic remains the same
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     split_docs = text_splitter.split_documents(documents)
     

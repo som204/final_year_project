@@ -32,7 +32,7 @@ class UserResponse(BaseModel):
     last_login: Optional[datetime] = None
     institute_id: Optional[int] = None
     department_id: Optional[int] = None
-
+    institute_name: Optional[str] = None
     model_config = {
         "from_attributes": True
     }

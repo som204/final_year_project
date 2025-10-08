@@ -489,3 +489,129 @@ input:checked + .slider:before { transform: translateX(22px); }
 .button-accent { background-color: #00C49A; color: #fff; width: 100%; padding: 0.8rem; font-size: 1.1rem; }
 .button-accent:hover { background-color: #00a986; }
 .button:disabled { background-color: #cccccc; cursor: not-allowed; }
+
+
+/* --- Management Page General Styles --- */
+.management-page {
+  width: 100%;
+}
+.management-page h1 {
+  font-size: 2rem;
+  color: #0A2540;
+  margin-bottom: 1.5rem;
+}
+.list-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.search-bar, .filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.search-bar input, .filter-bar select {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: transparent;
+}
+.filter-bar select {
+  cursor: pointer;
+}
+.filter-bar svg {
+  color: #64748b;
+}
+
+/* --- Data Table --- */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.data-table th, .data-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+.data-table thead {
+  background-color: #f8fafc;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+}
+.actions-cell {
+  display: flex;
+  gap: 0.5rem;
+}
+.action-button {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #e2e8f0;
+  background-color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.action-button:hover {
+    background-color: #f8fafc;
+}
+.action-button.edit { color: #007bff; }
+.action-button.delete { color: #dc3545; }
+
+/* --- Status & Role Badges --- */
+.status-badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.status-badge.role-admin {
+  background-color: #fce8e6;
+  color: #c5221f;
+}
+.status-badge.role-faculty {
+  background-color: #e6f4ea;
+  color: #1e8e3e;
+}
+.status-badge.role-student {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+}
+
+/* --- Feedback & Loading --- */
+.form-message.error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #fce8e6;
+  color: #d93025;
+}
+.loading-message {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2em;
+  color: #6c757d;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spinner {
+  animation: spin 1s linear infinite;
+}
+

@@ -10,7 +10,7 @@ import {
   Building,
   GraduationCap,
 } from "lucide-react";
-import "./Register.css"; // New CSS file
+import "./Register.css";
 import { Link } from "react-router-dom";
 
 const RegistrationPage = () => {
@@ -20,8 +20,8 @@ const RegistrationPage = () => {
     password: "",
     full_name: "",
     phone: "",
-    institute_name: "", // Will store the institute ID
-    department_name: "",
+    institute_id: "",
+    department_id: "",
   });
 
   const [institutes, setInstitutes] = useState([]);
@@ -35,25 +35,18 @@ const RegistrationPage = () => {
   });
   const [error, setError] = useState({ page: null, form: null });
 
-  // 1. Fetch all institutes on component mount
+  // Fetch all institutes
   useEffect(() => {
     const fetchInstitutes = async () => {
       try {
-      //   // Replace with your actual API endpoint
-      //   const response = await fetch('http://localhost:8000/institute/all',{
-      //     credentials:"include",
-      //     method:"GET"
-      //   });
-      //   const data = await response.json();
-
-        // Mocking API response for demonstration
-        const mockData = [
-          { id: 1, name: "Global Institute of Technology" },
-          { id: 2, name: "National College of Arts" },
-          { id: 3, name: "Metro Business School" },
-        ];
-        setInstitutes(mockData);
+        const response = await fetch("http://localhost:8000/institute/all", {
+          credentials: "include",
+          method: "GET",
+        });
+        const data = await response.json();
+        setInstitutes(data);
       } catch (err) {
+        console.log(err);
         setError((prev) => ({
           ...prev,
           page: "Failed to load institutes. Please refresh the page.",
@@ -65,95 +58,90 @@ const RegistrationPage = () => {
     fetchInstitutes();
   }, []);
 
-  // 2. Fetch departments when institute changes
+  // Fetch departments when institute changes
   useEffect(() => {
     const fetchDepartments = async () => {
-      if (!formData.institute_name || formData.institute_name === "other") {
+      if (!formData.institute_id || formData.institute_id === "other") {
         setDepartments([]);
         return;
       }
+
       setIsLoading((prev) => ({ ...prev, departments: true }));
       try {
-        // Replace with your actual API endpoint
-        // const response = await fetch(`/api/institutes/${formData.institute_name}/departments`);
-        // const data = await response.json();
-
-        // Mocking API response for demonstration
-        const mockData = {
-          1: [
-            { id: 101, name: "Computer Science" },
-            { id: 102, name: "Mechanical Engineering" },
-          ],
-          2: [
-            { id: 201, name: "Fine Arts" },
-            { id: 202, name: "History of Art" },
-          ],
-          3: [
-            { id: 301, name: "Marketing" },
-            { id: 302, name: "Finance" },
-          ],
-        }[formData.institute_name];
-        setDepartments(mockData || []);
+        const response = await fetch(
+          `http://localhost:8000/department/institute/${formData.institute_id}`,
+          {
+            credentials: "include",
+            method: "GET",
+          }
+        );
+        const data = await response.json();
+        setDepartments(
+          data.filter((dept) => dept.name.toLowerCase() !== "administration")
+        );
       } catch (err) {
+        console.log(err);
         setError((prev) => ({ ...prev, form: "Failed to load departments." }));
       } finally {
         setIsLoading((prev) => ({ ...prev, departments: false }));
       }
     };
-    fetchDepartments();
-  }, [formData.institute_name]);
 
+    fetchDepartments();
+  }, [formData.institute_id]);
+
+  // Handle change for normal inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // Handle institute selection
   const handleInstituteChange = (e) => {
     const { value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      institute_name: value,
-      department_name: "", // Reset department on institute change
+      institute_id: value,
+      department_id: "", // Reset department when institute changes
     }));
   };
 
+  // Submit registration form
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading((prev) => ({ ...prev, submitting: true }));
     setError((prev) => ({ ...prev, form: null }));
 
-    // 3. Determine role and construct final payload
     const role =
-      formData.institute_name !== "other" && formData.department_name
-        ? "student"
-        : "viewer";
+      formData.institute_id !== "0" && formData.department_id
+        ? "STUDENT"
+        : "VIEWER";
 
     const payload = {
       ...formData,
       role,
-      institute_name:
-        formData.institute_name === "other"
-          ? 0
-          : parseInt(formData.institute_name, 10),
-      department_name:
-        formData.institute_name === "other" ? "" : formData.department_name,
+      institute_id:
+        formData.institute_id === "0"
+          ? null
+          : parseInt(formData.institute_id, 10),
+      department_id:
+        formData.institute_id === "0"
+          ? null
+          : parseInt(formData.department_id, 10),
     };
 
     console.log("Submitting to backend:", JSON.stringify(payload, null, 2));
 
     try {
-      // Replace with your actual registration API endpoint
-      // const response = await fetch('/api/register', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(payload),
-      // });
-      // const data = await response.json();
-      // if (!response.ok) throw new Error(data.message || 'Registration failed.');
+      const response = await fetch("http://localhost:8000/user/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.message || "Registration failed.");
 
-      // Mock success
       alert("Registration successful!");
-      // Redirect or clear form here
     } catch (err) {
       setError((prev) => ({ ...prev, form: err.message }));
     } finally {
@@ -176,13 +164,13 @@ const RegistrationPage = () => {
           </a>
           <p className="branding-quote">Transforming Data into Insight.</p>
         </div>
+
         <div className="reg-form-section">
           <h2>Create an Account</h2>
-          <p className="form-intro">
-            Join the platform to streamline your work.
-          </p>
+          <p className="form-intro">Join the platform to streamline your work.</p>
+
           <form onSubmit={handleSubmit}>
-            {/* Form Fields */}
+            {/* Name and Username */}
             <div className="form-row">
               <div className="input-group">
                 <User className="input-icon" size={20} />
@@ -205,6 +193,8 @@ const RegistrationPage = () => {
                 />
               </div>
             </div>
+
+            {/* Email */}
             <div className="input-group">
               <Mail className="input-icon" size={20} />
               <input
@@ -215,6 +205,8 @@ const RegistrationPage = () => {
                 required
               />
             </div>
+
+            {/* Phone */}
             <div className="input-group">
               <Phone className="input-icon" size={20} />
               <input
@@ -225,6 +217,8 @@ const RegistrationPage = () => {
                 required
               />
             </div>
+
+            {/* Password */}
             <div className="input-group">
               <Lock className="input-icon" size={20} />
               <input
@@ -243,13 +237,13 @@ const RegistrationPage = () => {
               </button>
             </div>
 
-            {/* Dependent Dropdowns */}
+            {/* Institute and Department */}
             <div className="form-row">
               <div className="input-group">
                 <Building className="input-icon" size={20} />
                 <select
-                  name="institute_name"
-                  value={formData.institute_name}
+                  name="institute_id"
+                  value={formData.institute_id}
                   onChange={handleInstituteChange}
                   required
                 >
@@ -261,26 +255,30 @@ const RegistrationPage = () => {
                       {inst.name}
                     </option>
                   ))}
-                  <option value="other">Other</option>
+                  <option value="0">Other</option>
                 </select>
               </div>
+
               <div className="input-group">
                 <GraduationCap className="input-icon" size={20} />
                 <select
-                  name="department_name"
-                  value={formData.department_name}
+                  name="department_id"
+                  value={formData.department_id}
                   onChange={handleChange}
                   disabled={
-                    !formData.institute_name ||
-                    formData.institute_name === "other" ||
+                    !formData.institute_id ||
+                    formData.institute_id === "0" ||
                     isLoading.departments
+                  }
+                  required={
+                    formData.institute_id && formData.institute_id !== "0"
                   }
                 >
                   <option value="" disabled>
                     {isLoading.departments ? "Loading..." : "Select Department"}
                   </option>
                   {departments.map((dept) => (
-                    <option key={dept.id} value={dept.name}>
+                    <option key={dept.id} value={dept.id}>
                       {dept.name}
                     </option>
                   ))}
@@ -289,10 +287,15 @@ const RegistrationPage = () => {
             </div>
 
             {error.form && <p className="error-message">{error.form}</p>}
-            <button type="submit" className="button button-accent reg-button" disabled={isLoading.submitting}>
-              {isLoading.submitting ? 'Registering...' : 'Create Account'}
+            <button
+              type="submit"
+              className="button button-accent reg-button"
+              disabled={isLoading.submitting}
+            >
+              {isLoading.submitting ? "Registering..." : "Create Account"}
             </button>
           </form>
+
           <div className="login-prompt">
             <p>
               Already have an account? <Link to="/login">Log In</Link>

@@ -182,7 +182,7 @@ body {
 /* Logout Button */
 .logout-button {
   background-color: #ff4d4f;
-  color: var(--white-text);
+  color: var(--dark-text);
   border: none;
   border-radius: 8px;
   padding: 0.6rem 1.4rem;

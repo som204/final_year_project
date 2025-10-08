@@ -42,7 +42,7 @@ class UserService:
         except SQLAlchemyError as e:
             await db.rollback()
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Could not create user due to a database error.")
-        if(new_user.role != "STUDENT"):
+        if(new_user.role != "STUDENT" and new_user.role != "VIEWER"):
             try:
             # Query to find the institute name from the institute id
                 institute_name = None
@@ -149,12 +149,18 @@ class UserService:
 
 
     @staticmethod
-    async def get_all_users_service(db: AsyncSession) -> list[User]:
+    async def get_all_users_service(db: AsyncSession) -> list[UserResponse]:
         """Fetches all users from the database."""
         try:
-            result = await db.execute(select(User))
+            result = await db.execute(select(User).options(joinedload(User.institute)))
             users = result.scalars().all()
-            return list(users)
+            result=[]
+            for user in users:
+                user_data = UserResponse.model_validate(user)
+                user_dict = user_data.model_dump()
+                user_dict["institute_name"] = user.institute.name if user.institute else None
+                result.append(user_dict)
+            return result
         except SQLAlchemyError as e:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Could not fetch users due to a database error.")      
 
@@ -168,3 +174,20 @@ class UserService:
         except SQLAlchemyError as e:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Could not fetch users due to a database error.")
         
+
+
+    @staticmethod
+    async def delete_user_service(user_id: int, db: AsyncSession) -> dict:
+        """Deletes a user from the database."""
+        try:
+            result = await db.execute(select(User).filter(User.id == user_id))
+            user = result.scalars().first()
+            if not user:
+                raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
+            
+            await db.delete(user)
+            await db.commit()
+            return {"message": "User deleted successfully"}
+        except SQLAlchemyError as e:
+            await db.rollback()
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Could not delete user due to a database error.")

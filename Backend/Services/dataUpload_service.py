@@ -131,3 +131,61 @@ class DataUploadService:
                 detail=f"Database error: {e}"
             )
                 
+
+
+    @staticmethod
+    async def getFiles_by_institute_id(db:AsyncSession,institute_id:int) -> List[DataUploadBase]:
+        try:
+            stmt= select(DataUploaded).options(joinedload(DataUploaded.department),joinedload(DataUploaded.faculty),joinedload(DataUploaded.project)).filter(DataUploaded.institute_id==institute_id)
+            result=await db.execute(stmt)
+            uploads=result.scalars().all()
+            response_data = []
+            for upload in uploads:
+                upload_response = DataUploadBase.model_validate(upload)
+                if upload.department:
+                    upload_response.department_name=upload.department.name
+                    
+                if upload.faculty:
+                    upload_response.faculty_name=upload.faculty.full_name
+                if upload.project:
+                    upload_response.project_name=upload.project.name
+                    
+                response_data.append(upload_response)
+
+            return response_data
+        except SQLAlchemyError as e:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Database error: {e}"
+            )
+        except Exception as e:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Unexpected error: {e}"
+            )
+        
+    @staticmethod
+    async def delete_file(db:AsyncSession,file_id:int):
+        try:
+            stmt=select(DataUploaded).filter(DataUploaded.id==file_id)
+            result=await db.execute(stmt)
+            file=result.scalar_one_or_none()
+            if not file:
+                raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,detail="File not found")
+            file_path=file.file_path
+            await db.delete(file)
+            await db.commit()
+            if os.path.exists(file_path):
+                os.remove(file_path)
+            return {"detail":"File deleted successfully"}
+        except SQLAlchemyError as e:
+            await db.rollback()
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Database error: {e}"
+            )
+        except Exception as e:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Unexpected error: {e}"
+            )

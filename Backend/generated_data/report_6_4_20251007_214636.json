@@ -1,0 +1,178 @@
+{
+  "final_report_data": {
+    "metadata": {
+      "generated_at": "2025-10-07T21:46:36.032823",
+      "institute_id": 4,
+      "project_id": 6,
+      "version": 1,
+      "format": "html",
+      "language": "en"
+    },
+    "title": "Annual Report 2022-2023 | University of Toronto",
+    "institute_name": "University of Toronto",
+    "institute_type": "University",
+    "report_year": "2022-2023",
+    "location": "Toronto, Ontario, Canada",
+    "executive_summary": "The 2022-2023 annual report for the University of Toronto (University), covering comprehensive financial performance, departmental operations and budgets, sample student financials, and faculty composition. This fictional dataset details the institution's operating surplus, asset and liability structure, and provides a breakdown of revenue and expenses across key academic departments like CSE and ECE.",
+    "kpis": [
+      {
+        "metric": "Operating Surplus",
+        "value": "15,000",
+        "category": "Financial",
+        "trend": "stable",
+        "icon": "💰"
+      },
+      {
+        "metric": "Total Students",
+        "value": "6500",
+        "category": "Academic",
+        "trend": "stable",
+        "icon": "📚"
+      },
+      {
+        "metric": "Total Faculty",
+        "value": "151",
+        "category": "Academic",
+        "trend": "stable",
+        "icon": "📚"
+      },
+      {
+        "metric": "Research Grants Revenue",
+        "value": "150,000",
+        "category": "Research",
+        "trend": "stable",
+        "icon": "🔬"
+      },
+      {
+        "metric": "Total Assets",
+        "value": "1,580,000",
+        "category": "Financial",
+        "trend": "stable",
+        "icon": "💰"
+      },
+      {
+        "metric": "Net Investment in Plant",
+        "value": "720,000",
+        "category": "Infrastructure",
+        "trend": "stable",
+        "icon": "🏛️"
+      },
+      {
+        "metric": "Graduate Employment Rate",
+        "value": "91%",
+        "category": "Placement",
+        "trend": "stable",
+        "icon": "💼"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Executive Summary",
+        "content": "The academic year demonstrated significant financial stability and operational effectiveness, concluding with a total operating revenue of ₹1,015,000 against total operating expenses of ₹1,000,000. This prudent management resulted in a positive operating surplus of ₹15,000. When factoring in non-operating items such as net investment gains and capital transfers, the institution achieved a final Change in Net Position of ₹30,000, underscoring a year of sound fiscal health and sustainable growth.\n\nThe institution's diverse revenue streams were anchored by Tuition and Fees, which accounted for ₹425,000. This was substantially supplemented by external funding, including ₹280,000 from Government Grants & Contracts and ₹150,000 from Research Grants & Sponsored Programs, reflecting a strong emphasis on research and public engagement. The primary driver of expenses was Salaries and Benefits, totaling ₹540,000. Other significant expenditures included direct investments in the core academic mission, with ₹120,000 allocated to Academic Program Expenses and ₹110,000 to Research Expenses.\n\nThe institution served a total student population of 6,500, supported by 151 dedicated faculty members across five engineering departments. The Computer Science and Engineering (CSE) department was the largest academic unit, with 2,200 students and 42 faculty, and it also generated the highest departmental surplus of ₹30,000. A key strategic highlight for the year was the successful financial performance across all departments, each of which operated with a surplus. This achievement was supported by a disciplined revenue allocation methodology that tied funding to student-credit weighting and direct grant receipts, ensuring accountability and efficient resource management throughout the institution.",
+        "priority": 1,
+        "category": "General"
+      },
+      {
+        "title": "Financial Overview",
+        "content": "The financial performance for the reporting period is comprehensively detailed in the Consolidated Income Statement, which outlines the institution's primary revenue streams against its operational and administrative expenditures. This statement provides a clear view of the net financial outcome for the fiscal year, reflecting the overall operational efficiency and fiscal management. The accompanying Consolidated Statement of Cash Flows further clarifies the institution's liquidity, detailing the movement of funds from operating, investing, and financing activities throughout the year.\n\nAn assessment of the institution's financial position at the close of the period is presented in the Consolidated Balance Sheet. This document provides a detailed breakdown of total assets, liabilities, and the resulting net position. It serves as a critical indicator of the institution's long-term financial stability and resource base, offering a transparent snapshot of its holdings and obligations.\n\nA granular analysis of financial performance at the operational level is available through the Department-wise Financial Summary. This report facilitates a comparative review of the financial activities and outcomes of individual academic and administrative departments, highlighting areas of fiscal strength and opportunities for improved efficiency. This internal analysis is crucial for strategic resource allocation and performance management across the institution.",
+        "priority": 1,
+        "category": "General"
+      },
+      {
+        "title": "Academic Performance",
+        "content": "The academic year was marked by a robust student enrollment of 6,500 students across key engineering and technology disciplines. The Department of Computer Science and Engineering (CSE) registered the highest student population with 2,200 students, affirming its position as the largest department. This was followed by the Department of Electronics and Communication Engineering (ECE) with 1,600 students and the Information Technology (IT) department with 1,200 students. The Chemical Engineering and Applied Electronics and Instrumentation Engineering (AEIE) departments maintained steady enrollments with 800 and 700 students, respectively.\n\nThe student body is composed of both undergraduate and graduate scholars pursuing advanced studies and research. Available records indicate the presence of students at both academic levels across diverse departments, including CSE, ECE, Chemical, and AEIE. This mix of undergraduate and graduate programmes highlights the institution's commitment to providing a comprehensive educational pathway from foundational learning to specialised postgraduate education.\n\nThe enrollment distribution strongly underscores the institution's focus on high-demand technology sectors. A significant concentration of students is observed in the computing and electronics-related fields, with the CSE, IT, and ECE departments collectively accounting for 5,000 students. This strategic alignment with industry-relevant disciplines positions the institution as a primary contributor of skilled professionals in the technology landscape.",
+        "priority": 2,
+        "category": "General"
+      },
+      {
+        "title": "Future Goals & Vision",
+        "content": "Building upon a year of financial stability that resulted in a 30,000 change in net position, our foremost strategic initiative for the upcoming academic year is to fortify our financial foundation to support institutional growth. We will focus on expanding our primary revenue streams, with a targeted effort to increase Research Grants & Sponsored Programs beyond the current 150,000 and to secure additional Government Grants & Contracts, which presently stand at 280,000. Concurrently, a dedicated advancement strategy will aim to grow our Donations & Endowment Income from its base of 90,000, ensuring a diversified and resilient financial model for the future.\n\nThis financial strategy is intrinsically linked to our vision for enhancing research and academic excellence. We plan to reinvest in our core departments, such as CSE, ECE, and Chemical engineering, to bolster their research capabilities and output. Planned academic expansions will focus on launching new interdisciplinary programs that leverage our existing strengths, supported by the current 120,000 allocation for Academic Program Expenses. By increasing our research grant acquisitions, we will not only elevate our institutional profile but also create advanced learning and discovery opportunities for both our graduate and undergraduate students.\n\nEnhancing the student experience remains a central pillar of our vision. We are committed to optimizing the allocation of the 70,000 budget for Student Services & Scholarships to improve student support systems and increase financial aid opportunities. A key objective is to attract meritorious students across all programs by expanding our scholarship offerings for both undergraduate and graduate levels. Operationally, we will implement more efficient financial processes to better manage outstanding tuition balances, ensuring that institutional resources are maximized to benefit the entire student community.\n\nOur long-term goals are centered on significant infrastructural development and sustained financial health. The current operating surplus of 15,000, supplemented by capital grants, provides a foundation for a multi-year capital improvement plan. This plan will prioritize the modernization of research laboratories and campus facilities, building upon the annual 90,000 expenditure on maintenance and utilities. Through these integrated financial, academic, and infrastructural initiatives, we envision an institution that is not only a leader in technological education and research but also provides an unparalleled environment for student success.",
+        "priority": 2,
+        "category": "General"
+      },
+      {
+        "title": "Research & Publications",
+        "content": "The academic year demonstrated a strong commitment to advancing research, supported by significant financial inflows and strategic internal investment. The institution successfully secured ₹150,000 through Research Grants and Sponsored Programs, reflecting the quality and relevance of its scholarly initiatives. Complementing this external support, a substantial internal allocation of ₹120,000 was designated specifically for research funding, underscoring the institutional priority placed on fostering a culture of inquiry and innovation among faculty and students.\n\nTotal operational expenditure on research activities for the period was ₹110,000. These funds were strategically utilized to support a wide range of scholarly pursuits, including the operational costs of laboratories and other essential program requirements. This investment represents a critical component of the institution's overall operating expenses, directly enabling the execution of research projects that contribute to academic and scientific advancement.\n\nThe financial framework for research is designed to empower individual departments by directly linking funding to performance. Department-level revenue streams are composed of both internal research allocations and direct grant receipts. Furthermore, the allocation of research overhead is directly correlated with the volume of direct grants secured by a department, creating a sustainable model that encourages the pursuit of external funding opportunities and ensures resources are channeled effectively to support productive research environments.",
+        "priority": 3,
+        "category": "General"
+      },
+      {
+        "title": "Placements & Career Services",
+        "content": "Based on the provided context, there is no information available regarding Placements & Career Services. The data includes financial statements, faculty details for the CSE department, and a sample of student tuition records.\n\nTo write a narrative on this topic, please provide specific details such as graduate placement statistics, a list of top recruiting companies, information on career development workshops and events, and data on the success of the internship program.",
+        "priority": 3,
+        "category": "General"
+      },
+      {
+        "title": "Infrastructure Development",
+        "content": "The institution demonstrated a strong commitment to enhancing its physical infrastructure, allocating a Capital Expenditure Budget of ₹75,000 for the period. This strategic allocation was directed towards the continuous improvement and expansion of campus facilities to support academic objectives. The current net value of the institution's Property, Plant & Equipment stands at a significant ₹820,000, reflecting a substantial and well-maintained asset base that is fundamental to our operational capabilities.\n\nDuring the year, strategic investments were realised through the purchase of new Property, Plant & Equipment amounting to ₹60,000. These acquisitions were focused on modernising key academic and administrative resources. The financing for these capital projects was partially supported by the successful procurement of ₹20,000 in Capital Grants & Gifts specifically designated for facility development, highlighting external confidence in the institution's strategic direction and stewardship of its assets.\n\nThe institution's physical assets are a cornerstone of its financial position, with the net Property, Plant & Equipment value of ₹820,000 forming the largest component of total non-current assets. The balance sheet further reflects a Net Investment in Plant of ₹720,000, indicating a strong equity foundation for the campus infrastructure. This solid financial underpinning ensures the long-term sustainability and continued development of the institution's physical environment for all stakeholders.",
+        "priority": 4,
+        "category": "General"
+      },
+      {
+        "title": "Student Achievements",
+        "content": "The institution demonstrated a strong commitment to student support, allocating a total of ₹70,000 towards Student Services & Scholarships. An analysis of a representative sample of students illustrates the direct impact of this financial aid. Within this sample, a total of ₹15,000 in scholarships was disbursed across both undergraduate and graduate levels. Aid was distributed to students in diverse departments, including Computer Science and Engineering (CSE), Electronics and Communication Engineering (ECE), Chemical Engineering (CHEMICAL), and Applied Electronics and Instrumentation Engineering (AEIE), with individual awards ranging from ₹1,000 to ₹5,000.\n\nFinancial aid played a crucial role in reducing the cost of education for these students. For the sample group, total tuition amounted to ₹76,000, which was reduced to a net liability of ₹61,000 after the application of scholarships. This highlights the significant contribution of financial aid in making programmes accessible. The subsequent payment patterns provide insight into student financial management and engagement with the institution's billing cycle.\n\nAn examination of payment records for the sample indicates a varied pattern of fee settlement. Of the five students, two have successfully cleared their entire net tuition dues for the period. The remaining three students have partial outstanding balances, collectively amounting to ₹7,000. Specifically, outstanding amounts of ₹2,000, ₹1,000, and ₹4,000 are recorded for students in the CSE, ECE, and AEIE departments, respectively, indicating areas for follow-up in fee collection processes.",
+        "priority": 5,
+        "category": "General"
+      },
+      {
+        "title": "Faculty Accomplishments",
+        "content": "The institution's academic staff is robustly distributed across its key technical disciplines. The Computer Science and Engineering (CSE) department is the largest with a faculty count of 42, followed by Electronics and Communication Engineering (ECE) with 36, Information Technology (IT) with 28, Chemical Engineering with 25, and Applied Electronics & Instrumentation Engineering (AEIE) with 20 members. A detailed analysis of the CSE department's structure reveals a well-defined hierarchy, comprising one Head of Department, seven Professors, and six Assistant Professors, ensuring strong academic leadership and mentorship within the department.\n\nThe faculty profile within the Computer Science and Engineering department showcases a strong emphasis on higher education and research credentials. Based on available data, 21.4% of the faculty members hold a Ph.D. degree, underscoring a commitment to advanced research and academic excellence. A majority, approximately 57.1%, possess Master's level qualifications, including M.Tech and M.Sc degrees. The remaining faculty hold B.Tech degrees, contributing valuable industry-oriented perspectives to the academic environment.\n\nThe faculty cohort is distinguished by a considerable depth of professional experience. The average tenure among the academic staff in the CSE department is over 13 years, with individual experience ranging from 5 to 20 years. This composition reflects a healthy blend of seasoned academicians and emerging educators. Notably, over 71% of the faculty have more than a decade of experience, providing a stable foundation of expertise and mentorship. This balance ensures that students benefit from both long-standing academic wisdom and contemporary pedagogical approaches.",
+        "priority": 5,
+        "category": "General"
+      },
+      {
+        "title": "Extracurricular Activities",
+        "content": "Based on the provided context, which includes student academic records, tuition details, and institutional financial statements, there is no information available regarding student clubs, organizations, athletic achievements, or community engagement initiatives. Therefore, a narrative for 'Extracurricular Activities' cannot be generated.",
+        "priority": 6,
+        "category": "General"
+      }
+    ],
+    "charts": [],
+    "tables": [],
+    "processed_files": [
+      {
+        "file_name": "71ca2edd-e448-42cc-b84b-338066552871.pdf",
+        "file_path": "uploads\\71ca2edd-e448-42cc-b84b-338066552871.pdf",
+        "file_hash": "92a8e79b852b7c5ed8808885a0139f842ec902a3a87fe193b80ddd569c90b6f4",
+        "processed_at": "2025-10-07T21:41:53.755617",
+        "chunks_created": "27",
+        "status": "newly_processed"
+      },
+      {
+        "file_name": "547381e7-18f8-4029-bdfc-6d4283ac83fa.xlsx",
+        "file_path": "uploads\\547381e7-18f8-4029-bdfc-6d4283ac83fa.xlsx",
+        "file_hash": "71ccf7ddf6faf2ac3f7abdd082888f1fa080c67fac11e7bea5168e22428d4f61",
+        "processed_at": "2025-10-07T21:42:08.649675",
+        "chunks_created": "9",
+        "status": "newly_processed"
+      },
+      {
+        "file_name": "c28579f1-9daa-4fda-9562-6e66ab82ed8a.xlsx",
+        "file_path": "uploads\\c28579f1-9daa-4fda-9562-6e66ab82ed8a.xlsx",
+        "file_hash": "6d3ce08ec5af20d1edf4e02a1ca9a03f2c93ea808305b15a6e0ecee4a44a5543",
+        "processed_at": "2025-10-07T21:42:11.419349",
+        "chunks_created": "9",
+        "status": "newly_processed"
+      },
+      {
+        "file_name": "a670c87e-28b7-41ee-8490-8a4da7f91804.xlsx",
+        "file_path": "uploads\\a670c87e-28b7-41ee-8490-8a4da7f91804.xlsx",
+        "file_hash": "5b5489b03709fb3cef89b448c16b4b162dbd6cc056507a3a979c58955b301050",
+        "processed_at": "2025-10-07T21:42:14.304158",
+        "chunks_created": "43",
+        "status": "newly_processed"
+      }
+    ],
+    "errors": []
+  },
+  "metadata": {
+    "total_sections": 10,
+    "total_charts": 0,
+    "total_tables": 0,
+    "total_kpis": 7,
+    "files_processed": 4,
+    "generation_timestamp": "2025-10-07T21:46:36.032823"
+  },
+  "errors": [],
+  "warnings": []
+}

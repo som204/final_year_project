@@ -17,7 +17,7 @@ const DashboardPage = () => {
     const fetchDashboardData = async () => {
 
       try {
-        const [studentsResponse, institutesResponse] = await Promise.all([
+        const [studentsResponse, institutesResponse, reportsResponse] = await Promise.all([
           fetch('http://localhost:8000/user/all', {
             credentials: 'include',
             method: 'GET',
@@ -25,15 +25,22 @@ const DashboardPage = () => {
           fetch('http://localhost:8000/institute/all', {
             credentials: 'include',
             method: 'GET',
-          })
+          }),
+          fetch('http://localhost:8000/reports/all', {
+            credentials: 'include',
+            method: 'GET',
+          }),
         ]);
 
-        if (!studentsResponse.ok || !institutesResponse.ok) {
+        if (!studentsResponse.ok || !institutesResponse.ok || !reportsResponse.ok) {
           throw new Error('Failed to fetch dashboard data.');
         }
 
         const studentsData = await studentsResponse.json();
         const institutesData = await institutesResponse.json();
+        const reportsData = await reportsResponse.json();
+
+        setTotalReports(reportsData.length);
 
         const totalStudentsCount = studentsData.filter(student => {
           return student.role === 'STUDENT';

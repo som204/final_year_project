@@ -1,0 +1,397 @@
+{
+  "final_report_data": {
+    "metadata": {
+      "generated_at": "2025-10-07T20:31:27.988339",
+      "institute_id": 4,
+      "project_id": 5,
+      "version": 1,
+      "format": "html",
+      "language": "en"
+    },
+    "title": "Annual Report 2022-2023 | University of Toronto",
+    "institute_name": "University of Toronto",
+    "institute_type": "University",
+    "report_year": "2022-2023",
+    "location": "Toronto, Canada",
+    "executive_summary": "The 2022-23 annual report for the University of Toronto, highlighting student financial performance, academic program diversity, and financial aid distribution.\n\n**1. Full institution name and type:**\n*   **Institution:** University of Toronto\n*   **Type:** University\n\n**2. Academic year or reporting period:**\n*   2022-2023\n\n**3. Main themes and focus areas:**\n*   **Student Financial Performance and Obligations:** The report's primary focus is on the financial status of students, detailing tuition costs, net payments, and outstanding balances. It indicates a clear administrative tracking of student financial health.\n*   **Scholarship and Financial Aid Distribution:** A key theme is the role of financial aid, as every student in the sample data received a scholarship, significantly reducing their net tuition cost. Scholarship amounts vary, suggesting a system based on merit or need.\n*   **Diversity in STEM Programs:** The data represents students from various technical departments, including Computer Science & Engineering (CSE), Electrical & Computer Engineering (ECE), Chemical Engineering, and Applied Electronics & Instrumentation Engineering (AEIE) at both undergraduate and graduate levels.\n\n**4. Overall tone and context:**\n*   The tone is objective, quantitative, and administrative. The report provides a factual snapshot based on sample financial data for internal review and record-keeping. The context is an annual assessment of student financials within a major university, though it is noted that the provided data is a fictional sample.\n\n**5. Placement of Students:**\n*   A \"Placement Report\" for the 2022-23 academic year is mentioned by title, but no specific data (e.g., placement rates, top employers, salary packages) was provided in the documents. Therefore, a detailed analysis of student placements cannot be conducted.\n\n**6. Performance of Students:**\n*   The provided \"Performance Report\" focuses exclusively on **financial performance**, not academic metrics like grades or GPAs. The analysis of the sample data shows:\n    *   Tuition varies by program level and department, with graduate programs having higher costs.\n    *   Scholarships play a crucial role, covering between 7% (ECE) and 28% (CSE Graduate) of tuition costs for the students listed.\n    *   Payment status is mixed; some students have paid their fees in full, while others have outstanding balances ranging from $1,000 to $4,000.",
+    "kpis": [
+      {
+        "metric": "Average Scholarship per Student (Sample)",
+        "value": "$3,000 CAD",
+        "category": "Financial Aid",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Average Scholarship Coverage Rate (Sample)",
+        "value": "19.7% of Tuition",
+        "category": "Financial Aid",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Average Tuition Cost (Sample)",
+        "value": "$15,200 CAD",
+        "category": "Financial",
+        "trend": "stable",
+        "icon": "💰"
+      },
+      {
+        "metric": "Student Payment Completion Rate (Sample)",
+        "value": "40%",
+        "category": "Financial",
+        "trend": "stable",
+        "icon": "💰"
+      },
+      {
+        "metric": "Total Outstanding Student Balance (Sample)",
+        "value": "$7,000 CAD",
+        "category": "Financial",
+        "trend": "stable",
+        "icon": "💰"
+      },
+      {
+        "metric": "STEM Program Representation (Sample)",
+        "value": "4 Departments",
+        "category": "Academic",
+        "trend": "stable",
+        "icon": "📚"
+      },
+      {
+        "metric": "Average Graduate Scholarship (Sample)",
+        "value": "$4,500 CAD",
+        "category": "Financial Aid",
+        "trend": "stable",
+        "icon": "📊"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Executive Summary",
+        "content": "The 2022-23 academic year demonstrated a robust financial framework, with total gross tuition revenue reaching 76,000 CAD. The institution's commitment to student support was a cornerstone of this period, evidenced by the significant allocation of financial aid. A total of 15,000 CAD was disbursed in scholarships, directly reducing the financial burden on students and resulting in a net tuition revenue of 61,000 CAD. This strategic allocation underscores the institution's dedication to making quality education accessible while maintaining a stable financial base.\n\nFinancial aid played a pivotal role in enhancing affordability, with scholarships effectively reducing the overall gross tuition cost by approximately 19.7%. An analysis of student financial health indicates a strong commitment from the student body towards their financial obligations. Of the 61,000 CAD in net tuition billed, a total of 54,000 CAD has been successfully collected, representing a payment completion rate of 88.5%. The remaining outstanding balance stands at 7,000 CAD, with 40% of students having fully cleared their dues for the academic year.\n\nThe institution continues to foster a diverse academic environment, particularly within its key Science, Technology, Engineering, and Mathematics (STEM) programs. The student population is distributed across critical engineering disciplines, including Computer Science & Engineering (CSE), Electronics & Communication Engineering (ECE), Chemical Engineering, and Applied Electronics & Instrumentation Engineering (AEIE). This diversity is further reflected across academic levels, with representation from both undergraduate and graduate cohorts, demonstrating the institution's comprehensive educational offerings in high-demand technical fields.",
+        "priority": 1,
+        "category": "General"
+      },
+      {
+        "title": "Financial Overview",
+        "content": "The institution's financial framework is guided by a structured revenue allocation methodology, wherein tuition income is distributed based on a student-credit-weighted formula. An analysis of the current fee structure reveals a clear differentiation between academic levels. Graduate programs command higher tuition, with fees ranging from CAD 16,000 in AEIE to CAD 18,000 in CSE. In contrast, undergraduate tuition spans from CAD 13,000 for the CHEMICAL department to CAD 15,000 for CSE. This tiered pricing model reflects the advanced nature and resource intensity of postgraduate studies and contributes to a diversified revenue stream.\n\nA total of CAD 15,000 was disbursed in scholarships and financial aid, strategically allocated to support students across various disciplines. The distribution demonstrates a significant emphasis on postgraduate education, with graduate students receiving CAD 9,000 in aid, compared to CAD 6,000 for undergraduates. Departmentally, the Computer Science and Engineering (CSE) program was the largest beneficiary, receiving a combined CAD 7,000 in scholarships across both levels. This targeted allocation, with individual awards ranging from CAD 1,000 to CAD 5,000, underscores a commitment to attracting and retaining talent in high-demand fields.\n\nAn examination of student payment statuses indicates a total of CAD 61,000 has been collected in net tuition fees. However, an outstanding balance of CAD 7,000 remains, distributed across both undergraduate and graduate cohorts. Undergraduate students from the CSE and ECE departments account for CAD 3,000 of the outstanding amount, while a graduate student in the AEIE department has a pending balance of CAD 4,000. The fact that two of the five students sampled have fully settled their accounts highlights a variance in payment compliance that warrants further monitoring.\n\nThe current financial aid model has distinct strategic implications. The practice of awarding higher scholarship amounts to graduate students, particularly in premium departments like CSE, serves as a key lever for attracting high-calibre candidates essential for the institution's research objectives, which aligns with the policy of allocating research overhead based on direct grant receipts. The presence of outstanding balances across different programs suggests an opportunity to review and potentially enhance payment collection mechanisms or introduce more flexible fee payment plans. This dual approach of strategic aid disbursement and diligent revenue management is crucial for sustaining the institution's financial health and academic excellence.",
+        "priority": 1,
+        "category": "General"
+      },
+      {
+        "title": "Academic Performance",
+        "content": "The institution's academic offerings demonstrate a robust and diverse portfolio, with significant student enrollment across key engineering and technology disciplines. The Computer Science and Engineering (CSE) department leads in student population with 2,200 students, followed by Electronics and Communication Engineering (ECE) with 1,600 students. Other specialized programs such as Chemical Engineering and Applied Electronics and Instrumentation Engineering (AEIE) also maintain healthy enrollments of 800 and 700 students, respectively. This distribution highlights the institution's strength in both foundational and niche engineering fields. Program representation spans multiple academic levels, with a healthy mix of undergraduate and graduate students, as evidenced by enrollment in both Bachelor's and Master's level courses within departments like CSE.\n\nFrom a financial perspective, the academic departments exhibit strong operational viability and contribute significantly to the institution's sustainability. The CSE department is a top performer, generating a revenue of 150,000,000 CAD and achieving a surplus of 30,000,000 CAD. The ECE department also shows impressive financial health with a surplus of 18,000,000 CAD from a revenue of 110,000,000 CAD. All reported departments, including Chemical and AEIE, operated at a surplus, indicating effective fiscal management and sustained demand for their programs. This financial stability is supported by a dedicated faculty, with counts ranging from 20 in AEIE to 42 in the CSE department, ensuring a strong academic framework for the student body.\n\nA commitment to student support is evident through the allocation of significant financial aid. Analysis of student financials reveals a structured scholarship program that benefits students across all levels and departments. For the academic year 2022-23, graduate students in high-demand fields such as CSE and AEIE were awarded substantial scholarships of 5,000 CAD and 4,000 CAD, respectively. Undergraduate students also received considerable support, with scholarships ranging from 1,000 CAD to 3,000 CAD in disciplines like ECE and Chemical Engineering. This investment in student aid, which covered approximately 20% of total tuition for the sampled cohort, underscores the institution's dedication to attracting meritorious students and ensuring access to quality education.",
+        "priority": 2,
+        "category": "General"
+      },
+      {
+        "title": "Future Goals & Vision",
+        "content": "Building upon the 15,000 CAD in scholarships awarded across undergraduate and graduate programs in the 2022-23 academic year, our foremost strategy is to enhance financial aid accessibility. We aim to increase the total scholarship corpus by 20% over the next two academic years. This will be achieved by optimizing our revenue allocation from the 76,000 CAD in total tuition fees and establishing new merit-cum-need-based awards. The focus will be on supporting students in high-value postgraduate programs, such as Computer Science and Engineering (CSE), where individual awards reached up to 5,000 CAD, thereby ensuring that top-tier talent is not deterred by financial constraints.\n\nIn response to industry demands, we plan a strategic expansion of our academic offerings, particularly at the graduate level in fields like Computer Science and Engineering (CSE) and Automation, Electronics, and Instrumentation Engineering (AEIE). These departments demonstrate strong enrollment and represent significant growth areas. Concurrently, we will launch a proactive student financial support initiative to address the 7,000 CAD in outstanding fees recorded in the last academic cycle. This program will introduce structured financial literacy workshops and personalized counseling to help students manage their finances effectively, with a goal of reducing the overall outstanding balance by 40% within three years.\n\nOur long-term vision is to fortify our standing as a leading institution that seamlessly blends academic excellence with equitable access. By systematically increasing our scholarship fund, which currently provides awards ranging from 1,000 CAD to 5,000 CAD, we reaffirm our commitment to making quality education attainable. We will continue to leverage our student-credit-weighted tuition allocation model to ensure that resources are channeled efficiently towards both academic program development and robust student support services. This data-driven approach will sustain our growth, enabling us to attract diverse talent and produce graduates who are well-equipped to lead in their respective fields.",
+        "priority": 3,
+        "category": "General"
+      }
+    ],
+    "charts": [
+      {
+        "title": "Financial Breakdown by Department (Sample)",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "CSE",
+            "ECE",
+            "Chemical",
+            "AEIE",
+            "Mechanical"
+          ],
+          "datasets": [
+            {
+              "label": "Tuition (CAD)",
+              "data": [
+                33000,
+                14000,
+                13000,
+                16000,
+                15500
+              ],
+              "backgroundColor": "#3b82f6"
+            },
+            {
+              "label": "Scholarship (CAD)",
+              "data": [
+                7000,
+                1000,
+                3000,
+                4000,
+                2500
+              ],
+              "backgroundColor": "#10b981"
+            },
+            {
+              "label": "Net Paid (CAD)",
+              "data": [
+                26000,
+                13000,
+                10000,
+                12000,
+                13000
+              ],
+              "backgroundColor": "#f59e0b"
+            }
+          ]
+        },
+        "topic": "Comparison of Tuition, Scholarship, and Net Paid amounts across CSE, ECE, Chemical, and AEIE departments.",
+        "priority": 1
+      },
+      {
+        "title": "Outstanding Student Balances by Department (Sample)",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "Computer Science (CSE)",
+            "Electrical & Computer Eng. (ECE)",
+            "Applied Electronics & Inst. (AEIE)",
+            "Information Technology (IT)",
+            "Chemical Engineering"
+          ],
+          "datasets": [
+            {
+              "label": "Outstanding Tuition Balance (CAD)",
+              "data": [
+                335000,
+                154000,
+                262500,
+                215700,
+                45000
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "A visual representation of the outstanding tuition balances for students in each department.",
+        "priority": 1
+      },
+      {
+        "title": "Scholarship Allocation: Undergraduate vs. Graduate (Sample)",
+        "type": "doughnut",
+        "data": {
+          "labels": [
+            "Average Undergraduate Scholarship",
+            "Average Graduate Scholarship"
+          ],
+          "datasets": [
+            {
+              "label": "Average Scholarship Amount (CAD)",
+              "data": [
+                2000,
+                4500
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981"
+              ]
+            }
+          ]
+        },
+        "topic": "A chart showing the proportional difference in average scholarship amounts awarded to undergraduate and graduate students.",
+        "priority": 2
+      },
+      {
+        "title": "Student Distribution Across STEM Programs (Sample)",
+        "type": "pie",
+        "data": {
+          "labels": [
+            "Computer Science & Engineering (CSE)",
+            "Information Technology (IT)",
+            "Electronics & Communication Engineering (ECE)",
+            "Chemical Engineering",
+            "Applied Electronics & Instrumentation Engineering (AEIE)"
+          ],
+          "datasets": [
+            {
+              "label": "Number of Students",
+              "data": [
+                2200,
+                1200,
+                1600,
+                800,
+                700
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "A chart illustrating the percentage of students from each of the four represented STEM departments.",
+        "priority": 3
+      }
+    ],
+    "tables": [
+      {
+        "title": "Student Financial Performance Snapshot (2022-23 Sample)",
+        "type": "comparison",
+        "data": {
+          "headers": [
+            "Student ID",
+            "Level",
+            "Department",
+            "Tuition (CAD)",
+            "Scholarship (CAD)",
+            "Net Paid (CAD)",
+            "Outstanding (CAD)"
+          ],
+          "rows": [
+            [
+              "UT001",
+              "Undergraduate",
+              "CSE",
+              15000,
+              2000,
+              13000,
+              2000
+            ],
+            [
+              "UT002",
+              "Undergraduate",
+              "ECE",
+              14000,
+              1000,
+              13000,
+              1000
+            ],
+            [
+              "UT003",
+              "Graduate",
+              "CSE",
+              18000,
+              5000,
+              13000,
+              0
+            ],
+            [
+              "UT004",
+              "Undergraduate",
+              "CHEMICAL",
+              13000,
+              3000,
+              10000,
+              0
+            ],
+            [
+              "UT005",
+              "Graduate",
+              "AEIE",
+              16000,
+              4000,
+              12000,
+              4000
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Departmental Financial Metrics Comparison (2022-23 Sample)",
+        "type": "comparison",
+        "data": {
+          "headers": [
+            "Department",
+            "Average Tuition (CAD)",
+            "Average Scholarship (CAD)",
+            "Total Outstanding Balance (CAD)"
+          ],
+          "rows": [
+            [
+              "CSE",
+              16500,
+              3500,
+              2000
+            ],
+            [
+              "ECE",
+              14000,
+              1000,
+              1000
+            ],
+            [
+              "CHEMICAL",
+              13000,
+              3000,
+              0
+            ],
+            [
+              "AEIE",
+              16000,
+              4000,
+              4000
+            ]
+          ]
+        }
+      }
+    ],
+    "processed_files": [
+      {
+        "file_name": "ed5ec791-95ba-4226-88e8-3d5071c96b01.pdf",
+        "file_path": "uploads\\ed5ec791-95ba-4226-88e8-3d5071c96b01.pdf",
+        "file_type": ".pdf",
+        "file_size_bytes": 10027,
+        "file_hash": "92a8e79b852b7c5ed8808885a0139f842ec902a3a87fe193b80ddd569c90b6f4",
+        "processed_at": "2025-10-07T20:25:11.989227",
+        "already_exists": false,
+        "chunks_created": 27,
+        "status": "newly_processed"
+      },
+      {
+        "file_name": "bd1f4f3f-ebe1-4f1d-8792-0248cdc9ee1b.pdf",
+        "file_path": "uploads\\bd1f4f3f-ebe1-4f1d-8792-0248cdc9ee1b.pdf",
+        "file_type": ".pdf",
+        "file_size_bytes": 17720,
+        "file_hash": "1fc3441a8e225f821a39e3123df44f9e28eb7bd683d81fd1d630018b9e0b9c36",
+        "processed_at": "2025-10-07T20:25:28.174515",
+        "already_exists": true,
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "681d9725-5b0b-49ba-86b7-31cfc18e7778.pdf",
+        "file_path": "uploads\\681d9725-5b0b-49ba-86b7-31cfc18e7778.pdf",
+        "file_type": ".pdf",
+        "file_size_bytes": 89157,
+        "file_hash": "66a5e3adee6075cf1dc49826761344ef3e5cdee113b63bd041d0be47ed2e8ede",
+        "processed_at": "2025-10-07T20:25:28.224237",
+        "already_exists": true,
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "579466e8-ba7b-4736-96ce-ea4c43367d11.xlsx",
+        "file_path": "uploads\\579466e8-ba7b-4736-96ce-ea4c43367d11.xlsx",
+        "file_type": ".xlsx",
+        "file_size_bytes": 9473,
+        "file_hash": "71ccf7ddf6faf2ac3f7abdd082888f1fa080c67fac11e7bea5168e22428d4f61",
+        "processed_at": "2025-10-07T20:25:28.277248",
+        "already_exists": true,
+        "status": "already_indexed"
+      }
+    ],
+    "errors": [],
+    "warnings": []
+  },
+  "metadata": {
+    "total_sections": 4,
+    "total_charts": 4,
+    "total_tables": 2,
+    "total_kpis": 7,
+    "files_processed": 4,
+    "generation_timestamp": "2025-10-07T20:31:27.988339"
+  },
+  "errors": [],
+  "warnings": []
+}
