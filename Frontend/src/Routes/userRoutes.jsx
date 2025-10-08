@@ -18,6 +18,9 @@ import Protected_route from '../Authentication/Protected_route';
 import ProjectManagementPage from '../components/ProjectManagement';
 import ReportManagement from '../components/ReportManagement';
 import ReportComponent from '../components/Charts/ReportComponent';
+import DepartmentManagementSuperAdmin from '../components/DepartmentManagementSuperAdmin';
+import UserManagementSuperAdmin from '../components/UserManagementSuperAdmin';
+// import UserManagementPage from '../components/UserManagementPage';
 
 // Import your user-related pages/components
 
@@ -33,6 +36,9 @@ const UserRoutes = () => (
               <Route index element={<Navigate to="dashboard" />} />
               <Route path="dashboard" element={<DashboardPage />} />
               <Route path="register-institute" element={<InstituteRegPage />} />
+              <Route path="departments" element={<DepartmentManagementSuperAdmin />} />
+              <Route path="users" element={<UserManagementSuperAdmin />} />
+              {/* Add more admin routes as needed */}
             </Route>
             <Route path="/institute-admin" element={<InstituteAdminLayout />}>
               <Route index element={<Navigate to="dashboard" />} />

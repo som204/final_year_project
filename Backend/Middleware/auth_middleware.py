@@ -12,15 +12,16 @@ dotenv.load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY") or "dogo"
 ALGORITHM = os.getenv("ALGORITHM","HS256")
 
-EXEMPT_PATHS = {"/user/login", "/user/register", "/docs","/openapi.json","/","institute/all"}
+EXEMPT_PATHS = {"/user/login", "/user/register", "/docs","/openapi.json","/","/institute/all","/department/institute/"}
 
 
 class AuthMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
+        path = request.url.path
         if request.method == "OPTIONS":
             return await call_next(request)
 
-        if request.url.path in EXEMPT_PATHS:
+        if any(path.startswith(exempt) for exempt in EXEMPT_PATHS):
             return await call_next(request)
 
 

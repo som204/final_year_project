@@ -1,121 +1,185 @@
 import React, { useEffect, useRef } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import Chart from 'chart.js/auto';
-// 1. Import the CSS module file
 import styles from './ReportComponent.module.css';
 
 const ReportComponent = () => {
+    // 1. Get the nested report data from the navigation state
     const location = useLocation();
-    const { title, kpis, sections, chart } = location.state || {};
-    const chartRef = useRef(null);
-    const chartInstance = useRef(null);
+    const { final_report_data, metadata } = location.state || {};
 
+    // Create a ref to hold an array of chart instances for cleanup
+    const chartInstances = useRef([]);
+
+    // This useEffect hook handles the creation and destruction of MULTIPLE charts
     useEffect(() => {
-        // Ensure the chart data and canvas ref are available
-        if (chart && chart.data && chartRef.current) {
-            // Destroy any existing chart instance to prevent memory leaks and rendering issues
-            if (chartInstance.current) {
-                chartInstance.current.destroy();
-            }
+        // Ensure we have charts data before proceeding
+        if (final_report_data?.charts && final_report_data.charts.length > 0) {
+            
+            // Cleanup previous charts before creating new ones
+            chartInstances.current.forEach(instance => instance.destroy());
+            chartInstances.current = []; // Reset the array
 
-            const ctx = chartRef.current.getContext('2d');
-            try {
-                // Create the new Chart instance
-                chartInstance.current = new Chart(ctx, {
-                    type: 'bar',
-                    data: chart.data,
-                    options: {
-                        responsive: true,
-                        plugins: {
-                            title: {
-                                display: false // Title is handled by the H3 tag
-                            },
-                            tooltip: {
-                                callbacks: {
-                                    label: function(context) {
-                                        let label = context.dataset.label || '';
-                                        if (label) {
-                                            label += ': ';
+            final_report_data.charts.forEach((chart, index) => {
+                const canvasId = `chart-${index}`;
+                const ctx = document.getElementById(canvasId)?.getContext('2d');
+                
+                if (ctx) {
+                    try {
+                        const newChartInstance = new Chart(ctx, {
+                            type: chart.type || 'bar', // Use the type from the data
+                            data: chart.data,
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    title: { display: false },
+                                    legend: {
+                                        position: chart.type === 'pie' || chart.type === 'doughnut' ? 'top' : 'bottom',
+                                    },
+                                    tooltip: {
+                                        callbacks: {
+                                            label: function(context) {
+                                                let label = context.dataset.label || context.label || '';
+                                                if (label) label += ': ';
+                                                const value = context.parsed.y ?? context.parsed;
+                                                if (value !== null) {
+                                                    label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'CAD', notation: 'compact', maximumFractionDigits: 2 }).format(value);
+                                                }
+                                                return label;
+                                            }
                                         }
-                                        if (context.parsed.y !== null) {
-                                            // Format large numbers for tooltips (e.g., $1.2M)
-                                            label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 }).format(context.parsed.y);
+                                    }
+                                },
+                                // Conditionally add scales for bar and line charts
+                                scales: (chart.type === 'bar' || chart.type === 'line') ? {
+                                    y: {
+                                        beginAtZero: true,
+                                        ticks: {
+                                            callback: function(value) {
+                                                return new Intl.NumberFormat('en-US', { notation: 'compact', compactDisplay: 'short' }).format(value);
+                                            }
                                         }
-                                        return label;
                                     }
-                                }
+                                } : {}
                             }
-                        },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                ticks: {
-                                    callback: function(value) {
-                                        // Format Y-axis labels (e.g., 1M, 500K)
-                                        return new Intl.NumberFormat('en-US', { notation: 'compact', compactDisplay: 'short' }).format(value);
-                                    }
-                                }
-                            }
-                        }
+                        });
+                        chartInstances.current.push(newChartInstance);
+                    } catch (e) {
+                        console.error(`Could not render chart #${index}:`, e);
                     }
-                });
-            } catch (e) {
-                console.error("Could not render chart:", e);
-            }
+                }
+            });
         }
 
-        // Cleanup function: destroy chart instance when the component unmounts
+        // Cleanup function to destroy all chart instances when the component unmounts
         return () => {
-            if (chartInstance.current) {
-                chartInstance.current.destroy();
-            }
+            chartInstances.current.forEach(instance => instance.destroy());
         };
-    }, [chart]); // Rerun this effect only if the chart data changes
+    }, [final_report_data?.charts]); // Rerun this effect if the chart data changes
 
-    if (!title) {
+    if (!final_report_data) {
         return (
-            // Apply class names using the 'styles' object
             <div className={styles.container}>
-                <h1>No Report Data</h1>
-                <p>Report data was not provided. Please go back and generate a report first.</p>
+                <h1>No Report Data Found</h1>
+                <p>Please go back and generate a report first.</p>
                 <Link to="/institute-admin/report">Go Back</Link>
             </div>
         );
     }
 
+    const formatTimestamp = (ts) => {
+        if (!ts) return '';
+        return new Date(ts).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true });
+    };
+
     return (
-        // Apply the scoped class names to all your elements
         <div className={styles.reportBody}>
             <div className={styles.container}>
-                <h1>{title}</h1>
+                <h1>{final_report_data.title}</h1>
+                <h2 className={styles.reportSubtitle}>
+                    {final_report_data.institute_name} | {final_report_data.report_year}
+                </h2>
 
-                {kpis && kpis.length > 0 && (
-                    <div className={styles.statsGrid}>
-                        {kpis.map((card, index) => (
-                            <div className={styles.statCard} key={index}>
-                                <div className={styles.value}>{card.value}</div>
-                                <div className={styles.label}>{card.label}</div>
-                            </div>
-                        ))}
+                {final_report_data.kpis?.length > 0 && (
+                    <>
+                        <h2>Key Highlights</h2>
+                        <div className={styles.kpiGrid}>
+                            {final_report_data.kpis.map((kpi, index) => (
+                                <div className={styles.kpiCard} key={index}>
+                                    <span className={styles.kpiIcon}>{kpi.icon}</span>
+                                    <span className={styles.kpiValue}>{kpi.value}</span>
+                                    <span className={styles.kpiMetric}>{kpi.metric}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </>
+                )}
+
+                {final_report_data.sections?.length > 0 && (
+                    <div className={styles.toc}>
+                        <h3>Table of Contents</h3>
+                        <ol>
+                            {final_report_data.sections.map((section, index) => (
+                                <li key={index}><a href={`#section-${index}`}>{section.title}</a></li>
+                            ))}
+                        </ol>
                     </div>
                 )}
 
-                {sections && sections.length > 0 && (
-                    sections.map((section, index) => (
-                        <section key={index}>
+                {final_report_data.sections?.length > 0 && (
+                    final_report_data.sections.map((section, index) => (
+                        <section key={index} id={`section-${index}`}>
                             <h2>{section.title}</h2>
-                            <p dangerouslySetInnerHTML={{ __html: section.content.replace(/\n/g, '<br />') }} />
+                            <div className={styles.sectionContent} dangerouslySetInnerHTML={{ __html: section.content.replace(/\n/g, '<br />') }} />
                         </section>
                     ))
                 )}
-
-                {chart && chart.data && (
+                
+                {final_report_data.tables?.length > 0 && (
                     <section>
-                        <div className={styles.chartContainer}>
-                            <h3>{chart.title}</h3>
-                            <canvas ref={chartRef} id="financialChart"></canvas>
+                        <h2>Data Tables</h2>
+                        {final_report_data.tables.map((table, index) => (
+                            <div className={styles.tableContainer} key={index}>
+                                <h3>{table.title}</h3>
+                                <table className={styles.appendixTable}>
+                                    <thead>
+                                        <tr>
+                                            {table.data.headers.map((header, hIndex) => <th key={hIndex}>{header}</th>)}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {table.data.rows.map((row, rIndex) => (
+                                            <tr key={rIndex}>
+                                                {row.map((cell, cIndex) => <td key={cIndex}>{cell}</td>)}
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        ))}
+                    </section>
+                )}
+
+                {final_report_data.charts?.length > 0 && (
+                    <section>
+                        <h2>Data Visualizations</h2>
+                        <div className={styles.chartsGrid}>
+                            {final_report_data.charts.map((chart, index) => (
+                                <div className={styles.chartContainer} key={index}>
+                                    <h3>{chart.title}</h3>
+                                    <canvas id={`chart-${index}`}></canvas>
+                                </div>
+                            ))}
                         </div>
                     </section>
+                )}
+                
+                
+                {metadata && (
+                     <footer>
+                        <p>Report generated on: {formatTimestamp(metadata.generation_timestamp)}</p>
+                        <p>Powered by the Automated Reporting Agent</p>
+                    </footer>
                 )}
             </div>
         </div>

@@ -31,3 +31,6 @@ class ProjectService:
         """Fetches projects associated with a specific institute ID."""
         result = await db.execute(select(Project).filter(Project.institute_id == institute_id))
         return list(result.scalars().all())
+    
+
+    

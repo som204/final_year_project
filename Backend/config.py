@@ -8,8 +8,11 @@ load_dotenv()
 api=os.getenv("GOOGLE_API_KEY")
 GOOGLE_API_KEY = SecretStr(api) if api else None
 
+COHERE_API_KEY = os.getenv("COHERE_API_KEY")
+COHERE_API_KEY = SecretStr(COHERE_API_KEY) if COHERE_API_KEY else None
+
 # --- File Paths ---
-VECTOR_STORE_PATH = "./Vector_store"
+VECTOR_STORES_BASE_DIR = "./Vector_stores"
 UPLOADS_DIR = "./uploads"
 TEMPLATE_DIR = "./Templates"
 

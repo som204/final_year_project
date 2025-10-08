@@ -161,7 +161,6 @@ const ProjectManagementPage = () => {
                                                 </td>
                                                 <td>{new Date(proj.created_at).toLocaleDateString()}</td>
                                                 <td className="actions-cell">
-                                                    <button className="action-button edit"><Edit size={16} /></button>
                                                     <button className="action-button delete"><Trash2 size={16} /></button>
                                                 </td>
                                             </tr>

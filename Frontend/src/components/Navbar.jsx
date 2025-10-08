@@ -7,12 +7,27 @@ import { UserContext } from '../Context/user.context';
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { isAuthenticated, logout} = useContext(UserContext);
+  const { isAuthenticated, logout, user } = useContext(UserContext);
 
-  console.log("Is Logged In:", isAuthenticated);
   const handleLogout = async () => {
     await logout();
     navigate('/login');
+  };
+
+  // Determine dashboard route based on user role
+  const getDashboardRoute = () => {
+    console.log(user);
+    if (!user || !user.role) return '/';
+    switch (user.role) {
+      case 'SUPER_ADMIN':
+        return '/admin';
+      case 'ADMIN':
+        return '/institute-admin';
+      case 'FACULTY':
+        return '/faculty';
+      default:
+        return '/';
+    }
   };
 
   return (
@@ -29,9 +44,18 @@ const Navbar = () => {
         </nav>
         <div className="nav-actions">
           {isAuthenticated ? (
-            <button className="logout-button" onClick={handleLogout}>
-              Log Out
-            </button>
+            <>
+              <button
+                className="button button-secondary"
+                
+                onClick={() => navigate(getDashboardRoute())}
+              >
+                Dashboard
+              </button >
+              <button className="button button-secondary" onClick={handleLogout}>
+                Log Out
+              </button>
+            </>
           ) : (
             <>
               <button className="button button-ghost" onClick={() => navigate('/login')}>

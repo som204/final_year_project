@@ -18,5 +18,6 @@ class DepartmentResponseSchema(BaseModel):
     is_approved: bool
     created_at: datetime
     institute_id: int
+    institute_name: Optional[str] = None
     class Config:
         from_attributes = True

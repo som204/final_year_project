@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { LayoutDashboard, Building } from "lucide-react";
+import { LayoutDashboard, Building,Users } from "lucide-react";
 import "../../src/pages/Super Admin/SuperAdmin.css"; // CSS for Sidebar
 import { LogOut } from "lucide-react";
 
@@ -18,6 +18,14 @@ const Sidebar = ({ onLogoutClick }) => {
         <NavLink to="/admin/register-institute" className="sidebar-link">
           <Building size={20} />
           <span>Institute</span>
+        </NavLink>
+        <NavLink to="/admin/departments" className="sidebar-link">
+          <Building size={20} />
+          <span>Departments</span>
+        </NavLink>
+        <NavLink to="/admin/users" className="sidebar-link">
+          <Users size={20} />
+          <span>Users</span>
         </NavLink>
       </nav>
       <div className="sidebar-footer">

@@ -103,6 +103,24 @@ const FacultyManagementPage = () => {
         return dept ? dept.name : 'N/A';
     };
 
+    const handleDeleteUser = async (userId) => {
+        if (!window.confirm("Are you sure you want to delete this user?")) return;
+        try {
+            setIsLoading(true);
+            setError(null);
+            const res = await fetch(`http://localhost:8000/user/${userId}`, {
+                method: 'DELETE',
+                credentials: 'include',
+            });
+            if (!res.ok) throw new Error('Failed to delete user.');
+            setUsers(prev => prev.filter(u => u.id !== userId));
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     return (
         <div className="management-page">
             <h1>Faculty Management</h1>
@@ -142,7 +160,7 @@ const FacultyManagementPage = () => {
                                                 <td>{getDepartmentName(faculty.department_id)}</td>
                                                 <td className="actions-cell">
                                                     <button className="action-button edit"><Edit size={16} /></button>
-                                                    <button className="action-button delete"><Trash2 size={16} /></button>
+                                                    <button className="action-button delete" onClick={() => handleDeleteUser(faculty.id)}><Trash2 size={16} /></button>
                                                 </td>
                                             </tr>
                                         ))

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useContext } from 'react';
 import '../pages/Faculty/InstituteFaculty.css'; // Main CSS file for this section
 import { UserContext } from '../Context/user.context';
-import { Book, Upload, FileClock, Search, Filter } from 'lucide-react';
+import { Book, Upload, FileClock, Search, Filter,Trash2 } from 'lucide-react';
 
 const DataManagementPage = () => {
     // State for managing the active tab
@@ -129,6 +129,24 @@ const DataManagementPage = () => {
         }
     };
 
+
+    const handleDeleteFile = async (fileId) => {
+        if (!window.confirm('Are you sure you want to delete this file?')) return;
+        try {
+            const response = await fetch(`http://localhost:8000/uploads/${fileId}`, {
+                method: 'DELETE',
+                credentials: 'include',
+            });
+            if (!response.ok) {
+                const data = await response.json();
+                throw new Error(data.detail || 'Failed to delete file.');
+            }
+            setUploadedFiles(prev => prev.filter(file => file.id !== fileId));
+        } catch (err) {
+            setListError(err.message);
+            setTimeout(() => setListError(null), 4000);
+        }
+    };
     return (
         <div className="faculty-page-content">
             <h1>Data Management</h1>
@@ -176,6 +194,7 @@ const DataManagementPage = () => {
                                         <th>File Name</th>
                                         <th>Project</th>
                                         <th>Upload Date</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -185,6 +204,9 @@ const DataManagementPage = () => {
                                                 <td>{file.name}</td>
                                                 <td>{file.project_name || 'N/A'}</td>
                                                 <td>{new Date(file.upload_time).toLocaleDateString()}</td>
+                                                <td className="actions-cell">
+                                                    <button className="action-button delete" onClick={() => handleDeleteFile(file.id)}><Trash2 size={16} /></button>
+                                                </td>
                                             </tr>
                                         ))
                                     ) : (
