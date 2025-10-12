@@ -64,7 +64,7 @@ class UserService:
                 # --- 4. Run the blocking email function in a separate thread ---
                 email_sent = await asyncio.to_thread(
                     send_email,
-                    "somprasad613@gmail.com",
+                    new_user.email,
                     "Welcome to the Platform!",
                     "welcome_faculty.html", # Assuming this is the template name
                     welcome_context

@@ -77,7 +77,7 @@ const InstituteDashboard = () => {
 
         // Update state with the fetched data
         setDepartments(deptsData);
-        setFaculty(facultyData);
+        setFaculty(facultyData.filter(user => user.role === 'FACULTY'));
         setprojects(projectsData);
         setUploadedFiles(uploadsData);
         setGeneratedReports(reportsData);

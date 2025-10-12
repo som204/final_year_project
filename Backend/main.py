@@ -37,3 +37,7 @@ app.include_router(report_router)
 @app.get("/")
 def root():
     return {"message": "Hello FastAPI!"}
+
+@app.get("/health")
+def health_check():
+    return {"status": "healthy", "message": "Annual Report Portal API is running"}
