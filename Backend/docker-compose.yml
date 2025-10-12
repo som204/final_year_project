@@ -1,0 +1,45 @@
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: annual-report-backend
+    ports:
+      - "8000:8000"
+    # Env variables are now passed from an external .env file for security
+    env_file:
+      - .env
+    volumes:
+      - ./uploads:/app/uploads
+      - ./generated_reports:/app/generated_reports
+      - ./Vector_stores:/app/Vector_stores # Corrected path name
+    depends_on:
+      redis:
+        condition: service_healthy # Waits for redis to be ready
+    networks:
+      - annual-report-network
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: annual-report-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - annual-report-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  redis_data:
+
+networks:
+  annual-report-network:
+    driver: bridge
