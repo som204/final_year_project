@@ -189,3 +189,24 @@ class DataUploadService:
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail=f"Unexpected error: {e}"
             )
+        
+    @staticmethod
+    async def get_file_by_id(db:AsyncSession,file_id:int) -> str:
+        try:
+            stmt = select(DataUploaded).filter(DataUploaded.id == file_id)
+            result = await db.execute(stmt)
+            file = result.scalar_one_or_none()
+            if not file:
+                raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="File not found")
+            file_path = file.file_path
+            return file_path
+        except SQLAlchemyError as e:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Database error: {e}"
+            )
+        except Exception as e:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Unexpected error: {e}"
+            )

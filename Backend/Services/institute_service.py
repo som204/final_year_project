@@ -10,6 +10,8 @@ from Models.user_models import User
 from Models.department_models import Department
 from Services.email_service import send_email
 import asyncio
+from functools import reduce
+from operator import or_
 
 
 class InstituteService:
@@ -121,3 +123,65 @@ class InstituteService:
         except SQLAlchemyError as e:
             # In production, you might want to log the actual error `e`
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Could not fetch institutes due to a database error.")
+        
+    @staticmethod
+    async def update_institute_service(institute_id: int, institute_data: dict, db: AsyncSession) -> Institute:
+        """
+        Updates an existing institute. 
+        Expects 'institute_data' to be a dictionary (e.g., schema.model_dump(exclude_unset=True)).
+        """
+        try:
+            # 1. Fetch current institute
+            stmt = select(Institute).filter(Institute.id == institute_id)
+            result = await db.execute(stmt)
+            institute = result.scalars().first()
+            if not institute:
+                raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Institute not found")
+
+            # 2. Pre-transaction uniqueness checks (Institute Code & Name)
+            # We only check if these specific fields are being updated
+            new_code = institute_data.get("code")
+            new_name = institute_data.get("name")
+
+            or_parts = []
+            if new_code is not None and new_code != institute.code:
+                or_parts.append(Institute.code == new_code)
+            if new_name is not None and new_name != institute.name:
+                or_parts.append(Institute.name == new_name)
+
+            if or_parts:
+                # Check if ANY other institute (not the current one) has this name or code
+                conflict_filter = (Institute.id != institute_id) & reduce(or_, or_parts)
+                conflict_stmt = select(Institute).filter(conflict_filter)
+                if (await db.execute(conflict_stmt)).scalars().first():
+                    raise HTTPException(
+                        status_code=status.HTTP_409_CONFLICT, # 409 is better for duplicates
+                        detail="Another institute with this code or name already exists"
+                    )
+
+            # 3. Apply updates dynamically
+            # This replaces the long list of 'if' statements
+            allowed_fields = {"name", "code", "address", "contact_email", "contact_phone", "is_approved"}
+            
+            for key, value in institute_data.items():
+                if key in allowed_fields and hasattr(institute, key):
+                    setattr(institute, key, value)
+
+            # 4. Commit and Refresh
+            await db.commit()
+            await db.refresh(institute)
+            return institute
+
+        except HTTPException:
+            # Re-raise HTTP exceptions so they aren't caught by the generic block below
+            raise 
+        except IntegrityError:
+            await db.rollback()
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Update failed due to database integrity constraints.")
+        except SQLAlchemyError as e:
+            await db.rollback()
+            # Log 'e' here in production
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Could not update institute due to a database error.")
+        
+
+    

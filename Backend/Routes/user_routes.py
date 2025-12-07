@@ -40,3 +40,7 @@ async def get_users_by_institute(institute_id: int, db: AsyncSession = Depends(g
 @router.delete("/{user_id}")
 async def delete_user(user_id: int, db: AsyncSession = Depends(get_db)):
     return await UserService.delete_user_service(user_id, db)
+
+@router.put("/{user_id}", response_model=dict)
+async def update_user(user_id: int, update_data: dict, db: AsyncSession = Depends(get_db)):
+    return await UserService.update_user_service(user_id, update_data, db)

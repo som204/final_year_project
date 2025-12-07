@@ -20,6 +20,8 @@ import ReportManagement from '../components/ReportManagement';
 import ReportComponent from '../components/Charts/ReportComponent';
 import DepartmentManagementSuperAdmin from '../components/DepartmentManagementSuperAdmin';
 import UserManagementSuperAdmin from '../components/UserManagementSuperAdmin';
+import AnalyticsPage from '../components/AnalyticsPage';
+import result from '../Data/data1';
 // import UserManagementPage from '../components/UserManagementPage';
 
 // Import your user-related pages/components
@@ -38,7 +40,7 @@ const UserRoutes = () => (
               <Route path="register-institute" element={<InstituteRegPage />} />
               <Route path="departments" element={<DepartmentManagementSuperAdmin />} />
               <Route path="users" element={<UserManagementSuperAdmin />} />
-              {/* Add more admin routes as needed */}
+              
             </Route>
             <Route path="/institute-admin" element={<InstituteAdminLayout />}>
               <Route index element={<Navigate to="dashboard" />} />
@@ -47,6 +49,7 @@ const UserRoutes = () => (
               <Route path="faculty" element={<FacultyRegPage />} />
               <Route path="project" element={<ProjectManagementPage />} />
               <Route path="report" element={<ReportManagement />} />
+              <Route path="analyse" element={<AnalyticsPage/>} />
             </Route>
             <Route path="/faculty" element={<FacultyLayout />}>
               <Route index element={<Navigate to="dashboard" />} />

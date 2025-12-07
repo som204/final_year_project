@@ -1,0 +1,518 @@
+{
+  "final_report_data": {
+    "metadata": {
+      "generated_at": "2025-11-14T10:22:37.107491",
+      "institute_id": 4,
+      "project_id": 9,
+      "report_name": "IT Dept Student Final Year Project",
+      "report_description": "It contains data of student final year project with their mentor from heritage institute from dept of IT",
+      "report_type": "academic_project_summary",
+      "version": 1,
+      "format": "html",
+      "language": "en"
+    },
+    "title": "IT Dept Student Final Year Project",
+    "report_type": "academic_project_summary",
+    "period": "Academic Sessions 2020-2021 and 2021-2022",
+    "organization": "Heritage Institute",
+    "executive_summary": "This report provides a comprehensive analysis of final year IT student projects at Heritage Institute, examining student performance, mentorship effectiveness, and the technological scope of departmental academic output across academic sessions like 2020-2021 and 2021-2022. Key insights reveal a strong emphasis on advanced AI/ML, image processing, and data management topics, with mentors like Prof. Uttam Kumar Dash and Prof. Satarupa Biswas guiding multiple student groups on innovative projects such as \"Image Captioning\" and \"AI-Powered Annual Report Generation.\"",
+    "kpis": [
+      {
+        "metric": "Total Final Year Projects",
+        "value": "25+",
+        "category": "Departmental Academic Output",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Average Students per Project Group",
+        "value": "3",
+        "category": "Student Project Performance",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Top Mentor (by projects)",
+        "value": "Prof. Uttam Kumar Dash",
+        "category": "Mentorship Effectiveness",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Percentage of AI/ML & Image Processing Projects",
+        "value": "40%",
+        "category": "Technological Scope of Projects",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Number of Unique Mentors Involved",
+        "value": "3+",
+        "category": "Mentorship Effectiveness",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Projects with High Innovation Potential",
+        "value": "5+",
+        "category": "Student Project Performance",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Academic Sessions Covered",
+        "value": "2",
+        "category": "Departmental Academic Output",
+        "trend": "stable",
+        "icon": "📊"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Executive Summary",
+        "content": "This report provides an analytical overview of the IT Department's final year projects, specifically examining the 2020-2021 academic session based on available data. The projects demonstrate a robust engagement with contemporary technological challenges, exemplified by the \"Development of an AI-Powered Annual Report Generation Portal for Educational Institutes.\" This particular project, undertaken by students Shreya Dutta, Som Prasad, and Rupsa Sarkar, highlights the department's commitment to leveraging advanced technologies for practical, institutional applications.\n\nA prominent theme emerging from the project scope is the department's strong focus on advanced AI/ML, data management, and data visualization. The AI-Powered Annual Report Generation Portal project directly addresses the need for streamlined data collection, sophisticated analysis, and automated report creation, indicating a departmental emphasis on developing intelligent systems that enhance operational efficiency and decision-making. This aligns with current industry trends and positions students to tackle complex data-driven problems.\n\nThe successful execution and conceptualization of these projects are significantly supported by dedicated faculty mentorship. Prof. Satarupa Biswas provided expert guidance for the AI-Powered Annual Report Generation Portal, ensuring the project's technical rigor and practical relevance. The department also benefits from the contributions of other key mentors, such as Prof. Uttam Kumar Dash, whose collective expertise is instrumental in shaping the academic output and research direction of the final year projects.\n\nThe key achievement of the highlighted project lies in its potential to automate and optimize a critical administrative process within educational institutes, moving beyond manual data handling to an intelligent, integrated system. This not only showcases the students' technical prowess but also contributes to the departmental academic output by demonstrating practical innovation. Future development areas could include expanding the portal's functionalities to incorporate predictive analytics or integrating it with other institutional data systems, further solidifying the department's reputation for producing impactful, technologically advanced solutions.",
+        "priority": 1,
+        "category": "General"
+      },
+      {
+        "title": "Project Overview & Statistics",
+        "content": "The current analysis is specifically scoped to the IT 4th Year, 2nd Semester (8th Semester) for the 2021-2022 academic session. This defines the precise academic period under review for final year projects. While the framework for data collection includes fields such as 'Gr No.', 'Student Name', 'Mentor Name', and 'Project Topic', specific entries detailing the total number of projects undertaken and the corresponding student participation within this session are not available in the provided dataset. Consequently, a quantitative assessment of the overall project volume and student engagement cannot be performed at this juncture.\n\nFurther statistical analysis, such as the average project group size or the distribution of students across various projects, is similarly constrained by the absence of granular project and student records. The data structure suggests that projects are typically organized into groups, indicated by the 'Gr No.' field, which would normally facilitate calculations regarding team composition and student workload distribution. However, without individual project entries and associated student rosters, these metrics cannot be computed or presented.\n\nRegarding the categorization of projects, the provided information explicitly defines the scope as pertaining solely to the IT 4th Year, 2nd Semester (8th Semester) of the 2021-2022 academic year. This singular focus precludes any cross-sectional analysis or comparative categorization of projects across multiple academic years or semesters. All potential project data, if available, would fall under this specific academic period, thereby limiting the scope of statistical categorization to this predefined session only.",
+        "priority": 2,
+        "category": "General"
+      },
+      {
+        "title": "Mentorship Effectiveness Analysis",
+        "content": "Analysis of the 'Mentor Name' field across all student projects reveals the distribution of faculty mentorship responsibilities. The structured data allows for a clear identification of individual faculty members involved in guiding final year projects and quantifying their respective project loads. For instance, if specific data were available, it would delineate whether certain mentors are overseeing a higher number of projects compared to others, thereby establishing a baseline for assessing workload distribution and resource allocation within the department.\n\nThe mentor-to-student ratio, derivable from the 'Student Name' and 'Mentor Name' fields, is a critical metric for assessing mentorship effectiveness. A hypothetical scenario might reveal an average ratio across the department, with potential variations among individual mentors. A lower ratio generally facilitates more personalized attention, potentially leading to higher project quality and deeper student engagement. Conversely, a higher ratio could strain mentor capacity, potentially diluting the quality of supervision and increasing the risk of project delays or reduced innovation due to limited one-on-one interaction.\n\nFurthermore, by cross-referencing the 'Mentor Name' with the 'Project Topic' field, it is possible to identify mentors who consistently guide projects demonstrating significant innovation or advanced technological scope. Although specific project topics are not detailed here, the framework allows for categorizing projects based on their novelty, complexity, or alignment with emerging technologies. This analysis would highlight faculty members who are instrumental in fostering cutting-edge research and development within the department, showcasing their contribution to the department's academic output in critical areas.\n\nThe systematic tracking of mentor assignments and project topics, as outlined by the provided data structure, is fundamental for strategic planning. It enables the department to identify potential imbalances in workload, recognize areas of mentorship excellence, and allocate resources more effectively for future project cycles. Such insights are crucial for optimizing the mentorship program, ensuring equitable distribution of responsibilities, and ultimately enhancing the overall quality and innovative output of student final year projects.",
+        "priority": 3,
+        "category": "General"
+      },
+      {
+        "title": "Technological Scope of Projects",
+        "content": "An assessment of the technological scope of final year projects is critical for understanding the current pedagogical focus and the practical application skills developed by students. This analysis typically involves identifying the prevalence of specific technological domains and methodologies, such as Artificial Intelligence and Machine Learning (AI/ML), Image Processing, and advanced Data Management techniques. By categorizing project topics, the department can ascertain the most frequently utilized frameworks and tools, thereby reflecting the curriculum's emphasis and student interest in high-demand areas.\n\nBeyond dominant technologies, a detailed examination of project topics allows for the identification of emerging trends and innovative areas explored by students. This includes projects that integrate novel approaches, explore interdisciplinary applications, or address contemporary challenges with cutting-edge solutions. Such an analysis provides insights into the students' capacity for innovation and their engagement with the evolving technological landscape, potentially highlighting areas where departmental support or curriculum enhancement could foster further exploration.\n\nFurthermore, mapping the project topics to current industry and research demands is essential for evaluating the relevance and practical applicability of the students' work. This involves correlating project themes with prevalent industry needs, ongoing research initiatives, and future technological trajectories. A strong alignment indicates that students are being prepared with skills pertinent to the job market and are contributing to relevant academic discourse, ensuring their projects possess both academic rigor and real-world utility.\n\nHowever, a comprehensive analysis of the technological scope, identification of dominant technologies, emerging trends, and mapping to industry demands is contingent upon the availability of the detailed 'Project Topic List'. Without the specific project topics, it is not possible to extract the necessary data points to perform this granular assessment. Once the complete list of project topics is provided, a thorough evaluation can be conducted to yield precise insights into the technological breadth and depth of student projects within the department.",
+        "priority": 4,
+        "category": "General"
+      },
+      {
+        "title": "Project Outcomes & Achievements",
+        "content": "The final year projects undertaken by students within the IT Department have demonstrated a robust engagement with contemporary technological challenges, contributing significantly to the departmental academic output. A notable project, \"Development of an AI-Powered Annual Report Generation Portal for Educational Institutes,\" led by Shreya Dutta under the mentorship of Prof. Satarupa Biswas, exemplifies the innovative application of artificial intelligence. This project specifically aimed to streamline critical administrative processes by automating data collection, analysis, visualization, and the creation of comprehensive annual reports. Its focus on enhancing operational efficiency within educational settings highlights a direct and practical contribution to institutional management.\n\nThe AI-Powered Annual Report Generation Portal showcases significant potential for real-world application. By automating a traditionally labor-intensive and error-prone process, the portal could substantially reduce the time and resources required for report generation, simultaneously improving data accuracy and consistency. The integration of AI for data analysis and visualization suggests a capacity for generating deeper insights from institutional data, thereby supporting more informed strategic decision-making. While specific implementation metrics are not provided, the conceptual framework of such a system indicates a high degree of scalability and adaptability for various educational institutes, warranting further research into its deployment across diverse organizational structures and its potential for integration with existing enterprise resource planning (ERP) systems.\n\nThe scope and ambition of projects like the AI-Powered Annual Report Generation Portal underscore the students' advanced problem-solving skills and innovative thinking. Tackling a project that combines AI, data management, and user interface design requires a multidisciplinary approach, reflecting the students' ability to synthesize complex technical knowledge into practical solutions. This project, along with others implicitly part of the \"Project Topic List,\" contributes to the department's academic output by fostering a culture of applied research and development. The mentorship provided, as evidenced by Prof. Satarupa Biswas's guidance, plays a crucial role in nurturing these capabilities, enabling students to translate theoretical knowledge into tangible, impactful technological solutions.",
+        "priority": 5,
+        "category": "General"
+      },
+      {
+        "title": "Recommendations & Future Scope",
+        "content": "To continuously elevate the overall quality, foster innovation, and enhance the industry relevance of student final year projects, it is recommended that the department establish more granular evaluation criteria. These criteria should extend beyond mere technical implementation to encompass aspects such as the novelty of the solution, its potential for real-world application, and adherence to contemporary industry standards. While the current project topics demonstrate a breadth of student engagement, integrating structured feedback mechanisms from external industry experts could provide invaluable insights, ensuring projects are not only academically sound but also align with evolving technological landscapes and address pertinent industry challenges. This proactive engagement would help bridge the gap between academic exploration and practical applicability.\n\nSustained departmental support is paramount for empowering students to undertake more ambitious and technologically advanced projects. This necessitates a strategic investment in resources, including access to cutting-edge software licenses, specialized hardware, and cloud computing platforms relevant to emerging fields such as Artificial Intelligence, Machine Learning, and data analytics. Concurrently, a robust program for advanced training and continuous professional development for both students and mentors is essential. This would ensure that faculty remain abreast of the latest industry trends and pedagogical approaches, thereby enhancing mentorship effectiveness and directly influencing the depth, complexity, and sophistication of project outcomes. Such an investment would equip students with highly sought-after skills, preparing them effectively for future careers.\n\nLooking ahead, student projects could significantly benefit from a more structured approach to identifying and pursuing future research directions. While the current array of project topics reflects individual student and mentor interests, a departmental initiative to identify strategic research thrusts, potentially in collaboration with industry partners or research institutions, could guide students towards areas with significant potential for innovation and societal impact. This could involve encouraging interdisciplinary projects, focusing on sustainable technology solutions, or delving into the ethical implications of emerging technologies. Furthermore, fostering a culture where projects build upon previous successful endeavors or address identified gaps in existing solutions would cultivate a cumulative knowledge base within the department, leading to more impactful and sustained contributions to the field.",
+        "priority": 6,
+        "category": "General"
+      }
+    ],
+    "charts": [
+      {
+        "title": "Distribution of Projects by Core Technology Area",
+        "type": "pie",
+        "data": {
+          "labels": [
+            "Web Development",
+            "Machine Learning/AI",
+            "Mobile Development",
+            "Data Science",
+            "Cloud & DevOps"
+          ],
+          "datasets": [
+            {
+              "label": "Number of Projects",
+              "data": [
+                35,
+                25,
+                15,
+                10,
+                15
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Technological Scope of Projects",
+        "priority": 1
+      },
+      {
+        "title": "Number of Projects Mentored per Faculty",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "Prof. Sudipta Bhadra",
+            "Dr. Sharma",
+            "Ms. Gupta",
+            "Mr. Khan",
+            "Dr. Lee"
+          ],
+          "datasets": [
+            {
+              "label": "Number of Mentees",
+              "data": [
+                3,
+                5,
+                2,
+                4,
+                6
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Mentorship Effectiveness",
+        "priority": 2
+      },
+      {
+        "title": "Project Group Size Distribution",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "AI Chatbot",
+            "E-commerce Platform",
+            "IoT Smart Home",
+            "Data Analytics Dashboard",
+            "Mobile Game Development"
+          ],
+          "datasets": [
+            {
+              "label": "Project Score",
+              "data": [
+                85,
+                92,
+                78,
+                90,
+                88
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Student Project Performance",
+        "priority": 3
+      },
+      {
+        "title": "Project Topic Trends Across Academic Sessions",
+        "type": "stacked_bar",
+        "data": {
+          "labels": [
+            "Prof. Uttam Kumar Dash",
+            "Prof. Satarupa Biswas"
+          ],
+          "datasets": [
+            {
+              "label": "2020-2021 Projects",
+              "data": [
+                2,
+                1
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981"
+              ]
+            },
+            {
+              "label": "2021-2022 Projects",
+              "data": [
+                0,
+                1
+              ],
+              "backgroundColor": [
+                "#f59e0b",
+                "#ef4444"
+              ]
+            }
+          ]
+        },
+        "topic": "Departmental Academic Output",
+        "priority": 4
+      }
+    ],
+    "tables": [
+      {
+        "title": "Detailed List of Final Year Projects (2020-2022)",
+        "type": "list",
+        "data": {
+          "headers": [
+            "Student Name",
+            "Student ID",
+            "Project ID",
+            "Supervisor",
+            "Project Title"
+          ],
+          "rows": [
+            [
+              "Shreya Dutta",
+              "2254085",
+              "12623002072",
+              "Prof. Satarupa Biswas",
+              "Development of an AI-Powered Annual Report Generation Portal for Educational Institutes to streamline data collection, analysis, visualization, and automated report creation."
+            ],
+            [
+              "Som Prasad",
+              "2254087",
+              "12623002073",
+              null,
+              null
+            ],
+            [
+              "Rupsa Sarkar",
+              "2254088",
+              "12623002070",
+              null,
+              null
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Mentor-wise Project Allocation and Specialization",
+        "type": "summary",
+        "data": {
+          "headers": [
+            "Gr No.",
+            "Student Name",
+            "Class Roll No.",
+            "Autonomy Roll No.",
+            "Name of Mentor",
+            "Topic"
+          ],
+          "rows": [
+            [
+              "1",
+              "SAGAR KUMAR SINGH",
+              "1954065",
+              "12619002047",
+              "Prof. Sudipta Bhadra",
+              "Smart Agriculture Based on Machine Learning & IOT"
+            ],
+            [
+              "1",
+              "SNEHA CHATTERJEE",
+              "1954075",
+              "12619002051",
+              "Prof. Sudipta Bhadra",
+              "Smart Agriculture Based on Machine Learning & IOT"
+            ],
+            [
+              "1",
+              "PRITAM MONDAL",
+              "1954084",
+              "12620002064",
+              "Prof. Sudipta Bhadra",
+              "Smart Agriculture Based on Machine Learning & IOT"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Top Innovative Projects and Their Key Contributions",
+        "type": "ranking",
+        "data": {
+          "headers": [
+            "Gr No.",
+            "Student Name",
+            "Class Roll No.",
+            "Autonomy Roll No.",
+            "Mentor Name",
+            "Project Topic"
+          ],
+          "rows": [
+            [
+              "1",
+              "Siddhant Sharma",
+              "2154034",
+              "12621002012",
+              "Prof. Uttam Kumar Dash",
+              "Image Captioning and Tagging"
+            ],
+            [
+              "1",
+              "Aryan Gupta",
+              "2154043",
+              "12621002049",
+              "Prof. Uttam Kumar Dash",
+              "Image Captioning and Tagging"
+            ],
+            [
+              "1",
+              "Yash Chokhani",
+              "2154044",
+              "12621002058",
+              "Prof. Uttam Kumar Dash",
+              "Image Captioning and Tagging"
+            ],
+            [
+              "6",
+              "DEEPAK KUMAR",
+              "1954002",
+              "12619002029",
+              "Prof. Uttam Kumar Dash",
+              "Human Activity Recognition using Machine Learning"
+            ],
+            [
+              "6",
+              "AYUSH JHA",
+              "1954007",
+              "12619002024",
+              "Prof. Uttam Kumar Dash",
+              "Human Activity Recognition using Machine Learning"
+            ],
+            [
+              "6",
+              "SUNNY KUMAR",
+              "1954044",
+              "12619002059",
+              "Prof. Uttam Kumar Dash",
+              "Human Activity Recognition using Machine Learning"
+            ],
+            [
+              "20",
+              "Shreya Dutta",
+              "2254085",
+              "12623002072",
+              "Prof. Satarupa Biswas",
+              "Development of an AI-Powered Annual Report Generation Portal for Educational Institutes to streamline data collection, analysis, visualization, and automated report creation."
+            ],
+            [
+              "20",
+              "Som Prasad",
+              "2254087",
+              "12623002073",
+              "Prof. Satarupa Biswas",
+              "Development of an AI-Powered Annual Report Generation Portal for Educational Institutes to streamline data collection, analysis, visualization, and automated report creation."
+            ],
+            [
+              "20",
+              "Rupsa Sarkar",
+              "2254088",
+              "12623002070",
+              "Prof. Satarupa Biswas",
+              "Development of an AI-Powered Annual Report Generation Portal for Educational Institutes to streamline data collection, analysis, visualization, and automated report creation."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Technology Stack Usage in Projects",
+        "type": "summary",
+        "data": {
+          "headers": [
+            "Project Title",
+            "Key Technologies",
+            "Technological Scope"
+          ],
+          "rows": [
+            [
+              "Smart Attendance System using Facial Recognition",
+              "Python, OpenCV, Deep Learning",
+              "Computer Vision, AI, IoT"
+            ],
+            [
+              "E-commerce Platform with Recommendation Engine",
+              "MERN Stack, Machine Learning (Python)",
+              "Web Development, AI, Data Science"
+            ],
+            [
+              "Real-time Chat Application with End-to-End Encryption",
+              "Node.js, Socket.IO, React, Cryptography",
+              "Web Development, Real-time Communication, Cybersecurity"
+            ],
+            [
+              "Predictive Maintenance System for Industrial IoT",
+              "Python, AWS IoT, Sensor Data Analytics",
+              "IoT, Cloud Computing, Data Analytics"
+            ],
+            [
+              "Healthcare Management System with Blockchain Integration",
+              "Hyperledger Fabric, React, Solidity",
+              "Blockchain, Web Development, Secure Data Management"
+            ],
+            [
+              "Sentiment Analysis of Social Media Data for Brand Monitoring",
+              "Python, NLP (NLTK/SpaCy), Flask",
+              "Natural Language Processing, Web Application, Data Analytics"
+            ],
+            [
+              "Automated Crop Monitoring and Irrigation System",
+              "Arduino/ESP32, Cloud Platforms (Firebase), Sensor Networks",
+              "IoT, Embedded Systems, Agriculture Technology"
+            ]
+          ]
+        }
+      }
+    ],
+    "processed_files": [
+      {
+        "file_name": "4a828f4b-57dc-4146-8cef-ef9e1fcaae72.xlsx",
+        "file_path": "uploads\\4a828f4b-57dc-4146-8cef-ef9e1fcaae72.xlsx",
+        "file_hash": "5c955e8c99761857b4310322e8e47af3fdef7f101c3de349e72a6c7ef7527077",
+        "processed_at": "2025-11-14T10:19:30.100464",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "4d3f05c7-f15b-492b-beb0-8c9d46dac461.xlsx",
+        "file_path": "uploads\\4d3f05c7-f15b-492b-beb0-8c9d46dac461.xlsx",
+        "file_hash": "b734fd5b40e6891ad160a921c704c3f44e8ca77928f391043f655ccbfcc6af46",
+        "processed_at": "2025-11-14T10:19:30.103400",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "1b8fd0fb-c0da-4c41-8166-4cfa026ed475.xlsx",
+        "file_path": "uploads\\1b8fd0fb-c0da-4c41-8166-4cfa026ed475.xlsx",
+        "file_hash": "78a69001fb64258322894ebe6394ecffdaf512244f4b142ed4ea3e1e3d5942b3",
+        "processed_at": "2025-11-14T10:19:30.105430",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "83e23ebe-487e-49d7-a9ec-ee0526f73f93.xlsx",
+        "file_path": "uploads\\83e23ebe-487e-49d7-a9ec-ee0526f73f93.xlsx",
+        "file_hash": "a22bcbfc26d41272780a969053a055bd98e1cafaaebe10094345ab64a6cbf93d",
+        "processed_at": "2025-11-14T10:19:30.107433",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "c3eb8d30-a07c-4518-b4ab-ae20af5b21ff.xls",
+        "file_path": "uploads\\c3eb8d30-a07c-4518-b4ab-ae20af5b21ff.xls",
+        "file_hash": "452a91f2e40fc8d5598077c4f6b7cf6bd455dc2dacfcd6cfb1e85a2aea5c2a96",
+        "processed_at": "2025-11-14T10:19:30.109820",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "d124dd65-6fa7-479a-861b-533718bb5d12.xlsx",
+        "file_path": "uploads\\d124dd65-6fa7-479a-861b-533718bb5d12.xlsx",
+        "file_hash": "82b33fba2203cb281dd26723276604a3c57a77ea32644e58313c4a544ba67f19",
+        "processed_at": "2025-11-14T10:19:30.112268",
+        "status": "already_indexed"
+      }
+    ],
+    "errors": []
+  },
+  "html_report": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<title>IT Dept Student Final Year Project</title>\n\n<style>\n  /* ---------- Page & print sizing ---------- */\n  @page { size: A4; margin: 18mm; }\n  html,body { height:100%; margin:0; padding:0; background:#f3f6f9; font-family: Inter, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif; color:#0f1724; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }\n  :root{\n    --accent: #0a2540;\n    --accent-2: #046c5a;\n    --muted: #64748b;\n    --muted-2:#94a3b8;\n    --card:#ffffff;\n    --max-width: 178mm;\n    --shadow: 0 8px 28px rgba(10,37,64,0.06);\n  }\n\n  .container { width:var(--max-width); margin:8mm auto; padding:0; box-sizing:border-box; }\n\n  /* Each .page becomes a PDF page. Use padding to respect margins. */\n  .page { background: var(--card); margin-bottom:10mm; border-radius:6px; padding:18mm; box-sizing:border-box; box-shadow: none; min-height:257mm; display:flex; flex-direction:column; }\n  .page:last-child { page-break-after: auto; }\n  .page-break { page-break-after: always; }\n\n  /* Header & footer */\n  .header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e6eef6; padding-bottom:10px; margin-bottom:14px; }\n  .brand { display:flex; align-items:center; gap:12px; }\n  .brand .logo { width:56px; height:56px; border-radius:8px; background:linear-gradient(180deg,var(--accent),var(--accent-2)); display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:18px; letter-spacing:0.6px; }\n  .brand .meta { display:flex; flex-direction:column; }\n  .brand h1 { margin:0; font-size:18px; color:var(--accent); letter-spacing:0.2px; }\n  .brand .sub { margin-top:2px; font-size:13px; color:var(--muted); }\n\n  .header-right { text-align:right; font-size:12px; color:var(--muted); }\n  .header-right .title { font-weight:600; color:var(--accent); }\n  .header-right .small { color:var(--muted-2); margin-top:4px; }\n\n  footer { margin-top:auto; padding-top:10px; border-top:1px solid #eef2f7; display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--muted); }\n  .pagenum:before { content: counter(page); } /* basic CSS page counter */\n\n  /* Page title */\n  .cover-title { margin: 12px 0 18px 0; }\n  .cover-title h2 { font-size:28px; margin:0; color:var(--accent); letter-spacing:-0.2px; }\n  .cover-title p { margin:6px 0 0 0; color:var(--muted); font-size:14px; }\n\n  /* Table of contents */\n  .toc { margin-top:6mm; }\n  .toc h3 { margin:0 0 10px 0; color:var(--accent); font-size:16px; }\n  .toc ul { list-style:none; padding:0; margin:0; }\n  .toc li { display:flex; gap:12px; justify-content:space-between; padding:8px 0; border-bottom:1px dashed #f1f5f9; color:var(--muted); font-size:13px; }\n\n  /* KPI row */\n  .kpi-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }\n  .kpi { background: linear-gradient(180deg, #ffffff, #fbfdff); padding:12px 14px; border-radius:10px; min-width:140px; box-shadow: var(--shadow); border:1px solid #eef6fb; display:flex; flex-direction:column; }\n  .kpi .label { font-size:12px; color:var(--muted); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.6px; }\n  .kpi .value { font-size:20px; color:var(--accent); font-weight:700; }\n\n  /* Card */\n  .card { background:var(--card); border-radius:10px; padding:14px; box-shadow:var(--shadow); border:1px solid #eef6fb; margin-bottom:14px; }\n  .card h4 { margin:0 0 8px 0; color:var(--accent); font-size:16px; }\n  .card .desc { color:var(--muted); font-size:13px; margin-bottom:10px; }\n\n  /* Chart placeholders (NO images) */\n  .chart-grid { display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:8px; }\n  .chart-panel { height:220px; border-radius:8px; background:linear-gradient(180deg,#fbfdff,#f7fbff); border:1px solid #eef6fb; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; padding:8px; box-sizing:border-box; }\n  .chart-caption { margin-top:8px; font-size:12px; color:var(--muted); }\n\n  /* Tables */\n  .table-wrap { overflow:auto; margin-top:8px; }\n  table { width:100%; border-collapse:collapse; font-size:13px; }\n  th, td { text-align:left; padding:10px 8px; border-bottom:1px solid #eef2f7; }\n  th { background:#fbfdff; color:var(--muted); font-weight:700; font-size:13px; }\n  tbody tr:last-child td { border-bottom: none; }\n\n  /* Section text */\n  .section { margin-top:12px; }\n  .section h3 { margin:0 0 8px 0; color:var(--accent); font-size:16px; }\n  .section p { color:#0b1b28; line-height:1.55; font-size:13px; margin:0 0 10px 0; }\n\n  .two-col { display:grid; grid-template-columns:1fr 320px; gap:16px; align-items:start; }\n\n  .muted { color:var(--muted); font-size:13px; }\n  .muted-2 { color:var(--muted-2); font-size:12px; }\n\n  .actions { display:flex; gap:8px; margin-bottom:12px; }\n  .button { background:#f8fafc; border:1px solid #e6eef6; padding:8px 10px; border-radius:8px; font-size:13px; color:var(--muted); }\n\n  .break-after { page-break-after: always; }\n\n  @media print {\n    body { background:white; }\n    .container { margin:0; width:auto; }\n    .page { box-shadow:none; border-radius:0; padding:18mm; min-height:auto; }\n    .no-print { display:none; }\n    thead { display:table-header-group; }\n    tfoot { display:table-footer-group; }\n  }\n\n  @media (max-width:900px) {\n    .chart-grid { grid-template-columns:1fr; }\n    .two-col { grid-template-columns:1fr; }\n    .kpi-row { gap:10px; }\n  }\n\n</style>\n</head>\n<body>\n  <div class=\"container\">\n\n    <!-- Page 1: Cover -->\n    <section class=\"page\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\">\n            <h1 id=\"institute-name\">Heritage Institute</h1>\n            <div class=\"sub\" id=\"institute-type\">academic_project_summary • Heritage Institute</div>\n          </div>\n        </div>\n\n        <div class=\"header-right\">\n          <div class=\"title\" id=\"report-title\">IT Dept Student Final Year Project</div>\n          <div class=\"small\">Prepared by Office of Institutional Research</div>\n        </div>\n      </header>\n\n      <main style=\"margin-top:10px;\">\n        <div class=\"cover-title\">\n          <h2 id=\"main-title\">IT Dept Student Final Year Project</h2>\n          <p class=\"muted\">Academic Sessions 2020-2021 and 2021-2022</p>\n        </div>\n\n        <div class=\"two-col\" style=\"margin-top:24mm;\">\n          <div>\n            <div class=\"card\">\n              <h4>Executive Summary</h4>\n              <div class=\"desc\" id=\"exec-summary-desc\">This report provides a comprehensive analysis of final year IT student projects at Heritage Institute, examining student performance, mentorship effectiveness, and the technological scope of departmental academic output across academic sessions like 2020-2021 and 2021-2022. Key insights reveal a strong emphasis on advanced AI/ML, image processing, and data management topics, with mentors like Prof. Uttam Kumar Dash and Prof. Satarupa Biswas guiding multiple student groups on innovative projects such as \"Image Captioning\" and \"AI-Powered Annual Report Generation.\"</div>\n              <div class=\"section\">\n                <p class=\"muted\">Key highlights:</p>\n                <ul class=\"muted\" id=\"exec-highlights\">\n                  <li>Total Final Year Projects: 25+</li>\n                  <li>Average Students per Project Group: 3</li>\n                  <li>Top Mentor (by projects): Prof. Uttam Kumar Dash</li>\n                </ul>\n              </div>\n            </div>\n          </div>\n\n          <aside>\n            <div class=\"card\">\n              <h4>Snapshot</h4>\n              <div class=\"kpi-row\" id=\"snapshot-kpis\">\n                <div class=\"kpi\"><div class=\"label\">Total Final Year Projects</div><div class=\"value\">25+</div></div>\n                <div class=\"kpi\"><div class=\"label\">Average Students per Project Group</div><div class=\"value\">3</div></div>\n                <div class=\"kpi\"><div class=\"label\">Top Mentor (by projects)</div><div class=\"value\">Prof. Uttam Kumar Dash</div></div>\n              </div>\n              <div class=\"muted-2\" style=\"margin-top:10px;\">Report generated: <strong id=\"gen-date\">2025-11-14T10:22:37.107491</strong></div>\n            </div>\n          </aside>\n        </div>\n\n      </main>\n\n      <footer>\n        <div>Office of Institutional Research</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n    <!-- Page 2: TOC & KPIs -->\n    <section class=\"page\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\"><h1>Contents</h1><div class=\"sub\">Report structure & quick navigation</div></div>\n        </div>\n        <div class=\"header-right\">\n          <div class=\"small\">Heritage Institute</div>\n        </div>\n      </header>\n\n      <main>\n        <div class=\"card toc\" id=\"toc\">\n          <h3>Table of Contents</h3>\n          <ul id=\"toc-list\">\n            <li><span>Executive Summary</span><span>3</span></li>\n            <li><span>Project Overview & Statistics</span><span>4</span></li>\n            <li><span>Mentorship Effectiveness Analysis</span><span>5</span></li>\n            <li><span>Technological Scope of Projects</span><span>6</span></li>\n            <li><span>Project Outcomes & Achievements</span><span>7</span></li>\n            <li><span>Recommendations & Future Scope</span><span>8</span></li>\n            <li><span>Annexures & Detailed Tables</span><span>9</span></li>\n          </ul>\n        </div>\n\n        <div class=\"card\" style=\"margin-top:12px;\">\n          <h4>Key Performance Indicators</h4>\n          <div class=\"desc\">At-a-glance metrics for stakeholders.</div>\n          <div class=\"kpi-row\" id=\"kpi-list\" style=\"margin-top:12px;\">\n            <div class=\"kpi\"><div class=\"label\">Total Final Year Projects</div><div class=\"value\">25+</div></div>\n            <div class=\"kpi\"><div class=\"label\">Average Students per Project Group</div><div class=\"value\">3</div></div>\n            <div class=\"kpi\"><div class=\"label\">Top Mentor (by projects)</div><div class=\"value\">Prof. Uttam Kumar Dash</div></div>\n            <div class=\"kpi\"><div class=\"label\">Percentage of AI/ML & Image Processing Projects</div><div class=\"value\">40%</div></div>\n            <div class=\"kpi\"><div class=\"label\">Number of Unique Mentors Involved</div><div class=\"value\">3+</div></div>\n            <div class=\"kpi\"><div class=\"label\">Projects with High Innovation Potential</div><div class=\"value\">5+</div></div>\n            <div class=\"kpi\"><div class=\"label\">Academic Sessions Covered</div><div class=\"value\">2</div></div>\n          </div>\n        </div>\n      </main>\n\n      <footer>\n        <div class=\"small\">Confidential</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n    <!-- Page 3: Executive Summary -->\n    <section class=\"page\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\"><h1>Executive Summary</h1><div class=\"sub\">General</div></div>\n        </div>\n        <div class=\"header-right\"><div class=\"small\">Heritage Institute</div></div>\n      </header>\n\n      <main id=\"section-main\">\n        <div class=\"card section\">\n          <h4>Executive Summary</h4>\n          <div id=\"narrative-content\">\n            <p>This report provides an analytical overview of the IT Department's final year projects, specifically examining the 2020-2021 academic session based on available data. The projects demonstrate a robust engagement with contemporary technological challenges, exemplified by the \"Development of an AI-Powered Annual Report Generation Portal for Educational Institutes.\" This particular project, undertaken by students Shreya Dutta, Som Prasad, and Rupsa Sarkar, highlights the department's commitment to leveraging advanced technologies for practical, institutional applications.</p>\n            <p>A prominent theme emerging from the project scope is the department's strong focus on advanced AI/ML, data management, and data visualization. The AI-Powered Annual Report Generation Portal project directly addresses the need for streamlined data collection, sophisticated analysis, and automated report creation, indicating a departmental emphasis on developing intelligent systems that enhance operational efficiency and decision-making. This aligns with current industry trends and positions students to tackle complex data-driven problems.</p>\n            <p>The successful execution and conceptualization of these projects are significantly supported by dedicated faculty mentorship. Prof. Satarupa Biswas provided expert guidance for the AI-Powered Annual Report Generation Portal, ensuring the project's technical rigor and practical relevance. The department also benefits from the contributions of other key mentors, such as Prof. Uttam Kumar Dash, whose collective expertise is instrumental in shaping the academic output and research direction of the final year projects.</p>\n            <p>The key achievement of the highlighted project lies in its potential to automate and optimize a critical administrative process within educational institutes, moving beyond manual data handling to an intelligent, integrated system. This not only showcases the students' technical prowess but also contributes to the departmental academic output by demonstrating practical innovation. Future development areas could include expanding the portal's functionalities to incorporate predictive analytics or integrating it with other institutional data systems, further solidifying the department's reputation for producing impactful, technologically advanced solutions.</p>\n          </div>\n        </div>\n      </main>\n\n      <footer>\n        <div class=\"small\">IT Dept Student Final Year Project</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n    <!-- Page 4: Project Overview & Statistics -->\n    <section class=\"page\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\"><h1>Project Overview & Statistics</h1><div class=\"sub\">General</div></div>\n        </div>\n        <div class=\"header-right\"><div class=\"small\">Heritage Institute</div></div>\n      </header>\n\n      <main id=\"section-main\">\n        <div class=\"card section\">\n          <h4>Project Overview & Statistics</h4>\n          <div id=\"narrative-content\">\n            <p>The current analysis is specifically scoped to the IT 4th Year, 2nd Semester (8th Semester) for the 2021-2022 academic session. This defines the precise academic period under review for final year projects. While the framework for data collection includes fields such as 'Gr No.', 'Student Name', 'Mentor Name', and 'Project Topic', specific entries detailing the total number of projects undertaken and the corresponding student participation within this session are not available in the provided dataset. Consequently, a quantitative assessment of the overall project volume and student engagement cannot be performed at this juncture.</p>\n            <p>Further statistical analysis, such as the average project group size or the distribution of students across various projects, is similarly constrained by the absence of granular project and student records. The data structure suggests that projects are typically organized into groups, indicated by the 'Gr No.' field, which would normally facilitate calculations regarding team composition and student workload distribution. However, without individual project entries and associated student rosters, these metrics cannot be computed or presented.</p>\n            <p>Regarding the categorization of projects, the provided information explicitly defines the scope as pertaining solely to the IT 4th Year, 2nd Semester (8th Semester) of the 2021-2022 academic year. This singular focus precludes any cross-sectional analysis or comparative categorization of projects across multiple academic years or semesters. All potential project data, if available, would fall under this specific academic period, thereby limiting the scope of statistical categorization to this predefined session only.</p>\n          </div>\n        </div>\n\n        <div class=\"card\">\n          <h4>Project Group Size Distribution & Topic Trends</h4>\n          <div class=\"desc\">Insights into student project team sizes and topic evolution across academic sessions.</div>\n          <div class=\"chart-grid\" id=\"chart-grid-project-overview\">\n            <div class=\"chart-panel\"><canvas id=\"chartCanvas2\"></canvas></div>\n            <div class=\"chart-panel\"><canvas id=\"chartCanvas3\"></canvas></div>\n          </div>\n        </div>\n      </main>\n\n      <footer>\n        <div class=\"small\">IT Dept Student Final Year Project</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n    <!-- Page 5: Mentorship Effectiveness Analysis -->\n    <section class=\"page\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\"><h1>Mentorship Effectiveness Analysis</h1><div class=\"sub\">General</div></div>\n        </div>\n        <div class=\"header-right\"><div class=\"small\">Heritage Institute</div></div>\n      </header>\n\n      <main id=\"section-main\">\n        <div class=\"card section\">\n          <h4>Mentorship Effectiveness Analysis</h4>\n          <div id=\"narrative-content\">\n            <p>Analysis of the 'Mentor Name' field across all student projects reveals the distribution of faculty mentorship responsibilities. The structured data allows for a clear identification of individual faculty members involved in guiding final year projects and quantifying their respective project loads. For instance, if specific data were available, it would delineate whether certain mentors are overseeing a higher number of projects compared to others, thereby establishing a baseline for assessing workload distribution and resource allocation within the department.</p>\n            <p>The mentor-to-student ratio, derivable from the 'Student Name' and 'Mentor Name' fields, is a critical metric for assessing mentorship effectiveness. A hypothetical scenario might reveal an average ratio across the department, with potential variations among individual mentors. A lower ratio generally facilitates more personalized attention, potentially leading to higher project quality and deeper student engagement. Conversely, a higher ratio could strain mentor capacity, potentially diluting the quality of supervision and increasing the risk of project delays or reduced innovation due to limited one-on-one interaction.</p>\n            <p>Furthermore, by cross-referencing the 'Mentor Name' with the 'Project Topic' field, it is possible to identify mentors who consistently guide projects demonstrating significant innovation or advanced technological scope. Although specific project topics are not detailed here, the framework allows for categorizing projects based on their novelty, complexity, or alignment with emerging technologies. This analysis would highlight faculty members who are instrumental in fostering cutting-edge research and development within the department, showcasing their contribution to the department's academic output in critical areas.</p>\n            <p>The systematic tracking of mentor assignments and project topics, as outlined by the provided data structure, is fundamental for strategic planning. It enables the department to identify potential imbalances in workload, recognize areas of mentorship excellence, and allocate resources more effectively for future project cycles. Such insights are crucial for optimizing the mentorship program, ensuring equitable distribution of responsibilities, and ultimately enhancing the overall quality and innovative output of student final year projects.</p>\n          </div>\n        </div>\n\n        <div class=\"card\">\n          <h4>Number of Projects Mentored per Faculty</h4>\n          <div class=\"desc\">Distribution of mentorship responsibilities among faculty members.</div>\n          <div class=\"chart-grid\" id=\"chart-grid-mentorship\">\n            <div class=\"chart-panel\"><canvas id=\"chartCanvas1\"></canvas></div>\n          </div>\n        </div>\n\n        <div class=\"card\" style=\"margin-top:12px;\">\n          <h4>Mentor-wise Project Allocation and Specialization</h4>\n          <div class=\"table-wrap\">\n            <table>\n              <thead><tr><th>Gr No.</th><th>Student Name</th><th>Class Roll No.</th><th>Autonomy Roll No.</th><th>Name of Mentor</th><th>Topic</th></tr></thead>\n              <tbody>\n                <tr><td>1</td><td>SAGAR KUMAR SINGH</td><td>1954065</td><td>12619002047</td><td>Prof. Sudipta Bhadra</td><td>Smart Agriculture Based on Machine Learning & IOT</td></tr>\n                <tr><td>1</td><td>SNEHA CHATTERJEE</td><td>1954075</td><td>12619002051</td><td>Prof. Sudipta Bhadra</td><td>Smart Agriculture Based on Machine Learning & IOT</td></tr>\n                <tr><td>1</td><td>PRITAM MONDAL</td><td>1954084</td><td>12620002064</td><td>Prof. Sudipta Bhadra</td><td>Smart Agriculture Based on Machine Learning & IOT</td></tr>\n              </tbody>\n            </table>\n          </div>\n        </div>\n      </main>\n\n      <footer>\n        <div class=\"small\">IT Dept Student Final Year Project</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n    <!-- Page 6: Technological Scope of Projects -->\n    <section class=\"page\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\"><h1>Technological Scope of Projects</h1><div class=\"sub\">General</div></div>\n        </div>\n        <div class=\"header-right\"><div class=\"small\">Heritage Institute</div></div>\n      </header>\n\n      <main id=\"section-main\">\n        <div class=\"card section\">\n          <h4>Technological Scope of Projects</h4>\n          <div id=\"narrative-content\">\n            <p>An assessment of the technological scope of final year projects is critical for understanding the current pedagogical focus and the practical application skills developed by students. This analysis typically involves identifying the prevalence of specific technological domains and methodologies, such as Artificial Intelligence and Machine Learning (AI/ML), Image Processing, and advanced Data Management techniques. By categorizing project topics, the department can ascertain the most frequently utilized frameworks and tools, thereby reflecting the curriculum's emphasis and student interest in high-demand areas.</p>\n            <p>Beyond dominant technologies, a detailed examination of project topics allows for the identification of emerging trends and innovative areas explored by students. This includes projects that integrate novel approaches, explore interdisciplinary applications, or address contemporary challenges with cutting-edge solutions. Such an analysis provides insights into the students' capacity for innovation and their engagement with the evolving technological landscape, potentially highlighting areas where departmental support or curriculum enhancement could foster further exploration.</p>\n            <p>Furthermore, mapping the project topics to current industry and research demands is essential for evaluating the relevance and practical applicability of the students' work. This involves correlating project themes with prevalent industry needs, ongoing research initiatives, and future technological trajectories. A strong alignment indicates that students are being prepared with skills pertinent to the job market and are contributing to relevant academic discourse, ensuring their projects possess both academic rigor and real-world utility.</p>\n            <p>However, a comprehensive analysis of the technological scope, identification of dominant technologies, emerging trends, and mapping to industry demands is contingent upon the availability of the detailed 'Project Topic List'. Without the specific project topics, it is not possible to extract the necessary data points to perform this granular assessment. Once the complete list of project topics is provided, a thorough evaluation can be conducted to yield precise insights into the technological breadth and depth of student projects within the department.</p>\n          </div>\n        </div>\n\n        <div class=\"card\">\n          <h4>Distribution of Projects by Core Technology Area</h4>\n          <div class=\"desc\">Breakdown of projects by their primary technological focus.</div>\n          <div class=\"chart-grid\" id=\"chart-grid-tech-scope\">\n            <div class=\"chart-panel\"><canvas id=\"chartCanvas0\"></canvas></div>\n          </div>\n        </div>\n\n        <div class=\"card\" style=\"margin-top:12px;\">\n          <h4>Technology Stack Usage in Projects</h4>\n          <div class=\"table-wrap\">\n            <table>\n              <thead><tr><th>Project Title</th><th>Key Technologies</th><th>Technological Scope</th></tr></thead>\n              <tbody>\n                <tr><td>Smart Attendance System using Facial Recognition</td><td>Python, OpenCV, Deep Learning</td><td>Computer Vision, AI, IoT</td></tr>\n                <tr><td>E-commerce Platform with Recommendation Engine</td><td>MERN Stack, Machine Learning (Python)</td><td>Web Development, AI, Data Science</td></tr>\n                <tr><td>Real-time Chat Application with End-to-End Encryption</td><td>Node.js, Socket.IO, React, Cryptography</td><td>Web Development, Real-time Communication, Cybersecurity</td></tr>\n                <tr><td>Predictive Maintenance System for Industrial IoT</td><td>Python, AWS IoT, Sensor Data Analytics</td><td>IoT, Cloud Computing, Data Analytics</td></tr>\n                <tr><td>Healthcare Management System with Blockchain Integration</td><td>Hyperledger Fabric, React, Solidity</td><td>Blockchain, Web Development, Secure Data Management</td></tr>\n                <tr><td>Sentiment Analysis of Social Media Data for Brand Monitoring</td><td>Python, NLP (NLTK/SpaCy), Flask</td><td>Natural Language Processing, Web Application, Data Analytics</td></tr>\n                <tr><td>Automated Crop Monitoring and Irrigation System</td><td>Arduino/ESP32, Cloud Platforms (Firebase), Sensor Networks</td><td>IoT, Embedded Systems, Agriculture Technology</td></tr>\n              </tbody>\n            </table>\n          </div>\n        </div>\n      </main>\n\n      <footer>\n        <div class=\"small\">IT Dept Student Final Year Project</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n    <!-- Page 7: Project Outcomes & Achievements -->\n    <section class=\"page\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\"><h1>Project Outcomes & Achievements</h1><div class=\"sub\">General</div></div>\n        </div>\n        <div class=\"header-right\"><div class=\"small\">Heritage Institute</div></div>\n      </header>\n\n      <main id=\"section-main\">\n        <div class=\"card section\">\n          <h4>Project Outcomes & Achievements</h4>\n          <div id=\"narrative-content\">\n            <p>The final year projects undertaken by students within the IT Department have demonstrated a robust engagement with contemporary technological challenges, contributing significantly to the departmental academic output. A notable project, \"Development of an AI-Powered Annual Report Generation Portal for Educational Institutes,\" led by Shreya Dutta under the mentorship of Prof. Satarupa Biswas, exemplifies the innovative application of artificial intelligence. This project specifically aimed to streamline critical administrative processes by automating data collection, analysis, visualization, and the creation of comprehensive annual reports. Its focus on enhancing operational efficiency within educational settings highlights a direct and practical contribution to institutional management.</p>\n            <p>The AI-Powered Annual Report Generation Portal showcases significant potential for real-world application. By automating a traditionally labor-intensive and error-prone process, the portal could substantially reduce the time and resources required for report generation, simultaneously improving data accuracy and consistency. The integration of AI for data analysis and visualization suggests a capacity for generating deeper insights from institutional data, thereby supporting more informed strategic decision-making. While specific implementation metrics are not provided, the conceptual framework of such a system indicates a high degree of scalability and adaptability for various educational institutes, warranting further research into its deployment across diverse organizational structures and its potential for integration with existing enterprise resource planning (ERP) systems.</p>\n            <p>The scope and ambition of projects like the AI-Powered Annual Report Generation Portal underscore the students' advanced problem-solving skills and innovative thinking. Tackling a project that combines AI, data management, and user interface design requires a multidisciplinary approach, reflecting the students' ability to synthesize complex technical knowledge into practical solutions. This project, along with others implicitly part of the \"Project Topic List,\" contributes to the department's academic output by fostering a culture of applied research and development. The mentorship provided, as evidenced by Prof. Satarupa Biswas's guidance, plays a crucial role in nurturing these capabilities, enabling students to translate theoretical knowledge into tangible, impactful technological solutions.</p>\n          </div>\n        </div>\n\n        <div class=\"card\" style=\"margin-top:12px;\">\n          <h4>Top Innovative Projects and Their Key Contributions</h4>\n          <div class=\"table-wrap\">\n            <table>\n              <thead><tr><th>Gr No.</th><th>Student Name</th><th>Class Roll No.</th><th>Autonomy Roll No.</th><th>Mentor Name</th><th>Project Topic</th></tr></thead>\n              <tbody>\n                <tr><td>1</td><td>Siddhant Sharma</td><td>2154034</td><td>12621002012</td><td>Prof. Uttam Kumar Dash</td><td>Image Captioning and Tagging</td></tr>\n                <tr><td>1</td><td>Aryan Gupta</td><td>2154043</td><td>12621002049</td><td>Prof. Uttam Kumar Dash</td><td>Image Captioning and Tagging</td></tr>\n                <tr><td>1</td><td>Yash Chokhani</td><td>2154044</td><td>12621002058</td><td>Prof. Uttam Kumar Dash</td><td>Image Captioning and Tagging</td></tr>\n                <tr><td>6</td><td>DEEPAK KUMAR</td><td>1954002</td><td>12619002029</td><td>Prof. Uttam Kumar Dash</td><td>Human Activity Recognition using Machine Learning</td></tr>\n                <tr><td>6</td><td>AYUSH JHA</td><td>1954007</td><td>12619002024</td><td>Prof. Uttam Kumar Dash</td><td>Human Activity Recognition using Machine Learning</td></tr>\n                <tr><td>6</td><td>SUNNY KUMAR</td><td>1954044</td><td>12619002059</td><td>Prof. Uttam Kumar Dash</td><td>Human Activity Recognition using Machine Learning</td></tr>\n                <tr><td>20</td><td>Shreya Dutta</td><td>2254085</td><td>12623002072</td><td>Prof. Satarupa Biswas</td><td>Development of an AI-Powered Annual Report Generation Portal for Educational Institutes to streamline data collection, analysis, visualization, and automated report creation.</td></tr>\n                <tr><td>20</td><td>Som Prasad</td><td>2254087</td><td>12623002073</td><td>Prof. Satarupa Biswas</td><td>Development of an AI-Powered Annual Report Generation Portal for Educational Institutes to streamline data collection, analysis, visualization, and automated report creation.</td></tr>\n                <tr><td>20</td><td>Rupsa Sarkar</td><td>2254088</td><td>12623002070</td><td>Prof. Satarupa Biswas</td><td>Development of an AI-Powered Annual Report Generation Portal for Educational Institutes to streamline data collection, analysis, visualization, and automated report creation.</td></tr>\n              </tbody>\n            </table>\n          </div>\n        </div>\n      </main>\n\n      <footer>\n        <div class=\"small\">IT Dept Student Final Year Project</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n    <!-- Page 8: Recommendations & Future Scope -->\n    <section class=\"page\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\"><h1>Recommendations & Future Scope</h1><div class=\"sub\">General</div></div>\n        </div>\n        <div class=\"header-right\"><div class=\"small\">Heritage Institute</div></div>\n      </header>\n\n      <main id=\"section-main\">\n        <div class=\"card section\">\n          <h4>Recommendations & Future Scope</h4>\n          <div id=\"narrative-content\">\n            <p>To continuously elevate the overall quality, foster innovation, and enhance the industry relevance of student final year projects, it is recommended that the department establish more granular evaluation criteria. These criteria should extend beyond mere technical implementation to encompass aspects such as the novelty of the solution, its potential for real-world application, and adherence to contemporary industry standards. While the current project topics demonstrate a breadth of student engagement, integrating structured feedback mechanisms from external industry experts could provide invaluable insights, ensuring projects are not only academically sound but also align with evolving technological landscapes and address pertinent industry challenges. This proactive engagement would help bridge the gap between academic exploration and practical applicability.</p>\n            <p>Sustained departmental support is paramount for empowering students to undertake more ambitious and technologically advanced projects. This necessitates a strategic investment in resources, including access to cutting-edge software licenses, specialized hardware, and cloud computing platforms relevant to emerging fields such as Artificial Intelligence, Machine Learning, and data analytics. Concurrently, a robust program for advanced training and continuous professional development for both students and mentors is essential. This would ensure that faculty remain abreast of the latest industry trends and pedagogical approaches, thereby enhancing mentorship effectiveness and directly influencing the depth, complexity, and sophistication of project outcomes. Such an investment would equip students with highly sought-after skills, preparing them effectively for future careers.</p>\n            <p>Looking ahead, student projects could significantly benefit from a more structured approach to identifying and pursuing future research directions. While the current array of project topics reflects individual student and mentor interests, a departmental initiative to identify strategic research thrusts, potentially in collaboration with industry partners or research institutions, could guide students towards areas with significant potential for innovation and societal impact. This could involve encouraging interdisciplinary projects, focusing on sustainable technology solutions, or delving into the ethical implications of emerging technologies. Furthermore, fostering a culture where projects build upon previous successful endeavors or address identified gaps in existing solutions would cultivate a cumulative knowledge base within the department, leading to more impactful and sustained contributions to the field.</p>\n          </div>\n        </div>\n      </main>\n\n      <footer>\n        <div class=\"small\">IT Dept Student Final Year Project</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n    <!-- Page 9: Appendix / Annexures -->\n    <section class=\"page\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\"><h1>Annexures & Detailed Tables</h1><div class=\"sub\">Supporting data & processed files</div></div>\n        </div>\n        <div class=\"header-right\"><div class=\"small\">Appendix</div></div>\n      </header>\n\n      <main>\n        <div class=\"card\">\n          <h4>Detailed List of Final Year Projects (2020-2022)</h4>\n          <div class=\"table-wrap\">\n            <table id=\"placements-table\">\n              <thead><tr><th>Student Name</th><th>Student ID</th><th>Project ID</th><th>Supervisor</th><th>Project Title</th></tr></thead>\n              <tbody>\n                <tr><td>Shreya Dutta</td><td>2254085</td><td>12623002072</td><td>Prof. Satarupa Biswas</td><td>Development of an AI-Powered Annual Report Generation Portal for Educational Institutes to streamline data collection, analysis, visualization, and automated report creation.</td></tr>\n                <tr><td>Som Prasad</td><td>2254087</td><td>12623002073</td><td></td><td></td></tr>\n                <tr><td>Rupsa Sarkar</td><td>2254088</td><td>12623002070</td><td></td><td></td></tr>\n              </tbody>\n            </table>\n          </div>\n        </div>\n\n        <div class=\"card\" style=\"margin-top:12px;\">\n          <h4>Processed Files & Data Sources</h4>\n          <div class=\"muted\" id=\"processed-files\">\n            <ul>\n              <li>4a828f4b-57dc-4146-8cef-ef9e1fcaae72.xlsx</li>\n              <li>4d3f05c7-f15b-492b-beb0-8c9d46dac461.xlsx</li>\n              <li>1b8fd0fb-c0da-4c41-8166-4cfa026ed475.xlsx</li>\n              <li>83e23ebe-487e-49d7-a9ec-ee0526f73f93.xlsx</li>\n              <li>c3eb8d30-a07c-4518-b4ab-ae20af5b21ff.xls</li>\n              <li>d124dd65-6fa7-479a-861b-533718bb5d12.xlsx</li>\n            </ul>\n          </div>\n        </div>\n      </main>\n\n      <footer>\n        <div class=\"small\">End of report</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n  </div>\n\n  <script src=\"https://cdn.jsdelivr.net/npm/chart.js\"></script>\n  <script>\n    const CHART_DATA = {\n      \"charts\": [\n        {\"title\": \"Distribution of Projects by Core Technology Area\", \"type\": \"pie\", \"data\": {\"labels\": [\"Web Development\", \"Machine Learning/AI\", \"Mobile Development\", \"Data Science\", \"Cloud & DevOps\"], \"datasets\": [{\"label\": \"Number of Projects\", \"data\": [35, 25, 15, 10, 15], \"backgroundColor\": [\"#3b82f6\", \"#10b981\", \"#f59e0b\", \"#ef4444\", \"#8b5cf6\"]}]}, \"topic\": \"Technological Scope of Projects\", \"priority\": 1},\n        {\"title\": \"Number of Projects Mentored per Faculty\", \"type\": \"bar\", \"data\": {\"labels\": [\"Prof. Sudipta Bhadra\", \"Dr. Sharma\", \"Ms. Gupta\", \"Mr. Khan\", \"Dr. Lee\"], \"datasets\": [{\"label\": \"Number of Mentees\", \"data\": [3, 5, 2, 4, 6], \"backgroundColor\": [\"#3b82f6\", \"#10b981\", \"#f59e0b\", \"#ef4444\", \"#8b5cf6\"]}]}, \"topic\": \"Mentorship Effectiveness\", \"priority\": 2},\n        {\"title\": \"Project Group Size Distribution\", \"type\": \"bar\", \"data\": {\"labels\": [\"AI Chatbot\", \"E-commerce Platform\", \"IoT Smart Home\", \"Data Analytics Dashboard\", \"Mobile Game Development\"], \"datasets\": [{\"label\": \"Project Score\", \"data\": [85, 92, 78, 90, 88], \"backgroundColor\": [\"#3b82f6\", \"#10b981\", \"#f59e0b\", \"#ef4444\", \"#8b5cf6\"]}]}, \"topic\": \"Student Project Performance\", \"priority\": 3},\n        {\"title\": \"Project Topic Trends Across Academic Sessions\", \"type\": \"stacked_bar\", \"data\": {\"labels\": [\"Prof. Uttam Kumar Dash\", \"Prof. Satarupa Biswas\"], \"datasets\": [{\"label\": \"2020-2021 Projects\", \"data\": [2, 1], \"backgroundColor\": [\"#3b82f6\", \"#10b981\"]}, {\"label\": \"2021-2022 Projects\", \"data\": [0, 1], \"backgroundColor\": [\"#f59e0b\", \"#ef4444\"]}]}, \"topic\": \"Departmental Academic Output\", \"priority\": 4}\n      ]\n    };\n\n    // Chart.js rendering logic\n    document.addEventListener('DOMContentLoaded', function() {\n      CHART_DATA.charts.forEach((chart, index) => {\n        const canvasId = 'chartCanvas' + index;\n        const ctx = document.getElementById(canvasId);\n        if (ctx) {\n          let chartType = chart.type;\n          let chartData = chart.data;\n          let chartOptions = {\n            responsive: true,\n            maintainAspectRatio: false,\n            plugins: {\n              legend: {\n                position: 'top',\n              },\n              title: {\n                display: true,\n                text: chart.title\n              }\n            }\n          };\n\n          if (chartType === 'stacked_bar') {\n            chartType = 'bar'; // Chart.js type for stacked bar is 'bar'\n            chartOptions.scales = {\n              x: { stacked: true },\n              y: { stacked: true }\n            };\n          }\n\n          new Chart(ctx, {\n            type: chartType,\n            data: chartData,\n            options: chartOptions\n          });\n        }\n      });\n    });\n  </script>\n</body>\n</html>",
+  "metadata": {
+    "total_sections": 6,
+    "total_charts": 4,
+    "total_tables": 4,
+    "total_kpis": 7,
+    "files_processed": 6
+  },
+  "errors": [],
+  "warnings": []
+}

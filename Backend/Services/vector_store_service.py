@@ -12,7 +12,7 @@ from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 # --- THIS IS THE FIX ---
 # The import path for the retriever has been updated to the correct location
-from langchain.retrievers import ContextualCompressionRetriever
+from langchain_classic.retrievers import ContextualCompressionRetriever
 from langchain_cohere import CohereRerank
 
 from config import VECTOR_STORES_BASE_DIR, COHERE_API_KEY

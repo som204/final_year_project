@@ -9,6 +9,8 @@ from sqlalchemy.ext.asyncio import (
 from sqlalchemy.orm import DeclarativeBase
 from dotenv import load_dotenv
 import os
+from contextlib import asynccontextmanager
+from sqlalchemy.exc import DBAPIError
 
 # Load environment variables from .env
 load_dotenv()
@@ -28,12 +30,16 @@ DATABASE_URL = f"postgresql+asyncpg://{USER}:{PASSWORD}@{HOST}:{PORT}/{DBNAME}?s
 engine = create_async_engine(
     DATABASE_URL,
     echo=True,
+    
 )
 
 SessionLocal = async_sessionmaker(
     bind=engine,
     class_=AsyncSession,
     expire_on_commit=False,
+    autoflush=False,
+    autocommit=False,
+    
 )
 
 class Base(DeclarativeBase):

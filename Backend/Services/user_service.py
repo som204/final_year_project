@@ -191,3 +191,49 @@ class UserService:
         except SQLAlchemyError as e:
             await db.rollback()
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Could not delete user due to a database error.")
+        
+    
+    @staticmethod
+    async def update_user_service(user_id: int, update_data: dict, db: AsyncSession) -> dict:
+        """Updates an existing user. Only allow changing non-credential details (no username, email or password)."""
+        try:
+            # 1. Disallow changing restricted fields
+            forbidden = {"username", "password", "email"} # Added email to forbidden list based on docstring
+            attempted = forbidden.intersection(update_data.keys())
+            if attempted:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail=f"Cannot change fields via this endpoint: {', '.join(sorted(attempted))}"
+                )
+
+            # 2. Fetch User
+            stmt = select(User).filter(User.id == user_id)
+            result = await db.execute(stmt)
+            user = result.scalars().first()
+            if not user:
+                raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
+
+            # 3. Apply allowed updates to the DB object
+            for key, value in update_data.items():
+                if hasattr(user, key):
+                    setattr(user, key, value)
+
+            # 4. Commit changes to Database
+            await db.commit()
+            await db.refresh(user)
+
+            # 5. Prepare Response
+            user_response = UserResponse.model_validate(user, from_attributes=True)
+            resp_dict = user_response.model_dump()
+            
+            # Manually add fields if they aren't in the Pydantic model but exist on the DB model
+            resp_dict["dept_id"] = getattr(user, "department_id", None)
+            resp_dict["institute_id"] = getattr(user, "institute_id", None)
+
+            return resp_dict
+
+        except SQLAlchemyError as e:
+            await db.rollback()
+            print(e)
+            # It is often helpful to log 'e' here for debugging
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Database error while updating user")

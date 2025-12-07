@@ -14,3 +14,7 @@ async def create_institute(institute_data: InstituteCreate, db: AsyncSession = D
 @router.get("/all", response_model=list[InstituteResponse])
 async def get_all_institutes(db: AsyncSession = Depends(get_db)):
     return await InstituteService.get_all_institutes_service(db)
+
+@router.put("/update/{institute_id}", response_model=InstituteResponse)
+async def update_institute(institute_id: int, institute_data: dict, db: AsyncSession = Depends(get_db)):
+    return await InstituteService.update_institute_service(institute_id, institute_data, db)

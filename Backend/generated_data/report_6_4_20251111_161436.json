@@ -1,0 +1,148 @@
+{
+  "final_report_data": {
+    "metadata": {
+      "generated_at": "2025-11-11T16:13:12.677347",
+      "institute_id": 4,
+      "project_id": 6,
+      "version": 1,
+      "format": "html",
+      "language": "en"
+    },
+    "title": "Annual Report 2022-2023 | University of Toronto",
+    "institute_name": "University of Toronto",
+    "institute_type": "University",
+    "report_year": "2022-2023",
+    "location": "Toronto, Ontario, Canada",
+    "executive_summary": "The 2022-2023 annual report for the University of Toronto (University), covering financial performance, academic metrics, student placements, and departmental operations. The data indicates a positive operating surplus and successful career outcomes for graduates at top firms like Amazon and IBM, supported by a detailed breakdown of faculty and student statistics across key departments.",
+    "kpis": [
+      {
+        "metric": "Total Students",
+        "value": "6500",
+        "category": "Academic",
+        "trend": "stable",
+        "icon": "📚"
+      },
+      {
+        "metric": "Total Faculty",
+        "value": "151",
+        "category": "Academic",
+        "trend": "stable",
+        "icon": "📚"
+      },
+      {
+        "metric": "Operating Surplus",
+        "value": "15,000",
+        "category": "Financial",
+        "trend": "stable",
+        "icon": "💰"
+      },
+      {
+        "metric": "Total Operating Revenue",
+        "value": "1,015,000",
+        "category": "Financial",
+        "trend": "stable",
+        "icon": "💰"
+      },
+      {
+        "metric": "Internal Research Funding",
+        "value": "120,000",
+        "category": "Research",
+        "trend": "stable",
+        "icon": "🔬"
+      },
+      {
+        "metric": "Highest Placement CTC",
+        "value": "28.8 LPA",
+        "category": "Placement",
+        "trend": "stable",
+        "icon": "💼"
+      },
+      {
+        "metric": "Average Placement CTC",
+        "value": "14.8 LPA",
+        "category": "Placement",
+        "trend": "stable",
+        "icon": "💼"
+      },
+      {
+        "metric": "Capital Expenditure Budget",
+        "value": "75,000",
+        "category": "Infrastructure",
+        "trend": "stable",
+        "icon": "🏛️"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Executive Summary",
+        "content": "The 2022-2023 fiscal year demonstrated robust financial health and operational efficiency, concluding with a notable positive outcome. The institution successfully generated a total operating revenue of ₹1,015,000 against total operating expenses of ₹1,000,000. This prudent fiscal management resulted in a significant operating surplus of ₹15,000, underscoring our commitment to sustainable growth and the effective stewardship of resources dedicated to our academic mission.\n\nA detailed analysis of our revenue streams highlights a diversified and stable financial base. Tuition and Fees remained the primary source of income, contributing ₹425,000, complemented by substantial support from Government Grants and Contracts at ₹280,000 and Research Grants at ₹150,000. On the expenditure side, our foremost investment was in our faculty and staff, with Salaries and Benefits constituting the largest expense at ₹540,000. Significant allocations were also directed towards core academic functions, including ₹120,000 for Academic Program Expenses and ₹110,000 for Research Expenses, reflecting our unwavering focus on educational and scholarly excellence.\n\nThe institution's strong financial position was further enhanced by non-operating activities, leading to a net surplus of ₹22,000 before transfers. After accounting for all financial activities, the year concluded with a total positive change in net position of ₹30,000. This sound financial footing provides a strong foundation for pursuing our strategic goals in the upcoming year, allowing for continued investment in academic innovation, research infrastructure, and comprehensive student development.",
+        "priority": 1,
+        "category": "General"
+      },
+      {
+        "title": "Academic Performance",
+        "content": "The institution's academic landscape is supported by a robust student body totaling 6,500 individuals across five core engineering departments. The Computer Science and Engineering (CSE) department represents the largest cohort with 2,200 students, followed by Electronics and Communication Engineering (ECE) with 1,600 students and Information Technology (IT) with 1,200. The Chemical Engineering and Applied Electronics & Instrumentation Engineering (AEIE) departments maintain more focused student populations of 800 and 700, respectively. The institution caters to both undergraduate and graduate levels of study, providing a comprehensive educational pathway for its diverse student intake.\n\nAn analysis of instructional resources reveals varied student-to-faculty ratios across the departments. The Chemical Engineering department maintains the most favorable ratio at 32:1, closely followed by the AEIE department at 35:1, fostering a more personalized learning environment. The IT and ECE departments operate with comparable ratios of approximately 43:1 and 44:1, respectively. The CSE department, consistent with its large student enrollment, has the highest student-to-faculty ratio at approximately 52:1, indicating a significant demand for its academic programs and faculty resources.\n\nA review of academic performance within a sample cohort of first-year CSE students indicates a broad distribution of achievement. The Cumulative Grade Point Average (CGPA) within this group ranges from 5.09 to an exceptional 9.9. A notable segment of these students demonstrated high academic merit, with several individuals securing a CGPA above 9.0. The data reflects a healthy academic spectrum, with performance distributed across various levels, providing a foundational benchmark for tracking student progress and identifying areas for academic support and enrichment.",
+        "priority": 2,
+        "category": "General"
+      },
+      {
+        "title": "Financial Overview",
+        "content": "The institution demonstrated sound financial management over the fiscal period, concluding with a positive change in net position of ₹30,000. Total operating revenues reached ₹1,015,000 against total operating expenses of ₹1,000,000, resulting in an operating surplus of ₹15,000. After accounting for net non-operating items, including investment gains of ₹10,000 and interest expenses of ₹3,000, the net surplus before transfers stood at ₹22,000. This solid performance underscores a period of fiscal stability and responsible resource management.\n\nA diversified revenue portfolio supported the institution's financial health. The primary source of income was Tuition & Fees, contributing ₹425,000 to the total revenue. Significant funding was also secured through Government Grants & Contracts, which amounted to ₹280,000, and Research Grants & Sponsored Programs, which provided an additional ₹150,000. Further contributions from Donations & Endowment Income (₹90,000) and Auxiliary Enterprises (₹45,000) complemented these major streams, showcasing a robust and multi-faceted income model.\n\nExpenditure was strategically allocated to support core academic and operational functions. The largest component of operating expenses was Salaries & Benefits, totaling ₹540,000, reflecting the institution's investment in its faculty and staff. Substantial funds were also directed towards Academic Program Expenses (₹120,000) and Research Expenses (₹110,000), reinforcing the commitment to academic excellence and innovation. Key operational costs included ₹90,000 for Facilities, Maintenance & Utilities and ₹70,000 for Student Services & Scholarships, ensuring a conducive learning environment and student support.\n\nAn analysis of departmental performance reveals that all reporting academic units operated with a financial surplus. The Computer Science and Engineering (CSE) department was the most significant contributor, generating a surplus of ₹30,000 from revenues of ₹150,000. The Electronics and Communication Engineering (ECE) department also performed strongly, achieving a surplus of ₹18,000, followed by the Information Technology (IT) department with a surplus of ₹15,000. The Chemical and AEIE departments also concluded the period with positive financial outcomes, posting surpluses of ₹5,000 and ₹8,000, respectively, indicating financial viability across all reviewed disciplines.",
+        "priority": 3,
+        "category": "General"
+      },
+      {
+        "title": "Placements & Career Services",
+        "content": "The recent placement season demonstrated a robust engagement with a diverse portfolio of multinational corporations, reflecting strong industry confidence in our graduates. Students from the Computer Science & Engineering, Information Technology, Chemical, Electronics & Communication Engineering, and Applied Electronics & Instrumentation Engineering departments secured positions at leading firms. The list of recruiters included prominent technology giants such as Google, Amazon, IBM, Capgemini, Accenture, Wipro, and TCS, alongside core engineering leaders like ONGC, Reliance, Shell, Texas Instruments, Samsung, and ABB, ensuring a wide array of opportunities across various sectors.\n\nAn analysis of compensation packages reveals a highly competitive landscape, with offers ranging from 5.2 LPA to a maximum of 28.8 LPA. The Information Technology department attracted the highest compensation, with a student securing a 28.8 LPA package from Capgemini, followed by significant offers of 26.3 LPA from IBM and 24.9 LPA from Accenture. The Computer Science & Engineering department also saw exceptional placements, with students receiving packages of 21.4 LPA from Google and 21.3 LPA from Amazon. In the core engineering disciplines, Chemical Engineering students were placed with CTCs as high as 13.0 LPA from Shell and 11.7 LPA from Reliance, while Electronics & Communication Engineering graduates secured packages up to 14.5 LPA from Texas Instruments.\n\nThe correlation between student CGPA and placement outcomes indicates that while a strong academic record is advantageous, it is not the sole factor for securing high-value offers. For instance, the highest package of 28.8 LPA was awarded to an IT student with a 7.93 CGPA. Conversely, students with exemplary academic records, such as a 9.7 CGPA in IT, secured a 10.2 LPA package from IBM, while another IT student with a 9.32 CGPA received a 26.3 LPA offer from the same company. Notably, a CSE student with a 6.08 CGPA successfully secured a placement at Google with a 21.4 LPA package, underscoring that recruiters conduct a holistic assessment of candidates.",
+        "priority": 4,
+        "category": "General"
+      }
+    ],
+    "charts": [],
+    "tables": [],
+    "processed_files": [
+      {
+        "file_name": "71ca2edd-e448-42cc-b84b-338066552871.pdf",
+        "file_path": "uploads\\71ca2edd-e448-42cc-b84b-338066552871.pdf",
+        "file_hash": "92a8e79b852b7c5ed8808885a0139f842ec902a3a87fe193b80ddd569c90b6f4",
+        "processed_at": "2025-11-11T15:48:08.010222",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "547381e7-18f8-4029-bdfc-6d4283ac83fa.xlsx",
+        "file_path": "uploads\\547381e7-18f8-4029-bdfc-6d4283ac83fa.xlsx",
+        "file_hash": "71ccf7ddf6faf2ac3f7abdd082888f1fa080c67fac11e7bea5168e22428d4f61",
+        "processed_at": "2025-11-11T15:48:08.016809",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "c28579f1-9daa-4fda-9562-6e66ab82ed8a.xlsx",
+        "file_path": "uploads\\c28579f1-9daa-4fda-9562-6e66ab82ed8a.xlsx",
+        "file_hash": "6d3ce08ec5af20d1edf4e02a1ca9a03f2c93ea808305b15a6e0ecee4a44a5543",
+        "processed_at": "2025-11-11T15:48:08.027248",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "a670c87e-28b7-41ee-8490-8a4da7f91804.xlsx",
+        "file_path": "uploads\\a670c87e-28b7-41ee-8490-8a4da7f91804.xlsx",
+        "file_hash": "5b5489b03709fb3cef89b448c16b4b162dbd6cc056507a3a979c58955b301050",
+        "processed_at": "2025-11-11T15:48:08.067833",
+        "status": "already_indexed"
+      }
+    ],
+    "errors": []
+  },
+  "html_report": null,
+  "metadata": {
+    "total_sections": 4,
+    "total_charts": 0,
+    "total_tables": 0,
+    "total_kpis": 8,
+    "files_processed": 4,
+    "generation_timestamp": "2025-11-11T16:13:12.677347"
+  },
+  "errors": [
+    "LLM HTML Rendering failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50\nPlease retry in 23.435354757s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-pro\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 50\n}\n, retry_delay {\n  seconds: 23\n}\n]"
+  ],
+  "warnings": []
+}

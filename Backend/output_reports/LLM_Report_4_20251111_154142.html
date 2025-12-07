@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Annual Report 2022-2023 | University of Toronto</title>
+
+<style>
+  /* ---------- Page & print sizing ---------- */
+  @page { size: A4; margin: 18mm; }
+  html,body { height:100%; margin:0; padding:0; background:#f3f6f9; font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color:#0f1724; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+  :root{
+    --accent: #0a2540;
+    --accent-2: #046c5a;
+    --muted: #64748b;
+    --muted-2:#94a3b8;
+    --card:#ffffff;
+    --max-width: 178mm;
+    --shadow: 0 8px 28px rgba(10,37,64,0.06);
+  }
+
+  .container { width:var(--max-width); margin:8mm auto; padding:0; box-sizing:border-box; }
+
+  /* Each .page becomes a PDF page. Use padding to respect margins. */
+  .page { background: var(--card); margin-bottom:10mm; border-radius:6px; padding:18mm; box-sizing:border-box; box-shadow: none; min-height:257mm; display:flex; flex-direction:column; }
+  .page:last-child { page-break-after: auto; }
+  .page-break { page-break-after: always; }
+
+  /* Header & footer */
+  .header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e6eef6; padding-bottom:10px; margin-bottom:14px; }
+  .brand { display:flex; align-items:center; gap:12px; }
+  .brand .logo { width:56px; height:56px; border-radius:8px; background:linear-gradient(180deg,var(--accent),var(--accent-2)); display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:18px; letter-spacing:0.6px; }
+  .brand .meta { display:flex; flex-direction:column; }
+  .brand h1 { margin:0; font-size:18px; color:var(--accent); letter-spacing:0.2px; }
+  .brand .sub { margin-top:2px; font-size:13px; color:var(--muted); }
+
+  .header-right { text-align:right; font-size:12px; color:var(--muted); }
+  .header-right .title { font-weight:600; color:var(--accent); }
+  .header-right .small { color:var(--muted-2); margin-top:4px; }
+
+  footer { margin-top:auto; padding-top:10px; border-top:1px solid #eef2f7; display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--muted); }
+  .pagenum:before { content: counter(page); } /* basic CSS page counter */
+
+  /* Page title */
+  .cover-title { margin: 12px 0 18px 0; }
+  .cover-title h2 { font-size:28px; margin:0; color:var(--accent); letter-spacing:-0.2px; }
+  .cover-title p { margin:6px 0 0 0; color:var(--muted); font-size:14px; }
+
+  /* Table of contents */
+  .toc { margin-top:6mm; }
+  .toc h3 { margin:0 0 10px 0; color:var(--accent); font-size:16px; }
+  .toc ul { list-style:none; padding:0; margin:0; }
+  .toc li { display:flex; gap:12px; justify-content:space-between; padding:8px 0; border-bottom:1px dashed #f1f5f9; color:var(--muted); font-size:13px; }
+
+  /* KPI row */
+  .kpi-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+  .kpi { background: linear-gradient(180deg, #ffffff, #fbfdff); padding:12px 14px; border-radius:10px; min-width:140px; box-shadow: var(--shadow); border:1px solid #eef6fb; display:flex; flex-direction:column; }
+  .kpi .label { font-size:12px; color:var(--muted); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.6px; }
+  .kpi .value { font-size:20px; color:var(--accent); font-weight:700; }
+
+  /* Card */
+  .card { background:var(--card); border-radius:10px; padding:14px; box-shadow:var(--shadow); border:1px solid #eef6fb; margin-bottom:14px; }
+  .card h4 { margin:0 0 8px 0; color:var(--accent); font-size:16px; }
+  .card .desc { color:var(--muted); font-size:13px; margin-bottom:10px; }
+
+  /* Chart placeholders (NO images) */
+  .chart-grid { display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:8px; }
+  .chart-panel { height:220px; border-radius:8px; background:linear-gradient(180deg,#fbfdff,#f7fbff); border:1px solid #eef6fb; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; padding:8px; box-sizing:border-box; }
+  .chart-caption { margin-top:8px; font-size:12px; color:var(--muted); }
+
+  /* Tables */
+  .table-wrap { overflow:auto; margin-top:8px; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th, td { text-align:left; padding:10px 8px; border-bottom:1px solid #eef2f7; }
+  th { background:#fbfdff; color:var(--muted); font-weight:700; font-size:13px; }
+  tbody tr:last-child td { border-bottom: none; }
+
+  /* Section text */
+  .section { margin-top:12px; }
+  .section h3 { margin:0 0 8px 0; color:var(--accent); font-size:16px; }
+  .section p { color:#0b1b28; line-height:1.55; font-size:13px; margin:0 0 10px 0; }
+
+  .two-col { display:grid; grid-template-columns:1fr 320px; gap:16px; align-items:start; }
+
+  .muted { color:var(--muted); font-size:13px; }
+  .muted-2 { color:var(--muted-2); font-size:12px; }
+
+  .actions { display:flex; gap:8px; margin-bottom:12px; }
+  .button { background:#f8fafc; border:1px solid #e6eef6; padding:8px 10px; border-radius:8px; font-size:13px; color:var(--muted); }
+
+  .break-after { page-break-after: always; }
+
+  @media print {
+    body { background:white; }
+    .container { margin:0; width:auto; }
+    .page { box-shadow:none; border-radius:0; padding:18mm; min-height:auto; }
+    .no-print { display:none; }
+    thead { display:table-header-group; }
+    tfoot { display:table-footer-group; }
+  }
+
+  @media (max-width:900px) {
+    .chart-grid { grid-template-columns:1fr; }
+    .two-col { grid-template-columns:1fr; }
+    .kpi-row { gap:10px; }
+  }
+
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Page 1: Cover -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta">
+            <h1>University of Toronto</h1>
+            <div class="sub">University • Toronto, Ontario, Canada</div>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <div class="title">Annual Report 2022-2023</div>
+          <div class="small">Prepared by Office of Institutional Research</div>
+        </div>
+      </header>
+
+      <main style="margin-top:10px;">
+        <div class="cover-title">
+          <h2>Annual Report 2022-2023 | University of Toronto</h2>
+          <p class="muted">A comprehensive review of the 2022-2023 academic year.</p>
+        </div>
+
+        <div class="two-col" style="margin-top:24mm;">
+          <div>
+            <div class="card">
+              <h4>Executive Summary</h4>
+              <div class="desc">The 2022-2023 annual report for the University of Toronto (University), covering financial performance, student placements, academic standing, and departmental operations. This summary highlights the institution's planned operating surplus, strong career outcomes with companies like Amazon and IBM, and a detailed breakdown of departmental revenue and faculty qualifications.</div>
+              <div class="section">
+                <p class="muted">Key highlights:</p>
+                <ul class="muted">
+                  <li>Achieved a planned operating surplus of ₹15,000, demonstrating strong financial health.</li>
+                  <li>Secured top placements with leading companies including IBM, Amazon, Capgemini, and Accenture.</li>
+                  <li>Computer Science and Engineering (CSE) department led in student enrollment and financial contribution.</li>
+                  <li>Maintained a diverse and experienced faculty base, with 20% holding doctoral degrees in key departments.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <aside>
+            <div class="card">
+              <h4>Snapshot</h4>
+              <div class="kpi-row">
+                <div class="kpi"><div class="label">TOTAL STUDENTS</div><div class="value">6500</div></div>
+                <div class="kpi"><div class="label">OPERATING SURPLUS</div><div class="value">15,000</div></div>
+                <div class="kpi"><div class="label">HIGHEST PLACEMENT PACKAGE (CTC)</div><div class="value">28.8 LPA</div></div>
+              </div>
+              <div class="muted-2" style="margin-top:10px;">Report generated: <strong>2025-11-11T15:39:18.705403</strong></div>
+            </div>
+          </aside>
+        </div>
+
+      </main>
+
+      <footer>
+        <div>Office of Institutional Research</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 2: TOC & KPIs -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta">
+            <h1>Contents</h1>
+            <div class="sub">Report structure & key metrics</div>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="small">University of Toronto</div>
+        </div>
+      </header>
+
+      <main>
+        <div class="card toc">
+          <h3>Table of Contents</h3>
+          <ul>
+            <li><span>Executive Summary</span><span>3</span></li>
+            <li><span>Financial Overview</span><span>4</span></li>
+            <li><span>Placements & Career Services</span><span>5</span></li>
+            <li><span>Academic Performance</span><span>6</span></li>
+            <li><span>Faculty Accomplishments</span><span>7</span></li>
+            <li><span>Research & Publications</span><span>8</span></li>
+            <li><span>Student Achievements</span><span>9</span></li>
+            <li><span>Infrastructure Development</span><span>10</span></li>
+            <li><span>Future Goals & Vision</span><span>11</span></li>
+            <li><span>Annexures & Detailed Tables</span><span>12</span></li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h4>Key Performance Indicators</h4>
+          <div class="desc">At-a-glance metrics for the 2022-2023 academic year.</div>
+          <div class="kpi-row" style="margin-top:12px;">
+            <div class="kpi"><div class="label">TOTAL STUDENTS</div><div class="value">6500</div></div>
+            <div class="kpi"><div class="label">TOTAL FACULTY</div><div class="value">151</div></div>
+            <div class="kpi"><div class="label">OPERATING SURPLUS</div><div class="value">15,000</div></div>
+            <div class="kpi"><div class="label">TOTAL OPERATING REVENUE</div><div class="value">1,015,000</div></div>
+            <div class="kpi"><div class="label">INTERNAL RESEARCH FUNDING</div><div class="value">120,000</div></div>
+            <div class="kpi"><div class="label">HIGHEST PLACEMENT PACKAGE (CTC)</div><div class="value">28.8 LPA</div></div>
+            <div class="kpi"><div class="label">CAPITAL EXPENDITURE BUDGET</div><div class="value">75,000</div></div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="small">Confidential</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 3: Executive Summary -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta"><h1>Executive Summary</h1><div class="sub">A high-level overview of the academic year</div></div>
+        </div>
+        <div class="header-right"><div class="small">2022-2023</div></div>
+      </header>
+      <main>
+        <div class="card section">
+          <h4>Summary of Performance</h4>
+          <p>The academic year demonstrated significant financial stability and operational efficiency. The institution concluded the period with a total operating revenue of ₹1,015,000 against total operating expenses of ₹1,000,000, resulting in a healthy operating surplus of ₹15,000. After accounting for net investment gains and other non-operating items, the final change in net position was a positive ₹30,000. This robust financial health was primarily driven by revenues from Tuition & Fees (₹425,000) and Government Grants & Contracts (₹280,000), while prudent management of expenditures was maintained, with Salaries & Benefits representing the largest component at ₹540,000.</p><p>On the academic front, departmental performance underscored the institution's strengths, particularly in technology and engineering disciplines. The Computer Science and Engineering (CSE) department was a standout contributor, generating the highest departmental surplus of ₹30,000 while serving the largest student body of 2,200. Other key departments, including Electronics and Communication Engineering (ECE) and Information Technology (IT), also demonstrated strong financial viability with surpluses of ₹18,000 and ₹15,000, respectively. Collectively, these departments highlight a core academic structure that is both popular among students and operationally sound.</p><p>The institution's positive financial outcome, characterized by a ₹15,000 operating surplus, provides a solid foundation for future strategic initiatives. The demonstrated strength and financial self-sufficiency of high-demand departments such as CSE, ECE, and IT position the institution to further invest in these core areas. This financial stability will be crucial in pursuing continued academic excellence, enhancing research capabilities funded by the ₹150,000 in existing grants, and expanding student support services in the upcoming year. The focus will remain on leveraging these operational successes to reinforce our standing as a leading educational institution.</p>
+        </div>
+      </main>
+      <footer>
+        <div class="small">Source: Office of Institutional Research</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 4: Financial Overview -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta"><h1>Financial Overview</h1><div class="sub">Analysis of revenue, expenses, and departmental finances</div></div>
+        </div>
+        <div class="header-right"><div class="small">2022-2023</div></div>
+      </header>
+      <main>
+        <div class="card">
+          <h4>Financial Visualizations</h4>
+          <div class="desc">Visual breakdown of departmental performance and university-wide revenue sources.</div>
+          <div class="chart-grid">
+            <div class="chart-panel"><canvas id="chart-0"></canvas></div>
+            <div class="chart-panel"><canvas id="chart-1"></canvas></div>
+          </div>
+        </div>
+        <div class="card section">
+          <h4>Fiscal Performance Narrative</h4>
+          <p>The institution's financial performance for the period reflects a stable and well-managed fiscal position. Total operating revenue reached ₹1,015,000 against total operating expenses of ₹1,000,000, resulting in an operating surplus of ₹15,000. This outcome successfully met the planned operating surplus target for the year. After accounting for non-operating items, including net investment gains of ₹10,000, and transfers, the institution recorded a final change in net position of ₹30,000, indicating positive financial growth and effective resource management.</p><p>A diversified revenue stream underpinned the institution's financial health. Tuition and fees remained the primary source of income, contributing ₹425,000 to the total revenue. This was substantially supported by external funding, with Government Grants and Contracts providing ₹280,000 and Research Grants and Sponsored Programs adding another ₹150,000. Further contributions from Donations and Endowment Income (₹90,000) and Auxiliary Enterprises (₹45,000) demonstrate a robust and multi-faceted approach to revenue generation.</p>
+        </div>
+      </main>
+      <footer>
+        <div class="small">Source: Finance Department</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 5: Placements & Career Services -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta"><h1>Placements & Career Services</h1><div class="sub">Analysis of student career outcomes and recruitment</div></div>
+        </div>
+        <div class="header-right"><div class="small">2022-2023</div></div>
+      </header>
+      <main>
+        <div class="card">
+          <h4>Placement Data Visualization</h4>
+          <div class="desc">Distribution of student performance, which correlates with placement success.</div>
+          <div class="chart-grid" style="grid-template-columns: 1fr;">
+            <div class="chart-panel"><canvas id="chart-3"></canvas></div>
+          </div>
+        </div>
+        <div class="card section">
+          <h4>Recruitment Cycle Summary</h4>
+          <p>The recent placement cycle witnessed robust participation from a diverse range of leading corporations, resulting in successful career outcomes for students across multiple engineering disciplines. Prominent recruiters included IBM, Capgemini, Accenture, Amazon, ONGC, and Texas Instruments, each extending multiple offers to the graduating cohort. Other notable companies such as Google, TCS, Wipro, Shell, and Reliance also made significant contributions to the recruitment drive, reinforcing the institution's strong industry connections.</p><p>An analysis of department-wise placements indicates strong performance, particularly from the Information Technology department, which secured 7 offers from firms like Capgemini, IBM, and Accenture. The Computer Science and Engineering and Chemical Engineering departments followed with 4 placements each, with students receiving offers from top-tier companies including Amazon, Google, ONGC, and Shell. The Electronics and Communication Engineering department saw 3 students placed with industry leaders like Texas Instruments and Samsung, while the AEIE department secured a placement with ABB.</p><p>The compensation packages offered to students reflect a highly positive trend. The highest Cost to Company (CTC) package secured was 28.8 LPA, offered by Capgemini to a student from the IT department. The average CTC for the cohort stood at approximately 15.32 LPA, with a median CTC of 13.0 LPA, indicating a competitive and well-distributed salary range. The diversity in offers, from 5.2 LPA to 28.8 LPA, highlights the breadth of opportunities available to students, catering to various roles and industry sectors.</p>
+        </div>
+      </main>
+      <footer>
+        <div class="small">Source: Career Services Office</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 6: Academic Performance -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta"><h1>Academic Performance</h1><div class="sub">Enrollment data and student achievement metrics</div></div>
+        </div>
+        <div class="header-right"><div class="small">2022-2023</div></div>
+      </header>
+      <main>
+        <div class="card">
+          <h4>Enrollment Visualization</h4>
+          <div class="desc">A visual representation of student distribution across key departments.</div>
+          <div class="chart-grid" style="grid-template-columns: 1fr;">
+            <div class="chart-panel"><canvas id="chart-2"></canvas></div>
+          </div>
+        </div>
+        <div class="card section">
+          <h4>Student Body and Achievement</h4>
+          <p>The institution's student body comprises 6,500 students distributed across five key departments. The Department of Computer Science and Engineering (CSE) has the largest enrollment with 2,200 students, followed by Electronics and Communication Engineering (ECE) with 1,600 students, and Information Technology (IT) with 1,200 students. The Chemical Engineering and Applied Electronics and Instrumentation Engineering (AEIE) departments have smaller student populations of 800 and 700, respectively. The student population includes both undergraduate and graduate level students, indicating a diverse academic community pursuing a range of qualifications.</p><p>An analysis of departmental resources reveals varying student-faculty ratios across the disciplines. The Chemical Engineering department maintains the most favorable ratio at 32:1, with 25 faculty members for its 800 students. The AEIE department follows with a ratio of 35:1. The ratios in the larger departments are higher, with IT at approximately 43:1, ECE at 44:1, and the CSE department recording the highest student-faculty ratio at approximately 52:1, with 42 faculty members serving its 2,200 students.</p>
+        </div>
+      </main>
+      <footer>
+        <div class="small">Source: Registrar's Office</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 7: Faculty Accomplishments -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta"><h1>Faculty Accomplishments</h1><div class="sub">Profile of academic staff and qualifications</div></div>
+        </div>
+        <div class="header-right"><div class="small">2022-2023</div></div>
+      </header>
+      <main>
+        <div class="card">
+          <h4>Faculty Composition</h4>
+          <div class="desc">Distribution of faculty members across major departments.</div>
+          <div class="chart-grid" style="grid-template-columns: 1fr;">
+            <div class="chart-panel"><canvas id="chart-4"></canvas></div>
+          </div>
+        </div>
+        <div class="card section">
+          <h4>Faculty Profile and Leadership</h4>
+          <p>The institution's faculty profile is distinguished by a robust blend of academic qualifications and extensive professional experience. The Computer Science and Engineering (CSE) department is supported by 42 faculty members, while the Electronics and Communication Engineering (ECE) department comprises 36 faculty members. An analysis of the faculty composition reveals that approximately 20% of the academic staff in these key departments hold doctoral degrees. The experience spectrum is notably broad, ranging from 5 to 20 years, with several members such as Wendy Lee, Steven Lee, and Helen Clark possessing two decades of experience in their respective fields.</p><p>Departmental leadership is well-defined, with experienced academics like Michael Owen heading the CSE department as Head of Department. The faculty structure demonstrates a healthy balance between senior and junior positions, with a strategic mix of Professor and Assistant Professor roles across departments. This blend of seasoned professors and dynamic assistant professors fosters a rich environment for mentorship and academic innovation. The presence of highly experienced faculty, such as Uma Anderson with 17 years and Nina Davis with 18 years of experience, underscores the depth of expertise available to students at all levels of their academic journey.</p>
+        </div>
+      </main>
+      <footer>
+        <div class="small">Source: Human Resources & Academic Affairs</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 8: Research & Publications -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta"><h1>Research & Publications</h1><div class="sub">Overview of funding and research activities</div></div>
+        </div>
+        <div class="header-right"><div class="small">2022-2023</div></div>
+      </header>
+      <main>
+        <div class="card section">
+          <h4>Research Funding and Expenditure</h4>
+          <p>The institution's commitment to fostering a robust research ecosystem was underscored by significant financial inflows from external agencies. A total of ₹150,000 was secured through Research Grants and Sponsored Programs, complemented by an additional ₹280,000 from Government Grants and Contracts. This combined external funding reflects the high calibre of research proposals and the national relevance of the scholarly work undertaken by our faculty, providing essential resources for advanced academic inquiry.</p><p>To further catalyse innovation from within, a dedicated internal Research Funding Allocation of ₹120,000 was provisioned in the budget. These funds were strategically channelled to various departments, empowering them to pursue emergent research areas and providing crucial seed money for preliminary investigations. This internal support mechanism is instrumental in nurturing a vibrant research culture at the grassroots level and enabling faculty to develop competitive proposals for larger, external funding opportunities.</p><p>The operational execution of research activities resulted in total Research Expenses amounting to ₹110,000 for the period. This expenditure, well-aligned with the internal allocation, facilitated a wide range of scholarly pursuits, from laboratory work to fieldwork and data analysis. These investments in infrastructure, resources, and personnel are fundamental to the creation and dissemination of new knowledge, thereby enhancing the institution's academic standing and the intellectual contributions of its faculty.</p>
+        </div>
+      </main>
+      <footer>
+        <div class="small">Source: Office of Research Services</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 9: Student Achievements -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta"><h1>Student Achievements</h1><div class="sub">Scholarships and financial aid distribution</div></div>
+        </div>
+        <div class="header-right"><div class="small">2022-2023</div></div>
+      </header>
+      <main>
+        <div class="card section">
+          <h4>Financial Aid and Support</h4>
+          <p>The academic year demonstrated a strong commitment to student support through the provision of financial aid across multiple disciplines. Based on a representative sample, a total of 15,000 in scholarship funds was disbursed among five students, facilitating their educational pursuits. This financial assistance was awarded to students at both the Undergraduate and Graduate levels, underscoring the institution's dedication to supporting learners throughout their academic journey.</p><p>The distribution of scholarships spanned several key engineering departments, including Computer Science and Engineering (CSE), Electronics and Communication Engineering (ECE), Chemical Engineering (CHEMICAL), and Applied Electronics and Instrumentation Engineering (AEIE). Individual scholarship amounts varied, ranging from 1,000 to 5,000. Notably, a Graduate student from the CSE department was the recipient of the highest scholarship amount of 5,000, highlighting the significant support available for advanced studies.</p><p>This financial aid initiative had a considerable impact on reducing the economic burden on students and their families. The awarded scholarships covered a substantial portion of the total tuition fees for the recipients, ensuring that they could continue their studies with reduced financial strain. The support provided to students in diverse departments such as CSE, ECE, and CHEMICAL affirms the institution's objective of fostering talent across all its academic programmes.</p>
+        </div>
+      </main>
+      <footer>
+        <div class="small">Source: Financial Aid Office</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 10: Infrastructure Development -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta"><h1>Infrastructure Development</h1><div class="sub">Capital expenditure and campus enhancement</div></div>
+        </div>
+        <div class="header-right"><div class="small">2022-2023</div></div>
+      </header>
+      <main>
+        <div class="card section">
+          <h4>Capital Investment and Strategy</h4>
+          <p>The institution has allocated a significant Capital Expenditure Budget of ₹75,000 for the fiscal period, underscoring a firm commitment to the enhancement and expansion of its physical and technological infrastructure. This dedicated fund is central to the strategic plan for campus development, ensuring that facilities remain modern, functional, and conducive to a high-quality educational environment. The allocation represents a planned investment in the long-term assets of the institution, aimed at supporting both academic and extracurricular activities.</p><p>Funds from this capital budget are earmarked for a range of critical initiatives, including facilities maintenance, strategic upgrades to existing structures, and the implementation of new infrastructure projects. While specific project breakdowns are part of a detailed operational plan, the overarching goal is to improve the campus environment. This includes addressing deferred maintenance, enhancing classroom technology, and upgrading laboratory equipment to support advanced research and teaching methodologies.</p><p>These planned investments are crucial for sustaining the institution's competitive edge and enriching the student learning experience. The strategic deployment of the ₹75,000 capital budget is anticipated to yield substantial improvements in campus infrastructure, directly contributing to the institution's academic and research objectives. Careful management and oversight will ensure these funds are utilized effectively to meet the evolving needs of our students, faculty, and staff.</p>
+        </div>
+      </main>
+      <footer>
+        <div class="small">Source: Facilities Management</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 11: Future Goals & Vision -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta"><h1>Future Goals & Vision</h1><div class="sub">Strategic direction for the next 3-5 years</div></div>
+        </div>
+        <div class="header-right"><div class="small">2022-2023</div></div>
+      </header>
+      <main>
+        <div class="card section">
+          <h4>Strategic Vision</h4>
+          <p>Building upon the current academic profile of our first-year Computer Science and Engineering (CSE) cohort, our strategic vision for the next 3-5 years is centered on elevating student achievement and fostering a culture of excellence. The performance of the current intake, which shows an average CGPA of approximately 7.4, provides a crucial baseline for our future academic objectives. Our primary goal is to enhance this academic standing by implementing targeted strategies aimed at both supporting students who are facing challenges and providing advanced opportunities for high-achievers. This will involve a focused effort to improve overall cohort performance and ensure every student is positioned for success.</p><p>To achieve these academic goals, we will launch key initiatives designed to enhance the student experience and outcomes. Analysis of the current CSE cohort indicates that approximately 18% of students have a CGPA below 6.0, while a similar percentage maintains a CGPA above 9.0. In response, our plan includes the development of a structured academic support program for students requiring assistance, alongside an enrichment track offering early research and project-based learning for top performers. Future financial planning will prioritize investment in these areas, allocating resources towards mentorship programs, specialized workshops, and faculty development to support this dual-pronged approach to student development.</p><p>Our long-term vision for research and innovation is intrinsically linked to nurturing our undergraduate talent. By engaging our high-achieving students in departmental research activities early in their academic careers, we aim to cultivate a robust pipeline of future innovators. This strategy is designed to increase undergraduate participation in faculty-led projects, which will strengthen our research ecosystem. The success of this initiative will be tracked through metrics related to student involvement in research and its eventual impact on departmental grant receipts, aligning with our institutional model of allocating research overhead based on direct grant funding. This focus will ensure sustainable growth in our research and innovation capacity.</p>
+        </div>
+      </main>
+      <footer>
+        <div class="small">Source: Strategic Planning Committee</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Appendix / Annexures -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta"><h1>Annexures & Detailed Tables</h1><div class="sub">Supporting data & processed files</div></div>
+        </div>
+        <div class="header-right"><div class="small">Appendix</div></div>
+      </header>
+
+      <main>
+        <div class="card">
+          <h4>Key Faculty List</h4>
+          <div class="desc">A list of key faculty members from various departments. Note: The source data titled this "Top Placements" but contained faculty information.</div>
+          <div class="table-wrap">
+            <table class="min-w-full border divide-y">
+              <thead><tr><th>Name</th><th>Title</th><th>Department</th><th>Qualification</th><th>Experience (Years)</th></tr></thead>
+              <tbody>
+                <tr><td>Charlie Scott</td><td>Assistant Professor</td><td>CSE</td><td>M.Tech</td><td>5</td></tr>
+                <tr><td>Steven Lee</td><td>Professor</td><td>CSE</td><td>M.Tech</td><td>20</td></tr>
+                <tr><td>Eva Brown</td><td>Professor</td><td>CSE</td><td>B.Tech</td><td>10</td></tr>
+                <tr><td>Quentin Clark</td><td>Professor</td><td>CSE</td><td>B.Tech</td><td>5</td></tr>
+                <tr><td>Frank Garcia</td><td>Professor</td><td>CSE</td><td>M.Sc</td><td>18</td></tr>
+                <tr><td>Victor Zimmerman</td><td>Professor</td><td>CSE</td><td>B.Tech</td><td>17</td></tr>
+                <tr><td>Helen Young</td><td>Assistant Professor</td><td>CSE</td><td>M.Sc</td><td>4</td></tr>
+                <tr><td>Quentin Garcia</td><td>HOD</td><td>IT</td><td>M.Sc</td><td>22</td></tr>
+                <tr><td>Rachel Martin</td><td>Professor</td><td>IT</td><td>Ph.D.</td><td>7</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h4>Processed Files & Data Sources</h4>
+          <div class="muted">
+            <ul>
+              <li>71ca2edd-e448-42cc-b84b-338066552871.pdf</li>
+              <li>547381e7-18f8-4029-bdfc-6d4283ac83fa.xlsx</li>
+              <li>c28579f1-9daa-4fda-9562-6e66ab82ed8a.xlsx</li>
+              <li>a670c87e-28b7-41ee-8490-8a4da7f91804.xlsx</li>
+            </ul>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="small">End of report</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const chartData = {
+        "charts": [{"title": "Departmental Financial Performance (Revenue vs. Expenses)", "type": "bar", "data": {"labels": ["CSE", "IT", "ECE", "CHEMICAL", "AEIE"], "datasets": [{"label": "Revenue (Rupees)", "data": [150000, 90000, 110000, 70000, 60000], "backgroundColor": "#3b82f6"}, {"label": "Expenses (Rupees)", "data": [120000, 75000, 92000, 65000, 52000], "backgroundColor": "#ef4444"}]}, "topic": "departmental finances", "priority": 1}, {"title": "University Revenue Sources Breakdown", "type": "pie", "data": {"labels": ["Tuition & Fees", "Government Grants", "Donations & Endowment", "Sales & Services", "Other Sources"], "datasets": [{"label": "University Revenue by Source", "data": [42, 28, 15, 10, 5], "backgroundColor": ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6"]}]}, "topic": "university finances", "priority": 2}, {"title": "Student Enrollment by Department", "type": "bar", "data": {"labels": ["CSE", "ECE", "CHEMICAL", "AEIE"], "datasets": [{"label": "Enrollment by Department", "data": [2, 1, 1, 1], "backgroundColor": ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6"]}]}, "topic": "academic enrollment", "priority": 3}, {"title": "Distribution of Placement Packages (CTC)", "type": "bar", "data": {"labels": ["5.0-5.9", "6.0-6.9", "7.0-7.9", "8.0-8.9", "9.0-9.9"], "datasets": [{"label": "Student CGPA Distribution", "data": [5, 7, 7, 4, 5], "backgroundColor": ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6"]}]}, "topic": "student placements", "priority": 4}, {"title": "Faculty Qualifications Mix (Ph.D., M.Tech, etc.)", "type": "doughnut", "data": {"labels": ["CSE", "IT", "AEIE", "ECE"], "datasets": [{"label": "Faculty by Department", "data": [14, 3, 12, 15], "backgroundColor": ["#3b82f6", "#10b981", "#f59e0b", "#ef4444"]}]}, "topic": "faculty profile", "priority": 5}]
+    };
+
+    chartData.charts.forEach((chart, index) => {
+        const ctx = document.getElementById(`chart-${index}`);
+        if (ctx) {
+            new Chart(ctx, {
+                type: chart.type,
+                data: chart.data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: chart.title,
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            color: '#0a2540'
+                        },
+                        legend: {
+                            position: chart.type === 'pie' || chart.type === 'doughnut' ? 'right' : 'top',
+                            labels: {
+                                font: {
+                                    size: 11
+                                },
+                                color: '#64748b'
+                            }
+                        }
+                    },
+                    scales: (chart.type === 'bar') ? {
+                        y: { beginAtZero: true }
+                    } : {}
+                }
+            });
+        }
+    });
+  </script>
+</body>
+</html>
