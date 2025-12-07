@@ -17,3 +17,11 @@ async def create_department(department: DepartmentCreate, db: AsyncSession = Dep
 @router.get("/institute/{institute_id}", response_model=list[DepartmentResponseSchema])
 async def get_departments_by_institute(institute_id: int, db: AsyncSession = Depends(get_db)):
     return await DepartmentService.get_department_by_institute_id(institute_id, db)
+
+@router.delete("/{department_id}")
+async def delete_department(department_id: int, db: AsyncSession = Depends(get_db)):
+    return await DepartmentService.delete_department(department_id, db)
+
+@router.put("/{department_id}", response_model=DepartmentResponseSchema)
+async def update_department(department_id: int, department: dict, db: AsyncSession = Depends(get_db)):
+    return await DepartmentService.update_department(department_id, department, db)

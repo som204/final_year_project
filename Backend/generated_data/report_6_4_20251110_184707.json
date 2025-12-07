@@ -1,0 +1,159 @@
+{
+  "final_report_data": {
+    "metadata": {
+      "generated_at": "2025-11-10T18:45:56.172370",
+      "institute_id": 4,
+      "project_id": 6,
+      "version": 1,
+      "format": "html",
+      "language": "en"
+    },
+    "title": "Annual Report 2022-2023 | University of Toronto",
+    "institute_name": "University of Toronto",
+    "institute_type": "University",
+    "report_year": "2022-2023",
+    "location": "Toronto, Ontario, Canada",
+    "executive_summary": "The 2022-2023 annual report for the University of Toronto (University), covering financial performance, academic outcomes, student placements, and faculty composition. The data indicates a positive operating surplus, successful student placements in top-tier companies like Amazon and IBM, and a diverse faculty base across key engineering and technology departments.",
+    "kpis": [
+      {
+        "metric": "Total Student Enrollment",
+        "value": "6500",
+        "category": "Academic",
+        "trend": "stable",
+        "icon": "📚"
+      },
+      {
+        "metric": "Operating Surplus",
+        "value": "₹15,000",
+        "category": "Financial",
+        "trend": "stable",
+        "icon": "💰"
+      },
+      {
+        "metric": "Highest Placement Package (CTC)",
+        "value": "28.8 LPA",
+        "category": "Placement",
+        "trend": "stable",
+        "icon": "💼"
+      },
+      {
+        "metric": "Average Placement Package (CTC)",
+        "value": "15.3 LPA",
+        "category": "Placement",
+        "trend": "stable",
+        "icon": "💼"
+      },
+      {
+        "metric": "External Research Grants",
+        "value": "₹150,000",
+        "category": "Research",
+        "trend": "stable",
+        "icon": "🔬"
+      },
+      {
+        "metric": "Total Faculty Members",
+        "value": "151",
+        "category": "Academic",
+        "trend": "stable",
+        "icon": "📚"
+      },
+      {
+        "metric": "Capital Expenditure Budget",
+        "value": "₹75,000",
+        "category": "Infrastructure",
+        "trend": "stable",
+        "icon": "🏛️"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Executive Summary",
+        "content": "The academic year demonstrated significant financial stability and operational efficiency, culminating in a positive change in net position of ₹30,000. This was achieved through prudent fiscal management, with total operating revenues reaching ₹1,015,000 against total operating expenses of ₹1,000,000, resulting in an operating surplus of ₹15,000. After factoring in net investment gains and other non-operating items, the net surplus before transfers stood at ₹22,000, underscoring a period of sustainable growth for the institution.\n\nThe institution's revenue streams were well-diversified, with Tuition and Fees being the primary contributor at ₹425,000. This was substantially supported by Government Grants and Contracts amounting to ₹280,000 and Research Grants of ₹150,000, highlighting a strong focus on sponsored projects. On the expenditure side, Salaries and Benefits represented the largest investment at ₹540,000. Significant resources were also allocated to core academic functions, including ₹120,000 for Academic Program Expenses and ₹110,000 for Research Expenses, reinforcing our commitment to educational and scholarly excellence.\n\nAn analysis of departmental performance indicates robust health across all disciplines. The Computer Science and Engineering (CSE) department was a notable leader, serving the largest student population of 2,200 and generating the highest departmental operational surplus of ₹30,000. The Electronics and Communication Engineering (ECE) and Information Technology (IT) departments also showed strong results, with student counts of 1,600 and 1,200 respectively, and contributing surpluses of ₹18,000 and ₹15,000. These figures reflect the strong demand for our technical programs and their efficient management.",
+        "priority": 1,
+        "category": "General"
+      },
+      {
+        "title": "Academic Performance",
+        "content": "The academic year's data reflects a robust departmental structure, with a significant concentration of students in the Computer Science and Engineering (CSE) department. An analysis of the first-year cohort alone shows an enrollment of 28 students in this discipline. Further sampling across various student records indicates a strong presence in other key fields, including Information Technology (IT), Chemical Engineering (CHEMICAL), Electronics and Communication Engineering (ECE), and Applied Electronics and Instrumentation Engineering (AEIE). The distribution across these departments highlights a diversified academic offering catering to core engineering and technology sectors.\n\nAn examination of student academic performance reveals a wide spectrum of achievement as measured by the Cumulative Grade Point Average (CGPA). Within the first-year CSE cohort, performance ranged from a high of 9.9 to a low of 5.09. Notably, five students in this group achieved a CGPA of 9.0 or higher, demonstrating exceptional academic merit. This trend of high achievement is consistent across other departments, with students in IT securing CGPAs as high as 9.7 and 9.41, and a student in Chemical Engineering achieving a 9.42. The data indicates that while there is a broad distribution of scores, a culture of high academic performance is prevalent across multiple disciplines.\n\nThe institution caters to both undergraduate and graduate levels of study. Available records identify three undergraduate and two graduate students across various specialisations. The undergraduate population is represented in the CSE, ECE, and Chemical Engineering departments. The graduate student sample includes representation from the CSE and AEIE departments. The presence of students in the Computer Science and Engineering department at both the undergraduate and graduate levels underscores a complete academic pathway within this key discipline.",
+        "priority": 2,
+        "category": "General"
+      },
+      {
+        "title": "Financial Overview",
+        "content": "The institution demonstrated a stable financial performance, concluding the period with a positive change in net position of ₹30,000. Total operating revenues reached ₹1,015,000 against total operating expenses of ₹1,000,000, resulting in an operating surplus of ₹15,000. This surplus was further augmented by net non-operating items, including investment gains of ₹10,000 and an interest expense of ₹3,000. After accounting for transfers and capital grants amounting to ₹8,000, the institution successfully strengthened its financial standing.\n\nA detailed breakdown of revenue sources reveals a diversified income stream. Tuition and Fees remained the primary contributor, generating ₹425,000. Significant support was received from Government Grants & Contracts, which amounted to ₹280,000, followed by Research Grants & Sponsored Programs at ₹150,000. Additional income was secured through Donations & Endowment Income (₹90,000), Auxiliary Enterprises such as housing and dining services (₹45,000), and other miscellaneous sources (₹15,000), all contributing to the institution's robust financial base.\n\nOn the expenditure side, Salaries & Benefits constituted the largest component of operating expenses, totalling ₹540,000. Substantial investments were directed towards core academic and research functions, with Academic Program Expenses at ₹120,000 and Research Expenses at ₹110,000. Other major operational costs included Facilities, Maintenance & Utilities at ₹90,000 and Student Services & Scholarships at ₹70,000. Administrative & General expenses were managed at ₹50,000, with Depreciation & Amortization recorded at ₹30,000.\n\nAn analysis of department-wise financial performance indicates that all academic departments operated with a surplus. The Computer Science and Engineering (CSE) department was the most significant contributor, generating a revenue of ₹150,000 against expenses of ₹120,000, yielding a surplus of ₹30,000. The Electronics and Communication Engineering (ECE) department also performed strongly with a surplus of ₹18,000, followed by the Information Technology (IT) department with a surplus of ₹15,000. The AEIE and Chemical departments also concluded the period with positive financial outcomes, reporting surpluses of ₹8,000 and ₹5,000, respectively.",
+        "priority": 3,
+        "category": "General"
+      },
+      {
+        "title": "Research & Publications",
+        "content": "The institution demonstrated a strong commitment to advancing research and innovation, successfully securing ₹150,000 in Research Grants and Sponsored Programs. This external funding represents a critical component of the institution's revenue and directly supports scholarly activities across various departments. The commitment to these initiatives is further evidenced by a dedicated allocation of ₹110,000 towards direct Research Expenses, ensuring that sponsored projects are adequately resourced to achieve their objectives and contribute to the body of knowledge in their respective fields.\n\nTo foster a robust research ecosystem, the institution employs a strategic internal support mechanism. Alongside external funding, departments receive an internal research allocation, which empowers them to pursue nascent research ideas and build foundational capacity. This internal commitment is complemented by a structured system for managing research overhead, which is allocated to departments based on their direct grant receipts. This model incentivizes the pursuit of external funding while ensuring that the underlying institutional infrastructure supporting research activities is sustainably maintained and strengthened.\n\nThe successful acquisition of significant external grants and the methodical management of research expenditures underscore the high calibre and research capacity of the faculty. This financial performance serves as a strong indicator of the faculty's ability to develop compelling, fundable research proposals and execute complex projects. The synergy between external grant success and internal funding mechanisms creates a virtuous cycle, enhancing the institution's research profile and its ability to attract further funding and talent.",
+        "priority": 4,
+        "category": "General"
+      },
+      {
+        "title": "Placements & Career Services",
+        "content": "The academic year demonstrated a robust and successful placement season, underscored by the active participation of leading multinational corporations. Our students secured coveted positions across a diverse range of industries, reflecting the high quality of our academic programs and their industry readiness. Prominent recruiters included industry giants such as Amazon, which extended the highest number of offers, followed by Samsung, Microsoft, Capgemini, and Nokia. Other distinguished companies like Google, IBM, TCS, and Accenture also made significant contributions to the recruitment drive, reinforcing their continued trust in our institution's talent.\n\nAn analysis of department-wise placements reveals strong performance across all engineering disciplines. The Electronics and Communication Engineering (ECE) department led the placements with 16 students securing positions, closely followed by the Computer Science and Engineering (CSE) department with 15 successful placements. The Chemical Engineering department recorded 10 placements, while the Information Technology (IT) and Applied Electronics & Instrumentation Engineering (ΑΕΙΕ) departments saw 9 and 7 students placed, respectively, in reputable organizations.\n\nThe compensation packages offered this year reflect the high value placed on our graduates by the industry. The highest Cost to Company (CTC) package secured was an impressive 28.8 LPA, offered by Capgemini to a student from the Information Technology department. The overall average CTC stood at 14.07 LPA, indicating a strong earning potential for our graduates. Furthermore, the median CTC was 12.0 LPA, which provides a clear representation of the typical salary package and highlights the consistent success of our students in securing well-compensated roles.",
+        "priority": 5,
+        "category": "General"
+      },
+      {
+        "title": "Student Achievements",
+        "content": "The academic year was marked by exceptional student performance, with several individuals achieving outstanding Cumulative Grade Point Averages (CGPA). Notably, Noah Miller from the IT department secured the highest CGPA of 9.7. Other top performers included Ethan Gonzalez from the Chemical department with a CGPA of 9.42, and Noah Lopez and Harper Miller, both from the IT department, achieving CGPAs of 9.41 and 9.32 respectively. These results underscore the high academic standards maintained across various disciplines.\n\nThis academic excellence translated directly into significant career achievements, with students securing placements in leading national and multinational corporations. The placement outcomes were highlighted by several high-value compensation packages. Amelia Davis of the IT department received the highest offer of 28.8 LPA from Capgemini, followed by Harper Miller, also from IT, with a 26.3 LPA package from IBM. Charlotte Martin secured a notable 24.9 LPA offer from Accenture, demonstrating the strong industry demand for our graduates.\n\nSuccess was evident across all engineering streams. Students from the Computer Science and Engineering (CSE) department were placed at top technology firms such as Amazon and Google. The Chemical engineering department saw students like Ethan Gonzalez and Alexander Miller secure positions at ONGC. Similarly, graduates from the Electronics and Communication Engineering (ECE) department received offers from industry leaders including Texas Instruments and Samsung, reflecting the comprehensive and industry-relevant training provided by the institution.",
+        "priority": 6,
+        "category": "General"
+      },
+      {
+        "title": "Faculty Accomplishments",
+        "content": "The institution's academic strength is supported by a robust faculty base distributed across its core engineering disciplines. The Computer Science and Engineering department is the largest with 42 faculty members, followed by Electronics and Communication Engineering with 36, Information Technology with 28, Chemical Engineering with 25, and Applied Electronics and Instrumentation Engineering with 20. This distribution underscores the institution's commitment to providing comprehensive instruction and mentorship across its primary technical programmes.\n\nAn analysis of faculty profiles reveals a strong commitment to advanced academic qualifications and extensive professional experience. Within the Computer Science and Engineering department, the available data indicates a diverse mix of qualifications, including 3 Ph.D. holders, 5 with M.Tech degrees, and others with M.Sc and B.Tech qualifications. The Information Technology department demonstrates a significant concentration of advanced scholarship, with 7 of the 15 listed faculty members holding a Ph.D. The experience across these departments is substantial, ranging from 5 to 20 years, ensuring a blend of contemporary knowledge and seasoned pedagogical practice.\n\nDepartmental leadership is provided by experienced academicians who guide their respective faculties. The Computer Science and Engineering department is led by Head of Department Michael Owen, who possesses an M.Tech and 13 years of experience, while the AEIE department is headed by Victor Young. The faculty roster is further strengthened by a significant cohort of senior professors with extensive careers. In CSE, professors such as Wendy Lee and Steven Lee each contribute 20 years of experience. The IT department similarly benefits from the deep expertise of faculty like Victor Lee and Yasmin Brown, both with 20 years of experience, and Ian Johnson with 19 years, providing mentorship and academic stability.",
+        "priority": 8,
+        "category": "General"
+      }
+    ],
+    "charts": [],
+    "tables": [],
+    "processed_files": [
+      {
+        "file_name": "71ca2edd-e448-42cc-b84b-338066552871.pdf",
+        "file_path": "uploads\\71ca2edd-e448-42cc-b84b-338066552871.pdf",
+        "file_hash": "92a8e79b852b7c5ed8808885a0139f842ec902a3a87fe193b80ddd569c90b6f4",
+        "processed_at": "2025-11-10T18:26:57.233575",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "547381e7-18f8-4029-bdfc-6d4283ac83fa.xlsx",
+        "file_path": "uploads\\547381e7-18f8-4029-bdfc-6d4283ac83fa.xlsx",
+        "file_hash": "71ccf7ddf6faf2ac3f7abdd082888f1fa080c67fac11e7bea5168e22428d4f61",
+        "processed_at": "2025-11-10T18:26:57.237560",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "c28579f1-9daa-4fda-9562-6e66ab82ed8a.xlsx",
+        "file_path": "uploads\\c28579f1-9daa-4fda-9562-6e66ab82ed8a.xlsx",
+        "file_hash": "6d3ce08ec5af20d1edf4e02a1ca9a03f2c93ea808305b15a6e0ecee4a44a5543",
+        "processed_at": "2025-11-10T18:26:57.239899",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "a670c87e-28b7-41ee-8490-8a4da7f91804.xlsx",
+        "file_path": "uploads\\a670c87e-28b7-41ee-8490-8a4da7f91804.xlsx",
+        "file_hash": "5b5489b03709fb3cef89b448c16b4b162dbd6cc056507a3a979c58955b301050",
+        "processed_at": "2025-11-10T18:26:57.256209",
+        "status": "already_indexed"
+      }
+    ],
+    "errors": []
+  },
+  "html_report": null,
+  "metadata": {
+    "total_sections": 7,
+    "total_charts": 0,
+    "total_tables": 0,
+    "total_kpis": 7,
+    "files_processed": 4,
+    "generation_timestamp": "2025-11-10T18:45:56.172370"
+  },
+  "errors": [
+    "LLM HTML Rendering failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50\nPlease retry in 53.629007279s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-pro\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 50\n}\n, retry_delay {\n  seconds: 53\n}\n]"
+  ],
+  "warnings": []
+}

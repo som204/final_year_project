@@ -12,7 +12,9 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import "../pages/Admin/InstituteAdmin.css"; // Reusing the Institute Admin CSS
-import result from '../Data/data1';
+import result from "../Data/data1";
+import axios from "axios";
+import html2pdf from "html2pdf.js"; // ✅ NEW IMPORT
 
 const ReportManagement = () => {
   // --- State Management ---
@@ -36,6 +38,15 @@ const ReportManagement = () => {
   const [generationMessage, setGenerationMessage] = useState("");
   const [fileSearchTerm, setFileSearchTerm] = useState("");
   const [fileFilterDept, setFileFilterDept] = useState("all");
+
+  // NEW: Report name & description
+  const [reportName, setReportName] = useState("");
+  const [reportDescription, setReportDescription] = useState("");
+
+  // View / download states
+  const [isViewingReportId, setIsViewingReportId] = useState(null);
+  const [isDownloadingReportId, setIsDownloadingReportId] = useState(null); // ✅ NEW
+  const [viewError, setViewError] = useState(null);
 
   // --- Data Fetching ---
   const fetchInitialData = async () => {
@@ -157,6 +168,14 @@ const ReportManagement = () => {
   };
 
   const handleGenerateReport = async () => {
+    // Validation: require report name and at least one file
+    if (!reportName || reportName.trim() === "") {
+      setGenerationMessage({
+        type: "error",
+        text: "Please provide a name for the report.",
+      });
+      return;
+    }
     if (selectedFileIds.size === 0) {
       setGenerationMessage({
         type: "error",
@@ -164,42 +183,58 @@ const ReportManagement = () => {
       });
       return;
     }
+
     setIsGenerating(true);
     setGenerationMessage({
       type: "loading",
-      text: "Initializing AI agent... This may take a moment.",
+      text: "Generating Report... This may take a moment.",
     });
 
     const sourceFileIds = Array.from(selectedFileIds);
 
     try {
-      console.log("Selected Project ID:", selectedProject);
-      console.log("Source File IDs:", sourceFileIds);
-      // This is the endpoint for your AI agent
-      const response = await fetch("http://localhost:8000/reports/create", {
-        method: "POST",
-        credentials: "include",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          project_id: selectedProject,
-          source_file_ids: sourceFileIds,
-        }),
-      });
+      let response;
+      try {
+        const axiosRes = await axios.post(
+          "http://localhost:8000/reports/create",
+          {
+            project_id: selectedProject,
+            source_file_ids: sourceFileIds,
+            report_name: reportName,
+            report_desc: reportDescription,
+          },
+          {
+            withCredentials: true,
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+
+        response = {
+          ok: axiosRes.status >= 200 && axiosRes.status < 300,
+          status: axiosRes.status,
+          json: async () => axiosRes.data,
+        };
+      } catch (err) {
+        if (err.response) {
+          response = {
+            ok: false,
+            status: err.response.status,
+            json: async () => err.response.data,
+          };
+        } else {
+          throw err;
+        }
+      }
 
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.detail || "Report generation failed.");
       }
       const res = await response.json();
-      console.log(res);
-      setTimeout(() => {
-        navigate(`/report`, {
-          state: {
-            final_report_data: res.final_report_data,
-            metadata: res.metadata,
-          },
-        });
-      }, 5000);
+      const blob = new Blob([res.html_report], { type: "text/html" });
+      const url = URL.createObjectURL(blob);
+      window.open(url, "_blank");
+
       setGenerationMessage({
         type: "success",
         text: "Report generated successfully! Refreshing list...",
@@ -207,12 +242,124 @@ const ReportManagement = () => {
       // Refresh the reports list and switch back to the list tab
       fetchInitialData();
       setActiveTab("list");
+      // Reset the form (optional)
+      setReportName("");
+      setReportDescription("");
+      setSelectedFileIds(new Set());
     } catch (err) {
       setGenerationMessage({ type: "error", text: err.message });
     } finally {
       setIsGenerating(false);
 
       setTimeout(() => setGenerationMessage(""), 7000);
+    }
+  };
+
+  const handleViewReport = async (reportId) => {
+    setIsViewingReportId(reportId);
+    setViewError(null);
+
+    try {
+      const res = await axios.get(`http://localhost:8000/reports/${reportId}`, {
+        withCredentials: true,
+        headers: { Accept: "application/json" },
+      });
+
+      const data = res.data;
+      const html = data.html_report;
+
+      // If backend returns HTML content
+      if (html) {
+        const blob = new Blob([html], { type: "text/html" });
+        const url = URL.createObjectURL(blob);
+        window.open(url, "_blank");
+        return;
+      }
+      throw new Error("No viewable report content returned from server.");
+    } catch (err) {
+      setViewError(
+        err.response?.data?.detail || err.message || "Failed to load report."
+      );
+    } finally {
+      setIsViewingReportId(null);
+      setTimeout(() => setViewError(null), 5000);
+    }
+  };
+
+  // ✅ NEW: Download report as PDF by converting HTML → PDF on client
+  const handleDownloadReport = async (report) => {
+    setIsDownloadingReportId(report.id);
+    setViewError(null);
+
+    try {
+      const res = await axios.get(`http://localhost:8000/reports/${report.id}`, {
+        withCredentials: true,
+        headers: { Accept: "application/json" },
+      });
+
+      const data = res.data;
+      const html = data.html_report;
+
+      if (!html) {
+        throw new Error("No downloadable report content returned from server.");
+      }
+
+      const fileNameBase =
+        (report.file_name || `report-${report.id}`).replace(/\s+/g, "_") ||
+        `report-${report.id}`;
+
+      const options = {
+        margin: 10,
+        filename: `${fileNameBase}.pdf`,
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+      };
+
+      // html2pdf accepts an HTML string as source
+      await html2pdf().from(html).set(options).save();
+    } catch (err) {
+      setViewError(
+        err.response?.data?.detail ||
+          err.message ||
+          "Failed to download report."
+      );
+      setTimeout(() => setViewError(null), 5000);
+    } finally {
+      setIsDownloadingReportId(null);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    if (!window.confirm("Are you sure you want to delete this report?")) return;
+
+    try {
+      const res = await axios.delete(
+        `http://localhost:8000/reports/delete/${id}`,
+        {
+          withCredentials: true,
+          headers: { Accept: "application/json" },
+        }
+      );
+
+      if (res.status >= 200 && res.status < 300) {
+        // remove from local state to update UI immediately
+        setReports((prev) => prev.filter((r) => r.id !== id));
+      } else {
+        throw new Error(res.data?.detail || "Failed to delete report.");
+      }
+    } catch (err) {
+      const msg =
+        err.response?.data?.detail ||
+        err.message ||
+        "Failed to delete report.";
+      setReportsError(msg);
+      // attempt to refresh list to keep UI consistent
+      try {
+        await fetchInitialData();
+      } catch {
+        // ignore
+      }
+      setTimeout(() => setReportsError(null), 5000);
     }
   };
 
@@ -254,6 +401,11 @@ const ReportManagement = () => {
             {reportsError && (
               <p className="form-message error">{reportsError}</p>
             )}
+            {viewError && (
+              <p className="form-message error" style={{ marginTop: 8 }}>
+                {viewError}
+              </p>
+            )}
             {!isReportsLoading && !reportsError && (
               <table className="data-table ia-data-table">
                 <thead>
@@ -273,22 +425,37 @@ const ReportManagement = () => {
                           {projects.find((p) => p.id === report.project_id)
                             ?.name || "N/A"}
                         </td>
-                        <td>{new Date(report.created_at).toLocaleString()}</td>
+                        <td>
+                          {new Date(report.created_at).toLocaleString()}
+                        </td>
                         <td className="actions-cell">
+                          {/* View button */}
                           <button
                             className="action-button view"
-                            onClick={
-                              ()=>{navigate(`/report`, {
-                                state: {
-                                  final_report_data: result.final_report_data,
-                                  metadata: result.metadata,
-                                },
-                              })}
-                            }
+                            onClick={() => handleViewReport(report.id)}
+                            disabled={isViewingReportId === report.id}
                           >
-                            View
+                            {isViewingReportId === report.id
+                              ? "Viewing..."
+                              : "View"}
                           </button>
-                          <button className="action-button delete">
+
+                          {/* ✅ New Download button (beside View) */}
+                          <button
+                            className="action-button view"
+                            onClick={() => handleDownloadReport(report)}
+                            disabled={isDownloadingReportId === report.id}
+                          >
+                            {isDownloadingReportId === report.id
+                              ? "Downloading..."
+                              : "Download"}
+                          </button>
+
+                          {/* Delete button */}
+                          <button
+                            className="action-button delete"
+                            onClick={() => handleDelete(report.id)}
+                          >
                             <Trash2 size={16} />
                           </button>
                         </td>
@@ -324,6 +491,28 @@ const ReportManagement = () => {
                   </option>
                 ))}
               </select>
+            </div>
+
+            {/* NEW: Report name & description inputs */}
+            <div className="ia-form">
+              <label>
+                Report Name <span style={{ color: "red" }}>*</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Enter a descriptive report name"
+                value={reportName}
+                onChange={(e) => setReportName(e.target.value)}
+              />
+            </div>
+            <div className="ia-form">
+              <label>Report Description (optional)</label>
+              <textarea
+                placeholder="Describe the purpose and scope of this report (optional)"
+                value={reportDescription}
+                onChange={(e) => setReportDescription(e.target.value)}
+                rows={3}
+              />
             </div>
 
             {selectedProject && (

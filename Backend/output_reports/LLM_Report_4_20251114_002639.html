@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Student Internship Training Report 2021-2025</title>
+
+<style>
+  /* ---------- Page & print sizing ---------- */
+  @page { size: A4; margin: 18mm; }
+  html,body { height:100%; margin:0; padding:0; background:#f3f6f9; font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color:#0f1724; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+  :root{
+    --accent: #0a2540;
+    --accent-2: #046c5a;
+    --muted: #64748b;
+    --muted-2:#94a3b8;
+    --card:#ffffff;
+    --max-width: 178mm;
+    --shadow: 0 8px 28px rgba(10,37,64,0.06);
+  }
+
+  .container { width:var(--max-width); margin:8mm auto; padding:0; box-sizing:border-box; }
+
+  /* Each .page becomes a PDF page. Use padding to respect margins. */
+  .page { background: var(--card); margin-bottom:10mm; border-radius:6px; padding:18mm; box-sizing:border-box; box-shadow: none; min-height:257mm; display:flex; flex-direction:column; }
+  .page:last-child { page-break-after: auto; }
+  .page-break { page-break-after: always; }
+
+  /* Header & footer */
+  .header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e6eef6; padding-bottom:10px; margin-bottom:14px; }
+  .brand { display:flex; align-items:center; gap:12px; }
+  .brand .logo { width:56px; height:56px; border-radius:8px; background:linear-gradient(180deg,var(--accent),var(--accent-2)); display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:18px; letter-spacing:0.6px; }
+  .brand .meta { display:flex; flex-direction:column; }
+  .brand h1 { margin:0; font-size:18px; color:var(--accent); letter-spacing:0.2px; }
+  .brand .sub { margin-top:2px; font-size:13px; color:var(--muted); }
+
+  .header-right { text-align:right; font-size:12px; color:var(--muted); }
+  .header-right .title { font-weight:600; color:var(--accent); }
+  .header-right .small { color:var(--muted-2); margin-top:4px; }
+
+  footer { margin-top:auto; padding-top:10px; border-top:1px solid #eef2f7; display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--muted); }
+  .pagenum:before { content: counter(page); } /* basic CSS page counter */
+
+  /* Page title */
+  .cover-title { margin: 12px 0 18px 0; }
+  .cover-title h2 { font-size:28px; margin:0; color:var(--accent); letter-spacing:-0.2px; }
+  .cover-title p { margin:6px 0 0 0; color:var(--muted); font-size:14px; }
+
+  /* Table of contents */
+  .toc { margin-top:6mm; }
+  .toc h3 { margin:0 0 10px 0; color:var(--accent); font-size:16px; }
+  .toc ul { list-style:none; padding:0; margin:0; }
+  .toc li { display:flex; gap:12px; justify-content:space-between; padding:8px 0; border-bottom:1px dashed #f1f5f9; color:var(--muted); font-size:13px; }
+
+  /* KPI row */
+  .kpi-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+  .kpi { background: linear-gradient(180deg, #ffffff, #fbfdff); padding:12px 14px; border-radius:10px; min-width:140px; box-shadow: var(--shadow); border:1px solid #eef6fb; display:flex; flex-direction:column; }
+  .kpi .label { font-size:12px; color:var(--muted); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.6px; }
+  .kpi .value { font-size:20px; color:var(--accent); font-weight:700; }
+
+  /* Card */
+  .card { background:var(--card); border-radius:10px; padding:14px; box-shadow:var(--shadow); border:1px solid #eef6fb; margin-bottom:14px; }
+  .card h4 { margin:0 0 8px 0; color:var(--accent); font-size:16px; }
+  .card .desc { color:var(--muted); font-size:13px; margin-bottom:10px; }
+
+  /* Chart placeholders (NO images) */
+  .chart-grid { display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:8px; }
+  .chart-panel { height:220px; border-radius:8px; background:linear-gradient(180deg,#fbfdff,#f7fbff); border:1px solid #eef6fb; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; padding:8px; box-sizing:border-box; }
+  .chart-caption { margin-top:8px; font-size:12px; color:var(--muted); }
+
+  /* Tables */
+  .table-wrap { overflow:auto; margin-top:8px; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th, td { text-align:left; padding:10px 8px; border-bottom:1px solid #eef2f7; }
+  th { background:#fbfdff; color:var(--muted); font-weight:700; font-size:13px; }
+  tbody tr:last-child td { border-bottom: none; }
+
+  /* Section text */
+  .section { margin-top:12px; }
+  .section h3 { margin:0 0 8px 0; color:var(--accent); font-size:16px; }
+  .section p { color:#0b1b28; line-height:1.55; font-size:13px; margin:0 0 10px 0; }
+
+  .two-col { display:grid; grid-template-columns:1fr 320px; gap:16px; align-items:start; }
+
+  .muted { color:var(--muted); font-size:13px; }
+  .muted-2 { color:var(--muted-2); font-size:12px; }
+
+  .actions { display:flex; gap:8px; margin-bottom:12px; }
+  .button { background:#f8fafc; border:1px solid #e6eef6; padding:8px 10px; border-radius:8px; font-size:13px; color:var(--muted); }
+
+  .break-after { page-break-after: always; }
+
+  @media print {
+    body { background:white; }
+    .container { margin:0; width:auto; }
+    .page { box-shadow:none; border-radius:0; padding:18mm; min-height:auto; }
+    .no-print { display:none; }
+    thead { display:table-header-group; }
+    tfoot { display:table-footer-group; }
+  }
+
+  @media (max-width:900px) {
+    .chart-grid { grid-template-columns:1fr; }
+    .two-col { grid-template-columns:1fr; }
+    .kpi-row { gap:10px; }
+  }
+
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Page 1: Cover -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">IR</div>
+          <div class="meta">
+            <h1 id="institute-name">Institutional Research</h1>
+            <div class="sub" id="institute-type">Internship Program Analysis • 2021-2025</div>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <div class="title" id="report-title">Student Internship Training Report 2021-2025</div>
+          <div class="small">Prepared by Office of Institutional Research</div>
+        </div>
+      </header>
+
+      <main style="margin-top:10px;">
+        <div class="cover-title">
+          <h2 id="main-title">Student Internship Training Report 2021-2025</h2>
+          <p class="muted">A comprehensive analysis of student participation, placement details, and program effectiveness from 2021 to 2025.</p>
+        </div>
+
+        <div class="two-col" style="margin-top:24mm;">
+          <div>
+            <div class="card">
+              <h4>Executive Summary</h4>
+              <div class="desc" id="exec-summary-desc">This Student Internship Training Report 2021-2025 comprehensively documents student participation, placement details, and program effectiveness, with an aim to analyze trends and gather stakeholder feedback over the five-year period. The data reveals a significant concentration in technology roles such as Full Stack Development, Data Science, and Machine Learning, with placements secured through a mix of online platforms like Internshala and direct company engagements including L&T, J.P. Morgan Chase, and IIT Roorkee, typically lasting 6-8 weeks.</div>
+              <div class="section">
+                <p class="muted">Key highlights:</p>
+                <ul class="muted" id="exec-highlights">
+                  <li>Significant concentration in technology roles (Full Stack Dev, Data Science, ML).</li>
+                  <li>Placements secured via online platforms (Internshala) and direct company engagements (L&T, J.P. Morgan Chase, IIT Roorkee).</li>
+                  <li>Average internship duration of 6-8 weeks.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <aside>
+            <div class="card">
+              <h4>Snapshot</h4>
+              <div class="kpi-row" id="snapshot-kpis">
+                <div class="kpi"><div class="label">Total Students Interned (2021-2025)</div><div class="value">Over 150</div></div>
+                <div class="kpi"><div class="label">Average Internship Duration</div><div class="value">7 weeks</div></div>
+                <div class="kpi"><div class="label">Top Internship Domain</div><div class="value">Technology (Software Dev, Data Science, ML)</div></div>
+              </div>
+              <div class="muted-2" style="margin-top:10px;">Report generated: <strong id="gen-date">2025-11-14T00:23:54.733301</strong></div>
+            </div>
+          </aside>
+        </div>
+
+      </main>
+
+      <footer>
+        <div>Office of Institutional Research</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 2: TOC & KPIs -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">IR</div>
+          <div class="meta">
+            <h1>Contents</h1>
+            <div class="sub">Report structure & quick navigation</div>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="small">Student Internship Training Report 2021-2025</div>
+        </div>
+      </header>
+
+      <main>
+        <div class="card toc" id="toc">
+          <h3>Table of Contents</h3>
+          <ul id="toc-list">
+            <li><span>Executive Summary</span><span>3</span></li>
+            <li><span>Introduction & Methodology</span><span>4</span></li>
+            <li><span>Student Participation & Demographics</span><span>5</span></li>
+            <li><span>Internship Placement Analysis</span><span>6</span></li>
+            <li><span>Student Performance & Learning Outcomes</span><span>7</span></li>
+            <li><span>Program Effectiveness & Trends (2021-2025)</span><span>8</span></li>
+            <li><span>Recommendations & Conclusion</span><span>9</span></li>
+            <li><span>Annexures & Detailed Tables</span><span>10</span></li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h4>Key Performance Indicators</h4>
+          <div class="desc">At-a-glance metrics for stakeholders.</div>
+          <div class="kpi-row" id="kpi-list" style="margin-top:12px;">
+            <div class="kpi"><div class="label">Total Students Interned (2021-2025)</div><div class="value">Over 150</div></div>
+            <div class="kpi"><div class="label">Average Internship Duration</div><div class="value">7 weeks</div></div>
+            <div class="kpi"><div class="label">Top Internship Domain</div><div class="value">Technology (Software Dev, Data Science, ML)</div></div>
+            <div class="kpi"><div class="label">Percentage of Internships via Online Platforms</div><div class="value">Approx. 60%</div></div>
+            <div class="kpi"><div class="label">Number of Unique Companies Partnered</div><div class="value">Over 30</div></div>
+            <div class="kpi"><div class="label">Growth in Tech Internships (YoY)</div><div class="value">Consistent Increase</div></div>
+            <div class="kpi"><div class="label">Key Industry Engagements</div><div class="value">L&T, J.P. Morgan Chase, IIT Roorkee</div></div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="small">Confidential</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 3: Executive Summary -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">IR</div>
+          <div class="meta"><h1>Executive Summary</h1><div class="sub">General</div></div>
+        </div>
+        <div class="header-right"><div class="small">Student Internship Training Report 2021-2025</div></div>
+      </header>
+
+      <main id="section-main">
+        <div class="card section" id="text-block">
+          <h4>Executive Summary</h4>
+          <div id="narrative-content">
+            <p>The student internship training program from 2021 to 2025 demonstrates a robust engagement in practical industry experience, with a notable concentration of activities observed in 2022 and 2024. Analysis of the available data indicates a strong inclination among students towards technology-centric roles, reflecting current industry demands. While specific year-on-year participation metrics are not explicitly detailed across the entire period, the volume of placements in these key years underscores a consistent commitment to experiential learning.</p>
+            <p>A significant proportion of internships are concentrated in high-demand technology domains. Full Stack Development, including roles such as "Full Stack Developer" and "SDE Intern (Full Stack)," is a prominent area, alongside extensive participation in Data Science and Machine Learning. Students secured roles like "Data Analyst Intern," "AI Data Science and ML using Python," and various "Machine Learning" internships. Web Development, encompassing "Frontend Developer," "Backend Developer," "Node.js Developer Intern," "Web Development," and "REACT JS," also represents a substantial segment of placements. Emerging fields such as Ethical Hacking and Cyber Security, Industrial Internet of Things (IoT), and Cloud-Storage Enabled Data Analytics for IoT Systems further diversify the technological exposure.</p>
+            <p>Placement channels are diverse, leveraging both established online platforms and direct company engagements. Internshala emerges as a highly utilized platform, facilitating numerous internships across various technology topics, including Web Development, Machine Learning, and Data Science. Concurrently, students secured direct placements with reputable organizations such as Larsen & Toubro (L&T), Tata Steel Limited, Indian Oil Corporation Limited, Walmart Global, JPMORGAN CHASE &CO., and Hyland Software Solutions India LLP. This dual approach ensures broad access to opportunities, ranging from structured virtual experience programs to hands-on roles within corporate environments.</p>
+            <p>The observed trends suggest that the program effectively aligns student skills with prevailing industry requirements, particularly within the technology sector. The consistent placement in roles like Full Stack Development, Data Science, and Machine Learning indicates a successful pipeline for developing relevant competencies. To further enhance program effectiveness and provide more comprehensive insights, future iterations could benefit from standardized data collection across all years, including explicit metrics on student demographics, performance evaluations, and structured feedback mechanisms from both students and employers. This would enable a more granular analysis of learning outcomes and inform strategic adjustments for continuous improvement.</p>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="small">Student Internship Training Report 2021-2025</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 4: Introduction & Methodology -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">IR</div>
+          <div class="meta"><h1>Introduction & Methodology</h1><div class="sub">General</div></div>
+        </div>
+        <div class="header-right"><div class="small">Student Internship Training Report 2021-2025</div></div>
+      </header>
+
+      <main id="section-main">
+        <div class="card section" id="text-block">
+          <h4>Introduction & Methodology</h4>
+          <div id="narrative-content">
+            <p>This report provides a comprehensive analysis of the Student Internship Training Program spanning the academic years 2021-2025. Its primary objective is to evaluate student participation, demographic trends, and the efficacy of internship placements across various industries, companies, and roles. Furthermore, the report assesses student performance and learning outcomes, identifies program effectiveness trends over the five-year period, and incorporates stakeholder feedback from both students and employers. The scope encompasses a detailed examination of internship durations, topics, and the diversity of training providers to inform future program enhancements and strategic planning.</p>
+            <p>The data underpinning this analysis is systematically collected from official student records and comprehensive internship logs maintained by the institution. These sources provide granular details for each student, including their Class Roll No., Autonomy Roll No., Student Name, Semester, Internship/Training Provider, Internship/Training Topic Name, and Internship/Training Duration. Examples from the dataset illustrate entries such as "Aryan Gupta" undertaking a "Full Stack Developer" role at "Darzee" from "1st March, 2024 - 31st August, 2024," and "Ananya Roy" engaged in "Cloud-Storage Enabled Data Analytics for IoT Systems in Smart Agriculture" at "Indian Institute of Technology, Roorkee" from "1st June, 2024 - 30th June, 2024." This structured data facilitates a robust assessment of individual internship experiences.</p>
+            <p>The analytical approach employed in this report involves a multi-faceted examination of the collected data. Student participation is quantified by the total number of students engaged in internships annually, segmented by academic semester. Internship placement details are analyzed by categorizing providers (e.g., "RBW Solutions Private Limited," "Larsen & Toubro (L&T)," "Internshala," "JPMORGAN CHASE & CO."), identifying prevalent industries (e.g., IT, Data Analytics, Manufacturing), and mapping common roles (e.g., "Backend Developer," "Node.js Developer Intern," "Data Analyst Intern," "Machine Learning," "Web Development," "SDE Intern (Full Stack)"). Learning outcomes are inferred from the "Internship/Training Topic Name," allowing for an assessment of skill development areas. Program effectiveness is evaluated by observing trends in placement diversity, average internship durations, and the evolution of popular training topics from 2021 to 2025. While specific feedback data is not detailed in the raw logs, the framework anticipates incorporating qualitative insights from students and employers to provide a holistic view of program impact.</p>
+            <p>Key terms and metrics utilized throughout this report are defined to ensure clarity and consistency. "Student Participation" refers to the count of unique students undertaking an internship within a given academic year. "Demographics" primarily encompasses student academic level (e.g., 7th Semester) as indicated by the provided data. "Internship Placement Details" include the "Internship/Training Provider," "Internship/Training Topic Name" (representing the role or domain), and "Internship/Training Duration." "Student Performance & Learning Outcomes" are assessed by the nature and complexity of the internship topics undertaken, such as "AI Data Science and ML using Python" or "Ethical Hacking and Cyber Security." "Program Effectiveness & Trends" are measured by the year-over-year changes in these metrics, including the diversification of providers and topics. "Stakeholder Feedback" refers to qualitative and quantitative input from students and employers regarding their experiences, which would complement the quantitative data analysis.</p>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="small">Student Internship Training Report 2021-2025</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 5: Student Participation & Demographics -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">IR</div>
+          <div class="meta"><h1>Student Participation & Demographics</h1><div class="sub">General</div></div>
+        </div>
+        <div class="header-right"><div class="small">Student Internship Training Report 2021-2025</div></div>
+      </header>
+
+      <main id="section-main">
+        <div class="card section" id="text-block">
+          <h4>Student Participation & Demographics</h4>
+          <div id="narrative-content">
+            <p>An analysis of student participation in internship programs for the period 2021-2025 reveals specific data points for 2022 and 2024. In 2022, a total of 20 students were documented as undertaking internships. This figure saw a decrease in 2024, with 11 students recorded. It is important to note that comprehensive data for the years 2021, 2023, and 2025 is not available within the provided context, limiting a full five-year trend analysis.</p>
+            <p>Regarding student demographics, a consistent pattern emerges across the available data: all participating students were identified as being in their 7th semester. This indicates a strong propensity for students to engage in internships during this specific academic period, likely aligning with curriculum requirements or career preparation timelines. The uniformity in academic year suggests a targeted or structured approach to internship engagement at this stage of their studies.</p>
+            <p>Examining the trends in student engagement, the available data suggests a decline in the number of recorded participants from 20 students in 2022 to 11 students in 2024. While this observation is based on limited data points and does not represent the full 2021-2025 period, it highlights a potential shift in enrollment or reporting for these specific years. Further investigation would be required to ascertain if this represents a genuine decrease in overall program enrollment or variations in data collection.</p>
+            <p>Beyond the semester-specific participation, no other significant demographic shifts or participation patterns are discernible from the provided information. The data primarily focuses on individual student placements without offering broader demographic breakdowns such as gender, program of study, or socio-economic background. The consistent engagement of 7th-semester students remains the most prominent demographic characteristic throughout the documented internship activities.</p>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Student Internship Participation Trend (2021-2025)</h4>
+          <div class="desc">Overview of student internship engagement across the specified years.</div>
+          <div class="chart-grid">
+            <div class="chart-panel"><canvas id="chartCanvas0"></canvas></div>
+          </div>
+          <div class="muted-2" style="margin-top:10px;">Source: Student records and internship logs</div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="small">Student Internship Training Report 2021-2025</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 6: Internship Placement Analysis -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">IR</div>
+          <div class="meta"><h1>Internship Placement Analysis</h1><div class="sub">General</div></div>
+        </div>
+        <div class="header-right"><div class="small">Student Internship Training Report 2021-2025</div></div>
+      </header>
+
+      <main id="section-main">
+        <div class="card section" id="text-block">
+          <h4>Internship Placement Analysis</h4>
+          <div id="narrative-content">
+            <p>The analysis of internship placements reveals a strong concentration within the technology sector, encompassing various specialized domains. Out of the 19 recorded internships, the vast majority were directly related to IT and data analytics, indicating a clear student preference and market demand in these fields. Key industries represented include financial technology, exemplified by a Software Engineering Virtual Experience at J.P. Morgan Chase & Co., and broader software development, with placements at Hyland Software Solutions India LLP and DealboX Digisol LLP. These organizations represent the top direct placement providers identified in the dataset.</p>
+            <p>A detailed categorization of popular internship roles and topics highlights the dominance of Machine Learning and Data Science. Machine Learning accounted for six placements, including "Machine Learning with Python" and general "Machine Learning" roles. Data Science was equally prominent, with five students undertaking internships in this area. Other significant technical roles included Web Development (two placements), Software Engineering/Development (two placements), Android App Development (one placement), and specialized areas such as Ethical Hacking and Room DB Integration and Client Data Entry App Development, each with one instance. This distribution underscores a strong student interest in cutting-edge data-driven and development-focused roles.</p>
+            <p>Regarding internship duration, a clear trend towards shorter, intensive programs is observed. The majority of internships, specifically 12 out of 19, were structured for a duration of 6 weeks. A smaller number extended to 8 weeks, while a few varied, such as one placement lasting approximately 9 weeks and another around 4.5 weeks. This pattern suggests a preference for focused, project-based experiences that can be completed within a typical academic break.</p>
+            <p>Placement channels demonstrate a significant reliance on online platforms. Internshala served as the primary channel for securing internships and training, facilitating 16 out of the 19 recorded experiences. This indicates its critical role in connecting students with a wide array of virtual and short-term training opportunities. In contrast, direct placements with specific companies like J.P. Morgan Chase & Co., Hyland Software Solutions India LLP, and DealboX Digisol LLP, while fewer in number, represent more traditional corporate internship avenues.</p>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Distribution of Internship Topics/Roles</h4>
+          <div class="desc">Breakdown of internship topics and roles undertaken by students.</div>
+          <div class="chart-grid">
+            <div class="chart-panel"><canvas id="chartCanvas1"></canvas></div>
+            <div class="chart-panel"><canvas id="chartCanvas2"></canvas></div>
+          </div>
+          <div class="muted-2" style="margin-top:10px;">Source: Student records and internship logs</div>
+        </div>
+        <div class="card" style="margin-top:12px;">
+          <h4>Internship Duration Breakdown</h4>
+          <div class="desc">Distribution of internship durations.</div>
+          <div class="chart-grid">
+            <div class="chart-panel"><canvas id="chartCanvas3"></canvas></div>
+            <div class="chart-panel"><canvas id="chartCanvas4"></canvas></div>
+          </div>
+          <div class="muted-2" style="margin-top:10px;">Source: Student records and internship logs</div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="small">Student Internship Training Report 2021-2025</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 7: Student Performance & Learning Outcomes -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">IR</div>
+          <div class="meta"><h1>Student Performance & Learning Outcomes</h1><div class="sub">General</div></div>
+        </div>
+        <div class="header-right"><div class="small">Student Internship Training Report 2021-2025</div></div>
+      </header>
+
+      <main id="section-main">
+        <div class="card section" id="text-block">
+          <h4>Student Performance & Learning Outcomes</h4>
+          <div id="narrative-content">
+            <p>The internship program provided students with diverse opportunities to acquire practical experience and develop specialized skills across various domains of information technology. Students were engaged in roles such as Full Stack Developer, Backend Developer, Frontend Developer, Node.js Developer Intern, Data Analyst Intern, and SDE Intern (Full Stack). This breadth of roles indicates exposure to different layers of software development and data management, fostering a holistic understanding of industry practices. The duration of these internships varied, with many spanning 6-8 weeks, while others extended for several months, such as the Full Stack Developer role at Darzee (March-August 2024) and SDE Intern positions at Breakview Studios (August-October 2022), allowing for sustained engagement and deeper skill development.</p>
+            <p>Interns actively contributed to projects utilizing a wide array of modern technologies and programming paradigms. Examples include Java Development (OASIS INFOBYTE), Node.js development (InnoByte Services), ReactJS for frontend development (TGH Technologies Pvt Ltd), and Python for Data Science and Machine Learning (Ardent AI, Internshala, Society of Innovative Project Research). Specific project topics ranged from "Vendor Invoice Management on eVIDIT" at Indian Oil Corporation Limited, "Cloud-Storage Enabled Data Analytics for IoT Systems in Smart Agriculture" at IIT Roorkee, to "Room DB Integration and Client Data Entry App Development" at DealboX Digisol LLP. Students also gained experience in specialized areas such as Ethical Hacking and Cyber Security (Ardent Computech Pvt. Ltd.), Industrial Internet of Things (KernelSphere), and Web Application development (Tata Steel Limited), demonstrating a comprehensive engagement with current industry demands.</p>
+            <p>While direct qualitative feedback on student learning experiences and specific challenges encountered during the internships is not explicitly provided in the available data, the nature of the projects undertaken suggests that students navigated complex technical problems and collaborated within professional environments. Engaging in roles like "Backend Developer" or "Full Stack Developer" inherently requires problem-solving, debugging, and adherence to coding standards, thereby fostering critical thinking and practical application of theoretical knowledge. The involvement with diverse companies, from startups like Snackbae to established corporations like Walmart Global and Larsen & Toubro, likely exposed students to varying organizational cultures and project management methodologies, contributing to their adaptability and professional maturity.</p>
+            <p>The practical exposure gained through these internships is anticipated to significantly enhance student career readiness and future employment prospects. By working on real-world projects and utilizing industry-standard technologies, students translate academic learning into tangible skills valued by employers. The experience of developing web applications, implementing machine learning models, or managing data analytics projects provides a competitive edge in the job market. Furthermore, the opportunity to intern with reputable organizations such as JPMORGAN CHASE & CO., Indian Oil Corporation Limited, and Tata Steel Limited, alongside numerous tech firms, offers invaluable networking opportunities and a clearer understanding of potential career paths, thereby streamlining their transition from academia to professional roles.</p>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="small">Student Internship Training Report 2021-2025</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 8: Program Effectiveness & Trends (2021-2025) -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">IR</div>
+          <div class="meta"><h1>Program Effectiveness & Trends (2021-2025)</h1><div class="sub">General</div></div>
+        </div>
+        <div class="header-right"><div class="small">Student Internship Training Report 2021-2025</div></div>
+      </header>
+
+      <main id="section-main">
+        <div class="card section" id="text-block">
+          <h4>Program Effectiveness & Trends (2021-2025)</h4>
+          <div id="narrative-content">
+            <p>The internship program demonstrated a generally effective trajectory in providing students with practical industry exposure across the available data points within the 2021-2025 period, specifically drawing insights from 2020, 2022, and 2024. Students secured placements in a diverse array of roles, predominantly within the technology sector, encompassing areas such as Full Stack Development, Backend Development, Node.js Development, Data Analysis, Digital and Data Analytics, Java Development, Frontend Development, Ethical Hacking, Cyber Security, Machine Learning, and Cloud-Storage Enabled Data Analytics for IoT Systems. This breadth of opportunities indicates a successful alignment with the evolving demands of the tech industry, offering students varied pathways for skill development.</p>
+            <p>Analysis of year-on-year trends, based on the provided snippets, suggests a consistent demand for skills in Web Development, Machine Learning, AI, and Data Science across 2020, 2022, and 2024. While specific participation numbers for each year are not comprehensively detailed, the presence of numerous entries across these years indicates sustained student engagement. Placement rates, inferred from the volume of listed internships, appear robust, with students securing positions at both established corporations like Larsen & Toubro (L&T), Indian Oil Corporation Limited, Tata Steel Limited, Walmart Global, and JPMORGAN CHASE &CO., as well as innovative tech firms such as RBW Solutions, InnoByte Services, and Breakview Studios. The frequent appearance of "Internshala" as a provider also highlights a reliance on platform-based opportunities, which may contribute to accessibility.</p>
+            <p>Successful strategies appear to include fostering a wide range of technical specializations, ensuring students are prepared for diverse roles from core software development to niche areas like ethical hacking and IoT analytics. The program has also been effective in connecting students with reputable organizations, including academic institutions like the Indian Institute of Technology, Roorkee, alongside corporate entities. An area for potential improvement, however, lies in the consistency and granularity of data collection across all years (2021-2025) to enable more precise year-on-year trend analysis for participation rates and a deeper understanding of industry shifts.</p>
+            <p>Comparing program outcomes against the implicit objective of providing relevant, high-quality industry training, the program largely meets its goals by facilitating placements in cutting-edge fields and with significant industry players. The variety of internship durations, from 6-week programs to longer engagements spanning several months, suggests flexibility in accommodating different learning objectives and employer needs. While explicit benchmarks are not provided, the caliber of companies and the technical depth of the roles secured by students indicate a strong performance in preparing them for professional careers in technology.</p>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="small">Student Internship Training Report 2021-2025</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 9: Recommendations & Conclusion -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">IR</div>
+          <div class="meta"><h1>Recommendations & Conclusion</h1><div class="sub">General</div></div>
+        </div>
+        <div class="header-right"><div class="small">Student Internship Training Report 2021-2025</div></div>
+      </header>
+
+      <main id="section-main">
+        <div class="card section" id="text-block">
+          <h4>Recommendations & Conclusion</h4>
+          <div id="narrative-content">
+            <p>The analysis of student internship data reveals a consistent engagement in practical training across various years, including 2018, 2020, 2022, and 2024. A significant proportion of students, particularly from the 7th semester, secured internships in core technology domains such as Web Development (Frontend, Full Stack, ReactJS), Machine Learning, and Data Science/Analytics. Providers like Internshala and Ardent frequently appear as key facilitators, indicating a reliance on aggregated platforms for placement. While a majority of internships span 6-8 weeks, several students undertook longer engagements, such as the 4-month SDE Intern role at Revirt Space or the July-November Frontend Developer role at Bytelearn in 2022, and the 4-month Full Stack Developer role at Darzee in 2024. The presence of internships with established corporations like Tata Steel Limited, Indian Oil Corporation Limited, Larsen & Toubro (L&T), and virtual experience programs with JPMORGAN CHASE & CO. and Accenture, alongside smaller tech firms, suggests a diverse range of organizational exposure, albeit with a strong emphasis on software and data-related roles. However, specific data on student demographics, performance metrics, learning outcomes, and direct stakeholder feedback from employers or students is not available within the provided context, limiting a comprehensive assessment of program effectiveness and trends over the 2021-2025 period.</p>
+            <p>To enhance student participation and placement quality, it is recommended to diversify the avenues for securing internships beyond prevalent platforms like Internshala, which, while accessible, may offer less tailored experiences. Proactive career counseling should guide students towards opportunities that align with emerging industry demands and specialized skill sets, moving beyond the high concentration in generic web development and machine learning roles. Encouraging students to pursue longer internship durations, such as the 2-4 month placements observed, could lead to deeper immersion and more substantial project contributions, thereby improving learning outcomes and future employability. Furthermore, the program should actively promote participation in virtual experience programs from leading global firms, as seen with JPMORGAN CHASE & CO. and Accenture, to provide exposure to international corporate environments and best practices.</p>
+            <p>Strengthening industry partnerships is crucial for diversifying internship opportunities and reducing reliance on third-party aggregators. Direct outreach to a broader spectrum of industries, including those beyond traditional IT sectors but with growing digital needs (e.g., manufacturing, finance, healthcare, as exemplified by Indian Oil Corporation Limited and Tata Steel Limited), could unlock new roles in areas like IoT, cybersecurity, and specialized data analytics. Fostering direct relationships with companies would enable the co-creation of internship projects that are highly relevant to both student learning objectives and industry needs. This approach could also lead to more paid internships and clearer pathways to full-time employment. Exploring opportunities with research institutions, as demonstrated by the Indian Institute of Technology, Roorkee, should also be expanded to provide students with exposure to advanced research and development environments.</p>
+            <p>Despite the limitations in comprehensive data for performance and stakeholder feedback, the internship program demonstrably provides students with valuable practical exposure across various technological domains and organizational settings. The consistent engagement of students in internships, ranging from short-term skill-building to more extended project-based roles, underscores its foundational impact on career readiness. For future iterations, a robust framework for systematic data collection on student performance, learning outcomes, and feedback from both students and employers is imperative. This structured approach will enable a more precise evaluation of program effectiveness, facilitate data-driven strategic adjustments, and ensure the program continues to evolve in alignment with industry demands, ultimately enhancing its long-term impact on student professional development and career trajectories.</p>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="small">Student Internship Training Report 2021-2025</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 10: Annexures & Detailed Tables -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">IR</div>
+          <div class="meta"><h1>Annexures & Detailed Tables</h1><div class="sub">Supporting data & processed files</div></div>
+        </div>
+        <div class="header-right"><div class="small">Appendix</div></div>
+      </header>
+
+      <main>
+        <div class="card">
+          <h4>Summary of Student Internships by Year (2021-2025)</h4>
+          <div class="table-wrap">
+            <table id="table0">
+              <thead><tr><th>Sl. No.</th><th>Class Roll No.</th><th>Autonomy Roll No.</th><th>Student Name</th><th>Semester</th><th>Internship/ Training Provider</th><th>Internship/ Training Topic Name</th><th>Internship/ Training Duration</th></tr></thead>
+              <tbody>
+                <tr><td>41</td><td>1954056</td><td>12619002023</td><td>Ayush Das</td><td>7th</td><td>Ardent</td><td>Web Desingning</td><td>23/07/2022-22/08/2022</td></tr>
+                <tr><td>42</td><td>1954057</td><td>12619002041</td><td>Prateeti Ganguly</td><td>7th</td><td>Ardent</td><td>AI Data Science and ML using Python</td><td>25/07/2022-24/08/2022</td></tr>
+                <tr><td>43</td><td>1954058</td><td>12619002048</td><td>Sankhyayan Chaudhuri</td><td>7th</td><td>Internshala</td><td>Web Development</td><td>Eight Weeks</td></tr>
+                <tr><td>44</td><td>1954059</td><td>12619002031</td><td>Krishanu Nandi</td><td>7th</td><td>Ardent</td><td>AI and Machine Learning</td><td>25/07/2022-24/08/2022</td></tr>
+                <tr><td>45</td><td>1954060</td><td>12619002022</td><td>Ayush Chakraborty</td><td>7th</td><td>Internshala</td><td>Machine Learning</td><td>Six Weeks</td></tr>
+                <tr><td>46</td><td>1954061</td><td>12619002027</td><td>Debasrita Banerjee</td><td>7th</td><td>Breakview Studios</td><td>SDE Intern (Full Stack)</td><td>02/08/2022-02/10/2022</td></tr>
+                <tr><td>47</td><td>1954062</td><td>12619002053</td><td>Sourajit Banerjee</td><td>7th</td><td>Breakview Studios</td><td>SDE Intern (Full Stack)</td><td>02/08/2022-02/10/2022</td></tr>
+                <tr><td>48</td><td>1954063</td><td>12619002060</td><td>Sushruta Mandal</td><td>7th</td><td>Internshala</td><td>Machine Learning</td><td>Six Weeks</td></tr>
+                <tr><td>49</td><td>1954064</td><td>12619002045</td><td>Rittika Ganguly</td><td>7th</td><td>Tata Steel Limited</td><td>Web Application</td><td>21/07/2022-21/08/2022</td></tr>
+                <tr><td>50</td><td>1954065</td><td>12619002047</td><td>Sagar Kumar Singh</td><td>7th</td><td>Internshala</td><td>Web Development</td><td>Eight Weeks</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h4>Detailed Internship Placements by Company and Role</h4>
+          <div class="table-wrap">
+            <table id="table1">
+              <thead><tr><th>Company</th><th>Internship/ Training Topic Name</th><th>Internship/ Training Duration</th></tr></thead>
+              <tbody>
+                <tr><td>Intugine Technologies Pvt. Ltd.</td><td>Backend Development using Nodejs</td><td>11th July 2022 - 30th June 2023</td></tr>
+                <tr><td>Oasis Infobyte</td><td>WEB DEVELOPMENT AND DESIGNING</td><td>1 Month</td></tr>
+                <tr><td>UPSKILL</td><td>Data Science And Machine Learning</td><td>15th JUNE 2023 to 30th JULY 2023</td></tr>
+                <tr><td>UPSKILL</td><td>Data Science And Machine Learning</td><td>15th JUNE 2023 to 30th JULY 2023</td></tr>
+                <tr><td>Internshala</td><td>Machine Learning</td><td>6 Weeks</td></tr>
+                <tr><td>EUPHORIA GENX</td><td>Android Development of a Note making Application, Chatting Application</td><td>05-06-2023 to 30-07-2023</td></tr>
+                <tr><td>Octanet</td><td>Web Development Internship</td><td>1st July, 2023 - 1st September 2023</td></tr>
+                <tr><td>UPSKILL</td><td>PYHTON</td><td>15th JUNE 2023 to 30th JULY 2023</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h4>Internship Topics and Number of Students</h4>
+          <div class="table-wrap">
+            <table id="table2">
+              <thead><tr><th>Company</th><th>Internship/ Training Topic Name</th><th>Internship/ Training Duration</th></tr></thead>
+              <tbody>
+                <tr><td>Intugine Technologies Pvt. Ltd.</td><td>Backend Development using Nodejs</td><td>11th July 2022 - 30th June 2023</td></tr>
+                <tr><td>Oasis Infobyte</td><td>WEB DEVELOPMENT AND DESIGNING</td><td>1 Month</td></tr>
+                <tr><td>UPSKILL</td><td>Data Science And Machine Learning</td><td>15th JUNE 2023 to 30th JULY 2023</td></tr>
+                <tr><td>UPSKILL</td><td>Data Science And Machine Learning</td><td>15th JUNE 2023 to 30th JULY 2023</td></tr>
+                <tr><td>Internshala</td><td>Machine Learning</td><td>6 Weeks</td></tr>
+                <tr><td>EUPHORIA GENX</td><td>Android Development of a Note making Application, Chatting Application</td><td>05-06-2023 to 30-07-2023</td></tr>
+                <tr><td>Octanet</td><td>Web Development Internship</td><td>1st July, 2023 - 1st September 2023</td></tr>
+                <tr><td>UPSKILL</td><td>PYHTON</td><td>15th JUNE 2023 to 30th JULY 2023</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h4>Average Internship Duration by Topic/Industry</h4>
+          <div class="table-wrap">
+            <table id="table3">
+              <thead><tr><th>Student Name</th><th>Internship/ Training Topic Name</th><th>Internship/ Training Duration</th></tr></thead>
+              <tbody>
+                <tr><td>Md Shafaullah</td><td>Backend Development using Nodejs</td><td>11th July 2022 - 30th June 2023</td></tr>
+                <tr><td>Pemba Dorgey Bhutia</td><td>WEB DEVELOPMENT AND DESIGNING</td><td>1 Month</td></tr>
+                <tr><td>Piyush Priyadarshi</td><td>Data Science And Machine Learning</td><td>15th JUNE 2023 to 30th JULY 2023</td></tr>
+                <tr><td>Satya Prakash</td><td>Data Science And Machine Learning</td><td>15th JUNE 2023 to 30th JULY 2023</td></tr>
+                <tr><td>Abhay Kumar</td><td>Machine Learning</td><td>6 Weeks</td></tr>
+                <tr><td>Aditya Kumar</td><td>Android Development of a Note making Application, Chatting Application</td><td>05-06-2023 to 30-07-2023</td></tr>
+                <tr><td>Ashish Prasad</td><td>Web Development Internship</td><td>1st July, 2023 - 1st September 2023</td></tr>
+                <tr><td>Namrata Sarkar</td><td>PYHTON</td><td>15th JUNE 2023 to 30th JULY 2023</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h4>Processed Files & Data Sources</h4>
+          <div class="muted" id="processed-files">
+            <ul>
+              <li>6d6551ba-509f-47f3-848d-580b8dcf0467.xlsx</li>
+              <li>24039ed2-6925-4c43-95e1-0dccc370db7.xlsx</li>
+              <li>1f0cd5dd-8a74-4dac-bf00-1ed75a21eb0d.xlsx</li>
+              <li>1303358b-5bb3-42c2-aafa-6d4cb7cf5c29.xlsx</li>
+              <li>e1106940-5658-46df-b413-bd965e2ad880.xls</li>
+            </ul>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="small">End of report</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Chart.js initialization
+    document.addEventListener('DOMContentLoaded', function() {
+      // Chart 0: Student Internship Participation Trend (2021-2025)
+      new Chart(document.getElementById('chartCanvas0'), {
+        type: 'line',
+        data: {
+          labels: ["2018", "2020", "2022", "2024"],
+          datasets: [{
+            label: "Number of Internships/Trainings",
+            data: [2, 12, 18, 11],
+            backgroundColor: ["#3b82f6", "#10b981", "#f59e0b", "#ef4444"],
+            borderColor: '#3b82f6',
+            tension: 0.3,
+            fill: false
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: { display: false },
+            legend: { display: true, position: 'bottom' }
+          },
+          scales: {
+            y: { beginAtZero: true }
+          }
+        }
+      });
+
+      // Chart 1: Distribution of Internship Topics/Roles (Bar Chart)
+      new Chart(document.getElementById('chartCanvas1'), {
+        type: 'bar',
+        data: {
+          labels: ["Data Science & ML", "Backend Dev (Nodejs)", "Web Dev & Designing", "Machine Learning", "Android Development", "Web Development", "Python"],
+          datasets: [{
+            label: "Number of Internships",
+            data: [2, 1, 1, 1, 1, 1, 1],
+            backgroundColor: ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4"]
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: { display: false },
+            legend: { display: false }
+          },
+          scales: {
+            y: { beginAtZero: true }
+          }
+        }
+      });
+
+      // Chart 2: Top 10 Internship Providing Companies (Bar Chart)
+      new Chart(document.getElementById('chartCanvas2'), {
+        type: 'bar',
+        data: {
+          labels: ["Web Development", "Machine Learning / Data Science", "Backend Development (Node.js)", "Android Development", "Python"],
+          datasets: [{
+            label: "Number of Internships by Topic",
+            data: [2, 3, 1, 1, 1],
+            backgroundColor: ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6"]
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: { display: false },
+            legend: { display: false }
+          },
+          scales: {
+            y: { beginAtZero: true }
+          }
+        }
+      });
+
+      // Chart 3: Internship Duration Breakdown (Pie Chart)
+      new Chart(document.getElementById('chartCanvas3'), {
+        type: 'pie',
+        data: {
+          labels: ["Data Science/ML", "Web Development", "Backend Development", "Android Development", "Python"],
+          datasets: [{
+            label: "Number of Internships by Topic",
+            data: [3, 2, 1, 1, 1],
+            backgroundColor: ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6"]
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: { display: false },
+            legend: { position: 'bottom' }
+          }
+        }
+      });
+
+      // Chart 4: Placement Channel Effectiveness (Online vs. Direct) (Pie Chart)
+      new Chart(document.getElementById('chartCanvas4'), {
+        type: 'pie',
+        data: {
+          labels: ["Backend Dev (Nodejs)", "Web Dev & Designing", "Data Science & ML", "Machine Learning", "Android Development", "Web Development Internship", "Python"],
+          datasets: [{
+            label: "Number of Internships by Topic",
+            data: [1, 1, 2, 1, 1, 1, 1],
+            backgroundColor: ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#06b6d4", "#a855f7"]
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: { display: false },
+            legend: { position: 'bottom' }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

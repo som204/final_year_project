@@ -17,7 +17,8 @@ UPLOADS_DIR = "./uploads"
 TEMPLATE_DIR = "./Templates"
 
 # --- LLM and Embedding Models ---
-LLM_MODEL_NAME = "gemini-2.5-pro"
+# LLM_MODEL_NAME = "gemini-2.5-pro"
+LLM_MODEL_NAME= "gemini-2.5-flash"
 EMBEDDING_MODEL_NAME = "models/embedding-001"
 
 # --- Vector Store Configuration ---

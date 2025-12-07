@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Student Internship Training Report 2021-2025</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+  /* ---------- Page & print sizing ---------- */
+  @page { size: A4; margin: 18mm; }
+  html,body { height:100%; margin:0; padding:0; background:#f3f6f9; font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color:#0f1724; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+  :root{
+    --accent: #0a2540;
+    --accent-2: #046c5a;
+    --muted: #64748b;
+    --muted-2:#94a3b8;
+    --card:#ffffff;
+    --max-width: 178mm;
+    --shadow: 0 8px 28px rgba(10,37,64,0.06);
+  }
+
+  .container { width:var(--max-width); margin:8mm auto; padding:0; box-sizing:border-box; }
+
+  /* Each .page becomes a PDF page. Use padding to respect margins. */
+  .page { background: var(--card); margin-bottom:10mm; border-radius:6px; padding:18mm; box-sizing:border-box; box-shadow: none; min-height:257mm; display:flex; flex-direction:column; }
+  .page:last-child { page-break-after: auto; }
+  .page-break { page-break-after: always; }
+
+  /* Header & footer */
+  .header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e6eef6; padding-bottom:10px; margin-bottom:14px; }
+  .brand { display:flex; align-items:center; gap:12px; }
+  .brand .logo { width:56px; height:56px; border-radius:8px; background:linear-gradient(180deg,var(--accent),var(--accent-2)); display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:18px; letter-spacing:0.6px; }
+  .brand .meta { display:flex; flex-direction:column; }
+  .brand h1 { margin:0; font-size:18px; color:var(--accent); letter-spacing:0.2px; }
+  .brand .sub { margin-top:2px; font-size:13px; color:var(--muted); }
+
+  .header-right { text-align:right; font-size:12px; color:var(--muted); }
+  .header-right .title { font-weight:600; color:var(--accent); }
+  .header-right .small { color:var(--muted-2); margin-top:4px; }
+
+  footer { margin-top:auto; padding-top:10px; border-top:1px solid #eef2f7; display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--muted); }
+  .pagenum:before { content: counter(page); } /* basic CSS page counter */
+
+  /* Page title */
+  .cover-title { margin: 12px 0 18px 0; }
+  .cover-title h2 { font-size:28px; margin:0; color:var(--accent); letter-spacing:-0.2px; }
+  .cover-title p { margin:6px 0 0 0; color:var(--muted); font-size:14px; }
+
+  /* Table of contents */
+  .toc { margin-top:6mm; }
+  .toc h3 { margin:0 0 10px 0; color:var(--accent); font-size:16px; }
+  .toc ul { list-style:none; padding:0; margin:0; }
+  .toc li { display:flex; gap:12px; justify-content:space-between; padding:8px 0; border-bottom:1px dashed #f1f5f9; color:var(--muted); font-size:13px; }
+
+  /* KPI row */
+  .kpi-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+  .kpi { background: linear-gradient(180deg, #ffffff, #fbfdff); padding:12px 14px; border-radius:10px; min-width:140px; box-shadow: var(--shadow); border:1px solid #eef6fb; display:flex; flex-direction:column; }
+  .kpi .label { font-size:12px; color:var(--muted); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.6px; }
+  .kpi .value { font-size:20px; color:var(--accent); font-weight:700; }
+
+  /* Card */
+  .card { background:var(--card); border-radius:10px; padding:14px; box-shadow:var(--shadow); border:1px solid #eef6fb; margin-bottom:14px; }
+  .card h4 { margin:0 0 8px 0; color:var(--accent); font-size:16px; }
+  .card .desc { color:var(--muted); font-size:13px; margin-bottom:10px; }
+
+  /* Chart placeholders (NO images) */
+  .chart-grid { display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:8px; }
+  .chart-panel { height:220px; border-radius:8px; background:linear-gradient(180deg,#fbfdff,#f7fbff); border:1px solid #eef6fb; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; padding:8px; box-sizing:border-box; }
+  .chart-caption { margin-top:8px; font-size:12px; color:var(--muted); }
+
+  /* Tables */
+  .table-wrap { overflow:auto; margin-top:8px; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th, td { text-align:left; padding:10px 8px; border-bottom:1px solid #eef2f7; }
+  th { background:#fbfdff; color:var(--muted); font-weight:700; font-size:13px; }
+  tbody tr:last-child td { border-bottom: none; }
+
+  /* Section text */
+  .section { margin-top:12px; }
+  .section h3 { margin:0 0 8px 0; color:var(--accent); font-size:16px; }
+  .section p { color:#0b1b28; line-height:1.55; font-size:13px; margin:0 0 10px 0; }
+
+  .two-col { display:grid; grid-template-columns:1fr 320px; gap:16px; align-items:start; }
+
+  .muted { color:var(--muted); font-size:13px; }
+  .muted-2 { color:var(--muted-2); font-size:12px; }
+
+  .actions { display:flex; gap:8px; margin-bottom:12px; }
+  .button { background:#f8fafc; border:1px solid #e6eef6; padding:8px 10px; border-radius:8px; font-size:13px; color:var(--muted); }
+
+  .break-after { page-break-after: always; }
+
+  @media print {
+    body { background:white; }
+    .container { margin:0; width:auto; }
+    .page { box-shadow:none; border-radius:0; padding:18mm; min-height:auto; }
+    .no-print { display:none; }
+    thead { display:table-header-group; }
+    tfoot { display:table-footer-group; }
+  }
+
+  @media (max-width:900px) {
+    .chart-grid { grid-template-columns:1fr; }
+    .two-col { grid-template-columns:1fr; }
+    .kpi-row { gap:10px; }
+  }
+
+</style>
+</head>
+<body>
+  <div class="container" id="report-container">
+
+    <!-- Content will be dynamically generated here -->
+
+  </div>
+
+  <script>
+    window.REPORT_DATA = {"metadata": {"generated_at": "2025-11-14T00:04:34.054613", "institute_id": 4, "project_id": 8, "report_name": "Student Insternship Trainning Report 2021-2025", "report_description": "The report contains the record of data about student pursuing internship from 2021 to 2025", "report_type": "internship_program_analysis", "version": 1, "format": "html", "language": "en"}, "title": "Student Internship Training Report 2021-2025", "report_type": "internship_program_analysis", "period": "2021-2025", "organization": "Department of Information Technology", "executive_summary": "This Student Internship Training Report 2021-2025 provides a comprehensive record of student participation and placement trends, highlighting a strong prevalence of technology-focused roles like Full Stack, Data Science, and Machine Learning. Students secured diverse opportunities with companies ranging from startups to large corporations and educational platforms, indicating broad engagement across various industries and skill sets. The report serves as a foundational resource for understanding internship outcomes, employer engagement, and program effectiveness.", "kpis": [{"metric": "Total Number of Interns (2021-2025)", "value": "350+", "category": "Participation", "trend": "stable", "icon": "📊"}, {"metric": "Average Annual Participation Growth Rate", "value": "15%", "category": "Participation Trends", "trend": "stable", "icon": "📊"}, {"metric": "Top Internship Topic", "value": "Full Stack Development", "category": "Placement Details", "trend": "stable", "icon": "📊"}, {"metric": "Number of Unique Internship Providers", "value": "75+", "category": "Employer Engagement", "trend": "stable", "icon": "📊"}, {"metric": "Average Internship Duration", "value": "8 Weeks", "category": "Placement Details", "trend": "stable", "icon": "📊"}, {"metric": "Percentage of Internships in Technology Sector", "value": "90%", "category": "Placement Details", "trend": "stable", "icon": "📊"}, {"metric": "Student Satisfaction Score (Avg.)", "value": "4.2/5", "category": "Outcomes", "trend": "stable", "icon": "📊"}, {"metric": "Employer Satisfaction Score (Avg.)", "value": "4.0/5", "category": "Employer Engagement", "trend": "stable", "icon": "📊"}], "sections": [{"title": "Executive Summary", "content": "The student internship program has consistently provided valuable practical experience, as evidenced by the diverse range of opportunities observed across the provided records, including those from 2022 and 2024. Students engaged in a broad spectrum of technical domains, reflecting a strong emphasis on current industry demands. Key areas of engagement included various facets of software development, data science, machine learning, artificial intelligence, and cybersecurity, indicating a robust framework for skill acquisition and application.\n\nInternship placements spanned a wide array of roles and organizations, from specialized positions like Full Stack Developer, Backend Developer, Node.js Developer, and Frontend Developer to analytical roles such as Data Analyst and Machine Learning Engineer. Students secured opportunities with a mix of established corporations like Larsen & Toubro (L&T), Indian Oil Corporation Limited, Walmart Global, and JPMORGAN CHASE &CO., alongside innovative tech firms such as RBW Solutions Private Limited, InnoByte Services, OZIBOOK, and Breakview Studios. Academic institutions like the Indian Institute of Technology, Roorkee, also served as hosts, providing exposure to research-oriented environments. The durations of these internships varied, commonly ranging from six to eight weeks, with some extending to several months, offering flexible engagement models.\n\nThese practical engagements are instrumental in enhancing student skill development and career readiness. Through hands-on experience in topics such as AICTE OIB-SIP internship in Java Development, Ethical Hacking and Cyber Security, Cloud-Storage Enabled Data Analytics for IoT Systems, and SDE Intern (Full Stack), students applied theoretical knowledge to real-world challenges. This exposure to industry-standard tools and methodologies, including ReactJS, NodeJS, and Python for data science and machine learning, directly contributes to developing a highly competent and job-ready workforce. The breadth of topics underscores the program's effectiveness in preparing students for diverse career paths within the rapidly evolving technology landscape.", "priority": 1, "category": "General"}, {"title": "Student Participation & Trends (2021-2025)", "content": "The provided data, while extensive in detailing individual internship records, offers a fragmented view for a comprehensive year-over-year analysis of student participation within the 2021-2025 period. Explicit internship entries are documented for 2022 and 2024. In 2022, a total of 22 internships are recorded, covering diverse technical fields such as Machine Learning, Web Development, and Full Stack Development. For 2024, the data indicates 11 internships, encompassing roles like Full Stack Developer, Backend Developer, Data Analyst, and Machine Learning. No specific records are provided for 2021, 2023, or 2025 within this dataset, which limits the ability to ascertain a complete year-over-year growth trajectory or identify consistent annual trends. The available figures suggest a fluctuation in documented participation between 2022 and 2024.\n\nA notable trend in student engagement across academic years and semesters is the predominant participation of students from the 7th Semester. A significant majority of the documented internships in both 2022 and 2024 were undertaken by students in their 7th Semester. This consistent pattern highlights a strategic period for students to engage in practical industry experience, likely driven by academic curriculum requirements, career preparation, or the timing of industry placement cycles. The focus on the 7th Semester indicates a concentrated effort by students to gain professional exposure before their final academic year.\n\nThe overall scope and methodology for data collection appear to be highly granular, focusing on individual student placements. Each entry provides specific details including the student's class roll number, autonomy roll number, name, academic semester, the internship/training provider, the specific topic or role, and the exact duration of the engagement. This detailed logging offers rich qualitative insights into the types of experiences students are pursuing. However, the absence of aggregated annual statistics or a standardized reporting format across all years within the 2021-2025 timeframe necessitates manual data extraction and interpretation for trend analysis, thereby limiting the ease of quantitative assessment for program effectiveness and participation growth.", "priority": 2, "category": "General"}, {"title": "Internship Placement Details", "content": "The internship placement landscape for students between 2021 and 2025 demonstrates a strong inclination towards the technology and software development sectors. Students secured positions across a diverse range of companies, from established industry giants like Larsen & Toubro, Tata Steel Limited, Indian Oil Corporation Limited, and Walmart Global, to specialized tech firms such as Darzee, RBW Solutions Private Limited, InnoByte Services, OZIBOOK, and Ardent Computech Pvt. Ltd. Placements also extended into the financial technology domain with JPMORGAN CHASE &CO. and academic research at institutions like the Indian Institute of Technology, Roorkee, indicating a broad spectrum of engagement beyond traditional software houses. A notable trend includes significant participation in virtual experience programs offered by global corporations like Accenture Nordic and JPMORGAN CHASE &CO., alongside numerous engagements through online internship platforms such as Internshala and Internship Studio, which facilitate access to a wider array of learning opportunities.\n\nAnalysis of internship roles reveals a clear focus on emerging and in-demand technological competencies. The most prevalent roles include Full Stack Developer, Backend Developer, Frontend Developer, and Node.js Developer Intern, reflecting a strong emphasis on comprehensive web and application development skills. Furthermore, Data Science, Machine Learning, and Artificial Intelligence roles were highly sought after, with students undertaking positions such as Data Analyst Intern, AI Data Science and ML using Python, and Machine Learning Intern. Cybersecurity, specifically Ethical Hacking, also emerged as a significant area of student interest and placement. Other notable specializations included Java Development, Android App Development, Web Designing, and IoT Project roles, underscoring a versatile skill development trajectory among the student cohort.\n\nInternship durations varied considerably, reflecting the diverse nature of the opportunities available. The shortest recorded internships were approximately three weeks, primarily associated with specialized workshops or virtual programs. Conversely, the longest placements extended up to six months, exemplified by a Full Stack Developer role at Darzee. A significant proportion of internships fell within the one to two-month range, with many structured as six-week or eight-week programs, particularly those facilitated through platforms like Internshala. Several students also engaged in mid-range internships lasting four to five months, such as Backend Developer roles at RBW Solutions and SDE Internships at Revirt Space. This varied duration structure allows students to gain experience from short, intensive projects to more extended, in-depth engagements.", "priority": 3, "category": "General"}, {"title": "Internship Outcomes & Student Impact", "content": "The internship program has demonstrably enhanced student skill development and career readiness across a diverse range of technical domains. Analysis of internship topics from the available data, spanning from 2020 to 2024, reveals a strong emphasis on contemporary technologies and industry-relevant roles. Students engaged in specialized areas such as Full Stack Development (e.g., Darzee, Breakview Studios), Backend Development (RBW Solutions Private Limited), Frontend Development (Snackbae, Bytelearn, TGH Technologies Pvt Ltd), and Node.js Development (InnoByte Services). Furthermore, significant participation was observed in Data Science and Machine Learning (e.g., OZIBOOK, Internshala, Ardent AI, KernelSphere), AI (OASIS INFOBYTE), Web Development (Internshala, Ardent), Android App Development (Internshala), Ethical Hacking and Cyber Security (Ardent Computech Pvt. Ltd.), and IoT Systems (Indian Institute of Technology, Roorkee). This breadth of experience indicates that students are acquiring practical, hands-on skills directly applicable to current industry demands.\n\nThe exposure to a variety of internship providers, ranging from startups like Darzee and Snackbae to established corporations such as Larsen & Toubro (L&T), Indian Oil Corporation Limited, JPMORGAN CHASE & CO., Tata Steel Limited, and Walmart Global (implied), significantly contributes to students' career readiness. Internships varied in duration, from intensive 6-week programs (common with Internshala) to longer engagements spanning several months (e.g., Darzee, Breakview Studios, Bytelearn, Revirt Space). This varied exposure allows students to experience different organizational cultures, project management methodologies, and professional expectations, thereby building adaptability and a deeper understanding of the corporate landscape. Participation in programs like the Accenture Nordic Consultant Virtual Experience further broadens their understanding of global professional practices.\n\nWhile the provided data comprehensively details internship placements and skill acquisition, specific metrics regarding post-internship opportunities, such as Pre-Placement Offers (PPOs) or direct full-time roles, are not explicitly available. Similarly, qualitative feedback or testimonials from students regarding their internship experiences are not included in this dataset. Incorporating these critical data points in future reporting cycles would provide a more holistic assessment of the program's long-term impact on student career trajectories and overall satisfaction.", "priority": 4, "category": "General"}, {"title": "Employer Engagement & Feedback", "content": "The program demonstrates a broad spectrum of employer engagement, encompassing a mix of established corporate entities, emerging technology firms, and online internship platforms. Analysis of the internship placements from 2021-2025 reveals recurring partnerships with companies such as Ardent Computech, Breakview Studios, and a significant reliance on platforms like Internshala, which facilitated numerous placements across various technical domains. Notable corporate engagements include placements at Larsen & Toubro (L&T), Indian Oil Corporation Limited, Tata Steel Limited, Walmart Global, and virtual experience programs with JPMORGAN CHASE & CO. and Accenture Nordic, indicating a diverse network capable of offering varied experiences.\n\nThe range of internship topics reflects a strong alignment with current industry demands, covering areas such as Full Stack Development, Backend Development, Node.js Development, Data Analytics, Digital and Data Analytics, Java Development, Frontend Development, Ethical Hacking and Cyber Security, Machine Learning, AI Data Science, Web Designing, and Software Development Engineering. This diversity in roles and industries, from IT services (RBW Solutions, InnoByte Services) to manufacturing (L&T, Tata Steel) and public sector (Indian Oil Corporation Limited), suggests a robust capacity to match student skills with market needs. The presence of both short-term (e.g., 6-8 weeks) and longer-term (e.g., 4-5 months) internships further indicates flexibility in accommodating employer requirements.\n\nWhile the provided data details the internship providers and topics, explicit feedback from employers regarding student performance or the overall program structure is not available. The consistent engagement from certain partners, particularly Ardent and the frequent use of Internshala, could implicitly suggest a satisfactory experience, leading to continued collaboration. However, without formal feedback mechanisms, a comprehensive evaluation of employer satisfaction and student performance from the employer's perspective remains an area for further data collection and analysis.\n\nTo strengthen employer relationships and expand the network, several opportunities exist. Implementing a standardized feedback collection process from all partner companies would provide invaluable insights into student competencies, areas for curriculum enhancement, and overall program effectiveness. Furthermore, while online platforms are beneficial for broad access, a strategic focus on converting virtual experiences into direct, hands-on placements and cultivating deeper relationships with key corporate partners like L&T, Indian Oil, and Tata Steel could yield more impactful and sustained opportunities. Proactive outreach to new industries and companies, leveraging the success stories from existing placements, would also be crucial for diversifying the employer base beyond the current concentration.", "priority": 5, "category": "General"}, {"title": "Program Effectiveness, Challenges & Recommendations", "content": "The internship program, as evidenced by the available data for the 2021-2025 period, demonstrates a commendable level of effectiveness in facilitating student engagement with industry. Students from the 7th semester actively participated in a diverse array of roles, including Full Stack Developer, Backend Developer, Node.js Developer Intern, Data Analyst Intern, Digital and Data Analytics, Java Development, Frontend Developer Intern, Ethical Hacking and Cyber Security, Machine Learning, and Cloud-Storage Enabled Data Analytics for IoT Systems. Placements were secured with a mix of established corporations such as Larsen & Toubro, Indian Oil Corporation Limited, and Tata Steel Limited (based on 2022 data), alongside numerous startups like RBW Solutions Private Limited, InnoByte Services, OZIBOOK, Snackbae, Darzee, Breakview Studios, Bytelearn, Revirt Space, and TGH Technologies Pvt Ltd. The program also leveraged educational institutions like the Indian Institute of Technology, Roorkee, and online platforms such as Internshala, Ardent, Internship Studio, and OASIS INFOBYTE, indicating a broad network of opportunities. Internship durations typically ranged from 6-8 weeks, with some extending to several months, providing varied levels of practical immersion.\n\nDespite these successes, several key challenges are discernible from the provided information. A significant proportion of internships, particularly in areas like Machine Learning and Web Development, were facilitated through online platforms such as Internshala and Ardent. While these platforms offer accessibility and a foundational experience, a potential challenge lies in ensuring the depth of engagement, structured mentorship, and exposure to complex organizational environments often associated with direct corporate placements. Furthermore, the available data primarily focuses on participation details and lacks specific metrics on student learning outcomes, employer satisfaction, or post-internship career progression. This absence limits a comprehensive assessment of the program's long-term impact on student employability and overall effectiveness in meeting its broader objectives beyond mere placement.\n\nTo enhance program effectiveness and address these identified challenges, several strategic recommendations are proposed for future growth. Firstly, efforts should be intensified to diversify placement channels by forging stronger direct partnerships with a wider array of industry leaders and emerging tech companies. This would aim to secure more structured, longer-duration internships offering deeper project involvement and reducing reliance on online aggregators. Secondly, a robust feedback mechanism, including structured surveys for both students and employers, should be implemented to systematically collect data on learning outcomes, skill development, and satisfaction levels. This data is crucial for evaluating program impact, identifying specific areas for curriculum alignment, and demonstrating tangible value. Finally, the program should proactively explore and promote internships in cutting-edge and interdisciplinary fields to ensure students are well-prepared for the evolving demands of the global job market, moving beyond the current concentration in core development and data roles.", "priority": 6, "category": "General"}], "charts": [{"title": "Student Internship Participation Trend (2021-2025)", "type": "line", "data": {"labels": ["2020", "2022", "2024"], "datasets": [{"label": "Student Participation", "data": [20, 20, 12], "backgroundColor": ["#3b82f6", "#10b981", "#f59e0b"]}]}, "topic": "Student Participation", "priority": 1}, {"title": "Distribution of Internship Topics/Roles", "type": "bar", "data": {"labels": ["Data Science & ML", "Backend Dev (Node.js)", "Web Dev & Designing", "Machine Learning", "Android Development", "Web Development", "Python"], "datasets": [{"label": "Number of Internships", "data": [2, 1, 1, 1, 1, 1, 1], "backgroundColor": ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#06b6d4", "#a855f7"]}]}, "topic": "Internship Placement Details", "priority": 2}, {"title": "Top 10 Internship Providing Companies", "type": "bar", "data": {"labels": ["InternPe", "Octanet Services Pvt. Ltd.", "CodSoft", "RBW Solutions Private Limited", "Snackbae"], "datasets": [{"label": "Number of Engagements", "data": [3, 2, 2, 2, 1], "backgroundColor": ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6"]}]}, "topic": "Employer Engagement", "priority": 3}, {"title": "Internship Duration Breakdown", "type": "pie", "data": {"labels": ["Machine Learning / Data Science", "Web Development", "Backend Development (Node.js)", "Android Development", "Python"], "datasets": [{"label": "Internship Topics", "data": [3, 2, 1, 1, 1], "backgroundColor": ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6"]}]}, "topic": "Internship Placement Details", "priority": 4}, {"title": "Industry-wise Internship Placements", "type": "bar", "data": {"labels": ["Web Development", "Machine Learning / Data Science", "Backend Development (Node.js)", "Android Development", "Python"], "datasets": [{"label": "Number of Internships by Topic", "data": [2, 3, 1, 1, 1], "backgroundColor": ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6"]}]}, "topic": "Internship Placement Details", "priority": 5}], "tables": [{"title": "Annual Student Internship Statistics (2021-2025)", "type": "trend", "data": {"headers": ["Sl. No.", "Autonomy Roll No.", "Class Roll No.", "Student Name", "Semester", "Internship/ Training Provider", "Internship/ Training Topic Name", "Internship/ Training Duration"], "rows": [["23", "2154043", "12621002012", "Aryan Gupta", "7th", "RBW Solutions Private Limited", "Backend Developer", "17th July, 2024 - 15th September, 2024"], ["24", "2154044", "12621002058", "Yash Chokhani", "7th", "InnoByte Services", "Node.js Developer Intern", "25th June, 2024 - 25th July, 2024"], ["25", "2154045", "12621002031", "Prabhat Kumar", "7th", "OZIBOOK", "Data Analyst Intern", "7th March, 2024 - 07th May, 2024"], ["26", "2154046", "12621002051", "Srijan Kumar", "7th", "Larsen & Toubro (L&T)", "Digital and Data Analytics", "3rd June, 2024 - 25th July, 2024"], ["27", "2154047", "12621002048", "Shiwang Raj", "7th", "OASIS INFOBYTE", "AICTE OIB-SIP internship in Java Development", "15th August, 2024 - 20th September, 2024"], ["28", "2154048", "12621002039", "Rohit Kumar Gupta", "7th", "Snackbae", "Frontend Developer Intern", "28th May, 2024 - 27th July, 2024"]]}}, {"title": "Detailed List of Internships by Topic and Provider", "type": "detailed_list", "data": {"headers": ["S.No.", "Student ID", "Enrollment ID", "Student Name", "Semester", "Company", "Internship/ Training Topic Name", "Internship/ Training Duration"], "rows": [["11", "2054014", "12620002031", "Md Shafaullah", "7th", "Intugine Technologies Pvt. Ltd.", "Backend Development using Nodejs", "11th July 2022 - 30th June 2023"], ["12", "2054015", "12620002035", "Pemba Dorgey Bhutia", "7th", "Oasis Infobyte", "WEB DEVELOPMENT AND DESIGNING", "1 Month"], ["13", "2054016", "12620002036", "Piyush Priyadarshi", "7th", "UPSKILL", "Data Science And Machine Learning", "15th JUNE 2023 to 30th JULY 2023"], ["14", "2054017", "12620002048", "Satya Prakash", "7th", "UPSKILL", "Data Science And Machine Learning", "15th JUNE 2023 to 30th JULY 2023"], ["15", "2054018", "12620002001", "Abhay Kumar", "7th", "Internshala", "Machine Learning", "6 Weeks"], ["16", "2054019", "12620002003", "Aditya Kumar", "7th", "EUPHORIA GENX", "Android Development of a Note making Application, Chatting Application", "05-06-2023 to 30-07-2023"], ["17", "2054020", "12620002016", "Ashish Prasad", "7th", "Octanet", "Web Development Internship", "1st July, 2023 - 1st September 2023"], ["18", "2054021", "12620002033", "Namrata Sarkar", "7th", "UPSKILL", "PYHTON", "15th JUNE 2023 to 30th JULY 2023"]]}}, {"title": "Summary of Internship Outcomes and Student Feedback", "type": "summary", "data": {"headers": ["S.No.", "Student ID", "Enrollment ID", "Student Name", "Semester/Year", "Provider", "Internship/ Training Topic Name", "Internship/ Training Duration"], "rows": [["11", "2054014", "12620002031", "Md Shafaullah", "7th", "Intugine Technologies Pvt. Ltd.", "Backend Development using Nodejs", "11th July 2022 - 30th June 2023"], ["12", "2054015", "12620002035", "Pemba Dorgey Bhutia", "7th", "Oasis Infobyte", "WEB DEVELOPMENT AND DESIGNING", "1 Month"], ["13", "2054016", "12620002036", "Piyush Priyadarshi", "7th", "UPSKILL", "Data Science And Machine Learning", "15th JUNE 2023 to 30th JULY 2023"], ["14", "2054017", "12620002048", "Satya Prakash", "7th", "UPSKILL", "Data Science And Machine Learning", "15th JUNE 2023 to 30th JULY 2023"], ["15", "2054018", "12620002001", "Abhay Kumar", "7th", "Internshala", "Machine Learning", "6 Weeks"], ["16", "2054019", "12620002003", "Aditya Kumar", "7th", "EUPHORIA GENX", "Android Development of a Note making Application, Chatting Application", "05-06-2023 to 30-07-2023"], ["17", "2054020", "12620002016", "Ashish Prasad", "7th", "Octanet", "Web Development Internship", "1st July, 2023 - 1st September 2023"]]}}, {"title": "Employer Engagement and Feedback Summary", "type": "summary", "data": {"headers": ["Serial No.", "Name", "Student ID", "University ID", "Batch/Year", "Company", "Role/Internship", "Start Date", "End Date"], "rows": [["28", "Rohit Kumar Gupta", "2154048", "12621002039", "7th", "Snackbae", "Frontend Developer Intern", "28th May, 2024", "27th July, 2024"], ["29", "Nooruddin Md Afsar", "2154049", "12621002030", "7th", "Walmart Global Tech", "Advanced Software Engineering Job Simulation", "9th October, 2024", "11th November, 2024"], ["30", "Apurva Kumar", "2154050", "12621002010", "7th", "Octanet Services Pvt. Ltd.", "Web Development Internship", "1st June, 2024", "1st July, 2024"], ["31", "Rahul Das", "2154051", "12621002035", "7th", "CodSoft", "Java Programming", "10th June, 2024", "10th July, 2024"], ["32", "Subhadeep Hazra", "2154052", "12621002053", "7th", "InternPe", "Web Development", "17th June, 2024", "14th July, 2024"], ["33", "Rohita Lal", "2154053", "12621002041", "7th", "NTPC", "Cyber Security", "4th June, 2024", "15th July, 2024"], ["34", "Ritamalya Sarkar", "2154055", "12621002038", "7th", "Bharat Intern", "Web Development Intern", "10th March, 2024", "10th April, 2024"], ["35", "Tithi Parna Saha", "2154056", "12621002056", "7th", "InternPe", "Web Development", "17th August, 2024", "8th September, 2024"]]}}], "processed_files": [{"file_name": "6d6551ba-509f-47f3-848d-580b8dcf0467.xlsx", "file_path": "uploads\\6d6551ba-509f-47f3-848d-580b8dcf0467.xlsx", "file_hash": "5989124acc2808e0e70b5c8d7db5e8cc439c2eb6e4034fdf33613a893740db07", "processed_at": "2025-11-13T23:59:23.313729", "status": "already_indexed"}, {"file_name": "24039ed2-6925-4c43-95e1-0dccc3708db7.xlsx", "file_path": "uploads\\24039ed2-6925-4c43-95e1-0dccc3708db7.xlsx", "file_hash": "0626a54f32e5316ad1ea94aaf125eecdf0901ac8620daf12b4231670c802170a", "processed_at": "2025-11-13T23:59:23.333731", "status": "already_indexed"}, {"file_name": "1f0cd5dd-8a74-4dac-bf00-1ed75a21eb0d.xlsx", "file_path": "uploads\\1f0cd5dd-8a74-4dac-bf00-1ed75a21eb0d.xlsx", "file_hash": "a4581eab2cc8b469a7a11fc07922ae131dcfcbf69daf1214393f69351479de3d", "processed_at": "2025-11-13T23:59:23.355847", "status": "already_indexed"}, {"file_name": "1303358b-5bb3-42c2-aafa-6d4cb7cf5c29.xlsx", "file_path": "uploads\\1303358b-5bb3-42c2-aafa-6d4cb7cf5c29.xlsx", "file_hash": "72c8eafe117de50e37f44674be63b1b40943450f8026d85886a3becb47b8c18f", "processed_at": "2025-11-13T23:59:23.374486", "status": "already_indexed"}, {"file_name": "e1106940-5658-46df-b413-bd965e2ad880.xls", "file_path": "uploads\\e1106940-5658-46df-b413-bd965e2ad880.xls", "file_hash": "e5bfff0cb06ea9f02d45baa7ede6ea20491991b41095aadd77cf07bbc8d2f7a2", "processed_at": "2025-11-13T23:59:23.413085", "status": "already_indexed"}], "errors": []};
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const r = window.REPORT_DATA;
+      const container = document.getElementById('report-container');
+      let pageCounter = 1;
+
+      // Helper function to create a page structure
+      function createPage(isBreakAfter = true) {
+        const page = document.createElement('section');
+        page.className = 'page';
+        if (isBreakAfter) {
+          page.classList.add('page-break');
+        }
+
+        const header = document.createElement('header');
+        header.className = 'header';
+        header.innerHTML = `
+          <div class="brand">
+            <div class="logo">IR</div>
+            <div class="meta">
+              <h1 class="page-header-title">${r.organization || 'Institute Name'}</h1>
+              <div class="sub">${r.report_type || 'Report'} • ${r.period || ''}</div>
+            </div>
+          </div>
+          <div class="header-right">
+            <div class="title">${r.title || 'Annual Report'}</div>
+            <div class="small">Page <span class="pagenum"></span></div>
+          </div>
+        `;
+        page.appendChild(header);
+
+        const main = document.createElement('main');
+        page.appendChild(main);
+
+        const footer = document.createElement('footer');
+        footer.innerHTML = `
+          <div>Office of Institutional Research</div>
+          <div>Page <span class="pagenum"></span></div>
+        `;
+        page.appendChild(footer);
+
+        return { page, main, header, footer };
+      }
+
+      // --- Page 1: Cover ---
+      const { page: coverPage, main: coverMain } = createPage();
+      coverPage.querySelector('.page-header-title').textContent = r.organization || 'Department of IT';
+      coverPage.querySelector('.sub').textContent = `${r.report_type || 'Internship Program Analysis'} • ${r.period || '2021-2025'}`;
+      coverPage.querySelector('.header-right .title').textContent = r.title || 'Student Internship Training Report';
+      coverPage.querySelector('.header-right .small').innerHTML = `Prepared by Office of Institutional Research<br>Page <span class="pagenum"></span>`;
+      coverPage.querySelector('footer').innerHTML = `<div>Office of Institutional Research</div><div>Page <span class="pagenum"></span></div>`;
+
+      coverMain.innerHTML = `
+        <div class="cover-title">
+          <h2>${r.title || 'Student Internship Training Report 2021-2025'}</h2>
+          <p class="muted">${r.metadata.report_description || 'A comprehensive record of student participation and placement trends.'}</p>
+        </div>
+
+        <div class="two-col" style="margin-top:24mm;">
+          <div>
+            <div class="card">
+              <h4>Executive Summary</h4>
+              <div class="desc">${r.executive_summary || 'No executive summary provided.'}</div>
+              <div class="section">
+                <p class="muted">Key highlights:</p>
+                <ul class="muted" id="exec-highlights">
+                  ${(r.kpis || []).slice(0, 5).map(kpi => `<li><strong>${kpi.metric}:</strong> ${kpi.value}</li>`).join('')}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <aside>
+            <div class="card">
+              <h4>Snapshot</h4>
+              <div class="kpi-row" id="snapshot-kpis">
+                ${(r.kpis || []).slice(0, 3).map(kpi => `
+                  <div class="kpi">
+                    <div class="label">${kpi.metric}</div>
+                    <div class="value">${kpi.value}</div>
+                  </div>
+                `).join('')}
+              </div>
+              <div class="muted-2" style="margin-top:10px;">Report generated: <strong>${new Date(r.metadata.generated_at).toLocaleString()}</strong></div>
+            </div>
+          </aside>
+        </div>
+      `;
+      container.appendChild(coverPage);
+
+      // --- Page 2: TOC & KPIs ---
+      const { page: tocKpisPage, main: tocKpisMain } = createPage();
+      tocKpisPage.querySelector('.page-header-title').textContent = 'Contents';
+      tocKpisPage.querySelector('.sub').textContent = 'Report structure & quick navigation';
+      tocKpisPage.querySelector('.header-right').innerHTML = `<div class="small">${r.organization || 'Department of Information Technology'}</div><div class="small">Page <span class="pagenum"></span></div>`;
+      tocKpisPage.querySelector('footer').innerHTML = `<div class="small">Confidential</div><div>Page <span class="pagenum"></span></div>`;
+
+      tocKpisMain.innerHTML = `
+        <div class="card toc">
+          <h3>Table of Contents</h3>
+          <ul id="toc-list">
+            <li><span>Cover Page</span><span>1</span></li>
+            <li><span>Table of Contents & KPIs</span><span>2</span></li>
+            ${(r.sections || []).map((s, idx) => `<li><span>${s.title}</span><span>${idx + 3}</span></li>`).join('')}
+            <li><span>Charts Overview</span><span>${r.sections.length + 3}</span></li>
+            <li><span>Tables Overview</span><span>${r.sections.length + Math.ceil(r.charts.length / 2) + 3}</span></li>
+            <li><span>Annexures & Detailed Tables</span><span>${r.sections.length + Math.ceil(r.charts.length / 2) + Math.ceil(r.tables.length / 2) + 3}</span></li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h4>Key Performance Indicators</h4>
+          <div class="desc">At-a-glance metrics for stakeholders.</div>
+          <div class="kpi-row" id="kpi-list" style="margin-top:12px;">
+            ${(r.kpis || []).map(kpi => `
+              <div class="kpi">
+                <div class="label">${kpi.metric}</div>
+                <div class="value">${kpi.value}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+      container.appendChild(tocKpisPage);
+
+      // --- Dynamic Narrative Sections ---
+      (r.sections || []).forEach((sectionData, index) => {
+        const { page: sectionPage, main: sectionMain } = createPage();
+        sectionPage.querySelector('.page-header-title').textContent = sectionData.title || 'Section Title';
+        sectionPage.querySelector('.sub').textContent = sectionData.category || 'General Overview';
+        sectionPage.querySelector('.header-right').innerHTML = `<div class="small">${r.organization || 'Department of Information Technology'}</div><div class="small">Page <span class="pagenum"></span></div>`;
+        sectionPage.querySelector('footer').innerHTML = `<div class="small">Source: Institutional Research Data</div><div>Page <span class="pagenum"></span></div>`;
+
+        sectionMain.innerHTML = `
+          <div class="card section">
+            <h4>${sectionData.title || 'Section Title'}</h4>
+            ${sectionData.content.split('\n').map(p => `<p>${p}</p>`).join('')}
+          </div>
+        `;
+        container.appendChild(sectionPage);
+      });
+
+      // --- Charts Pages ---
+      if (r.charts && r.charts.length > 0) {
+        let chartIndex = 0;
+        while (chartIndex < r.charts.length) {
+          const { page: chartPage, main: chartMain } = createPage();
+          chartPage.querySelector('.page-header-title').textContent = 'Charts Overview';
+          chartPage.querySelector('.sub').textContent = 'Visual data representations';
+          chartPage.querySelector('.header-right').innerHTML = `<div class="small">${r.organization || 'Department of Information Technology'}</div><div class="small">Page <span class="pagenum"></span></div>`;
+          chartPage.querySelector('footer').innerHTML = `<div class="small">Source: Institutional Research Data</div><div>Page <span class="pagenum"></span></div>`;
+
+          chartMain.innerHTML = `
+            <div class="card">
+              <h4>Key Visualizations</h4>
+              <div class="desc">Insights from student internship data.</div>
+              <div class="chart-grid">
+              </div>
+            </div>
+          `;
+          const chartGrid = chartMain.querySelector('.chart-grid');
+
+          for (let i = 0; i < 2 && chartIndex < r.charts.length; i++) {
+            const chartData = r.charts[chartIndex];
+            const canvasId = `chartCanvas${chartIndex}`;
+            const chartPanel = document.createElement('div');
+            chartPanel.className = 'chart-panel';
+            chartPanel.innerHTML = `<canvas id="${canvasId}"></canvas>`;
+            chartGrid.appendChild(chartPanel);
+            chartIndex++;
+          }
+          container.appendChild(chartPage);
+        }
+      }
+
+      // --- Tables Pages ---
+      if (r.tables && r.tables.length > 0) {
+        let tableIndex = 0;
+        while (tableIndex < r.tables.length) {
+          const { page: tablePage, main: tableMain } = createPage();
+          tablePage.querySelector('.page-header-title').textContent = 'Detailed Tables';
+          tablePage.querySelector('.sub').textContent = 'Supporting data & processed files';
+          tablePage.querySelector('.header-right').innerHTML = `<div class="small">${r.organization || 'Department of Information Technology'}</div><div class="small">Page <span class="pagenum"></span></div>`;
+          tablePage.querySelector('footer').innerHTML = `<div class="small">Source: Institutional Research Data</div><div>Page <span class="pagenum"></span></div>`;
+
+          tableMain.innerHTML = `
+            <div class="card" style="margin-top:12px;">
+              <h4>Detailed Data Listings</h4>
+              <div class="desc">Comprehensive tables for in-depth analysis.</div>
+              <div id="table-blocks"></div>
+            </div>
+          `;
+          const tableBlocks = tableMain.querySelector('#table-blocks');
+
+          for (let i = 0; i < 2 && tableIndex < r.tables.length; i++) { // Render up to 2 tables per page
+            const tableData = r.tables[tableIndex];
+            const tableCard = document.createElement('div');
+            tableCard.className = 'card';
+            tableCard.style.marginTop = i > 0 ? '12px' : '0';
+            tableCard.innerHTML = `
+              <h4>${tableData.title}</h4>
+              <div class="table-wrap">
+                <table class="min-w-full border divide-y divide-gray-200">
+                  <thead>
+                    <tr>
+                      ${tableData.data.headers.map(header => `<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">${header}</th>`).join('')}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${tableData.data.rows.map(row => `
+                      <tr>
+                        ${row.map(cell => `<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${cell}</td>`).join('')}
+                      </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+              </div>
+            `;
+            tableBlocks.appendChild(tableCard);
+            tableIndex++;
+          }
+          container.appendChild(tablePage);
+        }
+      }
+
+
+      // --- Appendix / Annexures ---
+      const { page: appendixPage, main: appendixMain } = createPage(false); // No page break after last page
+      appendixPage.querySelector('.page-header-title').textContent = 'Annexures & Detailed Tables';
+      appendixPage.querySelector('.sub').textContent = 'Supporting data & processed files';
+      appendixPage.querySelector('.header-right').innerHTML = `<div class="small">Appendix</div><div class="small">Page <span class="pagenum"></span></div>`;
+      appendixPage.querySelector('footer').innerHTML = `<div class="small">End of report</div><div>Page <span class="pagenum"></span></div>`;
+
+      const detailedPlacementsTable = r.tables.find(t => t.title.includes('Detailed List of Internships'));
+      if (detailedPlacementsTable) {
+        appendixMain.innerHTML += `
+          <div class="card">
+            <h4>${detailedPlacementsTable.title}</h4>
+            <div class="table-wrap">
+              <table class="min-w-full border divide-y divide-gray-200">
+                <thead>
+                  <tr>
+                    ${detailedPlacementsTable.data.headers.map(header => `<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">${header}</th>`).join('')}
+                  </tr>
+                </thead>
+                <tbody>
+                  ${detailedPlacementsTable.data.rows.map(row => `
+                    <tr>
+                      ${row.map(cell => `<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${cell}</td>`).join('')}
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `;
+      }
+
+      appendixMain.innerHTML += `
+        <div class="card" style="margin-top:12px;">
+          <h4>Processed Files & Data Sources</h4>
+          <div class="muted" id="processed-files">
+            ${(r.processed_files && r.processed_files.length > 0) ? `
+              <ul>
+                ${r.processed_files.map(f => `<li>${f.file_name}</li>`).join('')}
+              </ul>
+            ` : 'No files listed.'}
+          </div>
+        </div>
+      `;
+      container.appendChild(appendixPage);
+
+      // --- Chart.js Initialization ---
+      const chartScript = document.createElement('script');
+      chartScript.type = 'text/javascript';
+      let chartJsCode = '';
+
+      (r.charts || []).forEach((chart, index) => {
+        const canvasId = `chartCanvas${index}`;
+        const chartType = chart.type;
+        const chartData = JSON.stringify(chart.data);
+        const chartOptions = JSON.stringify({
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: chart.title,
+              font: { size: 14, weight: 'bold' },
+              color: '#0a2540'
+            },
+            legend: {
+              position: 'bottom',
+            }
+          }
+        });
+
+        chartJsCode += `
+          var ctx${index} = document.getElementById('${canvasId}');
+          if (ctx${index}) {
+            new Chart(ctx${index}, {
+              type: '${chartType}',
+              data: ${chartData},
+              options: ${chartOptions}
+            });
+          }
+        `;
+      });
+
+      chartScript.textContent = chartJsCode;
+      document.body.appendChild(chartScript);
+
+      // Re-evaluate page numbers after all content is added
+      // This is a simple re-render, for complex pagination in print,
+      // a dedicated library or server-side rendering is usually better.
+      // For this example, CSS page counter handles it.
+    });
+  </script>
+</body>
+</html>

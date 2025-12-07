@@ -1,0 +1,588 @@
+{
+  "final_report_data": {
+    "metadata": {
+      "generated_at": "2025-11-12T20:11:41.843266",
+      "institute_id": 4,
+      "project_id": 6,
+      "report_name": "Final Year Report 2022-2023",
+      "report_description": "It is the final year report of University of Toronot. It contains data of finacials, placement, about student and about faculty.",
+      "report_type": "university_annual_report",
+      "version": 1,
+      "format": "html",
+      "language": "en"
+    },
+    "title": "Final Year Report 2022-2023",
+    "report_type": "university_annual_report",
+    "period": "2022-2023",
+    "organization": "University of Toronto",
+    "executive_summary": "The University of Toronto's Final Year Report 2022-2023, based on sample data, provides a comprehensive overview of its financial health, student achievements, and faculty composition. It highlights a robust financial position with total assets of 1,580,000 and strong career placement outcomes, exemplified by top CTCs approaching 30 LPA across diverse departments like IT and CSE. The report further details departmental financial performance, student billing patterns, and faculty profiles, underscoring the university's operational and academic strengths.",
+    "kpis": [
+      {
+        "metric": "Total Assets",
+        "value": "1,580,000",
+        "category": "Financial Performance",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Total Net Position",
+        "value": "1,100,000",
+        "category": "Financial Performance",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Highest CTC Achieved",
+        "value": "29.8 LPA",
+        "category": "Placement Outcomes",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Overall Student Enrollment",
+        "value": "6500",
+        "category": "Student Demographics",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Total Faculty Count",
+        "value": "151",
+        "category": "Faculty Profile",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Average Student CGPA (Sample)",
+        "value": "7.81",
+        "category": "Academic Achievements",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "CSE Department Surplus",
+        "value": "30,000",
+        "category": "Departmental Financials",
+        "trend": "stable",
+        "icon": "📊"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Executive Summary",
+        "content": "The university concluded the 2022-2023 fiscal year demonstrating robust financial health and effective stewardship, evidenced by a positive Change in Net Position of 30,000. Total Operating Revenue reached 1,015,000, successfully exceeding Total Operating Expenses of 1,000,000, which resulted in an Operating Surplus of 15,000. This performance underscores the institution's capacity for sustainable operations and strategic resource management.\n\nRevenue generation was primarily driven by Tuition & Fees, contributing 425,000, and Government Grants & Contracts, accounting for 280,000. Research Grants & Sponsored Programs also provided a significant 150,000, highlighting diverse funding streams. On the expenditure side, Salaries & Benefits represented the largest allocation at 540,000, followed by Academic Program Expenses at 120,000 and Research Expenses at 110,000, reflecting substantial investment in human capital and core academic missions. Non-operating items, including net investment gains of 10,000, further contributed to a Net Surplus Before Transfers of 22,000, which was then augmented by 8,000 from Transfers & Capital Grants.\n\nRegarding student demographics and academic achievements, the available data for the 2022-2023 year focuses on the first-year Computer Science and Engineering (CSE) cohort. This group of 28 students exhibited a wide range of academic performance, with individual Cumulative Grade Point Averages (CGPAs) spanning from 5.09 to an exceptional 9.9. The average CGPA for this cohort was approximately 7.41, indicating a generally strong academic foundation among incoming students. Specific metrics for overall student demographics, broader academic achievements across all programs, or career services and placement outcomes were not provided within the current context.\n\nFaculty contributions and research activities played a vital role in the university's operational success. Research Grants & Sponsored Programs generated 150,000 in revenue, while associated Research Expenses amounted to 110,000. This positive financial contribution from research underscores the university's active engagement in scholarly pursuits and its ability to attract external funding for innovative projects. While detailed faculty profiles or specific research output metrics are not available, these financial figures demonstrate a healthy and productive research environment.",
+        "priority": 1,
+        "category": "General"
+      },
+      {
+        "title": "Introduction and University Overview",
+        "content": "The University of Toronto, a globally recognized institution, operates with a foundational mission dedicated to advancing knowledge, fostering intellectual growth, and contributing significantly to societal betterment. This commitment is realized through a relentless pursuit of academic excellence, groundbreaking research, and deep community engagement. This Final Year Report for the fiscal year 2022-2023, spanning April 1, 2022, to March 31, 2023, provides a comprehensive analysis of the University's performance across its core operational and strategic domains, reflecting its ongoing dedication to these principles.\n\nThroughout the 2022-2023 academic year, the University maintained a strategic focus on initiatives designed to uphold its high standards and enhance its impact. Key areas of emphasis included ensuring robust financial performance and diligent stewardship of resources, cultivating a diverse and academically strong student body, and providing comprehensive support for student success from enrollment through career placement. These efforts are integral to the University's vision of preparing future leaders and innovators.\n\nThe University's unwavering commitment to academic excellence and community engagement is evident in its operational priorities. This report will detail the outcomes in critical areas such as Financial Performance and Stewardship, assessing the fiscal health and accountability measures implemented. It will also examine Student Demographics and Academic Achievements, highlighting the composition and success of the student body. Furthermore, the report will cover Career Services and Placement Outcomes, demonstrating the effectiveness of support systems in transitioning students to professional life, and provide insights into the Faculty Profile and Research Activities, showcasing the intellectual capital and innovative contributions of its scholars.",
+        "priority": 2,
+        "category": "General"
+      },
+      {
+        "title": "Financial Review",
+        "content": "The university concluded the 2022-2023 fiscal year with a robust financial position, reporting total assets of 1,580,000 and total liabilities of 480,000. This resulted in a substantial total net position of 1,100,000, reflecting sound financial health and accumulated resources. The asset base is predominantly composed of non-current assets, totaling 1,345,000, which underscores the institution's long-term investment in its operational infrastructure and endowment. Current assets, amounting to 235,000, provide adequate liquidity for immediate operational needs.\n\nA detailed analysis of the asset structure reveals significant long-term investments, with Property, Plant & Equipment (net) valued at 820,000, representing the largest component of non-current assets and indicating substantial investment in physical infrastructure. Long-term Investments / Endowment contribute an additional 500,000, providing a stable base for future growth and strategic initiatives. Within current assets, Cash & Cash Equivalents stand at 120,000, complemented by Accounts Receivable (net) of 60,000 and Short-term Investments of 40,000, ensuring operational flexibility and the ability to meet short-term obligations.\n\nThe university's liabilities are well-managed, with total current liabilities at 170,000 and total long-term liabilities at 310,000. Current liabilities primarily consist of Accounts Payable & Accrued Liabilities (90,000) and Deferred Revenue (60,000), indicating normal operational payables and pre-received income. Long-term liabilities are dominated by Long-term Debt of 250,000, which is prudently managed against the significant non-current asset base. The net position further illustrates effective financial stewardship, with 720,000 allocated to Net Investment in Plant, 200,000 designated as Restricted funds for scholarships and research, and 180,000 in Unrestricted / Designated funds, providing flexibility for strategic priorities.\n\nDepartmental financial performance for the year demonstrates effective resource allocation and operational efficiency across all units. All departments reported a surplus, collectively generating a total surplus of 76,000 from a combined revenue of 480,000 and expenses of 404,000. The Computer Science and Engineering (CSE) department led with the highest surplus of 30,000 from revenues of 150,000, followed by the Electronics and Communication Engineering (ECE) department with an 18,000 surplus and the Information Technology (IT) department with a 15,000 surplus. This consistent positive performance across academic departments highlights a disciplined approach to financial management and resource utilization, contributing positively to the university's overall financial stability.",
+        "priority": 3,
+        "category": "General"
+      },
+      {
+        "title": "Student Body Profile and Academic Performance",
+        "content": "The student body profile for the 2022-2023 academic year, based on available data, primarily highlights a concentration of first-year students within the Computer Science and Engineering (CSE) department. A detailed academic performance record for 28 students indicates that all are in their first year and enrolled in CSE. While this specific dataset focuses on a single department and academic level, broader financial records suggest a more diverse student population, encompassing both undergraduate and graduate levels across departments such as CSE, Electrical and Computer Engineering (ECE), Chemical Engineering, and Aerospace Engineering and Industrial Engineering (AEIE).\n\nAcademic performance among the 28 first-year CSE students demonstrates a wide range of achievement, with Cumulative Grade Point Averages (CGPA) spanning from 5.09 to an exceptional 9.9. The average CGPA for this cohort stands at approximately 7.33, indicating a generally strong academic foundation. Notable high achievers include students with CGPAs of 9.9, 9.31, 9.25, and 9.24, reflecting significant academic rigor and success. Conversely, the presence of students at the lower end of the CGPA spectrum suggests areas where targeted academic support and intervention may be beneficial to ensure comprehensive student success.\n\nAnalysis of student billing patterns, based on a sample of five students, reveals varying financial commitments and support mechanisms. Tuition fees ranged from 13,000 to 18,000, with scholarships playing a crucial role in mitigating the financial burden, ranging from 1,000 to 5,000 per student. These scholarships significantly reduce the net amount paid by students, which varied between 10,000 and 13,000. Outstanding amounts ranged from 0 to 4,000, indicating diverse payment behaviors and financial situations among the student body.\n\nThe provision of scholarships stands out as a direct initiative supporting student success and well-being by alleviating financial pressures. These financial aids are instrumental in ensuring access to education and potentially contributing to better academic focus and performance. While specific data on other student success and well-being initiatives is not detailed within the provided context, the strategic allocation of scholarships underscores a commitment to supporting students through their academic journey. Further comprehensive analysis would benefit from the full \"Department-wise Financial Summary\" to provide a complete picture of financial stewardship across all academic units.",
+        "priority": 4,
+        "category": "General"
+      },
+      {
+        "title": "Career Development and Graduate Placement",
+        "content": "The 2022-2023 academic year concluded with a robust performance in graduate placements, demonstrating the strong employability of our students across various disciplines. A total of 19 students secured placements with leading companies, reflecting successful transitions into professional roles. The IT department led in terms of the number of placements with 7 students, followed by CSE and Chemical Engineering with 4 students each, ECE with 3 students, and AEIE with 1 student. This distribution highlights a broad engagement with industry partners across multiple engineering streams.\n\nAn analysis of Cost to Company (CTC) packages reveals competitive compensation for our graduates. The highest CTC recorded was 28.8 LPA, secured by Amelia Davis from the IT department with Capgemini. Other notable high packages include 26.3 LPA (Harper Miller, IT, IBM), 24.9 LPA (Charlotte Martin, IT, Accenture), 21.4 LPA (Ella Johnson, CSE, Google), and 21.3 LPA (Ethan Garcia, CSE, Amazon). The average CTC across all placed students stood at approximately 15.89 LPA. Department-wise, the IT department achieved the highest average CTC at approximately 18.78 LPA, followed by CSE at 17.3 LPA, ECE at 10.3 LPA, Chemical Engineering at 9.5 LPA, and AEIE at 11.5 LPA.\n\nThe placement season saw participation from a diverse range of top recruiting companies and industry sectors. Key recruiters included technology giants such as Amazon, Google, IBM, Capgemini, Accenture, TCS, Wipro, and Samsung, indicating a strong demand for our graduates in the IT and software development sectors. The energy and chemical industries were also significant, with companies like Reliance, ONGC, and Shell hiring from the Chemical Engineering department. Furthermore, companies like ABB and Texas Instruments recruited from AEIE and ECE departments, respectively, showcasing opportunities in manufacturing and electronics. Several companies, including Amazon, IBM, Capgemini, Accenture, Texas Instruments, and ONGC, extended multiple offers, underscoring their sustained interest in our talent pool.\n\nWhile specific details regarding career services initiatives are not explicitly provided within the available data, the observed placement outcomes suggest effective support mechanisms are in place to facilitate student career development and industry engagement. The successful placement of students across diverse companies and with competitive CTCs indicates that students are well-prepared for the professional world, likely through a combination of academic rigor, skill development, and career guidance. The consistent recruitment by prominent companies further attests to the quality of our graduates and the efficacy of the placement process.",
+        "priority": 5,
+        "category": "General"
+      },
+      {
+        "title": "Faculty Highlights and Research Contributions",
+        "content": "The university's faculty profile for the 2022-2023 academic year comprises 38 unique members distributed across three departments: Computer Science and Engineering (CSE), Electrical and Computer Engineering (ECE), and Chemical Engineering. The CSE department has 14 faculty members, ECE has 16, and Chemical Engineering has 8. Leadership roles include two Heads of Department (HODs), one in CSE and one in Chemical Engineering. The faculty body consists of 20 Professors and 16 Assistant Professors, indicating a balanced mix of experienced academics and emerging scholars.\n\nIn terms of academic qualifications, the faculty demonstrates a diverse educational background. Seven faculty members hold Ph.D. degrees, with three in CSE, three in ECE, and one in Chemical Engineering, signifying a strong foundation for advanced research and specialized instruction. Additionally, 12 faculty members possess M.Tech degrees, 12 hold M.Sc degrees, and 7 have B.Tech degrees. This breadth of qualifications contributes to a comprehensive academic environment capable of delivering diverse curricula and fostering varied intellectual pursuits. The faculty also exhibits a wide range of professional experience, from 3 years to 20 years, with several professors having over a decade of experience, including five faculty members with 20 years of experience in their respective fields.\n\nWhile specific data regarding significant research projects, publications, grants secured, and formal recognition of faculty achievements is not provided within the current context, the presence of 7 Ph.D.-qualified faculty members across the three departments suggests an inherent capacity for advanced research and scholarly output. The extensive experience of many professors, particularly those with 10 to 20 years in academia, further indicates a deep reservoir of expertise that likely contributes to their fields through mentorship, curriculum development, and informal knowledge dissemination.\n\nSimilarly, detailed information on initiatives for faculty development and support is not explicitly available in the provided data. However, the university's commitment to maintaining a faculty with diverse qualifications and experience levels implies an underlying framework for professional growth. The blend of Assistant Professors and seasoned Professors suggests opportunities for mentorship and collaborative development, which are crucial for sustaining academic excellence and fostering a vibrant research culture.",
+        "priority": 6,
+        "category": "General"
+      },
+      {
+        "title": "Key Achievements and Milestones",
+        "content": "The academic year 2022-2023 saw notable individual achievements within the student body, particularly among the sampled first-year students in the Computer Science and Engineering (CSE) department. Analysis of the provided student-level data reveals a strong performance cohort, with several students demonstrating exceptional academic prowess. For instance, Benjamin Wilson achieved a CGPA of 9.9, closely followed by Alexander Jackson and Amelia Miller, both with CGPAs exceeding 9.2. Overall, five students in this sample maintained a CGPA of 9.0 or higher, indicating a significant segment of high-achieving individuals within the first-year CSE program. The CGPA range for this group spanned from 5.09 to 9.9, with an average CGPA of approximately 7.32 across the 28 sampled students, reflecting a broad spectrum of academic engagement and success.\n\nIn terms of financial stewardship, the university's operational framework for revenue allocation is clearly defined. Tuition revenue is allocated based on a student-credit-weighted formula, ensuring that resources are distributed in alignment with student enrollment and academic load. Furthermore, research overhead is allocated directly based on grant receipts, a methodology designed to transparently link research funding with the administrative and infrastructural support required for its execution. This structured approach underpins the university's financial operations, providing a clear basis for resource distribution.\n\nWhile the provided data offers specific insights into a segment of student academic performance and outlines key financial allocation methodologies, comprehensive reporting on other critical areas is not feasible with the available information. Details regarding overall financial performance, including revenue generation, expenditure, and investment outcomes, are not present. Similarly, data on broader student demographics, career services outcomes such as placement rates or employer engagement, faculty profiles, research activities, grants secured, or the impact of university initiatives on the wider community and academic landscape are beyond the scope of the provided context. Therefore, a full assessment of achievements and milestones in these areas cannot be rendered at this time.",
+        "priority": 7,
+        "category": "General"
+      },
+      {
+        "title": "Conclusion and Future Outlook",
+        "content": "The fiscal year 2022-2023 has been a period of dedicated focus across the University of Toronto's core operational and strategic pillars. The preceding analysis has detailed the institution's Financial Performance and Stewardship, highlighting the commitment to responsible resource management. Concurrently, the report examined Student Demographics and Academic Achievements, reflecting the university's ongoing efforts to foster an inclusive and high-achieving learning environment. Furthermore, insights into Career Services and Placement Outcomes underscored the institution's dedication to preparing students for successful post-graduation pathways, while the Faculty Profile and Research Activities section showcased the vibrant intellectual contributions and scholarly pursuits that define the university's academic landscape.\n\nLooking ahead, the University of Toronto is poised to build upon the foundations established in 2022-2023, setting strategic goals and priorities for the upcoming academic year. These include a continued emphasis on robust financial stewardship to ensure long-term sustainability and investment in critical areas. Efforts will be directed towards further enhancing the student experience, fostering academic excellence, and expanding support services to ensure every student can thrive. Simultaneously, the university will strengthen its career development initiatives, forging deeper connections with industry partners to maximize placement outcomes and equip graduates with the skills demanded by a dynamic global workforce.\n\nA central priority remains the cultivation of a world-class faculty and research ecosystem. This involves attracting and retaining leading scholars, investing in cutting-edge research infrastructure, and promoting interdisciplinary collaboration to address complex global challenges. The University of Toronto is committed to continuous improvement across all facets of its operations, embracing innovation and adaptability to meet evolving educational and societal needs. This unwavering dedication ensures that the institution remains at the forefront of discovery and learning.\n\nThe vision for the University of Toronto is one of sustained leadership in both education and research, solidifying its reputation as a global intellectual powerhouse. By fostering an environment of academic rigor, groundbreaking discovery, and profound societal impact, the university aims to continue shaping future leaders, advancing knowledge, and contributing meaningfully to the economic, social, and cultural well-being of local and global communities. This forward-looking perspective underpins the institution's commitment to excellence and its enduring legacy.",
+        "priority": 8,
+        "category": "General"
+      }
+    ],
+    "charts": [
+      {
+        "title": "University Financial Position (2022-2023)",
+        "type": "pie",
+        "data": {
+          "labels": [
+            "Accounts Payable & Accrued Liabilities",
+            "Deferred Revenue",
+            "Short-term Debt & Current Portion",
+            "Long-term Debt",
+            "Pension & Post-retirement Liabilities",
+            "Other Long-term Liabilities"
+          ],
+          "datasets": [
+            {
+              "label": "Breakdown of Total Liabilities",
+              "data": [
+                90000,
+                60000,
+                20000,
+                250000,
+                50000,
+                10000
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6",
+                "#6366f1"
+              ]
+            }
+          ]
+        },
+        "topic": "financial assets and liabilities breakdown",
+        "priority": 1
+      },
+      {
+        "title": "Top CTCs by Department (2022-2023 Placements)",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "CSE",
+            "ECE",
+            "CHEMICAL",
+            "AEIE"
+          ],
+          "datasets": [
+            {
+              "label": "Total Tuition by Department",
+              "data": [
+                33000,
+                14000,
+                13000,
+                16000
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444"
+              ]
+            }
+          ]
+        },
+        "topic": "student placement outcomes",
+        "priority": 1
+      },
+      {
+        "title": "Departmental Financial Performance (Revenue vs. Expenses)",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "CSE",
+            "IT",
+            "ECE",
+            "CHEMICAL",
+            "AEIE"
+          ],
+          "datasets": [
+            {
+              "label": "Surplus/(Deficit) (Rupees)",
+              "data": [
+                30000,
+                15000,
+                18000,
+                5000,
+                8000
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "departmental financial health",
+        "priority": 2
+      },
+      {
+        "title": "Student Enrollment Distribution by Department",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "CSE",
+            "IT",
+            "ECE",
+            "CHEMICAL",
+            "AEIE"
+          ],
+          "datasets": [
+            {
+              "label": "Student Count",
+              "data": [
+                2200,
+                1200,
+                1600,
+                800,
+                700
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "student demographics",
+        "priority": 2
+      },
+      {
+        "title": "Faculty Count by Department",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "CSE",
+            "ECE",
+            "AEIE",
+            "IT"
+          ],
+          "datasets": [
+            {
+              "label": "Number of Faculty by Department",
+              "data": [
+                14,
+                15,
+                12,
+                3
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444"
+              ]
+            }
+          ]
+        },
+        "topic": "faculty profile",
+        "priority": 3
+      }
+    ],
+    "tables": [
+      {
+        "title": "Consolidated Balance Sheet Summary (2022-2023)",
+        "type": "summary",
+        "data": {
+          "headers": [
+            "Column1",
+            "Column2",
+            "Column3"
+          ],
+          "rows": [
+            [
+              "120,000",
+              "60,000",
+              "40,000"
+            ],
+            [
+              "15,000",
+              "235,000",
+              "500,000"
+            ],
+            [
+              "820,000",
+              "25,000",
+              "1,345,000"
+            ],
+            [
+              "1,580,000",
+              "90,000",
+              "60,000"
+            ],
+            [
+              "20,000",
+              "170,000",
+              "250,000"
+            ],
+            [
+              "50,000",
+              "10,000",
+              "310,000"
+            ],
+            [
+              "480,000",
+              "720,000",
+              "200,000"
+            ],
+            [
+              "180,000",
+              "1,100,000",
+              "1,580,000"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Department-wise Financial Overview (Revenue, Expenses, Surplus)",
+        "type": "summary",
+        "data": {
+          "headers": [
+            "Department",
+            "Revenue",
+            "Expenses",
+            "Surplus/(Deficit)",
+            "Faculty Count"
+          ],
+          "rows": [
+            [
+              "CSE",
+              "150,000",
+              "120,000",
+              "30,000",
+              "42"
+            ],
+            [
+              "IT",
+              "90,000",
+              "75,000",
+              "15,000",
+              "28"
+            ],
+            [
+              "ECE",
+              "110,000",
+              "92,000",
+              "18,000",
+              "36"
+            ],
+            [
+              "CHEMICAL",
+              "70,000",
+              "65,000",
+              "5,000",
+              "25"
+            ],
+            [
+              "AEIE",
+              "60,000",
+              "52,000",
+              "8,000",
+              "20"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Sample Student Placement Outcomes (Top CTCs)",
+        "type": "detailed_list",
+        "data": {
+          "headers": [
+            "Name",
+            "Title",
+            "Department",
+            "Email",
+            "Degree",
+            "Experience (Years)"
+          ],
+          "rows": [
+            [
+              "Charlie Scott",
+              "Assistant Professor",
+              "CSE",
+              "charlie.scott@utoronto.edu",
+              "M.Tech",
+              5
+            ],
+            [
+              "Steven Lee",
+              "Professor",
+              "CSE",
+              "steven.lee@utoronto.edu",
+              "M.Tech",
+              20
+            ],
+            [
+              "Eva Brown",
+              "Professor",
+              "CSE",
+              "eva.brown@utoronto.edu",
+              "B.Tech",
+              10
+            ],
+            [
+              "Quentin Clark",
+              "Professor",
+              "CSE",
+              "quentin.clark@utoronto.edu",
+              "B.Tech",
+              5
+            ],
+            [
+              "Frank Garcia",
+              "Professor",
+              "CSE",
+              "frank.garcia@utoronto.edu",
+              "M.Sc",
+              18
+            ],
+            [
+              "Victor Zimmerman",
+              "Professor",
+              "CSE",
+              "victor.zimmerman@utoronto.edu",
+              "B.Tech",
+              17
+            ],
+            [
+              "Helen Young",
+              "Assistant Professor",
+              "CSE",
+              "helen.young@utoronto.edu",
+              "M.Sc",
+              4
+            ],
+            [
+              "Charlie Anderson",
+              "Assistant Professor",
+              "CSE",
+              "charlie.anderson@utoronto.edu",
+              "M.Sc",
+              6
+            ],
+            [
+              "Quentin Garcia",
+              "HOD",
+              "IT",
+              "quentin.garcia@utoronto.edu",
+              "M.Sc",
+              22
+            ],
+            [
+              "Rachel Martin",
+              "Professor",
+              "IT",
+              "rachel.martin@utoronto.edu",
+              "Ph.D.",
+              7
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Sample Student Billing and Scholarship Data",
+        "type": "summary",
+        "data": {
+          "headers": [
+            "Department",
+            "Revenue",
+            "Expenses",
+            "Surplus/(Deficit)",
+            "Faculty Count",
+            "Student Count"
+          ],
+          "rows": [
+            [
+              "CSE",
+              "150,000",
+              "120,000",
+              "30,000",
+              "42",
+              "2200"
+            ],
+            [
+              "IT",
+              "90,000",
+              "75,000",
+              "15,000",
+              "28",
+              "1200"
+            ],
+            [
+              "ECE",
+              "110,000",
+              "92,000",
+              "18,000",
+              "36",
+              "1600"
+            ],
+            [
+              "CHEMICAL",
+              "70,000",
+              "65,000",
+              "5,000",
+              "25",
+              "800"
+            ],
+            [
+              "AEIE",
+              "60,000",
+              "52,000",
+              "8,000",
+              "20",
+              "700"
+            ]
+          ]
+        }
+      }
+    ],
+    "processed_files": [
+      {
+        "file_name": "71ca2edd-e448-42cc-b84b-338066552871.pdf",
+        "file_path": "uploads\\71ca2edd-e448-42cc-b84b-338066552871.pdf",
+        "file_hash": "92a8e79b852b7c5ed8808885a0139f842ec902a3a87fe193b80ddd569c90b6f4",
+        "processed_at": "2025-11-12T19:58:54.297235",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "547381e7-18f8-4029-bdfc-6d4283ac83fa.xlsx",
+        "file_path": "uploads\\547381e7-18f8-4029-bdfc-6d4283ac83fa.xlsx",
+        "file_hash": "71ccf7ddf6faf2ac3f7abdd082888f1fa080c67fac11e7bea5168e22428d4f61",
+        "processed_at": "2025-11-12T19:58:54.304875",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "c28579f1-9daa-4fda-9562-6e66ab82ed8a.xlsx",
+        "file_path": "uploads\\c28579f1-9daa-4fda-9562-6e66ab82ed8a.xlsx",
+        "file_hash": "6d3ce08ec5af20d1edf4e02a1ca9a03f2c93ea808305b15a6e0ecee4a44a5543",
+        "processed_at": "2025-11-12T19:58:54.314790",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "a670c87e-28b7-41ee-8490-8a4da7f91804.xlsx",
+        "file_path": "uploads\\a670c87e-28b7-41ee-8490-8a4da7f91804.xlsx",
+        "file_hash": "5b5489b03709fb3cef89b448c16b4b162dbd6cc056507a3a979c58955b301050",
+        "processed_at": "2025-11-12T19:58:54.386710",
+        "status": "already_indexed"
+      }
+    ],
+    "errors": []
+  },
+  "html_report": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<title>Final Year Report 2022-2023</title>\n\n<style>\n  /* ---------- Page & print sizing ---------- */\n  @page { size: A4; margin: 18mm; }\n  html,body { height:100%; margin:0; padding:0; background:#f3f6f9; font-family: Inter, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif; color:#0f1724; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }\n  :root{\n    --accent: #0a2540;\n    --accent-2: #046c5a;\n    --muted: #64748b;\n    --muted-2:#94a3b8;\n    --card:#ffffff;\n    --max-width: 178mm;\n    --shadow: 0 8px 28px rgba(10,37,64,0.06);\n  }\n\n  .container { width:var(--max-width); margin:8mm auto; padding:0; box-sizing:border-box; }\n\n  /* Each .page becomes a PDF page. Use padding to respect margins. */\n  .page { background: var(--card); margin-bottom:10mm; border-radius:6px; padding:18mm; box-sizing:border-box; box-shadow: none; min-height:257mm; display:flex; flex-direction:column; }\n  .page:last-child { page-break-after: auto; }\n  .page-break { page-break-after: always; }\n\n  /* Header & footer */\n  .header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e6eef6; padding-bottom:10px; margin-bottom:14px; }\n  .brand { display:flex; align-items:center; gap:12px; }\n  .brand .logo { width:56px; height:56px; border-radius:8px; background:linear-gradient(180deg,var(--accent),var(--accent-2)); display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:18px; letter-spacing:0.6px; }\n  .brand .meta { display:flex; flex-direction:column; }\n  .brand h1 { margin:0; font-size:18px; color:var(--accent); letter-spacing:0.2px; }\n  .brand .sub { margin-top:2px; font-size:13px; color:var(--muted); }\n\n  .header-right { text-align:right; font-size:12px; color:var(--muted); }\n  .header-right .title { font-weight:600; color:var(--accent); }\n  .header-right .small { color:var(--muted-2); margin-top:4px; }\n\n  footer { margin-top:auto; padding-top:10px; border-top:1px solid #eef2f7; display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--muted); }\n  .pagenum:before { content: counter(page); } /* basic CSS page counter */\n\n  /* Page title */\n  .cover-title { margin: 12px 0 18px 0; }\n  .cover-title h2 { font-size:28px; margin:0; color:var(--accent); letter-spacing:-0.2px; }\n  .cover-title p { margin:6px 0 0 0; color:var(--muted); font-size:14px; }\n\n  /* Table of contents */\n  .toc { margin-top:6mm; }\n  .toc h3 { margin:0 0 10px 0; color:var(--accent); font-size:16px; }\n  .toc ul { list-style:none; padding:0; margin:0; }\n  .toc li { display:flex; gap:12px; justify-content:space-between; padding:8px 0; border-bottom:1px dashed #f1f5f9; color:var(--muted); font-size:13px; }\n\n  /* KPI row */\n  .kpi-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }\n  .kpi { background: linear-gradient(180deg, #ffffff, #fbfdff); padding:12px 14px; border-radius:10px; min-width:140px; box-shadow: var(--shadow); border:1px solid #eef6fb; display:flex; flex-direction:column; }\n  .kpi .label { font-size:12px; color:var(--muted); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.6px; }\n  .kpi .value { font-size:20px; color:var(--accent); font-weight:700; }\n\n  /* Card */\n  .card { background:var(--card); border-radius:10px; padding:14px; box-shadow:var(--shadow); border:1px solid #eef6fb; margin-bottom:14px; }\n  .card h4 { margin:0 0 8px 0; color:var(--accent); font-size:16px; }\n  .card .desc { color:var(--muted); font-size:13px; margin-bottom:10px; }\n\n  /* Chart placeholders (NO images) */\n  .chart-grid { display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:8px; }\n  .chart-panel { height:220px; border-radius:8px; background:linear-gradient(180deg,#fbfdff,#f7fbff); border:1px solid #eef6fb; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; padding:8px; box-sizing:border-box; }\n  .chart-caption { margin-top:8px; font-size:12px; color:var(--muted); }\n\n  /* Tables */\n  .table-wrap { overflow:auto; margin-top:8px; }\n  table { width:100%; border-collapse:collapse; font-size:13px; }\n  th, td { text-align:left; padding:10px 8px; border-bottom:1px solid #eef2f7; }\n  th { background:#fbfdff; color:var(--muted); font-weight:700; font-size:13px; }\n  tbody tr:last-child td { border-bottom: none; }\n\n  /* Section text */\n  .section { margin-top:12px; }\n  .section h3 { margin:0 0 8px 0; color:var(--accent); font-size:16px; }\n  .section p { color:#0b1b28; line-height:1.55; font-size:13px; margin:0 0 10px 0; }\n\n  .two-col { display:grid; grid-template-columns:1fr 320px; gap:16px; align-items:start; }\n\n  .muted { color:var(--muted); font-size:13px; }\n  .muted-2 { color:var(--muted-2); font-size:12px; }\n\n  .actions { display:flex; gap:8px; margin-bottom:12px; }\n  .button { background:#f8fafc; border:1px solid #e6eef6; padding:8px 10px; border-radius:8px; font-size:13px; color:var(--muted); }\n\n  .break-after { page-break-after: always; }\n\n  @media print {\n    body { background:white; }\n    .container { margin:0; width:auto; }\n    .page { box-shadow:none; border-radius:0; padding:18mm; min-height:auto; }\n    .no-print { display:none; }\n    thead { display:table-header-group; }\n    tfoot { display:table-footer-group; }\n  }\n\n  @media (max-width:900px) {\n    .chart-grid { grid-template-columns:1fr; }\n    .two-col { grid-template-columns:1fr; }\n    .kpi-row { gap:10px; }\n  }\n\n</style>\n</head>\n<body>\n  <div class=\"container\">\n\n    <!-- Page 1: Cover -->\n    <section class=\"page break-after\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\">\n            <h1 id=\"institute-name\">University of Toronto</h1>\n            <div class=\"sub\" id=\"institute-type\">University Annual Report • University of Toronto</div>\n          </div>\n        </div>\n\n        <div class=\"header-right\">\n          <div class=\"title\" id=\"report-title\">Final Year Report 2022-2023</div>\n          <div class=\"small\">Prepared by Office of Institutional Research</div>\n        </div>\n      </header>\n\n      <main style=\"margin-top:10px;\">\n        <div class=\"cover-title\">\n          <h2 id=\"main-title\">Final Year Report 2022-2023</h2>\n          <p class=\"muted\">It is the final year report of University of Toronot. It contains data of finacials, placement, about student and about faculty.</p>\n        </div>\n\n        <div class=\"two-col\" style=\"margin-top:24mm;\">\n          <div>\n            <div class=\"card\">\n              <h4>Executive Summary</h4>\n              <div class=\"desc\" id=\"exec-summary-desc\">The University of Toronto's Final Year Report 2022-2023, based on sample data, provides a comprehensive overview of its financial health, student achievements, and faculty composition. It highlights a robust financial position with total assets of 1,580,000 and strong career placement outcomes, exemplified by top CTCs approaching 30 LPA across diverse departments like IT and CSE. The report further details departmental financial performance, student billing patterns, and faculty profiles, underscoring the university's operational and academic strengths.</div>\n              <div class=\"section\">\n                <p class=\"muted\">Key highlights:</p>\n                <ul class=\"muted\" id=\"exec-highlights\">\n                  <li>Total Assets: 1,580,000</li>\n                  <li>Total Net Position: 1,100,000</li>\n                  <li>Highest CTC Achieved: 29.8 LPA</li>\n                </ul>\n              </div>\n            </div>\n          </div>\n\n          <aside>\n            <div class=\"card\">\n              <h4>Snapshot</h4>\n              <div class=\"kpi-row\" id=\"snapshot-kpis\">\n                <div class=\"kpi\"><div class=\"label\">Total Assets</div><div class=\"value\">1,580,000</div></div>\n                <div class=\"kpi\"><div class=\"label\">Total Net Position</div><div class=\"value\">1,100,000</div></div>\n                <div class=\"kpi\"><div class=\"label\">Highest CTC Achieved</div><div class=\"value\">29.8 LPA</div></div>\n              </div>\n              <div class=\"muted-2\" style=\"margin-top:10px;\">Report generated: <strong id=\"gen-date\">2025-11-12 20:11:41</strong></div>\n            </div>\n          </aside>\n        </div>\n\n      </main>\n\n      <footer>\n        <div>Office of Institutional Research</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n    <!-- Page 2: TOC & KPIs -->\n    <section class=\"page break-after\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\">\n            <h1>Contents</h1>\n            <div class=\"sub\">Report structure & quick navigation</div>\n          </div>\n        </div>\n        <div class=\"header-right\">\n          <div class=\"small\">University of Toronto</div>\n        </div>\n      </header>\n\n      <main>\n        <div class=\"card toc\" id=\"toc\">\n          <h3>Table of Contents</h3>\n          <ul id=\"toc-list\">\n            <li><span>Executive Summary</span><span>3</span></li>\n            <li><span>Introduction and University Overview</span><span>3</span></li>\n            <li><span>Financial Review</span><span>4</span></li>\n            <li><span>Student Body Profile and Academic Performance</span><span>5</span></li>\n            <li><span>Career Development and Graduate Placement</span><span>6</span></li>\n            <li><span>Faculty Highlights and Research Contributions</span><span>7</span></li>\n            <li><span>Key Achievements and Milestones</span><span>8</span></li>\n            <li><span>Conclusion and Future Outlook</span><span>8</span></li>\n            <li><span>Annexures & Detailed Tables</span><span>9</span></li>\n          </ul>\n        </div>\n\n        <div class=\"card\" style=\"margin-top:12px;\">\n          <h4>Key Performance Indicators</h4>\n          <div class=\"desc\">At-a-glance metrics for stakeholders.</div>\n          <div class=\"kpi-row\" id=\"kpi-list\" style=\"margin-top:12px;\">\n            <div class=\"kpi\"><div class=\"label\">Total Assets</div><div class=\"value\">1,580,000</div></div>\n            <div class=\"kpi\"><div class=\"label\">Total Net Position</div><div class=\"value\">1,100,000</div></div>\n            <div class=\"kpi\"><div class=\"label\">Highest CTC Achieved</div><div class=\"value\">29.8 LPA</div></div>\n            <div class=\"kpi\"><div class=\"label\">Overall Student Enrollment</div><div class=\"value\">6500</div></div>\n            <div class=\"kpi\"><div class=\"label\">Total Faculty Count</div><div class=\"value\">151</div></div>\n            <div class=\"kpi\"><div class=\"label\">Average Student CGPA (Sample)</div><div class=\"value\">7.81</div></div>\n            <div class=\"kpi\"><div class=\"label\">CSE Department Surplus</div><div class=\"value\">30,000</div></div>\n          </div>\n        </div>\n      </main>\n\n      <footer>\n        <div class=\"small\">Confidential</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n    <!-- Page 3: Executive Summary & Introduction -->\n    <section class=\"page break-after\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\"><h1>Executive Summary & Introduction</h1><div class=\"sub\">Overview of the report and university mission</div></div>\n        </div>\n        <div class=\"header-right\"><div class=\"small\">University of Toronto</div></div>\n      </header>\n\n      <main id=\"section-main\">\n        <div class=\"card section\">\n          <h4>Executive Summary</h4>\n          <div>\n            <p>The university concluded the 2022-2023 fiscal year demonstrating robust financial health and effective stewardship, evidenced by a positive Change in Net Position of 30,000. Total Operating Revenue reached 1,015,000, successfully exceeding Total Operating Expenses of 1,000,000, which resulted in an Operating Surplus of 15,000. This performance underscores the institution's capacity for sustainable operations and strategic resource management.</p>\n            <p>Revenue generation was primarily driven by Tuition & Fees, contributing 425,000, and Government Grants & Contracts, accounting for 280,000. Research Grants & Sponsored Programs also provided a significant 150,000, highlighting diverse funding streams. On the expenditure side, Salaries & Benefits represented the largest allocation at 540,000, followed by Academic Program Expenses at 120,000 and Research Expenses at 110,000, reflecting substantial investment in human capital and core academic missions. Non-operating items, including net investment gains of 10,000, further contributed to a Net Surplus Before Transfers of 22,000, which was then augmented by 8,000 from Transfers & Capital Grants.</p>\n            <p>Regarding student demographics and academic achievements, the available data for the 2022-2023 year focuses on the first-year Computer Science and Engineering (CSE) cohort. This group of 28 students exhibited a wide range of academic performance, with individual Cumulative Grade Point Averages (CGPAs) spanning from 5.09 to an exceptional 9.9. The average CGPA for this cohort was approximately 7.41, indicating a generally strong academic foundation among incoming students. Specific metrics for overall student demographics, broader academic achievements across all programs, or career services and placement outcomes were not provided within the current context.</p>\n            <p>Faculty contributions and research activities played a vital role in the university's operational success. Research Grants & Sponsored Programs generated 150,000 in revenue, while associated Research Expenses amounted to 110,000. This positive financial contribution from research underscores the university's active engagement in scholarly pursuits and its ability to attract external funding for innovative projects. While detailed faculty profiles or specific research output metrics are not available, these financial figures demonstrate a healthy and productive research environment.</p>\n          </div>\n        </div>\n\n        <div class=\"card section\" style=\"margin-top:12px;\">\n          <h4>Introduction and University Overview</h4>\n          <div>\n            <p>The University of Toronto, a globally recognized institution, operates with a foundational mission dedicated to advancing knowledge, fostering intellectual growth, and contributing significantly to societal betterment. This commitment is realized through a relentless pursuit of academic excellence, groundbreaking research, and deep community engagement. This Final Year Report for the fiscal year 2022-2023, spanning April 1, 2022, to March 31, 2023, provides a comprehensive analysis of the University's performance across its core operational and strategic domains, reflecting its ongoing dedication to these principles.</p>\n            <p>Throughout the 2022-2023 academic year, the University maintained a strategic focus on initiatives designed to uphold its high standards and enhance its impact. Key areas of emphasis included ensuring robust financial performance and diligent stewardship of resources, cultivating a diverse and academically strong student body, and providing comprehensive support for student success from enrollment through career placement. These efforts are integral to the University's vision of preparing future leaders and innovators.</p>\n            <p>The University's unwavering commitment to academic excellence and community engagement is evident in its operational priorities. This report will detail the outcomes in critical areas such as Financial Performance and Stewardship, assessing the fiscal health and accountability measures implemented. It will also examine Student Demographics and Academic Achievements, highlighting the composition and success of the student body. Furthermore, the report will cover Career Services and Placement Outcomes, demonstrating the effectiveness of support systems in transitioning students to professional life, and provide insights into the Faculty Profile and Research Activities, showcasing the intellectual capital and innovative contributions of its scholars.</p>\n          </div>\n        </div>\n      </main>\n\n      <footer>\n        <div class=\"small\">Source: University Internal Records</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n    <!-- Page 4: Financial Review, Charts & Tables -->\n    <section class=\"page break-after\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\"><h1>Financial Review</h1><div class=\"sub\">Analysis of the university's financial health and performance</div></div>\n        </div>\n        <div class=\"header-right\"><div class=\"small\">University of Toronto</div></div>\n      </header>\n\n      <main id=\"section-main\">\n        <div class=\"card section\">\n          <h4>Financial Review</h4>\n          <div>\n            <p>The university concluded the 2022-2023 fiscal year with a robust financial position, reporting total assets of 1,580,000 and total liabilities of 480,000. This resulted in a substantial total net position of 1,100,000, reflecting sound financial health and accumulated resources. The asset base is predominantly composed of non-current assets, totaling 1,345,000, which underscores the institution's long-term investment in its operational infrastructure and endowment. Current assets, amounting to 235,000, provide adequate liquidity for immediate operational needs.</p>\n            <p>A detailed analysis of the asset structure reveals significant long-term investments, with Property, Plant & Equipment (net) valued at 820,000, representing the largest component of non-current assets and indicating substantial investment in physical infrastructure. Long-term Investments / Endowment contribute an additional 500,000, providing a stable base for future growth and strategic initiatives. Within current assets, Cash & Cash Equivalents stand at 120,000, complemented by Accounts Receivable (net) of 60,000 and Short-term Investments of 40,000, ensuring operational flexibility and the ability to meet short-term obligations.</p>\n            <p>The university's liabilities are well-managed, with total current liabilities at 170,000 and total long-term liabilities at 310,000. Current liabilities primarily consist of Accounts Payable & Accrued Liabilities (90,000) and Deferred Revenue (60,000), indicating normal operational payables and pre-received income. Long-term liabilities are dominated by Long-term Debt of 250,000, which is prudently managed against the significant non-current asset base. The net position further illustrates effective financial stewardship, with 720,000 allocated to Net Investment in Plant, 200,000 designated as Restricted funds for scholarships and research, and 180,000 in Unrestricted / Designated funds, providing flexibility for strategic priorities.</p>\n            <p>Departmental financial performance for the year demonstrates effective resource allocation and operational efficiency across all units. All departments reported a surplus, collectively generating a total surplus of 76,000 from a combined revenue of 480,000 and expenses of 404,000. The Computer Science and Engineering (CSE) department led with the highest surplus of 30,000 from revenues of 150,000, followed by the Electronics and Communication Engineering (ECE) department with an 18,000 surplus and the Information Technology (IT) department with a 15,000 surplus. This consistent positive performance across academic departments highlights a disciplined approach to financial management and resource utilization, contributing positively to the university's overall financial stability.</p>\n          </div>\n        </div>\n\n        <div class=\"card\">\n          <h4>Financial Overview Charts</h4>\n          <div class=\"desc\">Visual representation of key financial metrics.</div>\n          <div class=\"chart-grid\">\n            <div class=\"chart-panel\"><canvas id=\"chart-0\"></canvas></div>\n            <div class=\"chart-panel\"><canvas id=\"chart-2\"></canvas></div>\n          </div>\n        </div>\n\n        <div class=\"card\" style=\"margin-top:12px;\">\n          <h4>Consolidated Balance Sheet Summary</h4>\n          <div class=\"table-wrap\">\n            <table>\n              <thead>\n                <tr><th>Cash & Cash Equivalents</th><th>Accounts Receivable (net)</th><th>Short-term Investments</th></tr>\n              </thead>\n              <tbody>\n                <tr><td>120,000</td><td>60,000</td><td>40,000</td></tr>\n              </tbody>\n            </table>\n            <table style=\"margin-top:10px;\">\n              <thead>\n                <tr><th>Other Current Assets</th><th>Total Current Assets</th><th>Long-term Investments / Endowment</th></tr>\n              </thead>\n              <tbody>\n                <tr><td>15,000</td><td>235,000</td><td>500,000</td></tr>\n              </tbody>\n            </table>\n            <table style=\"margin-top:10px;\">\n              <thead>\n                <tr><th>Property, Plant & Equipment (net)</th><th>Other Non-current Assets</th><th>Total Non-current Assets</th></tr>\n              </thead>\n              <tbody>\n                <tr><td>820,000</td><td>25,000</td><td>1,345,000</td></tr>\n              </tbody>\n            </table>\n            <table style=\"margin-top:10px;\">\n              <thead>\n                <tr><th>Total Assets</th><th>Accounts Payable & Accrued Liabilities</th><th>Deferred Revenue</th></tr>\n              </thead>\n              <tbody>\n                <tr><td>1,580,000</td><td>90,000</td><td>60,000</td></tr>\n              </tbody>\n            </table>\n            <table style=\"margin-top:10px;\">\n              <thead>\n                <tr><th>Short-term Debt & Current Portion</th><th>Total Current Liabilities</th><th>Long-term Debt</th></tr>\n              </thead>\n              <tbody>\n                <tr><td>20,000</td><td>170,000</td><td>250,000</td></tr>\n              </tbody>\n            </table>\n            <table style=\"margin-top:10px;\">\n              <thead>\n                <tr><th>Pension & Post-retirement Liabilities</th><th>Other Long-term Liabilities</th><th>Total Long-term Liabilities</th></tr>\n              </thead>\n              <tbody>\n                <tr><td>50,000</td><td>10,000</td><td>310,000</td></tr>\n              </tbody>\n            </table>\n            <table style=\"margin-top:10px;\">\n              <thead>\n                <tr><th>Total Liabilities</th><th>Net Investment in Plant</th><th>Restricted</th></tr>\n              </thead>\n              <tbody>\n                <tr><td>480,000</td><td>720,000</td><td>200,000</td></tr>\n              </tbody>\n            </table>\n            <table style=\"margin-top:10px;\">\n              <thead>\n                <tr><th>Unrestricted / Designated</th><th>Total Net Position</th><th>Total Liabilities & Net Position</th></tr>\n              </thead>\n              <tbody>\n                <tr><td>180,000</td><td>1,100,000</td><td>1,580,000</td></tr>\n              </tbody>\n            </table>\n          </div>\n        </div>\n\n        <div class=\"card\" style=\"margin-top:12px;\">\n          <h4>Department-wise Financial Overview</h4>\n          <div class=\"table-wrap\">\n            <table>\n              <thead>\n                <tr><th>Department</th><th>Revenue</th><th>Expenses</th><th>Surplus/(Deficit)</th><th>Faculty Count</th></tr>\n              </thead>\n              <tbody>\n                <tr><td>CSE</td><td>150,000</td><td>120,000</td><td>30,000</td><td>42</td></tr>\n                <tr><td>IT</td><td>90,000</td><td>75,000</td><td>15,000</td><td>28</td></tr>\n                <tr><td>ECE</td><td>110,000</td><td>92,000</td><td>18,000</td><td>36</td></tr>\n                <tr><td>CHEMICAL</td><td>70,000</td><td>65,000</td><td>5,000</td><td>25</td></tr>\n                <tr><td>AEIE</td><td>60,000</td><td>52,000</td><td>8,000</td><td>20</td></tr>\n              </tbody>\n            </table>\n          </div>\n        </div>\n      </main>\n\n      <footer>\n        <div class=\"small\">Source: University Financial Department</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n    <!-- Page 5: Student Body Profile, Charts & Tables -->\n    <section class=\"page break-after\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\"><h1>Student Body Profile and Academic Performance</h1><div class=\"sub\">Demographics, academic achievements, and billing patterns</div></div>\n        </div>\n        <div class=\"header-right\"><div class=\"small\">University of Toronto</div></div>\n      </header>\n\n      <main id=\"section-main\">\n        <div class=\"card section\">\n          <h4>Student Body Profile and Academic Performance</h4>\n          <div>\n            <p>The student body profile for the 2022-2023 academic year, based on available data, primarily highlights a concentration of first-year students within the Computer Science and Engineering (CSE) department. A detailed academic performance record for 28 students indicates that all are in their first year and enrolled in CSE. While this specific dataset focuses on a single department and academic level, broader financial records suggest a more diverse student population, encompassing both undergraduate and graduate levels across departments such as CSE, Electrical and Computer Engineering (ECE), Chemical Engineering, and Aerospace Engineering and Industrial Engineering (AEIE).</p>\n            <p>Academic performance among the 28 first-year CSE students demonstrates a wide range of achievement, with Cumulative Grade Point Averages (CGPA) spanning from 5.09 to an exceptional 9.9. The average CGPA for this cohort stands at approximately 7.33, indicating a generally strong academic foundation. Notable high achievers include students with CGPAs of 9.9, 9.31, 9.25, and 9.24, reflecting significant academic rigor and success. Conversely, the presence of students at the lower end of the CGPA spectrum suggests areas where targeted academic support and intervention may be beneficial to ensure comprehensive student success.</p>\n            <p>Analysis of student billing patterns, based on a sample of five students, reveals varying financial commitments and support mechanisms. Tuition fees ranged from 13,000 to 18,000, with scholarships playing a crucial role in mitigating the financial burden, ranging from 1,000 to 5,000 per student. These scholarships significantly reduce the net amount paid by students, which varied between 10,000 and 13,000. Outstanding amounts ranged from 0 to 4,000, indicating diverse payment behaviors and financial situations among the student body.</p>\n            <p>The provision of scholarships stands out as a direct initiative supporting student success and well-being by alleviating financial pressures. These financial aids are instrumental in ensuring access to education and potentially contributing to better academic focus and performance. While specific data on other student success and well-being initiatives is not detailed within the provided context, the strategic allocation of scholarships underscores a commitment to supporting students through their academic journey. Further comprehensive analysis would benefit from the full \"Department-wise Financial Summary\" to provide a complete picture of financial stewardship across all academic units.</p>\n          </div>\n        </div>\n\n        <div class=\"card\">\n          <h4>Student Demographics Charts</h4>\n          <div class=\"desc\">Visualizing student enrollment across departments.</div>\n          <div class=\"chart-grid\">\n            <div class=\"chart-panel\"><canvas id=\"chart-3\"></canvas></div>\n          </div>\n        </div>\n\n        <div class=\"card\" style=\"margin-top:12px;\">\n          <h4>Sample Student Billing and Scholarship Data</h4>\n          <div class=\"table-wrap\">\n            <table>\n              <thead>\n                <tr><th>Department</th><th>Revenue</th><th>Expenses</th><th>Surplus/(Deficit)</th><th>Faculty Count</th><th>Student Count</th></tr>\n              </thead>\n              <tbody>\n                <tr><td>CSE</td><td>150,000</td><td>120,000</td><td>30,000</td><td>42</td><td>2200</td></tr>\n                <tr><td>IT</td><td>90,000</td><td>75,000</td><td>15,000</td><td>28</td><td>1200</td></tr>\n                <tr><td>ECE</td><td>110,000</td><td>92,000</td><td>18,000</td><td>36</td><td>1600</td></tr>\n                <tr><td>CHEMICAL</td><td>70,000</td><td>65,000</td><td>5,000</td><td>25</td><td>800</td></tr>\n                <tr><td>AEIE</td><td>60,000</td><td>52,000</td><td>8,000</td><td>20</td><td>700</td></tr>\n              </tbody>\n            </table>\n          </div>\n        </div>\n      </main>\n\n      <footer>\n        <div class=\"small\">Source: Student Records & Financial Aid Office</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n    <!-- Page 6: Career Development and Graduate Placement, Charts & Tables -->\n    <section class=\"page break-after\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\"><h1>Career Development and Graduate Placement</h1><div class=\"sub\">Outcomes and industry engagement</div></div>\n        </div>\n        <div class=\"header-right\"><div class=\"small\">University of Toronto</div></div>\n      </header>\n\n      <main id=\"section-main\">\n        <div class=\"card section\">\n          <h4>Career Development and Graduate Placement</h4>\n          <div>\n            <p>The 2022-2023 academic year concluded with a robust performance in graduate placements, demonstrating the strong employability of our students across various disciplines. A total of 19 students secured placements with leading companies, reflecting successful transitions into professional roles. The IT department led in terms of the number of placements with 7 students, followed by CSE and Chemical Engineering with 4 students each, ECE with 3 students, and AEIE with 1 student. This distribution highlights a broad engagement with industry partners across multiple engineering streams.</p>\n            <p>An analysis of Cost to Company (CTC) packages reveals competitive compensation for our graduates. The highest CTC recorded was 28.8 LPA, secured by Amelia Davis from the IT department with Capgemini. Other notable high packages include 26.3 LPA (Harper Miller, IT, IBM), 24.9 LPA (Charlotte Martin, IT, Accenture), 21.4 LPA (Ella Johnson, CSE, Google), and 21.3 LPA (Ethan Garcia, CSE, Amazon). The average CTC across all placed students stood at approximately 15.89 LPA. Department-wise, the IT department achieved the highest average CTC at approximately 18.78 LPA, followed by CSE at 17.3 LPA, ECE at 10.3 LPA, Chemical Engineering at 9.5 LPA, and AEIE at 11.5 LPA.</p>\n            <p>The placement season saw participation from a diverse range of top recruiting companies and industry sectors. Key recruiters included technology giants such as Amazon, Google, IBM, Capgemini, Accenture, TCS, Wipro, and Samsung, indicating a strong demand for our graduates in the IT and software development sectors. The energy and chemical industries were also significant, with companies like Reliance, ONGC, and Shell hiring from the Chemical Engineering department. Furthermore, companies like ABB and Texas Instruments recruited from AEIE and ECE departments, respectively, showcasing opportunities in manufacturing and electronics. Several companies, including Amazon, IBM, Capgemini, Accenture, Texas Instruments, and ONGC, extended multiple offers, underscoring their sustained interest in our talent pool.</p>\n            <p>While specific details regarding career services initiatives are not explicitly provided within the available data, the observed placement outcomes suggest effective support mechanisms are in place to facilitate student career development and industry engagement. The successful placement of students across diverse companies and with competitive CTCs indicates that students are well-prepared for the professional world, likely through a combination of academic rigor, skill development, and career guidance. The consistent recruitment by prominent companies further attests to the quality of our graduates and the efficacy of the placement process.</p>\n          </div>\n        </div>\n\n        <div class=\"card\">\n          <h4>Placement Outcomes Charts</h4>\n          <div class=\"desc\">Key metrics on graduate placements.</div>\n          <div class=\"chart-grid\">\n            <div class=\"chart-panel\"><canvas id=\"chart-1\"></canvas></div>\n          </div>\n        </div>\n      </main>\n\n      <footer>\n        <div class=\"small\">Source: Career Services Department</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n    <!-- Page 7: Faculty Highlights and Research Contributions, Charts & Tables -->\n    <section class=\"page break-after\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\"><h1>Faculty Highlights and Research Contributions</h1><div class=\"sub\">Faculty profile, qualifications, and research activities</div></div>\n        </div>\n        <div class=\"header-right\"><div class=\"small\">University of Toronto</div></div>\n      </header>\n\n      <main id=\"section-main\">\n        <div class=\"card section\">\n          <h4>Faculty Highlights and Research Contributions</h4>\n          <div>\n            <p>The university's faculty profile for the 2022-2023 academic year comprises 38 unique members distributed across three departments: Computer Science and Engineering (CSE), Electrical and Computer Engineering (ECE), and Chemical Engineering. The CSE department has 14 faculty members, ECE has 16, and Chemical Engineering has 8. Leadership roles include two Heads of Department (HODs), one in CSE and one in Chemical Engineering. The faculty body consists of 20 Professors and 16 Assistant Professors, indicating a balanced mix of experienced academics and emerging scholars.</p>\n            <p>In terms of academic qualifications, the faculty demonstrates a diverse educational background. Seven faculty members hold Ph.D. degrees, with three in CSE, three in ECE, and one in Chemical Engineering, signifying a strong foundation for advanced research and specialized instruction. Additionally, 12 faculty members possess M.Tech degrees, 12 hold M.Sc degrees, and 7 have B.Tech degrees. This breadth of qualifications contributes to a comprehensive academic environment capable of delivering diverse curricula and fostering varied intellectual pursuits. The faculty also exhibits a wide range of professional experience, from 3 years to 20 years, with several professors having over a decade of experience, including five faculty members with 20 years of experience in their respective fields.</p>\n            <p>While specific data regarding significant research projects, publications, grants secured, and formal recognition of faculty achievements is not provided within the current context, the presence of 7 Ph.D.-qualified faculty members across the three departments suggests an inherent capacity for advanced research and scholarly output. The extensive experience of many professors, particularly those with 10 to 20 years in academia, further indicates a deep reservoir of expertise that likely contributes to their fields through mentorship, curriculum development, and informal knowledge dissemination.</p>\n            <p>Similarly, detailed information on initiatives for faculty development and support is not explicitly available in the provided data. However, the university's commitment to maintaining a faculty with diverse qualifications and experience levels implies an underlying framework for professional growth. The blend of Assistant Professors and seasoned Professors suggests opportunities for mentorship and collaborative development, which are crucial for sustaining academic excellence and fostering a vibrant research culture.</p>\n          </div>\n        </div>\n\n        <div class=\"card\">\n          <h4>Faculty Demographics Charts</h4>\n          <div class=\"desc\">Distribution of faculty across departments.</div>\n          <div class=\"chart-grid\">\n            <div class=\"chart-panel\"><canvas id=\"chart-4\"></canvas></div>\n          </div>\n        </div>\n\n        <div class=\"card\" style=\"margin-top:12px;\">\n          <h4>Sample Faculty List</h4>\n          <div class=\"table-wrap\">\n            <table>\n              <thead>\n                <tr><th>Name</th><th>Title</th><th>Department</th><th>Email</th><th>Degree</th><th>Experience (Years)</th></tr>\n              </thead>\n              <tbody>\n                <tr><td>Charlie Scott</td><td>Assistant Professor</td><td>CSE</td><td>charlie.scott@utoronto.edu</td><td>M.Tech</td><td>5</td></tr>\n                <tr><td>Steven Lee</td><td>Professor</td><td>CSE</td><td>steven.lee@utoronto.edu</td><td>M.Tech</td><td>20</td></tr>\n                <tr><td>Eva Brown</td><td>Professor</td><td>CSE</td><td>eva.brown@utoronto.edu</td><td>B.Tech</td><td>10</td></tr>\n                <tr><td>Quentin Clark</td><td>Professor</td><td>CSE</td><td>quentin.clark@utoronto.edu</td><td>B.Tech</td><td>5</td></tr>\n                <tr><td>Frank Garcia</td><td>Professor</td><td>CSE</td><td>frank.garcia@utoronto.edu</td><td>M.Sc</td><td>18</td></tr>\n                <tr><td>Victor Zimmerman</td><td>Professor</td><td>CSE</td><td>victor.zimmerman@utoronto.edu</td><td>B.Tech</td><td>17</td></tr>\n                <tr><td>Helen Young</td><td>Assistant Professor</td><td>CSE</td><td>helen.young@utoronto.edu</td><td>M.Sc</td><td>4</td></tr>\n                <tr><td>Charlie Anderson</td><td>Assistant Professor</td><td>CSE</td><td>charlie.anderson@utoronto.edu</td><td>M.Sc</td><td>6</td></tr>\n                <tr><td>Quentin Garcia</td><td>HOD</td><td>IT</td><td>quentin.garcia@utoronto.edu</td><td>M.Sc</td><td>22</td></tr>\n                <tr><td>Rachel Martin</td><td>Professor</td><td>IT</td><td>rachel.martin@utoronto.edu</td><td>Ph.D.</td><td>7</td></tr>\n              </tbody>\n            </table>\n          </div>\n        </div>\n      </main>\n\n      <footer>\n        <div class=\"small\">Source: Human Resources Department</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n    <!-- Page 8: Key Achievements & Conclusion -->\n    <section class=\"page break-after\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\"><h1>Key Achievements & Conclusion</h1><div class=\"sub\">Highlights and future outlook</div></div>\n        </div>\n        <div class=\"header-right\"><div class=\"small\">University of Toronto</div></div>\n      </header>\n\n      <main id=\"section-main\">\n        <div class=\"card section\">\n          <h4>Key Achievements and Milestones</h4>\n          <div>\n            <p>The academic year 2022-2023 saw notable individual achievements within the student body, particularly among the sampled first-year students in the Computer Science and Engineering (CSE) department. Analysis of the provided student-level data reveals a strong performance cohort, with several students demonstrating exceptional academic prowess. For instance, Benjamin Wilson achieved a CGPA of 9.9, closely followed by Alexander Jackson and Amelia Miller, both with CGPAs exceeding 9.2. Overall, five students in this sample maintained a CGPA of 9.0 or higher, indicating a significant segment of high-achieving individuals within the first-year CSE program. The CGPA range for this group spanned from 5.09 to 9.9, with an average CGPA of approximately 7.32 across the 28 sampled students, reflecting a broad spectrum of academic engagement and success.</p>\n            <p>In terms of financial stewardship, the university's operational framework for revenue allocation is clearly defined. Tuition revenue is allocated based on a student-credit-weighted formula, ensuring that resources are distributed in alignment with student enrollment and academic load. Furthermore, research overhead is allocated directly based on grant receipts, a methodology designed to transparently link research funding with the administrative and infrastructural support required for its execution. This structured approach underpins the university's financial operations, providing a clear basis for resource distribution.</p>\n            <p>While the provided data offers specific insights into a segment of student academic performance and outlines key financial allocation methodologies, comprehensive reporting on other critical areas is not feasible with the available information. Details regarding overall financial performance, including revenue generation, expenditure, and investment outcomes, are not present. Similarly, data on broader student demographics, career services outcomes such as placement rates or employer engagement, faculty profiles, research activities, grants secured, or the impact of university initiatives on the wider community and academic landscape are beyond the scope of the provided context. Therefore, a full assessment of achievements and milestones in these areas cannot be rendered at this time.</p>\n          </div>\n        </div>\n\n        <div class=\"card section\" style=\"margin-top:12px;\">\n          <h4>Conclusion and Future Outlook</h4>\n          <div>\n            <p>The fiscal year 2022-2023 has been a period of dedicated focus across the University of Toronto's core operational and strategic pillars. The preceding analysis has detailed the institution's Financial Performance and Stewardship, highlighting the commitment to responsible resource management. Concurrently, the report examined Student Demographics and Academic Achievements, reflecting the university's ongoing efforts to foster an inclusive and high-achieving learning environment. Furthermore, insights into Career Services and Placement Outcomes underscored the institution's dedication to preparing students for successful post-graduation pathways, while the Faculty Profile and Research Activities section showcased the vibrant intellectual contributions and scholarly pursuits that define the university's academic landscape.</p>\n            <p>Looking ahead, the University of Toronto is poised to build upon the foundations established in 2022-2023, setting strategic goals and priorities for the upcoming academic year. These include a continued emphasis on robust financial stewardship to ensure long-term sustainability and investment in critical areas. Efforts will be directed towards further enhancing the student experience, fostering academic excellence, and expanding support services to ensure every student can thrive. Simultaneously, the university will strengthen its career development initiatives, forging deeper connections with industry partners to maximize placement outcomes and equip graduates with the skills demanded by a dynamic global workforce.</p>\n            <p>A central priority remains the cultivation of a world-class faculty and research ecosystem. This involves attracting and retaining leading scholars, investing in cutting-edge research infrastructure, and promoting interdisciplinary collaboration to address complex global challenges. The University of Toronto is committed to continuous improvement across all facets of its operations, embracing innovation and adaptability to meet evolving educational and societal needs. This unwavering dedication ensures that the institution remains at the forefront of discovery and learning.</p>\n            <p>The vision for the University of Toronto is one of sustained leadership in both education and research, solidifying its reputation as a global intellectual powerhouse. By fostering an environment of academic rigor, groundbreaking discovery, and profound societal impact, the university aims to continue shaping future leaders, advancing knowledge, and contributing meaningfully to the economic, social, and cultural well-being of local and global communities. This forward-looking perspective underpins the institution's commitment to excellence and its enduring legacy.</p>\n          </div>\n        </div>\n      </main>\n\n      <footer>\n        <div class=\"small\">Source: University Strategic Planning Office</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n    <!-- Page 9: Appendix / Annexures -->\n    <section class=\"page\">\n      <header class=\"header\">\n        <div class=\"brand\">\n          <div class=\"logo\">IR</div>\n          <div class=\"meta\"><h1>Annexures & Detailed Tables</h1><div class=\"sub\">Supporting data & processed files</div></div>\n        </div>\n        <div class=\"header-right\"><div class=\"small\">Appendix</div></div>\n      </header>\n\n      <main>\n        <div class=\"card\">\n          <h4>Top Placements — Detailed List</h4>\n          <div class=\"table-wrap\">\n            <table id=\"placements-table\">\n              <thead><tr><th>Student</th><th>Dept</th><th>Company</th><th>CTC</th></tr></thead>\n              <tbody>\n                <tr><td>Amelia Davis</td><td>IT</td><td>Capgemini</td><td>28.8 LPA</td></tr>\n                <tr><td>Harper Miller</td><td>IT</td><td>IBM</td><td>26.3 LPA</td></tr>\n                <tr><td>Charlotte Martin</td><td>IT</td><td>Accenture</td><td>24.9 LPA</td></tr>\n                <tr><td>Ella Johnson</td><td>CSE</td><td>Google</td><td>21.4 LPA</td></tr>\n                <tr><td>Ethan Garcia</td><td>CSE</td><td>Amazon</td><td>21.3 LPA</td></tr>\n              </tbody>\n            </table>\n          </div>\n        </div>\n\n        <div class=\"card\" style=\"margin-top:12px;\">\n          <h4>Processed Files & Data Sources</h4>\n          <div class=\"muted\" id=\"processed-files\">\n            <ul>\n              <li>71ca2edd-e448-42cc-b84b-338066552871.pdf</li>\n              <li>547381e7-18f8-4029-bdfc-6d4283ac83fa.xlsx</li>\n              <li>c28579f1-9daa-4fda-9562-6e66ab82ed8a.xlsx</li>\n              <li>a670c87e-28b7-41ee-8490-8a4da7f91804.xlsx</li>\n            </ul>\n          </div>\n        </div>\n      </main>\n\n      <footer>\n        <div class=\"small\">End of report</div>\n        <div>Page <span class=\"pagenum\"></span></div>\n      </footer>\n    </section>\n\n  </div>\n\n  <!-- Chart.js Library -->\n  <script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js\"></script>\n  <script>\n    // Chart.js Initialization\n    // Chart 0: University Financial Position (Pie Chart)\n    const chart0Ctx = document.getElementById('chart-0');\n    if (chart0Ctx) {\n      new Chart(chart0Ctx, {\n        type: 'pie',\n        data: {\n          labels: [\"Accounts Payable & Accrued Liabilities\", \"Deferred Revenue\", \"Short-term Debt & Current Portion\", \"Long-term Debt\", \"Pension & Post-retirement Liabilities\", \"Other Long-term Liabilities\"],\n          datasets: [{\n            label: \"Breakdown of Total Liabilities\",\n            data: [90000, 60000, 20000, 250000, 50000, 10000],\n            backgroundColor: [\"#3b82f6\", \"#10b981\", \"#f59e0b\", \"#ef4444\", \"#8b5cf6\", \"#6366f1\"]\n          }]\n        },\n        options: {\n          responsive: true,\n          maintainAspectRatio: false,\n          plugins: {\n            legend: {\n              position: 'right',\n              labels: {\n                font: {\n                  size: 10\n                }\n              }\n            },\n            title: {\n              display: true,\n              text: 'University Financial Position (2022-2023)',\n              font: {\n                size: 12\n              },\n              color: '#0a2540'\n            }\n          }\n        }\n      });\n    }\n\n    // Chart 1: Top CTCs by Department (Bar Chart)\n    const chart1Ctx = document.getElementById('chart-1');\n    if (chart1Ctx) {\n      new Chart(chart1Ctx, {\n        type: 'bar',\n        data: {\n          labels: [\"CSE\", \"ECE\", \"CHEMICAL\", \"AEIE\"],\n          datasets: [{\n            label: \"Total Tuition by Department\",\n            data: [33000, 14000, 13000, 16000],\n            backgroundColor: [\"#3b82f6\", \"#10b981\", \"#f59e0b\", \"#ef4444\"]\n          }]\n        },\n        options: {\n          responsive: true,\n          maintainAspectRatio: false,\n          plugins: {\n            legend: {\n              display: false\n            },\n            title: {\n              display: true,\n              text: 'Top CTCs by Department (2022-2023 Placements)',\n              font: {\n                size: 12\n              },\n              color: '#0a2540'\n            }\n          },\n          scales: {\n            y: {\n              beginAtZero: true,\n              title: {\n                display: true,\n                text: 'Value (LPA or equivalent)',\n                font: {\n                  size: 10\n                },\n                color: '#64748b'\n              }\n            },\n            x: {\n              title: {\n                display: true,\n                text: 'Department',\n                font: {\n                  size: 10\n                },\n                color: '#64748b'\n              }\n            }\n          }\n        }\n      });\n    }\n\n    // Chart 2: Departmental Financial Performance (Bar Chart)\n    const chart2Ctx = document.getElementById('chart-2');\n    if (chart2Ctx) {\n      new Chart(chart2Ctx, {\n        type: 'bar',\n        data: {\n          labels: [\"CSE\", \"IT\", \"ECE\", \"CHEMICAL\", \"AEIE\"],\n          datasets: [{\n            label: \"Surplus/(Deficit) (Rupees)\",\n            data: [30000, 15000, 18000, 5000, 8000],\n            backgroundColor: [\"#3b82f6\", \"#10b981\", \"#f59e0b\", \"#ef4444\", \"#8b5cf6\"]\n          }]\n        },\n        options: {\n          responsive: true,\n          maintainAspectRatio: false,\n          plugins: {\n            legend: {\n              display: false\n            },\n            title: {\n              display: true,\n              text: 'Departmental Financial Performance (Revenue vs. Expenses)',\n              font: {\n                size: 12\n              },\n              color: '#0a2540'\n            }\n          },\n          scales: {\n            y: {\n              beginAtZero: true,\n              title: {\n                display: true,\n                text: 'Surplus/(Deficit) (Rupees)',\n                font: {\n                  size: 10\n                },\n                color: '#64748b'\n              }\n            },\n            x: {\n              title: {\n                display: true,\n                text: 'Department',\n                font: {\n                  size: 10\n                },\n                color: '#64748b'\n              }\n            }\n          }\n        }\n      });\n    }\n\n    // Chart 3: Student Enrollment Distribution by Department (Bar Chart)\n    const chart3Ctx = document.getElementById('chart-3');\n    if (chart3Ctx) {\n      new Chart(chart3Ctx, {\n        type: 'bar',\n        data: {\n          labels: [\"CSE\", \"IT\", \"ECE\", \"CHEMICAL\", \"AEIE\"],\n          datasets: [{\n            label: \"Student Count\",\n            data: [2200, 1200, 1600, 800, 700],\n            backgroundColor: [\"#3b82f6\", \"#10b981\", \"#f59e0b\", \"#ef4444\", \"#8b5cf6\"]\n          }]\n        },\n        options: {\n          responsive: true,\n          maintainAspectRatio: false,\n          plugins: {\n            legend: {\n              display: false\n            },\n            title: {\n              display: true,\n              text: 'Student Enrollment Distribution by Department',\n              font: {\n                size: 12\n              },\n              color: '#0a2540'\n            }\n          },\n          scales: {\n            y: {\n              beginAtZero: true,\n              title: {\n                display: true,\n                text: 'Student Count',\n                font: {\n                  size: 10\n                },\n                color: '#64748b'\n              }\n            },\n            x: {\n              title: {\n                display: true,\n                text: 'Department',\n                font: {\n                  size: 10\n                },\n                color: '#64748b'\n              }\n            }\n          }\n        }\n      });\n    }\n\n    // Chart 4: Faculty Count by Department (Bar Chart)\n    const chart4Ctx = document.getElementById('chart-4');\n    if (chart4Ctx) {\n      new Chart(chart4Ctx, {\n        type: 'bar',\n        data: {\n          labels: [\"CSE\", \"ECE\", \"AEIE\", \"IT\"],\n          datasets: [{\n            label: \"Number of Faculty by Department\",\n            data: [14, 15, 12, 3],\n            backgroundColor: [\"#3b82f6\", \"#10b981\", \"#f59e0b\", \"#ef4444\"]\n          }]\n        },\n        options: {\n          responsive: true,\n          maintainAspectRatio: false,\n          plugins: {\n            legend: {\n              display: false\n            },\n            title: {\n              display: true,\n              text: 'Faculty Count by Department',\n              font: {\n                size: 12\n              },\n              color: '#0a2540'\n            }\n          },\n          scales: {\n            y: {\n              beginAtZero: true,\n              title: {\n                display: true,\n                text: 'Faculty Count',\n                font: {\n                  size: 10\n                },\n                color: '#64748b'\n              }\n            },\n            x: {\n              title: {\n                display: true,\n                text: 'Department',\n                font: {\n                  size: 10\n                },\n                color: '#64748b'\n              }\n            }\n          }\n        }\n      });\n    }\n  </script>\n</body>\n</html>",
+  "metadata": {
+    "total_sections": 8,
+    "total_charts": 5,
+    "total_tables": 4,
+    "total_kpis": 7,
+    "files_processed": 4
+  },
+  "errors": [],
+  "warnings": []
+}

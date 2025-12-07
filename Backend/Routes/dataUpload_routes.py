@@ -5,6 +5,7 @@ from typing import List
 import os
 from Schemas.dataUpload_schema import DataUploadBase
 from Services.dataUpload_service import DataUploadService
+from fastapi.responses import FileResponse
 
 router = APIRouter(prefix="/uploads", tags=["Uploads"])
 
@@ -45,3 +46,8 @@ async def get_uploads_by_Instituteid(institute_id:int ,db: AsyncSession = Depend
 async def delete_upload(upload_id: int, db: AsyncSession = Depends(get_db)):
     await DataUploadService.delete_file(db=db, file_id=upload_id)
     return {"detail": "Upload deleted successfully"}
+
+@router.get("/file/{file_id}")
+async def download_file(file_id: int, db: AsyncSession = Depends(get_db)):
+    file_path = await DataUploadService.get_file_by_id(db=db, file_id=file_id)
+    return FileResponse(path=file_path, filename=os.path.basename(file_path), media_type='application/octet-stream')

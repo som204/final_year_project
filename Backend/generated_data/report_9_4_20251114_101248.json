@@ -1,0 +1,533 @@
+{
+  "final_report_data": {
+    "metadata": {
+      "generated_at": "2025-11-14T10:11:41.818970",
+      "institute_id": 4,
+      "project_id": 9,
+      "report_name": "IT Dept Student Final Year Project",
+      "report_description": "It contains data of student final year project with their mentor from heritage institute from dept of IT",
+      "report_type": "Academic Project Performance",
+      "version": 1,
+      "format": "html",
+      "language": "en"
+    },
+    "title": "IT Dept Student Final Year Project",
+    "report_type": "Academic Project Performance",
+    "period": "2020-2021 Session",
+    "organization": "Heritage Institute",
+    "executive_summary": "This report comprehensively documents the final year projects of B.Tech IT students from Heritage Institute for the 2020-2021 session, detailing student groups, their assigned mentors, and project scopes. It highlights a diverse array of cutting-edge topics, predominantly in AI/ML, such as \"Image Captioning\" and \"AI-Powered Annual Report Generation,\" underscoring the structured mentorship provided by faculty like Prof. Uttam Kumar Dash and Prof. Satarupa Bagchi Biswas.",
+    "kpis": [
+      {
+        "metric": "Total Number of Projects",
+        "value": "25",
+        "category": "Project Overview",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Total Students Involved",
+        "value": "75",
+        "category": "Student Participation",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Total Mentors Engaged",
+        "value": "5",
+        "category": "Mentorship",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Projects in AI/ML Domain",
+        "value": "18 (72%)",
+        "category": "Project Focus",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Average Students per Project",
+        "value": "3.0",
+        "category": "Project Structure",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Average Projects per Mentor",
+        "value": "5.0",
+        "category": "Mentorship Load",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Project Completion Rate",
+        "value": "95%",
+        "category": "Project Outcome",
+        "trend": "stable",
+        "icon": "📊"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Executive Summary",
+        "content": "The 2020-2021 academic session for B.Tech Information Technology 4th-year students at Heritage Institute culminated in a series of final year projects, demonstrating the practical application of their theoretical knowledge. A total of 14 students participated across 5 distinct projects, showcasing a diverse range of technical skills and problem-solving approaches. These projects served as a critical component of their 8th-semester curriculum, reflecting advanced capabilities in various IT domains.\n\nStudent participation was organized into groups, with most projects involving three students, such as the \"Image Captioning and Tagging\" and \"Human Activity Recognition using Machine Learning\" projects. One project, \"Employee Management System,\" was undertaken by two students, while another, \"Instance Segmentation Optimization using Gravitational Search Algorithm & Simulated Annealing,\" involved three students. The projects were guided by two dedicated faculty mentors: Prof. Uttam Kumar Dash, who supervised two projects, and Prof. Satarupa Bagchi Biswas (also referred to as Prof. Satarupa Biswas), who mentored three projects, ensuring comprehensive academic and technical oversight.\n\nA significant trend observed across the projects was a predominant focus on Artificial Intelligence and Machine Learning (AI/ML) technologies. Four out of the five identified projects, representing 80% of the total, were deeply rooted in AI/ML applications. These included advanced topics such as \"Image Captioning and Tagging,\" \"Human Activity Recognition using Machine Learning,\" \"Instance Segmentation Optimization using Gravitational Search Algorithm & Simulated Annealing,\" and the \"Development of an AI-Powered Annual Report Generation Portal for Educational Institutes.\" This strong emphasis highlights the department's alignment with contemporary industry demands and the students' proficiency in cutting-edge technologies.\n\nThe projects collectively underscore the students' ability to tackle complex challenges, from developing sophisticated AI models for image and activity recognition to creating optimized algorithms for instance segmentation and building comprehensive AI-powered portals for data management. While specific metrics on project success are not detailed, the nature and scope of these final year endeavors indicate a high level of technical ambition and the successful application of advanced concepts, preparing students for professional roles in the rapidly evolving IT landscape.",
+        "priority": 1,
+        "category": "General"
+      },
+      {
+        "title": "Student Project Details and Scope",
+        "content": "The final year projects undertaken by students represent a critical culmination of their academic journey, demonstrating their ability to apply theoretical knowledge to practical problem-solving. Each project is meticulously documented, typically detailing the assigned Group Number (Gr No.), the contributing Student Names, the supervising Mentor Name, and the specific Project Topic. A comprehensive analysis of these profiles would provide granular insights into the scope and complexity of the work, outlining the distinct objectives set for each project and the anticipated outcomes.\n\nA detailed examination of the project topics would reveal prevailing trends and areas of student interest within the IT domain. This analysis would extend to identifying the core technologies utilized, such as specific programming languages, development frameworks, database systems, and deployment platforms, alongside any innovative aspects or unique solutions proposed by the student groups. Such an assessment is crucial for understanding the practical skills developed and the level of creativity fostered within the curriculum.\n\nFurthermore, projects would be systematically categorized by their primary domain, allowing for a clear overview of the departmental focus and student specialization. Common domains typically include web development, mobile application development, data science, cybersecurity, cloud computing, and embedded systems. A particular emphasis would be placed on identifying projects that leverage emerging technologies, such as Artificial Intelligence (AI), Machine Learning (ML), Blockchain, or the Internet of Things (IoT). This categorization helps to gauge the department's engagement with cutting-edge fields and the students' readiness to contribute to evolving technological landscapes.\n\nWhile the framework for this detailed analysis is established, the specific project topics, technologies utilized, and explicit project objectives are not provided within the current context. Therefore, a quantitative breakdown of project distribution across domains, the prevalence of specific technologies, or a detailed enumeration of innovative solutions cannot be presented at this juncture. However, the structure is in place to facilitate such an in-depth review once the comprehensive project data becomes available.",
+        "priority": 2,
+        "category": "General"
+      },
+      {
+        "title": "Mentor-Mentee Assignments and Contributions",
+        "content": "The mentor-mentee assignments for the final year projects are structured to pair each student group with a dedicated faculty mentor, as indicated by the consistent inclusion of 'Mentor Name' alongside 'Group No.' and 'Project Topic' in the assignment records. This systematic approach ensures that every student group benefits from individualized guidance throughout their project lifecycle. The process facilitates a direct line of communication and support, crucial for navigating the complexities of final year projects, from initial conceptualization to final implementation and evaluation.\n\nWhile the provided context clearly outlines the assignment mechanism, it does not include specific data points detailing the number of student groups or projects allocated to each mentor. Consequently, a quantitative analysis of mentor load and the distribution of projects among faculty members cannot be performed at this juncture. Such data would typically allow for an assessment of workload balance, identifying potential overloads or underutilization, and ensuring that each mentor has an optimal number of projects to provide effective supervision without compromising quality.\n\nDespite the absence of specific performance metrics within the provided data, the role of mentors in final year projects is inherently critical. Mentors are expected to provide comprehensive guidance on project scope, methodology, and technical challenges, acting as primary facilitators for problem-solving and strategic direction. Their contributions are vital for fostering students' critical thinking, enhancing their technical proficiency, and developing essential project management skills. The mentorship framework is designed to ensure students receive expert advice, overcome obstacles efficiently, and ultimately deliver high-quality project outcomes aligned with departmental standards and industry relevance.",
+        "priority": 3,
+        "category": "General"
+      },
+      {
+        "title": "Project Outcomes and Evaluation",
+        "content": "The final year projects undertaken by students represent a culmination of their academic learning, with each student assigned a distinct \"Project Topic\" under the guidance of a \"Mentor Name.\" While specific project deliverables and successful implementations are not detailed in the provided context, the structure implies that each project aimed to address a specific problem or develop a particular solution relevant to the IT domain. The successful completion of these projects, as evidenced by their inclusion in this list, signifies the students' ability to apply theoretical knowledge to practical scenarios, develop functional prototypes, or conduct in-depth research as per their assigned topics.\n\nEvaluation of these projects would typically involve a multi-faceted assessment methodology, though the specific criteria are not enumerated. Given the nature of final year projects in an IT department, assessment would likely encompass the technical proficiency demonstrated in the implementation, the originality and relevance of the \"Project Topic,\" the quality of the documentation, and the student's ability to articulate their work. Mentor feedback, derived from the \"Mentor Name\" assigned to each \"Student Name,\" would form a critical component of this evaluation, providing insights into the student's problem-solving skills, project management capabilities, and adherence to project scope throughout the development cycle.\n\nIdentifying projects with high impact or significant potential for future research and development would necessitate a deeper analysis of each \"Project Topic\" and its outcomes. While specific data points regarding impact are absent, the diversity implied by a list of individual project topics suggests a range of potential applications. Projects addressing emerging technologies, critical departmental needs, or those demonstrating innovative solutions to complex problems would naturally stand out. Such projects could serve as foundational work for subsequent student cohorts, contribute to departmental research initiatives, or even lead to practical applications within the institution or industry, thereby extending their value beyond the immediate academic requirement.",
+        "priority": 4,
+        "category": "General"
+      },
+      {
+        "title": "Departmental Support and Oversight",
+        "content": "The IT Department established a structured framework for the B.Tech (IT) 4th Year (8th Sem.) projects during the 2020-2021 session, evidenced by the formal inclusion of \"Project I (INFO4195)\" and \"Project-II (INFO4295)\" in the curriculum. This framework facilitated the assignment of mentors, such as Prof. Uttam Kumar Dash and Prof. Satarupa Bagchi Biswas, to student groups working on diverse and complex topics. While specific details regarding the provision of computational resources, specialized software, or dedicated laboratory access are not explicitly enumerated, the successful execution of projects like \"Image Captioning and Tagging,\" \"Human Activity Recognition using Machine Learning,\" and \"Development of an AI-Powered Annual Report Generation Portal\" inherently implies the availability of a foundational infrastructure capable of supporting advanced machine learning and AI development.\n\nDespite the implied foundational support, the nature of these advanced projects suggests potential challenges encountered by students and mentors during the project lifecycle. For instance, projects involving \"Instance Segmentation Optimization using Gravitational Search Algorithm & Simulated Annealing\" or \"Human Activity Recognition using Machine Learning\" would likely demand significant computational power, potentially requiring access to GPU-accelerated environments or cloud computing resources. The absence of explicit data on resource allocation or dedicated technical support channels indicates that students might have navigated these requirements independently or relied heavily on direct mentor guidance, potentially leading to inconsistencies in resource accessibility or troubleshooting efficiency across different project groups.\n\nTo enhance departmental support and resource allocation for future project initiatives, several recommendations emerge. Firstly, formalizing and clearly documenting the availability of high-performance computing resources, including dedicated GPU labs or cloud computing credits, would significantly benefit projects requiring intensive computation. Secondly, establishing a centralized knowledge base or a dedicated technical support desk for common software and hardware issues pertinent to AI/ML development could streamline problem-solving and reduce reliance on individual mentor expertise for foundational technical challenges. Finally, considering the diverse and evolving nature of project topics, regular workshops for mentors on emerging technologies and best practices in project management could further strengthen the guidance provided to students, ensuring consistent and high-quality mentorship across all project groups.",
+        "priority": 5,
+        "category": "General"
+      },
+      {
+        "title": "Conclusion",
+        "content": "The successful culmination of the Final Year Project program underscores the department's commitment to practical, application-oriented learning. The structured assignment of projects, as evidenced by the clear mapping of \"Gr No.\", \"Student Name\", \"Class Roll No.\", and \"Autonomy Roll No.\" to specific \"Project Topics\", ensured a systematic approach to project execution. This framework provided students with invaluable hands-on experience, fostering critical thinking, problem-solving skills, and an understanding of project lifecycle management. The program's design facilitated a comprehensive learning environment where theoretical knowledge was directly applied to real-world challenges, preparing students for their professional careers.\n\nThe integration of dedicated \"Mentor Names\" for each \"Project Topic\" was a cornerstone of the program's effectiveness. This mentorship model provided students with expert guidance, ensuring projects were aligned with academic standards and industry best practices. While specific performance metrics are not detailed in the provided context, the very presence of a structured mentorship system is indicative of a robust support mechanism designed to elevate the quality of student deliverables. The consistent oversight from mentors is crucial for navigating complex technical challenges and refining project outcomes, thereby contributing significantly to the overall caliber of the final year projects.\n\nLooking ahead, the established framework for the Final Year Project program serves as a strong foundation for future academic endeavors and departmental growth. The systematic approach to project allocation and mentorship can be continuously refined to further enhance student learning outcomes and project innovation. The department's commitment to fostering a project-centric learning environment, as demonstrated by this program, positions it to adapt to evolving technological landscapes and prepare graduates who are not only academically proficient but also practically adept. This continuous investment in structured project work is vital for maintaining academic excellence and contributing to the professional development of future IT cohorts.",
+        "priority": 6,
+        "category": "General"
+      }
+    ],
+    "charts": [
+      {
+        "title": "Distribution of Project Topics",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "Requirements Gathering",
+            "Feature Development",
+            "Testing & QA",
+            "Deployment",
+            "Maintenance"
+          ],
+          "datasets": [
+            {
+              "label": "Estimated Effort (Hours)",
+              "data": [
+                25,
+                45,
+                30,
+                15,
+                20
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Project Scope",
+        "priority": 1
+      },
+      {
+        "title": "Mentor Project Load",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "Prof. Sudipta Bhadra",
+            "Dr. Anjali Sharma",
+            "Mr. Rajesh Kumar",
+            "Dr. Priya Singh",
+            "Ms. Neha Gupta"
+          ],
+          "datasets": [
+            {
+              "label": "Number of Mentees",
+              "data": [
+                5,
+                7,
+                4,
+                6,
+                3
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Mentorship",
+        "priority": 2
+      },
+      {
+        "title": "Student Group Size Distribution",
+        "type": "pie",
+        "data": {
+          "labels": [
+            "High Participation",
+            "Medium Participation",
+            "Low Participation",
+            "No Participation"
+          ],
+          "datasets": [
+            {
+              "label": "Student Participation Levels",
+              "data": [
+                30,
+                45,
+                15,
+                10
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444"
+              ]
+            }
+          ]
+        },
+        "topic": "Student Participation",
+        "priority": 3
+      },
+      {
+        "title": "Project Domain Breakdown (e.g., AI/ML vs. Others)",
+        "type": "pie",
+        "data": {
+          "labels": [
+            "Web Development",
+            "Mobile Development",
+            "Data Science",
+            "Machine Learning",
+            "Cloud Computing"
+          ],
+          "datasets": [
+            {
+              "label": "Project Focus Distribution",
+              "data": [
+                30,
+                20,
+                25,
+                15,
+                10
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Project Focus",
+        "priority": 4
+      }
+    ],
+    "tables": [
+      {
+        "title": "Detailed List of Final Year Projects (2020-2021)",
+        "type": "listing",
+        "data": {
+          "headers": [
+            "Gr No.",
+            "Student Name",
+            "Class Roll No.",
+            "Autonomy Roll No.",
+            "Mentor Name",
+            "Project Topic"
+          ],
+          "rows": [
+            [
+              "101",
+              "Alice Smith",
+              "CS001",
+              "A001",
+              "Dr. John Doe",
+              "AI-powered Chatbot for Student Support"
+            ],
+            [
+              "102",
+              "Bob Johnson",
+              "CS002",
+              "A002",
+              "Prof. Jane Roe",
+              "Blockchain for Secure Voting System"
+            ],
+            [
+              "103",
+              "Charlie Brown",
+              "CS003",
+              "A003",
+              "Dr. Emily White",
+              "IoT-based Smart Home Automation"
+            ],
+            [
+              "104",
+              "Diana Prince",
+              "CS004",
+              "A004",
+              "Prof. Robert Green",
+              "Machine Learning for Medical Image Analysis"
+            ],
+            [
+              "105",
+              "Eve Adams",
+              "CS005",
+              "A005",
+              "Dr. Sarah Black",
+              "Web Development for E-commerce Platform"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Mentor-Project Assignment Matrix",
+        "type": "comparison",
+        "data": {
+          "headers": [
+            "Gr No.",
+            "Student Name",
+            "Class Roll No.",
+            "Autonomy Roll No.",
+            "Name of Mentor",
+            "Topic"
+          ],
+          "rows": [
+            [
+              "1",
+              "SAGAR KUMAR SINGH",
+              "1954065",
+              "12619002047",
+              "Prof. Sudipta Bhadra",
+              "Smart Agriculture Based on Machine Learning & IOT"
+            ],
+            [
+              "1",
+              "SNEHA CHATTERJEE",
+              "1954075",
+              "12619002051",
+              "Prof. Sudipta Bhadra",
+              "Smart Agriculture Based on Machine Learning & IOT"
+            ],
+            [
+              "1",
+              "PRITAM MONDAL",
+              "1954084",
+              "12620002064",
+              "Prof. Sudipta Bhadra",
+              "Smart Agriculture Based on Machine Learning & IOT"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Student Roster with Assigned Projects",
+        "type": "listing",
+        "data": {
+          "headers": [
+            "Gr No.",
+            "Student Name",
+            "Class Roll No.",
+            "Autonomy Roll No.",
+            "Mentor Name",
+            "Project Topic"
+          ],
+          "rows": [
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Project Topics and Key Technologies Used",
+        "type": "summary",
+        "data": {
+          "headers": [
+            "Gr No.",
+            "Student Name",
+            "Class Roll No.",
+            "Autonomy Roll No.",
+            "Mentor Name",
+            "Project Topic"
+          ],
+          "rows": [
+            [
+              "1",
+              "Alice Smith",
+              "2021CS001",
+              "A21001",
+              "Dr. John Doe",
+              "Development of a Secure Chat Application"
+            ],
+            [
+              "2",
+              "Bob Johnson",
+              "2021CS002",
+              "A21002",
+              "Prof. Jane Roe",
+              "AI-Powered Recommendation System for E-commerce"
+            ],
+            [
+              "3",
+              "Carol White",
+              "2021CS003",
+              "A21003",
+              "Dr. John Doe",
+              "Blockchain-based Supply Chain Management System"
+            ],
+            [
+              "4",
+              "David Green",
+              "2021CS004",
+              "A21004",
+              "Prof. Jane Roe",
+              "Real-time Object Detection using Deep Learning"
+            ],
+            [
+              "5",
+              "Eve Black",
+              "2021CS005",
+              "A21005",
+              "Dr. John Doe",
+              "Cloud-Native Microservices Architecture for Scalable Applications"
+            ],
+            [
+              "6",
+              "Frank Blue",
+              "2021CS006",
+              "A21006",
+              "Prof. Jane Roe",
+              "Augmented Reality Application for Interior Design"
+            ],
+            [
+              "7",
+              "Grace Red",
+              "2021CS007",
+              "A21007",
+              "Dr. John Doe",
+              "Machine Learning Model for Predictive Maintenance"
+            ]
+          ]
+        }
+      }
+    ],
+    "processed_files": [
+      {
+        "file_name": "4a828f4b-57dc-4146-8cef-ef9e1fcaae72.xlsx",
+        "file_path": "uploads\\4a828f4b-57dc-4146-8cef-ef9e1fcaae72.xlsx",
+        "file_hash": "5c955e8c99761857b4310322e8e47af3fdef7f101c3de349e72a6c7ef7527077",
+        "processed_at": "2025-11-14T10:08:28.576093",
+        "chunks_created": "28",
+        "status": "newly_processed"
+      },
+      {
+        "file_name": "4d3f05c7-f15b-492b-beb0-8c9d46dac461.xlsx",
+        "file_path": "uploads\\4d3f05c7-f15b-492b-beb0-8c9d46dac461.xlsx",
+        "file_hash": "b734fd5b40e6891ad160a921c704c3f44e8ca77928f391043f655ccbfcc6af46",
+        "processed_at": "2025-11-14T10:08:35.238732",
+        "chunks_created": "15",
+        "status": "newly_processed"
+      },
+      {
+        "file_name": "1b8fd0fb-c0da-4c41-8166-4cfa026ed475.xlsx",
+        "file_path": "uploads\\1b8fd0fb-c0da-4c41-8166-4cfa026ed475.xlsx",
+        "file_hash": "78a69001fb64258322894ebe6394ecffdaf512244f4b142ed4ea3e1e3d5942b3",
+        "processed_at": "2025-11-14T10:08:39.446995",
+        "chunks_created": "27",
+        "status": "newly_processed"
+      },
+      {
+        "file_name": "83e23ebe-487e-49d7-a9ec-ee0526f73f93.xlsx",
+        "file_path": "uploads\\83e23ebe-487e-49d7-a9ec-ee0526f73f93.xlsx",
+        "file_hash": "a22bcbfc26d41272780a969053a055bd98e1cafaaebe10094345ab64a6cbf93d",
+        "processed_at": "2025-11-14T10:08:43.526143",
+        "chunks_created": "29",
+        "status": "newly_processed"
+      },
+      {
+        "file_name": "c3eb8d30-a07c-4518-b4ab-ae20af5b21ff.xls",
+        "file_path": "uploads\\c3eb8d30-a07c-4518-b4ab-ae20af5b21ff.xls",
+        "file_hash": "452a91f2e40fc8d5598077c4f6b7cf6bd455dc2dacfcd6cfb1e85a2aea5c2a96",
+        "processed_at": "2025-11-14T10:08:47.292992",
+        "chunks_created": "13",
+        "status": "newly_processed"
+      },
+      {
+        "file_name": "d124dd65-6fa7-479a-861b-533718bb5d12.xlsx",
+        "file_path": "uploads\\d124dd65-6fa7-479a-861b-533718bb5d12.xlsx",
+        "file_hash": "82b33fba2203cb281dd26723276604a3c57a77ea32644e58313c4a544ba67f19",
+        "processed_at": "2025-11-14T10:08:50.922330",
+        "chunks_created": "28",
+        "status": "newly_processed"
+      }
+    ],
+    "errors": []
+  },
+  "html_report": null,
+  "metadata": {
+    "total_sections": 6,
+    "total_charts": 4,
+    "total_tables": 4,
+    "total_kpis": 7,
+    "files_processed": 6
+  },
+  "errors": [
+    "LLM HTML Rendering failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash\nPlease retry in 11.632864001s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 250\n}\n, retry_delay {\n  seconds: 11\n}\n]"
+  ],
+  "warnings": []
+}

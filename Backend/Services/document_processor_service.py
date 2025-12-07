@@ -1,6 +1,6 @@
 
 from langchain_unstructured import UnstructuredLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_classic.text_splitter import RecursiveCharacterTextSplitter
 import os
 import dotenv
 dotenv.load_dotenv()

@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Annual Report 2022-2023 | University of Toronto</title>
+
+<style>
+  /* ---------- Page & print sizing ---------- */
+  @page { size: A4; margin: 18mm; }
+  html,body { height:100%; margin:0; padding:0; background:#f3f6f9; font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color:#0f1724; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+  :root{
+    --accent: #0a2540;
+    --accent-2: #046c5a;
+    --muted: #64748b;
+    --muted-2:#94a3b8;
+    --card:#ffffff;
+    --max-width: 178mm;
+    --shadow: 0 8px 28px rgba(10,37,64,0.06);
+  }
+
+  .container { width:var(--max-width); margin:8mm auto; padding:0; box-sizing:border-box; }
+
+  /* Each .page becomes a PDF page. Use padding to respect margins. */
+  .page { background: var(--card); margin-bottom:10mm; border-radius:6px; padding:18mm; box-sizing:border-box; box-shadow: none; min-height:257mm; display:flex; flex-direction:column; }
+  .page:last-child { page-break-after: auto; }
+  .page-break { page-break-after: always; }
+
+  /* Header & footer */
+  .header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e6eef6; padding-bottom:10px; margin-bottom:14px; }
+  .brand { display:flex; align-items:center; gap:12px; }
+  .brand .logo { width:56px; height:56px; border-radius:8px; background:linear-gradient(180deg,var(--accent),var(--accent-2)); display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:18px; letter-spacing:0.6px; }
+  .brand .meta { display:flex; flex-direction:column; }
+  .brand h1 { margin:0; font-size:18px; color:var(--accent); letter-spacing:0.2px; }
+  .brand .sub { margin-top:2px; font-size:13px; color:var(--muted); }
+
+  .header-right { text-align:right; font-size:12px; color:var(--muted); }
+  .header-right .title { font-weight:600; color:var(--accent); }
+  .header-right .small { color:var(--muted-2); margin-top:4px; }
+
+  footer { margin-top:auto; padding-top:10px; border-top:1px solid #eef2f7; display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--muted); }
+  .pagenum:before { content: counter(page); } /* basic CSS page counter */
+
+  /* Page title */
+  .cover-title { margin: 12px 0 18px 0; }
+  .cover-title h2 { font-size:28px; margin:0; color:var(--accent); letter-spacing:-0.2px; }
+  .cover-title p { margin:6px 0 0 0; color:var(--muted); font-size:14px; }
+
+  /* Table of contents */
+  .toc { margin-top:6mm; }
+  .toc h3 { margin:0 0 10px 0; color:var(--accent); font-size:16px; }
+  .toc ul { list-style:none; padding:0; margin:0; }
+  .toc li { display:flex; gap:12px; justify-content:space-between; padding:8px 0; border-bottom:1px dashed #f1f5f9; color:var(--muted); font-size:13px; }
+
+  /* KPI row */
+  .kpi-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+  .kpi { background: linear-gradient(180deg, #ffffff, #fbfdff); padding:12px 14px; border-radius:10px; min-width:140px; box-shadow: var(--shadow); border:1px solid #eef6fb; display:flex; flex-direction:column; }
+  .kpi .label { font-size:12px; color:var(--muted); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.6px; }
+  .kpi .value { font-size:20px; color:var(--accent); font-weight:700; }
+
+  /* Card */
+  .card { background:var(--card); border-radius:10px; padding:14px; box-shadow:var(--shadow); border:1px solid #eef6fb; margin-bottom:14px; }
+  .card h4 { margin:0 0 8px 0; color:var(--accent); font-size:16px; }
+  .card .desc { color:var(--muted); font-size:13px; margin-bottom:10px; }
+
+  /* Chart placeholders (NO images) */
+  .chart-grid { display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:8px; }
+  .chart-panel { height:220px; border-radius:8px; background:linear-gradient(180deg,#fbfdff,#f7fbff); border:1px solid #eef6fb; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; padding:8px; box-sizing:border-box; }
+  .chart-caption { margin-top:8px; font-size:12px; color:var(--muted); }
+
+  /* Tables */
+  .table-wrap { overflow:auto; margin-top:8px; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th, td { text-align:left; padding:10px 8px; border-bottom:1px solid #eef2f7; }
+  th { background:#fbfdff; color:var(--muted); font-weight:700; font-size:13px; }
+  tbody tr:last-child td { border-bottom: none; }
+
+  /* Section text */
+  .section { margin-top:12px; }
+  .section h3 { margin:0 0 8px 0; color:var(--accent); font-size:16px; }
+  .section p { color:#0b1b28; line-height:1.55; font-size:13px; margin:0 0 10px 0; }
+
+  .two-col { display:grid; grid-template-columns:1fr 320px; gap:16px; align-items:start; }
+
+  .muted { color:var(--muted); font-size:13px; }
+  .muted-2 { color:var(--muted-2); font-size:12px; }
+
+  .actions { display:flex; gap:8px; margin-bottom:12px; }
+  .button { background:#f8fafc; border:1px solid #e6eef6; padding:8px 10px; border-radius:8px; font-size:13px; color:var(--muted); }
+
+  .break-after { page-break-after: always; }
+
+  @media print {
+    body { background:white; }
+    .container { margin:0; width:auto; }
+    .page { box-shadow:none; border-radius:0; padding:18mm; min-height:auto; }
+    .no-print { display:none; }
+    thead { display:table-header-group; }
+    tfoot { display:table-footer-group; }
+  }
+
+  @media (max-width:900px) {
+    .chart-grid { grid-template-columns:1fr; }
+    .two-col { grid-template-columns:1fr; }
+    .kpi-row { gap:10px; }
+  }
+
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Page 1: Cover -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta">
+            <h1>University of Toronto</h1>
+            <div class="sub">Public Institution • Toronto, Ontario, Canada</div>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <div class="title">Annual Report 2022-2023</div>
+          <div class="small">Prepared by Office of Institutional Research</div>
+        </div>
+      </header>
+
+      <main style="margin-top:10px;">
+        <div class="cover-title">
+          <h2>Annual Report 2022-2023 | University of Toronto</h2>
+          <p class="muted">Academic Year 2022-2023</p>
+        </div>
+
+        <div class="two-col" style="margin-top:24mm;">
+          <div>
+            <div class="card">
+              <h4>Executive Summary</h4>
+              <div class="desc">The 2022-2023 annual report for the University of Toronto (Public Institution), covering Academics, Research, Placements, and Infrastructure.
+
+The report highlights a strong academic performance with an average CGPA of 7.5 across various departments, including CSE, ECE, CHEMICAL, and IT. The university also saw significant research funding, with a total allocation of $120,000 for internal research grants. In terms of placements, the report notes that students secured high-paying jobs at top companies such as Amazon, Google, IBM, and Accenture, with an average CTC of 15.5 LPA. Additionally, the university invested heavily in infrastructure, with a total operating revenue of $1,015,000 and a planned operating surplus of $15,000.</div>
+              <div class="section">
+                <p class="muted">Key highlights:</p>
+                <ul class="muted">
+                  <li>Strong academic performance with an average CGPA of 7.5.</li>
+                  <li>Significant research funding with $120,000 in internal grants.</li>
+                  <li>High-value placements with an average CTC of 15.5 LPA.</li>
+                  <li>Positive financial outlook with an operating surplus of $15,000.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <aside>
+            <div class="card">
+              <h4>Snapshot</h4>
+              <div class="kpi-row">
+                <div class="kpi"><div class="label">Average CGPA</div><div class="value">7.5</div></div>
+                <div class="kpi"><div class="label">Total Research Funding</div><div class="value">$120,000</div></div>
+                <div class="kpi"><div class="label">Operating Surplus</div><div class="value">$15,000</div></div>
+              </div>
+              <div class="muted-2" style="margin-top:10px;">Report generated: <strong>2025-11-11T14:55:01.533814</strong></div>
+            </div>
+          </aside>
+        </div>
+
+      </main>
+
+      <footer>
+        <div>Office of Institutional Research</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 2: TOC & KPIs -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta">
+            <h1>Contents</h1>
+            <div class="sub">Report structure & quick navigation</div>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="small">University of Toronto</div>
+        </div>
+      </header>
+
+      <main>
+        <div class="card toc">
+          <h3>Table of Contents</h3>
+          <ul>
+            <li><span>Student Outcomes</span><span>3</span></li>
+            <li><span>Research and Development</span><span>4</span></li>
+            <li><span>Financial Performance</span><span>5</span></li>
+            <li><span>Faculty and Staff</span><span>6</span></li>
+            <li><span>Annexures & Detailed Tables</span><span>7</span></li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h4>Key Performance Indicators</h4>
+          <div class="desc">At-a-glance metrics for stakeholders for the 2022-2023 academic year.</div>
+          <div class="kpi-row" style="margin-top:12px;">
+            <div class="kpi"><div class="label">Average CGPA</div><div class="value">7.5</div></div>
+            <div class="kpi"><div class="label">Total Research Funding</div><div class="value">$120,000</div></div>
+            <div class="kpi"><div class="label">Operating Surplus</div><div class="value">$15,000</div></div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="small">Confidential</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 3: Student Outcomes -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta"><h1>Student Outcomes</h1><div class="sub">General</div></div>
+        </div>
+        <div class="header-right"><div class="small">Section 1</div></div>
+      </header>
+
+      <main>
+        <div class="card section">
+          <h4>Analysis of Student Progress</h4>
+          <p>The academic year demonstrated significant progress in student outcomes, with a notable increase in the number of students achieving their academic goals. According to the data provided, out of the five students sampled, four (80%) have successfully paid their tuition fees in full, indicating a high level of financial commitment and responsibility among students.</p>
+          <p>A closer examination of the data reveals that 60% of students (UT001, UT002, and UT004) have utilized scholarships to offset their tuition costs, with an average scholarship amount of ₹3,500. This suggests that the institution's scholarship program is effective in supporting students from diverse backgrounds. Furthermore, 40% of students (UT003 and UT005) have opted for graduate programs, indicating a growing interest in advanced education among students.</p>
+          <p>The data also highlights the importance of timely payment of tuition fees, with 60% of students (UT001, UT002, and UT004) having paid their outstanding balances within the specified timeframe. This achievement is particularly noteworthy, given that the institution's revenue allocation methodology prioritizes student-credit-weighted formula for tuition allocation.</p>
+          <p>The sample data provides valuable insights into student billing patterns, underscoring the need for continued support and guidance in financial planning and management. As the institution continues to evolve and adapt to changing student needs, it is essential to monitor and analyze these trends to inform policy decisions and improve overall student outcomes.</p>
+        </div>
+      </main>
+
+      <footer>
+        <div class="small">Source: Student Information System</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 4: Research and Development -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta"><h1>Research and Development</h1><div class="sub">General</div></div>
+        </div>
+        <div class="header-right"><div class="small">Section 2</div></div>
+      </header>
+
+      <main>
+        <div class="card section">
+          <h4>Budgetary Allocations and Strategy</h4>
+          <p>The academic year demonstrated significant progress in the Research and Development department, with a total budget allocation of Rs. 100,000,000. This represents a substantial increase from previous years, indicating a strong commitment to advancing research initiatives within the institution. The planned operating surplus of Rs. 15,000 reflects a prudent financial management approach, ensuring that operational costs are carefully balanced against revenue generation.</p>
+          <p>A notable aspect of this year's budget is the allocation for Research Funding, which stands at Rs. 120,000. This represents a significant investment in research projects and initiatives, underscoring the institution's dedication to fostering innovation and academic excellence. Furthermore, the Scholarship & Financial Aid Budget of Rs. 85,000 supports students from diverse backgrounds, promoting inclusivity and accessibility within the educational environment.</p>
+          <p>The Capital Expenditure Budget of Rs. 75,000 is also noteworthy, as it enables the acquisition of essential equipment and infrastructure to support research activities. This investment will undoubtedly contribute to improved research outcomes and a more conducive learning environment for faculty and students alike. Overall, the Research and Development department's budgetary allocations demonstrate a thoughtful and strategic approach to resource management, positioning the institution for continued growth and success in the years to come.</p>
+          <p>The faculty's expertise and research interests are also reflected in the budget allocations, with several professors and assistant professors receiving funding for specific projects and initiatives. For instance, Professor Nina Parker (Ph.D.) is allocated Rs. 8,000 for her research project, while Assistant Professor Julia Johnson (M.Tech) receives Rs. 20,000 to support her work. These targeted investments in faculty research will undoubtedly yield significant benefits for the institution's academic reputation and research output.</p>
+        </div>
+      </main>
+
+      <footer>
+        <div class="small">Source: Finance & R&D Departments</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 5: Financial Performance -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta"><h1>Financial Performance</h1><div class="sub">General</div></div>
+        </div>
+        <div class="header-right"><div class="small">Section 3</div></div>
+      </header>
+
+      <main>
+        <div class="card">
+          <h4>Net Position Trend (2018-2022)</h4>
+          <div class="desc">Visual representation of the institution's net financial position over the last five years, showing a shift from surplus to deficit.</div>
+          <div class="chart-panel">
+            <canvas id="financialPerformanceChart"></canvas>
+          </div>
+        </div>
+
+        <div class="card section" style="margin-top:12px;">
+          <h4>Financial Narrative</h4>
+          <p>The financial performance of the institution has been a subject of interest for stakeholders. A review of the data reveals that the net position has fluctuated significantly over the years. In the initial years, the net position was in surplus, with a peak of ₹1,580,000 recorded in 2018. However, this trend reversed in subsequent years, with the net position turning into a deficit by 2020. The deficit continued to widen, reaching ₹720,000 by 2022.</p>
+          <p>A closer examination of the data reveals that the operating activities have been a major contributor to the fluctuations in the net position. The net surplus/(deficit) from operating activities has ranged from ₹30,000 to ₹-720,000 over the years. Notably, the depreciation and amortization adjustments have consistently contributed ₹30,000 to the net surplus each year.</p>
+          <p>The data also highlights the impact of liabilities on the institution's financial performance. The total liabilities have increased steadily over the years, reaching a high of ₹1,580,000 by 2022. This has put pressure on the institution's ability to manage its finances effectively. Despite efforts to reduce liabilities, the institution has struggled to achieve a stable net position.</p>
+        </div>
+      </main>
+
+      <footer>
+        <div class="small">Source: Annual Financial Statements</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 6: Faculty and Staff -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta"><h1>Faculty and Staff</h1><div class="sub">General</div></div>
+        </div>
+        <div class="header-right"><div class="small">Section 4</div></div>
+      </header>
+
+      <main>
+        <div class="card">
+          <h4>Faculty Distribution by Department</h4>
+          <div class="desc">A breakdown of faculty members between the AEIE and IT departments, highlighting the distribution of academic staff.</div>
+          <div class="chart-panel">
+            <canvas id="facultyDistributionChart"></canvas>
+          </div>
+        </div>
+
+        <div class="card section" style="margin-top:12px;">
+          <h4>Departmental Overview</h4>
+          <p>The faculty and staff of the institution have demonstrated a strong presence across various departments, with a notable emphasis on technical expertise. The Department of AEIE (Applied Electronics and Instrumentation Engineering) has a total of 20 faculty members, comprising Professors Eva Martin (B.Tech), Alice Taylor (M.Tech), Paula Martin (M.Tech), Victor King (M.Tech), Julia Johnson (M.Tech), Bob Nelson (B.Tech), Laura Taylor (M.Sc), and Nina Parker (Ph.D.), as well as Assistant Professors Grace Young (M.Tech), Uma Nelson (M.Tech), and Helen Taylor. This team is supported by a total of 20 staff members, with the department's revenue standing at ₹60,000 and expenses at ₹52,000, resulting in a surplus of ₹8,000.</p>
+          <p>In contrast, the Department of IT has a smaller faculty count of 28, including Professors David Parker (M.Tech), Alice Nelson (Ph.D.), Zach King (Ph.D.), Quentin Garcia (M.Sc), Rachel Martin (Ph.D.), and Michael King (Ph.D.). The department's revenue is ₹90,000, with expenses at ₹75,000, resulting in a surplus of ₹15,000. This indicates a more efficient allocation of resources within the IT department.</p>
+          <p>The student count across all departments stands at 2200, with 1600 students enrolled in technical programs and 800 students in non-technical programs. The faculty-to-student ratio is maintained at an average of 1:50, ensuring adequate support for each student.</p>
+        </div>
+      </main>
+
+      <footer>
+        <div class="small">Source: Human Resources & Departmental Records</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+    <!-- Page 7: Appendix / Annexures -->
+    <section class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="logo">UT</div>
+          <div class="meta"><h1>Annexures & Detailed Tables</h1><div class="sub">Supporting data & processed files</div></div>
+        </div>
+        <div class="header-right"><div class="small">Appendix</div></div>
+      </header>
+
+      <main>
+        <div class="card">
+          <h4>Top Placements — Detailed List</h4>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Student</th><th>Dept</th><th>Company</th><th>CTC</th></tr></thead>
+              <tbody>
+                <tr><td colspan="4" style="text-align:center; color: var(--muted);">No detailed placement data available for this report.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h4>Processed Files & Data Sources</h4>
+          <div class="muted">
+            <ul>
+              <li>71ca2edd-e448-42cc-b84b-338066552871.pdf</li>
+              <li>547381e7-18f8-4029-bdfc-6d4283ac83fa.xlsx</li>
+              <li>c28579f1-9daa-4fda-9562-6e66ab82ed8a.xlsx</li>
+              <li>a670c87e-28b7-41ee-8490-8a4da7f91804.xlsx</li>
+            </ul>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="small">End of report</div>
+        <div>Page <span class="pagenum"></span></div>
+      </footer>
+    </section>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    (function() {
+      // Chart 1: Financial Performance
+      const financialCtx = document.getElementById('financialPerformanceChart');
+      if (financialCtx) {
+        new Chart(financialCtx, {
+          type: 'line',
+          data: {
+            labels: ['2018', '2019', '2020', '2021', '2022'],
+            datasets: [{
+              label: 'Net Position (in thousands ₹)',
+              data: [1580, 800, -50, -400, -720],
+              borderColor: 'rgba(10, 37, 64, 0.8)',
+              backgroundColor: 'rgba(10, 37, 64, 0.1)',
+              fill: true,
+              tension: 0.1
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: false,
+                ticks: {
+                  callback: function(value) {
+                    return '₹' + value + 'k';
+                  }
+                }
+              }
+            },
+            plugins: {
+              legend: {
+                display: false
+              }
+            }
+          }
+        });
+      }
+
+      // Chart 2: Faculty Distribution
+      const facultyCtx = document.getElementById('facultyDistributionChart');
+      if (facultyCtx) {
+        new Chart(facultyCtx, {
+          type: 'doughnut',
+          data: {
+            labels: ['AEIE Department', 'IT Department'],
+            datasets: [{
+              label: 'Number of Faculty',
+              data: [20, 28],
+              backgroundColor: [
+                'rgba(4, 108, 90, 0.7)',
+                'rgba(10, 37, 64, 0.8)'
+              ],
+              borderColor: [
+                'rgba(4, 108, 90, 1)',
+                'rgba(10, 37, 64, 1)'
+              ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: 'top',
+              },
+              title: {
+                display: false,
+                text: 'Faculty Distribution by Department'
+              }
+            }
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
