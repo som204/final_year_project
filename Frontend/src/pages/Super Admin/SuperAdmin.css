@@ -1,18 +1,80 @@
-/* --- Admin Layout & Sidebar --- */
-.admin-layout {
-  display: flex;
-  min-height: 100vh;
-  background-color: #f8f9fa;
-  font-family: 'Poppins', sans-serif;
+/* ==========================================================================
+   1. VARIABLES & RESET
+   ========================================================================== */
+:root {
+  /* Admin Theme Colors (Slate Blue & Teal) */
+  --admin-primary: #0A2540;
+  --admin-accent: #00C49A;
+  --admin-accent-hover: #00a986;
+  
+  /* Status Colors */
+  --success-bg: #e6f4ea;
+  --success-text: #1e8e3e;
+  --error-bg: #fce8e6;
+  --error-text: #d93025;
+  --warning-bg: #fef9c3;
+  --warning-text: #854d0e;
+
+  /* Neutrals */
+  --bg-body: #f8f9fa;
+  --bg-card: #ffffff;
+  --text-dark: #333;
+  --text-med: #555;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+
+  /* UI Properties */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 4px 12px rgba(0,0,0,0.05);
+  --font-family: 'Poppins', sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--bg-body);
+}
+
+/* ==========================================================================
+   2. MAIN LAYOUT
+   ========================================================================== */
+.admin-layout {
+  display: flex;
+  height: 100vh;       /* Fix height to viewport */
+  overflow: hidden;    /* Prevent body scroll */
+  background-color: var(--bg-body);
+}
+
+.admin-content {
+  flex-grow: 1;
+  height: 100%;        /* Fill vertical space */
+  overflow-y: auto;    /* Scroll content independently */
+  padding: 2rem;
+}
+
+/* Page Headers */
+.admin-content h1 {
+  font-size: 2rem;
+  color: var(--admin-primary);
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   3. SIDEBAR NAVIGATION
+   ========================================================================== */
 .sidebar {
   width: 260px;
-  background-color: #0A2540; /* Slate Blue */
+  background-color: var(--admin-primary);
   color: #fff;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
+  height: 100%;
 }
 
 .sidebar-header {
@@ -23,6 +85,7 @@
 .sidebar-title {
   font-size: 1.5rem;
   text-align: center;
+  margin: 0;
 }
 
 .sidebar-nav {
@@ -30,6 +93,8 @@
   flex-direction: column;
   gap: 0.5rem;
   padding: 1rem;
+  flex-grow: 1; /* Pushes footer down */
+  overflow-y: auto;
 }
 
 .sidebar-link {
@@ -37,7 +102,7 @@
   align-items: center;
   gap: 1rem;
   padding: 0.8rem 1rem;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   color: #c0c8d1;
   text-decoration: none;
   transition: background-color 0.2s, color 0.2s;
@@ -48,26 +113,43 @@
   color: #fff;
 }
 
-/* Active link style */
 .sidebar-link.active {
-  background-color: #00C49A; /* Teal Accent */
+  background-color: var(--admin-accent);
   color: #fff;
   font-weight: 500;
 }
 
-.admin-content {
-  flex-grow: 1;
-  padding: 2rem;
-  overflow-y: auto;
+.sidebar-footer {
+  padding: 1rem;
+  border-top: 1px solid #1a3a5a;
 }
 
-.admin-content h1 {
-  font-size: 2rem;
-  color: #0A2540;
-  margin-bottom: 2rem;
+.logout-button {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: #c0c8d1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  text-align: left;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-/* --- Dashboard Page --- */
+.logout-button:hover {
+  background-color: var(--admin-accent);
+  color: #fff;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   4. DASHBOARD & STATS CARDS
+   ========================================================================== */
 .stats-cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -79,10 +161,10 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background-color: #fff;
+  background-color: var(--bg-card);
   padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
 }
 
 .stat-card-icon {
@@ -93,60 +175,48 @@
   border-radius: 50%;
   color: #fff;
 }
+
+/* Stat Icon Variations */
 .stat-card-icon.institutes { background-color: #4A90E2; }
 .stat-card-icon.students { background-color: #50E3C2; }
 .stat-card-icon.viewers { background-color: #F5A623; }
 
 .stat-card-info p {
   font-size: 1rem;
-  color: #555;
+  color: var(--text-med);
   margin: 0 0 0.25rem 0;
 }
+
 .stat-card-info span {
   font-size: 2rem;
   font-weight: 600;
-  color: #333;
+  color: var(--text-dark);
 }
 
+/* Recent Institutes Table Container */
 .recent-institutes-container h2 {
   font-size: 1.5rem;
-  color: #333;
+  color: var(--text-dark);
   margin-bottom: 1rem;
 }
 
-.recent-institutes-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-.recent-institutes-table th, .recent-institutes-table td {
-  padding: 1rem;
-  text-align: left;
-}
-.recent-institutes-table thead {
-  background-color: #f1f5f9;
-}
-.recent-institutes-table tbody tr:not(:last-child) {
-  border-bottom: 1px solid #e2e8f0;
-}
-
-/* --- Institute Registration Page --- */
+/* ==========================================================================
+   5. FORMS & INPUTS
+   ========================================================================== */
 .institute-reg-form {
   max-width: 800px;
-  background-color: #fff;
+  background-color: var(--bg-card);
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
 }
 
 .form-section {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--border);
 }
+
 .form-section:last-of-type {
   border-bottom: none;
   margin-bottom: 1rem;
@@ -154,421 +224,244 @@
 
 .form-section h3 {
   font-size: 1.2rem;
-  color: #0A2540;
+  color: var(--admin-primary);
   margin-bottom: 1.5rem;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1.5rem;
 }
+
 @media (min-width: 768px) {
   .form-row { grid-template-columns: 1fr 1fr; }
 }
 
+.institute-reg-form .input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.institute-reg-form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
 .institute-reg-form input {
   width: 100%;
-  padding: 0.8rem 1rem;
-  margin-bottom: 1rem;
+  padding: 0.8rem 1rem 0.8rem 3rem; /* Left padding for icon */
+  margin-bottom: 0;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-family);
 }
 
 .institute-reg-form input:focus {
   outline: none;
-  border-color: #00C49A;
+  border-color: var(--admin-accent);
   box-shadow: 0 0 0 3px rgba(0, 196, 154, 0.2);
 }
 
-.form-message {
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 8px;
-  text-align: center;
-}
-.form-message.error {
-  background-color: #fce8e6;
-  color: #d93025;
-}
-.form-message.success {
-  background-color: #e6f4ea;
-  color: #1e8e3e;
-}
-
-/* Button styles (re-declared for consistency) */
-.button { display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; font-weight: 500; border: 1px solid transparent; cursor: pointer; transition: background-color 0.2s; }
-.button-accent { background-color: #00C49A; color: #fff; width: 100%; padding: 0.8rem; font-size: 1.1rem; }
-.button-accent:hover { background-color: #00a986; }
-.button:disabled { background-color: #cccccc; cursor: not-allowed; }
-
-.sidebar-nav {
-  /* This allows the navigation section to grow, pushing the footer down */
-  flex-grow: 1;
-}
-
-.sidebar-footer {
-  padding: 1rem;
-  /* Use a border color that matches the super admin theme */
-  border-top: 1px solid #1a3a5a; 
-}
-
-.logout-button {
-  /* Base styles copied from .sidebar-link for consistency */
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  color: #c0c8d1; /* Matches inactive link color */
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  text-align: left;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.logout-button:hover {
-  /* Hover styles to match the active link state */
-  background-color: #00C49A; /* Teal Accent */
-  color: #fff;
-  font-weight: 500;
-}
-
-/* Add these styles to your SuperAdmin.css file */
-
-.management-page {
-  width: 100%;
-}
-
-.tabs {
-  display: flex;
-  border-bottom: 2px solid #e2e8f0;
-  margin-bottom: 1.5rem;
-}
-
-.tab-button {
-  padding: 0.8rem 1.5rem;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #64748b;
-  position: relative;
-  bottom: -2px;
-}
-
-.tab-button.active {
-  color: #0A2540; /* Slate Blue */
-  border-bottom: 2px solid #00C49A; /* Teal Accent */
-}
-
-.list-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.search-bar, .filter-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-}
-
-.search-bar input, .filter-bar select {
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  background-color: transparent;
-}
-
-.filter-bar select {
-  cursor: pointer;
-}
-
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.data-table th, .data-table td {
-  padding: 1rem;
-  text-align: left;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.data-table thead {
-  background-color: #f8fafc;
-}
-
-.status-badge {
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.status-badge.approved {
-  background-color: #dcfce7;
-  color: #166534;
-}
-
-.status-badge.pending {
-  background-color: #fef9c3;
-  color: #854d0e;
-}
-
-.actions-cell {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.action-button {
-  padding: 0.4rem 0.8rem;
-  border: 1px solid #e2e8f0;
-  background-color: #fff;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.action-button.edit { color: #007bff; }
-.action-button.delete { color: #dc3545; }
-
-.form-checkbox {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.management-page {
-  width: 100%;
-}
-
-.tabs {
-  display: flex;
-  border-bottom: 2px solid #e2e8f0;
-  margin-bottom: 1.5rem;
-}
-
-.tab-button {
-  padding: 0.8rem 1.5rem;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #64748b;
-  position: relative;
-  bottom: -2px;
-}
-
-.tab-button.active {
-  color: #0A2540; /* Slate Blue */
-  border-bottom: 2px solid #00C49A; /* Teal Accent */
-}
-
-.list-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.search-bar, .filter-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-}
-
-.search-bar input, .filter-bar select {
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  background-color: transparent;
-}
-
-.filter-bar select {
-  cursor: pointer;
-}
-
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.data-table th, .data-table td {
-  padding: 1rem;
-  text-align: left;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.data-table thead {
-  background-color: #f8fafc;
-}
-
-.status-badge {
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.status-badge.approved { background-color: #dcfce7; color: #166534; }
-.status-badge.pending { background-color: #fef9c3; color: #854d0e; }
-
-.actions-cell { display: flex; gap: 0.5rem; }
-.action-button { padding: 0.4rem 0.8rem; border: 1px solid #e2e8f0; background-color: #fff; border-radius: 6px; cursor: pointer; }
-.action-button.edit { color: #007bff; }
-.action-button.delete { color: #dc3545; }
-
-/* --- Improved Form Styles --- */
-.institute-reg-form {
-  max-width: 800px;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-.institute-reg-form .form-row { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-@media (min-width: 768px) { .institute-reg-form .form-row { grid-template-columns: 1fr 1fr; } }
-
-.institute-reg-form .input-group { position: relative; margin-bottom: 1.5rem; }
-.institute-reg-form label { display: block; font-weight: 500; margin-bottom: 0.5rem; color: #333; }
+/* Input Icons */
 .institute-reg-form .input-icon {
   position: absolute;
   left: 1rem;
-  /* Vertically center the icon relative to the input field below it */
   bottom: 0.5rem;
   transform: translateY(-50%);
-  top: auto; /* Remove the old top positioning */
   color: #999;
   pointer-events: none;
 }
-.institute-reg-form input { margin-bottom: 0; padding-left: 3rem; }
-.institute-reg-form input:focus { outline: none; border-color: #00C49A; box-shadow: 0 0 0 3px rgba(0, 196, 154, 0.2); }
 
-/* --- Toggle Switch --- */
-.toggle-group { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding: 0.75rem; background-color: #f8fafc; border-radius: 8px; }
-.toggle-switch { position: relative; display: inline-block; width: 50px; height: 28px; }
+/* Toggle Switch */
+.toggle-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem;
+  background-color: #f8fafc;
+  border-radius: var(--radius-sm);
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
 .toggle-switch input { opacity: 0; width: 0; height: 0; }
-.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 28px; }
-.slider:before { position: absolute; content: ""; height: 20px; width: 20px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
-input:checked + .slider { background-color: #00C49A; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 28px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px; width: 20px;
+  left: 4px; bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider { background-color: var(--admin-accent); }
 input:checked + .slider:before { transform: translateX(22px); }
 
-/* --- Feedback Messages --- */
-.form-message { display: flex; align-items: center; gap: 0.75rem; padding: 1rem; margin: 1rem 0; border-radius: 8px; text-align: left; }
-.form-message.error { background-color: #fce8e6; color: #d93025; }
-.form-message.success { background-color: #e6f4ea; color: #1e8e3e; }
+/* ==========================================================================
+   6. TABLES & LISTS
+   ========================================================================== */
+.management-page { width: 100%; }
 
-/* --- Buttons --- */
-.button-accent { background-color: #00C49A; color: #fff; width: 100%; padding: 0.8rem; font-size: 1.1rem; }
-.button-accent:hover { background-color: #00a986; }
-.button:disabled { background-color: #cccccc; cursor: not-allowed; }
-
-
-/* --- Management Page General Styles --- */
-.management-page {
-  width: 100%;
-}
-.management-page h1 {
-  font-size: 2rem;
-  color: #0A2540;
+/* Tabs */
+.tabs {
+  display: flex;
+  border-bottom: 2px solid var(--border);
   margin-bottom: 1.5rem;
 }
+
+.tab-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  position: relative;
+  bottom: -2px;
+}
+
+.tab-button.active {
+  color: var(--admin-primary);
+  border-bottom: 2px solid var(--admin-accent);
+}
+
+/* Search & Filter Controls */
 .list-controls {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
 }
-.search-bar, .filter-bar {
+
+.search-bar, 
+.filter-bar {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   background-color: #fff;
   padding: 0.5rem 1rem;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
   box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
-.search-bar input, .filter-bar select {
+
+.search-bar input, 
+.filter-bar select {
   border: none;
   outline: none;
   font-size: 1rem;
   background-color: transparent;
 }
-.filter-bar select {
-  cursor: pointer;
-}
-.filter-bar svg {
-  color: #64748b;
-}
 
-/* --- Data Table --- */
-.data-table {
+.filter-bar select { cursor: pointer; }
+.filter-bar svg { color: var(--text-muted); }
+
+/* Data Tables (Shared) */
+.data-table,
+.recent-institutes-table {
   width: 100%;
   border-collapse: collapse;
   background-color: #fff;
-  border-radius: 12px;
+  border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-sm);
 }
-.data-table th, .data-table td {
+
+.data-table th, .data-table td,
+.recent-institutes-table th, .recent-institutes-table td {
   padding: 1rem;
   text-align: left;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--border);
 }
-.data-table thead {
+
+.data-table thead,
+.recent-institutes-table thead {
   background-color: #f8fafc;
   font-size: 0.9em;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #64748b;
+  color: var(--text-muted);
 }
+
+.data-table tbody tr:not(:last-child),
+.recent-institutes-table tbody tr:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+
+/* Actions in Table */
 .actions-cell {
   display: flex;
   gap: 0.5rem;
 }
+
 .action-button {
   padding: 0.4rem 0.8rem;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
   background-color: #fff;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s;
 }
-.action-button:hover {
-    background-color: #f8fafc;
-}
+
+.action-button:hover { background-color: #f8fafc; }
 .action-button.edit { color: #007bff; }
 .action-button.delete { color: #dc3545; }
 
-/* --- Status & Role Badges --- */
+/* ==========================================================================
+   7. BUTTONS, BADGES & UTILITIES
+   ========================================================================== */
+/* Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button-accent {
+  background-color: var(--admin-accent);
+  color: #fff;
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.button-accent:hover {
+  background-color: var(--admin-accent-hover);
+}
+
+.button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Status Badges */
 .status-badge {
   padding: 0.25rem 0.6rem;
   border-radius: 999px;
@@ -577,41 +470,43 @@ input:checked + .slider:before { transform: translateX(22px); }
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-.status-badge.role-admin {
-  background-color: #fce8e6;
-  color: #c5221f;
-}
-.status-badge.role-faculty {
-  background-color: #e6f4ea;
-  color: #1e8e3e;
-}
-.status-badge.role-student {
-  background-color: #e8f0fe;
-  color: #1a73e8;
-}
 
-/* --- Feedback & Loading --- */
-.form-message.error {
+.status-badge.approved { background-color: #dcfce7; color: #166534; }
+.status-badge.pending { background-color: #fef9c3; color: #854d0e; }
+
+/* Role Badges */
+.status-badge.role-admin { background-color: #fce8e6; color: #c5221f; }
+.status-badge.role-faculty { background-color: #e6f4ea; color: #1e8e3e; }
+.status-badge.role-student { background-color: #e8f0fe; color: #1a73e8; }
+
+/* Feedback Messages */
+.form-message {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   padding: 1rem;
-  border-radius: 8px;
-  background-color: #fce8e6;
-  color: #d93025;
+  margin: 1rem 0;
+  border-radius: var(--radius-sm);
+  text-align: left;
 }
+
+.form-message.error { background-color: var(--error-bg); color: var(--error-text); }
+.form-message.success { background-color: var(--success-bg); color: var(--success-text); }
+
+/* Loading Spinner */
 .loading-message {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 1.2em;
-  color: #6c757d;
+  color: var(--text-muted);
 }
+
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
 .spinner {
   animation: spin 1s linear infinite;
 }
-

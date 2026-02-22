@@ -6,103 +6,384 @@
 <title>{{REPORT_TITLE}}</title>
 
 <style>
-  /* ---------- Page & print sizing ---------- */
-  @page { size: A4; margin: 18mm; }
-  html,body { height:100%; margin:0; padding:0; background:#f3f6f9; font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color:#0f1724; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
-  :root{
+  /* ---------- Page & print sizing - FIXED FOR html2pdf ---------- */
+  * { box-sizing: border-box; }
+  
+  html, body { 
+    margin: 0; 
+    padding: 0; 
+    background: #ffffff;
+    font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+    color: #0f1724; 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;
+    width: 210mm; /* A4 width */
+  }
+  
+  :root {
     --accent: #0a2540;
     --accent-2: #046c5a;
     --muted: #64748b;
-    --muted-2:#94a3b8;
-    --card:#ffffff;
-    --max-width: 178mm;
+    --muted-2: #94a3b8;
+    --card: #ffffff;
     --shadow: 0 8px 28px rgba(10,37,64,0.06);
+    /* A4 dimensions minus margins */
+    --page-width: 210mm;
+    --page-height: 297mm;
+    --margin: 18mm;
+    --content-width: 174mm; /* 210mm - (18mm * 2) */
+    --content-height: 261mm; /* 297mm - (18mm * 2) */
   }
 
-  .container { width:var(--max-width); margin:8mm auto; padding:0; box-sizing:border-box; }
+  .container { 
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
-  /* Each .page becomes a PDF page. Use padding to respect margins. */
-  .page { background: var(--card); margin-bottom:10mm; border-radius:6px; padding:18mm; box-sizing:border-box; box-shadow: none; min-height:257mm; display:flex; flex-direction:column; }
-  .page:last-child { page-break-after: auto; }
-  .page-break { page-break-after: always; }
+  /* Each .page becomes a PDF page with EXACT A4 dimensions */
+  .page { 
+    width: var(--page-width);
+    height: var(--page-height);
+    padding: var(--margin);
+    margin: 0;
+    background: var(--card);
+    display: flex;
+    flex-direction: column;
+    page-break-after: always;
+    page-break-inside: avoid;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .page:last-child { 
+    page-break-after: auto; 
+  }
 
   /* Header & footer */
-  .header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e6eef6; padding-bottom:10px; margin-bottom:14px; }
-  .brand { display:flex; align-items:center; gap:12px; }
-  .brand .logo { width:56px; height:56px; border-radius:8px; background:linear-gradient(180deg,var(--accent),var(--accent-2)); display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:18px; letter-spacing:0.6px; }
-  .brand .meta { display:flex; flex-direction:column; }
-  .brand h1 { margin:0; font-size:18px; color:var(--accent); letter-spacing:0.2px; }
-  .brand .sub { margin-top:2px; font-size:13px; color:var(--muted); }
-
-  .header-right { text-align:right; font-size:12px; color:var(--muted); }
-  .header-right .title { font-weight:600; color:var(--accent); }
-  .header-right .small { color:var(--muted-2); margin-top:4px; }
-
-  footer { margin-top:auto; padding-top:10px; border-top:1px solid #eef2f7; display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--muted); }
-  .pagenum:before { content: counter(page); } /* basic CSS page counter */
-
-  /* Page title */
-  .cover-title { margin: 12px 0 18px 0; }
-  .cover-title h2 { font-size:28px; margin:0; color:var(--accent); letter-spacing:-0.2px; }
-  .cover-title p { margin:6px 0 0 0; color:var(--muted); font-size:14px; }
-
-  /* Table of contents */
-  .toc { margin-top:6mm; }
-  .toc h3 { margin:0 0 10px 0; color:var(--accent); font-size:16px; }
-  .toc ul { list-style:none; padding:0; margin:0; }
-  .toc li { display:flex; gap:12px; justify-content:space-between; padding:8px 0; border-bottom:1px dashed #f1f5f9; color:var(--muted); font-size:13px; }
-
-  /* KPI row */
-  .kpi-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
-  .kpi { background: linear-gradient(180deg, #ffffff, #fbfdff); padding:12px 14px; border-radius:10px; min-width:140px; box-shadow: var(--shadow); border:1px solid #eef6fb; display:flex; flex-direction:column; }
-  .kpi .label { font-size:12px; color:var(--muted); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.6px; }
-  .kpi .value { font-size:20px; color:var(--accent); font-weight:700; }
-
-  /* Card */
-  .card { background:var(--card); border-radius:10px; padding:14px; box-shadow:var(--shadow); border:1px solid #eef6fb; margin-bottom:14px; }
-  .card h4 { margin:0 0 8px 0; color:var(--accent); font-size:16px; }
-  .card .desc { color:var(--muted); font-size:13px; margin-bottom:10px; }
-
-  /* Chart placeholders (NO images) */
-  .chart-grid { display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:8px; }
-  .chart-panel { height:220px; border-radius:8px; background:linear-gradient(180deg,#fbfdff,#f7fbff); border:1px solid #eef6fb; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; padding:8px; box-sizing:border-box; }
-  .chart-caption { margin-top:8px; font-size:12px; color:var(--muted); }
-
-  /* Tables */
-  .table-wrap { overflow:auto; margin-top:8px; }
-  table { width:100%; border-collapse:collapse; font-size:13px; }
-  th, td { text-align:left; padding:10px 8px; border-bottom:1px solid #eef2f7; }
-  th { background:#fbfdff; color:var(--muted); font-weight:700; font-size:13px; }
-  tbody tr:last-child td { border-bottom: none; }
-
-  /* Section text */
-  .section { margin-top:12px; }
-  .section h3 { margin:0 0 8px 0; color:var(--accent); font-size:16px; }
-  .section p { color:#0b1b28; line-height:1.55; font-size:13px; margin:0 0 10px 0; }
-
-  .two-col { display:grid; grid-template-columns:1fr 320px; gap:16px; align-items:start; }
-
-  .muted { color:var(--muted); font-size:13px; }
-  .muted-2 { color:var(--muted-2); font-size:12px; }
-
-  .actions { display:flex; gap:8px; margin-bottom:12px; }
-  .button { background:#f8fafc; border:1px solid #e6eef6; padding:8px 10px; border-radius:8px; font-size:13px; color:var(--muted); }
-
-  .break-after { page-break-after: always; }
-
-  @media print {
-    body { background:white; }
-    .container { margin:0; width:auto; }
-    .page { box-shadow:none; border-radius:0; padding:18mm; min-height:auto; }
-    .no-print { display:none; }
-    thead { display:table-header-group; }
-    tfoot { display:table-footer-group; }
+  .header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom: 1px solid #e6eef6; 
+    padding-bottom: 10px; 
+    margin-bottom: 14px;
+    flex-shrink: 0;
+  }
+  
+  .brand { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+  }
+  
+  .brand .logo { 
+    width: 56px; 
+    height: 56px; 
+    border-radius: 8px; 
+    background: linear-gradient(180deg, var(--accent), var(--accent-2)); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    font-weight: 700; 
+    font-size: 18px; 
+    letter-spacing: 0.6px;
+    flex-shrink: 0;
+  }
+  
+  .brand .meta { 
+    display: flex; 
+    flex-direction: column; 
+  }
+  
+  .brand h1 { 
+    margin: 0; 
+    font-size: 18px; 
+    color: var(--accent); 
+    letter-spacing: 0.2px; 
+  }
+  
+  .brand .sub { 
+    margin-top: 2px; 
+    font-size: 13px; 
+    color: var(--muted); 
   }
 
-  @media (max-width:900px) {
-    .chart-grid { grid-template-columns:1fr; }
-    .two-col { grid-template-columns:1fr; }
-    .kpi-row { gap:10px; }
+  .header-right { 
+    text-align: right; 
+    font-size: 12px; 
+    color: var(--muted); 
+  }
+  
+  .header-right .title { 
+    font-weight: 600; 
+    color: var(--accent); 
+  }
+  
+  .header-right .small { 
+    color: var(--muted-2); 
+    margin-top: 4px; 
+  }
+
+  footer { 
+    margin-top: auto; 
+    padding-top: 10px; 
+    border-top: 1px solid #eef2f7; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    font-size: 12px; 
+    color: var(--muted);
+    flex-shrink: 0;
+  }
+
+  /* Page title */
+  .cover-title { 
+    margin: 12px 0 18px 0; 
+  }
+  
+  .cover-title h2 { 
+    font-size: 28px; 
+    margin: 0; 
+    color: var(--accent); 
+    letter-spacing: -0.2px; 
+  }
+  
+  .cover-title p { 
+    margin: 6px 0 0 0; 
+    color: var(--muted); 
+    font-size: 14px; 
+  }
+
+  /* Table of contents */
+  .toc { 
+    margin-top: 6mm; 
+  }
+  
+  .toc h3 { 
+    margin: 0 0 10px 0; 
+    color: var(--accent); 
+    font-size: 16px; 
+  }
+  
+  .toc ul { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+  }
+  
+  .toc li { 
+    display: flex; 
+    gap: 12px; 
+    justify-content: space-between; 
+    padding: 8px 0; 
+    border-bottom: 1px dashed #f1f5f9; 
+    color: var(--muted); 
+    font-size: 13px; 
+  }
+
+  /* KPI row */
+  .kpi-row { 
+    display: flex; 
+    gap: 12px; 
+    flex-wrap: wrap; 
+    margin-top: 12px; 
+  }
+  
+  .kpi { 
+    background: linear-gradient(180deg, #ffffff, #fbfdff); 
+    padding: 12px 14px; 
+    border-radius: 10px; 
+    min-width: 140px; 
+    box-shadow: var(--shadow); 
+    border: 1px solid #eef6fb; 
+    display: flex; 
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .kpi .label { 
+    font-size: 12px; 
+    color: var(--muted); 
+    margin-bottom: 6px; 
+    text-transform: uppercase; 
+    letter-spacing: 0.6px; 
+  }
+  
+  .kpi .value { 
+    font-size: 20px; 
+    color: var(--accent); 
+    font-weight: 700; 
+  }
+
+  /* Card */
+  .card { 
+    background: var(--card); 
+    border-radius: 10px; 
+    padding: 14px; 
+    box-shadow: var(--shadow); 
+    border: 1px solid #eef6fb; 
+    margin-bottom: 14px; 
+  }
+  
+  .card h4 { 
+    margin: 0 0 8px 0; 
+    color: var(--accent); 
+    font-size: 16px; 
+  }
+  
+  .card .desc { 
+    color: var(--muted); 
+    font-size: 13px; 
+    margin-bottom: 10px; 
+  }
+
+  /* Chart placeholders */
+  .chart-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 12px; 
+    margin-top: 8px; 
+  }
+  
+  .chart-panel { 
+    height: 220px; 
+    border-radius: 8px; 
+    background: linear-gradient(180deg, #fbfdff, #f7fbff); 
+    border: 1px solid #eef6fb; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: var(--muted); 
+    font-size: 13px; 
+    padding: 8px;
+  }
+  
+  .chart-caption { 
+    margin-top: 8px; 
+    font-size: 12px; 
+    color: var(--muted); 
+  }
+
+  /* Tables */
+  .table-wrap { 
+    overflow: auto; 
+    margin-top: 8px; 
+  }
+  
+  table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    font-size: 13px; 
+  }
+  
+  th, td { 
+    text-align: left; 
+    padding: 10px 8px; 
+    border-bottom: 1px solid #eef2f7; 
+  }
+  
+  th { 
+    background: #fbfdff; 
+    color: var(--muted); 
+    font-weight: 700; 
+    font-size: 13px; 
+  }
+  
+  tbody tr:last-child td { 
+    border-bottom: none; 
+  }
+
+  /* Section text */
+  .section { 
+    margin-top: 12px; 
+  }
+  
+  .section h3 { 
+    margin: 0 0 8px 0; 
+    color: var(--accent); 
+    font-size: 16px; 
+  }
+  
+  .section p { 
+    color: #0b1b28; 
+    line-height: 1.55; 
+    font-size: 13px; 
+    margin: 0 0 10px 0; 
+  }
+
+  .two-col { 
+    display: grid; 
+    grid-template-columns: 1fr 320px; 
+    gap: 16px; 
+    align-items: start; 
+  }
+
+  .muted { 
+    color: var(--muted); 
+    font-size: 13px; 
+  }
+  
+  .muted-2 { 
+    color: var(--muted-2); 
+    font-size: 12px; 
+  }
+
+  .actions { 
+    display: flex; 
+    gap: 8px; 
+    margin-bottom: 12px; 
+  }
+  
+  .button { 
+    background: #f8fafc; 
+    border: 1px solid #e6eef6; 
+    padding: 8px 10px; 
+    border-radius: 8px; 
+    font-size: 13px; 
+    color: var(--muted); 
+  }
+
+  /* Main content area - grows to fill available space */
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Important for proper flex behavior */
+  }
+
+  /* Print-specific styles */
+  @media print {
+    html, body {
+      width: 210mm;
+      height: 297mm;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .page {
+      margin: 0;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    
+    .no-print {
+      display: none !important;
+    }
+  }
+
+  /* Responsive fallback (shouldn't be needed for PDF generation) */
+  @media (max-width: 900px) {
+    .chart-grid { 
+      grid-template-columns: 1fr; 
+    }
+    .two-col { 
+      grid-template-columns: 1fr; 
+    }
+    .kpi-row { 
+      gap: 10px; 
+    }
   }
 
 </style>
@@ -162,7 +443,7 @@
 
       <footer>
         <div>Office of Institutional Research</div>
-        <div>Page <span class="pagenum"></span></div>
+        <div>Page 1</div>
       </footer>
     </section>
 
@@ -200,7 +481,7 @@
 
       <footer>
         <div class="small">Confidential</div>
-        <div>Page <span class="pagenum"></span></div>
+        <div>Page 2</div>
       </footer>
     </section>
 
@@ -242,7 +523,7 @@
 
       <footer>
         <div class="small">[[SOURCE_NOTE]]</div>
-        <div>Page <span class="pagenum"></span></div>
+        <div>Page 3</div>
       </footer>
     </section>
 
@@ -279,16 +560,14 @@
 
       <footer>
         <div class="small">End of report</div>
-        <div>Page <span class="pagenum"></span></div>
+        <div>Page 4</div>
       </footer>
     </section>
 
   </div>
 
-  <!-- Report JSON placeholder: replace via server-side merge or LLM, or set window.REPORT_DATA in JS -->
+  <!-- Report JSON placeholder -->
   <script>
-    // If you want client-side rendering, inject your final_report_data JSON at this placeholder:
-    // window.REPORT_DATA = {...};
     window.REPORT_DATA = /*REPORT_JSON_PLACEHOLDER*/ {};
 
     (function renderFromReport() {
@@ -327,19 +606,19 @@
         });
       }
 
-      // TOC generation (basic from sections)
+      // TOC generation
       const tocList = document.getElementById('toc-list');
       const sections = r.sections || [];
       if(tocList) {
         tocList.innerHTML = '';
         sections.forEach((s, idx) => {
           const li = document.createElement('li');
-          li.innerHTML = '<span>' + (s.title || ('Section ' + (idx+1))) + '</span><span>' + (idx+2) + '</span>';
+          li.innerHTML = '<span>' + (s.title || ('Section ' + (idx+1))) + '</span><span>' + (idx+3) + '</span>';
           tocList.appendChild(li);
         });
       }
 
-      // Narrative sections injection (first few)
+      // Narrative sections injection
       const narrativeRoot = document.getElementById('narrative-content');
       if(narrativeRoot && sections.length) {
         narrativeRoot.innerHTML = '';
@@ -353,7 +632,7 @@
         });
       }
 
-      // Tables injection (example: placements)
+      // Tables injection
       const placements = (r.tables || []).find(t => /placement|top placements|placements/i.test(t.title || '')) || null;
       if(placements) {
         const tbody = document.querySelector('#placements-table tbody');
@@ -388,8 +667,7 @@
         }
       }
 
-      // Chart placeholders: create title boxes for each chart
-      const chartGrid = document.getElementById('chart-grid');
+      // Chart placeholders
       const chartsRoot = document.getElementById('chart-grid');
       const charts = r.charts || [];
       if(chartsRoot) {

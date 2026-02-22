@@ -9,11 +9,14 @@ from sqlalchemy import (
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 from sqlalchemy.ext.hybrid import hybrid_property
 
+from Models.comment_models import ReportComment
+
 if TYPE_CHECKING:
     from .department_models import Department
     from .institute_models import Institute
     from .dataUpload_models import DataUploaded
     from .report_models import Report
+    from .comment_models import ReportComment
 
 import bcrypt
 
@@ -58,6 +61,10 @@ class User(Base):
     institute: Mapped[Optional["Institute"]] = relationship(back_populates="users")
     department: Mapped[Optional["Department"]] = relationship(back_populates="users")
     data_uploads: Mapped[List["DataUploaded"]] = relationship(back_populates="faculty")
+    report_comments: Mapped[List["ReportComment"]] = relationship(
+    back_populates="user",
+    cascade="all, delete-orphan"
+)
 
 
     @hybrid_property

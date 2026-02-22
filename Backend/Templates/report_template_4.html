@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Template 4 — Slate Minimalist | Institute Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:14px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:'IBM Plex Sans',sans-serif;background:#c8cbd4;color:#0e1118}
+
+:root{
+  --slate:#1e2533;
+  --slate2:#2d3546;
+  --indigo:#3b4fd4;
+  --gold:#c4962a;
+  --muted:#6b7687;
+  --muted2:#a0a9bc;
+  --border:#e0e4ef;
+  --bg:#f4f5f9;
+  --card:#ffffff;
+  --green:#166534;
+  --red:#991b1b;
+  --amber:#92400e;
+}
+
+.pages{display:flex;flex-direction:column;align-items:center;gap:12px;padding:16px}
+.page{
+  width:210mm;min-height:297mm;
+  background:var(--card);
+  display:flex;flex-direction:column;
+  padding:16mm 20mm 0;
+  position:relative;
+  box-shadow:0 2px 20px rgba(30,37,51,0.10);
+}
+
+/* ===== HEADER ===== */
+.pg-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.hd-left{display:flex;flex-direction:column;gap:3px}
+.hd-inst{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--slate);letter-spacing:0.3px}
+.hd-sub{font-size:11px;color:var(--muted);letter-spacing:0.2px}
+.hd-right{text-align:right}
+.hd-sec{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--indigo);letter-spacing:0.5px;display:block}
+.hd-title{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;color:var(--slate)}
+
+/* ===== COVER ===== */
+.cover-area{margin-bottom:24px}
+.cover-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--indigo);margin-bottom:12px}
+.cover-title{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;line-height:1.15;color:var(--slate);margin-bottom:16px}
+.cover-title em{font-style:italic;color:var(--indigo)}
+.cover-rule{width:48px;height:2px;background:var(--indigo);margin-bottom:16px}
+.cover-summary{font-size:13px;line-height:1.75;color:var(--muted);max-width:420px}
+
+.cover-aside{display:flex;flex-direction:column;gap:12px}
+.aside-stat{border:1px solid var(--border);padding:14px;display:flex;flex-direction:column;gap:4px}
+.aside-stat .label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--muted2);text-transform:uppercase}
+.aside-stat .value{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--slate);line-height:1}
+.aside-stat .chg{font-size:11px;color:var(--green);font-weight:500}
+.aside-stat.accent{background:var(--slate);border-color:var(--slate)}
+.aside-stat.accent .label{color:#8899bb}
+.aside-stat.accent .value{color:white}
+.aside-stat.accent .chg{color:#93c5fd}
+
+/* ===== LAYOUT ===== */
+.split{display:grid;grid-template-columns:1fr 220px;gap:24px;margin-bottom:20px}
+.split-33{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.split-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:18px}
+
+/* ===== SECTION LABEL ===== */
+.sec-lbl{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--indigo);margin-bottom:4px}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--slate);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+
+/* ===== BLOCK ===== */
+.blk{margin-bottom:16px}
+.blk-title{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;color:var(--slate);margin-bottom:2px}
+.blk-sub{font-size:11px;color:var(--muted2);margin-bottom:10px}
+
+/* ===== KPI ROW ===== */
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:18px}
+.kpi-cell{background:white;padding:14px;display:flex;flex-direction:column;gap:3px}
+.kpi-lbl{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:0.8px;color:var(--muted2);text-transform:uppercase}
+.kpi-val{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--slate);line-height:1.1}
+.kpi-chg{font-size:11px;font-weight:500}
+.kpi-up{color:#15803d}
+.kpi-dn{color:#dc2626}
+
+/* ===== TABLE ===== */
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.5px;padding:8px 10px;border-bottom:2px solid var(--slate);color:var(--muted);text-align:left;text-transform:uppercase}
+td{padding:9px 10px;border-bottom:1px solid var(--border);color:var(--slate);vertical-align:middle}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:var(--bg)}
+
+/* ===== BADGE ===== */
+.tag{display:inline-block;padding:2px 7px;font-size:10px;font-family:'IBM Plex Mono',monospace;letter-spacing:0.3px;border:1px solid}
+.tag-g{color:#15803d;border-color:#bbf7d0;background:#f0fdf4}
+.tag-r{color:#dc2626;border-color:#fecaca;background:#fef2f2}
+.tag-b{color:#1d4ed8;border-color:#bfdbfe;background:#eff6ff}
+.tag-a{color:#b45309;border-color:#fde68a;background:#fffbeb}
+.tag-s{color:var(--slate);border-color:var(--border);background:var(--bg)}
+
+/* ===== PROGRESS ===== */
+.pg-row{margin-bottom:11px}
+.pg-labels{display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px}
+.pg-name{color:var(--slate);font-weight:500}
+.pg-pct{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted)}
+.pg-track{height:4px;background:var(--border)}
+.pg-fill{height:100%}
+
+/* ===== SVG ===== */
+svg text{font-family:'IBM Plex Sans',sans-serif}
+
+/* ===== TOC ===== */
+.toc-line{display:flex;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--border);gap:10px}
+.toc-line:last-child{border-bottom:none}
+.toc-idx{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--indigo);min-width:20px;letter-spacing:0.5px}
+.toc-lbl{font-size:13px;color:var(--slate);font-weight:400;flex:1}
+.toc-dot{flex:1;height:1px;border-bottom:1px dotted var(--border);margin:0 8px;align-self:center}
+.toc-pg{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted2);min-width:24px;text-align:right}
+
+/* ===== LEGEND ===== */
+.lgnd{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px}
+.lgnd-i{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)}
+.lgnd-dot{width:8px;height:8px;border-radius:50%}
+.lgnd-sq{width:14px;height:4px}
+
+/* ===== QUOTE ===== */
+.factoid{background:var(--bg);border-left:2px solid var(--indigo);padding:10px 14px;font-size:12.5px;color:var(--slate);line-height:1.6;font-style:italic}
+
+/* ===== FOOTER ===== */
+.pg-footer{margin-top:auto;padding:10px 0 12px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:10.5px}
+.pg-footer .ft-left{color:var(--muted2)}
+.pg-footer .ft-right{font-family:'IBM Plex Mono',monospace;color:var(--indigo);letter-spacing:0.5px}
+
+/* ===== PRINT ===== */
+@page{size:A4;margin:0}
+@media print{
+  body{background:white}
+  .pages{padding:0;gap:0}
+  .page{box-shadow:none;page-break-after:always;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="pages">
+
+<!-- ====== PAGE 1: COVER ====== -->
+<div class="page">
+  <div class="pg-header">
+    <div class="hd-left">
+      <div class="hd-inst">Vidyasagar Institute of Engineering & Technology</div>
+      <div class="hd-sub">Autonomous · NAAC A+ · Est. 1982 · Kolkata, West Bengal</div>
+    </div>
+    <div class="hd-right">
+      <span class="hd-sec">IR / AY-2425 / VOL-01</span>
+      <span class="hd-title">Annual Institutional Report</span>
+    </div>
+  </div>
+
+  <div class="split" style="margin-bottom:22px;align-items:start">
+    <div class="cover-area">
+      <div class="cover-eyebrow">Annual Institutional Report · 2024 – 2025</div>
+      <div class="cover-title">Performance<br/><em>& Outcomes</em><br/>Report</div>
+      <div class="cover-rule"></div>
+      <div class="cover-summary">A comprehensive, data-driven review of academic performance, placement outcomes, research and innovation activity, faculty development, and infrastructure utilization across all departments for the academic year 2024–25.</div>
+    </div>
+    <div class="cover-aside">
+      <div class="aside-stat accent">
+        <div class="label">Placement Rate</div>
+        <div class="value">94.7%</div>
+        <div class="chg">↑ 3.1pp from AY23–24</div>
+      </div>
+      <div class="aside-stat">
+        <div class="label">Total Students</div>
+        <div class="value">6,842</div>
+        <div class="chg">↑ 4.2% YoY</div>
+      </div>
+      <div class="aside-stat">
+        <div class="label">Research Papers</div>
+        <div class="value">318</div>
+        <div class="chg">↑ 18.6% YoY</div>
+      </div>
+      <div class="aside-stat">
+        <div class="label">NIRF Rank</div>
+        <div class="value">#18</div>
+        <div class="chg">↑ 5 positions</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi-cell"><div class="kpi-lbl">Faculty</div><div class="kpi-val">412</div><div class="kpi-chg kpi-up">78% PhD</div></div>
+    <div class="kpi-cell"><div class="kpi-lbl">Patents</div><div class="kpi-val">42</div><div class="kpi-chg kpi-up">18 Granted</div></div>
+    <div class="kpi-cell"><div class="kpi-lbl">Avg CTC</div><div class="kpi-val">₹18.4L</div><div class="kpi-chg kpi-up">↑ ₹2.3L</div></div>
+    <div class="kpi-cell"><div class="kpi-lbl">Research Grants</div><div class="kpi-val">₹24.6Cr</div><div class="kpi-chg kpi-up">↑ 16%</div></div>
+  </div>
+
+  <!-- Enrollment Line Chart -->
+  <div class="blk">
+    <div class="blk-title">Enrollment by Department & Programme Type</div>
+    <div class="blk-sub">Total headcount — UG / PG / PhD — AY 2024–25</div>
+    <svg width="100%" height="160" viewBox="0 0 550 160">
+      <line x1="40" y1="10" x2="40" y2="130" stroke="#e0e4ef"/><line x1="40" y1="130" x2="545" y2="130" stroke="#e0e4ef"/>
+      <g font-size="9" fill="#a0a9bc" text-anchor="end"><text x="36" y="133">0</text><text x="36" y="94">500</text><text x="36" y="55">1000</text><text x="36" y="16">1500</text></g>
+      <!-- CSE=1240 ME=897 CE=793 ECE=666 EE=621 IT=517 CH=406 -->
+      <rect x="48" y="20" width="48" height="110" fill="#1e2533" rx="2"/>
+      <rect x="108" y="50" width="48" height="80" fill="#3b4fd4" rx="2"/>
+      <rect x="168" y="58" width="48" height="72" fill="#1e2533" rx="2" opacity="0.8"/>
+      <rect x="228" y="70" width="48" height="60" fill="#3b4fd4" rx="2" opacity="0.8"/>
+      <rect x="288" y="74" width="48" height="56" fill="#1e2533" rx="2" opacity="0.6"/>
+      <rect x="348" y="82" width="48" height="48" fill="#3b4fd4" rx="2" opacity="0.6"/>
+      <rect x="408" y="94" width="48" height="36" fill="#1e2533" rx="2" opacity="0.4"/>
+      <g font-size="8" fill="#a0a9bc" text-anchor="middle">
+        <text x="72" y="145">CSE</text><text x="132" y="145">ECE</text><text x="192" y="145">ME</text><text x="252" y="145">CE</text><text x="312" y="145">EE</text><text x="372" y="145">IT</text><text x="432" y="145">CH</text>
+      </g>
+      <g font-size="9" fill="white" text-anchor="middle" font-weight="600">
+        <text x="72" y="35">1,240</text><text x="132" y="65">666</text><text x="192" y="73">897</text><text x="252" y="85">793</text><text x="312" y="89">621</text><text x="372" y="97">517</text><text x="432" y="109">406</text>
+      </g>
+    </svg>
+    <div class="lgnd">
+      <div class="lgnd-i"><div class="lgnd-dot" style="background:#1e2533"></div>Dept (Even pattern)</div>
+      <div class="lgnd-i"><div class="lgnd-dot" style="background:#3b4fd4"></div>Dept (Odd pattern)</div>
+    </div>
+  </div>
+
+  <div class="pg-footer">
+    <div class="ft-left">Office of Institutional Research · Vidyasagar Institute of Engineering & Technology</div>
+    <div class="ft-right">01 — 06</div>
+  </div>
+</div>
+
+<!-- ====== PAGE 2: TOC ====== -->
+<div class="page">
+  <div class="pg-header">
+    <div class="hd-left"><div class="hd-inst">Vidyasagar Institute of Engineering & Technology</div><div class="hd-sub">Annual Institutional Report 2024–25</div></div>
+    <div class="hd-right"><span class="hd-sec">IR / AY-2425 / TOC</span><span class="hd-title">Table of Contents</span></div>
+  </div>
+
+  <div class="sec-lbl">Report Contents</div>
+  <div class="sec-title">Table of Contents</div>
+
+  <div class="blk">
+    <div class="toc-line"><div class="toc-idx">01</div><div class="toc-lbl">Cover & Executive Summary</div><div class="toc-dot"></div><div class="toc-pg">p. 1</div></div>
+    <div class="toc-line"><div class="toc-idx">02</div><div class="toc-lbl">Table of Contents & Key Performance Indicators</div><div class="toc-dot"></div><div class="toc-pg">p. 2</div></div>
+    <div class="toc-line"><div class="toc-idx">03</div><div class="toc-lbl">Academic Performance Analysis</div><div class="toc-dot"></div><div class="toc-pg">p. 3</div></div>
+    <div class="toc-line"><div class="toc-idx">04</div><div class="toc-lbl">Placement & Career Outcomes</div><div class="toc-dot"></div><div class="toc-pg">p. 4</div></div>
+    <div class="toc-line"><div class="toc-idx">05</div><div class="toc-lbl">Research, Innovation & Faculty Development</div><div class="toc-dot"></div><div class="toc-pg">p. 5</div></div>
+    <div class="toc-line"><div class="toc-idx">06</div><div class="toc-lbl">Annexures & 5-Year Comparative Analysis</div><div class="toc-dot"></div><div class="toc-pg">p. 6</div></div>
+  </div>
+
+  <div style="height:14px"></div>
+  <div class="sec-lbl">Key Metrics</div>
+  <div class="sec-title">Performance Dashboard — AY 2024–25</div>
+
+  <div class="kpi-row">
+    <div class="kpi-cell"><div class="kpi-lbl">Placement Rate</div><div class="kpi-val">94.7%</div><div class="kpi-chg kpi-up">↑ 3.1pp</div></div>
+    <div class="kpi-cell"><div class="kpi-lbl">Avg CTC</div><div class="kpi-val">₹18.4L</div><div class="kpi-chg kpi-up">↑ ₹2.3L</div></div>
+    <div class="kpi-cell"><div class="kpi-lbl">Highest CTC</div><div class="kpi-val">₹1.2Cr</div><div class="kpi-chg">International</div></div>
+    <div class="kpi-cell"><div class="kpi-lbl">Companies</div><div class="kpi-val">284</div><div class="kpi-chg kpi-up">42 new</div></div>
+  </div>
+  <div class="kpi-row" style="margin-top:-1px">
+    <div class="kpi-cell"><div class="kpi-lbl">Publications</div><div class="kpi-val">318</div><div class="kpi-chg kpi-up">↑ 18.6%</div></div>
+    <div class="kpi-cell"><div class="kpi-lbl">Research Funding</div><div class="kpi-val">₹24.6Cr</div><div class="kpi-chg kpi-up">↑ 16%</div></div>
+    <div class="kpi-cell"><div class="kpi-lbl">NIRF Rank</div><div class="kpi-val">#18</div><div class="kpi-chg kpi-up">↑ 5 pos</div></div>
+    <div class="kpi-cell"><div class="kpi-lbl">Avg SGPA</div><div class="kpi-val">8.24</div><div class="kpi-chg kpi-up">↑ 0.18</div></div>
+  </div>
+
+  <!-- 5-year line chart -->
+  <div class="blk">
+    <div class="blk-title">5-Year Performance Trajectory</div>
+    <div class="blk-sub">Placement rate and research output index 2020–2025</div>
+    <svg width="100%" height="130" viewBox="0 0 540 130">
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#3b4fd4" stop-opacity="0.15"/>
+          <stop offset="100%" stop-color="#3b4fd4" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <line x1="42" y1="10" x2="42" y2="108" stroke="#e0e4ef"/><line x1="42" y1="108" x2="530" y2="108" stroke="#e0e4ef"/>
+      <line x1="42" y1="78" x2="530" y2="78" stroke="#f4f5f9" stroke-dasharray="3 3"/>
+      <line x1="42" y1="48" x2="530" y2="48" stroke="#f4f5f9" stroke-dasharray="3 3"/>
+      <g font-size="9" fill="#a0a9bc"><text x="108" y="122">2020-21</text><text x="218" y="122">2021-22</text><text x="328" y="122">2022-23</text><text x="428" y="122">2023-24</text><text x="516" y="122">2024-25</text></g>
+      <g font-size="9" fill="#a0a9bc" text-anchor="end"><text x="38" y="111">80%</text><text x="38" y="80">87%</text><text x="38" y="50">94%</text></g>
+      <!-- Area fill -->
+      <polygon points="110,88 220,76 330,58 430,44 530,20 530,108 110,108" fill="url(#g1)"/>
+      <polyline points="110,88 220,76 330,58 430,44 530,20" fill="none" stroke="#3b4fd4" stroke-width="2" stroke-linejoin="round"/>
+      <g fill="#3b4fd4"><circle cx="110" cy="88" r="3.5"/><circle cx="220" cy="76" r="3.5"/><circle cx="330" cy="58" r="3.5"/><circle cx="430" cy="44" r="3.5"/><circle cx="530" cy="20" r="4.5" stroke="white" stroke-width="1.5"/></g>
+      <!-- Research line -->
+      <polyline points="110,100 220,90 330,76 430,62 530,42" fill="none" stroke="#1e2533" stroke-width="1.5" stroke-dasharray="5 3" stroke-linejoin="round"/>
+      <g fill="#1e2533"><circle cx="110" cy="100" r="3"/><circle cx="220" cy="90" r="3"/><circle cx="330" cy="76" r="3"/><circle cx="430" cy="62" r="3"/><circle cx="530" cy="42" r="3.5" stroke="white" stroke-width="1.5"/></g>
+    </svg>
+    <div class="lgnd">
+      <div class="lgnd-i"><div class="lgnd-dot" style="background:#3b4fd4"></div>Placement Rate</div>
+      <div class="lgnd-i"><div class="lgnd-dot" style="background:#1e2533"></div>Research Index</div>
+    </div>
+  </div>
+
+  <div class="pg-footer">
+    <div class="ft-left">Office of Institutional Research · Vidyasagar Institute of Engineering & Technology</div>
+    <div class="ft-right">02 — 06</div>
+  </div>
+</div>
+
+<!-- ====== PAGE 3: ACADEMIC ====== -->
+<div class="page">
+  <div class="pg-header">
+    <div class="hd-left"><div class="hd-inst">Vidyasagar Institute of Engineering & Technology</div><div class="hd-sub">Annual Institutional Report 2024–25</div></div>
+    <div class="hd-right"><span class="hd-sec">IR / AY-2425 / SEC-03</span><span class="hd-title">Academic Performance</span></div>
+  </div>
+
+  <div class="sec-lbl">Section 03</div>
+  <div class="sec-title">Academic Performance Analysis</div>
+
+  <div class="split-33">
+    <div>
+      <div class="blk-title">Dept SGPA — Even vs Odd Sem</div>
+      <div class="blk-sub">Average SGPA, AY 2024–25</div>
+      <svg width="100%" height="190" viewBox="0 0 270 190">
+        <line x1="30" y1="10" x2="30" y2="158" stroke="#e0e4ef"/><line x1="30" y1="158" x2="265" y2="158" stroke="#e0e4ef"/>
+        <g font-size="9" fill="#a0a9bc" text-anchor="end"><text x="26" y="161">7</text><text x="26" y="117">8</text><text x="26" y="73">9</text><text x="26" y="29">10</text></g>
+        <rect x="36" y="34" width="18" height="124" fill="#1e2533" rx="1.5"/>
+        <rect x="56" y="48" width="18" height="110" fill="#3b4fd4" rx="1.5"/>
+        <rect x="88" y="52" width="18" height="106" fill="#1e2533" rx="1.5"/>
+        <rect x="108" y="64" width="18" height="94" fill="#3b4fd4" rx="1.5"/>
+        <rect x="140" y="70" width="18" height="88" fill="#1e2533" rx="1.5"/>
+        <rect x="160" y="82" width="18" height="76" fill="#3b4fd4" rx="1.5"/>
+        <rect x="192" y="76" width="18" height="82" fill="#1e2533" rx="1.5" opacity="0.75"/>
+        <rect x="212" y="88" width="18" height="70" fill="#3b4fd4" rx="1.5" opacity="0.75"/>
+        <rect x="244" y="82" width="18" height="76" fill="#1e2533" rx="1.5" opacity="0.55"/>
+        <g font-size="8.5" fill="#a0a9bc" text-anchor="middle">
+          <text x="55" y="174">CSE</text><text x="107" y="174">ECE</text><text x="159" y="174">ME</text><text x="211" y="174">CE</text><text x="253" y="174">EE</text>
+        </g>
+      </svg>
+      <div class="lgnd">
+        <div class="lgnd-i"><div class="lgnd-sq" style="background:#1e2533"></div>Even Sem</div>
+        <div class="lgnd-i"><div class="lgnd-sq" style="background:#3b4fd4"></div>Odd Sem</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="blk-title">Pass Rate by Department</div>
+      <div class="blk-sub">All subjects cleared %</div>
+      <div style="margin-top:10px">
+        <div class="pg-row"><div class="pg-labels"><span class="pg-name">CSE</span><span class="pg-pct">96.4%</span></div><div class="pg-track"><div class="pg-fill" style="width:96.4%;background:#1e2533"></div></div></div>
+        <div class="pg-row"><div class="pg-labels"><span class="pg-name">IT</span><span class="pg-pct">95.0%</span></div><div class="pg-track"><div class="pg-fill" style="width:95%;background:#1e2533"></div></div></div>
+        <div class="pg-row"><div class="pg-labels"><span class="pg-name">ECE</span><span class="pg-pct">93.1%</span></div><div class="pg-track"><div class="pg-fill" style="width:93.1%;background:#3b4fd4"></div></div></div>
+        <div class="pg-row"><div class="pg-labels"><span class="pg-name">EE</span><span class="pg-pct">91.2%</span></div><div class="pg-track"><div class="pg-fill" style="width:91.2%;background:#3b4fd4"></div></div></div>
+        <div class="pg-row"><div class="pg-labels"><span class="pg-name">ME</span><span class="pg-pct">89.7%</span></div><div class="pg-track"><div class="pg-fill" style="width:89.7%;background:#6b7687"></div></div></div>
+        <div class="pg-row"><div class="pg-labels"><span class="pg-name">CE</span><span class="pg-pct">87.3%</span></div><div class="pg-track"><div class="pg-fill" style="width:87.3%;background:#6b7687"></div></div></div>
+        <div class="pg-row"><div class="pg-labels"><span class="pg-name">Chemical</span><span class="pg-pct">84.2%</span></div><div class="pg-track"><div class="pg-fill" style="width:84.2%;background:#a0a9bc"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="blk">
+    <div class="blk-title">Department-Wise Academic Summary</div>
+    <div class="blk-sub">Enrollment, SGPA, pass rates, and classification — AY 2024–25</div>
+    <table>
+      <thead><tr><th>Department</th><th>UG</th><th>PG</th><th>PhD</th><th>Avg SGPA</th><th>Pass %</th><th>Backlog %</th><th>Scholarships</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td>Computer Science</td><td>480</td><td>160</td><td>120</td><td>8.74</td><td>96.4%</td><td>3.2%</td><td>124</td><td><span class="tag tag-g">A+</span></td></tr>
+        <tr><td>Electronics & Comm</td><td>420</td><td>148</td><td>98</td><td>8.52</td><td>93.1%</td><td>4.8%</td><td>108</td><td><span class="tag tag-g">A+</span></td></tr>
+        <tr><td>Information Tech</td><td>280</td><td>80</td><td>44</td><td>8.62</td><td>95.0%</td><td>3.8%</td><td>62</td><td><span class="tag tag-g">A+</span></td></tr>
+        <tr><td>Electrical Engg</td><td>300</td><td>100</td><td>58</td><td>8.34</td><td>91.2%</td><td>5.2%</td><td>66</td><td><span class="tag tag-b">A</span></td></tr>
+        <tr><td>Mechanical Engg</td><td>380</td><td>120</td><td>76</td><td>8.21</td><td>89.7%</td><td>6.1%</td><td>84</td><td><span class="tag tag-b">A</span></td></tr>
+        <tr><td>Civil Engg</td><td>360</td><td>110</td><td>64</td><td>8.05</td><td>87.3%</td><td>7.4%</td><td>72</td><td><span class="tag tag-s">B+</span></td></tr>
+        <tr><td>Chemical Engg</td><td>240</td><td>72</td><td>38</td><td>7.94</td><td>84.2%</td><td>8.2%</td><td>44</td><td><span class="tag tag-a">B</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pg-footer">
+    <div class="ft-left">Office of Institutional Research · Vidyasagar Institute of Engineering & Technology</div>
+    <div class="ft-right">03 — 06</div>
+  </div>
+</div>
+
+<!-- ====== PAGE 4: PLACEMENTS ====== -->
+<div class="page">
+  <div class="pg-header">
+    <div class="hd-left"><div class="hd-inst">Vidyasagar Institute of Engineering & Technology</div><div class="hd-sub">Annual Institutional Report 2024–25</div></div>
+    <div class="hd-right"><span class="hd-sec">IR / AY-2425 / SEC-04</span><span class="hd-title">Placement & Career Outcomes</span></div>
+  </div>
+
+  <div class="sec-lbl">Section 04</div>
+  <div class="sec-title">Placement & Career Outcomes</div>
+
+  <div class="split-33">
+    <div>
+      <div class="blk-title">Sector-Wise Placement</div>
+      <div class="blk-sub">Distribution across industry verticals</div>
+      <svg width="100%" height="190" viewBox="0 0 270 190">
+        <circle cx="95" cy="92" r="58" fill="none" stroke="#e0e4ef" stroke-width="24"/>
+        <circle cx="95" cy="92" r="58" fill="none" stroke="#1e2533" stroke-width="24" stroke-dasharray="138.3 225.5" stroke-dashoffset="0" transform="rotate(-90 95 92)"/>
+        <circle cx="95" cy="92" r="58" fill="none" stroke="#3b4fd4" stroke-width="24" stroke-dasharray="80.1 283.7" stroke-dashoffset="-138.3" transform="rotate(-90 95 92)"/>
+        <circle cx="95" cy="92" r="58" fill="none" stroke="#6b7687" stroke-width="24" stroke-dasharray="72.8 291" stroke-dashoffset="-218.4" transform="rotate(-90 95 92)"/>
+        <circle cx="95" cy="92" r="58" fill="none" stroke="#a0a9bc" stroke-width="24" stroke-dasharray="43.7 319.7" stroke-dashoffset="-291.2" transform="rotate(-90 95 92)"/>
+        <circle cx="95" cy="92" r="58" fill="none" stroke="#e0e4ef" stroke-width="24" stroke-dasharray="29.1 334.3" stroke-dashoffset="-334.9" transform="rotate(-90 95 92)"/>
+        <text x="95" y="87" text-anchor="middle" font-size="15" font-weight="600" fill="#1e2533">94.7%</text>
+        <text x="95" y="102" text-anchor="middle" font-size="9" fill="#6b7687">Placed</text>
+        <g font-size="9.5" fill="#0e1118">
+          <rect x="162" y="30" width="8" height="8" fill="#1e2533"/><text x="174" y="39">IT (38%)</text>
+          <rect x="162" y="52" width="8" height="8" fill="#3b4fd4"/><text x="174" y="61">Finance (22%)</text>
+          <rect x="162" y="74" width="8" height="8" fill="#6b7687"/><text x="174" y="83">Core (20%)</text>
+          <rect x="162" y="96" width="8" height="8" fill="#a0a9bc"/><text x="174" y="105">Consult (12%)</text>
+          <rect x="162" y="118" width="8" height="8" fill="#e0e4ef" stroke="#a0a9bc" stroke-width="0.5"/><text x="174" y="127">Other (8%)</text>
+        </g>
+      </svg>
+    </div>
+    <div>
+      <div class="blk-title">CTC Distribution</div>
+      <div class="blk-sub">Students per salary bracket (LPA)</div>
+      <svg width="100%" height="190" viewBox="0 0 250 190">
+        <line x1="30" y1="10" x2="30" y2="158" stroke="#e0e4ef"/><line x1="30" y1="158" x2="245" y2="158" stroke="#e0e4ef"/>
+        <g font-size="9" fill="#a0a9bc" text-anchor="end"><text x="26" y="161">0</text><text x="26" y="121">400</text><text x="26" y="81">800</text><text x="26" y="41">1200</text></g>
+        <rect x="38" y="116" width="30" height="42" fill="#a0a9bc" rx="1.5"/>
+        <rect x="80" y="66" width="30" height="92" fill="#1e2533" rx="1.5"/>
+        <rect x="122" y="44" width="30" height="114" fill="#3b4fd4" rx="1.5"/>
+        <rect x="164" y="84" width="30" height="74" fill="#1e2533" rx="1.5" opacity="0.7"/>
+        <rect x="206" y="127" width="30" height="31" fill="#a0a9bc" rx="1.5"/>
+        <g font-size="8.5" fill="#a0a9bc" text-anchor="middle"><text x="53" y="172">&lt;8</text><text x="95" y="172">8–12</text><text x="137" y="172">12–20</text><text x="179" y="172">20–40</text><text x="221" y="172">&gt;40</text></g>
+        <g font-size="9" fill="white" text-anchor="middle" font-weight="600"><text x="53" y="140">312</text><text x="95" y="88">784</text><text x="137" y="65">1,124</text><text x="179" y="106">648</text><text x="221" y="148">186</text></g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="blk">
+    <div class="blk-title">Top Recruiter Summary — AY 2024–25</div>
+    <div class="blk-sub">Companies ranked by offers, average and peak CTC</div>
+    <table>
+      <thead><tr><th>#</th><th>Company</th><th>Sector</th><th>Offers</th><th>Avg CTC</th><th>Max CTC</th><th>Depts</th><th>Category</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Google</td><td>Technology</td><td>48</td><td>₹42 LPA</td><td>₹1.2 Cr</td><td>CSE, IT</td><td><span class="tag tag-s">Dream</span></td></tr>
+        <tr><td>2</td><td>Microsoft</td><td>Technology</td><td>62</td><td>₹35 LPA</td><td>₹80 LPA</td><td>CSE, ECE, IT</td><td><span class="tag tag-s">Dream</span></td></tr>
+        <tr><td>3</td><td>Amazon</td><td>E-Commerce</td><td>74</td><td>₹28 LPA</td><td>₹65 LPA</td><td>CSE, ECE</td><td><span class="tag tag-g">PPO</span></td></tr>
+        <tr><td>4</td><td>Goldman Sachs</td><td>Finance</td><td>38</td><td>₹24 LPA</td><td>₹48 LPA</td><td>All Depts</td><td><span class="tag tag-g">PPO</span></td></tr>
+        <tr><td>5</td><td>TCS</td><td>IT / Consulting</td><td>186</td><td>₹7 LPA</td><td>₹12 LPA</td><td>All Depts</td><td><span class="tag tag-a">Mass</span></td></tr>
+        <tr><td>6</td><td>L&T Infra</td><td>Core Engineering</td><td>52</td><td>₹9.5 LPA</td><td>₹16 LPA</td><td>CE, ME, EE</td><td><span class="tag tag-b">Core</span></td></tr>
+        <tr><td>7</td><td>McKinsey & Co.</td><td>Consulting</td><td>18</td><td>₹38 LPA</td><td>₹60 LPA</td><td>CSE, MBA</td><td><span class="tag tag-s">Dream</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pg-footer">
+    <div class="ft-left">Office of Institutional Research · Vidyasagar Institute of Engineering & Technology</div>
+    <div class="ft-right">04 — 06</div>
+  </div>
+</div>
+
+<!-- ====== PAGE 5: RESEARCH ====== -->
+<div class="page">
+  <div class="pg-header">
+    <div class="hd-left"><div class="hd-inst">Vidyasagar Institute of Engineering & Technology</div><div class="hd-sub">Annual Institutional Report 2024–25</div></div>
+    <div class="hd-right"><span class="hd-sec">IR / AY-2425 / SEC-05</span><span class="hd-title">Research & Innovation</span></div>
+  </div>
+
+  <div class="sec-lbl">Section 05</div>
+  <div class="sec-title">Research, Innovation & Faculty Development</div>
+
+  <div class="split-3">
+    <div>
+      <div class="blk-title">Publications by Type</div>
+      <svg width="100%" height="120" viewBox="0 0 150 120">
+        <line x1="15" y1="10" x2="15" y2="100" stroke="#e0e4ef"/><line x1="15" y1="100" x2="145" y2="100" stroke="#e0e4ef"/>
+        <rect x="22" y="12" width="24" height="88" fill="#1e2533" rx="1.5"/>
+        <rect x="58" y="35" width="24" height="65" fill="#3b4fd4" rx="1.5"/>
+        <rect x="94" y="55" width="24" height="45" fill="#6b7687" rx="1.5"/>
+        <rect x="130" y="76" width="24" height="24" fill="#a0a9bc" rx="1.5"/>
+        <g font-size="8" fill="#a0a9bc" text-anchor="middle"><text x="34" y="112">SCI</text><text x="70" y="112">Scopus</text><text x="106" y="112">Conf</text><text x="142" y="112">Books</text></g>
+        <g font-size="9" fill="white" text-anchor="middle" font-weight="600"><text x="34" y="26">168</text><text x="70" y="49">96</text><text x="106" y="69">72</text><text x="142" y="90">18</text></g>
+      </svg>
+    </div>
+    <div>
+      <div class="blk-title">Funding Sources</div>
+      <div style="margin-top:8px">
+        <div class="pg-row"><div class="pg-labels"><span class="pg-name">DST</span><span class="pg-pct">₹9.8Cr</span></div><div class="pg-track"><div class="pg-fill" style="width:80%;background:#1e2533"></div></div></div>
+        <div class="pg-row"><div class="pg-labels"><span class="pg-name">DRDO</span><span class="pg-pct">₹6.4Cr</span></div><div class="pg-track"><div class="pg-fill" style="width:52%;background:#3b4fd4"></div></div></div>
+        <div class="pg-row"><div class="pg-labels"><span class="pg-name">Industry</span><span class="pg-pct">₹5.2Cr</span></div><div class="pg-track"><div class="pg-fill" style="width:42%;background:#6b7687"></div></div></div>
+        <div class="pg-row"><div class="pg-labels"><span class="pg-name">AICTE</span><span class="pg-pct">₹3.2Cr</span></div><div class="pg-track"><div class="pg-fill" style="width:26%;background:#a0a9bc"></div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="blk-title">Patent Activity</div>
+      <svg width="100%" height="120" viewBox="0 0 150 120">
+        <line x1="15" y1="10" x2="15" y2="100" stroke="#e0e4ef"/><line x1="15" y1="100" x2="145" y2="100" stroke="#e0e4ef"/>
+        <rect x="22" y="55" width="18" height="45" fill="#1e2533" rx="1.5"/>
+        <rect x="52" y="40" width="18" height="60" fill="#1e2533" rx="1.5"/>
+        <rect x="82" y="22" width="18" height="78" fill="#1e2533" rx="1.5"/>
+        <rect x="112" y="10" width="18" height="90" fill="#3b4fd4" rx="1.5"/>
+        <rect x="25" y="72" width="12" height="28" fill="#a0a9bc" rx="1.5"/>
+        <rect x="55" y="58" width="12" height="42" fill="#a0a9bc" rx="1.5"/>
+        <rect x="85" y="44" width="12" height="56" fill="#a0a9bc" rx="1.5"/>
+        <rect x="115" y="30" width="12" height="70" fill="#6b7687" rx="1.5"/>
+        <g font-size="8" fill="#a0a9bc" text-anchor="middle"><text x="31" y="112">2021</text><text x="61" y="112">2022</text><text x="91" y="112">2023</text><text x="121" y="112">2024</text></g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="blk">
+    <div class="blk-title">Active Sponsored Research Projects</div>
+    <div class="blk-sub">Externally funded projects — AY 2024–25</div>
+    <table>
+      <thead><tr><th>Project Title</th><th>Principal Investigator</th><th>Dept</th><th>Sponsor</th><th>Grant</th><th>Period</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>AI-driven Drug Discovery</td><td>Dr. R. Sharma</td><td>CSE</td><td>DBT</td><td>₹2.4Cr</td><td>2023–26</td><td><span class="tag tag-g">Active</span></td></tr>
+        <tr><td>5G mmWave Antenna Arrays</td><td>Dr. P. Verma</td><td>ECE</td><td>DRDO</td><td>₹1.8Cr</td><td>2022–25</td><td><span class="tag tag-g">Active</span></td></tr>
+        <tr><td>Smart Grid Optimization</td><td>Dr. S. Patel</td><td>EE</td><td>DST</td><td>₹1.6Cr</td><td>2023–26</td><td><span class="tag tag-g">Active</span></td></tr>
+        <tr><td>Nano-composite Materials</td><td>Dr. A. Kumar</td><td>ME</td><td>SERB</td><td>₹1.2Cr</td><td>2022–25</td><td><span class="tag tag-a">Extending</span></td></tr>
+        <tr><td>Urban Flood Modelling</td><td>Dr. N. Gupta</td><td>CE</td><td>NMCG</td><td>₹0.9Cr</td><td>2024–26</td><td><span class="tag tag-g">Active</span></td></tr>
+        <tr><td>Carbon Capture Systems</td><td>Dr. L. Rao</td><td>CH</td><td>Oil India</td><td>₹1.1Cr</td><td>2021–24</td><td><span class="tag tag-b">Complete</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="factoid">
+    In AY 2024–25, VIET researchers published 168 SCI-indexed papers — a 24% increase over the prior year — with a combined Scopus h-index of 42 for the institution, placing it among the top 25 engineering institutions by research impact.
+  </div>
+
+  <div class="pg-footer">
+    <div class="ft-left">Office of Institutional Research · Vidyasagar Institute of Engineering & Technology</div>
+    <div class="ft-right">05 — 06</div>
+  </div>
+</div>
+
+<!-- ====== PAGE 6: APPENDIX ====== -->
+<div class="page">
+  <div class="pg-header">
+    <div class="hd-left"><div class="hd-inst">Vidyasagar Institute of Engineering & Technology</div><div class="hd-sub">Annual Institutional Report 2024–25</div></div>
+    <div class="hd-right"><span class="hd-sec">IR / AY-2425 / SEC-06</span><span class="hd-title">Annexures</span></div>
+  </div>
+
+  <div class="sec-lbl">Section 06</div>
+  <div class="sec-title">Annexures & 5-Year Comparative Analysis</div>
+
+  <div class="blk">
+    <div class="blk-title">Five-Year Performance Summary</div>
+    <div class="blk-sub">Key institutional metrics 2020–21 through 2024–25</div>
+    <table>
+      <thead><tr><th>Metric</th><th>2020–21</th><th>2021–22</th><th>2022–23</th><th>2023–24</th><th>2024–25</th><th>5-yr Growth</th></tr></thead>
+      <tbody>
+        <tr><td>Total Enrollment</td><td>5,840</td><td>6,012</td><td>6,248</td><td>6,562</td><td>6,842</td><td><span class="tag tag-g">+17.2%</span></td></tr>
+        <tr><td>Placement Rate</td><td>82.4%</td><td>85.1%</td><td>88.6%</td><td>91.6%</td><td>94.7%</td><td><span class="tag tag-g">+12.3pp</span></td></tr>
+        <tr><td>Average CTC (LPA)</td><td>₹12.4</td><td>₹13.8</td><td>₹15.2</td><td>₹16.1</td><td>₹18.4</td><td><span class="tag tag-g">+48.4%</span></td></tr>
+        <tr><td>Research Papers</td><td>186</td><td>214</td><td>248</td><td>268</td><td>318</td><td><span class="tag tag-g">+71%</span></td></tr>
+        <tr><td>Research Funding (Cr)</td><td>₹11.2</td><td>₹14.8</td><td>₹18.4</td><td>₹21.2</td><td>₹24.6</td><td><span class="tag tag-g">+119%</span></td></tr>
+        <tr><td>NIRF Rank</td><td>28</td><td>26</td><td>24</td><td>23</td><td>18</td><td><span class="tag tag-b">▲ 10 pos</span></td></tr>
+        <tr><td>Patents Filed</td><td>18</td><td>24</td><td>28</td><td>36</td><td>42</td><td><span class="tag tag-g">+133%</span></td></tr>
+        <tr><td>Faculty Count</td><td>368</td><td>382</td><td>396</td><td>404</td><td>412</td><td><span class="tag tag-g">+11.9%</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="split-33">
+    <div class="blk">
+      <div class="blk-title">Infrastructure Utilization</div>
+      <table style="font-size:12px">
+        <thead><tr><th>Facility</th><th>Capacity</th><th>Usage</th></tr></thead>
+        <tbody>
+          <tr><td>Classrooms</td><td>120</td><td><span class="tag tag-g">94%</span></td></tr>
+          <tr><td>Laboratories</td><td>84</td><td><span class="tag tag-g">88%</span></td></tr>
+          <tr><td>Library Seats</td><td>1,200</td><td><span class="tag tag-b">76%</span></td></tr>
+          <tr><td>Hostel Rooms</td><td>3,400</td><td><span class="tag tag-g">98%</span></td></tr>
+          <tr><td>Sports Facilities</td><td>18 courts</td><td><span class="tag tag-a">62%</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="blk">
+      <div class="blk-title">Data Sources & Methodology</div>
+      <ul style="font-size:11.5px;color:#6b7687;padding-left:16px;line-height:2.1;font-family:'IBM Plex Mono',monospace">
+        <li>MIS_Student_Data_FY2425.xlsx</li>
+        <li>Placement_Portal_2425.csv</li>
+        <li>Research_SCOPUS_2425.xlsx</li>
+        <li>Finance_Grants_FY2425.pdf</li>
+        <li>Faculty_HR_2425.xlsx</li>
+        <li>NIRF_Submission_2025.pdf</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pg-footer" style="margin-top:auto">
+    <div class="ft-left">Office of Institutional Research · Vidyasagar Institute of Engineering & Technology — End of Document</div>
+    <div class="ft-right">06 — 06</div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

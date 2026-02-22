@@ -2,10 +2,13 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import APIRouter, Depends, Request, Response, HTTPException, status
 import logging
 from Database.db import get_db
+from Schemas.comment_schema import CommentCreate
+from Schemas.report_visibility_schema import ReportVisibilitySchema
 from Services.report_service import ReportService
 from Schemas.report_schema import ReportBase, GenerateReportRequest
 from Services.ai_service import generate_report
 from Models.dataUpload_models import DataUploaded
+
 
 logger = logging.getLogger(__name__)
 from sqlalchemy.future import select
@@ -98,4 +101,50 @@ async def delete_report(report_id: int, db: AsyncSession = Depends(get_db)):
 @router.get("/{report_id}")
 async def get_report_by_id(report_id: int, db: AsyncSession = Depends(get_db)):
     return await ReportService.get_report_by_id(report_id, db)
+
+@router.post("/comment")
+async def add_report_comment(
+    data: CommentCreate,
+    db: AsyncSession = Depends(get_db)
+):
+    return await ReportService.add_report_comment(
+        report_id=data.report_id,
+        user_id=data.user_id,
+        comment_text=data.comment_text,
+        db=db
+    )
+
+@router.post("/share")
+async def share_report(data: ReportVisibilitySchema, db: AsyncSession = Depends(get_db)):
+    print(f"Sharing report {data.report_id} with level {data.share_level}")
+    return await ReportService.share_report(data.report_id, data.share_level, db)
+
+@router.get("/template/{template_id}")
+async def get_report_template(template_id: int, db: AsyncSession = Depends(get_db)):
+    """
+    Endpoint to retrieve the content of a report template by its ID.
+    """
+    try:
+        template_content = await ReportService.send_report_template(template_id, db)
+        return Response(content=template_content, media_type="text/html")
+    except Exception as e:
+        print(f"Error retrieving report template: {e}")
+        raise HTTPException(status_code=404, detail=str(e))
+    
+@router.put("/update/{report_id}")
+async def update_report(
+    report_id: int,
+    updated_data: dict,
+    db: AsyncSession = Depends(get_db)
+):
+    return await ReportService.update_report(report_id, updated_data, db)
+
+
+# @router.get("/latex/test/{report_id}")
+# async def test_latex_compilation(report_id: int, db: AsyncSession = Depends(get_db)):
+#     """
+#     Test LaTeX compilation with demo content
+#     No database required - just tests if MiKTeX is working
+#     """
+#     return await ReportService.test_latex_compilation(report_id, db)
 

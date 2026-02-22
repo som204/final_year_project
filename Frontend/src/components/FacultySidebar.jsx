@@ -1,12 +1,10 @@
-import React,{useContext,useState} from 'react';
-import { NavLink,useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Upload } from 'lucide-react';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { LayoutDashboard, Upload, FileText, LogOut } from 'lucide-react';
 import '../pages/Faculty/InstituteFaculty.css';
-import { LogOut } from 'lucide-react';
 
 const FacultySidebar = ({ onLogoutClick }) => {
   return (
-    <>
     <aside className="faculty-sidebar">
       <div className="faculty-sidebar-header">
         <h2 className="faculty-sidebar-title">Faculty Portal</h2>
@@ -20,16 +18,19 @@ const FacultySidebar = ({ onLogoutClick }) => {
           <Upload size={20} />
           <span>Upload Data</span>
         </NavLink>
+        {/* NEW REPORT LINK */}
+        <NavLink to="/faculty/reports" className="faculty-sidebar-link">
+          <FileText size={20} />
+          <span>Reports</span>
+        </NavLink>
       </nav>
-       <div className="sidebar-footer">
-        {/* 2. The button's onClick now calls the prop from the parent */}
-        <button className="sidebar-link logout-button" onClick={onLogoutClick}>
+      <div className="sidebar-footer">
+        <button className="logout-button" onClick={onLogoutClick}>
           <LogOut size={20} />
           <span>Logout</span>
         </button>
-        </div>
+      </div>
     </aside>
-      </>
   );
 };
 

@@ -172,6 +172,7 @@ class UserService:
             users = result.scalars().all()
             return list(users)
         except SQLAlchemyError as e:
+            print(e)
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Could not fetch users due to a database error.")
         
 

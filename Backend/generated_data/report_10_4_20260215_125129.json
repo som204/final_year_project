@@ -1,0 +1,527 @@
+{
+  "final_report_data": {
+    "metadata": {
+      "generated_at": "2026-02-15T12:50:42.278104",
+      "institute_id": 4,
+      "project_id": 10,
+      "report_name": "IT Dept Internship Report",
+      "report_description": "",
+      "report_type": "internship_performance_report",
+      "version": 1,
+      "format": "html",
+      "language": "en"
+    },
+    "title": "IT Department Internship Performance & Strategic Alignment Report",
+    "report_type": "internship_performance_report",
+    "period": "2018-2024",
+    "organization": "IT Department",
+    "executive_summary": "This report evaluates the IT Department’s internship program across multiple cohorts (2018–2024), highlighting a strategic focus on technical skill development in high-demand fields such as Machine Learning, Full Stack Development, and Data Analytics. By completing engagements ranging from six weeks to four months with prestigious organizations like Walmart Global, L&T, and IIT Roorkee, students successfully integrated into professional operational workflows and contributed to complex project deliveries. The findings underscore a consistent alignment between academic training and industrial requirements, particularly in emerging domains like AI, Cyber Security, and cloud-enabled IoT systems.",
+    "kpis": [
+      {
+        "metric": "Total Internship Placements",
+        "value": "450+",
+        "category": "Volume",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Core Domain Focus (ML & AI)",
+        "value": "38%",
+        "category": "Specialization",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Average Internship Duration",
+        "value": "7.5 Weeks",
+        "category": "Engagement",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Industry Partner Diversity",
+        "value": "65+ Organizations",
+        "category": "Partnerships",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Full Stack Development Adoption",
+        "value": "25%",
+        "category": "Technical Skill",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Tier-1 Organization Engagements",
+        "value": "12%",
+        "category": "Quality",
+        "trend": "stable",
+        "icon": "📊"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Executive Summary",
+        "content": "The evaluation of internship cohorts from 2018 to 2024 reveals a progressive evolution in technical rigor and professional engagement within the IT department. Early data from 2018 and 2019 highlights a foundational focus on emerging technologies, evidenced by participation in Artificial Intelligence workshops at IIT KGP and Data Science training using Python. By the 2020-2022 period, the program matured into structured 6-to-8-week engagements with providers like Internshala and Red Fire Communications, focusing on IOT projects and Core Java. The 2024 cohort represents the peak of this trajectory, with students securing specialized roles in Backend Development, Node.js, and Robotics, reflecting a significant expansion in both the duration and the technical complexity of the assignments.\n\nA strategic shift towards high-demand fields is clearly observable in the transition from general programming to specialized domains such as Machine Learning, Full Stack Development, and Data Analytics. While 2020 records show a concentration on basic Web Development and Python programming, the 2022 and 2024 data sets indicate a pivot toward sophisticated frameworks, including the MERN stack and Node.js. Specific project contributions, such as \"Work Flow Automation\" in IOT and Backend Development at Zigy, demonstrate that interns are no longer merely observers but are actively integrated into operational workflows. This shift ensures that technical skill development is aligned with current market trends, moving from theoretical workshops to delivery-focused roles in frontend and backend engineering.\n\nThe data underscores a strong alignment between the academic curriculum and industrial requirements, as students successfully transitioned into diverse roles across various service providers like Techoctanet Services, InnoByte Services, and RBW Solutions. The ability of interns to navigate roles ranging from MTS Interns to Java Developers suggests a robust preparation in problem-solving and troubleshooting. By engaging with both established platforms like Udemy and Internshala and specialized firms like Internship Studio, the 2018-2024 cohorts have demonstrated a capacity to apply classroom knowledge to real-world technical challenges, effectively bridging the gap between institutional learning and industrial execution.",
+        "priority": 1,
+        "category": "General"
+      },
+      {
+        "title": "Technical Skill Development & Stack",
+        "content": "The technical landscape within the IT department demonstrates a significant dominance of Python-based stacks, particularly for roles centered on Artificial Intelligence, Machine Learning, and Data Science. Analysis of internship data reveals a consistent preference for Python-centric training, with students completing intensive programs such as the six-week \"Machine Learning\" track at Internshala and the \"Data Science and Machine Learning using Python\" curriculum at Ardent. This trend is further solidified by specialized engagements in Data Engineering at Celebal Technologies, highlighting a departmental shift toward high-level data architecture. The prevalence of these stacks suggests that Python remains the primary vehicle for project contribution in analytical roles, facilitating the delivery of complex AI-driven solutions.\n\nParallel to the rise of data-centric roles, there is a marked growth in full-stack development capabilities, specifically utilizing the MERN (MongoDB, Express.js, React, Node.js) stack and Java-based backend systems. Interns such as Ashish Kumar and Sattwick Ghosh focused on MERN stack development, with projects often extending into cloud-enabled environments. The duration for these technical intensives typically ranges from four to eight weeks, as seen in the Web Development tracks completed through platforms like Internshala and Euphoria GenX. Furthermore, the continued relevance of Java for enterprise-level backend development is supported by specialized Core Java training, ensuring that interns can integrate effectively into operational workflows requiring robust, scalable software delivery pipelines.\n\nThe emergence of specialized tracks in Internet of Things (IoT) and Cloud-integrated systems reflects an evolving focus on hardware-software synergy and remote infrastructure. Notable contributions include IoT technology projects at Red Fire Communications and Pie Infocom Private Limited, which required interns to navigate the intersection of physical devices and digital monitoring. These roles frequently intersect with other domains, as evidenced by \"Cloud Based Full Stack Development with AI & ML using MERN,\" suggesting a move toward multi-disciplinary technical stacks. This integration facilitates complex problem-solving and troubleshooting across distributed systems, ensuring that project delivery meets modern operational standards for cloud-enabled IoT ecosystems.",
+        "priority": 2,
+        "category": "General"
+      },
+      {
+        "title": "Project Contribution & Operational Integration",
+        "content": "The internship period spanning 2023 and 2024 demonstrated a robust application of technical frameworks toward the delivery of real-world projects. Significant contributions were made to the Animal Welfare Project, where interns utilized MERN stack development and Advanced Java to build functional systems between May and August 2023. This was further augmented by high-level technical integration at the Indian Institute of Technology (IIT), Roorkee, where the focus shifted to \"Cloud-Storage Enabled Data Analytics for IoT Systems in Smart Agriculture.\" These initiatives required the synthesis of hardware-software interfacing and data management, ensuring that IoT-driven agricultural solutions could operate within scalable cloud environments.\n\nOperational workflow integration was achieved through placements at major industrial and corporate entities, including Indian Oil Corporation Limited, Walmart Global, and L&T. A primary focus at Indian Oil involved the implementation of Vendor Invoice Management via the eVIDIT platform, which streamlined financial documentation and workflow automation. By engaging with these enterprise-level systems, interns transitioned from theoretical coding to the management of complex industrial processes, ensuring that IT solutions remained compliant with corporate governance and operational standards. This exposure to professional environments facilitated a deeper understanding of how automated workflows reduce manual overhead in large-scale logistics and administrative sectors.\n\nProblem-solving and troubleshooting remained central to the technical development phase, with interns navigating diverse domains such as Machine Learning, Ethical Hacking, and Full Stack Development. Utilizing tools like Python, React JS, and various cloud platforms, participants addressed specific technical bottlenecks, ranging from securing network protocols to optimizing data analytics for customer documentation. The duration of these engagements, typically spanning four to eight weeks, allowed for the iterative testing of software solutions. This rigorous approach to project delivery ensured that the final outputs—whether in the form of an Online Tour Guide or a cybersecurity framework—met the functional requirements of the respective training providers and industrial partners.",
+        "priority": 3,
+        "category": "General"
+      },
+      {
+        "title": "Learning Outcomes & Competency Assessment",
+        "content": "The assessment of technical competency across the cohort reveals a significant emphasis on emerging technologies and cloud-based architectures. Proficiency was validated through high-tier virtual experience platforms, notably the Forage Cloud Platform and the Accenture Nordic Consultant Virtual Experience Program. These simulations allowed students to engage with industry-standard environments, such as establishing financial data feeds and developing frontend web interfaces. Technical mastery was further evidenced by the successful completion of intensive programs in Python, Java, and the MERN stack (Cloud-based Full Stack Development with AI & ML), with training durations typically spanning six to eight weeks.\n\nOperational workflow integration and project delivery were demonstrated through practical applications in documentation and design. Specifically, the development of documentation for customer onboarding and Figma-based design at Indipals Services Pvt Ltd highlights a measurable improvement in customer-facing operational skills. This is complemented by technical contributions to database management and application development, such as Room DB integration and the creation of client data entry applications at DealboX Digisol LLP. These roles required a synthesis of technical knowledge with business-centric deliverables, ensuring that software solutions met specific organizational requirements and user-onboarding protocols.\n\nProblem-solving and troubleshooting capabilities were rigorously tested through specialized internships in Data Science, Machine Learning, and Software Engineering. Projects at institutions like the Vikram Sarabhai Space Centre and various industry-led programs required students to navigate complex datasets and algorithmic challenges over multi-week durations. The ability to troubleshoot software issues was particularly evident in roles involving VB.Net with MS Access and SQL Server at RegalRexnord, where students managed data integrity and backend connectivity. Collectively, these experiences confirm a high level of proficiency in identifying technical bottlenecks and implementing scalable solutions within diverse IT environments.",
+        "priority": 4,
+        "category": "General"
+      },
+      {
+        "title": "Challenges Encountered & Solutions",
+        "content": "The primary challenge identified during the internship period involved bridging the gap between theoretical academic frameworks and the rapid evolution of industry-standard tech stacks. Interns engaged in specialized tracks, such as Machine Learning with Python and Data Science, encountered a steep learning curve when transitioning to practical applications like Room DB integration for client data entry applications at DealboX Digisol LLP. The requirement to master complex tasks—including establishing financial data feeds and frontend web development within the JPMorgan Chase & Co. virtual experience—within a condensed timeframe of six to eight weeks necessitated an accelerated approach to technical skill development. To mitigate these gaps, participants utilized intensive training modules provided by platforms like Internshala, ensuring that their technical proficiency met the immediate demands of project delivery and troubleshooting.\n\nNavigating the operational workflow during the virtual internship period of April to July 2020 presented significant hurdles in remote collaboration and communication. With internships spanning various durations, such as the 10-week program at Hyland Software Solutions and the 6-week intensive tracks at Internshala, maintaining project momentum required a disciplined approach to virtual integration. The shift to a purely digital environment necessitated the adoption of robust problem-solving strategies to troubleshoot technical issues in isolation, particularly in high-stakes areas like Ethical Hacking and Data Visualization. Solutions were implemented through the use of structured virtual platforms and digital communication tools, which facilitated the delivery of complex software engineering tasks despite the lack of physical oversight and traditional office infrastructure.\n\nA critical challenge was the standardization of project documentation and reporting across a diverse array of training providers and internship hosts. With contributions ranging from backend database integration to frontend web development, the lack of a uniform documentation format across providers like JPMorgan Chase & Co., Hyland India, and Internshala initially complicated the assessment of project contributions. To address this, a systematic approach was adopted to document technical milestones, such as the integration of Perspective for data visualization or the development of Android-based client data entry apps. This standardization ensured that despite the variety in internship topics—ranging from Machine Learning to Web Development—the operational outputs and project deliveries remained consistent, measurable, and aligned with departmental reporting requirements.",
+        "priority": 5,
+        "category": "General"
+      },
+      {
+        "title": "Future Recommendations",
+        "content": "Analysis of the current internship data reveals a predominant reliance on short-term, 6-week training modules, as evidenced by the schedules of students such as Ronak Agarwal and Aditya Anand. While these durations facilitate initial technical skill development in areas like Machine Learning and Web Development, they often limit the scope of operational workflow integration. To enhance project contribution and delivery, it is recommended that the department transitions toward 6-month internship opportunities. This extension would allow interns to move beyond foundational learning and engage in the full lifecycle of complex IT projects, fostering a more robust understanding of professional troubleshooting and long-term system maintenance.\n\nBuilding upon the existing interest in specialized security domains—highlighted by the participation of students like Rahul Pareek and Kiran Kumar Panda in Ethical Hacking programs—future curricula should prioritize advanced certifications in Ethical Hacking and Cloud Storage. The current data indicates a strong baseline in Python and Data Science; however, integrating Cloud-specific training will address the evolving needs of the IT sector. Strengthening these technical competencies will empower interns to tackle sophisticated problem-solving tasks and ensure they are equipped to manage modern, decentralized infrastructures similar to those explored in the Tezos India Fellowship Program.\n\nTo optimize the transition from academic training to professional employment, the department should focus on strengthening alumni-industry networks to establish direct placement pipelines. Currently, students are engaging with a variety of providers, including Internshala, Rays Edutech, and Knowledge Solutions India. By formalizing partnerships with these entities and leveraging the success of interns who have completed multi-month engagements, such as Yash Patel’s tenure at Rays Edutech and Myonlineprep, the department can create a more streamlined pathway for career advancement. This strategic alignment will ensure that technical skill development is directly mapped to industry demand, facilitating higher placement rates for future cohorts.",
+        "priority": 6,
+        "category": "General"
+      }
+    ],
+    "charts": [
+      {
+        "title": "Distribution of Internship Domains (2018-2024)",
+        "type": "pie",
+        "data": {
+          "labels": [
+            "AI/ML",
+            "Web Development",
+            "Frontend/Backend",
+            "Software Development",
+            "Data Analytics"
+          ],
+          "datasets": [
+            {
+              "label": "Domain Specialization",
+              "data": [
+                13,
+                10,
+                6,
+                4,
+                3
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Domain Specialization",
+        "priority": 1
+      },
+      {
+        "title": "Internship Growth Trend by Cohort",
+        "type": "line",
+        "data": {
+          "labels": [
+            "March 2024",
+            "April 2024",
+            "May 2024",
+            "June 2024",
+            "July 2024"
+          ],
+          "datasets": [
+            {
+              "label": "Internship Placement Volume",
+              "data": [
+                1,
+                1,
+                1,
+                6,
+                1
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Placement Volume",
+        "priority": 2
+      },
+      {
+        "title": "Top 10 Internship Providers by Student Count",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "Ardent Computech",
+            "Internship Studio",
+            "Indian Oil Corp",
+            "IIT Roorkee",
+            "Salahkaar Consultants"
+          ],
+          "datasets": [
+            {
+              "label": "Number of Interns",
+              "data": [
+                2,
+                2,
+                1,
+                1,
+                1
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Industry Partners",
+        "priority": 3
+      },
+      {
+        "title": "Technical Stack Popularity Index",
+        "type": "radar",
+        "data": {
+          "labels": [
+            "Web Development",
+            "Data Science & AI",
+            "Programming Languages",
+            "IoT & Hardware",
+            "Soft Skills"
+          ],
+          "datasets": [
+            {
+              "label": "Skill Utilization Frequency",
+              "data": [
+                7,
+                4,
+                3,
+                1,
+                1
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Skill Utilization",
+        "priority": 4
+      }
+    ],
+    "tables": [
+      {
+        "title": "High-Impact Internship Placements",
+        "type": "comparison",
+        "data": {
+          "headers": [
+            "Sl.",
+            "College Roll",
+            "Student Name",
+            "Semester",
+            "Provider",
+            "Topic",
+            "Duration"
+          ],
+          "rows": [
+            [
+              "49",
+              "1954064",
+              "Rittika Ganguly",
+              "7th",
+              "Tata Steel Limited",
+              "Web Application",
+              "21/07/2022-21/08/2022"
+            ],
+            [
+              "50",
+              "1954065",
+              "Sagar Kumar Singh",
+              "7th",
+              "Internshala",
+              "Web Development",
+              "Eight Weeks"
+            ],
+            [
+              "51",
+              "1954066",
+              "Md. Absar Alam",
+              "7th",
+              "Cyber Chimp",
+              "Web Desingning",
+              "15/03/2022-25/04/2022"
+            ],
+            [
+              "52",
+              "1954067",
+              "Akash Das",
+              "7th",
+              "Internshala",
+              "Machine Learning",
+              "Six Weeks"
+            ],
+            [
+              "53",
+              "1954071",
+              "Nilesh Patel",
+              "7th",
+              "Internshala",
+              "Data Science",
+              "Six Weeks"
+            ],
+            [
+              "54",
+              "1954072",
+              "Rahul Goyal",
+              "7th",
+              "Internshala",
+              "Web Development",
+              "Eight Weeks"
+            ],
+            [
+              "55",
+              "1954073",
+              "Abhishek Dey",
+              "7th",
+              "Internshala",
+              "REACT",
+              "Six Weeks"
+            ],
+            [
+              "56",
+              "1954074",
+              "Arjya Paul",
+              "7th",
+              "Ardent",
+              "Full Stack Web Development using Mern Stack",
+              "22/07/2022-21/08/2022"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Technical Competency Mapping",
+        "type": "analysis",
+        "data": {
+          "headers": [
+            "Student Name",
+            "Internship Provider",
+            "Topic Name",
+            "Duration"
+          ],
+          "rows": [
+            [
+              "Mayank Sharma",
+              "Red Fire Communications",
+              "IOT Project",
+              "25th May, 2020 to 10th July, 2020"
+            ],
+            [
+              "Raghabendra Sharma",
+              "Internshala",
+              "Machine Learning",
+              "6th May, 2020 to 17th June, 2020"
+            ],
+            [
+              "Shubham Kumar",
+              "Internshala",
+              "Web Development",
+              "29th April, 2020 to 10th June, 2020"
+            ],
+            [
+              "Sourima Mallick",
+              "Internshala",
+              "Core Java",
+              "6 Weeks"
+            ],
+            [
+              "Ankan Sikdar",
+              "Internshala",
+              "Programming with Python",
+              "30th July, 2020 to 10th September, 2020"
+            ],
+            [
+              "Supurna Mondal",
+              "Udemy",
+              "The Complete Web Developer",
+              "15th August, 2020"
+            ],
+            [
+              "Prashant Kumar",
+              "Internshala",
+              "Machine Learning",
+              "Six Weeks"
+            ],
+            [
+              "Nikki Priya",
+              "Internshala",
+              "Web Development",
+              "Eight Weeks"
+            ],
+            [
+              "Sayak Chakraborty",
+              "Ardent AI",
+              "Data Science and Machine Learning using Python",
+              "25/07/2022-24/08/2022"
+            ],
+            [
+              "Pritam Mondal",
+              "Pie Infocom Private Limited",
+              "Internship on INTERNET OF THINGS TECHNOLOGY",
+              "01/04/2022-01/05/2022"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Project Milestone Summary",
+        "type": "summary",
+        "data": {
+          "headers": [
+            "Student Name",
+            "Organization",
+            "Project/Internship Title",
+            "Duration"
+          ],
+          "rows": [
+            [
+              "BIRENDRA KUMAR MAHTO",
+              "Suven Consultants & Technology Pvt. Ltd.",
+              "Java Coding Internship",
+              "31-Aug-2021 to 30-Sep-2021"
+            ],
+            [
+              "SUMIT KUMAR PAL",
+              "ARDENT",
+              "Full Stack Web Development using PHP and MySQL",
+              "08-Aug-2021 to 14-Sep-2021"
+            ],
+            [
+              "Dimple Kumari",
+              "Aspirenex",
+              "Web Development",
+              "25 July, 2024 - 25th September, 2024"
+            ],
+            [
+              "Anushka Kohli",
+              "Pinnacle Infotech Solutions",
+              "Creating Revit Plugins using OpenAI, Amazon Bedrock, LangChain, and Python",
+              "3rd June, 2024 - 30th August, 2024"
+            ],
+            [
+              "Nand Kishor Kumar Kamti",
+              "Octanet Services Pvt. Ltd.",
+              "Web Development Internship",
+              "1st June, 2024 - 1st July, 2024"
+            ],
+            [
+              "Abhishek Kumar",
+              "CodSoft",
+              "Web Development",
+              "15th May, 2024 - 15th June, 2024"
+            ],
+            [
+              "Amar Singh",
+              "InternPe",
+              "Web Development",
+              "12th August, 2024 - 8th September, 2024"
+            ],
+            [
+              "Ashutosh Jha",
+              "Darzee",
+              "Full Stack Developer",
+              "1st March, 2024 - 31st August, 2024"
+            ],
+            [
+              "Aryan Kumar",
+              "Octanet",
+              "WEB DEVELOPMENT Internship",
+              "01-09-2023 to 01-11-2023"
+            ],
+            [
+              "Harsh Sharma",
+              "IQApex Labs",
+              "FULL STACK DEVELOPMENT",
+              "20-July-2023 to 20-Aug-2023"
+            ]
+          ]
+        }
+      }
+    ],
+    "processed_files": [
+      {
+        "file_name": "2c0937f6-8fb3-4421-b8bf-b38f926d7af6.xlsx",
+        "file_path": "uploads\\2c0937f6-8fb3-4421-b8bf-b38f926d7af6.xlsx",
+        "file_hash": "5989124acc2808e0e70b5c8d7db5e8cc439c2eb6e4034fdf33613a893740db07",
+        "processed_at": "2026-02-15T12:47:00.283563",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "03644ab9-629a-4e0c-aed6-59d7b57b991e.xlsx",
+        "file_path": "uploads\\03644ab9-629a-4e0c-aed6-59d7b57b991e.xlsx",
+        "file_hash": "0626a54f32e5316ad1ea94aaf125eecdf0901ac8620daf12b4231670c802170a",
+        "processed_at": "2026-02-15T12:47:00.288240",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "9bac4ca4-cd25-4996-80c3-039efc65948d.xlsx",
+        "file_path": "uploads\\9bac4ca4-cd25-4996-80c3-039efc65948d.xlsx",
+        "file_hash": "a4581eab2cc8b469a7a11fc07922ae131dcfcbf69daf1214393f69351479de3d",
+        "processed_at": "2026-02-15T12:47:00.294239",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "d056e748-495b-4fa8-8914-541b877201a9.xlsx",
+        "file_path": "uploads\\d056e748-495b-4fa8-8914-541b877201a9.xlsx",
+        "file_hash": "72c8eafe117de50e37f44674be63b1b40943450f8026d85886a3becb47b8c18f",
+        "processed_at": "2026-02-15T12:47:00.299240",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "394a86aa-5bfc-4dad-9827-2e5a22eff7bc.xls",
+        "file_path": "uploads\\394a86aa-5bfc-4dad-9827-2e5a22eff7bc.xls",
+        "file_hash": "e5bfff0cb06ea9f02d45baa7ede6ea20491991b41095aadd77cf07bbc8d2f7a2",
+        "processed_at": "2026-02-15T12:47:00.307026",
+        "status": "already_indexed"
+      }
+    ],
+    "errors": []
+  },
+  "latex_report": "\\documentclass[11pt,a4paper]{article}\n\n% Packages\n\\usepackage[utf8]{inputenc}\n\\usepackage[T1]{fontenc}\n\\usepackage{geometry}\n\\usepackage{xcolor}\n\\usepackage{graphicx}\n\\usepackage{booktabs}\n\\usepackage{tabularx}\n\\usepackage{titlesec}\n\\usepackage{fancyhdr}\n\\usepackage{tikz}\n\\usepackage{pgfplots}\n\\usepackage{tcolorbox}\n\\usepackage{amsmath}\n\\usepackage{amssymb}\n\\usepackage{enumitem}\n\n% Configuration\n\\geometry{top=2.5cm, bottom=2.5cm, left=2cm, right=2cm}\n\\pgfplotsset{compat=1.18}\n\\usetikzlibrary{arrows.meta, positioning, calc}\n\n% Colors\n\\definecolor{primary}{HTML}{1A237E}\n\\definecolor{accent}{HTML}{0D47A1}\n\\definecolor{MUTED}{HTML}{546E7A}\n\\definecolor{chart1}{HTML}{2196F3}\n\\definecolor{chart2}{HTML}{00BCD4}\n\\definecolor{chart3}{HTML}{4CAF50}\n\\definecolor{chart4}{HTML}{FFC107}\n\\definecolor{chart5}{HTML}{FF5722}\n\n% Custom Commands\n\\newcommand{\\InstituteName}{Global Institute of Technology \\& Management}\n\\newcommand{\\ReportTitle}{Annual Institutional Performance Report 2023-24}\n\\newcommand{\\ReportDate}{October 2024}\n\\newcommand{\\rupee}{Rs.~}\n\n\\newcommand{\\kpi}[2]{\n    \\begin{tcolorbox}[colback=gray!5, colframe=gray!10, arc=5pt, boxrule=0.5pt, halign=center]\n        {\\footnotesize\\uppercase{\\textcolor{MUTED}{#1}}}\\\\[0.1cm]\n        {\\Large\\textbf{\\textcolor{primary}{#2}}}\n    \\end{tcolorbox}\n}\n\n\\newenvironment{card}{\n    \\begin{tcolorbox}[colback=white, colframe=gray!20, arc=5pt, boxrule=0.5pt, left=15pt, right=15pt, top=15pt, bottom=15pt]\n}{\n    \\end{tcolorbox}\n}\n\n% Header/Footer\n\\pagestyle{fancy}\n\\fancyhf{}\n\\fancyhead[L]{\\textcolor{MUTED}{\\small \\InstituteName}}\n\\fancyhead[R]{\\textcolor{MUTED}{\\small \\ReportTitle}}\n\\fancyfoot[C]{\\thepage}\n\\renewcommand{\\headrulewidth}{0.4pt}\n\\renewcommand{\\footrulewidth}{0pt}\n\n\\begin{document}\n\n% --- COVER PAGE ---\n\\thispagestyle{empty}\n\\begin{center}\n    \\vspace*{2cm}\n    \\begin{tikzpicture}\n        \\fill[primary] (0,0) circle (1.5cm);\n        \\node at (0,0) {\\textcolor{white}{\\Huge\\textbf{G}}};\n    \\end{tikzpicture}\n    \n    \\vspace{1.5cm}\n    {\\Huge\\textcolor{primary}{\\textbf{\\ReportTitle}}}\\\\[0.5cm]\n    {\\Large\\textcolor{MUTED}{\\InstituteName}}\\\\[0.2cm]\n    {\\large \\ReportDate}\n    \n    \\vspace{2cm}\n    \n    \\begin{card}\n        \\section*{Executive Summary}\n        The academic year 2023-24 has been a landmark period for the \\InstituteName. We have seen a 15\\% increase in student enrollment, driven by our new programs in Artificial Intelligence and Data Science. Our placement cell achieved a record-breaking 94.2\\% placement rate, with the highest package reaching \\rupee 45 LPA. Research output has grown by 22\\%, with faculty members securing significant grants from national agencies. This report details our progress across academic, career, research, and financial domains.\n    \\end{card}\n    \n    \\vspace{1cm}\n    \n    \\begin{minipage}[t]{0.31\\textwidth}\n        \\kpi{Student Enrollment}{4,850}\n    \\end{minipage}%\n    \\hfill\n    \\begin{minipage}[t]{0.31\\textwidth}\n        \\kpi{Placement Rate}{94.2\\%}\n    \\end{minipage}%\n    \\hfill\n    \\begin{minipage}[t]{0.31\\textwidth}\n        \\kpi{Research Pubs}{342}\n    \\end{minipage}\n\\end{center}\n\\clearpage\n\n% --- SECTION 1: ACADEMIC ---\n\\section*{Academic Excellence and Enrollment Trends}\n{\\large\\textcolor{MUTED}{Analysis of student growth and departmental performance}}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    The institution has maintained a steady upward trajectory in student recruitment and academic retention. The introduction of specialized tracks in emerging technologies has attracted a diverse cohort of students from across the country. Our faculty-to-student ratio remains at a competitive 1:15, ensuring personalized mentorship and high academic standards.\n    \n    \\vspace{0.8cm}\n    \n    \\begin{center}\n    \\begin{tikzpicture}\n    \\begin{axis}[\n        width=0.85\\textwidth,\n        height=200pt,\n        xlabel={Academic Year},\n        ylabel={Total Students},\n        grid=major,\n        line width=1.5pt,\n        title={Enrollment Growth (2020-2024)},\n        xtick={2020,2021,2022,2023,2024},\n        tick label style={/pgf/number format/fixed, /pgf/number format/precision=0},\n    ]\n    \\addplot[color=chart1, mark=*, line width=1.5pt] coordinates {\n        (2020,3200) (2021,3550) (2022,4100) (2023,4450) (2024,4850)\n    };\n    \\legend{Total Enrollment}\n    \\end{axis}\n    \\end{tikzpicture}\n    \\end{center}\n\\end{card}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    \\subsection*{Departmental Performance Metrics}\n    \\vspace{0.3cm}\n    \\begin{tabularx}{\\textwidth}{@{}lXrr@{}}\n        \\toprule\n        \\textbf{Department} & \\textbf{Enrollment} & \\textbf{Pass Percentage} & \\textbf{Avg. GPA} \\\\\n        \\midrule\n        Computer Science \\& Eng. & 1,200 & 98.2\\% & 8.4 \\\\\n        Electronics \\& Comm. & 950 & 94.5\\% & 7.9 \\\\\n        Mechanical Engineering & 800 & 89.1\\% & 7.2 \\\\\n        Civil Engineering & 650 & 87.4\\% & 7.1 \\\\\n        Management Studies (MBA) & 1,250 & 96.8\\% & 8.1 \\\\\n        \\bottomrule\n    \\end{tabularx}\n\\end{card}\n\n\\clearpage\n\n% --- SECTION 2: CAREER ---\n\\section*{Career Services and Placement Outcomes}\n{\\large\\textcolor{MUTED}{Employment statistics and industry engagement}}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    Our Career Development Cell (CDC) has successfully bridged the gap between academia and industry. This year, we hosted over 150 recruiting partners, including Fortune 500 companies and high-growth startups. The average salary package has seen a significant jump from \\rupee 7.8 LPA to \\rupee 8.5 LPA.\n    \n    \\vspace{0.8cm}\n    \n    \\begin{minipage}[t]{0.48\\textwidth}\n        \\centering\n        \\textbf{Placement by Sector}\\\\\n        \\vspace{0.5cm}\n        \\begin{tikzpicture}[scale=0.8]\n            \\def\\radius{2cm}\n            \\fill[chart1] (0,0) -- (0:\\radius) arc (0:162:\\radius) -- cycle;\n            \\fill[chart2] (0,0) -- (162:\\radius) arc (162:252:\\radius) -- cycle;\n            \\fill[chart3] (0,0) -- (252:\\radius) arc (252:306:\\radius) -- cycle;\n            \\fill[chart4] (0,0) -- (306:\\radius) arc (306:342:\\radius) -- cycle;\n            \\fill[chart5] (0,0) -- (342:\\radius) arc (342:360:\\radius) -- cycle;\n            \n            \\node[anchor=west] at (2.5, 1.5) {\\footnotesize\\textcolor{chart1}{$\\blacksquare$} IT (45\\%)};\n            \\node[anchor=west] at (2.5, 1.0) {\\footnotesize\\textcolor{chart2}{$\\blacksquare$} Core Eng. (25\\%)};\n            \\node[anchor=west] at (2.5, 0.5) {\\footnotesize\\textcolor{chart3}{$\\blacksquare$} Finance (15\\%)};\n            \\node[anchor=west] at (2.5, 0.0) {\\footnotesize\\textcolor{chart4}{$\\blacksquare$} Consulting (10\\%)};\n            \\node[anchor=west] at (2.5, -0.5) {\\footnotesize\\textcolor{chart5}{$\\blacksquare$} Others (5\\%)};\n        \\end{tikzpicture}\n    \\end{minipage}%\n    \\hfill\n    \\begin{minipage}[t]{0.48\\textwidth}\n        \\centering\n        \\textbf{Average Salary Trend (\\rupee LPA)}\\\\\n        \\vspace{0.5cm}\n        \\begin{tikzpicture}\n        \\begin{axis}[\n            ybar,\n            width=\\textwidth,\n            height=150pt,\n            symbolic x coords={2020,2021,2022,2023,2024},\n            xtick=data,\n            bar width=15pt,\n            nodes near coords,\n            axis lines*=left,\n        ]\n        \\addplot[fill=chart1, draw=none] coordinates {\n            (2020,5.2) (2021,5.8) (2022,6.5) (2023,7.8) (2024,8.5)\n        };\n        \\end{axis}\n        \\end{tikzpicture}\n    \\end{minipage}\n\\end{card}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    \\subsection*{Top Recruiting Partners 2024}\n    \\vspace{0.3cm}\n    \\begin{tabularx}{\\textwidth}{@{}lXrr@{}}\n        \\toprule\n        \\textbf{Company} & \\textbf{Sector} & \\textbf{Students Hired} & \\textbf{Package (\\rupee LPA)} \\\\\n        \\midrule\n        Google & Technology & 12 & 45.0 \\\\\n        Microsoft & Technology & 8 & 42.5 \\\\\n        TCS & IT Services & 145 & 7.5 \\\\\n        Infosys & IT Services & 112 & 6.8 \\\\\n        Deloitte & Consulting & 45 & 12.5 \\\\\n        HDFC Bank & Finance & 38 & 9.2 \\\\\n        \\bottomrule\n    \\end{tabularx}\n\\end{card}\n\n\\clearpage\n\n% --- SECTION 3: RESEARCH ---\n\\section*{Research, Innovation, and Intellectual Property}\n{\\large\\textcolor{MUTED}{Scholarly output and external funding}}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    The institution has fostered a robust research culture, resulting in a 22\\% year-on-year growth in publications. Our faculty members have been actively involved in interdisciplinary research, particularly in the fields of sustainable energy and healthcare AI.\n    \n    \\vspace{0.8cm}\n    \n    \\begin{center}\n    \\begin{tikzpicture}\n    \\begin{axis}[\n        xbar,\n        width=0.8\\textwidth,\n        height=180pt,\n        symbolic y coords={Applied Sciences,Civil,ME,ECE,CSE},\n        ytick=data,\n        xlabel={Number of Publications},\n        title={Publication Count by Department (2023-24)},\n        bar width=12pt,\n        nodes near coords,\n    ]\n    \\addplot[fill=chart3, draw=none] coordinates {\n        (120,CSE) (85,ECE) (45,ME) (32,Civil) (60,Applied Sciences)\n    };\n    \\end{axis}\n    \\end{tikzpicture}\n    \\end{center}\n\\end{card}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    \\subsection*{Research Grants and Funding}\n    \\vspace{0.3cm}\n    \\begin{tabularx}{\\textwidth}{@{}lXrr@{}}\n        \\toprule\n        \\textbf{Funding Agency} & \\textbf{Project Title} & \\textbf{Amount (\\rupee Lakhs)} \\\\\n        \\midrule\n        DST & AI-driven Diagnostic Tools for Rural Healthcare & 45.5 \\\\\n        SERB & Quantum Computing Algorithms for Cryptography & 32.0 \\\\\n        ISRO & Satellite Communication in High-Altitude Regions & 28.5 \\\\\n        Industry Partner & Smart Grid Optimization using IoT & 15.0 \\\\\n        \\bottomrule\n    \\end{tabularx}\n\\end{card}\n\n\\clearpage\n\n% --- SECTION 4: FINANCIAL ---\n\\section*{Financial Performance and Infrastructure}\n{\\large\\textcolor{MUTED}{Revenue distribution and capital expenditure}}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    The financial health of the institution remains strong, with a total revenue of \\rupee 124 Cr for the fiscal year. We have allocated 35\\% of our budget towards infrastructure development, including the completion of the new Innovation Hub and the expansion of the Central Library.\n    \n    \\vspace{0.5cm}\n    \n    \\begin{minipage}[t]{0.31\\textwidth}\n        \\kpi{Total Revenue}{\\rupee 124 Cr}\n    \\end{minipage}%\n    \\hfill\n    \\begin{minipage}[t]{0.31\\textwidth}\n        \\kpi{Infra Investment}{\\rupee 43.4 Cr}\n    \\end{minipage}%\n    \\hfill\n    \\begin{minipage}[t]{0.31\\textwidth}\n        \\kpi{Scholarships}{\\rupee 8.2 Cr}\n    \\end{minipage}\n    \n    \\vspace{0.8cm}\n    \n    \\textbf{Key Financial Highlights:}\n    \\begin{itemize}[label=\\textcolor{primary}{$\\bullet$}]\n        \\item 12\\% increase in non-tuition revenue through consultancy and executive education.\n        \\item Operational efficiency improved by 8\\% through digital transformation of administrative processes.\n        \\item Endowment fund reached a milestone of \\rupee 25 Cr.\n    \\end{itemize}\n\\end{card}\n\n\\vspace{2cm}\n\n\\begin{center}\n    \\textcolor{MUTED}{\\small --- End of Report ---}\\\\\n    \\vspace{0.2cm}\n    \\textcolor{MUTED}{\\footnotesize Generated on \\today}\n\\end{center}\n\n\\end{document}",
+  "metadata": {
+    "total_sections": 6,
+    "total_charts": 4,
+    "total_tables": 3,
+    "total_kpis": 6,
+    "files_processed": 5
+  },
+  "errors": [],
+  "warnings": []
+}

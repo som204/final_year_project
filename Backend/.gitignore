@@ -10,6 +10,4 @@ env/
 __pycache__/
 *.pyc
 
-uploads/
-Vector_store/
-generated_report.html
+

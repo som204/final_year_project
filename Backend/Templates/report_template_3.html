@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Template 3 — Crimson Modern | Institute Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:14px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:'Outfit',sans-serif;background:#f0f0f0;color:#0f0f0f}
+
+:root{
+  --red:#c0001a;
+  --red2:#e8001f;
+  --dark:#0f0f0f;
+  --gray:#6b7280;
+  --lgray:#9ca3af;
+  --border:#e5e7eb;
+  --bg:#f9f9f9;
+  --card:#ffffff;
+  --teal:#0d7377;
+  --amber:#b45309;
+  --shadow:0 4px 20px rgba(0,0,0,0.08);
+}
+
+.pages{display:flex;flex-direction:column;align-items:center;gap:12px;padding:16px}
+.page{
+  width:210mm;min-height:297mm;
+  background:var(--card);
+  display:flex;flex-direction:column;
+  padding:0;
+  position:relative;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.page-inner{flex:1;display:flex;flex-direction:column;padding:14mm 18mm;padding-top:6mm}
+
+/* ===== TOP STRIPE ===== */
+.top-stripe{height:10px;background:var(--red);width:100%;flex-shrink:0}
+.top-stripe-thin{height:4px;background:var(--dark);width:100%;flex-shrink:0}
+
+/* ===== HEADER ===== */
+.pg-header{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:2px solid var(--dark);margin-bottom:16px}
+.hd-brand{display:flex;align-items:center;gap:12px}
+.hd-logo{width:50px;height:50px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:22px;color:white;letter-spacing:1px}
+.hd-text h1{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.5px;color:var(--dark);line-height:1.1}
+.hd-text p{font-size:11px;color:var(--gray);margin-top:2px;letter-spacing:0.3px}
+.hd-right{text-align:right}
+.hd-right .pg-title{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;color:var(--red)}
+.hd-right .pg-sub{font-size:11px;color:var(--lgray)}
+
+/* ===== COVER ===== */
+.cover-hero{background:var(--dark);color:white;padding:30px 32px;margin-bottom:20px;position:relative;overflow:hidden}
+.cover-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border:3px solid rgba(192,0,26,0.3);border-radius:50%}
+.cover-hero::after{content:'';position:absolute;bottom:-40px;left:40px;width:140px;height:140px;background:rgba(192,0,26,0.08);border-radius:50%}
+.cover-hero .yr{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.cover-hero h2{font-family:'Bebas Neue',sans-serif;font-size:40px;letter-spacing:2px;line-height:1.1;color:white;margin-bottom:12px;position:relative;z-index:1}
+.cover-hero p{font-size:13px;color:#9ca3af;max-width:500px;line-height:1.65;position:relative;z-index:1}
+.cover-hero .red-line{width:60px;height:4px;background:var(--red);margin:16px 0;position:relative;z-index:1}
+
+/* ===== METRICS STRIP ===== */
+.metrics-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--border);margin-bottom:20px}
+.metric-box{padding:14px;text-align:center;border-right:1px solid var(--border)}
+.metric-box:last-child{border-right:none}
+.metric-box .m-label{font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:var(--lgray);margin-bottom:6px}
+.metric-box .m-val{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px;color:var(--dark)}
+.metric-box .m-chg{font-size:11px;margin-top:3px}
+.chg-up{color:#15803d;font-weight:600}
+.chg-dn{color:var(--red);font-weight:600}
+.metric-box.red-bg{background:var(--red)}
+.metric-box.red-bg .m-label,.metric-box.red-bg .m-val,.metric-box.red-bg .m-chg{color:white}
+
+/* ===== GRID ===== */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:16px}
+
+/* ===== CARD ===== */
+.card{border:1px solid var(--border);border-radius:0;padding:14px;margin-bottom:14px;position:relative}
+.card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--red)}
+.card.dark{background:var(--dark);color:white;border:none}
+.card.dark::before{background:var(--red)}
+.c-title{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;color:var(--dark);margin-bottom:2px}
+.card.dark .c-title{color:white}
+.c-sub{font-size:11.5px;color:var(--gray);margin-bottom:10px}
+.card.dark .c-sub{color:#9ca3af}
+
+/* ===== SECTION HEADING ===== */
+.sec-hd{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.sec-hd .num{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--red);line-height:1;letter-spacing:1px}
+.sec-hd .divider{width:3px;height:32px;background:var(--dark)}
+.sec-hd h3{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.5px;color:var(--dark)}
+
+/* ===== TABLE ===== */
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+thead tr{background:var(--dark)}
+th{padding:9px 10px;color:white;font-weight:600;font-size:12px;text-align:left;letter-spacing:0.3px}
+td{padding:9px 10px;border-bottom:1px solid var(--border);color:var(--dark);vertical-align:middle}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafafa}
+
+/* ===== BADGE ===== */
+.bdg{display:inline-block;padding:2px 8px;font-size:10.5px;font-weight:600;letter-spacing:0.3px}
+.bdg-green{background:#dcfce7;color:#14532d}
+.bdg-red{background:#fee2e2;color:#7f1d1d}
+.bdg-amber{background:#fef3c7;color:#78350f}
+.bdg-blue{background:#dbeafe;color:#1e3a8a}
+.bdg-dark{background:var(--dark);color:white}
+
+/* ===== PROGRESS ===== */
+.prog-row{margin-bottom:10px}
+.prog-lbl{display:flex;justify-content:space-between;font-size:12px;font-weight:500;margin-bottom:4px;color:var(--dark)}
+.prog-track{height:6px;background:var(--border)}
+.prog-fill{height:100%;transition:width 0.4s}
+
+/* ===== LEGEND ===== */
+.legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.leg-i{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--gray)}
+.leg-d{width:10px;height:10px}
+.leg-sq{width:14px;height:6px}
+
+/* ===== SVG ===== */
+svg text{font-family:'Outfit',sans-serif}
+
+/* ===== TOC ===== */
+.toc-row{display:flex;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--border);gap:10px;font-size:13px}
+.toc-row:last-child{border-bottom:none}
+.toc-n{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--red);min-width:24px}
+.toc-t{flex:1;color:var(--dark);font-weight:500}
+.toc-dots{flex:1;border-bottom:1px dotted var(--lgray);height:1px}
+.toc-pg{font-size:12px;color:var(--lgray);min-width:28px;text-align:right;font-weight:600}
+
+/* ===== FOOTER ===== */
+.pg-footer{padding:10px 18mm;border-top:3px solid var(--dark);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--lgray);background:var(--bg);margin-top:auto;flex-shrink:0}
+.pg-footer strong{color:var(--red);font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:0.5px}
+
+/* ===== PRINT ===== */
+@page{size:A4;margin:0}
+@media print{
+  body{background:white}
+  .pages{padding:0;gap:0}
+  .page{box-shadow:none;page-break-after:always;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="pages">
+
+<!-- ===== PAGE 1: COVER ===== -->
+<div class="page">
+  <div class="top-stripe"></div>
+  <div class="top-stripe-thin"></div>
+  <div class="page-inner">
+    <div class="pg-header">
+      <div class="hd-brand">
+        <div class="hd-logo">BIT</div>
+        <div class="hd-text">
+          <h1>Bharat Institute of Technology</h1>
+          <p>Autonomous · AICTE Approved · NAAC 'A++' · Ranchi, Jharkhand</p>
+        </div>
+      </div>
+      <div class="hd-right">
+        <div class="pg-title">Annual Report 2024–25</div>
+        <div class="pg-sub">Office of Institutional Research</div>
+      </div>
+    </div>
+
+    <div class="cover-hero">
+      <div class="yr">Academic Year 2024 – 2025</div>
+      <h2>ANNUAL INSTITUTIONAL<br/>PERFORMANCE REPORT</h2>
+      <div class="red-line"></div>
+      <p>A rigorous, data-driven assessment of academic performance, placement outcomes, research activity, faculty growth, and infrastructure across all departments at Bharat Institute of Technology.</p>
+    </div>
+
+    <div class="metrics-strip">
+      <div class="metric-box"><div class="m-label">Students</div><div class="m-val">6,842</div><div class="m-chg chg-up">↑ 4.2%</div></div>
+      <div class="metric-box red-bg"><div class="m-label">Placed</div><div class="m-val">94.7%</div><div class="m-chg">↑ 3.1pp</div></div>
+      <div class="metric-box"><div class="m-label">Avg CTC</div><div class="m-val">₹18.4L</div><div class="m-chg chg-up">↑ ₹2.3L</div></div>
+      <div class="metric-box"><div class="m-label">Publications</div><div class="m-val">318</div><div class="m-chg chg-up">↑ 18.6%</div></div>
+      <div class="metric-box"><div class="m-label">NIRF Rank</div><div class="m-val">#18</div><div class="m-chg chg-up">↑ 5 pos</div></div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="c-title">Executive Summary</div>
+        <div class="c-sub">AY 2024–25 highlights</div>
+        <p style="font-size:13px;line-height:1.7;color:#374151;margin-bottom:10px">BIT achieved a historic placement rate of 94.7%, driven by 284 companies visiting campus, 48 new first-time recruiters, and a surge in dream company offers. Research output grew by 18.6% with ₹24.6 Cr in grants secured.</p>
+        <p style="font-size:13px;line-height:1.7;color:#374151">NIRF 2025 ranking improved to #18 — a jump of 5 positions — validating progress across all five NIRF evaluation parameters. Faculty PhD ratio improved to 78%, and 2 patents were granted internationally.</p>
+      </div>
+      <div class="card">
+        <div class="c-title">Enrollment by Department</div>
+        <div class="c-sub">Total headcount AY 2024–25</div>
+        <svg width="100%" height="185" viewBox="0 0 300 185">
+          <line x1="10" y1="10" x2="10" y2="160" stroke="#e5e7eb"/><line x1="10" y1="160" x2="295" y2="160" stroke="#e5e7eb"/>
+          <g font-size="9" fill="#9ca3af" text-anchor="middle">
+            <text x="52" y="175">CSE</text><text x="96" y="175">ECE</text><text x="140" y="175">ME</text><text x="184" y="175">CE</text><text x="228" y="175">EE</text><text x="272" y="175">IT</text>
+          </g>
+          <g font-size="9" fill="#9ca3af" text-anchor="end">
+            <text x="6" y="163">0</text><text x="6" y="110">700</text><text x="6" y="57">1400</text>
+          </g>
+          <!-- CSE = 760 total -->
+          <rect x="34" y="39" width="36" height="121" fill="#c0001a" rx="2"/>
+          <!-- ECE = 666 -->
+          <rect x="78" y="53" width="36" height="107" fill="#0f0f0f" rx="2"/>
+          <!-- ME = 576 -->
+          <rect x="122" y="68" width="36" height="92" fill="#c0001a" rx="2" opacity="0.8"/>
+          <!-- CE = 534 -->
+          <rect x="166" y="74" width="36" height="86" fill="#0f0f0f" rx="2" opacity="0.8"/>
+          <!-- EE = 458 -->
+          <rect x="210" y="83" width="36" height="77" fill="#c0001a" rx="2" opacity="0.6"/>
+          <!-- IT = 404 -->
+          <rect x="254" y="92" width="36" height="68" fill="#0f0f0f" rx="2" opacity="0.6"/>
+          <g font-size="8.5" fill="white" text-anchor="middle" font-weight="600">
+            <text x="52" y="130">1,240</text><text x="96" y="140">1,068</text><text x="140" y="152">897</text><text x="184" y="154">793</text><text x="228" y="155">690</text><text x="272" y="157">621</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="pg-footer">
+    <span>Office of Institutional Research · Bharat Institute of Technology</span>
+    <strong>01 / 06</strong>
+  </div>
+</div>
+
+<!-- ===== PAGE 2: TOC & KPIs ===== -->
+<div class="page">
+  <div class="top-stripe"></div>
+  <div class="top-stripe-thin"></div>
+  <div class="page-inner">
+    <div class="pg-header">
+      <div class="hd-brand"><div class="hd-logo">BIT</div><div class="hd-text"><h1>Bharat Institute of Technology</h1><p>Annual Institutional Report 2024–25</p></div></div>
+      <div class="hd-right"><div class="pg-title">Contents</div><div class="pg-sub">Table of Contents & KPIs</div></div>
+    </div>
+
+    <div class="sec-hd"><div class="num">§</div><div class="divider"></div><h3>Report Structure</h3></div>
+    <div class="card" style="margin-bottom:20px">
+      <div class="toc-row"><div class="toc-n">01</div><div class="toc-t">Cover & Executive Summary</div><div class="toc-dots"></div><div class="toc-pg">1</div></div>
+      <div class="toc-row"><div class="toc-n">02</div><div class="toc-t">Table of Contents & KPIs</div><div class="toc-dots"></div><div class="toc-pg">2</div></div>
+      <div class="toc-row"><div class="toc-n">03</div><div class="toc-t">Academic Performance</div><div class="toc-dots"></div><div class="toc-pg">3</div></div>
+      <div class="toc-row"><div class="toc-n">04</div><div class="toc-t">Placement & Career Outcomes</div><div class="toc-dots"></div><div class="toc-pg">4</div></div>
+      <div class="toc-row"><div class="toc-n">05</div><div class="toc-t">Research & Innovation</div><div class="toc-dots"></div><div class="toc-pg">5</div></div>
+      <div class="toc-row"><div class="toc-n">06</div><div class="toc-t">Annexures & Historical Data</div><div class="toc-dots"></div><div class="toc-pg">6</div></div>
+    </div>
+
+    <div class="sec-hd"><div class="num">KPI</div><div class="divider"></div><h3>Dashboard</h3></div>
+    <div class="metrics-strip" style="grid-template-columns:repeat(4,1fr)">
+      <div class="metric-box"><div class="m-label">Faculty PhD %</div><div class="m-val">78%</div><div class="m-chg chg-up">↑ 3pp</div></div>
+      <div class="metric-box red-bg"><div class="m-label">Highest CTC</div><div class="m-val">₹1.2Cr</div><div class="m-chg">International</div></div>
+      <div class="metric-box"><div class="m-label">Companies</div><div class="m-val">284</div><div class="m-chg chg-up">42 New</div></div>
+      <div class="metric-box"><div class="m-label">PhD Students</div><div class="m-val">684</div><div class="m-chg">112 grad.</div></div>
+    </div>
+    <div class="metrics-strip" style="grid-template-columns:repeat(4,1fr);margin-top:-1px">
+      <div class="metric-box"><div class="m-label">Patents Filed</div><div class="m-val">42</div><div class="m-chg chg-up">18 granted</div></div>
+      <div class="metric-box"><div class="m-label">Research Funds</div><div class="m-val">₹24.6Cr</div><div class="m-chg chg-up">↑ 16%</div></div>
+      <div class="metric-box red-bg"><div class="m-label">Avg SGPA</div><div class="m-val">8.24</div><div class="m-chg">↑ 0.18</div></div>
+      <div class="metric-box"><div class="m-label">SCI Papers</div><div class="m-val">168</div><div class="m-chg chg-up">↑ 24%</div></div>
+    </div>
+
+    <div style="height:16px"></div>
+    <div class="card">
+      <div class="c-title">5-Year Trend Analysis</div>
+      <div class="c-sub">Placement rate, research index, and NIRF rank 2020–2025</div>
+      <svg width="100%" height="130" viewBox="0 0 550 130">
+        <line x1="45" y1="10" x2="45" y2="108" stroke="#e5e7eb"/><line x1="45" y1="108" x2="540" y2="108" stroke="#e5e7eb"/>
+        <g font-size="9" fill="#9ca3af"><text x="118" y="122">2020-21</text><text x="228" y="122">2021-22</text><text x="338" y="122">2022-23</text><text x="438" y="122">2023-24</text><text x="528" y="122">2024-25</text></g>
+        <g font-size="9" fill="#9ca3af" text-anchor="end"><text x="41" y="111">80%</text><text x="41" y="75">87%</text><text x="41" y="39">94%</text></g>
+        <!-- Placement Line -->
+        <polyline points="120,88 230,76 340,58 440,44 530,18" fill="none" stroke="#c0001a" stroke-width="2.5" stroke-linejoin="round"/>
+        <g fill="#c0001a"><circle cx="120" cy="88" r="4"/><circle cx="230" cy="76" r="4"/><circle cx="340" cy="58" r="4"/><circle cx="440" cy="44" r="4"/><circle cx="530" cy="18" r="5" stroke="white" stroke-width="2"/></g>
+        <!-- Research line -->
+        <polyline points="120,100 230,90 340,74 440,58 530,38" fill="none" stroke="#0f0f0f" stroke-width="1.5" stroke-dasharray="6 3" stroke-linejoin="round"/>
+        <g fill="#0f0f0f"><circle cx="120" cy="100" r="3"/><circle cx="230" cy="90" r="3"/><circle cx="340" cy="74" r="3"/><circle cx="440" cy="58" r="3"/><circle cx="530" cy="38" r="4" stroke="white" stroke-width="1.5"/></g>
+      </svg>
+      <div class="legend">
+        <div class="leg-i"><div class="leg-d" style="background:#c0001a;width:14px;height:3px;margin-top:4px"></div>Placement Rate</div>
+        <div class="leg-i"><div class="leg-d" style="background:#0f0f0f;width:14px;height:3px;margin-top:4px"></div>Research Index</div>
+      </div>
+    </div>
+  </div>
+  <div class="pg-footer">
+    <span>Office of Institutional Research · Bharat Institute of Technology</span>
+    <strong>02 / 06</strong>
+  </div>
+</div>
+
+<!-- ===== PAGE 3: ACADEMIC ===== -->
+<div class="page">
+  <div class="top-stripe"></div><div class="top-stripe-thin"></div>
+  <div class="page-inner">
+    <div class="pg-header">
+      <div class="hd-brand"><div class="hd-logo">BIT</div><div class="hd-text"><h1>Bharat Institute of Technology</h1><p>Annual Institutional Report 2024–25</p></div></div>
+      <div class="hd-right"><div class="pg-title">Section 03</div><div class="pg-sub">Academic Performance</div></div>
+    </div>
+    <div class="sec-hd"><div class="num">03</div><div class="divider"></div><h3>Academic Performance Analysis</h3></div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="c-title">Dept SGPA Comparison</div>
+        <div class="c-sub">Even Sem vs Odd Sem AY 2024–25</div>
+        <svg width="100%" height="185" viewBox="0 0 280 185">
+          <line x1="30" y1="10" x2="30" y2="155" stroke="#e5e7eb"/><line x1="30" y1="155" x2="275" y2="155" stroke="#e5e7eb"/>
+          <g font-size="9" fill="#9ca3af" text-anchor="end"><text x="26" y="158">7</text><text x="26" y="117">8</text><text x="26" y="76">9</text><text x="26" y="35">10</text></g>
+          <!-- Grouped bars per dept -->
+          <rect x="36" y="38" width="17" height="117" fill="#c0001a" rx="2"/>
+          <rect x="55" y="48" width="17" height="107" fill="#0f0f0f" rx="2"/>
+          <rect x="84" y="56" width="17" height="99" fill="#c0001a" rx="2"/>
+          <rect x="103" y="66" width="17" height="89" fill="#0f0f0f" rx="2"/>
+          <rect x="132" y="72" width="17" height="83" fill="#c0001a" rx="2"/>
+          <rect x="151" y="82" width="17" height="73" fill="#0f0f0f" rx="2"/>
+          <rect x="180" y="78" width="17" height="77" fill="#c0001a" rx="2"/>
+          <rect x="199" y="88" width="17" height="67" fill="#0f0f0f" rx="2"/>
+          <rect x="228" y="84" width="17" height="71" fill="#c0001a" rx="2"/>
+          <rect x="247" y="94" width="17" height="61" fill="#0f0f0f" rx="2"/>
+          <g font-size="8.5" fill="#9ca3af" text-anchor="middle">
+            <text x="54" y="170">CSE</text><text x="102" y="170">ECE</text><text x="150" y="170">ME</text><text x="198" y="170">CE</text><text x="246" y="170">EE</text>
+          </g>
+        </svg>
+        <div class="legend">
+          <div class="leg-i"><div class="leg-sq" style="background:#c0001a"></div>Even Sem</div>
+          <div class="leg-i"><div class="leg-sq" style="background:#0f0f0f"></div>Odd Sem</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="c-title">Pass Percentage</div>
+        <div class="c-sub">All subjects cleared, by department</div>
+        <div style="margin-top:10px">
+          <div class="prog-row"><div class="prog-lbl"><span>CSE</span><span>96.4%</span></div><div class="prog-track"><div class="prog-fill" style="width:96.4%;background:#c0001a"></div></div></div>
+          <div class="prog-row"><div class="prog-lbl"><span>IT</span><span>95.0%</span></div><div class="prog-track"><div class="prog-fill" style="width:95%;background:#c0001a"></div></div></div>
+          <div class="prog-row"><div class="prog-lbl"><span>ECE</span><span>93.1%</span></div><div class="prog-track"><div class="prog-fill" style="width:93.1%;background:#0f0f0f"></div></div></div>
+          <div class="prog-row"><div class="prog-lbl"><span>EE</span><span>91.2%</span></div><div class="prog-track"><div class="prog-fill" style="width:91.2%;background:#0f0f0f"></div></div></div>
+          <div class="prog-row"><div class="prog-lbl"><span>ME</span><span>89.7%</span></div><div class="prog-track"><div class="prog-fill" style="width:89.7%;background:#6b7280"></div></div></div>
+          <div class="prog-row"><div class="prog-lbl"><span>CE</span><span>87.3%</span></div><div class="prog-track"><div class="prog-fill" style="width:87.3%;background:#6b7280"></div></div></div>
+          <div class="prog-row"><div class="prog-lbl"><span>Chemical</span><span>84.2%</span></div><div class="prog-track"><div class="prog-fill" style="width:84.2%;background:#9ca3af"></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-title">Department-Wise Academic Summary</div>
+      <div class="c-sub">Full academic metrics for AY 2024–25</div>
+      <table>
+        <thead><tr><th>Department</th><th>UG</th><th>PG</th><th>PhD</th><th>Avg SGPA</th><th>Pass %</th><th>Backlog %</th><th>Scholarships</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Computer Science</td><td>480</td><td>160</td><td>120</td><td>8.74</td><td>96.4%</td><td>3.2%</td><td>124</td><td><span class="bdg bdg-green">Excellent</span></td></tr>
+          <tr><td>Electronics</td><td>420</td><td>148</td><td>98</td><td>8.52</td><td>93.1%</td><td>4.8%</td><td>108</td><td><span class="bdg bdg-green">Excellent</span></td></tr>
+          <tr><td>Information Tech</td><td>280</td><td>80</td><td>44</td><td>8.62</td><td>95.0%</td><td>3.8%</td><td>62</td><td><span class="bdg bdg-green">Excellent</span></td></tr>
+          <tr><td>Electrical</td><td>300</td><td>100</td><td>58</td><td>8.34</td><td>91.2%</td><td>5.2%</td><td>66</td><td><span class="bdg bdg-blue">Good</span></td></tr>
+          <tr><td>Mechanical</td><td>380</td><td>120</td><td>76</td><td>8.21</td><td>89.7%</td><td>6.1%</td><td>84</td><td><span class="bdg bdg-blue">Good</span></td></tr>
+          <tr><td>Civil</td><td>360</td><td>110</td><td>64</td><td>8.05</td><td>87.3%</td><td>7.4%</td><td>72</td><td><span class="bdg bdg-amber">Average</span></td></tr>
+          <tr><td>Chemical</td><td>240</td><td>72</td><td>38</td><td>7.94</td><td>84.2%</td><td>8.2%</td><td>44</td><td><span class="bdg bdg-amber">Average</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="pg-footer"><span>Office of Institutional Research · Bharat Institute of Technology</span><strong>03 / 06</strong></div>
+</div>
+
+<!-- ===== PAGE 4: PLACEMENTS ===== -->
+<div class="page">
+  <div class="top-stripe"></div><div class="top-stripe-thin"></div>
+  <div class="page-inner">
+    <div class="pg-header">
+      <div class="hd-brand"><div class="hd-logo">BIT</div><div class="hd-text"><h1>Bharat Institute of Technology</h1><p>Annual Institutional Report 2024–25</p></div></div>
+      <div class="hd-right"><div class="pg-title">Section 04</div><div class="pg-sub">Placement Outcomes</div></div>
+    </div>
+    <div class="sec-hd"><div class="num">04</div><div class="divider"></div><h3>Placement & Career Outcomes</h3></div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="c-title">Sector Distribution</div>
+        <div class="c-sub">Placed students by industry vertical</div>
+        <svg width="100%" height="190" viewBox="0 0 270 190">
+          <circle cx="100" cy="95" r="56" fill="none" stroke="#e5e7eb" stroke-width="24"/>
+          <circle cx="100" cy="95" r="56" fill="none" stroke="#c0001a" stroke-width="24" stroke-dasharray="133.5 218.1" stroke-dashoffset="0" transform="rotate(-90 100 95)"/>
+          <circle cx="100" cy="95" r="56" fill="none" stroke="#0f0f0f" stroke-width="24" stroke-dasharray="77.3 274.3" stroke-dashoffset="-133.5" transform="rotate(-90 100 95)"/>
+          <circle cx="100" cy="95" r="56" fill="none" stroke="#6b7280" stroke-width="24" stroke-dasharray="70.3 281.3" stroke-dashoffset="-210.8" transform="rotate(-90 100 95)"/>
+          <circle cx="100" cy="95" r="56" fill="none" stroke="#9ca3af" stroke-width="24" stroke-dasharray="42.2 309.4" stroke-dashoffset="-281.1" transform="rotate(-90 100 95)"/>
+          <circle cx="100" cy="95" r="56" fill="none" stroke="#d1d5db" stroke-width="24" stroke-dasharray="28.1 323.5" stroke-dashoffset="-323.3" transform="rotate(-90 100 95)"/>
+          <text x="100" y="90" text-anchor="middle" font-size="16" font-weight="700" fill="#c0001a">94.7%</text>
+          <text x="100" y="106" text-anchor="middle" font-size="9" fill="#6b7280">Placed</text>
+          <g font-size="10" fill="#374151">
+            <rect x="162" y="35" width="10" height="10" fill="#c0001a"/><text x="176" y="45">IT (38%)</text>
+            <rect x="162" y="57" width="10" height="10" fill="#0f0f0f"/><text x="176" y="67">Finance (22%)</text>
+            <rect x="162" y="79" width="10" height="10" fill="#6b7280"/><text x="176" y="89">Core (20%)</text>
+            <rect x="162" y="101" width="10" height="10" fill="#9ca3af"/><text x="176" y="111">Consult (12%)</text>
+            <rect x="162" y="123" width="10" height="10" fill="#d1d5db"/><text x="176" y="133">Other (8%)</text>
+          </g>
+        </svg>
+      </div>
+      <div class="card">
+        <div class="c-title">CTC Bracket Distribution</div>
+        <div class="c-sub">Students per salary bracket (LPA)</div>
+        <svg width="100%" height="190" viewBox="0 0 240 190">
+          <line x1="28" y1="10" x2="28" y2="158" stroke="#e5e7eb"/><line x1="28" y1="158" x2="235" y2="158" stroke="#e5e7eb"/>
+          <g font-size="9" fill="#9ca3af" text-anchor="end"><text x="24" y="161">0</text><text x="24" y="121">400</text><text x="24" y="81">800</text><text x="24" y="41">1,200</text></g>
+          <rect x="36" y="116" width="28" height="42" fill="#9ca3af" rx="2"/>
+          <rect x="78" y="68" width="28" height="90" fill="#0f0f0f" rx="2"/>
+          <rect x="120" y="47" width="28" height="111" fill="#c0001a" rx="2"/>
+          <rect x="162" y="86" width="28" height="72" fill="#0f0f0f" rx="2" opacity="0.7"/>
+          <rect x="204" y="127" width="28" height="31" fill="#9ca3af" rx="2"/>
+          <g font-size="9" fill="#9ca3af" text-anchor="middle"><text x="50" y="172">&lt;8</text><text x="92" y="172">8–12</text><text x="134" y="172">12–20</text><text x="178" y="172">20–40</text><text x="218" y="172">&gt;40</text></g>
+          <g font-size="9" fill="white" text-anchor="middle" font-weight="700"><text x="50" y="140">312</text><text x="92" y="94">784</text><text x="134" y="72">1,124</text><text x="178" y="112">648</text><text x="218" y="148">186</text></g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-title">Top Recruiters — AY 2024–25</div>
+      <div class="c-sub">By total offers and package</div>
+      <table>
+        <thead><tr><th>#</th><th>Company</th><th>Sector</th><th>Offers</th><th>Avg CTC</th><th>Max CTC</th><th>Depts</th><th>Type</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><strong>Google</strong></td><td>IT</td><td>48</td><td>₹42 LPA</td><td>₹1.2 Cr</td><td>CSE, IT</td><td><span class="bdg bdg-dark">Dream</span></td></tr>
+          <tr><td>2</td><td><strong>Microsoft</strong></td><td>IT</td><td>62</td><td>₹35 LPA</td><td>₹80 LPA</td><td>CSE, ECE, IT</td><td><span class="bdg bdg-dark">Dream</span></td></tr>
+          <tr><td>3</td><td><strong>Amazon</strong></td><td>E-Commerce</td><td>74</td><td>₹28 LPA</td><td>₹65 LPA</td><td>CSE, ECE</td><td><span class="bdg bdg-green">PPO</span></td></tr>
+          <tr><td>4</td><td><strong>Goldman Sachs</strong></td><td>Finance</td><td>38</td><td>₹24 LPA</td><td>₹48 LPA</td><td>All</td><td><span class="bdg bdg-green">PPO</span></td></tr>
+          <tr><td>5</td><td><strong>TCS</strong></td><td>IT/Consult.</td><td>186</td><td>₹7 LPA</td><td>₹12 LPA</td><td>All</td><td><span class="bdg bdg-amber">Mass</span></td></tr>
+          <tr><td>6</td><td><strong>L&T</strong></td><td>Core Engg</td><td>52</td><td>₹9.5 LPA</td><td>₹16 LPA</td><td>CE,ME,EE</td><td><span class="bdg bdg-blue">Core</span></td></tr>
+          <tr><td>7</td><td><strong>McKinsey</strong></td><td>Consulting</td><td>18</td><td>₹38 LPA</td><td>₹60 LPA</td><td>CSE</td><td><span class="bdg bdg-dark">Dream</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="pg-footer"><span>Office of Institutional Research · Bharat Institute of Technology</span><strong>04 / 06</strong></div>
+</div>
+
+<!-- ===== PAGE 5: RESEARCH ===== -->
+<div class="page">
+  <div class="top-stripe"></div><div class="top-stripe-thin"></div>
+  <div class="page-inner">
+    <div class="pg-header">
+      <div class="hd-brand"><div class="hd-logo">BIT</div><div class="hd-text"><h1>Bharat Institute of Technology</h1><p>Annual Institutional Report 2024–25</p></div></div>
+      <div class="hd-right"><div class="pg-title">Section 05</div><div class="pg-sub">Research & Innovation</div></div>
+    </div>
+    <div class="sec-hd"><div class="num">05</div><div class="divider"></div><h3>Research & Innovation</h3></div>
+
+    <div class="three-col">
+      <div class="card">
+        <div class="c-title">Publications</div>
+        <svg width="100%" height="120" viewBox="0 0 150 120">
+          <rect x="15" y="10" width="26" height="90" fill="#c0001a" rx="2"/>
+          <rect x="53" y="32" width="26" height="68" fill="#0f0f0f" rx="2"/>
+          <rect x="91" y="52" width="26" height="48" fill="#6b7280" rx="2"/>
+          <rect x="129" y="74" width="21" height="26" fill="#9ca3af" rx="2"/>
+          <g font-size="8.5" fill="#9ca3af" text-anchor="middle">
+            <text x="28" y="112">SCI</text><text x="66" y="112">Scopus</text><text x="104" y="112">Conf.</text><text x="139" y="112">Books</text>
+          </g>
+          <g font-size="9" fill="white" text-anchor="middle" font-weight="700">
+            <text x="28" y="22">168</text><text x="66" y="44">96</text><text x="104" y="64">72</text><text x="139" y="86">18</text>
+          </g>
+        </svg>
+      </div>
+      <div class="card">
+        <div class="c-title">Funding Sources</div>
+        <div style="margin-top:8px">
+          <div class="prog-row"><div class="prog-lbl"><span>DST</span><span>₹9.8Cr</span></div><div class="prog-track"><div class="prog-fill" style="width:80%;background:#c0001a"></div></div></div>
+          <div class="prog-row"><div class="prog-lbl"><span>DRDO</span><span>₹6.4Cr</span></div><div class="prog-track"><div class="prog-fill" style="width:52%;background:#0f0f0f"></div></div></div>
+          <div class="prog-row"><div class="prog-lbl"><span>Industry</span><span>₹5.2Cr</span></div><div class="prog-track"><div class="prog-fill" style="width:42%;background:#6b7280"></div></div></div>
+          <div class="prog-row"><div class="prog-lbl"><span>AICTE</span><span>₹3.2Cr</span></div><div class="prog-track"><div class="prog-fill" style="width:26%;background:#9ca3af"></div></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="c-title">Patent Activity</div>
+        <svg width="100%" height="120" viewBox="0 0 150 120">
+          <line x1="15" y1="10" x2="15" y2="100" stroke="#e5e7eb"/><line x1="15" y1="100" x2="145" y2="100" stroke="#e5e7eb"/>
+          <rect x="22" y="55" width="18" height="45" fill="#0f0f0f" rx="2"/>
+          <rect x="52" y="40" width="18" height="60" fill="#0f0f0f" rx="2"/>
+          <rect x="82" y="22" width="18" height="78" fill="#0f0f0f" rx="2"/>
+          <rect x="112" y="10" width="18" height="90" fill="#0f0f0f" rx="2"/>
+          <rect x="25" y="72" width="12" height="28" fill="#c0001a" rx="2"/>
+          <rect x="55" y="58" width="12" height="42" fill="#c0001a" rx="2"/>
+          <rect x="85" y="44" width="12" height="56" fill="#c0001a" rx="2"/>
+          <rect x="115" y="30" width="12" height="70" fill="#c0001a" rx="2"/>
+          <g font-size="8" fill="#9ca3af" text-anchor="middle"><text x="31" y="112">2021</text><text x="61" y="112">2022</text><text x="91" y="112">2023</text><text x="121" y="112">2024</text></g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-title">Active Sponsored Research Projects</div>
+      <div class="c-sub">Externally funded projects across departments</div>
+      <table>
+        <thead><tr><th>Project Title</th><th>PI</th><th>Dept</th><th>Sponsor</th><th>Grant</th><th>Period</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>AI-driven Drug Discovery</td><td>Dr. R. Sharma</td><td>CSE</td><td>DBT</td><td>₹2.4Cr</td><td>2023–26</td><td><span class="bdg bdg-green">Active</span></td></tr>
+          <tr><td>5G mmWave Antennas</td><td>Dr. P. Verma</td><td>ECE</td><td>DRDO</td><td>₹1.8Cr</td><td>2022–25</td><td><span class="bdg bdg-green">Active</span></td></tr>
+          <tr><td>Smart Grid Optimization</td><td>Dr. S. Patel</td><td>EE</td><td>DST</td><td>₹1.6Cr</td><td>2023–26</td><td><span class="bdg bdg-green">Active</span></td></tr>
+          <tr><td>Nano-composite Materials</td><td>Dr. A. Kumar</td><td>ME</td><td>SERB</td><td>₹1.2Cr</td><td>2022–25</td><td><span class="bdg bdg-amber">Extending</span></td></tr>
+          <tr><td>Carbon Capture Systems</td><td>Dr. L. Rao</td><td>CH</td><td>Oil India</td><td>₹1.1Cr</td><td>2021–24</td><td><span class="bdg bdg-blue">Complete</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="pg-footer"><span>Office of Institutional Research · Bharat Institute of Technology</span><strong>05 / 06</strong></div>
+</div>
+
+<!-- ===== PAGE 6: APPENDIX ===== -->
+<div class="page">
+  <div class="top-stripe"></div><div class="top-stripe-thin"></div>
+  <div class="page-inner">
+    <div class="pg-header">
+      <div class="hd-brand"><div class="hd-logo">BIT</div><div class="hd-text"><h1>Bharat Institute of Technology</h1><p>Annual Institutional Report 2024–25</p></div></div>
+      <div class="hd-right"><div class="pg-title">Section 06</div><div class="pg-sub">Annexures</div></div>
+    </div>
+    <div class="sec-hd"><div class="num">06</div><div class="divider"></div><h3>Annexures & Historical Data</h3></div>
+
+    <div class="card">
+      <div class="c-title">5-Year Consolidated Comparison</div>
+      <div class="c-sub">Key metrics 2020–21 to 2024–25</div>
+      <table>
+        <thead><tr><th>Metric</th><th>2020–21</th><th>2021–22</th><th>2022–23</th><th>2023–24</th><th>2024–25</th><th>Growth</th></tr></thead>
+        <tbody>
+          <tr><td>Total Enrollment</td><td>5,840</td><td>6,012</td><td>6,248</td><td>6,562</td><td>6,842</td><td><span class="bdg bdg-green">+17.2%</span></td></tr>
+          <tr><td>Placement Rate</td><td>82.4%</td><td>85.1%</td><td>88.6%</td><td>91.6%</td><td>94.7%</td><td><span class="bdg bdg-green">+12.3pp</span></td></tr>
+          <tr><td>Avg CTC (LPA)</td><td>₹12.4</td><td>₹13.8</td><td>₹15.2</td><td>₹16.1</td><td>₹18.4</td><td><span class="bdg bdg-green">+48.4%</span></td></tr>
+          <tr><td>Research Papers</td><td>186</td><td>214</td><td>248</td><td>268</td><td>318</td><td><span class="bdg bdg-green">+71%</span></td></tr>
+          <tr><td>Research Funding</td><td>₹11.2Cr</td><td>₹14.8Cr</td><td>₹18.4Cr</td><td>₹21.2Cr</td><td>₹24.6Cr</td><td><span class="bdg bdg-green">+119%</span></td></tr>
+          <tr><td>NIRF Rank</td><td>28</td><td>26</td><td>24</td><td>23</td><td>18</td><td><span class="bdg bdg-dark">▲ 10 pos</span></td></tr>
+          <tr><td>Patents Filed</td><td>18</td><td>24</td><td>28</td><td>36</td><td>42</td><td><span class="bdg bdg-green">+133%</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="c-title">Infrastructure</div>
+        <table style="font-size:12px">
+          <thead><tr><th>Facility</th><th>Units</th><th>Usage</th></tr></thead>
+          <tbody>
+            <tr><td>Classrooms</td><td>120</td><td><span class="bdg bdg-green">94%</span></td></tr>
+            <tr><td>Labs</td><td>84</td><td><span class="bdg bdg-green">88%</span></td></tr>
+            <tr><td>Library Seats</td><td>1,200</td><td><span class="bdg bdg-blue">76%</span></td></tr>
+            <tr><td>Hostel Rooms</td><td>3,400</td><td><span class="bdg bdg-green">98%</span></td></tr>
+            <tr><td>Sports Courts</td><td>18</td><td><span class="bdg bdg-amber">62%</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div class="c-title">Data Sources</div>
+        <ul style="font-size:12px;color:#6b7280;padding-left:16px;line-height:2.1">
+          <li>MIS_Student_Data_FY2425.xlsx</li>
+          <li>Placement_Portal_Export_2425.csv</li>
+          <li>Research_Output_SCOPUS.xlsx</li>
+          <li>Finance_Budget_Grants_FY2425.pdf</li>
+          <li>Faculty_HR_Records_2425.xlsx</li>
+          <li>NIRF_Submission_2025.pdf</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="pg-footer" style="margin-top:auto"><span>Office of Institutional Research · Bharat Institute of Technology — End of Report</span><strong>06 / 06</strong></div>
+</div>
+
+</div>
+</body>
+</html>

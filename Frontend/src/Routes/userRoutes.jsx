@@ -21,7 +21,13 @@ import ReportComponent from '../components/Charts/ReportComponent';
 import DepartmentManagementSuperAdmin from '../components/DepartmentManagementSuperAdmin';
 import UserManagementSuperAdmin from '../components/UserManagementSuperAdmin';
 import AnalyticsPage from '../components/AnalyticsPage';
-import result from '../Data/data1';
+import FacultyReports from '../components/FacultyReports';
+import Student from '../pages/Student/Student';
+import StudentDashboard from '../components/StudentDashboard';
+import StudentReports from '../components/StudentReports';
+import StudentUpload from '../components/StudentUpload';
+import StudentManagement from '../components/StudentManagement';
+import FullPageEditor from '../components/FullPageEditor';
 // import UserManagementPage from '../components/UserManagementPage';
 
 // Import your user-related pages/components
@@ -33,6 +39,7 @@ const UserRoutes = () => (
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/report" element={<ReportComponent />} />
+        <Route path="/institute-admin/report/edit/:id" element={<FullPageEditor />} />
         <Route element={<Protected_route />}>
               <Route path="/admin" element={<SuperAdmin />}>
               <Route index element={<Navigate to="dashboard" />} />
@@ -47,14 +54,23 @@ const UserRoutes = () => (
               <Route path="dashboard" element={<InstituteDashboard />} />
               <Route path="department" element={<DeptRegPage />} />
               <Route path="faculty" element={<FacultyRegPage />} />
+              <Route path="students" element={<StudentManagement />} />
               <Route path="project" element={<ProjectManagementPage />} />
               <Route path="report" element={<ReportManagement />} />
               <Route path="analyse" element={<AnalyticsPage/>} />
+             
             </Route>
             <Route path="/faculty" element={<FacultyLayout />}>
               <Route index element={<Navigate to="dashboard" />} />
               <Route path="dashboard" element={<FacultyDashboard />} />
               <Route path="upload-data" element={<DataUploadPage />} />
+              <Route path="reports" element={<FacultyReports />} />
+            </Route>
+            <Route path="/student" element={<Student />}>
+              <Route index element={<Navigate to="dashboard" />} />
+              <Route path="dashboard" element={<StudentDashboard />} />
+              <Route path="reports" element={<StudentReports />} />
+              <Route path="upload" element={<StudentUpload />} />
             </Route>   
         </Route>
         <Route path="*" element={<Login/>} />

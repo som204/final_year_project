@@ -33,6 +33,7 @@ class UserResponse(BaseModel):
     institute_id: Optional[int] = None
     department_id: Optional[int] = None
     institute_name: Optional[str] = None
+    is_approved: Optional[bool] = None
     model_config = {
         "from_attributes": True
     }
