@@ -11,6 +11,8 @@ from Models import Base
 from Models.association_models import report_data_association
 from datetime import timezone
 
+from Models.comment_models import ReportComment
+
 if TYPE_CHECKING:
     from .user_models import User
     from .dataUpload_models import DataUploaded
@@ -27,17 +29,27 @@ class Report(Base):
     file_name: Mapped[str] = mapped_column(String(255), nullable=False)
     file_path: Mapped[str] = mapped_column(Text, nullable=False)
     description: Mapped[str] = mapped_column(Text, nullable=False)
-    created_at: Mapped[datetime] = mapped_column(
-    DateTime(timezone=True), nullable=False,default=lambda: datetime.now(timezone.utc)
-    )
-    
-    project_id: Mapped[int] = mapped_column(ForeignKey("projects.id"), index=True)
-    
+    share: Mapped[str] = mapped_column(String(50), nullable=False, default="private")
 
-    
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        nullable=False,
+        default=lambda: datetime.now(timezone.utc)
+    )
+
+    project_id: Mapped[int] = mapped_column(
+        ForeignKey("projects.id"),
+        index=True
+    )
+
     projects: Mapped["Project"] = relationship(back_populates="reports")
-    
+
     source_files: Mapped[List["DataUploaded"]] = relationship(
         secondary=report_data_association,
         back_populates="generated_reports"
+    )
+
+    comments: Mapped[List["ReportComment"]] = relationship(
+        back_populates="report",
+        cascade="all, delete-orphan"
     )

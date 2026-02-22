@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Template 2 — Emerald Academic | Institute Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:14px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:'DM Sans',sans-serif;background:#e8ede9;color:#1c2b1e}
+
+:root{
+  --green:#1b4332;
+  --green2:#2d6a4f;
+  --green3:#40916c;
+  --mint:#b7e4c7;
+  --lime:#d8f3dc;
+  --cream:#f9fdf9;
+  --muted:#52796f;
+  --muted2:#95a89e;
+  --border:#cde0d2;
+  --card:#ffffff;
+  --red:#c0392b;
+  --amber:#d4a017;
+  --blue:#155e75;
+  --shadow:0 2px 18px rgba(27,67,50,0.09);
+}
+
+.pages{display:flex;flex-direction:column;align-items:center;gap:12px;padding:16px}
+.page{
+  width:210mm;min-height:297mm;
+  background:var(--cream);
+  display:flex;flex-direction:column;
+  padding:15mm 18mm;
+  position:relative;
+  box-shadow:var(--shadow);
+}
+
+/* Decorative side accent */
+.page::before{content:'';position:absolute;top:0;left:0;width:7px;height:100%;background:linear-gradient(180deg,var(--green),var(--green3),var(--mint))}
+
+/* ===== HEADER ===== */
+.page-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.inst-brand{display:flex;align-items:center;gap:14px}
+.inst-emblem{width:58px;height:58px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;color:var(--mint);font-family:'Merriweather',serif;font-size:18px;font-weight:700;letter-spacing:1px;border:3px solid var(--green3)}
+.inst-name h1{font-family:'Merriweather',serif;font-size:16px;color:var(--green);line-height:1.3}
+.inst-name p{font-size:11.5px;color:var(--muted);margin-top:3px}
+.header-right{text-align:right}
+.header-right .report-label{font-size:12px;color:var(--muted);display:block}
+.header-right .section-label{font-family:'Merriweather',serif;font-size:14px;color:var(--green);font-weight:700}
+
+/* ===== COVER ===== */
+.cover-band{background:var(--green);border-radius:10px;padding:28px 32px;color:white;margin-bottom:22px;position:relative;overflow:hidden}
+.cover-band::after{content:'';position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;background:rgba(183,228,199,0.12);border-radius:50%}
+.cover-band .year-tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mint);margin-bottom:10px}
+.cover-band h2{font-family:'Merriweather',serif;font-size:26px;color:white;line-height:1.3;margin-bottom:10px}
+.cover-band p{font-size:13px;color:rgba(255,255,255,0.75);max-width:500px;line-height:1.6}
+.cover-band .meta-chips{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.chip{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;font-size:11px;color:white}
+
+/* ===== STAT CARDS ===== */
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;box-shadow:0 1px 6px rgba(27,67,50,0.07)}
+.stat-icon{font-size:20px;margin-bottom:6px}
+.stat-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.6px}
+.stat-value{font-size:21px;font-weight:700;color:var(--green);margin-top:4px}
+.stat-change{font-size:11px;margin-top:4px}
+.up{color:#2d6a4f;font-weight:600}
+.dn{color:var(--red);font-weight:600}
+
+/* ===== GRID ===== */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:16px}
+
+/* ===== CARD ===== */
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:14px}
+.card-head{font-family:'Merriweather',serif;font-size:14px;color:var(--green);margin-bottom:3px}
+.card-sub{font-size:11.5px;color:var(--muted);margin-bottom:11px}
+
+/* ===== SECTION TITLE ===== */
+.sec-title{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.sec-num{width:28px;height:28px;background:var(--green);color:white;border-radius:6px;font-family:'Merriweather',serif;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sec-title h3{font-family:'Merriweather',serif;font-size:17px;color:var(--green)}
+.sec-rule{flex:1;height:1px;background:var(--border)}
+
+/* ===== TABLE ===== */
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+thead tr{background:var(--green)}
+th{padding:9px 10px;color:white;font-weight:600;font-size:12px;text-align:left}
+td{padding:9px 10px;border-bottom:1px solid var(--border);color:#1c2b1e;vertical-align:middle}
+tbody tr:nth-child(even){background:var(--lime)}
+tbody tr:last-child td{border-bottom:none}
+
+/* ===== BADGE ===== */
+.badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600}
+.badge-green{background:#bbf7d0;color:#14532d}
+.badge-amber{background:#fef9c3;color:#713f12}
+.badge-red{background:#fecaca;color:#7f1d1d}
+.badge-blue{background:#dbeafe;color:#1e3a8a}
+.badge-teal{background:#ccfbf1;color:#134e4a}
+
+/* ===== PROGRESS ===== */
+.prog-row{margin-bottom:10px}
+.prog-lbl{display:flex;justify-content:space-between;font-size:12px;color:var(--green);font-weight:500;margin-bottom:4px}
+.prog-track{height:8px;border-radius:4px;background:var(--border)}
+.prog-fill{height:100%;border-radius:4px}
+
+/* ===== SVG ===== */
+svg text{font-family:'DM Sans',sans-serif}
+
+/* ===== QUOTE / HIGHLIGHT ===== */
+.pull-quote{border-left:4px solid var(--green3);background:var(--lime);padding:12px 16px;border-radius:0 8px 8px 0;font-size:13px;color:var(--green);font-style:italic;margin:10px 0;line-height:1.6}
+
+/* ===== LEGEND ===== */
+.legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.leg-item{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--muted)}
+.leg-dot{width:10px;height:10px;border-radius:50%}
+.leg-sq{width:14px;height:8px;border-radius:2px}
+
+/* ===== TOC ===== */
+.toc-entry{display:flex;padding:11px 0;border-bottom:1px solid var(--border);align-items:center;gap:12px;font-size:13px}
+.toc-entry:last-child{border-bottom:none}
+.toc-num{font-family:'Merriweather',serif;font-size:12px;font-weight:700;color:var(--green);min-width:22px}
+.toc-label{flex:1;color:var(--green)}
+.toc-desc{font-size:11px;color:var(--muted);margin-top:2px}
+.toc-pg{font-size:12px;color:var(--muted2);min-width:30px;text-align:right;font-weight:600}
+
+/* ===== FOOTER ===== */
+.page-footer{margin-top:auto;padding-top:12px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted2)}
+
+/* ===== PRINT ===== */
+@page{size:A4;margin:0}
+@media print{
+  body{background:white}
+  .pages{padding:0;gap:0}
+  .page{box-shadow:none;page-break-after:always;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="pages">
+
+<!-- ====== PAGE 1: COVER ====== -->
+<div class="page">
+  <div class="page-header">
+    <div class="inst-brand">
+      <div class="inst-emblem">SU</div>
+      <div class="inst-name">
+        <h1>Sagar University of Technology</h1>
+        <p>Autonomous • Grade 'A+' (NAAC) • Est. 1978 • Bhopal, MP</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <span class="report-label">Institutional Report</span>
+      <span class="section-label">AY 2024–25</span>
+    </div>
+  </div>
+
+  <div class="cover-band">
+    <div class="year-tag">Academic Year 2024 – 2025</div>
+    <h2>Annual Institutional Performance<br/>& Outcome Report</h2>
+    <p>Prepared by the Office of Institutional Research to present a transparent, data-driven assessment of academic, research, placement, and infrastructure outcomes for all stakeholders.</p>
+    <div class="meta-chips">
+      <span class="chip">12 Departments</span>
+      <span class="chip">6,842 Students</span>
+      <span class="chip">412 Faculty</span>
+      <span class="chip">NIRF #18</span>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-icon">🎓</div>
+      <div class="stat-label">Graduates 2024–25</div>
+      <div class="stat-value">1,642</div>
+      <div class="stat-change up">↑ 4.2% vs prior year</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">💼</div>
+      <div class="stat-label">Placement Rate</div>
+      <div class="stat-value">94.7%</div>
+      <div class="stat-change up">↑ 3.1pp vs prior year</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🔬</div>
+      <div class="stat-label">Publications</div>
+      <div class="stat-value">318</div>
+      <div class="stat-change up">↑ 18.6% vs prior year</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🏆</div>
+      <div class="stat-label">NIRF Rank</div>
+      <div class="stat-value">#18</div>
+      <div class="stat-change up">↑ 5 positions</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-head">Executive Summary</div>
+      <div class="card-sub">Highlights of Academic Year 2024–25</div>
+      <p style="font-size:13px;line-height:1.7;color:#1c2b1e;margin-bottom:10px">SUT recorded exemplary progress across all institutional parameters in AY 2024–25. The placement rate reached an all-time high of 94.7%, with average CTC improving to ₹18.4 LPA. Research output grew by 18.6%, with 318 publications in reputed journals including 168 SCI-indexed papers.</p>
+      <div class="pull-quote">NIRF 2025 ranked SUT at #18, reflecting sustained improvement across Teaching-Learning, Research, Graduation Outcomes, Outreach, and Perception parameters.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">Enrollment Overview</div>
+      <div class="card-sub">Student distribution across programmes</div>
+      <!-- Stacked bar chart: UG / PG / PhD -->
+      <svg width="100%" height="180" viewBox="0 0 260 180">
+        <line x1="30" y1="10" x2="30" y2="148" stroke="#cde0d2"/>
+        <line x1="30" y1="148" x2="255" y2="148" stroke="#cde0d2"/>
+        <g font-size="9" fill="#95a89e" text-anchor="end">
+          <text x="26" y="151">0</text>
+          <text x="26" y="111">1500</text>
+          <text x="26" y="71">3000</text>
+          <text x="26" y="31">4500</text>
+        </g>
+        <!-- CSE: UG=480, PG=160, PhD=120 — normalized to height 138 -->
+        <!-- CSE UG -->
+        <rect x="38" y="81" width="22" height="67" fill="#1b4332" rx="2"/>
+        <rect x="38" y="58" width="22" height="23" fill="#2d6a4f" rx="2"/>
+        <rect x="38" y="41" width="22" height="17" fill="#40916c" rx="2"/>
+        <!-- ECE -->
+        <rect x="72" y="90" width="22" height="58" fill="#1b4332" rx="2"/>
+        <rect x="72" y="69" width="22" height="21" fill="#2d6a4f" rx="2"/>
+        <rect x="72" y="55" width="22" height="14" fill="#40916c" rx="2"/>
+        <!-- ME -->
+        <rect x="106" y="95" width="22" height="53" fill="#1b4332" rx="2"/>
+        <rect x="106" y="78" width="22" height="17" fill="#2d6a4f" rx="2"/>
+        <rect x="106" y="67" width="22" height="11" fill="#40916c" rx="2"/>
+        <!-- CE -->
+        <rect x="140" y="99" width="22" height="49" fill="#1b4332" rx="2"/>
+        <rect x="140" y="83" width="22" height="16" fill="#2d6a4f" rx="2"/>
+        <rect x="140" y="74" width="22" height="9" fill="#40916c" rx="2"/>
+        <!-- EE -->
+        <rect x="174" y="106" width="22" height="42" fill="#1b4332" rx="2"/>
+        <rect x="174" y="92" width="22" height="14" fill="#2d6a4f" rx="2"/>
+        <rect x="174" y="84" width="22" height="8" fill="#40916c" rx="2"/>
+        <!-- IT -->
+        <rect x="208" y="111" width="22" height="37" fill="#1b4332" rx="2"/>
+        <rect x="208" y="100" width="22" height="11" fill="#2d6a4f" rx="2"/>
+        <rect x="208" y="94" width="22" height="6" fill="#40916c" rx="2"/>
+        <g font-size="8.5" fill="#52796f" text-anchor="middle">
+          <text x="49" y="163">CSE</text><text x="83" y="163">ECE</text><text x="117" y="163">ME</text>
+          <text x="151" y="163">CE</text><text x="185" y="163">EE</text><text x="219" y="163">IT</text>
+        </g>
+      </svg>
+      <div class="legend">
+        <div class="leg-item"><div class="leg-sq" style="background:#1b4332"></div>UG</div>
+        <div class="leg-item"><div class="leg-sq" style="background:#2d6a4f"></div>PG</div>
+        <div class="leg-item"><div class="leg-sq" style="background:#40916c"></div>PhD</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Office of Institutional Research — Sagar University of Technology</span>
+    <span>Page 1 of 6</span>
+  </div>
+</div>
+
+<!-- ====== PAGE 2: TOC + KPIs ====== -->
+<div class="page">
+  <div class="page-header">
+    <div class="inst-brand"><div class="inst-emblem">SU</div><div class="inst-name"><h1>Sagar University of Technology</h1><p>Annual Institutional Report 2024–25</p></div></div>
+    <div class="header-right"><span class="report-label">Navigation</span><span class="section-label">Contents</span></div>
+  </div>
+
+  <div class="sec-title"><div class="sec-num">§</div><h3>Table of Contents</h3><div class="sec-rule"></div></div>
+
+  <div class="card" style="margin-bottom:20px">
+    <div class="toc-entry"><div class="toc-num">01</div><div><div class="toc-label">Cover & Executive Summary</div><div class="toc-desc">Overview, KPI snapshot, enrollment charts</div></div><div class="toc-pg">1</div></div>
+    <div class="toc-entry"><div class="toc-num">02</div><div><div class="toc-label">Table of Contents & Key Performance Indicators</div><div class="toc-desc">Report guide and complete KPI dashboard</div></div><div class="toc-pg">2</div></div>
+    <div class="toc-entry"><div class="toc-num">03</div><div><div class="toc-label">Academic Performance Analysis</div><div class="toc-desc">SGPA trends, pass rates, dept-wise academic table</div></div><div class="toc-pg">3</div></div>
+    <div class="toc-entry"><div class="toc-num">04</div><div><div class="toc-label">Placement & Career Outcomes</div><div class="toc-desc">Sector distribution, CTC analysis, top recruiters table</div></div><div class="toc-pg">4</div></div>
+    <div class="toc-entry"><div class="toc-num">05</div><div><div class="toc-label">Research, Innovation & Faculty Development</div><div class="toc-desc">Publications, funding, patents, milestones</div></div><div class="toc-pg">5</div></div>
+    <div class="toc-entry"><div class="toc-num">06</div><div><div class="toc-label">Annexures & 5-Year Comparative Data</div><div class="toc-desc">Historical trends, infrastructure, data sources</div></div><div class="toc-pg">6</div></div>
+  </div>
+
+  <div class="sec-title"><div class="sec-num">KPI</div><h3>Key Performance Indicators Dashboard</h3><div class="sec-rule"></div></div>
+
+  <div class="stat-row">
+    <div class="stat-card"><div class="stat-label">Faculty w/ PhD</div><div class="stat-value">78%</div><div class="stat-change up">↑ 3pp</div></div>
+    <div class="stat-card"><div class="stat-label">Patents Filed</div><div class="stat-value">42</div><div class="stat-change up">↑ 6 YoY</div></div>
+    <div class="stat-card"><div class="stat-label">Research Grants</div><div class="stat-value">₹24.6Cr</div><div class="stat-change up">↑ 16%</div></div>
+    <div class="stat-card"><div class="stat-label">Avg SGPA (UG)</div><div class="stat-value">8.24</div><div class="stat-change up">↑ 0.18</div></div>
+  </div>
+  <div class="stat-row">
+    <div class="stat-card"><div class="stat-label">Highest CTC</div><div class="stat-value">₹1.2Cr</div><div class="stat-change">International</div></div>
+    <div class="stat-card"><div class="stat-label">Companies Visited</div><div class="stat-value">284</div><div class="stat-change up">↑ 42 new</div></div>
+    <div class="stat-card"><div class="stat-label">PhD Enrolled</div><div class="stat-value">684</div><div class="stat-change up">112 graduated</div></div>
+    <div class="stat-card"><div class="stat-label">SCI Publications</div><div class="stat-value">168</div><div class="stat-change up">↑ 24%</div></div>
+  </div>
+
+  <!-- Trend line chart -->
+  <div class="card">
+    <div class="card-head">5-Year Placement Rate Trend</div>
+    <div class="card-sub">Percentage of eligible students placed — 2020–2025</div>
+    <svg width="100%" height="110" viewBox="0 0 540 110">
+      <defs>
+        <linearGradient id="gr1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1b4332" stop-opacity="0.25"/>
+          <stop offset="100%" stop-color="#1b4332" stop-opacity="0.02"/>
+        </linearGradient>
+      </defs>
+      <line x1="40" y1="10" x2="40" y2="90" stroke="#cde0d2"/><line x1="40" y1="90" x2="530" y2="90" stroke="#cde0d2"/>
+      <g font-size="9" fill="#95a89e"><text x="108" y="105">2020-21</text><text x="218" y="105">2021-22</text><text x="328" y="105">2022-23</text><text x="428" y="105">2023-24</text><text x="516" y="105">2024-25</text></g>
+      <g font-size="9" fill="#95a89e" text-anchor="end"><text x="36" y="93">80%</text><text x="36" y="66">88%</text><text x="36" y="40">94%</text></g>
+      <!-- Area -->
+      <polygon points="110,70 220,60 330,46 430,38 530,20 530,90 110,90" fill="url(#gr1)"/>
+      <!-- Line -->
+      <polyline points="110,70 220,60 330,46 430,38 530,20" fill="none" stroke="#1b4332" stroke-width="2.5" stroke-linejoin="round"/>
+      <g fill="#1b4332"><circle cx="110" cy="70" r="4"/><circle cx="220" cy="60" r="4"/><circle cx="330" cy="46" r="4"/><circle cx="430" cy="38" r="4"/><circle cx="530" cy="20" r="5" stroke="white" stroke-width="2"/></g>
+      <g font-size="9" fill="#1b4332" font-weight="700"><text x="110" y="62">82.4%</text><text x="220" y="52">85.1%</text><text x="330" y="38">88.6%</text><text x="430" y="30">91.6%</text><text x="515" y="14">94.7%</text></g>
+    </svg>
+  </div>
+
+  <div class="page-footer">
+    <span>Office of Institutional Research — Sagar University of Technology</span>
+    <span>Page 2 of 6</span>
+  </div>
+</div>
+
+<!-- ====== PAGE 3: ACADEMIC PERFORMANCE ====== -->
+<div class="page">
+  <div class="page-header">
+    <div class="inst-brand"><div class="inst-emblem">SU</div><div class="inst-name"><h1>Sagar University of Technology</h1><p>Annual Institutional Report 2024–25</p></div></div>
+    <div class="header-right"><span class="report-label">Section 03</span><span class="section-label">Academic Performance</span></div>
+  </div>
+
+  <div class="sec-title"><div class="sec-num">03</div><h3>Academic Performance Analysis</h3><div class="sec-rule"></div></div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-head">SGPA Trend (2022–25)</div>
+      <div class="card-sub">Average SGPA per department over 3 years</div>
+      <svg width="100%" height="170" viewBox="0 0 270 170">
+        <line x1="30" y1="10" x2="30" y2="145" stroke="#cde0d2"/><line x1="30" y1="145" x2="265" y2="145" stroke="#cde0d2"/>
+        <g font-size="9" fill="#95a89e" text-anchor="end"><text x="26" y="148">7</text><text x="26" y="103">8</text><text x="26" y="58">9</text><text x="26" y="14">10</text></g>
+        <!-- CSE -->
+        <polyline points="55,52 130,44 205,36" fill="none" stroke="#1b4332" stroke-width="2" stroke-linejoin="round"/>
+        <!-- ECE -->
+        <polyline points="55,68 130,58 205,52" fill="none" stroke="#40916c" stroke-width="2" stroke-dasharray="5 3" stroke-linejoin="round"/>
+        <!-- ME -->
+        <polyline points="55,92 130,84 205,78" fill="none" stroke="#b7e4c7" stroke-width="2" stroke-dasharray="3 3" stroke-linejoin="round"/>
+        <!-- Dots CSE -->
+        <g fill="#1b4332"><circle cx="55" cy="52" r="3"/><circle cx="130" cy="44" r="3"/><circle cx="205" cy="36" r="4" stroke="white" stroke-width="1.5"/></g>
+        <g fill="#40916c"><circle cx="55" cy="68" r="3"/><circle cx="130" cy="58" r="3"/><circle cx="205" cy="52" r="4" stroke="white" stroke-width="1.5"/></g>
+        <g fill="#95a89e"><circle cx="55" cy="92" r="3"/><circle cx="130" cy="84" r="3"/><circle cx="205" cy="78" r="4" stroke="white" stroke-width="1.5"/></g>
+        <g font-size="9" fill="#95a89e" text-anchor="middle"><text x="55" y="162">2022-23</text><text x="130" y="162">2023-24</text><text x="205" y="162">2024-25</text></g>
+      </svg>
+      <div class="legend">
+        <div class="leg-item"><div class="leg-dot" style="background:#1b4332"></div>CSE</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#40916c"></div>ECE</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#b7e4c7"></div>ME</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">Course Pass Rate</div>
+      <div class="card-sub">% of students passing all subjects, by dept.</div>
+      <div style="margin-top:10px">
+        <div class="prog-row"><div class="prog-lbl"><span>CSE</span><span>96.4%</span></div><div class="prog-track"><div class="prog-fill" style="width:96.4%;background:#1b4332"></div></div></div>
+        <div class="prog-row"><div class="prog-lbl"><span>IT</span><span>95.0%</span></div><div class="prog-track"><div class="prog-fill" style="width:95%;background:#1b4332"></div></div></div>
+        <div class="prog-row"><div class="prog-lbl"><span>ECE</span><span>93.1%</span></div><div class="prog-track"><div class="prog-fill" style="width:93.1%;background:#2d6a4f"></div></div></div>
+        <div class="prog-row"><div class="prog-lbl"><span>EE</span><span>91.2%</span></div><div class="prog-track"><div class="prog-fill" style="width:91.2%;background:#2d6a4f"></div></div></div>
+        <div class="prog-row"><div class="prog-lbl"><span>ME</span><span>89.7%</span></div><div class="prog-track"><div class="prog-fill" style="width:89.7%;background:#40916c"></div></div></div>
+        <div class="prog-row"><div class="prog-lbl"><span>CE</span><span>87.3%</span></div><div class="prog-track"><div class="prog-fill" style="width:87.3%;background:#40916c"></div></div></div>
+        <div class="prog-row"><div class="prog-lbl"><span>Chemical</span><span>84.2%</span></div><div class="prog-track"><div class="prog-fill" style="width:84.2%;background:#95a89e"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">Department-Wise Academic Summary — AY 2024–25</div>
+    <div class="card-sub">Comprehensive academic data for all departments</div>
+    <table>
+      <thead><tr><th>Department</th><th>UG</th><th>PG</th><th>PhD</th><th>Avg SGPA</th><th>Pass %</th><th>Backlog %</th><th>Scholarships</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td>Computer Science</td><td>480</td><td>160</td><td>120</td><td>8.74</td><td>96.4%</td><td>3.2%</td><td>124</td><td><span class="badge badge-green">A+</span></td></tr>
+        <tr><td>Electronics & Comm</td><td>420</td><td>148</td><td>98</td><td>8.52</td><td>93.1%</td><td>4.8%</td><td>108</td><td><span class="badge badge-green">A+</span></td></tr>
+        <tr><td>Information Tech</td><td>280</td><td>80</td><td>44</td><td>8.62</td><td>95.0%</td><td>3.8%</td><td>62</td><td><span class="badge badge-green">A+</span></td></tr>
+        <tr><td>Electrical Engg</td><td>300</td><td>100</td><td>58</td><td>8.34</td><td>91.2%</td><td>5.2%</td><td>66</td><td><span class="badge badge-teal">A</span></td></tr>
+        <tr><td>Mechanical Engg</td><td>380</td><td>120</td><td>76</td><td>8.21</td><td>89.7%</td><td>6.1%</td><td>84</td><td><span class="badge badge-teal">A</span></td></tr>
+        <tr><td>Civil Engg</td><td>360</td><td>110</td><td>64</td><td>8.05</td><td>87.3%</td><td>7.4%</td><td>72</td><td><span class="badge badge-blue">B+</span></td></tr>
+        <tr><td>Chemical Engg</td><td>240</td><td>72</td><td>38</td><td>7.94</td><td>84.2%</td><td>8.2%</td><td>44</td><td><span class="badge badge-amber">B</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="page-footer">
+    <span>Office of Institutional Research — Sagar University of Technology</span>
+    <span>Page 3 of 6</span>
+  </div>
+</div>
+
+<!-- ====== PAGE 4: PLACEMENTS ====== -->
+<div class="page">
+  <div class="page-header">
+    <div class="inst-brand"><div class="inst-emblem">SU</div><div class="inst-name"><h1>Sagar University of Technology</h1><p>Annual Institutional Report 2024–25</p></div></div>
+    <div class="header-right"><span class="report-label">Section 04</span><span class="section-label">Placement Outcomes</span></div>
+  </div>
+
+  <div class="sec-title"><div class="sec-num">04</div><h3>Placement & Career Outcomes</h3><div class="sec-rule"></div></div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-head">Sector-Wise Placement</div>
+      <div class="card-sub">Industry distribution of placed students</div>
+      <!-- Pie chart via SVG sectors -->
+      <svg width="100%" height="190" viewBox="0 0 270 190">
+        <!-- Donut: radius 60, cx=100, cy=95 -->
+        <circle cx="100" cy="95" r="55" fill="none" stroke="#e8ede9" stroke-width="26"/>
+        <!-- IT: 38% = 360*0.38 = 136.8° -->
+        <circle cx="100" cy="95" r="55" fill="none" stroke="#1b4332" stroke-width="26"
+          stroke-dasharray="131.1 214.2" stroke-dashoffset="0" transform="rotate(-90 100 95)"/>
+        <!-- Finance: 22% = 79.2° -->
+        <circle cx="100" cy="95" r="55" fill="none" stroke="#40916c" stroke-width="26"
+          stroke-dasharray="75.9 269.4" stroke-dashoffset="-131.1" transform="rotate(-90 100 95)"/>
+        <!-- Core: 20% -->
+        <circle cx="100" cy="95" r="55" fill="none" stroke="#b7e4c7" stroke-width="26"
+          stroke-dasharray="69 276.3" stroke-dashoffset="-207" transform="rotate(-90 100 95)"/>
+        <!-- Consult: 12% -->
+        <circle cx="100" cy="95" r="55" fill="none" stroke="#d4a017" stroke-width="26"
+          stroke-dasharray="41.4 303.9" stroke-dashoffset="-276" transform="rotate(-90 100 95)"/>
+        <!-- Other: 8% -->
+        <circle cx="100" cy="95" r="55" fill="none" stroke="#95a89e" stroke-width="26"
+          stroke-dasharray="27.6 317.7" stroke-dashoffset="-317.4" transform="rotate(-90 100 95)"/>
+        <text x="100" y="90" text-anchor="middle" font-size="15" font-weight="700" fill="#1b4332">94.7%</text>
+        <text x="100" y="106" text-anchor="middle" font-size="9" fill="#52796f">Placed</text>
+        <!-- Legend at right -->
+        <g font-size="10" fill="#1c2b1e">
+          <rect x="165" y="40" width="10" height="10" fill="#1b4332" rx="2"/>
+          <text x="179" y="50">IT (38%)</text>
+          <rect x="165" y="62" width="10" height="10" fill="#40916c" rx="2"/>
+          <text x="179" y="72">Finance (22%)</text>
+          <rect x="165" y="84" width="10" height="10" fill="#b7e4c7" rx="2"/>
+          <text x="179" y="94">Core (20%)</text>
+          <rect x="165" y="106" width="10" height="10" fill="#d4a017" rx="2"/>
+          <text x="179" y="116">Consult (12%)</text>
+          <rect x="165" y="128" width="10" height="10" fill="#95a89e" rx="2"/>
+          <text x="179" y="138">Other (8%)</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="card">
+      <div class="card-head">CTC Distribution</div>
+      <div class="card-sub">Students per salary bracket (LPA)</div>
+      <svg width="100%" height="190" viewBox="0 0 240 190">
+        <line x1="30" y1="10" x2="30" y2="158" stroke="#cde0d2"/><line x1="30" y1="158" x2="235" y2="158" stroke="#cde0d2"/>
+        <g font-size="9" fill="#95a89e" text-anchor="end"><text x="26" y="161">0</text><text x="26" y="121">400</text><text x="26" y="81">800</text><text x="26" y="41">1200</text></g>
+        <rect x="38" y="115" width="28" height="43" fill="#2d6a4f" rx="3"/>
+        <rect x="80" y="67" width="28" height="91" fill="#1b4332" rx="3"/>
+        <rect x="122" y="46" width="28" height="112" fill="#1b4332" rx="3"/>
+        <rect x="164" y="85" width="28" height="73" fill="#40916c" rx="3"/>
+        <rect x="206" y="126" width="28" height="32" fill="#b7e4c7" rx="3"/>
+        <g font-size="9" fill="#95a89e" text-anchor="middle">
+          <text x="52" y="172">&lt;8</text><text x="94" y="172">8–12</text><text x="136" y="172">12–20</text><text x="178" y="172">20–40</text><text x="220" y="172">&gt;40</text>
+        </g>
+        <g font-size="9" fill="white" text-anchor="middle" font-weight="700">
+          <text x="52" y="140">312</text><text x="94" y="92">784</text><text x="136" y="70">1,124</text><text x="178" y="110">648</text><text x="220" y="145">186</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">Top Recruiters — AY 2024–25</div>
+    <div class="card-sub">Companies by total offers, CTC, and departments covered</div>
+    <table>
+      <thead><tr><th>#</th><th>Company</th><th>Sector</th><th>Offers</th><th>Avg CTC</th><th>Max CTC</th><th>Depts</th><th>Category</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><strong>Google</strong></td><td>Technology</td><td>48</td><td>₹42 LPA</td><td>₹1.2 Cr</td><td>CSE, IT</td><td><span class="badge badge-green">Dream</span></td></tr>
+        <tr><td>2</td><td><strong>Microsoft</strong></td><td>Technology</td><td>62</td><td>₹35 LPA</td><td>₹80 LPA</td><td>CSE, ECE, IT</td><td><span class="badge badge-green">Dream</span></td></tr>
+        <tr><td>3</td><td><strong>Amazon</strong></td><td>E-Commerce</td><td>74</td><td>₹28 LPA</td><td>₹65 LPA</td><td>CSE, ECE</td><td><span class="badge badge-teal">PPO</span></td></tr>
+        <tr><td>4</td><td><strong>Goldman Sachs</strong></td><td>Finance</td><td>38</td><td>₹24 LPA</td><td>₹48 LPA</td><td>All</td><td><span class="badge badge-teal">PPO</span></td></tr>
+        <tr><td>5</td><td><strong>TCS</strong></td><td>Consulting</td><td>186</td><td>₹7 LPA</td><td>₹12 LPA</td><td>All</td><td><span class="badge badge-amber">Mass</span></td></tr>
+        <tr><td>6</td><td><strong>L&T</strong></td><td>Core Engg</td><td>52</td><td>₹9.5 LPA</td><td>₹16 LPA</td><td>CE, ME, EE</td><td><span class="badge badge-blue">Core</span></td></tr>
+        <tr><td>7</td><td><strong>McKinsey</strong></td><td>Consulting</td><td>18</td><td>₹38 LPA</td><td>₹60 LPA</td><td>CSE, ECE</td><td><span class="badge badge-green">Dream</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="page-footer">
+    <span>Office of Institutional Research — Sagar University of Technology</span>
+    <span>Page 4 of 6</span>
+  </div>
+</div>
+
+<!-- ====== PAGE 5: RESEARCH ====== -->
+<div class="page">
+  <div class="page-header">
+    <div class="inst-brand"><div class="inst-emblem">SU</div><div class="inst-name"><h1>Sagar University of Technology</h1><p>Annual Institutional Report 2024–25</p></div></div>
+    <div class="header-right"><span class="report-label">Section 05</span><span class="section-label">Research & Innovation</span></div>
+  </div>
+
+  <div class="sec-title"><div class="sec-num">05</div><h3>Research, Innovation & Faculty Development</h3><div class="sec-rule"></div></div>
+
+  <div class="three-col">
+    <div class="card">
+      <div class="card-head">Publications by Type</div>
+      <svg width="100%" height="120" viewBox="0 0 150 120">
+        <rect x="20" y="10" width="25" height="90" fill="#1b4332" rx="3"/><text x="32" y="108" text-anchor="middle" font-size="8" fill="#52796f">SCI</text><text x="32" y="22" text-anchor="middle" font-size="9" fill="white" font-weight="700">168</text>
+        <rect x="57" y="32" width="25" height="68" fill="#40916c" rx="3"/><text x="69" y="108" text-anchor="middle" font-size="8" fill="#52796f">Scopus</text><text x="69" y="44" text-anchor="middle" font-size="9" fill="white" font-weight="700">96</text>
+        <rect x="94" y="52" width="25" height="48" fill="#b7e4c7" rx="3"/><text x="106" y="108" text-anchor="middle" font-size="8" fill="#52796f">Conf.</text><text x="106" y="64" text-anchor="middle" font-size="9" fill="#1b4332" font-weight="700">72</text>
+        <rect x="131" y="77" width="25" height="23" fill="#d4a017" rx="3"/><text x="143" y="108" text-anchor="middle" font-size="8" fill="#52796f">Books</text><text x="143" y="89" text-anchor="middle" font-size="9" fill="white" font-weight="700">18</text>
+      </svg>
+    </div>
+    <div class="card">
+      <div class="card-head">Funding Sources</div>
+      <div style="margin-top:8px">
+        <div class="prog-row"><div class="prog-lbl"><span>DST</span><span>₹9.8Cr</span></div><div class="prog-track"><div class="prog-fill" style="width:80%;background:#1b4332"></div></div></div>
+        <div class="prog-row"><div class="prog-lbl"><span>DRDO</span><span>₹6.4Cr</span></div><div class="prog-track"><div class="prog-fill" style="width:52%;background:#2d6a4f"></div></div></div>
+        <div class="prog-row"><div class="prog-lbl"><span>Industry</span><span>₹5.2Cr</span></div><div class="prog-track"><div class="prog-fill" style="width:42%;background:#40916c"></div></div></div>
+        <div class="prog-row"><div class="prog-lbl"><span>AICTE</span><span>₹3.2Cr</span></div><div class="prog-track"><div class="prog-fill" style="width:26%;background:#95a89e"></div></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">Patent Activity</div>
+      <svg width="100%" height="120" viewBox="0 0 150 120">
+        <line x1="15" y1="10" x2="15" y2="100" stroke="#cde0d2"/><line x1="15" y1="100" x2="145" y2="100" stroke="#cde0d2"/>
+        <rect x="22" y="55" width="18" height="45" fill="#1b4332" rx="2"/>
+        <rect x="52" y="40" width="18" height="60" fill="#1b4332" rx="2"/>
+        <rect x="82" y="22" width="18" height="78" fill="#1b4332" rx="2"/>
+        <rect x="112" y="10" width="18" height="90" fill="#1b4332" rx="2"/>
+        <rect x="25" y="72" width="12" height="28" fill="#40916c" rx="2"/>
+        <rect x="55" y="58" width="12" height="42" fill="#40916c" rx="2"/>
+        <rect x="85" y="44" width="12" height="56" fill="#40916c" rx="2"/>
+        <rect x="115" y="30" width="12" height="70" fill="#40916c" rx="2"/>
+        <g font-size="8" fill="#95a89e" text-anchor="middle"><text x="31" y="112">2021</text><text x="61" y="112">2022</text><text x="91" y="112">2023</text><text x="121" y="112">2024</text></g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">Active Sponsored Research Projects</div>
+    <div class="card-sub">Externally funded research initiatives AY 2024–25</div>
+    <table>
+      <thead><tr><th>Project</th><th>PI</th><th>Dept</th><th>Sponsor</th><th>Grant</th><th>Period</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>AI-driven Drug Discovery</td><td>Dr. R. Sharma</td><td>CSE</td><td>DBT</td><td>₹2.4Cr</td><td>2023–26</td><td><span class="badge badge-green">Active</span></td></tr>
+        <tr><td>5G mmWave Antennas</td><td>Dr. P. Verma</td><td>ECE</td><td>DRDO</td><td>₹1.8Cr</td><td>2022–25</td><td><span class="badge badge-green">Active</span></td></tr>
+        <tr><td>Smart Grid Optimization</td><td>Dr. S. Patel</td><td>EE</td><td>DST</td><td>₹1.6Cr</td><td>2023–26</td><td><span class="badge badge-green">Active</span></td></tr>
+        <tr><td>Nano-composite Materials</td><td>Dr. A. Kumar</td><td>ME</td><td>SERB</td><td>₹1.2Cr</td><td>2022–25</td><td><span class="badge badge-amber">Extending</span></td></tr>
+        <tr><td>Urban Flood Modelling</td><td>Dr. N. Gupta</td><td>CE</td><td>NMCG</td><td>₹0.9Cr</td><td>2024–26</td><td><span class="badge badge-green">Active</span></td></tr>
+        <tr><td>Carbon Capture Systems</td><td>Dr. L. Rao</td><td>CH</td><td>Oil India</td><td>₹1.1Cr</td><td>2021–24</td><td><span class="badge badge-blue">Complete</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="page-footer">
+    <span>Office of Institutional Research — Sagar University of Technology</span>
+    <span>Page 5 of 6</span>
+  </div>
+</div>
+
+<!-- ====== PAGE 6: APPENDIX ====== -->
+<div class="page">
+  <div class="page-header">
+    <div class="inst-brand"><div class="inst-emblem">SU</div><div class="inst-name"><h1>Sagar University of Technology</h1><p>Annual Institutional Report 2024–25</p></div></div>
+    <div class="header-right"><span class="report-label">Section 06</span><span class="section-label">Annexures</span></div>
+  </div>
+
+  <div class="sec-title"><div class="sec-num">06</div><h3>Annexures & Comparative Data</h3><div class="sec-rule"></div></div>
+
+  <div class="card">
+    <div class="card-head">5-Year Comparative Performance</div>
+    <div class="card-sub">Institutional metrics from 2020–21 to 2024–25</div>
+    <table>
+      <thead><tr><th>Metric</th><th>2020–21</th><th>2021–22</th><th>2022–23</th><th>2023–24</th><th>2024–25</th><th>Δ (5yr)</th></tr></thead>
+      <tbody>
+        <tr><td>Total Enrollment</td><td>5,840</td><td>6,012</td><td>6,248</td><td>6,562</td><td>6,842</td><td><span class="badge badge-green">+17.2%</span></td></tr>
+        <tr><td>Placement Rate</td><td>82.4%</td><td>85.1%</td><td>88.6%</td><td>91.6%</td><td>94.7%</td><td><span class="badge badge-green">+12.3pp</span></td></tr>
+        <tr><td>Avg CTC (LPA)</td><td>₹12.4</td><td>₹13.8</td><td>₹15.2</td><td>₹16.1</td><td>₹18.4</td><td><span class="badge badge-green">+48.4%</span></td></tr>
+        <tr><td>Publications</td><td>186</td><td>214</td><td>248</td><td>268</td><td>318</td><td><span class="badge badge-green">+71%</span></td></tr>
+        <tr><td>Research Funding</td><td>₹11.2Cr</td><td>₹14.8Cr</td><td>₹18.4Cr</td><td>₹21.2Cr</td><td>₹24.6Cr</td><td><span class="badge badge-green">+119%</span></td></tr>
+        <tr><td>NIRF Rank</td><td>28</td><td>26</td><td>24</td><td>23</td><td>18</td><td><span class="badge badge-green">▲ 10</span></td></tr>
+        <tr><td>Patents Filed</td><td>18</td><td>24</td><td>28</td><td>36</td><td>42</td><td><span class="badge badge-green">+133%</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-head">Infrastructure Summary</div>
+      <table style="font-size:12px">
+        <thead><tr><th>Facility</th><th>Units</th><th>Utilization</th></tr></thead>
+        <tbody>
+          <tr><td>Classrooms</td><td>120</td><td><span class="badge badge-green">94%</span></td></tr>
+          <tr><td>Labs</td><td>84</td><td><span class="badge badge-green">88%</span></td></tr>
+          <tr><td>Library Seats</td><td>1,200</td><td><span class="badge badge-teal">76%</span></td></tr>
+          <tr><td>Hostel Rooms</td><td>3,400</td><td><span class="badge badge-green">98%</span></td></tr>
+          <tr><td>Sports Facilities</td><td>18</td><td><span class="badge badge-amber">62%</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-head">Source Files</div>
+      <ul style="font-size:12px;color:#52796f;padding-left:18px;line-height:2.1">
+        <li>MIS_Student_Data_FY2425.xlsx</li>
+        <li>Placement_Portal_Export_2425.csv</li>
+        <li>Research_Output_SCOPUS.xlsx</li>
+        <li>Finance_Budget_Grants_FY2425.pdf</li>
+        <li>Faculty_HR_Records_2425.xlsx</li>
+        <li>NIRF_Submission_2025.pdf</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page-footer" style="margin-top:auto">
+    <span>Office of Institutional Research — Sagar University of Technology — End of Report</span>
+    <span>Page 6 of 6</span>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

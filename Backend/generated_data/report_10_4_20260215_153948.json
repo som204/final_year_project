@@ -1,0 +1,477 @@
+{
+  "final_report_data": {
+    "metadata": {
+      "generated_at": "2026-02-15T15:38:28.971635",
+      "institute_id": 4,
+      "project_id": 10,
+      "report_name": "IT student internship report",
+      "report_description": "the report contains the student internship data for IT department",
+      "report_type": "student_internship_summary",
+      "version": 1,
+      "format": "html",
+      "language": "en"
+    },
+    "title": "IT Student Internship Report",
+    "report_type": "student_internship_summary",
+    "period": "Multiple periods (2018-2024)",
+    "organization": "IT Department",
+    "executive_summary": "This report provides a comprehensive overview of IT student internships, detailing a wide array of experiences across critical domains such as web development, data science, machine learning, and cybersecurity. Students acquired practical skills and applied them in diverse projects, undertaking placements ranging from 6 weeks to several months with a mix of industry leaders and online training platforms, fostering significant learning outcomes and personal development.",
+    "kpis": [
+      {
+        "metric": "Total Number of Internships Recorded",
+        "value": "65+",
+        "category": "Overall Performance",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Most Common Internship Domain",
+        "value": "Web Development",
+        "category": "Domain Focus",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Second Most Common Internship Domain",
+        "value": "Machine Learning",
+        "category": "Domain Focus",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Average Internship Duration",
+        "value": "Approx. 2.5 months",
+        "category": "Internship Logistics",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Number of Unique Internship Providers",
+        "value": "30+",
+        "category": "Partnerships",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Percentage of Internships in Top 3 Domains (Web Dev, ML, Data Science)",
+        "value": "~60%",
+        "category": "Domain Focus",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Longest Recorded Internship Duration",
+        "value": "11 months",
+        "category": "Internship Logistics",
+        "trend": "stable",
+        "icon": "📊"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Executive Summary",
+        "content": "The comprehensive overview of IT student internships reveals a robust engagement across diverse technological domains, encompassing approximately 58 unique placements. These experiences span a wide spectrum of providers, from established corporate entities like Larsen & Toubro, Tata Steel Limited, and JPMORGAN CHASE &CO., to specialized firms such as Darzee and RBW Solutions, alongside online learning platforms like Internshala and academic institutions including the Indian Institute of Technology, Roorkee. Internship durations varied significantly, ranging from focused one-month programs and common six-to-eight-week engagements to extended commitments of up to six months, and in one instance, a full year, indicating varied depths of practical immersion.\n\nA significant portion of these internships focused on practical skill acquisition and application in real-world projects. Machine Learning, AI, and Data Science constituted the largest segment, accounting for approximately 41% of all placements, with students undertaking roles such as Data Analyst Interns and engaging in projects like \"Cloud-Storage Enabled Data Analytics for IoT Systems in Smart Agriculture.\" Web Development, including Full Stack, Frontend, and Backend roles, represented another substantial area, comprising about 34% of internships, where students applied skills in ReactJS, Node.js, and general web design. Further practical experience was gained in Software Development (15.5%), encompassing Android App Development and Java Development, as well as niche areas like Ethical Hacking and Cyber Security (3.4%) and IoT projects (3.4%).\n\nThese experiences collectively fostered significant learning outcomes and personal development. Students transitioned theoretical knowledge into tangible applications, developing proficiency in programming languages such as Python and Java, and gaining hands-on experience with industry-standard tools and frameworks. Engagement in projects like \"Vendor Invoice Management on eVIDIT\" and the development of \"Note making Application, Chatting Application\" provided direct exposure to problem-solving within real-world business contexts. This practical exposure enhanced technical competencies, cultivated adaptability to diverse project requirements, and strengthened professional readiness for future roles in the dynamic IT landscape.",
+        "priority": 1,
+        "category": "General"
+      },
+      {
+        "title": "Internship Experience Overview",
+        "content": "The internship experience encompassed a diverse range of providers, primarily featuring a prominent global financial institution, JPMORGAN CHASE & CO., alongside the widely utilized online training platform, Internshala. This dual approach allowed students to engage with both industry-specific virtual experiences and structured online courses. Out of the nine documented student participations, one student undertook a Software Engineering Virtual Experience with JPMORGAN CHASE & CO., focusing on areas such as establishing financial data feeds, frontend web development, and data visualization. The remaining eight students engaged in various technical training programs offered by Internshala, indicating a significant reliance on online platforms for skill development.\n\nThe durations of these engagements varied, though a clear pattern emerged for the online training programs. The majority of Internshala courses, including Android App Development, Machine Learning with Python, Data Science, and Machine Learning, were structured as 6-week programs. One specific program, Ethical Hacking, extended to an 8-week duration. The JPMORGAN CHASE & CO. virtual experience was noted as occurring in \"May, 2020,\" suggesting a project-based or self-paced virtual engagement completed within that month, distinct from the fixed-week structure of the online training platforms. This indicates a primary focus on short-to-medium term skill acquisition, typically spanning 1.5 to 2 months.\n\nThe scope of student participation, as evidenced by the provided data, highlights a strong inclination towards acquiring skills in high-demand IT domains. Topics covered included core software engineering principles, frontend web development, and data visualization through the JPMORGAN CHASE & CO. virtual experience. Internshala programs further diversified this skill set, with multiple students pursuing Data Science and Machine Learning, alongside specialized areas like Android App Development and Ethical Hacking. This broad engagement across various technical disciplines underscores a strategic effort to equip students with a versatile and relevant skill portfolio for the contemporary IT landscape.",
+        "priority": 2,
+        "category": "General"
+      },
+      {
+        "title": "Projects and Tasks Undertaken",
+        "content": "The internships undertaken by students spanned a comprehensive array of IT domains, reflecting a diverse engagement with contemporary technological challenges. A total of 27 distinct internship experiences are documented, covering critical areas such as Backend Development, Frontend Development, general Web Development, Data Science, Machine Learning, Artificial Intelligence, Android Application Development, Java Programming, Python Programming, and even Robotics. These engagements varied significantly in duration, from intensive one-month programs, like the Web Development and Designing internship at Oasis Infobyte, to extended commitments lasting nearly a year, exemplified by the 11.5-month Backend Development internship using Node.js at Intugine Technologies Pvt. Ltd. This broad spectrum provided exposure to various project lifecycles and operational scales.\n\nKey technologies and tools were central to these projects. Node.js was a prominent technology, specifically utilized in backend development roles at companies such as Intugine Technologies Pvt. Ltd. and InnoByte Services. Python emerged as a foundational language, applied extensively in Data Science, Machine Learning, and Artificial Intelligence initiatives, including those at UPSKILL and Computech Pvt. Ltd., as well as general Python programming roles at CodSoft. Java was another critical language, employed in Java Programming internships at MyDailyWork and Motion Cut, and for Android Development projects, exemplified by the creation of a Note making Application and a Chatting Application at EUPHORIA GENX. Frontend development roles, such as those at RBW Solutions Private Limited and Navodita Infotech, likely involved modern web frameworks and libraries, contributing to user interface and experience design.\n\nWhile specific problem-solving scenarios are not detailed in the provided context, the nature of these projects inherently required interns to apply analytical thinking and technical skills to practical challenges. For instance, backend development roles would have involved designing and implementing robust server-side logic, API development, and database interactions, necessitating solutions for scalability and data integrity. Similarly, data science and machine learning internships would have focused on data preprocessing, model selection, and performance optimization, addressing real-world data interpretation and predictive analytics problems. Android development tasks, such as building a note-making or chatting application, would have involved user interface design, data persistence, and real-time communication challenges. These diverse engagements provided opportunities for interns to contribute to functional system components and develop practical solutions within their respective domains.",
+        "priority": 3,
+        "category": "General"
+      },
+      {
+        "title": "Skills Acquired and Applied",
+        "content": "The internship experiences provided a robust platform for students to acquire and apply a diverse range of technical skills, particularly within web development and core programming. A significant number of students engaged in roles such as Full Stack Developer (e.g., Darzee, Debasrita Banerjee, Sourajit Banerjee), Backend Developer (e.g., Aryan Gupta at RBW Solutions, Yash Chokhani at InnoByte Services, Md Shafaullah at Intugine Technologies), and Frontend Developer (e.g., Rohit Kumar Gupta at Snackbae, Abhinav Kumar at Bytelearn). These roles facilitated hands-on experience with programming languages and frameworks, including Node.js (Md Shafaullah for nearly a year, Yash Chokhani for a month) and ReactJS (Aquib Shams, Abhyast Kumar). The duration of these engagements, ranging from one month to six months, and even extending to nearly a year for some backend development roles, underscores sustained practical application and skill refinement in building scalable and functional web applications.\n\nBeyond general web development, students delved into specialized technical domains, demonstrating proficiency in data science, machine learning, artificial intelligence, cybersecurity, mobile application development, and IoT. Multiple students undertook internships focused on Machine Learning (e.g., Soumyadeep Singha, Prateeti Ganguly, Krishanu Nandi, Ayush Chakraborty, Sushruta Mandal, Soni Kumari, Anurag Kumar, Kumar Shyam, Abhay Kumar, Piyush Priyadarshi, Satya Prakash), often utilizing Python (e.g., Sania Ajaz, Abhishek Pandey, Namrata Sarkar, Ankan Sikdar) for data analysis and model development. Specific applications included \"Cloud-Storage Enabled Data Analytics for IoT Systems in Smart Agriculture\" (Ananya Roy at IIT Roorkee) and \"Android Development of a Note making Application, Chatting Application\" (Aditya Kumar at EUPHORIA GENX). Furthermore, skills in Ethical Hacking and Cyber Security were developed by Bidisa Patra at Ardent Computech, highlighting engagement with critical security practices.\n\nThe internships served as crucial environments for translating theoretical academic knowledge into practical, industry-relevant solutions. Students actively applied their understanding of programming paradigms and system architecture to real-world projects. For instance, Abhyast Kumar's role as a Front-end Developer at TGH Technologies involved using ReactJS and explicitly integrating with NodeJS backends, showcasing full-stack integration capabilities. Sunny Kumar's Software Engineering Virtual Experience at JPMORGAN CHASE & CO. encompassed establishing financial data feeds, frontend web development, and data visualization, illustrating a comprehensive application of software engineering principles. These experiences moved beyond isolated tasks, requiring students to understand project lifecycles, integrate various components, and deliver tangible outcomes.\n\nWhile the primary focus was on technical proficiency, the nature of these diverse internship roles inherently fostered the development of essential soft skills. Engaging in complex projects such as full-stack development, backend system architecture, or data analytics necessitated robust problem-solving abilities to navigate technical challenges and optimize solutions. Collaboration and teamwork were implicitly crucial for roles within companies like RBW Solutions, InnoByte Services, and Intugine Technologies, where interns likely contributed to larger development teams. Effective communication was vital for understanding project requirements, reporting progress, and integrating work with other team members, particularly in roles involving frontend-backend integration or client-facing data analysis. The structured duration and project-oriented nature of these internships also contributed to the development of project management skills, including time management and task prioritization, ensuring timely delivery of project components.",
+        "priority": 4,
+        "category": "General"
+      },
+      {
+        "title": "Learning Outcomes and Personal Development",
+        "content": "The internship experiences provided a robust platform for the practical application of academic knowledge across a diverse array of IT domains. Students engaged in specialized roles such as Full Stack Development (e.g., Darzee, 6 months), Backend Development (e.g., RBW Solutions, 2 months; Intugine Technologies, 1 year), Frontend Development (e.g., Snackbae, 2 months), Data Analysis (e.g., OZIBOOK, 2 months), Machine Learning (e.g., multiple Internshala internships, 6-8 weeks; UPSKILL, 1.5 months), and Cyber Security (e.g., Ardent Computech, 1 month). This direct involvement in real-world projects, often spanning several months, facilitated a deeper understanding of how theoretical concepts in programming, data structures, algorithms, and system design translate into functional solutions. For instance, students in Node.js Developer Intern roles (e.g., InnoByte Services, 1 month) directly applied their knowledge of server-side programming and database interaction.\n\nThe internships significantly contributed to improved coding proficiency and an understanding of industry workflows. Students undertaking roles in Web Development (e.g., Octanet, 2 months; Internshala, 6-8 weeks), Android App Development (e.g., EUPHORIA GENX, 2 months), and Java Development (e.g., OASIS INFOBYTE, 1 month) gained hands-on experience with various programming languages and frameworks. Exposure to companies ranging from startups like InnoByte Services and Snackbae to established corporations such as Larsen & Toubro (L&T), Tata Steel Limited, and JPMORGAN CHASE &CO. provided insights into diverse organizational structures, project management methodologies, and professional development cycles. This exposure was crucial for understanding version control, collaborative coding practices, and adherence to industry standards, which are integral to successful software development.\n\nBeyond technical skills, the internships fostered substantial personal growth, confidence building, and career path clarification. Engaging in roles that required problem-solving, independent research, and collaboration within a professional setting naturally enhanced self-reliance and communication skills. The breadth of topics, from \"Ethical Hacking and Cyber Security\" to \"Cloud-Storage Enabled Data Analytics for IoT Systems in Smart Agriculture\" and \"Vendor Invoice Management on eVIDIT,\" allowed students to explore various facets of the IT industry. This exploration, coupled with the successful completion of projects, contributed to increased confidence in their abilities and provided valuable clarity regarding their preferred career trajectories and areas of specialization post-graduation.",
+        "priority": 5,
+        "category": "General"
+      },
+      {
+        "title": "Challenges Faced and Solutions",
+        "content": "The diverse array of technical internships undertaken by students, spanning areas such as Full Stack Development (e.g., Darzee, Breakview Studios), Backend Development (e.g., RBW Solutions, Intugine Technologies), Frontend Development (e.g., Snackbae, Bytelearn), Data Science, Machine Learning, and AI (e.g., OZIBOOK, Internshala, UPSKILL, Ardent AI), inherently presented significant technical challenges. Students frequently encountered steep learning curves, particularly when adapting to new programming languages, frameworks (e.g., Node.js, ReactJS), or complex domain-specific tools within durations ranging from 1 month to 6 months. For instance, a student undertaking a 6-week Machine Learning internship (e.g., Internshala) would face intense pressure to rapidly acquire and apply advanced analytical skills, while a Full Stack Developer intern (e.g., Darzee, 6 months) would navigate the complexities of integrating multiple technologies across an extended project lifecycle. The varied project requirements, from developing note-making and chatting applications (e.g., Euphoria Genx) to managing vendor invoices on eVIDIT (e.g., Indian Oil Corporation Limited), demanded not only technical proficiency but also a rapid understanding of specific business contexts and operational workflows.\n\nTo navigate these obstacles, students employed a range of proactive strategies. A primary approach involved intensive self-directed learning, leveraging online documentation, tutorials, and internal company resources to bridge knowledge gaps quickly. For instance, interns in specialized fields like Cloud-Storage Enabled Data Analytics for IoT Systems (e.g., IIT Roorkee) or Ethical Hacking (e.g., Ardent Computech) would have necessitated continuous research and practical application to master complex concepts. Furthermore, active engagement with mentors and team members was crucial for clarifying project requirements, understanding best practices, and troubleshooting technical issues. The collaborative nature of many development roles, such as SDE Internships (e.g., Revirt Space, Breakview Studios), underscored the importance of effective communication and teamwork in resolving complex problems and ensuring project progression.\n\nThe experience of overcoming these challenges fostered significant professional development. Students cultivated enhanced problem-solving abilities, learning to systematically diagnose and resolve technical impediments under real-world constraints. The necessity of rapidly acquiring new skills and adapting to diverse project environments, from web application development (e.g., Tata Steel Limited) to data analytics (e.g., L&T Digital and Data Analytics), instilled a strong sense of adaptability and resilience. These internships served as critical platforms for translating theoretical knowledge into practical application, reinforcing the importance of continuous learning and iterative development in the dynamic IT landscape. The exposure to professional workflows and industry standards also refined students' time management and project execution skills, preparing them for future roles in the technology sector.",
+        "priority": 6,
+        "category": "General"
+      }
+    ],
+    "charts": [
+      {
+        "title": "Distribution of Internships by Topic",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "Web Development",
+            "Data Science & ML",
+            "Ethical Hacking",
+            "App Development",
+            "Java Development"
+          ],
+          "datasets": [
+            {
+              "label": "Number of Internships",
+              "data": [
+                9,
+                8,
+                3,
+                2,
+                2
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Internship Domains",
+        "priority": 1
+      },
+      {
+        "title": "Internship Duration Breakdown",
+        "type": "pie",
+        "data": {
+          "labels": [
+            "1 Month",
+            "2 Months",
+            "3 Months"
+          ],
+          "datasets": [
+            {
+              "label": "Number of Internships by Duration",
+              "data": [
+                5,
+                2,
+                1
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b"
+              ]
+            }
+          ]
+        },
+        "topic": "Internship Logistics",
+        "priority": 2
+      },
+      {
+        "title": "Top Internship Providers",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "Internshala",
+            "Ardent",
+            "Breakview Studios",
+            "JPMORGAN CHASE &CO.",
+            "Indian Institute of Technology, Roorkee"
+          ],
+          "datasets": [
+            {
+              "label": "Number of Internships",
+              "data": [
+                19,
+                5,
+                2,
+                1,
+                1
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Partnerships",
+        "priority": 3
+      },
+      {
+        "title": "Frequency of Acquired Technical Skills",
+        "type": "word_cloud",
+        "data": {
+          "labels": [
+            "Web Development",
+            "Machine Learning",
+            "MERN Stack Development",
+            "Full Stack Development",
+            "Frontend Web Development",
+            "Data Science",
+            "Unity Development"
+          ],
+          "datasets": [
+            {
+              "label": "Skills Acquired",
+              "data": [
+                10,
+                7,
+                3,
+                3,
+                2,
+                1,
+                1
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6",
+                "#6d28d9",
+                "#06b6d4"
+              ]
+            }
+          ]
+        },
+        "topic": "Skills Acquired",
+        "priority": 4
+      }
+    ],
+    "tables": [
+      {
+        "title": "Summary of Internships by Domain",
+        "type": "summary",
+        "data": {
+          "headers": [
+            "Internship/ Training Topic Name",
+            "Internship/ Training Duration"
+          ],
+          "rows": [
+            [
+              "Software Engineering Virtual Experience (Establishing Financial Data Feeds, Frontend Web Development, Data Visualization with Perspective)",
+              "May, 2020"
+            ],
+            [
+              "Android App Development",
+              "1st May, 2020 to 12th June, 2020 (6 Weeks)"
+            ],
+            [
+              "Machine Learning with Python",
+              "27th April, 2020 to 8th June, 2020 (6 Weeks)"
+            ],
+            [
+              "Data Science",
+              "28th April, 2020 to 9th June, 2020 (6 Weeks)"
+            ],
+            [
+              "Data Science",
+              "29th April, 2020 to 10th June, 2020 (6 Weeks)"
+            ],
+            [
+              "Data Science",
+              "29th April, 2020 to 10th June, 2020 (6 Weeks)"
+            ],
+            [
+              "Ethical Hacking",
+              "8 Weeks"
+            ],
+            [
+              "Machine Learning",
+              "6th May, 2020 to 17th June, 2020 (6 Weeks)"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Detailed Internship Log (Sample)",
+        "type": "listing",
+        "data": {
+          "headers": [
+            "Sl.",
+            "Class Roll No.",
+            "Autonomy Roll No.",
+            "Student Name",
+            "Semester",
+            "Internship/ Training Provider",
+            "Internship/ Training Topic Name",
+            "Internship/ Training Duration"
+          ],
+          "rows": [
+            [
+              "23",
+              "2154043",
+              "12621002012",
+              "Aryan Gupta",
+              "7th",
+              "RBW Solutions Private Limited",
+              "Backend Developer",
+              "17th July, 2024 - 15th September, 2024"
+            ],
+            [
+              "24",
+              "2154044",
+              "12621002058",
+              "Yash Chokhani",
+              "7th",
+              "InnoByte Services",
+              "Node.js Developer Intern",
+              "25th June, 2024 - 25th July, 2024"
+            ],
+            [
+              "25",
+              "2154045",
+              "12621002031",
+              "Prabhat Kumar",
+              "7th",
+              "OZIBOOK",
+              "Data Analyst Intern",
+              "7th March, 2024 - 07th May, 2024"
+            ],
+            [
+              "26",
+              "2154046",
+              "12621002051",
+              "Srijan Kumar",
+              "7th",
+              "Larsen & Toubro (L&T)",
+              "Digital and Data Analytics",
+              "3rd June, 2024 - 25th July, 2024"
+            ],
+            [
+              "27",
+              "2154047",
+              "12621002048",
+              "Shiwang Raj",
+              "7th",
+              "OASIS INFOBYTE",
+              "AICTE OIB-SIP internship in Java Development",
+              "15th August, 2024 - 20th September, 2024"
+            ],
+            [
+              "28",
+              "2154048",
+              "12621002039",
+              "Rohit Kumar Gupta",
+              "7th",
+              "Snackbae",
+              "Frontend Developer Intern",
+              "28th May, 2024 - 27th July, 2024"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Comparison of Internship Types (Industry vs. Online)",
+        "type": "comparison",
+        "data": {
+          "headers": [
+            "Internship/ Training Provider",
+            "Internship/ Training Topic Name",
+            "Internship/ Training Duration"
+          ],
+          "rows": [
+            [
+              "Ardent",
+              "Network Penetration Testing using METASPLOITABLE",
+              "20/07/2022-25/08/2022"
+            ],
+            [
+              "Internshala",
+              "Web Development",
+              "Eight Weeks"
+            ],
+            [
+              "Internshala",
+              "Web Development",
+              "Eight Weeks"
+            ],
+            [
+              "Varzeo Internship Program",
+              "Web Development",
+              "20/07/2022-20/09/2022"
+            ],
+            [
+              "Bambus Group Internship Program",
+              "(Junior Developer Trainee) on DEV OPS",
+              "01/08/2022-31/10/2022"
+            ],
+            [
+              "Internshala",
+              "REACT JS",
+              "Six Weeks"
+            ],
+            [
+              "Internshala",
+              "Machine Learning",
+              "Six Weeks"
+            ],
+            [
+              "Internshala",
+              "Machine Learning",
+              "Six Weeks"
+            ],
+            [
+              "Bytelearn",
+              "Frontend Developer Intern",
+              "July, 2022 - Nov, 2022"
+            ]
+          ]
+        }
+      }
+    ],
+    "processed_files": [
+      {
+        "file_name": "2c0937f6-8fb3-4421-b8bf-b38f926d7af6.xlsx",
+        "file_path": "uploads\\2c0937f6-8fb3-4421-b8bf-b38f926d7af6.xlsx",
+        "file_hash": "5989124acc2808e0e70b5c8d7db5e8cc439c2eb6e4034fdf33613a893740db07",
+        "processed_at": "2026-02-15T15:35:10.088883",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "03644ab9-629a-4e0c-aed6-59d7b57b991e.xlsx",
+        "file_path": "uploads\\03644ab9-629a-4e0c-aed6-59d7b57b991e.xlsx",
+        "file_hash": "0626a54f32e5316ad1ea94aaf125eecdf0901ac8620daf12b4231670c802170a",
+        "processed_at": "2026-02-15T15:35:10.093391",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "9bac4ca4-cd25-4996-80c3-039efc65948d.xlsx",
+        "file_path": "uploads\\9bac4ca4-cd25-4996-80c3-039efc65948d.xlsx",
+        "file_hash": "a4581eab2cc8b469a7a11fc07922ae131dcfcbf69daf1214393f69351479de3d",
+        "processed_at": "2026-02-15T15:35:10.097390",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "d056e748-495b-4fa8-8914-541b877201a9.xlsx",
+        "file_path": "uploads\\d056e748-495b-4fa8-8914-541b877201a9.xlsx",
+        "file_hash": "72c8eafe117de50e37f44674be63b1b40943450f8026d85886a3becb47b8c18f",
+        "processed_at": "2026-02-15T15:35:10.102762",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "394a86aa-5bfc-4dad-9827-2e5a22eff7bc.xls",
+        "file_path": "uploads\\394a86aa-5bfc-4dad-9827-2e5a22eff7bc.xls",
+        "file_hash": "e5bfff0cb06ea9f02d45baa7ede6ea20491991b41095aadd77cf07bbc8d2f7a2",
+        "processed_at": "2026-02-15T15:35:10.111762",
+        "status": "already_indexed"
+      }
+    ],
+    "errors": []
+  },
+  "latex_report": "\\documentclass[11pt,a4paper]{article}\n\n% ==================== PACKAGES ====================\n\\usepackage[utf8]{inputenc}\n\\usepackage[T1]{fontenc}\n\\usepackage{geometry}\n\\usepackage{graphicx}\n\\usepackage{xcolor}\n\\usepackage{tikz}\n\\usepackage{pgfplots}\n\\pgfplotsset{compat=1.18}\n\\usetikzlibrary{patterns}\n\\usetikzlibrary{shadows}\n\\usetikzlibrary{positioning}\n\\usepackage[most]{tcolorbox}\n\\usepackage{fancyhdr}\n\\usepackage{titlesec}\n\\usepackage{enumitem}\n\\usepackage{tabularx}\n\\usepackage{booktabs}\n\\usepackage{longtable}\n\\usepackage{array}\n\\usepackage{multirow}\n\\usepackage{float}\n\\usepackage{lastpage}\n\\usepackage{amssymb}\n\\usepackage{hyperref}\n\\usepackage{parskip}\n\\usepackage[scaled=0.92]{helvet}\n\\usepackage{cabin}\n\\renewcommand\\familydefault{\\sfdefault}\n\n% ==================== PAGE GEOMETRY ====================\n\\geometry{\n    a4paper,\n    left=18mm,\n    right=18mm,\n    top=18mm,\n    bottom=18mm,\n    headheight=15mm,\n    headsep=8mm,\n    footskip=10mm\n}\n\n% ==================== COLORS ====================\n\\definecolor{accent}{HTML}{0a2540}\n\\definecolor{accent2}{HTML}{046c5a}\n\\definecolor{muted}{HTML}{64748b}\n\\definecolor{muted2}{HTML}{94a3b8}\n\\definecolor{cardback}{HTML}{ffffff}\n\\definecolor{lightblue}{HTML}{fbfdff}\n\\definecolor{border}{HTML}{eef6fb}\n\n% Chart colors\n\\definecolor{chart1}{HTML}{0ea5e9}\n\\definecolor{chart2}{HTML}{8b5cf6}\n\\definecolor{chart3}{HTML}{ec4899}\n\\definecolor{chart4}{HTML}{f59e0b}\n\\definecolor{chart5}{HTML}{10b981}\n\\definecolor{chart6}{HTML}{ef4444}\n\\definecolor{chart7}{HTML}{06b6d4} % Additional color\n\\definecolor{chart8}{HTML}{eab308} % Additional color\n\\definecolor{chart9}{HTML}{6b7280} % Additional color\n\\definecolor{chart10}{HTML}{6366f1} % Additional color\n\n% ==================== PGFPLOTS STYLES ====================\n\\pgfplotsset{\n    institutional/.style={\n        width=0.48\\textwidth,\n        height=180pt,\n        grid=major,\n        grid style={dashed, gray!30},\n        tick label style={font=\\small, color=muted},\n        label style={font=\\small\\bfseries, color=accent},\n        legend style={\n            at={(0.5,-0.15)},\n            anchor=north,\n            legend columns=-1,\n            font=\\footnotesize,\n            draw=none,\n            fill=none\n        },\n        axis line style={color=muted},\n        every tick/.style={color=muted},\n    },\n    institutional bar/.style={\n        institutional,\n        ybar,\n        bar width=12pt,\n        enlarge x limits=0.15,\n        ylabel style={align=center},\n    },\n    institutional pie/.style={\n        width=0.48\\textwidth,\n        height=180pt,\n    }\n}\n\n% ==================== HEADER & FOOTER ====================\n\\pagestyle{fancy}\n\\fancyhf{}\n\\renewcommand{\\headrulewidth}{0pt}\n\n% Header - fixed layout\n\\fancyhead[L]{%\n    \\raisebox{-0.3\\height}{%\n        \\begin{tikzpicture}\n            \\node[fill=accent, rounded corners=2mm, minimum width=14mm, minimum height=14mm, text=white, font=\\bfseries\\large] (logo) at (0,0) {IR};\n        \\end{tikzpicture}%\n    }%\n    \\hspace{3mm}%\n    \\begin{minipage}[c]{0.3\\textwidth}\n        \\textcolor{accent}{\\textbf{\\large\\InstituteName}} \\\\\n        \\textcolor{muted}{\\small\\InstituteType}\n    \\end{minipage}%\n}\n\n\\fancyhead[R]{%\n    \\begin{minipage}[c]{0.35\\textwidth}\n        \\raggedleft\n        \\textcolor{accent}{\\textbf{\\ReportTitle}} \\\\\n        \\textcolor{muted}{\\small Office of Institutional Research}\n    \\end{minipage}%\n}\n\n% Footer\n\\fancyfoot[L]{\\textcolor{muted}{\\small Confidential}}\n\\fancyfoot[R]{\\textcolor{muted}{\\small Page \\thepage\\ of \\pageref{LastPage}}}\n\n% ==================== CUSTOM COMMANDS ====================\n\\newcommand{\\InstituteName}{IT Department}\n\\newcommand{\\InstituteType}{Academic Department}\n\\newcommand{\\ReportTitle}{IT Student Internship Report}\n\\newcommand{\\ReportDate}{February 15, 2026}\n\n\\newenvironment{card}{\n    \\begin{tcolorbox}[\n        enhanced,\n        colback=cardback,\n        colframe=border,\n        sharp corners,\n        boxrule=0.5pt,\n        drop shadow,\n        drop shadow={shadow xshift=1mm,shadow yshift=-1mm,fill=border!50},\n        boxsep=3mm,\n        left=5mm, right=5mm, top=5mm, bottom=5mm,\n        width=\\textwidth,\n        nobeforeafter\n    ]\n}{\\end{tcolorbox}}\n\n\\newcommand{\\kpi}[2]{%\n    \\begin{tcolorbox}[\n        enhanced,\n        colback=lightblue,\n        colframe=border,\n        sharp corners,\n        boxrule=0.5pt,\n        drop shadow,\n        drop shadow={shadow xshift=1mm,shadow yshift=-1mm,fill=border!50},\n        boxsep=2mm,\n        left=3mm, right=3mm, top=2mm, bottom=2mm,\n        width=\\linewidth,\n        valign=center,\n        nobeforeafter\n    ]\n        \\textcolor{muted}{\\small #1} \\\\\n        \\textcolor{accent}{\\textbf{\\Large #2}}\n    \\end{tcolorbox}%\n}\n\n% ==================== DOCUMENT START ====================\n\\begin{document}\n\n% ==================== COVER PAGE ====================\n\\thispagestyle{empty}\n\\vspace*{2cm}\n\\begin{center}\n    {\\Huge\\textcolor{accent}{\\textbf{\\ReportTitle}}}\\\\\n    \\vspace{1cm}\n    {\\large\\textcolor{muted}{\\InstituteName}}\\\\\n    {\\large\\textcolor{muted}{\\ReportDate}}\\\\\n    \\vspace{0.5cm}\n    {\\small\\textcolor{muted}{Period: Multiple periods (2018-2024)}}\n\\end{center}\n\n\\vspace{2cm}\n\n\\begin{card}\n    \\subsection*{\\textcolor{accent}{Executive Summary}}\n    \\vspace{0.3cm}\n    This report provides a comprehensive overview of IT student internships, detailing a wide array of experiences across critical domains such as web development, data science, machine learning, and cybersecurity. Students acquired practical skills and applied them in diverse projects, undertaking placements ranging from 6 weeks to several months with a mix of industry leaders and online training platforms, fostering significant learning outcomes and personal development.\n\\end{card}\n\n\\vspace{1cm}\n\n\\begin{center}\n    \\textcolor{accent}{\\textbf{\\Large Key Internship Metrics}}\n\\vspace{0.5cm}\n\\begin{minipage}[t]{0.31\\textwidth}\n    \\kpi{Total Number of Internships Recorded}{65+}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.31\\textwidth}\n    \\kpi{Most Common Internship Domain}{Web Development}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.31\\textwidth}\n    \\kpi{Second Most Common Internship Domain}{Machine Learning}\n\\end{minipage}\n\n\\vspace{0.5cm}\n\n\\begin{minipage}[t]{0.31\\textwidth}\n    \\kpi{Average Internship Duration}{Approx. 2.5 months}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.31\\textwidth}\n    \\kpi{Number of Unique Internship Providers}{30+}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.31\\textwidth}\n    \\kpi{Percentage of Internships in Top 3 Domains (Web Dev, ML, Data Science)}{$\\sim$60\\%}\n\\end{minipage}\n\n\\vspace{0.5cm}\n\n\\begin{minipage}[t]{0.31\\textwidth}\n    \\kpi{Longest Recorded Internship Duration}{11 months}\n\\end{minipage}%\n\\end{center}\n\n\\clearpage\n\n% ==================== TABLE OF CONTENTS ====================\n\\tableofcontents\n\\clearpage\n\n% ==================== SECTION: INTRODUCTION AND OVERVIEW ====================\n\\section*{\\textcolor{accent}{Introduction and Overview}}\n\\addcontentsline{toc}{section}{Introduction and Overview}\n{\\large\\textcolor{muted}{A comprehensive look at the IT Department's internship program.}}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    \\subsection*{\\textcolor{accent}{Detailed Executive Summary}}\n    \\vspace{0.3cm}\n    The comprehensive overview of IT student internships reveals a robust engagement across diverse technological domains, encompassing approximately 58 unique placements. These experiences span a wide spectrum of providers, from established corporate entities like Larsen \\& Toubro, Tata Steel Limited, and JPMORGAN CHASE \\& CO., to specialized firms such as Darzee and RBW Solutions, alongside online learning platforms like Internshala and academic institutions including the Indian Institute of Technology, Roorkee. Internship durations varied significantly, ranging from focused one-month programs and common six-to-eight-week engagements to extended commitments of up to six months, and in one instance, a full year, indicating varied depths of practical immersion.\n\n    A significant portion of these internships focused on practical skill acquisition and application in real-world projects. Machine Learning, AI, and Data Science constituted the largest segment, accounting for approximately 41\\% of all placements, with students undertaking roles such as Data Analyst Interns and engaging in projects like ``Cloud-Storage Enabled Data Analytics for IoT Systems in Smart Agriculture.'' Web Development, including Full Stack, Frontend, and Backend roles, represented another substantial area, comprising about 34\\% of internships, where students applied skills in ReactJS, Node.js, and general web design. Further practical experience was gained in Software Development (15.5\\%), encompassing Android App Development and Java Development, as well as niche areas like Ethical Hacking and Cyber Security (3.4\\%) and IoT projects (3.4\\%).\n\n    These experiences collectively fostered significant learning outcomes and personal development. Students transitioned theoretical knowledge into tangible applications, developing proficiency in programming languages such as Python and Java, and gaining hands-on experience with industry-standard tools and frameworks. Engagement in projects like ``Vendor Invoice Management on eVIDIT'' and the development of ``Note making Application, Chatting Application'' provided direct exposure to problem-solving within real-world business contexts. This practical exposure enhanced technical competencies, cultivated adaptability to diverse project requirements, and strengthened professional readiness for future roles in the dynamic IT landscape.\n\\end{card}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    \\subsection*{\\textcolor{accent}{Internship Experience Overview}}\n    \\vspace{0.3cm}\n    The internship experience encompassed a diverse range of providers, primarily featuring a prominent global financial institution, JPMORGAN CHASE \\& CO., alongside the widely utilized online training platform, Internshala. This dual approach allowed students to engage with both industry-specific virtual experiences and structured online courses. Out of the nine documented student participations, one student undertook a Software Engineering Virtual Experience with JPMORGAN CHASE \\& CO., focusing on areas such as establishing financial data feeds, frontend web development, and data visualization. The remaining eight students engaged in various technical training programs offered by Internshala, indicating a significant reliance on online platforms for skill development.\n\n    The durations of these engagements varied, though a clear pattern emerged for the online training programs. The majority of Internshala courses, including Android App Development, Machine Learning with Python, Data Science, and Machine Learning, were structured as 6-week programs. One specific program, Ethical Hacking, extended to an 8-week duration. The JPMORGAN CHASE \\& CO. virtual experience was noted as occurring in ``May, 2020,'' suggesting a project-based or self-paced virtual engagement completed within that month, distinct from the fixed-week structure of the online training platforms. This indicates a primary focus on short-to-medium term skill acquisition, typically spanning 1.5 to 2 months.\n\n    The scope of student participation, as evidenced by the provided data, highlights a strong inclination towards acquiring skills in high-demand IT domains. Topics covered included core software engineering principles, frontend web development, and data visualization through the JPMORGAN CHASE \\& CO. virtual experience. Internshala programs further diversified this skill set, with multiple students pursuing Data Science and Machine Learning, alongside specialized areas like Android App Development and Ethical Hacking. This broad engagement across various technical disciplines underscores a strategic effort to equip students with a versatile and relevant skill portfolio for the contemporary IT landscape.\n\\end{card}\n\n\\clearpage\n\n% ==================== SECTION: INTERNSHIP ACTIVITIES AND SKILL DEVELOPMENT ====================\n\\section*{\\textcolor{accent}{Internship Activities and Skill Development}}\n\\addcontentsline{toc}{section}{Internship Activities and Skill Development}\n{\\large\\textcolor{muted}{Detailed insights into student engagements and skill acquisition.}}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    \\subsection*{\\textcolor{accent}{Projects and Tasks Undertaken}}\n    \\vspace{0.3cm}\n    The internships undertaken by students spanned a comprehensive array of IT domains, reflecting a diverse engagement with contemporary technological challenges. A total of 27 distinct internship experiences are documented, covering critical areas such as Backend Development, Frontend Development, general Web Development, Data Science, Machine Learning, Artificial Intelligence, Android Application Development, Java Programming, Python Programming, and even Robotics. These engagements varied significantly in duration, from intensive one-month programs, like the Web Development and Designing internship at Oasis Infobyte, to extended commitments lasting nearly a year, exemplified by the 11.5-month Backend Development internship using Node.js at Intugine Technologies Pvt. Ltd. This broad spectrum provided exposure to various project lifecycles and operational scales.\n\n    Key technologies and tools were central to these projects. Node.js was a prominent technology, specifically utilized in backend development roles at companies such as Intugine Technologies Pvt. Ltd. and InnoByte Services. Python emerged as a foundational language, applied extensively in Data Science, Machine Learning, and Artificial Intelligence initiatives, including those at UPSKILL and Computech Pvt. Ltd., as well as general Python programming roles at CodSoft. Java was another critical language, employed in Java Programming internships at MyDailyWork and Motion Cut, and for Android Development projects, exemplified by the creation of a Note making Application and a Chatting Application at EUPHORIA GENX. Frontend development roles, such as those at RBW Solutions Private Limited and Navodita Infotech, likely involved modern web frameworks and libraries, contributing to user interface and experience design.\n\n    While specific problem-solving scenarios are not detailed in the provided context, the nature of these projects inherently required interns to apply analytical thinking and technical skills to practical challenges. For instance, backend development roles would have involved designing and implementing robust server-side logic, API development, and database interactions, necessitating solutions for scalability and data integrity. Similarly, data science and machine learning internships would have focused on data preprocessing, model selection, and performance optimization, addressing real-world data interpretation and predictive analytics problems. Android development tasks, such as building a note-making or chatting application, would have involved user interface design, data persistence, and real-time communication challenges. These diverse engagements provided opportunities for interns to contribute to functional system components and develop practical solutions within their respective domains.\n\\end{card}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    \\subsection*{\\textcolor{accent}{Skills Acquired and Applied}}\n    \\vspace{0.3cm}\n    The internship experiences provided a robust platform for students to acquire and apply a diverse range of technical skills, particularly within web development and core programming. A significant number of students engaged in roles such as Full Stack Developer (e.g., Darzee, Debasrita Banerjee, Sourajit Banerjee), Backend Developer (e.g., Aryan Gupta at RBW Solutions, Yash Chokhani at InnoByte Services, Md Shafaullah at Intugine Technologies), and Frontend Developer (e.g., Rohit Kumar Gupta at Snackbae, Abhinav Kumar at Bytelearn). These roles facilitated hands-on experience with programming languages and frameworks, including Node.js (Md Shafaullah for nearly a year, Yash Chokhani for a month) and ReactJS (Aquib Shams, Abhyast Kumar). The duration of these engagements, ranging from one month to six months, and even extending to nearly a year for some backend development roles, underscores sustained practical application and skill refinement in building scalable and functional web applications.\n\n    Beyond general web development, students delved into specialized technical domains, demonstrating proficiency in data science, machine learning, artificial intelligence, cybersecurity, mobile application development, and IoT. Multiple students undertook internships focused on Machine Learning (e.g., Soumyadeep Singha, Prateeti Ganguly, Krishanu Nandi, Ayush Chakraborty, Sushruta Mandal, Soni Kumari, Anurag Kumar, Kumar Shyam, Abhay Kumar, Piyush Priyadarshi, Satya Prakash), often utilizing Python (e.g., Sania Ajaz, Abhishek Pandey, Namrata Sarkar, Ankan Sikdar) for data analysis and model development. Specific applications included ``Cloud-Storage Enabled Data Analytics for IoT Systems in Smart Agriculture'' (Ananya Roy at IIT Roorkee) and ``Android Development of a Note making Application, Chatting Application'' (Aditya Kumar at EUPHORIA GENX). Furthermore, skills in Ethical Hacking and Cyber Security were developed by Bidisa Patra at Ardent Computech, highlighting engagement with critical security practices.\n\n    The internships served as crucial environments for translating theoretical academic knowledge into practical, industry-relevant solutions. Students actively applied their understanding of programming paradigms and system architecture to real-world projects. For instance, Abhyast Kumar's role as a Front-end Developer at TGH Technologies involved using ReactJS and explicitly integrating with NodeJS backends, showcasing full-stack integration capabilities. Sunny Kumar's Software Engineering Virtual Experience at JPMORGAN CHASE \\& CO. encompassed establishing financial data feeds, frontend web development, and data visualization, illustrating a comprehensive application of software engineering principles. These experiences moved beyond isolated tasks, requiring students to understand project lifecycles, integrate various components, and deliver tangible outcomes.\n\n    While the primary focus was on technical proficiency, the nature of these diverse internship roles inherently fostered the development of essential soft skills. Engaging in complex projects such as full-stack development, backend system architecture, or data analytics necessitated robust problem-solving abilities to navigate technical challenges and optimize solutions. Collaboration and teamwork were implicitly crucial for roles within companies like RBW Solutions, InnoByte Services, and Intugine Technologies, where interns likely contributed to larger development teams. Effective communication was vital for understanding project requirements, reporting progress, and integrating work with other team members, particularly in roles involving frontend-backend integration or client-facing data analysis. The structured duration and project-oriented nature of these internships also contributed to the development of project management skills, including time management and task prioritization, ensuring timely delivery of project components.\n\\end{card}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    \\subsection*{\\textcolor{accent}{Internship Focus Areas}}\n    \\vspace{0.3cm}\n    \\begin{minipage}[t]{0.48\\textwidth}\n        \\begin{tikzpicture}\n        \\begin{axis}[\n            institutional bar,\n            title={Distribution of Internships by Topic},\n            x tick label style={rotate=45, anchor=east},\n            symbolic x coords={Web Development,Data Science \\& ML,Ethical Hacking,App Development,Java Development},\n            xtick=data,\n            ylabel={Number of Internships},\n            ymin=0,\n            bar width=10pt,\n            width=\\textwidth, % Use full minipage width\n            height=200pt,\n        ]\n        \\addplot[fill=chart1, draw=none] coordinates {\n            (Web Development,9) (Data Science \\& ML,8) (Ethical Hacking,3) (App Development,2) (Java Development,2)\n        };\n        \\end{axis}\n        \\end{tikzpicture}\n    \\end{minipage}%\n    \\hfill\n    \\begin{minipage}[t]{0.48\\textwidth}\n        \\begin{tikzpicture}\n        \\begin{axis}[\n            institutional bar,\n            title={Frequency of Acquired Technical Skills},\n            x tick label style={rotate=45, anchor=east},\n            symbolic x coords={Web Development,Machine Learning,MERN Stack Development,Full Stack Development,Frontend Web Development,Data Science,Unity Development},\n            xtick=data,\n            ylabel={Skill Frequency},\n            ymin=0,\n            bar width=10pt,\n            width=\\textwidth, % Use full minipage width\n            height=200pt,\n        ]\n        \\addplot[fill=chart2, draw=none] coordinates {\n            (Web Development,10) (Machine Learning,7) (MERN Stack Development,3) (Full Stack Development,3) (Frontend Web Development,2) (Data Science,1) (Unity Development,1)\n        };\n        \\end{axis}\n        \\end{tikzpicture}\n    \\end{minipage}\n\\end{card}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    \\subsection*{\\textcolor{accent}{Detailed Internship Log (Sample)}}\n    \\vspace{0.3cm}\n    \\begin{longtable}{@{}p{0.03\\textwidth}p{0.08\\textwidth}p{0.1\\textwidth}p{0.15\\textwidth}p{0.07\\textwidth}p{0.18\\textwidth}p{0.2\\textwidth}p{0.15\\textwidth}@{}}\n        \\toprule\n        \\textbf{Sl.} & \\textbf{Class Roll No.} & \\textbf{Autonomy Roll No.} & \\textbf{Student Name} & \\textbf{Semester} & \\textbf{Internship/ Training Provider} & \\textbf{Internship/ Training Topic Name} & \\textbf{Internship/ Training Duration} \\\\\n        \\midrule\n        \\endhead\n        23 & 2154043 & 12621002012 & Aryan Gupta & 7th & RBW Solutions Private Limited & Backend Developer & 17th July, 2024 - 15th September, 2024 \\\\\n        24 & 2154044 & 12621002058 & Yash Chokhani & 7th & InnoByte Services & Node.js Developer Intern & 25th June, 2024 - 25th July, 2024 \\\\\n        25 & 2154045 & 12621002031 & Prabhat Kumar & 7th & OZIBOOK & Data Analyst Intern & 7th March, 2024 - 07th May, 2024 \\\\\n        26 & 2154046 & 12621002051 & Srijan Kumar & 7th & Larsen \\& Toubro (L\\&T) & Digital and Data Analytics & 3rd June, 2024 - 25th July, 2024 \\\\\n        27 & 2154047 & 12621002048 & Shiwang Raj & 7th & OASIS INFOBYTE & AICTE OIB-SIP internship in Java Development & 15th August, 2024 - 20th September, 2024 \\\\\n        28 & 2154048 & 12621002039 & Rohit Kumar Gupta & 7th & Snackbae & Frontend Developer Intern & 28th May, 2024 - 27th July, 2024 \\\\\n        \\bottomrule\n    \\end{longtable}\n\\end{card}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    \\subsection*{\\textcolor{accent}{Summary of Internships by Domain}}\n    \\vspace{0.3cm}\n    \\begin{longtable}{@{}p{0.5\\textwidth}p{0.45\\textwidth}@{}}\n        \\toprule\n        \\textbf{Internship/ Training Topic Name} & \\textbf{Internship/ Training Duration} \\\\\n        \\midrule\n        \\endhead\n        Software Engineering Virtual Experience (Establishing Financial Data Feeds, Frontend Web Development, Data Visualization with Perspective) & May, 2020 \\\\\n        Android App Development & 1st May, 2020 to 12th June, 2020 (6 Weeks) \\\\\n        Machine Learning with Python & 27th April, 2020 to 8th June, 2020 (6 Weeks) \\\\\n        Data Science & 28th April, 2020 to 9th June, 2020 (6 Weeks) \\\\\n        Data Science & 29th April, 2020 to 10th June, 2020 (6 Weeks) \\\\\n        Data Science & 29th April, 2020 to 10th June, 2020 (6 Weeks) \\\\\n        Ethical Hacking & 8 Weeks \\\\\n        Machine Learning & 6th May, 2020 to 17th June, 2020 (6 Weeks) \\\\\n        \\bottomrule\n    \\end{longtable}\n\\end{card}\n\n\\clearpage\n\n% ==================== SECTION: LEARNING OUTCOMES AND CHALLENGES ====================\n\\section*{\\textcolor{accent}{Learning Outcomes and Challenges}}\n\\addcontentsline{toc}{section}{Learning Outcomes and Challenges}\n{\\large\\textcolor{muted}{Analysis of practical experiences, learning, and challenges faced.}}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    \\subsection*{\\textcolor{accent}{Learning Outcomes and Personal Development}}\n    \\vspace{0.3cm}\n    The internship experiences provided a robust platform for the practical application of academic knowledge across a diverse array of IT domains. Students engaged in specialized roles such as Full Stack Development (e.g., Darzee, 6 months), Backend Development (e.g., RBW Solutions, 2 months; Intugine Technologies, 1 year), Frontend Development (e.g., Snackbae, 2 months), Data Analysis (e.g., OZIBOOK, 2 months), Machine Learning (e.g., multiple Internshala internships, 6-8 weeks; UPSKILL, 1.5 months), and Cyber Security (e.g., Ardent Computech, 1 month). This direct involvement in real-world projects, often spanning several months, facilitated a deeper understanding of how theoretical concepts in programming, data structures, algorithms, and system design translate into functional solutions. For instance, students in Node.js Developer Intern roles (e.g., InnoByte Services, 1 month) directly applied their knowledge of server-side programming and database interaction.\n\n    The internships significantly contributed to improved coding proficiency and an understanding of industry workflows. Students undertaking roles in Web Development (e.g., Octanet, 2 months; Internshala, 6-8 weeks), Android App Development (e.g., EUPHORIA GENX, 2 months), and Java Development (e.g., OASIS INFOBYTE, 1 month) gained hands-on experience with various programming languages and frameworks. Exposure to companies ranging from startups like InnoByte Services and Snackbae to established corporations such as Larsen \\& Toubro (L\\&T), Tata Steel Limited, and JPMORGAN CHASE \\& CO. provided insights into diverse organizational structures, project management methodologies, and professional development cycles. This exposure was crucial for understanding version control, collaborative coding practices, and adherence to industry standards, which are integral to successful software development.\n\n    Beyond technical skills, the internships fostered substantial personal growth, confidence building, and career path clarification. Engaging in roles that required problem-solving, independent research, and collaboration within a professional setting naturally enhanced self-reliance and communication skills. The breadth of topics, from ``Ethical Hacking and Cyber Security'' to ``Cloud-Storage Enabled Data Analytics for IoT Systems in Smart Agriculture'' and ``Vendor Invoice Management on eVIDIT,'' allowed students to explore various facets of the IT industry. This exploration, coupled with the successful completion of projects, contributed to increased confidence in their abilities and provided valuable clarity regarding their preferred career trajectories and areas of specialization post-graduation.\n\\end{card}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    \\subsection*{\\textcolor{accent}{Challenges Faced and Solutions}}\n    \\vspace{0.3cm}\n    The diverse array of technical internships undertaken by students, spanning areas such as Full Stack Development (e.g., Darzee, Breakview Studios), Backend Development (e.g., RBW Solutions, Intugine Technologies), Frontend Development (e.g., Snackbae, Bytelearn), Data Science, Machine Learning, and AI (e.g., OZIBOOK, Internshala, UPSKILL, Ardent AI), inherently presented significant technical challenges. Students frequently encountered steep learning curves, particularly when adapting to new programming languages, frameworks (e.g., Node.js, ReactJS), or complex domain-specific tools within durations ranging from 1 month to 6 months. For instance, a student undertaking a 6-week Machine Learning internship (e.g., Internshala) would face intense pressure to rapidly acquire and apply advanced analytical skills, while a Full Stack Developer intern (e.g., Darzee, 6 months) would navigate the complexities of integrating multiple technologies across an extended project lifecycle. The varied project requirements, from developing note-making and chatting applications (e.g., Euphoria Genx) to managing vendor invoices on eVIDIT (e.g., Indian Oil Corporation Limited), demanded not only technical proficiency but also a rapid understanding of specific business contexts and operational workflows.\n\n    To navigate these obstacles, students employed a range of proactive strategies. A primary approach involved intensive self-directed learning, leveraging online documentation, tutorials, and internal company resources to bridge knowledge gaps quickly. For instance, interns in specialized fields like Cloud-Storage Enabled Data Analytics for IoT Systems (e.g., IIT Roorkee) or Ethical Hacking (e.g., Ardent Computech) would have necessitated continuous research and practical application to master complex concepts. Furthermore, active engagement with mentors and team members was crucial for clarifying project requirements, understanding best practices, and troubleshooting technical issues. The collaborative nature of many development roles, such as SDE Internships (e.g., Revirt Space, Breakview Studios), underscored the importance of effective communication and teamwork in resolving complex problems and ensuring project progression.\n\n    The experience of overcoming these challenges fostered significant professional development. Students cultivated enhanced problem-solving abilities, learning to systematically diagnose and resolve technical impediments under real-world constraints. The necessity of rapidly acquiring new skills and adapting to diverse project environments, from web application development (e.g., Tata Steel Limited) to data analytics (e.g., L\\&T Digital and Data Analytics), instilled a strong sense of adaptability and resilience. These internships served as critical platforms for translating theoretical knowledge into practical application, reinforcing the importance of continuous learning and iterative development in the dynamic IT landscape. The exposure to professional workflows and industry standards also refined students' time management and project execution skills, preparing them for future roles in the technology sector.\n\\end{card}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    \\subsection*{\\textcolor{accent}{Internship Duration Breakdown}}\n    \\vspace{0.3cm}\n    \\begin{center}\n        \\begin{tikzpicture}\n        \\coordinate (center) at (0,0);\n        \\def\\radius{2.5cm}\n        \\pgfmathsetmacro{\\totaldata}{5+2+1} % Sum of all data points (5+2+1 = 8)\n        \n        % Data: 1 Month (5), 2 Months (2), 3 Months (1)\n        % Percentages: 5/8=62.5%, 2/8=25%, 1/8=12.5%\n        \n        \\pgfmathsetmacro{\\angleA}{5/(\\totaldata)*360} % 1 Month\n        \\pgfmathsetmacro{\\angleB}{2/(\\totaldata)*360} % 2 Months\n        \\pgfmathsetmacro{\\angleC}{1/(\\totaldata)*360} % 3 Months\n\n        \\fill[chart1] (center) -- (0:\\radius) arc (0:\\angleA:\\radius) -- cycle;\n        \\fill[chart2] (center) -- (\\angleA:\\radius) arc (\\angleA:\\angleA+\\angleB:\\radius) -- cycle;\n        \\fill[chart3] (center) -- (\\angleA+\\angleB:\\radius) arc (\\angleA+\\angleB:\\angleA+\\angleB+\\angleC:\\radius) -- cycle;\n\n        \\node[anchor=west, font=\\small] at (3.5, 0.5) {\\textcolor{chart1}{$\\blacksquare$} 1 Month (62.5\\%)};\n        \\node[anchor=west, font=\\small] at (3.5, 0) {\\textcolor{chart2}{$\\blacksquare$} 2 Months (25\\%)};\n        \\node[anchor=west, font=\\small] at (3.5, -0.5) {\\textcolor{chart3}{$\\blacksquare$} 3 Months (12.5\\%)};\n        \\end{tikzpicture}\n    \\end{center}\n\\end{card}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    \\subsection*{\\textcolor{accent}{Comparison of Internship Types (Industry vs. Online)}}\n    \\vspace{0.3cm}\n    \\begin{longtable}{@{}p{0.25\\textwidth}p{0.4\\textwidth}p{0.3\\textwidth}@{}}\n        \\toprule\n        \\textbf{Internship/ Training Provider} & \\textbf{Internship/ Training Topic Name} & \\textbf{Internship/ Training Duration} \\\\\n        \\midrule\n        \\endhead\n        Ardent & Network Penetration Testing using METASPLOITABLE & 20/07/2022-25/08/2022 \\\\\n        Internshala & Web Development & Eight Weeks \\\\\n        Internshala & Web Development & Eight Weeks \\\\\n        Varzeo Internship Program & Web Development & 20/07/2022-20/09/2022 \\\\\n        Bambus Group Internship Program & (Junior Developer Trainee) on DEV OPS & 01/08/2022-31/10/2022 \\\\\n        Internshala & REACT JS & Six Weeks \\\\\n        Internshala & Machine Learning & Six Weeks \\\\\n        Internshala & Machine Learning & Six Weeks \\\\\n        Bytelearn & Frontend Developer Intern & July, 2022 - Nov, 2022 \\\\\n        \\bottomrule\n    \\end{longtable}\n\\end{card}\n\n\\clearpage\n\n% ==================== SECTION: RECOMMENDATIONS AND FUTURE OUTLOOK ====================\n\\section*{\\textcolor{accent}{Recommendations and Future Outlook}}\n\\addcontentsline{toc}{section}{Recommendations and Future Outlook}\n{\\large\\textcolor{muted}{Strategic recommendations for enhancing future internship programs.}}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    \\subsection*{\\textcolor{accent}{Recommendations for Future Internships}}\n    \\vspace{0.3cm}\n    To enhance the internship program for future students, a critical review of internship durations and types of engagement is recommended. While a significant number of students undertook shorter programs, such as the numerous 6-week and 8-week internships facilitated by Internshala across various domains like Web Development, Machine Learning, and Data Science, longer durations appear to correlate with more specialized roles. For instance, Darzee offered a 6-month Full Stack Developer role, Intugine Technologies provided a nearly year-long Backend Development opportunity, and Bytelearn and Revirt Space offered 5-month and 4-month SDE Internships, respectively. Future program improvements should encourage students to pursue these extended engagements, which likely offer deeper immersion and more substantial project contributions. Furthermore, the program should continue to support the diverse range of technical topics observed, including Backend, Frontend, Node.js, Java, Python, AI, Machine Learning, Data Analytics, Ethical Hacking, and Cyber Security, ensuring a broad skill development pathway. The inclusion of structured programs, such as the AICTE OIB-SIP internship in Java Development, also presents a valuable model for future offerings.\n\n    Collaboration with industry partners can be significantly enhanced by focusing on the quality and duration of placements. The current report highlights a wide array of partners, from startups like InnoByte Services and Snackbae to established corporations such as Larsen \\& Toubro (L\\&T), Indian Oil Corporation Limited, Tata Steel Limited, and global entities like JPMORGAN CHASE \\& CO. and Accenture Nordic. To deepen these relationships, the department should actively seek to formalize partnerships that facilitate longer-term internships, similar to the 6-month engagement with Darzee or the nearly year-long stint at Intugine Technologies. These extended periods allow for more meaningful project involvement and foster stronger ties between the academic institution and industry. Additionally, exploring and expanding opportunities for virtual experience programs, as offered by JPMORGAN CHASE \\& CO. and Accenture Nordic, can broaden access to a wider range of companies and specialized roles, complementing traditional in-person placements.\n\n    For students preparing for future internships, the current experiences underscore the importance of developing robust technical skills in high-demand areas. The prevalence of roles in Web Development (including Full Stack, Frontend, Backend, Node.js, and ReactJS), Machine Learning, Data Science, AI, Java Development, and Python indicates these are critical competencies. Students should prioritize hands-on project work in these domains to build a strong portfolio. Furthermore, based on the varied durations observed, students are advised to actively seek internships that extend beyond the typical 6-8 week period, aiming for opportunities of two months or more. Longer engagements, such as the 4-5 month roles at Bytelearn and Revirt Space, or the 6-month position at Darzee, provide more comprehensive learning and practical application of skills. Finally, students should diversify their search strategies, exploring opportunities not only through online platforms but also directly with companies, academic institutions like IIT Roorkee, and through structured programs like AICTE OIB-SIP, to maximize their exposure to diverse industry environments and challenges.\n\\end{card}\n\n\\vspace{0.5cm}\n\n\\begin{card}\n    \\subsection*{\\textcolor{accent}{Top Internship Providers}}\n    \\vspace{0.3cm}\n    \\begin{center}\n        \\begin{tikzpicture}\n        \\begin{axis}[\n            institutional bar,\n            title={Top Internship Providers},\n            x tick label style={rotate=45, anchor=east},\n            symbolic x coords={Internshala,Ardent,Breakview Studios,JPMORGAN CHASE \\& CO.,IIT Roorkee},\n            xtick=data,\n            ylabel={Number of Internships},\n            ymin=0,\n            bar width=10pt,\n            width=\\textwidth, % Use full minipage width\n            height=200pt,\n        ]\n        \\addplot[fill=chart3, draw=none] coordinates {\n            (Internshala,19) (Ardent,5) (Breakview Studios,2) (JPMORGAN CHASE \\& CO.,1) (IIT Roorkee,1)\n        };\n        \\end{axis}\n        \\end{tikzpicture}\n    \\end{center}\n\\end{card}\n\n\\end{document}",
+  "metadata": {
+    "total_sections": 6,
+    "total_charts": 4,
+    "total_tables": 3,
+    "total_kpis": 7,
+    "files_processed": 5
+  },
+  "errors": [],
+  "warnings": []
+}

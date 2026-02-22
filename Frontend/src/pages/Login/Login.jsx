@@ -38,6 +38,8 @@ const Login = () => {
         navigate('/institute-admin');
       }else if (data.user.role === 'FACULTY') {
         navigate('/faculty');
+      }else if (data.user.role === 'STUDENT') {
+        navigate('/student');
       }
     } catch (err) {
       setError(err.message);

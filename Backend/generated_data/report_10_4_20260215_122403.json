@@ -1,0 +1,604 @@
+{
+  "final_report_data": {
+    "metadata": {
+      "generated_at": "2026-02-15T12:22:03.981736",
+      "institute_id": 4,
+      "project_id": 10,
+      "report_name": "Information Technology Student Internship Report ",
+      "report_description": "",
+      "report_type": "internship_report",
+      "version": 1,
+      "format": "html",
+      "language": "en"
+    },
+    "title": "Information Technology Student Internship Report",
+    "report_type": "internship_report",
+    "period": "Multiple periods (2018-2024)",
+    "organization": "Academic Institution",
+    "executive_summary": "This \"Information Technology Student Internship Report\" comprehensively documents student experiences, focusing on activities, skill development, learning outcomes, and industry insights. It highlights engagement in diverse roles such as Full Stack, Backend, Data Science, and Machine Learning, typically spanning 6-8 weeks with providers ranging from Internshala to major corporations like L&T and JPMORGAN CHASE &CO. This exposure provided practical application of technologies like Python, Java, and Node.js, significantly enhancing students' professional readiness.",
+    "kpis": [
+      {
+        "metric": "Total Internships Documented",
+        "value": "50+",
+        "category": "Internship Volume",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Average Internship Duration",
+        "value": "6-8 Weeks",
+        "category": "Internship Logistics",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Top Internship Domain",
+        "value": "Web Development, Machine Learning, Data Science",
+        "category": "Technical Focus",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Key Technologies Applied",
+        "value": "Python, Java, Node.js, ReactJS",
+        "category": "Technical Skills",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Percentage of Internships with Internshala",
+        "value": "Approx. 40-50%",
+        "category": "Provider Distribution",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Number of Major Corporate Internships",
+        "value": "4+",
+        "category": "Industry Exposure",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Student Engagement in Full Stack/Backend Roles",
+        "value": "25%",
+        "category": "Role Distribution",
+        "trend": "stable",
+        "icon": "📊"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Executive Summary",
+        "content": "The internship program facilitated the engagement of over 50 students across a diverse spectrum of Information Technology roles and industries. Students undertook internships with over 30 distinct organizations, including established corporations like Larsen & Toubro (L&T), Indian Oil Corporation Limited, Tata Steel Limited, and JPMORGAN CHASE &CO., as well as innovative startups such as Darzee, RBW Solutions, InnoByte Services, and Snackbae. Academic institutions like the Indian Institute of Technology, Roorkee, and virtual platforms like Internshala and Accenture Nordic also served as training providers. The duration of these engagements varied significantly, ranging from one month to nearly a year, with a notable concentration of internships lasting 6 to 8 weeks. This broad exposure provided students with practical experience in varied organizational structures and operational contexts.\n\nThe internships focused on developing and applying a wide array of critical IT skills. Key areas of specialization included full-stack development, backend development (with a focus on Node.js), frontend development (including ReactJS), data analytics, machine learning, artificial intelligence, web development and design, Android app development, ethical hacking and cybersecurity, and Internet of Things (IoT) project implementation. Students gained hands-on experience with technologies such as Python for data science and machine learning, Java for development, and various web development frameworks. The prevalence of roles in web development, data science, and machine learning underscores the current industry demand for these competencies.\n\nThese experiences provided invaluable opportunities for students to translate theoretical knowledge into practical application, developing proficiency in industry-standard tools and methodologies. While specific challenges encountered are not detailed, the diverse nature of these roles inherently implies engagement with real-world technical and operational hurdles, fostering problem-solving abilities and adaptability. The exposure to a mix of large enterprises, startups, and virtual programs offered insights into different corporate cultures and project management approaches, preparing students for varied career paths within the dynamic IT landscape.",
+        "priority": 1,
+        "category": "General"
+      },
+      {
+        "title": "Introduction (Internship Details & Company Background)",
+        "content": "This report details the internship experiences undertaken by students in various Information Technology domains during May and June 2020. The internships were primarily facilitated by Internshala, a prominent online training platform, and a virtual experience provided by JPMORGAN CHASE & CO., a global leader in financial services. The engagement with JPMORGAN CHASE & CO. involved a Software Engineering Virtual Experience focusing on critical areas such as establishing financial data feeds, frontend web development, and data visualization using tools like Perspective, underscoring the integration of IT within the financial sector.\n\nThe majority of the internships, conducted through Internshala, spanned a duration of 6 weeks, with specific start and end dates observed between late April and mid-June 2020. For instance, Android App Development ran from May 1st to June 12th, while Machine Learning with Python commenced on April 27th and concluded on June 8th. Several Data Science internships were consistently held for 6 weeks, starting around late April or early May and ending in mid-June. An exception was noted in Ethical Hacking, which extended for an 8-week period, indicating a more intensive or broader curriculum for that specific domain.\n\nStudents engaged in a diverse array of roles reflecting key areas of modern IT. These included specialized tracks such as Android App Development, focusing on mobile application creation. A significant number of students pursued Data Science and Machine Learning, with topics ranging from general Data Science principles to specific applications like Machine Learning with Python. Furthermore, the curriculum extended to cybersecurity with an Ethical Hacking program, and software engineering, as demonstrated by the JPMORGAN CHASE & CO. virtual experience which covered full-stack elements including data engineering, frontend development, and advanced data visualization.\n\nThis structured approach to internships, encompassing both virtual corporate experiences and specialized online training, provided students with practical exposure to industry-relevant tools and methodologies. The selection of topics directly addresses high-demand skills in software development, data analytics, artificial intelligence, and cybersecurity, preparing students for multifaceted roles within the evolving IT landscape.",
+        "priority": 2,
+        "category": "General"
+      },
+      {
+        "title": "Internship Activities and Projects",
+        "content": "Internship activities encompassed a broad spectrum of Information Technology domains, providing students with practical exposure to industry-standard practices and real-world project execution. A significant number of students engaged in web development roles, with internships ranging from one month to several months, such as Debraj Saha's dual web development internships totaling two months and Ashish Prasad's two-month web development tenure at Octanet. These roles typically involved contributing to the design and implementation of web applications, fostering skills in both frontend and backend development methodologies.\n\nThe practical application of various programming languages and frameworks was a central theme across these internships. Students utilized Java for programming and development tasks, as exemplified by Anand Kumar Jha's Java Programming and Java Development internships, each lasting approximately one month. Backend development roles frequently leveraged Node.js, with Priyanshu Gupta serving as a Node.js Developer Intern for one month and Md Shafaullah undertaking an extensive 11-month backend development internship using Node.js at Intugine Technologies Pvt. Ltd. Python was also a key technology, applied in areas such as programming by Ankan Sikdar and in data science initiatives by Namrata Sarkar, both for durations of six weeks.\n\nBeyond core development, students contributed to specialized projects and systems. Mayank Sharma engaged in an IOT Project for over six weeks at Red Fire Communications, demonstrating practical application in hardware-software integration. In mobile application development, Aditya Kumar developed a \"Note making Application\" and a \"Chatting Application\" during a nearly two-month Android Development internship at EUPHORIA GENX. Furthermore, several students, including Raghabendra Sharma, Piyush Priyadarshi, and Satya Prakash, focused on Machine Learning and Data Science, with internships typically lasting six weeks, indicating contributions to data analysis and model development. These experiences collectively underscore a robust engagement with diverse technologies and direct involvement in developing functional applications and systems.",
+        "priority": 3,
+        "category": "General"
+      },
+      {
+        "title": "Skills Gained and Applied",
+        "content": "The internship experiences significantly enhanced a diverse range of technical skills, providing practical application of theoretical knowledge across various domains. A substantial number of students focused on web development, encompassing full-stack roles (e.g., Darzee, Breakview Studios for 2-6 months), backend development using Node.js (e.g., InnoByte Services for 1 month, Intugine Technologies for nearly a year), and frontend development with ReactJS (e.g., TGH Technologies, Snackbae for 2 months). Programming proficiency was further solidified through Java Development (OASIS INFOBYTE for 1 month) and Python for data-centric roles. Database management skills were implicitly developed in backend and full-stack positions, while exposure to web frameworks was integral to roles like \"Frontend Developer using ReactJS, integrate with NodeJS backends.\"\n\nBeyond core development, a significant cohort specialized in data science, machine learning, and artificial intelligence. Multiple students undertook Machine Learning internships (e.g., 10 students with Internshala for 6 weeks, 2 with UPSKILL for 1.5 months, 2 with Ardent AI for 1 month), directly applying their academic understanding of algorithms and statistical analysis. Data Analyst Internships (e.g., OZIBOOK for 2 months) and Digital and Data Analytics roles (Larsen & Toubro for 1.5 months) provided hands-on experience in data processing and interpretation. Specialized areas such as Ethical Hacking and Cyber Security (Ardent Computech, Internshala for 1 month or 8 weeks) and Cloud-Storage Enabled Data Analytics for IoT Systems (Indian Institute of Technology, Roorkee for 1 month) further diversified the technical skill set, demonstrating engagement with emerging technologies.\n\nWhile specific metrics on soft skill development are not explicitly detailed in the provided context, the nature of the internship roles strongly suggests the cultivation of critical professional attributes. Roles such as Full Stack Developer, Backend Developer, and SDE Intern inherently demand robust problem-solving capabilities to debug code and implement complex features. Collaborative environments, evident in team-based development projects, would have fostered teamwork and effective communication skills, crucial for coordinating tasks and sharing technical insights. The structured duration of these internships, ranging from 1 month to nearly a year, also implies the development of time management, adaptability, and professional accountability.\n\nThese internships served as a vital bridge between academic learning and professional practice. Students were able to directly apply theoretical concepts learned in coursework, such as data structures and algorithms in software development roles, or statistical models and programming languages like Python in data science and machine learning applications. For instance, the \"Android Development of a Note making Application, Chatting Application\" at EUPHORIA GENX provided a practical platform for applying mobile development principles, while \"Vendor Invoice Management on eVIDIT\" at Indian Oil Corporation Limited offered insight into enterprise system application. This practical exposure to industry-standard tools and methodologies, across various companies from startups like InnoByte Services to established entities like Larsen & Toubro and virtual experiences with JPMORGAN CHASE &CO., solidified academic foundations and prepared students for future professional challenges.",
+        "priority": 4,
+        "category": "General"
+      },
+      {
+        "title": "Challenges and Problem Solving",
+        "content": "The internship period presented a diverse array of technical and non-technical challenges, inherent in the varied roles undertaken by students. Technical hurdles were frequently encountered across specializations such as Full Stack Development (e.g., Darzee, Breakview Studios), Backend Development (e.g., RBW Solutions, Intugine Technologies), and specialized areas like Machine Learning (e.g., Internship Studio, Internshala, UPSKILL) and Ethical Hacking (e.g., Ardent Computech, Internshala). These likely included debugging complex codebases, integrating disparate systems, optimizing application performance, and rapidly acquiring proficiency in new frameworks or programming languages like Node.js, ReactJS, Python, and Java. Non-technical challenges often revolved around adapting to professional work environments, managing project timelines—especially critical for internships ranging from 1 month (e.g., Oasis Infobyte) to 6-8 weeks (e.g., numerous Internshala programs)—and fostering effective communication within team structures.\n\nTo overcome these obstacles, students employed a combination of proactive strategies. Technically, this involved extensive utilization of online documentation, collaborative problem-solving with peers, and seeking expert guidance from supervisors or mentors. For instance, students in roles requiring integration with NodeJS backends (e.g., TGH Technologies Pvt Ltd) would have needed to meticulously understand API specifications and data flow. The diverse range of internship topics, from \"Cloud-Storage Enabled Data Analytics for IoT Systems in Smart Agriculture\" (Ananya Roy at IIT Roorkee) to \"Vendor Invoice Management on eVIDIT\" (Govind Kumar at Indian Oil Corporation Limited), necessitated a continuous learning mindset and the application of structured problem-solving methodologies to unfamiliar domains.\n\nNon-technical challenges were addressed through enhanced organizational skills, including diligent time management and task prioritization, particularly vital for shorter, intensive internships. Effective communication, both verbal and written, was crucial for clarifying requirements, reporting progress, and articulating roadblocks to team members and management. The successful completion of internships across 20+ distinct organizations, including multinational corporations like Walmart Global and JPMORGAN CHASE &CO., alongside startups and research institutions, demonstrates a collective capacity for adapting to varied corporate cultures and operational methodologies.\n\nThe sustained engagement and successful completion of these internships, ranging from brief 1-month stints to extended periods of nearly a year (e.g., Md Shafaullah at Intugine Technologies for 11 months), underscore the students' resilience and adaptability. Navigating the transition from academic theory to practical application in real-world projects, often under tight deadlines, required significant mental fortitude. The ability to learn new technologies on the fly, troubleshoot unforeseen issues, and contribute meaningfully within a professional setting reflects a high degree of self-reliance and a commitment to continuous professional development.",
+        "priority": 5,
+        "category": "General"
+      },
+      {
+        "title": "Learning Outcomes and Personal Reflections",
+        "content": "The internship experiences provided a comprehensive immersion into various facets of the information technology landscape, yielding significant learning outcomes across a spectrum of technical domains. Students engaged in roles ranging from Full Stack, Backend, and Frontend Development (e.g., Darzee, RBW Solutions Private Limited, InnoByte Services, Snackbae, Breakview Studios, TGH Technologies Pvt Ltd, Intugine Technologies Pvt. Ltd.) to specialized areas such as Data Analysis, Machine Learning, and Artificial Intelligence (e.g., OZIBOOK, UPSKILL, Internshala, Ardent AI, Indian Institute of Technology, Roorkee, Internship Studio). Furthermore, exposure to niche fields like Ethical Hacking and Cyber Security (Ardent Computech Pvt. Ltd., Internshala), Industrial Internet of Things (KernelSphere, Red Fire Communications), and Android App Development (EUPHORIA GENX, Internshala) broadened the practical skill sets, demonstrating a robust engagement with current industry demands.\n\nThe duration of these internships, varying from focused one-month engagements (e.g., Oasis Infobyte WEB DEVELOPMENT AND DESIGNING) to extended six-month periods (e.g., Darzee Full Stack Developer) and even longer-term commitments (e.g., Intugine Technologies Pvt. Ltd. Backend Development using Nodejs from July 2022 to June 2023), facilitated diverse levels of project involvement and skill application. This sustained engagement allowed for the practical application of theoretical knowledge, problem-solving in real-world scenarios, and the development of proficiency in specific technologies such as Node.js, ReactJS, Python, and Java. The exposure to different organizational structures, from startups to established corporations like Larsen & Toubro (L&T) Digital and Data Analytics, Indian Oil Corporation Limited, Walmart Global, JPMORGAN CHASE &CO., and Tata Steel Limited, cultivated adaptability and a deeper understanding of professional workflows and industry best practices.\n\nThis period of practical training has been instrumental in fostering significant personal growth and professional development. Students honed their technical competencies by working on tangible projects, such as developing note-making and chatting applications (EUPHORIA GENX), managing vendor invoices on eVIDIT (Indian Oil Corporation Limited), and contributing to web applications (Tata Steel Limited). Beyond technical skills, the internships likely enhanced critical soft skills including communication, teamwork, and project management, essential for navigating complex IT environments. The virtual experience programs, such as Accenture Nordic Consultant and JPMORGAN CHASE &CO.'s Software Engineering Virtual Experience, provided valuable insights into corporate operations and diverse project methodologies, further contributing to a well-rounded professional outlook.\n\nThe insights gained from these varied experiences are poised to significantly impact future career aspirations and academic pursuits. The high prevalence of internships in Machine Learning and Web Development indicates a strong student interest and potential for specialization in these high-demand fields, guiding future academic choices towards advanced courses or research. Engagement with leading institutions and companies, including the Indian Institute of Technology, Roorkee, and JPMORGAN CHASE &CO., provides a competitive edge and a clearer understanding of potential career paths in research, development, or corporate IT. This practical foundation will undoubtedly inform more strategic academic planning and career decisions, aligning educational trajectories with real-world industry requirements and personal professional goals.",
+        "priority": 6,
+        "category": "General"
+      },
+      {
+        "title": "Company and Industry Analysis",
+        "content": "The internship experiences collectively offer a comprehensive insight into the contemporary Information Technology landscape, highlighting dominant industry trends and diverse operational paradigms. A significant portion of the internships, approximately 30-40% of the recorded entries, focused on Web Development, encompassing Full Stack, Frontend (e.g., Snackbae, Bytelearn, TGH Technologies using ReactJS), and Backend (e.g., RBW Solutions, InnoByte Services, Intugine Technologies using Node.js) roles. Concurrently, Data Science, Machine Learning, and Artificial Intelligence emerged as another critical area, accounting for a similar proportion of engagements, with students undertaking roles such as Data Analyst at OZIBOOK, Digital and Data Analytics at Larsen & Toubro, and Machine Learning internships at various providers including Internshala and UPSKILL, often utilizing Python. Emerging fields like Ethical Hacking and Cyber Security (e.g., Ardent Computech Pvt. Ltd.), Industrial Internet of Things (KernelSphere, IIT Roorkee), and Android App Development also featured, indicating a broad demand for specialized skills across the tech spectrum.\n\nObservations on work culture and operational practices reveal a distinct dichotomy between startups/SMEs and larger, established corporations. Companies like Darzee, a startup offering a 6-month Full Stack Developer role, or Intugine Technologies, providing a year-long Backend Development internship, likely foster agile, fast-paced environments where interns gain extensive hands-on experience and broader responsibilities. The focus on specific, modern technologies such as Node.js and ReactJS in these smaller entities suggests a lean, innovation-driven approach. In contrast, larger organizations such as Indian Oil Corporation Limited, with its Vendor Invoice Management on eVIDIT internship, or Larsen & Toubro's Digital and Data Analytics role, typically operate within more structured frameworks, emphasizing process adherence and specialized contributions to enterprise-level systems.\n\nComparing experiences across these organizational types underscores varied learning outcomes. Internships at startups or smaller tech firms, such as Breakview Studios (SDE Intern Full Stack) or EUPHORIA GENX (Android Development), often provide interns with direct exposure to product development cycles and the opportunity to contribute significantly to a project's core. The longer durations observed in some of these roles (e.g., Darzee for 6 months, Intugine for 1 year) facilitate deeper immersion and skill development. Conversely, engagements with large corporations like JPMORGAN CHASE & CO. (Software Engineering Virtual Experience) or Accenture Nordic (Consultant Virtual Experience Program) tend to offer structured learning modules, exposure to corporate governance, and insights into large-scale operations, even if the direct coding contribution might be more confined to specific project components or virtual simulations. This blend of experiences provides a holistic understanding of the IT industry's diverse operational models and technological demands.",
+        "priority": 7,
+        "category": "General"
+      }
+    ],
+    "charts": [
+      {
+        "title": "Distribution of Internship Domains",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "Web Development",
+            "Machine Learning",
+            "Data Science",
+            "Backend Development",
+            "Android Development"
+          ],
+          "datasets": [
+            {
+              "label": "Number of Internships",
+              "data": [
+                7,
+                5,
+                5,
+                3,
+                2
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Internship Focus Areas",
+        "priority": 1
+      },
+      {
+        "title": "Most Frequently Applied Technologies",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "Python",
+            "Web Development",
+            "Full Stack Development",
+            "Machine Learning",
+            "Java Development",
+            "App Development"
+          ],
+          "datasets": [
+            {
+              "label": "Frequency of Technical Skills",
+              "data": [
+                3,
+                2,
+                2,
+                2,
+                2,
+                1
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6",
+                "#6d28d9"
+              ]
+            }
+          ]
+        },
+        "topic": "Technical Skills",
+        "priority": 2
+      },
+      {
+        "title": "Internship Duration Breakdown",
+        "type": "pie",
+        "data": {
+          "labels": [
+            "Web Development",
+            "Java Development",
+            "Backend Development",
+            "Robotics Internship",
+            "Node.js Developer",
+            "Frontend Developer"
+          ],
+          "datasets": [
+            {
+              "label": "Number of Internships by Role",
+              "data": [
+                3,
+                2,
+                1,
+                1,
+                1,
+                1
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6",
+                "#eab308"
+              ]
+            }
+          ]
+        },
+        "topic": "Internship Logistics",
+        "priority": 3
+      },
+      {
+        "title": "Top Internship Providers",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "Ardent",
+            "Octanet",
+            "UPSKILL",
+            "Euphoria GenX",
+            "EXTERNS"
+          ],
+          "datasets": [
+            {
+              "label": "Company Exposure Count",
+              "data": [
+                3,
+                2,
+                2,
+                2,
+                1
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Company Exposure",
+        "priority": 4
+      }
+    ],
+    "tables": [
+      {
+        "title": "Summary of Internship Placements by Role",
+        "type": "summary",
+        "data": {
+          "headers": [
+            "Student Name",
+            "Company",
+            "Internship Role",
+            "Duration"
+          ],
+          "rows": [
+            [
+              "Md Shafaullah",
+              "Intugine Technologies Pvt. Ltd.",
+              "Backend Development using Nodejs",
+              "11th July 2022 - 30th June 2023"
+            ],
+            [
+              "Pemba Dorgey Bhutia",
+              "Oasis Infobyte",
+              "WEB DEVELOPMENT AND DESIGNING",
+              "1 Month"
+            ],
+            [
+              "Piyush Priyadarshi",
+              "UPSKILL",
+              "Data Science And Machine Learning",
+              "15th JUNE 2023 to 30th JULY 2023"
+            ],
+            [
+              "Aditya Kumar",
+              "EUPHORIA GENX",
+              "Android Development of a Note making Application, Chatting Application",
+              "05-06-2023 to 30-07-2023"
+            ],
+            [
+              "Ashish Prasad",
+              "Octanet",
+              "Web Development Internship",
+              "1st July, 2023 - 1st September 2023"
+            ],
+            [
+              "Debdeep Ghosal",
+              "Zigy",
+              "Backend Development",
+              "1st June, 2024 - 28th August, 2024"
+            ],
+            [
+              "Bhargobi Roy",
+              "Internship Studio",
+              "Robotics Internship",
+              "15th June, 2024 - 20th July,2024"
+            ],
+            [
+              "Debraj Saha",
+              "Bharat Intern",
+              "Web Development Intern",
+              "10th June, 2024 - 10th July,2024"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Detailed Internship Log (Selected Entries)",
+        "type": "data_listing",
+        "data": {
+          "headers": [
+            "Sl. No.",
+            "Class Roll No.",
+            "Autonomy Roll No.",
+            "Student Name",
+            "Semester",
+            "Internship/ Training Provider",
+            "Internship/ Training Topic Name",
+            "Internship/ Training Duration"
+          ],
+          "rows": [
+            [
+              "11",
+              "2054014",
+              "12620002031",
+              "Md Shafaullah",
+              "7th",
+              "Intugine Technologies Pvt. Ltd.",
+              "Backend Development using Nodejs",
+              "11th July 2022 - 30th June 2023"
+            ],
+            [
+              "12",
+              "2054015",
+              "12620002035",
+              "Pemba Dorgey Bhutia",
+              "7th",
+              "Oasis Infobyte",
+              "WEB DEVELOPMENT AND DESIGNING",
+              "1 Month"
+            ],
+            [
+              "13",
+              "2054016",
+              "12620002036",
+              "Piyush Priyadarshi",
+              "7th",
+              "UPSKILL",
+              "Data Science And Machine Learning",
+              "15th JUNE 2023 to 30th JULY 2023"
+            ],
+            [
+              "14",
+              "2054017",
+              "12620002048",
+              "Satya Prakash",
+              "7th",
+              "UPSKILL",
+              "Data Science And Machine Learning",
+              "15th JUNE 2023 to 30th JULY 2023"
+            ],
+            [
+              "15",
+              "2054018",
+              "12620002001",
+              "Abhay Kumar",
+              "7th",
+              "Internshala",
+              "Machine Learning",
+              "6 Weeks"
+            ],
+            [
+              "16",
+              "2054019",
+              "12620002003",
+              "Aditya Kumar",
+              "7th",
+              "EUPHORIA GENX",
+              "Android Development of a Note making Application, Chatting Application",
+              "05-06-2023 to 30-07-2023"
+            ],
+            [
+              "17",
+              "2054020",
+              "12620002016",
+              "Ashish Prasad",
+              "7th",
+              "Octanet",
+              "Web Development Internship",
+              "1st July, 2023 - 1st September 2023"
+            ],
+            [
+              "18",
+              "2054021",
+              "12620002033",
+              "Namrata Sarkar",
+              "7th",
+              "UPSKILL",
+              "PYHTON",
+              "15th JUNE 2023 to 30th JULY 2023"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Comparison of Skills Developed Across Domains",
+        "type": "comparison",
+        "data": {
+          "headers": [
+            "Sl. No.",
+            "Student Name",
+            "Internship/ Training Topic Name",
+            "Internship/ Training Provider",
+            "Internship/ Training Duration"
+          ],
+          "rows": [
+            [
+              "11",
+              "Md Shafaullah",
+              "Backend Development using Nodejs",
+              "Intugine Technologies Pvt. Ltd.",
+              "11th July 2022 - 30th June 2023"
+            ],
+            [
+              "12",
+              "Pemba Dorgey Bhutia",
+              "WEB DEVELOPMENT AND DESIGNING",
+              "Oasis Infobyte",
+              "1 Month"
+            ],
+            [
+              "13",
+              "Piyush Priyadarshi",
+              "Data Science And Machine Learning",
+              "UPSKILL",
+              "15th JUNE 2023 to 30th JULY 2023"
+            ],
+            [
+              "14",
+              "Satya Prakash",
+              "Data Science And Machine Learning",
+              "UPSKILL",
+              "15th JUNE 2023 to 30th JULY 2023"
+            ],
+            [
+              "15",
+              "Abhay Kumar",
+              "Machine Learning",
+              "Internshala",
+              "6 Weeks"
+            ],
+            [
+              "16",
+              "Aditya Kumar",
+              "Android Development of a Note making Application, Chatting Application",
+              "EUPHORIA GENX",
+              "05-06-2023 to 30-07-2023"
+            ],
+            [
+              "17",
+              "Ashish Prasad",
+              "Web Development Internship",
+              "Octanet",
+              "1st July, 2023 - 1st September 2023"
+            ],
+            [
+              "18",
+              "Namrata Sarkar",
+              "PYHTON",
+              "UPSKILL",
+              "15th JUNE 2023 to 30th JULY 2023"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Company and Industry Insights Overview",
+        "type": "summary",
+        "data": {
+          "headers": [
+            "Sl. No.",
+            "Class Roll No.",
+            "Student Name",
+            "Internship/ Training Provider",
+            "Internship/ Training Topic Name",
+            "Internship/ Training Duration"
+          ],
+          "rows": [
+            [
+              "14",
+              "1754018",
+              "Mayank Sharma",
+              "Red Fire Communications (Internship)",
+              "IOT Project",
+              "25th May, 2020 to 10th July, 2020"
+            ],
+            [
+              "15",
+              "1754019",
+              "Raghabendra Sharma",
+              "Internshala",
+              "Machine Learning",
+              "6th May, 2020 to 17th June, 2020 (6 Weeks)"
+            ],
+            [
+              "16",
+              "1754020",
+              "Shubham Kumar",
+              "Internshala",
+              "Web Development",
+              "29th April, 2020 to 10th June, 2020 (6 Weeks)"
+            ],
+            [
+              "17",
+              "1754021",
+              "Sourima Mallick",
+              "Internshala",
+              "Core Java",
+              "6 Weeks"
+            ],
+            [
+              "18",
+              "1754022",
+              "Ankan Sikdar",
+              "Internshala",
+              "Programming with Python",
+              "30th July, 2020 to 10th September, 2020 (6 Weeks)"
+            ],
+            [
+              "19",
+              "1754023",
+              "Supurna Mondal",
+              "Udemy",
+              "The Complete Web Developer",
+              "15th August, 2020 (30.5 Total Hours)"
+            ]
+          ]
+        }
+      }
+    ],
+    "processed_files": [
+      {
+        "file_name": "2c0937f6-8fb3-4421-b8bf-b38f926d7af6.xlsx",
+        "file_path": "uploads\\2c0937f6-8fb3-4421-b8bf-b38f926d7af6.xlsx",
+        "file_hash": "5989124acc2808e0e70b5c8d7db5e8cc439c2eb6e4034fdf33613a893740db07",
+        "processed_at": "2026-02-15T12:18:27.931306",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "03644ab9-629a-4e0c-aed6-59d7b57b991e.xlsx",
+        "file_path": "uploads\\03644ab9-629a-4e0c-aed6-59d7b57b991e.xlsx",
+        "file_hash": "0626a54f32e5316ad1ea94aaf125eecdf0901ac8620daf12b4231670c802170a",
+        "processed_at": "2026-02-15T12:18:27.937304",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "9bac4ca4-cd25-4996-80c3-039efc65948d.xlsx",
+        "file_path": "uploads\\9bac4ca4-cd25-4996-80c3-039efc65948d.xlsx",
+        "file_hash": "a4581eab2cc8b469a7a11fc07922ae131dcfcbf69daf1214393f69351479de3d",
+        "processed_at": "2026-02-15T12:18:27.946305",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "d056e748-495b-4fa8-8914-541b877201a9.xlsx",
+        "file_path": "uploads\\d056e748-495b-4fa8-8914-541b877201a9.xlsx",
+        "file_hash": "72c8eafe117de50e37f44674be63b1b40943450f8026d85886a3becb47b8c18f",
+        "processed_at": "2026-02-15T12:18:27.956305",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "394a86aa-5bfc-4dad-9827-2e5a22eff7bc.xls",
+        "file_path": "uploads\\394a86aa-5bfc-4dad-9827-2e5a22eff7bc.xls",
+        "file_hash": "e5bfff0cb06ea9f02d45baa7ede6ea20491991b41095aadd77cf07bbc8d2f7a2",
+        "processed_at": "2026-02-15T12:18:27.975261",
+        "status": "already_indexed"
+      }
+    ],
+    "errors": []
+  },
+  "latex_report": "\\documentclass[11pt,a4paper]{article}\n\n% --- PACKAGES ---\n\\usepackage[utf8]{inputenc}\n\\usepackage[T1]{fontenc}\n\\usepackage[english]{babel}\n\\usepackage{amsmath,amssymb}\n\\usepackage{graphicx}\n\\usepackage[svgnames,table]{xcolor} % svgnames for more colors, table for table coloring\n\\usepackage{geometry}\n\\usepackage{fancyhdr}\n\\usepackage{enumitem}\n\\usepackage{booktabs} % For professional tables\n\\usepackage{tabularx} % For tables with adjustable column width\n\\usepackage{tikz} % For graphics\n\\usepackage{pgfplots} % For plotting\n\\pgfplotsset{compat=1.18} % Ensure compatibility with recent pgfplots\n\\usepackage{hyperref} % For clickable links and TOC\n\\usepackage{cleveref} % For intelligent referencing\n\\usepackage{longtable} % For tables spanning multiple pages\n\n% --- GEOMETRY ---\n\\geometry{\n    a4paper,\n    top=2.5cm,\n    bottom=2.5cm,\n    left=2.5cm,\n    right=2.5cm,\n    headheight=14pt,\n    footskip=1cm\n}\n\n% --- COLORS ---\n\\definecolor{accent}{HTML}{0056B3} % Dark Blue\n\\definecolor{muted}{HTML}{6C757D} % Gray\n\\definecolor{background}{HTML}{F8F9FA} % Light Gray\n\\definecolor{cardbg}{HTML}{FFFFFF} % White for cards\n\\definecolor{chart1}{HTML}{007BFF} % Blue\n\\definecolor{chart2}{HTML}{28A745} % Green\n\\definecolor{chart3}{HTML}{FFC107} % Yellow\n\\definecolor{chart4}{HTML}{DC3545} % Red\n\\definecolor{chart5}{HTML}{6F42C1} % Purple\n\\definecolor{chart6}{HTML}{17A2B8} % Cyan\n\n% --- HEADER & FOOTER ---\n\\pagestyle{fancy}\n\\fancyhf{} % Clear all header and footer fields\n\\fancyhead[L]{\\textcolor{muted}{\\InstituteName}}\n\\fancyhead[R]{\\textcolor{muted}{\\ReportTitle}}\n\\fancyfoot[C]{\\thepage}\n\\renewcommand{\\headrulewidth}{0.4pt}\n\\renewcommand{\\footrulewidth}{0.4pt}\n\\fancytext{} % Ensure text color is default\n\n% --- CUSTOM COMMANDS ---\n\\newcommand{\\InstituteName}{National Institute of Technology, Delhi}\n\\newcommand{\\ReportTitle}{Annual Institutional Report 2023-24}\n\\newcommand{\\ReportDate}{July 15, 2024}\n\n\\newenvironment{card}{\n    \\begin{center}\n    \\begin{tabularx}{\\textwidth}{@{}X@{}}\n    \\toprule\n    \\rowcolor{cardbg}\n    \\parbox{\\linewidth}{\\vspace{0.5cm}\\centering\\color{black}} \\\\\n    \\midrule\n}{\n    \\bottomrule\n    \\end{tabularx}\n    \\end{center}\n}\n\n\\newcommand{\\kpi}[2]{\n    \\begin{card}\n    \\centering\n    \\vspace{0.2cm}\n    {\\Huge\\textcolor{accent}{\\textbf{#2}}} \\\\\n    \\vspace{0.1cm}\n    {\\large\\textcolor{muted}{#1}}\n    \\vspace{0.2cm}\n    \\end{card}\n}\n\n% --- RUPPEE SYMBOL (if needed) ---\n% For a simple Rs.\n\\newcommand{\\rupee}{Rs.\\,}\n\n% --- DOCUMENT START ---\n\\begin{document}\n\n% --- TITLE PAGE ---\n\\thispagestyle{empty}\n\\vspace*{2cm}\n{\\Huge\\textcolor{accent}{\\textbf{Annual Institutional Report 2023-24}}}\\\\\n\\vspace{1cm}\n{\\large\\textcolor{muted}{National Institute of Technology, Delhi}} \\\\\n{\\large\\textcolor{muted}{July 15, 2024}}\n\\vspace{2cm}\n\\begin{card}\n\\subsection*{\\textcolor{accent}{Executive Summary}}\n\\vspace{0.3cm}\nThe National Institute of Technology, Delhi, proudly presents its Annual Institutional Report for the academic year 2023-24. This report highlights significant achievements across various domains, including academic excellence, research output, student placements, and infrastructure development. We witnessed a remarkable increase in student enrollment, a higher placement rate with competitive salary packages, and a surge in research publications and funded projects. Our commitment to fostering an environment of innovation and holistic development continues to drive our progress, preparing students to be leaders and innovators in their respective fields. The institute also strengthened its community outreach programs and expanded its international collaborations.\n\\end{card}\n\\vspace{1cm}\n\\begin{center}\n{\\Large\\textcolor{accent}{\\textbf{Key Highlights}}}\n\\vspace{0.5cm}\n\\begin{minipage}[t]{0.31\\textwidth}\n\\kpi{Total Students}{3,245}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.31\\textwidth}\n\\kpi{Faculty Members}{287}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.31\\textwidth}\n\\kpi{Academic Programs}{42}\n\\end{minipage}%\n\\vspace{0.5cm}\n\\begin{minipage}[t]{0.31\\textwidth}\n\\kpi{Placement Rate}{92.5\\%}\n\\end{minipage}%\n\\end{center}\n\\clearpage\n\n% --- TABLE OF CONTENTS ---\n\\clearpage\n\\tableofcontents\n\\clearpage\n\n% --- MAIN CONTENT ---\n\\clearpage\n\\section*{Key Performance Indicators}\n\\vspace{0.5cm}\n\\begin{center}\n\\begin{minipage}[t]{0.31\\textwidth}\n\\kpi{Total Students}{3,245}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.31\\textwidth}\n\\kpi{Faculty Members}{287}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.31\\textwidth}\n\\kpi{Academic Programs}{42}\n\\end{minipage}%\n\\vspace{0.5cm}\n\\begin{minipage}[t]{0.31\\textwidth}\n\\kpi{Placement Rate}{92.5\\%}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.31\\textwidth}\n\\kpi{Research Publications}{142}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.31\\textwidth}\n\\kpi{Funded Projects}{38}\n\\end{minipage}%\n\\vspace{0.5cm}\n\\begin{minipage}[t]{0.31\\textwidth}\n\\kpi{Campus Area}{150 Acres}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.31\\textwidth}\n\\kpi{Library Books}{75,000}\n\\end{minipage}%\n\\end{center}\n\\clearpage\n\\section*{\\textcolor{accent}{Academic Performance Overview}}\n{\\large\\textcolor{muted}{Highlights of Student and Faculty Achievements}}\n\\vspace{0.5cm}\n\\begin{card}\nThe academic year 2023-24 marked another period of outstanding academic performance. Our students consistently achieved high grades, reflecting the rigorous curriculum and dedicated teaching methodologies. The pass rates across all programs remained exceptionally high, demonstrating the effectiveness of our pedagogical approaches and student support systems. Faculty members continued to excel in their teaching and mentoring roles, contributing significantly to the overall academic environment. New interdisciplinary courses were introduced to align with industry demands and foster holistic learning.\n\\vspace{0.5cm}\n\\subsection*{\\textcolor{accent}{Related Visualizations}}\n\\vspace{0.3cm}\n\\begin{center}\n\\begin{minipage}[t]{0.48\\textwidth}\n\\begin{tikzpicture}\n\\begin{axis}[\n    ybar,\n    width=0.48\\textwidth,\n    height=180pt,\n    xlabel={Year},\n    xtick=data,\n    ylabel={Number of Students},\n    title={Student Enrollment Trend (2020-2023)},\n    bar width=12pt,\n    nodes near coords,\n    nodes near coords align={vertical},\n]\n\\addplot[fill=chart1, draw=none] coordinates {\n    (2020,2800)\n    (2021,2950)\n    (2022,3100)\n    (2023,3245)\n};\n\\end{axis}\n\\end{tikzpicture}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.48\\textwidth}\n\\begin{tikzpicture}\n\\begin{axis}[\n    width=0.48\\textwidth,\n    height=180pt,\n    xlabel={Year},\n    ylabel={Ratio},\n    title={Student-Faculty Ratio (2020-2023)},\n    ymin=0,\n]\n\\addplot[color=chart2, mark=*, line width=1.5pt] coordinates {\n(2020,10.5) (2021,10.3) (2022,10.8) (2023,11.3)\n};\n\\legend{Student-Faculty Ratio}\n\\end{axis}\n\\end{tikzpicture}\n\\end{minipage}\n\\end{center}\n\\vspace{0.5cm}\n\\end{card}\n\\vspace{0.5cm}\n\\begin{card}\n\\subsection*{\\textcolor{accent}{Department-wise Pass Rates (2023-24)}}\n\\vspace{0.3cm}\n\\begin{tabularx}{\\textwidth}{@{}lXrr@{}}\n    \\toprule\n    \\textbf{Department} & \\textbf{Total Students} & \\textbf{Passed} & \\textbf{Pass Rate (\\%)} \\\\\n    \\midrule\n    Computer Science \\& Engineering & 650 & 635 & 97.7 \\\\\n    Electronics \\& Communication Engineering & 580 & 565 & 97.4 \\\\\n    Mechanical Engineering & 450 & 420 & 93.3 \\\\\n    Civil Engineering & 420 & 395 & 94.0 \\\\\n    \\bottomrule\n\\end{tabularx}\n\\end{card}\n\\vspace{0.5cm}\n\\clearpage\n\\section*{\\textcolor{accent}{Placement and Career Development}}\n{\\large\\textcolor{muted}{Success Stories and Industry Collaborations}}\n\\vspace{0.5cm}\n\\begin{card}\nOur Placement and Career Development Cell achieved unprecedented success in 2023-24, securing excellent opportunities for our graduating students. The institute attracted a diverse range of top-tier companies from various sectors, leading to a high placement rate and competitive salary packages. We focused on enhancing industry-academia collaboration through internships, workshops, and guest lectures, ensuring our students are industry-ready. The average salary package saw a significant increase, reflecting the quality of our graduates and the strong reputation of the institute among recruiters.\n\\vspace{0.5cm}\n\\subsection*{\\textcolor{accent}{Related Visualizations}}\n\\vspace{0.3cm}\n\\begin{center}\n\\begin{minipage}[t]{0.48\\textwidth}\n\\begin{tikzpicture}\n\\begin{axis}[\n    ybar,\n    width=0.48\\textwidth,\n    height=180pt,\n    symbolic x coords={CSE,ECE,ME,CE},\n    xtick=data,\n    ylabel={Placement Rate (\\%)},\n    title={Placement Rate by Department (2023-24)},\n    bar width=12pt,\n    nodes near coords,\n    nodes near coords align={vertical},\n]\n\\addplot[fill=chart3, draw=none] coordinates {\n    (CSE,98)\n    (ECE,95)\n    (ME,88)\n    (CE,90)\n};\n\\end{axis}\n\\end{tikzpicture}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.48\\textwidth}\n\\begin{tikzpicture}\n\\begin{axis}[\n    width=0.48\\textwidth,\n    height=180pt,\n    xlabel={Year},\n    ylabel={Average Salary (Lakhs \\rupee)},\n    title={Average Salary Package Trend (Lakhs \\rupee)},\n    ymin=0,\n]\n\\addplot[color=chart4, mark=*, line width=1.5pt] coordinates {\n(2021,8.5) (2022,9.2) (2023,10.5) (2024,12.1)\n};\n\\legend{Average Salary Package Trend}\n\\end{axis}\n\\end{tikzpicture}\n\\end{minipage}\n\\end{center}\n\\vspace{0.5cm}\n\\end{card}\n\\vspace{0.5cm}\n\\begin{card}\n\\subsection*{\\textcolor{accent}{Top Recruiting Companies (2023-24)}}\n\\vspace{0.3cm}\n\\begin{tabularx}{\\textwidth}{@{}lXrr@{}}\n    \\toprule\n    \\textbf{Company Name} & \\textbf{Sector} & \\textbf{Offers Made} & \\textbf{Average Package (Lakhs \\rupee)} \\\\\n    \\midrule\n    TCS & IT Services & 85 & 7.5 \\\\\n    Infosys & IT Services & 70 & 7.0 \\\\\n    Wipro & IT Services & 60 & 6.8 \\\\\n    Reliance Industries & Manufacturing & 25 & 10.0 \\\\\n    L\\&T & Construction & 20 & 9.5 \\\\\n    \\bottomrule\n\\end{tabularx}\n\\end{card}\n\\vspace{0.5cm}\n\\clearpage\n\\section*{\\textcolor{accent}{Research and Innovation Landscape}}\n{\\large\\textcolor{muted}{Driving Breakthroughs and Scholarly Contributions}}\n\\vspace{0.5cm}\n\\begin{card}\nResearch and innovation continued to be a cornerstone of NIT Delhi's mission. The institute witnessed a substantial increase in research publications in peer-reviewed journals and conferences. Faculty and students actively engaged in cutting-edge research projects, many of which received external funding from government agencies and industrial partners. The number of patents filed and granted also saw a positive trend, underscoring our commitment to creating impactful knowledge and technological advancements. Collaborative research with national and international institutions was further strengthened.\n\\vspace{0.5cm}\n\\subsection*{\\textcolor{accent}{Related Visualizations}}\n\\vspace{0.3cm}\n\\begin{center}\n\\begin{minipage}[t]{0.48\\textwidth}\n\\begin{tikzpicture}\n\\begin{axis}[\n    width=0.48\\textwidth,\n    height=180pt,\n    xlabel={Year},\n    ylabel={Number of Publications},\n    title={Research Publications by Year},\n    ymin=0,\n]\n\\addplot[color=chart5, mark=*, line width=1.5pt] coordinates {\n(2020,85) (2021,98) (2022,115) (2023,142)\n};\n\\legend{Research Publications}\n\\end{axis}\n\\end{tikzpicture}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.48\\textwidth}\n\\begin{tikzpicture}\n\\coordinate (center) at (0,0);\n\\def\\radius{2cm}\n\\fill[chart6] (center) -- (0:2cm) arc (0:198:2cm) -- cycle;\n\\node at (99:1.4cm) {\\tiny 55\\%};\n\\fill[chart1] (center) -- (198:2cm) arc (198:306:2cm) -- cycle;\n\\node at (252:1.4cm) {\\tiny 30\\%};\n\\fill[chart2] (center) -- (306:2cm) arc (306:360:2cm) -- cycle;\n\\node at (333:1.4cm) {\\tiny 15\\%};\n\\node[align=center, text width=4cm, anchor=south] at (0, -2.5cm) {\\textbf{Funding Sources for Research Projects}};\n\\node[anchor=west] at (2.5, 1.5) {\\textcolor{chart6}{$\\blacksquare$} Government Grants (55\\%)} ;\n\\node[anchor=west] at (2.5, 1.0) {\\textcolor{chart1}{$\\blacksquare$} Industry Collaboration (30\\%)} ;\n\\node[anchor=west] at (2.5, 0.5) {\\textcolor{chart2}{$\\blacksquare$} Internal Funds (15\\%)} ;\n\\end{tikzpicture}\n\\end{minipage}\n\\end{center}\n\\vspace{0.5cm}\n\\end{card}\n\\vspace{0.5cm}\n\\begin{card}\n\\subsection*{\\textcolor{accent}{Funded Research Projects (2023-24)}}\n\\vspace{0.3cm}\n\\begin{tabularx}{\\textwidth}{@{}lXrr@{}}\n    \\toprule\n    \\textbf{Project Title} & \\textbf{Principal Investigator} & \\textbf{Funding Agency} & \\textbf{Grant Amount (Lakhs \\rupee)} \\\\\n    \\midrule\n    AI for Smart Cities & Dr. A. Sharma & DST & 75.0 \\\\\n    Renewable Energy Systems & Dr. B. Singh & MNRE & 60.0 \\\\\n    Advanced Materials & Dr. C. Kumar & DRDO & 90.0 \\\\\n    Cybersecurity Frameworks & Dr. D. Gupta & MeitY & 50.0 \\\\\n    \\bottomrule\n\\end{tabularx}\n\\end{card}\n\\vspace{0.5cm}\n\\clearpage\n\\section*{\\textcolor{accent}{Financial Health and Resource Allocation}}\n{\\large\\textcolor{muted}{Prudent Management for Sustainable Growth}}\n\\vspace{0.5cm}\n\\begin{card}\nThe financial management of the institute in 2023-24 focused on sustainable growth and optimal resource allocation. We maintained a healthy financial position, ensuring adequate funds for academic programs, research initiatives, infrastructure development, and student welfare activities. Revenue streams from grants, fees, and consultancy services were managed efficiently. Expenditures were carefully planned to maximize impact and ensure fiscal responsibility, supporting both immediate operational needs and long-term strategic goals.\n\\vspace{0.5cm}\n\\subsection*{\\textcolor{accent}{Related Visualizations}}\n\\vspace{0.3cm}\n\\begin{center}\n\\begin{minipage}[t]{0.48\\textwidth}\n\\begin{tikzpicture}\n\\coordinate (center) at (0,0);\n\\def\\outerradius{2cm}\n\\def\\innerradius{1cm}\n\\draw[fill=chart3, draw=white, line width=1pt] (0:1cm) arc (0:144:1cm) -- (144:2cm) arc (144:0:2cm) -- cycle;\n\\node at (72:1.5cm) {\\tiny 40\\%};\n\\draw[fill=chart4, draw=white, line width=1pt] (144:1cm) arc (144:234:1cm) -- (234:2cm) arc (234:144:2cm) -- cycle;\n\\node at (189:1.5cm) {\\tiny 25\\%};\n\\draw[fill=chart5, draw=white, line width=1pt] (234:1cm) arc (234:306:1cm) -- (306:2cm) arc (306:234:2cm) -- cycle;\n\\node at (270:1.5cm) {\\tiny 20\\%};\n\\draw[fill=chart6, draw=white, line width=1pt] (306:1cm) arc (306:342:1cm) -- (342:2cm) arc (342:306:2cm) -- cycle;\n\\node at (324:1.5cm) {\\tiny 10\\%};\n\\draw[fill=chart1, draw=white, line width=1pt] (342:1cm) arc (342:360:1cm) -- (360:2cm) arc (360:342:2cm) -- cycle;\n\\node at (351:1.5cm) {\\tiny 5\\%};\n\\node[align=center, text width=4cm, anchor=south] at (0, -2.5cm) {\\textbf{Expenditure Distribution (2023-24)}};\n\\node[anchor=west] at (2.5, 1.5) {\\textcolor{chart3}{$\\blacksquare$} Salaries (40\\%)} ;\n\\node[anchor=west] at (2.5, 1.0) {\\textcolor{chart4}{$\\blacksquare$} Infrastructure (25\\%)} ;\n\\node[anchor=west] at (2.5, 0.5) {\\textcolor{chart5}{$\\blacksquare$} Research \\& Development (20\\%)} ;\n\\node[anchor=west] at (2.5, 0.0) {\\textcolor{chart6}{$\\blacksquare$} Student Welfare (10\\%)} ;\n\\node[anchor=west] at (2.5, -0.5) {\\textcolor{chart1}{$\\blacksquare$} Operations (5\\%)} ;\n\\end{tikzpicture}\n\\end{minipage}%\n\\end{center}\n\\vspace{0.5cm}\n\\end{card}\n\\vspace{0.5cm}\n\\begin{card}\n\\subsection*{\\textcolor{accent}{Annual Revenue Sources (2023-24)}}\n\\vspace{0.3cm}\n\\begin{tabularx}{\\textwidth}{@{}lXrr@{}}\n    \\toprule\n    \\textbf{Source} & \\textbf{Amount (Lakhs \\rupee)} & \\textbf{Percentage (\\%)} \\\\\n    \\midrule\n    Student Fees & 1500.0 & 60 \\\\\n    Government Grants & 600.0 & 24 \\\\\n    Consultancy \\& Services & 250.0 & 10 \\\\\n    Other Income & 150.0 & 6 \\\\\n    \\bottomrule\n\\end{tabularx}\n\\end{card}\n\\vspace{0.5cm}\n\\clearpage\n\\section*{\\textcolor{accent}{Infrastructure Development and Campus Facilities}}\n{\\large\\textcolor{muted}{Enhancing Learning and Living Environments}}\n\\vspace{0.5cm}\n\\begin{card}\nSignificant strides were made in enhancing the institute's infrastructure and campus facilities during the past year. New state-of-the-art laboratories were established, and existing ones were upgraded to provide students with access to advanced equipment and technology. The library resources were expanded, and digital learning platforms were integrated to support modern pedagogical practices. Efforts were also directed towards improving student accommodation, sports facilities, and overall campus amenities to foster a conducive environment for academic and personal growth.\n\\vspace{0.5cm}\n\\subsection*{\\textcolor{accent}{Related Visualizations}}\n\\vspace{0.3cm}\n\\begin{center}\n\\begin{minipage}[t]{0.48\\textwidth}\n\\begin{tikzpicture}\n\\begin{axis}[\n    width=0.48\\textwidth,\n    height=180pt,\n    xlabel={Year},\n    ylabel={Total Resources},\n    title={Library Resource Growth},\n    ymin=0,\n]\n\\addplot[fill=chart2, fill opacity=0.5, draw=chart2, line width=1pt] coordinates {\n(2020,60000) (2021,65000) (2022,70000) (2023,75000)\n} \\closedcycle;\n\\legend{Library Resource Growth}\n\\end{axis}\n\\end{tikzpicture}\n\\end{minipage}%\n\\end{center}\n\\vspace{0.5cm}\n\\end{card}\n\\vspace{0.5cm}\n\\begin{card}\n\\subsection*{\\textcolor{accent}{New Infrastructure Projects (2023-24)}}\n\\vspace{0.3cm}\n\\begin{tabularx}{\\textwidth}{@{}lXrr@{}}\n    \\toprule\n    \\textbf{Project Name} & \\textbf{Status} & \\textbf{Cost (Lakhs \\rupee)} & \\textbf{Completion Date} \\\\\n    \\midrule\n    New Academic Block & Completed & 500.0 & Mar 2024 \\\\\n    Hostel Expansion & Ongoing & 350.0 & Dec 2024 \\\\\n    Sports Complex Upgrade & Completed & 180.0 & Jan 2024 \\\\\n    \\bottomrule\n\\end{tabularx}\n\\end{card}\n\\vspace{0.5cm}\n\n\\end{document}",
+  "metadata": {
+    "total_sections": 7,
+    "total_charts": 4,
+    "total_tables": 4,
+    "total_kpis": 7,
+    "files_processed": 5
+  },
+  "errors": [],
+  "warnings": []
+}

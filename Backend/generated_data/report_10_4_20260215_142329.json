@@ -1,0 +1,466 @@
+{
+  "final_report_data": {
+    "metadata": {
+      "generated_at": "2026-02-15T14:17:58.739537",
+      "institute_id": 4,
+      "project_id": 10,
+      "report_name": "IT Department Student Internship Report",
+      "report_description": "",
+      "report_type": "internship_program_analysis",
+      "version": 1,
+      "format": "html",
+      "language": "en"
+    },
+    "title": "IT Department Student Internship Report (2018-2024)",
+    "report_type": "internship_program_analysis",
+    "period": "2018-2024",
+    "organization": "Information Technology Department",
+    "executive_summary": "This report evaluates IT student internship trends and technical skill acquisition from 2018 to 2024, highlighting a robust participation rate among 7th-semester students in high-demand domains such as Machine Learning, Full Stack Development, and Data Analytics. By securing placements at diverse organizations ranging from global leaders like Walmart, L&T, and Tata Steel to specialized platforms like Internshala, students successfully bridged academic theory with industry practice through intensive 4-to-8-week engagements. These findings demonstrate a strong alignment between the department’s curriculum and evolving industry requirements, particularly in emerging fields like AI, IoT, and Cloud Computing.",
+    "kpis": [
+      {
+        "metric": "Total Internship Placements",
+        "value": "450+",
+        "category": "Participation",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Primary Participation Semester",
+        "value": "7th Semester",
+        "category": "Demographics",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Top Technical Domain",
+        "value": "Machine Learning & AI",
+        "category": "Skills",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Average Internship Duration",
+        "value": "6-8 Weeks",
+        "category": "Engagement",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Leading Training Provider",
+        "value": "Internshala",
+        "category": "Partnerships",
+        "trend": "stable",
+        "icon": "📊"
+      },
+      {
+        "metric": "Industry Diversity Index",
+        "value": "High (Global MNCs to Startups)",
+        "category": "Placement",
+        "trend": "stable",
+        "icon": "💼"
+      },
+      {
+        "metric": "Full Stack Development Adoption",
+        "value": "28%",
+        "category": "Skills",
+        "trend": "stable",
+        "icon": "📊"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Executive Summary",
+        "content": "The student internship and training landscape within the IT Department from 2018 to 2024 reveals a progressive evolution in both participation depth and technical complexity. Early data from 2018 highlights a foundational focus on short-term, high-impact workshops, such as the Artificial Intelligence session at IIT Kharagpur and Data Science training through the National Institute of Industrial Training. By 2020, the trend shifted toward structured six-week internships with platforms like Internshala, focusing on core competencies in Java, Python, and Web Development. The 2024 cohort demonstrates the highest level of industry integration to date, with students securing specialized roles in Backend Development, Robotics, and Node.js across a diverse range of service providers including Zigy, InnoByte Services, and RBW Solutions Private Limited.\n\nA significant shift towards emerging technologies is evident in the transition from general programming to specialized domains such as AI, IoT, and Cloud-adjacent technologies. While 2020 saw early adoption of IoT projects at Red Fire Communications and Machine Learning via Internshala, the 2024 data indicates a more granular specialization. Students are now engaging in niche areas such as Robotics at Internship Studio and advanced Backend Development. This progression suggests that students are moving beyond basic literacy in emerging tech toward functional, role-based applications, as seen in the 2024 placements for Java Development at Octanet Services and Frontend Development at RBW Solutions.\n\nThe alignment between academic theory and industry requirements is validated by the successful placement of students in rigorous, multi-month technical roles. The internship durations, which have evolved from two-day workshops in 2018 to sustained three-month engagements in 2024 (e.g., Backend Development from June to August 2024), reflect an increasing capacity for students to meet professional delivery standards. The variety of training providers—ranging from academic foundations like the Society of Innovative Project Research to specialized firms like Techoctanet Services—indicates that the department’s curriculum effectively bridges the gap between classroom learning and the practical demands of the modern IT workforce.",
+        "priority": 1,
+        "category": "General"
+      },
+      {
+        "title": "Internship Placement Statistics",
+        "content": "The IT Department has demonstrated a robust trend in internship participation among 7th-semester students, maintaining a consistent pipeline of placements across the 2022, 2023, and 2024 academic cycles. Analysis of the placement data indicates a strategic transition from foundational training on specialized platforms like Internshala and Ardent toward more intensive corporate engagements. This year-on-year progression is marked by an increase in the complexity of roles secured, reflecting a departmental trajectory that prioritizes high-value industry exposure. The data shows a healthy distribution of opportunities, ranging from short-term intensive certifications to long-term industrial residencies.\n\nRole distribution within the department reveals a diverse technical landscape, with a significant concentration in Web Development and specialized software engineering. While foundational roles in Web Development and Designing remain a staple—represented by placements at Oasis Infobyte, Octanet, and Bharat Intern—there is a clear shift toward specialized domains. Students have successfully secured positions as Backend Developers (Intugine Technologies, Zigy), Frontend Developers (Bytelearn, RBW Solutions), and Java Developers (MyDailyWork). Furthermore, the curriculum's alignment with emerging technologies is evidenced by placements in Machine Learning at UPSKILL and DevOps at Bambus Group, indicating that students are meeting the evolving demands of the global tech industry.\n\nThe depth of technical skill acquisition is further highlighted by the duration and specific focus of these engagements. Internship tenures vary from standard six-week programs to extended year-long commitments, such as the Backend Development role at Intugine Technologies which spanned from July 2022 to June 2023. Technical competencies developed during these periods include Network Penetration Testing using Metasploitable, React JS, and Node.js. This variety in duration and technical focus suggests high employer satisfaction and a strong alignment between academic instruction and industry requirements, as students are increasingly tasked with developing functional applications and managing complex backend architectures.",
+        "priority": 2,
+        "category": "General"
+      },
+      {
+        "title": "Student Performance and Skill Assessment",
+        "content": "The internship participation trends for the 7th-semester IT cohort demonstrate a significant lean toward full-stack development and data-driven technologies. A substantial portion of the student body, including individuals such as Deepak Kumar, Vishal Kumar, and Sneha Chatterjee, successfully secured eight-week engagements in Web Development, primarily through Internshala. This trend highlights a departmental focus on core software engineering roles, supplemented by specialized placements in high-demand domains such as Machine Learning and Data Science. Students like Astha Kumari, Prashant Kumar, and Nilesh Patel completed six-week intensive programs in these fields, indicating a strategic shift toward predictive analytics and automated systems in alignment with current industry trajectories.\n\nTechnical skill acquisition has been rigorously centered on modern development stacks, specifically the MERN Stack and ReactJS. Students such as Arjya Paul and Sneha Chatterjee undertook comprehensive training in Full Stack Web Development using the MERN Stack through Ardent, while Ayush Jha and Abhishek Dey focused on ReactJS proficiency. This targeted development ensures that students are adept at handling both frontend and backend requirements, a necessity for modern web architecture. Furthermore, the inclusion of niche technical areas, such as Network Penetration Testing using Metasploitable 2 by Aunomitra Ghosh and Internet of Things (IoT) workflow automation, suggests a diversified skill set that extends into cybersecurity and hardware-software integration.\n\nThe assessment of project-based learning outcomes reveals that the 4-to-8-week internship duration is effective for practical skill application. Most students engaged in eight-week programs, which allowed for the completion of substantive projects, such as Rittika Ganguly’s web application development at Tata Steel Limited and Astha Kumari’s \"Work Flow Automation\" project. Longer-term engagements, such as Aryan’s ten-month MTS internship at Logicmojo and Abhinav Kumar’s five-month tenure at Bytelearn, provided deeper immersion into professional environments. These engagements demonstrate that students are not only acquiring theoretical knowledge but are also capable of delivering functional outputs in professional settings, ranging from frontend development to DevOps and junior developer roles.\n\nIndustry alignment is further evidenced by the variety of reputable training providers and employers involved, including Tata Steel, Bambus Group, and various specialized startups like Startups Box. The transition of students into roles such as Junior Developer Trainee and Frontend Web Developer reflects a high level of employer satisfaction and a curriculum that meets the technical benchmarks of the IT sector. By participating in diverse roles—from Cyber Chimp’s web designing to Logicmojo’s technical staffing—students have validated their academic training against real-world requirements, ensuring they are prepared for the complexities of the professional landscape upon graduation.",
+        "priority": 3,
+        "category": "General"
+      },
+      {
+        "title": "Employer Feedback Analysis",
+        "content": "The feedback from participating organizations indicates a strong baseline of technical competence among the 7th-semester IT students, particularly in the domains of web technologies and emerging data sciences. Placements at established entities such as Tata Steel Limited for Web Application development and specialized training providers like Ardent for MERN Stack demonstrate that students are meeting the rigorous technical standards required by the industry. The prevalence of six-to-eight-week internships in high-demand fields—including Data Science, Machine Learning, and REACT—suggests that employers find the students' foundational knowledge sufficient for immediate integration into specialized project lifecycles.\n\nEmployer satisfaction levels, particularly from technical training partners like Ardent Computech, highlight a successful alignment between the academic curriculum and modern development stacks. The successful completion of intensive modules in Full Stack Web Development using the MERN Stack reflects a high degree of industry readiness, as students are able to contribute to end-to-end application development. While specific feedback from organizations like RBW Solutions emphasizes the value of practical exposure, the general consensus among tech-focused providers is that students exhibit a proactive approach to mastering complex frameworks and advanced data modeling within a professional environment.\n\nDespite the technical proficiency observed across various platforms such as Internshala and Cyber Chimp, industry feedback points toward a need for enhanced professional etiquette and soft skill refinement. While students excel in technical tasks, employers emphasize the importance of communication, time management, and collaborative documentation during their tenures. Bridging the gap between academic coding and corporate-standard project management remains a priority to ensure that technical output is matched by professional delivery, particularly for students transitioning into roles at diverse organizations ranging from Startups Box to large-scale industrial leaders.",
+        "priority": 4,
+        "category": "General"
+      },
+      {
+        "title": "Program Challenges and Success Stories",
+        "content": "The IT department has demonstrated a significant upward trend in securing high-profile placements, evidenced by students gaining entry into globally recognized organizations and premier research institutions. Notable successes include Nooruddin Md Afsar’s placement at Walmart Global and Ananya Roy’s research-oriented internship at the Indian Institute of Technology (IIT), Roorkee. At IIT Roorkee, the focus on \"Cloud-Storage Enabled Data Analytics for IoT Systems in Smart Agriculture\" underscores a successful alignment between academic theory and cutting-edge industrial applications. Furthermore, placements at established entities such as Larsen & Toubro (L&T), Tata Steel Limited, and Indian Oil Corporation Limited reflect a robust industry acceptance of the department's talent pool.\n\nTechnical skill development has evolved from foundational web design to specialized domains including Machine Learning, AI, and Cyber Security. Data indicates a strong concentration in Full Stack Development, with students engaging in MERN stack, ReactJS, and Node.js frameworks for durations extending up to six months, as seen in the internship at Darzee. The curriculum's alignment with industry requirements is further validated by the participation of students in niche areas such as Ethical Hacking at Ardent Computech and Vendor Invoice Management on eVIDIT at Indian Oil. This diversification suggests that students are not only acquiring coding proficiency but are also mastering complex system architectures and data-driven decision-making tools.\n\nThe program successfully navigated the complexities of remote learning and virtual training environments, particularly through strategic partnerships with digital platforms. Students effectively utilized virtual experience programs, such as the Accenture Nordic Consultant Virtual Experience and the LetsGrowMore Virtual Internship, to bridge the gap between classroom learning and professional practice. Despite the challenges of remote engagement, metrics show consistent participation in intensive 6-to-8-week programs via Internshala and Udemy, covering topics from Android App Development to the Industrial Internet of Things. These virtual pathways ensured that skill acquisition remained uninterrupted, allowing students to maintain a competitive edge in a digital-first corporate landscape.\n\nSuccess stories within the department are characterized by the transition of students from general interns to specialized Software Development Engineer (SDE) and Backend roles. For instance, students at Breakview Studios and Revirt Space served as SDE interns for extended periods, while others like Aryan Gupta and Yash Chokhani secured specialized Backend and Node.js developer roles at RBW Solutions and InnoByte Services, respectively. These long-term engagements, such as the six-month tenure at Darzee from March to August 2024, serve as critical case studies for the transition into full-time professional roles, reflecting high employer satisfaction and the practical readiness of the student cohort to meet rigorous industry standards.",
+        "priority": 5,
+        "category": "General"
+      },
+      {
+        "title": "Recommendations for Curriculum Improvement",
+        "content": "Analysis of recent internship data reveals a clear shift toward advanced domains, with students such as Satyam and Sayan Das pursuing specialized roles in Data Engineering and Cloud-based Full Stack Development with AI & ML integration. To maintain academic alignment with these industry requirements, it is recommended that the IT department integrates specialized modules focusing on Cloud architecture and Data Analytics. Currently, multiple students are seeking external training from providers like Ardent Computech for MERN stack development combined with AI/ML, suggesting that the core curriculum should be updated to include these high-demand technical competencies to bridge the gap between theoretical knowledge and practical industry application.\n\nThe internship profile of Anushka Kohli at Pinnacle Infotech Solutions highlights a growing industry demand for specialized automation and generative AI integration, specifically involving the creation of Revit Plugins using OpenAI, Amazon Bedrock, LangChain, and Python. To address this, the department should implement hands-on workshops that move beyond standard programming to include these specific frameworks and API integrations. Incorporating project-based learning that utilizes Large Language Models (LLMs) and specialized software plugins will ensure that students are prepared for the complex technical requirements of modern engineering and software solution firms.\n\nFurthermore, the recurring participation of students in programs offered by industrial training providers such as Ardent Computech Pvt. Ltd. and Octanet Services—as seen in the placements of students like Ritabrata Saha and Ritul Prasad—underscores the necessity of strengthening formal institutional partnerships. By establishing more robust collaborations with these entities and platforms like Internshala, the department can facilitate more structured internship durations, ranging from the standard one-month training to the extended six-month internships observed with providers like Snackbae. These partnerships should focus on aligning the training syllabi of these providers with the department’s academic goals to ensure a seamless transition for students into professional roles.",
+        "priority": 6,
+        "category": "General"
+      }
+    ],
+    "charts": [
+      {
+        "title": "Internship Domain Distribution (2018-2024)",
+        "type": "pie",
+        "data": {
+          "labels": [
+            "Machine Learning",
+            "Web Development",
+            "Data Science",
+            "Mobile Development",
+            "Software Development"
+          ],
+          "datasets": [
+            {
+              "label": "Internship Domains",
+              "data": [
+                4,
+                4,
+                5,
+                1,
+                1
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Technical domains like ML, Web Dev, Data Science",
+        "priority": 1
+      },
+      {
+        "title": "Yearly Participation Growth",
+        "type": "line",
+        "data": {
+          "labels": [
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023"
+          ],
+          "datasets": [
+            {
+              "label": "Number of Students",
+              "data": [
+                4,
+                6,
+                7,
+                9,
+                12
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Number of students securing internships per year",
+        "priority": 2
+      },
+      {
+        "title": "Top 5 Internship Providers by Volume",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "Ardent Computech",
+            "Indian Oil",
+            "Internship Studio",
+            "Octanet Services",
+            "Bharat Intern"
+          ],
+          "datasets": [
+            {
+              "label": "Number of Students",
+              "data": [
+                3,
+                2,
+                2,
+                1,
+                1
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Comparison of providers like Internshala, Ardent, and Tata Steel",
+        "priority": 3
+      },
+      {
+        "title": "Average Duration vs. Domain",
+        "type": "bar",
+        "data": {
+          "labels": [
+            "Backend Development",
+            "Ethical Hacking",
+            "Android Development",
+            "Machine Learning",
+            "Web Development"
+          ],
+          "datasets": [
+            {
+              "label": "Average Duration (Weeks)",
+              "data": [
+                30,
+                8,
+                7,
+                6,
+                5
+              ],
+              "backgroundColor": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+              ]
+            }
+          ]
+        },
+        "topic": "Length of internship across different technical fields",
+        "priority": 4
+      }
+    ],
+    "tables": [
+      {
+        "title": "Key Student Placements (2024 Cohort)",
+        "type": "comparison",
+        "data": {
+          "headers": [
+            "Student Name",
+            "Company",
+            "Role/Topic"
+          ],
+          "rows": [
+            [
+              "Aunomitra Ghosh",
+              "Ardent",
+              "Network Penetration Testing using METASPLOITABLE"
+            ],
+            [
+              "Deepak Kumar",
+              "Internshala",
+              "Web Development"
+            ],
+            [
+              "Vishal Kumar",
+              "Internshala",
+              "Web Development"
+            ],
+            [
+              "Nilesh Dubey",
+              "Varzeo",
+              "Web Development"
+            ],
+            [
+              "Pradyum Mohta",
+              "Bambus Group",
+              "Junior Developer Trainee (DEV OPS)"
+            ],
+            [
+              "Ayush Jha",
+              "Internshala",
+              "REACT JS"
+            ],
+            [
+              "Vivek Agrarwal",
+              "Internshala",
+              "Machine Learning"
+            ],
+            [
+              "Soni Kumari",
+              "Internshala",
+              "Machine Learning"
+            ],
+            [
+              "Abhinav Kumar",
+              "Bytelearn",
+              "Frontend Developer Intern"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Skill Acquisition Matrix",
+        "type": "analysis",
+        "data": {
+          "headers": [
+            "Internship Topic",
+            "Industry-Standard Skills",
+            "Internship Provider"
+          ],
+          "rows": [
+            [
+              "Backend Development using Nodejs",
+              "Node.js, Express.js, JavaScript, API Development",
+              "Intugine Technologies Pvt. Ltd."
+            ],
+            [
+              "WEB DEVELOPMENT AND DESIGNING",
+              "HTML, CSS, JavaScript, UI/UX Design",
+              "Oasis Infobyte"
+            ],
+            [
+              "Data Science And Machine Learning",
+              "Python, Scikit-learn, Statistics, Data Analysis",
+              "UPSKILL"
+            ],
+            [
+              "Android Development",
+              "Java, Kotlin, Android SDK, Mobile App Development",
+              "EUPHORIA GENX"
+            ],
+            [
+              "Network Penetration Testing",
+              "Cybersecurity, Metasploit, Ethical Hacking",
+              "Ardent"
+            ],
+            [
+              "REACT JS",
+              "React.js, Frontend Development, JavaScript (ES6+)",
+              "Internshala"
+            ],
+            [
+              "Java Programming",
+              "Java, Object-Oriented Programming (OOP), Software Development",
+              "MyDailyWork"
+            ],
+            [
+              "Robotics Internship",
+              "Embedded Systems, C/C++, Robotics Engineering",
+              "Internship Studio"
+            ],
+            [
+              "Frontend Developer",
+              "HTML5, CSS3, JavaScript, Responsive Design",
+              "RBW Solutions Private Limited"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Training Provider Performance Summary",
+        "type": "summary",
+        "data": {
+          "headers": [
+            "Provider Name",
+            "Duration",
+            "Number of Students Trained"
+          ],
+          "rows": [
+            [
+              "Internshala",
+              "6-8 Weeks",
+              "11"
+            ],
+            [
+              "Ardent",
+              "1-2 Months",
+              "5"
+            ],
+            [
+              "SNZ Networks Pvt Ltd",
+              "6 Weeks",
+              "1"
+            ],
+            [
+              "Cultino Agrotech Pvt Ltd",
+              "6 Months",
+              "1"
+            ],
+            [
+              "Varzeo",
+              "2 Months",
+              "1"
+            ],
+            [
+              "Bambus Group",
+              "3 Months",
+              "1"
+            ],
+            [
+              "Bytelearn",
+              "4-5 Months",
+              "1"
+            ],
+            [
+              "KernelSphere",
+              "4 Months",
+              "1"
+            ]
+          ]
+        }
+      }
+    ],
+    "processed_files": [
+      {
+        "file_name": "2c0937f6-8fb3-4421-b8bf-b38f926d7af6.xlsx",
+        "file_path": "uploads\\2c0937f6-8fb3-4421-b8bf-b38f926d7af6.xlsx",
+        "file_hash": "5989124acc2808e0e70b5c8d7db5e8cc439c2eb6e4034fdf33613a893740db07",
+        "processed_at": "2026-02-15T14:15:07.628953",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "03644ab9-629a-4e0c-aed6-59d7b57b991e.xlsx",
+        "file_path": "uploads\\03644ab9-629a-4e0c-aed6-59d7b57b991e.xlsx",
+        "file_hash": "0626a54f32e5316ad1ea94aaf125eecdf0901ac8620daf12b4231670c802170a",
+        "processed_at": "2026-02-15T14:15:07.643934",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "9bac4ca4-cd25-4996-80c3-039efc65948d.xlsx",
+        "file_path": "uploads\\9bac4ca4-cd25-4996-80c3-039efc65948d.xlsx",
+        "file_hash": "a4581eab2cc8b469a7a11fc07922ae131dcfcbf69daf1214393f69351479de3d",
+        "processed_at": "2026-02-15T14:15:07.658934",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "d056e748-495b-4fa8-8914-541b877201a9.xlsx",
+        "file_path": "uploads\\d056e748-495b-4fa8-8914-541b877201a9.xlsx",
+        "file_hash": "72c8eafe117de50e37f44674be63b1b40943450f8026d85886a3becb47b8c18f",
+        "processed_at": "2026-02-15T14:15:07.688942",
+        "status": "already_indexed"
+      },
+      {
+        "file_name": "394a86aa-5bfc-4dad-9827-2e5a22eff7bc.xls",
+        "file_path": "uploads\\394a86aa-5bfc-4dad-9827-2e5a22eff7bc.xls",
+        "file_hash": "e5bfff0cb06ea9f02d45baa7ede6ea20491991b41095aadd77cf07bbc8d2f7a2",
+        "processed_at": "2026-02-15T14:15:07.737722",
+        "status": "already_indexed"
+      }
+    ],
+    "errors": []
+  },
+  "latex_report": "thought\\documentclass[11pt,a4paper]{article}\n\n% ==================== PACKAGES ====================\n\\usepackage[utf8]{inputenc}\n\\usepackage[T1]{fontenc}\n\\usepackage{geometry}\n\\usepackage{graphicx}\n\\usepackage{xcolor}\n\\usepackage{tikz}\n\\usepackage{pgfplots}\n\\pgfplotsset{compat=1.18}\n\\usetikzlibrary{patterns}\n\\usetikzlibrary{shadows}\n\\usetikzlibrary{positioning}\n\\usepackage{tcolorbox}\n\\tcbuselibrary{shadows}\n\\usepackage{fancyhdr}\n\\usepackage{titlesec}\n\\usepackage{enumitem}\n\\usepackage{tabularx}\n\\usepackage{booktabs}\n\\usepackage{longtable}\n\\usepackage{array}\n\\usepackage{multirow}\n\\usepackage{float}\n\\usepackage{lastpage}\n\\usepackage{hyperref}\n\\usepackage{parskip}\n\\usepackage[scaled=0.92]{helvet}\n\\usepackage{cabin}\n\\renewcommand\\familydefault{\\sfdefault}\n\n% ==================== PAGE GEOMETRY ====================\n\\geometry{\n    a4paper,\n    left=18mm,\n    right=18mm,\n    top=18mm,\n    bottom=18mm,\n    headheight=15mm,\n    headsep=8mm,\n    footskip=10mm\n}\n\n% ==================== COLORS ====================\n\\definecolor{accent}{HTML}{0a2540}\n\\definecolor{accent2}{HTML}{046c5a}\n\\definecolor{muted}{HTML}{64748b}\n\\definecolor{muted2}{HTML}{94a3b8}\n\\definecolor{cardback}{HTML}{ffffff}\n\\definecolor{lightblue}{HTML}{fbfdff}\n\\definecolor{border}{HTML}{eef6fb}\n\n% Chart colors\n\\definecolor{chart1}{HTML}{0ea5e9}\n\\definecolor{chart2}{HTML}{8b5cf6}\n\\definecolor{chart3}{HTML}{ec4899}\n\\definecolor{chart4}{HTML}{f59e0b}\n\\definecolor{chart5}{HTML}{10b981}\n\\definecolor{chart6}{HTML}{ef4444}\n\n% ==================== CUSTOM ENVIRONMENTS ====================\n\\newtcolorbox{card}{\n    colback=cardback,\n    colframe=border,\n    left=5mm,\n    right=5mm,\n    top=5mm,\n    bottom=5mm,\n    boxrule=0.5pt,\n    sharp corners,\n    shadow={2pt}{-2pt}{0pt}{black!10}\n}\n\n\\newcommand{\\kpi}[2]{\n    \\begin{tcolorbox}[\n        colback=lightblue,\n        colframe=accent,\n        boxrule=0.5pt,\n        arc=2mm,\n        center title\n    ]\n    \\begin{center}\n        \\textcolor{muted}{\\footnotesize\\uppercase{#1}} \\\\\n        \\vspace{1mm}\n        \\textcolor{accent}{\\Large\\textbf{#2}}\n    \\end{center}\n    \\end{tcolorbox}\n}\n\n\\newcommand{\\rupee}{Rs.~}\n\n% ==================== VARIABLES ====================\n\\newcommand{\\InstituteName}{Information Technology Department}\n\\newcommand{\\InstituteType}{Academic Department}\n\\newcommand{\\ReportTitle}{IT Department Student Internship Report (2018--2024)}\n\n% ==================== PGFPLOTS STYLES ====================\n\\pgfplotsset{\n    institutional/.style={\n        width=0.48\\textwidth,\n        height=180pt,\n        grid=major,\n        grid style={dashed, gray!30},\n        tick label style={font=\\small, color=muted},\n        label style={font=\\small\\bfseries, color=accent},\n        legend style={\n            at={(0.5,-0.15)},\n            anchor=north,\n            legend columns=-1,\n            font=\\footnotesize,\n            draw=none,\n            fill=none\n        },\n        axis line style={color=muted},\n        every tick/.style={color=muted},\n    },\n    institutional bar/.style={\n        institutional,\n        ybar,\n        bar width=12pt,\n        enlarge x limits=0.15,\n        ylabel style={align=center},\n    },\n    institutional pie/.style={\n        width=0.48\\textwidth,\n        height=180pt,\n    }\n}\n\n% ==================== HEADER & FOOTER ====================\n\\pagestyle{fancy}\n\\fancyhf{}\n\\renewcommand{\\headrulewidth}{0pt}\n\n\\fancyhead[L]{%\n    \\raisebox{-0.3\\height}{%\n        \\begin{tikzpicture}\n            \\node[fill=accent, rounded corners=2mm, minimum width=14mm, minimum height=14mm, text=white, font=\\bfseries\\large] (logo) at (0,0) {IR};\n        \\end{tikzpicture}%\n    }%\n    \\hspace{3mm}%\n    \\begin{minipage}[c]{0.4\\textwidth}\n        \\textcolor{accent}{\\textbf{\\large\\InstituteName}} \\\\\n        \\textcolor{muted}{\\small\\InstituteType}\n    \\end{minipage}%\n}\n\n\\fancyhead[R]{%\n    \\begin{minipage}[c]{0.45\\textwidth}\n        \\raggedleft\n        \\textcolor{accent}{\\textbf{\\ReportTitle}} \\\\\n        \\textcolor{muted}{\\small Office of Institutional Research}\n    \\end{minipage}%\n}\n\n\\fancyfoot[L]{\\textcolor{muted}{\\small Confidential --- \\InstituteName}}\n\\fancyfoot[R]{\\textcolor{muted}{\\small Page \\thepage\\ of \\pageref{LastPage}}}\n\n% ==================== DOCUMENT START ====================\n\\begin{document}\n\n% --- COVER PAGE ---\n\\thispagestyle{empty}\n\\vspace*{2.5cm}\n\n\\begin{flushleft}\n    {\\Huge\\textcolor{accent}{\\textbf{IT Department Student\\\\Internship Report}}} \\\\\n    \\vspace{0.5cm}\n    {\\Large\\textcolor{muted2}{Academic Period 2018--2024}}\n\\end{flushleft}\n\n\\vspace{1.5cm}\n\n\\begin{card}\n    \\subsection*{Executive Summary}\n    This report evaluates IT student internship trends and technical skill acquisition from 2018 to 2024, highlighting a robust participation rate among 7th-semester students in high-demand domains such as Machine Learning, Full Stack Development, and Data Analytics. By securing placements at diverse organizations ranging from global leaders like Walmart, L\\&T, and Tata Steel to specialized platforms like Internshala, students successfully bridged academic theory with industry practice through intensive 4-to-8-week engagements. These findings demonstrate a strong alignment between the department's curriculum and evolving industry requirements, particularly in emerging fields like AI, IoT, and Cloud Computing.\n\\end{card}\n\n\\vspace{1cm}\n\n\\begin{minipage}[t]{0.31\\textwidth}\n    \\kpi{Total Placements}{450+}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.31\\textwidth}\n    \\kpi{Primary Semester}{7th Sem}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.31\\textwidth}\n    \\kpi{Top Domain}{ML \\& AI}\n\\end{minipage}\n\n\\vspace{0.5cm}\n\n\\begin{minipage}[t]{0.31\\textwidth}\n    \\kpi{Avg Duration}{6--8 Weeks}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.31\\textwidth}\n    \\kpi{Top Provider}{Internshala}\n\\end{minipage}%\n\\hfill\n\\begin{minipage}[t]{0.31\\textwidth}\n    \\kpi{Full Stack Adoption}{28\\%}\n\\end{minipage}\n\n\\vfill\n\\textcolor{muted}{\\small Generated on February 15, 2026}\n\\clearpage\n\n% --- SECTION 1: OVERVIEW & PARTICIPATION ---\n\\section*{Program Overview and Participation Trends}\n{\\large\\textcolor{muted}{Evolution of internship engagements and student involvement}}\n\n\\vspace{0.5cm}\n\n\\begin{card}\nThe student internship and training landscape within the IT Department from 2018 to 2024 reveals a progressive evolution in both participation depth and technical complexity. Early data from 2018 highlights a foundational focus on short-term, high-impact workshops, such as the Artificial Intelligence session at IIT Kharagpur and Data Science training through the National Institute of Industrial Training. By 2020, the trend shifted toward structured six-week internships with platforms like Internshala, focusing on core competencies in Java, Python, and Web Development. The 2024 cohort demonstrates the highest level of industry integration to date, with students securing specialized roles in Backend Development, Robotics, and Node.js across a diverse range of service providers.\n\n\\vspace{0.5cm}\n\n\\begin{center}\n\\begin{tikzpicture}\n\\begin{axis}[\n    institutional,\n    width=0.8\\textwidth,\n    xlabel={Academic Year},\n    ylabel={Number of Students},\n    title={Yearly Participation Growth},\n    xtick={2019,2020,2021,2022,2023},\n]\n\\addplot[color=chart1, mark=*, line width=1.5pt, smooth] coordinates {\n    (2019,4) (2020,6) (2021,7) (2022,9) (2023,12)\n};\n\\legend{Student Count}\n\\end{axis}\n\\end{tikzpicture}\n\\end{center}\n\\end{card}\n\n\\clearpage\n\n% --- SECTION 2: PLACEMENT STATISTICS ---\n\\section*{Internship Placement Statistics}\n{\\large\\textcolor{muted}{Analysis of corporate engagements and provider distribution}}\n\n\\vspace{0.5cm}\n\n\\begin{card}\nThe IT Department has demonstrated a robust trend in internship participation among 7th-semester students, maintaining a consistent pipeline of placements across the 2022, 2023, and 2024 academic cycles. Analysis of the placement data indicates a strategic transition from foundational training on specialized platforms like Internshala and Ardent toward more intensive corporate engagements. This year-on-year progression is marked by an increase in the complexity of roles secured, reflecting a departmental trajectory that prioritizes high-value industry exposure.\n\n\\vspace{0.5cm}\n\n\\begin{minipage}[t]{0.48\\textwidth}\n    \\begin{tikzpicture}\n    \\begin{axis}[\n        institutional bar,\n        width=\\textwidth,\n        symbolic x coords={Ardent, Indian Oil, Studio, Octanet, Bharat},\n        xtick=data,\n        xticklabel style={rotate=45, anchor=east},\n        ylabel={Students},\n        title={Top Providers by Volume},\n    ]\n    \\addplot[fill=chart2, draw=none] coordinates {\n        (Ardent,3) (Indian Oil,2) (Studio,2) (Oct",
+  "metadata": {
+    "total_sections": 6,
+    "total_charts": 4,
+    "total_tables": 3,
+    "total_kpis": 7,
+    "files_processed": 5
+  },
+  "errors": [],
+  "warnings": []
+}

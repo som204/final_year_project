@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, BookPlus, UserPlus,FolderKanban,FileText,ChartLine} from 'lucide-react';
+import { LayoutDashboard, BookPlus, UserPlus,FolderKanban,FileText,ChartLine,GraduationCap} from 'lucide-react';
 import '../pages/Admin/InstituteAdmin.css';
 import { LogOut } from 'lucide-react';
 
@@ -22,6 +22,10 @@ const InstituteSidebar = ({ onLogoutClick }) => {
         <NavLink to="/institute-admin/faculty" className="ia-sidebar-link">
           <UserPlus size={20} />
           <span>Faculty</span>
+        </NavLink>
+        <NavLink to="/institute-admin/students" className="ia-sidebar-link">
+          <GraduationCap size={20} />
+          <span>Students</span>
         </NavLink>
         <NavLink to="/institute-admin/project" className="ia-sidebar-link">
           <FolderKanban size={20} />

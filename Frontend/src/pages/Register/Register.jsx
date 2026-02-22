@@ -187,7 +187,7 @@ const RegistrationPage = () => {
                 <input
                   type="text"
                   name="username"
-                  placeholder="Username"
+                  placeholder="Roll Number"
                   onChange={handleChange}
                   required
                 />

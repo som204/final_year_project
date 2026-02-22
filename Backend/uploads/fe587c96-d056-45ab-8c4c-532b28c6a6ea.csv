@@ -1,0 +1,28 @@
+Category,Item,Revenue,Expense,Quarter
+Tuition Fees,Undergraduate Programs,"5,000,000","0",Q1
+Tuition Fees,Postgraduate Programs,"2,500,000","0",Q1
+Salaries & Benefits,Faculty Payroll,"0","3,000,000",Q1
+Salaries & Benefits,Administrative Staff,"0","800,000",Q1
+Infrastructure,Campus Maintenance,"0","450,000",Q1
+Research,Lab Equipment Purchase,"0","750,000",Q1
+Grants,Government Research Grant,"1,200,000","0",Q1
+Tuition Fees,Undergraduate Programs,"5,100,000","0",Q2
+Tuition Fees,Postgraduate Programs,"2,600,000","0",Q2
+Salaries & Benefits,Faculty Payroll,"0","3,100,000",Q2
+Salaries & Benefits,Administrative Staff,"0","820,000",Q2
+Infrastructure,New Classroom Wing Construction,"0","2,500,000",Q2
+Student Services,Library & Digital Resources,"0","200,000",Q2
+Donations,Alumni Contribution Fund,"750,000","0",Q2
+Tuition Fees,Undergraduate Programs,"4,950,000","0",Q3
+Tuition Fees,Postgraduate Programs,"2,550,000","0",Q3
+Salaries & Benefits,Faculty Payroll,"0","3,150,000",Q3
+Salaries & Benefits,Administrative Staff,"0","830,000",Q3
+Infrastructure,Campus Maintenance,"0","480,000",Q3
+Research,AI Supercomputer Cluster Lease,"0","1,200,000",Q3
+Grants,Corporate Sponsorship for Tech Fest,"300,000","0",Q3
+Tuition Fees,Undergraduate Programs,"5,200,000","0",Q4
+Tuition Fees,Postgraduate Programs,"2,700,000","0",Q4
+Salaries & Benefits,Faculty Payroll,"0","3,200,000",Q4
+Salaries & Benefits,Administrative Staff,"0","850,000",Q4
+Infrastructure,Sports Facility Upgrade,"0","900,000",Q4
+Student Services,Career Placement Cell,"0","150,000",Q4

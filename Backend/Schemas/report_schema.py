@@ -19,3 +19,4 @@ class GenerateReportRequest(BaseModel):
     source_file_ids: List[int]
     report_name: str
     report_desc: str
+    report_template: int
