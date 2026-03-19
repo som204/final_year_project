@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import "../pages/Admin/InstituteAdmin.css";
+import { API_BASE_URL } from "../config";
+
 import {
   X, Save, Loader2, Bold, Italic, Strikethrough,
   Underline as UnderlineIcon, List, ListOrdered, Minus,
@@ -602,7 +602,7 @@ const FullPageEditor = () => {
   useEffect(() => {
     const fetchReport = async () => {
       try {
-        const res = await axios.get(`http://localhost:8000/reports/${id}`, {
+        const res = await axios.get(`${API_BASE_URL}/reports/${id}`, {
           withCredentials: true,
           headers: { Accept: "application/json" },
         });
@@ -655,7 +655,7 @@ const FullPageEditor = () => {
       const rebuiltFullHtml = rebuildFullHtml(originalFullHtml, bodyClone.innerHTML);
       const payload = { ...data, html_report: rebuiltFullHtml };
         console.log("Saving report with payload:", payload);
-      await axios.put(`http://localhost:8000/reports/update/${id}`, payload, { withCredentials: true });
+      await axios.put(`${API_BASE_URL}/reports/update/${id}`, payload, { withCredentials: true });
       setData(payload);
       setOriginalFullHtml(rebuiltFullHtml);
       showStatus("✓ Saved successfully");

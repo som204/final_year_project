@@ -11,7 +11,12 @@ from .dataUpload_models import DataUploaded
 from .project_models import Project
 from .report_models import Report
 from .association_models import report_data_association
+from .notification_models import Notification, NotificationRecipient
 
 
 # You can also define what gets imported when someone does "from Models import *"
-__all__ = ["Base", "Institute", "Department", "User", "Stakeholder", "Project", "Report", "DataUploaded", "report_data_association"]
+__all__ = [
+    "Base", "Institute", "Department", "User", "Stakeholder",
+    "Project", "Report", "DataUploaded", "report_data_association",
+    "Notification", "NotificationRecipient",
+]

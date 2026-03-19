@@ -8,7 +8,7 @@ import {
   Paperclip,
   CheckCircle
 } from "lucide-react";
-import '../pages/Student/Student.css';
+
 
 // Projects asking for student data
 const MOCK_PROJECTS = [

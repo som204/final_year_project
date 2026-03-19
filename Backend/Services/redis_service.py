@@ -11,16 +11,27 @@ class RedisService:
     @classmethod
     def get_client(cls):
         if cls._client is None:
-            host = os.getenv("REDIS_HOST", "localhost")
-            port = int(os.getenv("REDIS_PORT", 17431))
-            password = os.getenv("REDIS_PASSWORD", None)
+            redis_url = os.getenv("REDIS_URL")
 
-            cls._client = redis.Redis(
-                host=host,
-                port=port,
-                password=password,
-                decode_responses=True,
-            )
+            # ✅ Use full URL (BEST for cloud)
+            if redis_url:
+                cls._client = redis.from_url(
+                    redis_url,
+                    decode_responses=True
+                )
+            else:
+                # fallback (local dev)
+                host = os.getenv("REDIS_HOST")
+                port = int(os.getenv("REDIS_PORT"))
+                password = os.getenv("REDIS_PASSWORD")
+
+                cls._client = redis.Redis(
+                    host=host,
+                    port=port,
+                    password=password,
+                    decode_responses=True,
+                )
+
         return cls._client
 
     @classmethod

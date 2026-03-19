@@ -1,37 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, FileText, UploadCloud, LogOut } from 'lucide-react';
-import '../pages/Student/Student.css'; // Assuming you have specific styles for the student sidebar
+import { LayoutDashboard, FileText, LogOut, Menu, X } from 'lucide-react';
+import NotificationBell from "./NotificationBell";
+
+const navLinkClass = ({ isActive }) =>
+  `flex items-center gap-4 px-4 py-3 rounded-lg transition-colors duration-200 ${
+    isActive
+      ? "bg-indigo-600 text-white font-medium"
+      : "text-slate-300 hover:bg-slate-800 hover:text-white"
+  }`;
 
 const StudentSidebar = ({ onLogoutClick }) => {
-  return (
-    <aside className="student-sidebar">
-      <div className="student-sidebar-header">
-        <h2 className="student-sidebar-title">Student Portal</h2>
-      </div>
-      <nav className="student-sidebar-nav">
-        <NavLink to="/student/dashboard" className="student-sidebar-link">
-          <LayoutDashboard size={20} />
-          <span>Dashboard</span>
-        </NavLink>
-        
-        {/* VIEW ONLY REPORTS */}
-        <NavLink to="/student/reports" className="student-sidebar-link">
-          <FileText size={20} />
-          <span>Institute Reports</span>
-        </NavLink>
+  const [isOpen, setIsOpen] = useState(false);
 
-        {/* NEW UPLOAD DATA TAB */}
-        {/* <NavLink to="/student/upload" className="student-sidebar-link">
-          <UploadCloud size={20} />
-          <span>Upload Data</span>
-        </NavLink> */}
-      </nav>
-      <div className="sidebar-footer">
-        <button className="logout-button" onClick={onLogoutClick}>
-          <LogOut size={20} />
-          <span>Logout</span>
+  return (
+    <aside className="w-full md:w-64 bg-slate-900 text-white flex flex-col shrink-0 md:h-full relative z-40">
+      <div className="p-4 md:p-6 border-b border-slate-800 flex justify-between items-center">
+        <h2 className="text-xl md:text-2xl font-semibold m-0">Student Portal</h2>
+        <button 
+          className="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none" 
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
+      </div>
+
+      {/* MOBILE DROPDOWN + DESKTOP NAV */}
+      <div className={`${isOpen ? 'flex' : 'hidden'} md:flex flex-col absolute md:relative top-full md:top-auto left-0 md:left-auto w-full md:w-auto bg-slate-900 md:grow md:h-auto h-[calc(100vh-73px)] border-b border-slate-800 md:border-0`}>
+        <nav className="flex flex-col gap-2 p-4 grow overflow-y-auto">
+          <NavLink to="/student/dashboard" className={navLinkClass} onClick={() => setIsOpen(false)}>
+            <LayoutDashboard size={20} className="shrink-0" />
+            <span>Dashboard</span>
+          </NavLink>
+          
+          {/* VIEW ONLY REPORTS */}
+          <NavLink to="/student/reports" className={navLinkClass} onClick={() => setIsOpen(false)}>
+            <FileText size={20} className="shrink-0" />
+            <span>Institute Reports</span>
+          </NavLink>
+          
+          <div className="mt-auto md:mt-0 pt-4 md:pt-0">
+             <NotificationBell to="/student/notifications" onClick={() => setIsOpen(false)} />
+          </div>
+        </nav>
+        <div className="p-4 border-t border-slate-800">
+          <button 
+            className="w-full flex items-center gap-4 px-4 py-3 rounded-lg text-slate-300 hover:bg-rose-600 hover:text-white transition-colors duration-200 text-left" 
+            onClick={() => {
+              setIsOpen(false);
+              onLogoutClick();
+            }}
+          >
+            <LogOut size={20} />
+            <span>Logout</span>
+          </button>
+        </div>
       </div>
     </aside>
   );

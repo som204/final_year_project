@@ -1,8 +1,9 @@
 // src/pages/ProjectManagementPage.jsx
 import React, { useState, useEffect, useMemo, useContext } from "react";
 import { UserContext } from "../Context/user.context";
-import { Search, Filter, Edit, Trash2 } from "lucide-react";
-import "../pages/Admin/InstituteAdmin.css"; // Reusing the existing CSS
+import { Search, Filter, Edit, Trash2, Folder, Plus, Eye, Loader, FileText, X } from "lucide-react";
+import { API_BASE_URL } from "../config";
+
 import * as XLSX from "xlsx";
 
 const ProjectManagementPage = () => {
@@ -47,7 +48,7 @@ const ProjectManagementPage = () => {
     setError(null);
     try {
       const response = await fetch(
-        `http://localhost:8000/projects/institute/${user.institute_id}`,
+        `${API_BASE_URL}/projects/institute/${user.institute_id}`,
         {
           credentials: "include",
           method: "GET",
@@ -104,7 +105,7 @@ const ProjectManagementPage = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:8000/projects/create", {
+      const response = await fetch(`${API_BASE_URL}/projects/create`, {
         method: "POST",
         credentials: "include",
         headers: {
@@ -143,7 +144,7 @@ const ProjectManagementPage = () => {
     try {
       // Adjust endpoint if yours differs. Expecting array of uploaded files for project.
       const resp = await fetch(
-        `http://localhost:8000/uploads/projects/${project.id}`,
+        `${API_BASE_URL}/uploads/projects/${project.id}`,
         {
           method: "GET",
           credentials: "include",
@@ -208,7 +209,7 @@ const ProjectManagementPage = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:8000/projects/${editingProject.id}`,
+        `${API_BASE_URL}/projects/${editingProject.id}`,
         {
           method: "PUT",
           credentials: "include",
@@ -264,7 +265,7 @@ const ProjectManagementPage = () => {
 
     try {
       // A. Fetch the file
-      const downloadUrl = `http://localhost:8000/uploads/file/${file.id}`;
+      const downloadUrl = `${API_BASE_URL}/uploads/file/${file.id}`;
       const resp = await fetch(downloadUrl, {
         method: "GET",
         credentials: "include",
@@ -363,7 +364,7 @@ const ProjectManagementPage = () => {
     setModalActionLoading(true);
     setModalError(null);
     try {
-      const resp = await fetch(`http://localhost:8000/uploads/${fileId}`, {
+      const resp = await fetch(`${API_BASE_URL}/uploads/${fileId}`, {
         method: "DELETE",
         credentials: "include",
         headers: token ? { Authorization: `Bearer ${token}` } : undefined,
@@ -391,7 +392,7 @@ const ProjectManagementPage = () => {
 
     setListError(null);
     try {
-      const resp = await fetch(`http://localhost:8000/projects/${projectId}`, {
+      const resp = await fetch(`${API_BASE_URL}/projects/${projectId}`, {
         method: "DELETE",
         credentials: "include",
         headers: token ? { Authorization: `Bearer ${token}` } : undefined,
@@ -416,235 +417,258 @@ const ProjectManagementPage = () => {
   };
 
   return (
-    <div className="management-page">
-      <h1>Project Management</h1>
+    <div className="p-6 md:p-10 bg-slate-50 min-h-screen font-sans">
+      <div className="max-w-7xl mx-auto">
+        <header className="mb-8">
+          <h1 className="text-3xl font-bold text-slate-800 tracking-tight">Project Management</h1>
+          <p className="text-slate-500 mt-2 font-medium">Create and manage academic & research projects</p>
+        </header>
 
-      <div className="tabs">
-        <button
-          onClick={() => setActiveTab("list")}
-          className={`tab-button ${activeTab === "list" ? "active" : ""}`}
-        >
-          All Projects
-        </button>
-        <button
-          onClick={() => setActiveTab("create")}
-          className={`tab-button ${activeTab === "create" ? "active" : ""}`}
-        >
-          Create New Project
-        </button>
-      </div>
+        {/* TABS */}
+        <div className="flex space-x-1 bg-slate-200/50 p-1.5 rounded-2xl w-fit mb-8 border border-slate-200/50">
+          <button
+            onClick={() => setActiveTab("list")}
+            className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
+              activeTab === "list"
+                ? "bg-white text-indigo-600 shadow-sm"
+                : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
+            }`}
+          >
+            <Folder size={18} /> All Projects
+          </button>
+          <button
+            onClick={() => setActiveTab("create")}
+            className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
+              activeTab === "create"
+                ? "bg-white text-indigo-600 shadow-sm"
+                : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
+            }`}
+          >
+            <Plus size={18} /> Create New
+          </button>
+        </div>
 
-      <div className="tab-content">
-        {/* LIST VIEW */}
-        {activeTab === "list" && (
-          <div className="list-view">
-            <div className="list-controls">
-              <div className="search-bar">
-                <Search size={20} />
-                <input
-                  type="text"
-                  placeholder="Search by project name..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
+        <div className="transition-all duration-300">
+          {/* LIST VIEW */}
+          {activeTab === "list" && (
+            <div className="animate-in fade-in duration-300 slide-in-from-bottom-2">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                <div className="relative w-full md:w-96">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+                  <input
+                    type="text"
+                    placeholder="Search by project name..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm font-medium placeholder:font-normal placeholder:text-slate-400"
+                  />
+                </div>
+                <div className="relative w-full md:w-64 group">
+                  <Filter className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-500 transition-colors pointer-events-none" size={20} />
+                  <select
+                    value={filterStatus}
+                    onChange={(e) => setFilterStatus(e.target.value)}
+                    className="w-full pl-12 pr-10 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm font-medium appearance-none cursor-pointer text-slate-700"
+                  >
+                    <option value="ALL">All Statuses</option>
+                    <option value="ONGOING">Ongoing</option>
+                    <option value="ON_HOLD">On Hold</option>
+                    <option value="CANCELLED">Cancelled</option>
+                    <option value="COMPLETED">Completed</option>
+                  </select>
+                </div>
               </div>
-              <div className="filter-bar">
-                <Filter size={20} />
-                <select
-                  value={filterStatus}
-                  onChange={(e) => setFilterStatus(e.target.value)}
-                >
-                  <option value="ALL">All Statuses</option>
-                  <option value="ONGOING">Ongoing</option>
-                  <option value="ON_HOLD">On Hold</option>
-                  <option value="CANCELLED">Cancelled</option>
-                  <option value="COMPLETED">Completed</option>
-                </select>
-              </div>
-            </div>
 
-            {isLoading && <p>Loading projects...</p>}
-            {error && <p className="form-message error">{error}</p>}
-            {!isLoading && !error && (
-              <table className="data-table ia-data-table">
-                <thead>
-                  <tr>
-                    <th>Project Name</th>
-                    <th>Status</th>
-                    <th>Created On</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredProjects.length > 0 ? (
-                    filteredProjects.map((proj) => (
-                      <tr key={proj.id}>
-                        <td>
-                          <button
-                            className="link-button"
-                            style={{
-                              textDecoration: "underline",
-                              cursor: "pointer",
-                              background: "none",
-                              border: "none",
-                              padding: 0,
-                            }}
-                            onClick={() => openProjectModal(proj)}
-                            title="View project files"
-                          >
-                            {proj.name}
-                          </button>
-                        </td>
-                        <td>
-                          <span
-                            className={`status-badge status-${(
-                              proj.status || ""
-                            ).toLowerCase()}`}
-                          >
-                            {(proj.status || "").replace("_", " ")}
-                          </span>
-                        </td>
-                        <td>
-                          {proj.created_at
-                            ? new Date(proj.created_at).toLocaleDateString()
-                            : "-"}
-                        </td>
-                        <td className="actions-cell">
-                          <button
-                            className="action-button edit"
-                            title="Edit project"
-                            onClick={() => openEditModal(proj)}
-                          >
-                            <Edit size={16} />
-                          </button>
-                          {/* Additional actions can go here (edit/delete project) */}
-                          <button
-                            className="action-button delete"
-                            title="Delete project"
-                            onClick={() => handleDeleteProject(proj.id)}
-                          >
-                            <Trash2 size={16} />
-                          </button>
-                        </td>
-                      </tr>
-                    ))
-                  ) : (
-                    <tr>
-                      <td colSpan="4">No projects found.</td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
-            )}
-          </div>
-        )}
-
-        {/* CREATE VIEW */}
-        {activeTab === "create" && (
-          <div className="ia-page-content">
-            <form onSubmit={handleFormSubmit} className="ia-form">
-              <label>Project Name</label>
-              <input
-                type="text"
-                name="name"
-                placeholder="e.g., Annual Report 2025-2026"
-                value={formData.name}
-                onChange={handleFormChange}
-                required
-              />
-
-              <label>Description</label>
-              <textarea
-                name="description"
-                placeholder="A brief description of the project's goals..."
-                value={formData.description}
-                onChange={handleFormChange}
-                required
-              />
-
-              <label>Initial Status</label>
-              <select
-                name="status"
-                value={formData.status}
-                onChange={handleFormChange}
-                required
-              >
-                <option value="ONGOING">Ongoing</option>
-                <option value="ON_HOLD">On Hold</option>
-                <option value="CANCELLED">Cancelled</option>
-                <option value="COMPLETED">Completed</option>
-              </select>
-
-              {formError && <p className="form-message error">{formError}</p>}
-              {formSuccess && (
-                <p className="form-message success">{formSuccess}</p>
+              {isLoading && (
+                <div className="flex items-center justify-center p-12 text-slate-500">
+                  <Loader className="animate-spin mr-3 text-indigo-600" size={24} /> 
+                  <span className="font-medium">Loading projects...</span>
+                </div>
               )}
+              {error && <div className="bg-rose-50 border border-rose-200 text-rose-600 px-4 py-3 rounded-xl mb-6 font-medium">{error}</div>}
+              
+              {!isLoading && !error && (
+                <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left border-collapse">
+                      <thead>
+                        <tr>
+                          <th className="py-4 px-6 bg-slate-50/50 text-slate-500 font-semibold text-sm border-b border-slate-100">Project Name</th>
+                          <th className="py-4 px-6 bg-slate-50/50 text-slate-500 font-semibold text-sm border-b border-slate-100">Status</th>
+                          <th className="py-4 px-6 bg-slate-50/50 text-slate-500 font-semibold text-sm border-b border-slate-100">Created On</th>
+                          <th className="py-4 px-6 bg-slate-50/50 text-slate-500 font-semibold text-sm border-b border-slate-100 text-right">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody className="text-sm">
+                        {filteredProjects.length > 0 ? (
+                          filteredProjects.map((proj) => (
+                            <tr key={proj.id} className="hover:bg-slate-50/80 transition-colors group">
+                              <td className="py-4 px-6 border-b border-slate-50">
+                                <button
+                                  className="text-left font-bold text-slate-800 hover:text-indigo-600 transition-colors focus:outline-none"
+                                  onClick={() => openProjectModal(proj)}
+                                  title="View project files"
+                                >
+                                  {proj.name}
+                                  <div className="text-xs font-normal text-slate-500 truncate max-w-xs mt-0.5">{proj.description}</div>
+                                </button>
+                              </td>
+                              <td className="py-4 px-6 border-b border-slate-50">
+                                <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border ${
+                                  proj.status === 'COMPLETED' ? 'bg-emerald-50 text-emerald-700 border-emerald-200' :
+                                  proj.status === 'ONGOING' ? 'bg-indigo-50 text-indigo-700 border-indigo-200' :
+                                  proj.status === 'ON_HOLD' ? 'bg-amber-50 text-amber-700 border-amber-200' :
+                                  'bg-slate-100 text-slate-700 border-slate-200'
+                                }`}>
+                                  {(proj.status || "").replace("_", " ")}
+                                </span>
+                              </td>
+                              <td className="py-4 px-6 border-b border-slate-50 text-slate-600 font-medium">
+                                {proj.created_at ? new Date(proj.created_at).toLocaleDateString() : "-"}
+                              </td>
+                              <td className="py-4 px-6 border-b border-slate-50 text-right">
+                                <button
+                                  className="p-2 text-indigo-500 hover:bg-indigo-50 rounded-lg transition-colors mr-2 focus:ring-2 focus:ring-indigo-200 outline-none"
+                                  title="Edit project"
+                                  onClick={() => openEditModal(proj)}
+                                >
+                                  <Edit size={18} />
+                                </button>
+                                <button
+                                  className="p-2 text-rose-500 hover:bg-rose-50 rounded-lg transition-colors focus:ring-2 focus:ring-rose-200 outline-none"
+                                  title="Delete project"
+                                  onClick={() => handleDeleteProject(proj.id)}
+                                >
+                                  <Trash2 size={18} />
+                                </button>
+                              </td>
+                            </tr>
+                          ))
+                        ) : (
+                          <tr>
+                            <td colSpan="4" className="py-12 text-center text-slate-500">
+                              <div className="flex flex-col items-center justify-center gap-3">
+                                <Folder className="w-10 h-10 text-slate-200" />
+                                <p>No projects found matching your criteria.</p>
+                              </div>
+                            </td>
+                          </tr>
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
 
-              <button
-                type="submit"
-                className="button button-accent"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Creating Project..." : "Create Project"}
-              </button>
-            </form>
-          </div>
-        )}
+          {/* CREATE VIEW */}
+          {activeTab === "create" && (
+            <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-10 animate-in fade-in duration-300 slide-in-from-bottom-2 max-w-3xl">
+              <h2 className="text-2xl font-bold text-slate-800 mb-6">Create New Project</h2>
+              <form onSubmit={handleFormSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1.5">Project Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="e.g., Annual Report 2025-2026"
+                    value={formData.name}
+                    onChange={handleFormChange}
+                    required
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50/50 hover:bg-slate-50 focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium shadow-sm"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1.5">Description</label>
+                  <textarea
+                    name="description"
+                    placeholder="A brief description of the project's goals..."
+                    value={formData.description}
+                    onChange={handleFormChange}
+                    required
+                    rows="4"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50/50 hover:bg-slate-50 focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium shadow-sm resize-none"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1.5">Initial Status</label>
+                  <select
+                    name="status"
+                    value={formData.status}
+                    onChange={handleFormChange}
+                    required
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50/50 hover:bg-slate-50 focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium appearance-none shadow-sm cursor-pointer"
+                  >
+                    <option value="ONGOING">Ongoing</option>
+                    <option value="ON_HOLD">On Hold</option>
+                    <option value="CANCELLED">Cancelled</option>
+                    <option value="COMPLETED">Completed</option>
+                  </select>
+                </div>
+
+                {formError && <div className="p-3 bg-rose-50 text-rose-600 rounded-xl text-sm font-medium border border-rose-200">{formError}</div>}
+                {formSuccess && <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl text-sm font-medium border border-emerald-200">{formSuccess}</div>}
+
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full sm:w-auto px-8 py-3 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 shadow-md shadow-indigo-600/20 hover:shadow-indigo-600/40 hover:-translate-y-0.5 transition-all disabled:opacity-70 disabled:hover:translate-y-0"
+                  >
+                    {isSubmitting ? "Creating Project..." : "Create Project"}
+                  </button>
+                </div>
+              </form>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Project files modal */}
       {projectModalOpen && (
         <div
-          className="modal-overlay"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm animate-in fade-in duration-200"
           onClick={(e) => {
             if (e.target === e.currentTarget) closeProjectModal();
           }}
         >
           <div
-            className="modal-content"
+            className="bg-white rounded-3xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden transform transition-all animate-in zoom-in-95 duration-200 border border-slate-100"
             role="dialog"
             aria-modal="true"
             aria-label={`Files for ${modalProject?.name || "project"}`}
           >
-            <div className="modal-toolbar">
-              <div className="modal-title">
-                <h3>{modalProject?.name}</h3>
+            <div className="px-6 py-5 border-b border-slate-100 flex justify-between items-start bg-slate-50/80">
+              <div>
+                <h3 className="text-xl font-bold text-slate-800 tracking-tight">{modalProject?.name}</h3>
                 {modalProject?.description && (
-                  <div className="subtitle modal-meta">
-                    {modalProject.description}
-                  </div>
+                  <p className="text-sm text-slate-500 mt-1 max-w-2xl">{modalProject.description}</p>
                 )}
               </div>
-
-              <div className="toolbar-actions">
-                <button className="modal-close-btn" onClick={closeProjectModal}>
-                  Close
-                </button>
-              </div>
+              <button className="text-slate-400 hover:text-slate-600 hover:bg-slate-200/50 p-2 rounded-xl transition-colors" onClick={closeProjectModal}>
+                <X size={20} />
+              </button>
             </div>
 
-            <div className="modal-body">
-              <div
-                style={{
-                  marginBottom: 12,
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
-                <div style={{ fontSize: 14, color: "#334155", fontWeight: 600 }}>
-                  Files
-                </div>
-                <div style={{ fontSize: 13, color: "#6b7280" }}>
+            <div className="p-6 flex-1 overflow-y-auto">
+              <div className="flex justify-between items-center mb-6 border-b border-slate-100 pb-4">
+                <h4 className="text-lg font-semibold text-slate-800 flex items-center gap-2"><Folder size={20} className="text-indigo-500" /> Project Files</h4>
+                <div className="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                   {modalFiles.length} file(s)
                 </div>
               </div>
 
               {modalLoading && (
-                <div className="modal-empty">Loading files…</div>
+                <div className="flex flex-col items-center justify-center py-12 text-slate-500">
+                  <Loader className="animate-spin mb-3 text-indigo-500" size={32} />
+                  <p className="font-medium">Loading files...</p>
+                </div>
               )}
               {modalError && (
-                <div className="modal-empty" style={{ color: "#ef4444" }}>
+                <div className="bg-rose-50 text-rose-600 p-4 rounded-xl border border-rose-200 text-center font-medium my-4">
                   {modalError}
                 </div>
               )}
@@ -652,59 +676,68 @@ const ProjectManagementPage = () => {
               {!modalLoading && !modalError && (
                 <>
                   {modalFiles.length === 0 ? (
-                    <div className="modal-empty">
-                      No files uploaded for this project yet.
+                    <div className="text-center py-12 bg-slate-50 rounded-2xl border border-slate-100 border-dashed">
+                      <FileText className="w-12 h-12 text-slate-300 mx-auto mb-3" />
+                      <p className="text-slate-500 font-medium">No files have been uploaded to this project yet.</p>
+                      <p className="text-sm text-slate-400 mt-1">Upload files from the respective departments.</p>
                     </div>
                   ) : (
-                    <table
-                      className="modal-file-table"
-                      aria-describedby="modal-files"
-                    >
-                      <thead>
-                        <tr>
-                          <th>File Name</th>
-                          <th>Uploaded At</th>
-                          <th style={{ width: 200 }}>Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {modalFiles.map((file) => (
-                          <tr key={file.id}>
-                            <td>
-                              <div className="file-name" title={file.name}>
-                                {file.name}
-                              </div>
-                            </td>
-                            <td>
-                              {file.upload_time
-                                ? new Date(file.upload_time).toLocaleString()
-                                : "-"}
-                            </td>
-                            <td>
-                              <div className="modal-actions">
+                    <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
+                      <table className="w-full text-left border-collapse" aria-describedby="modal-files">
+                        <thead>
+                          <tr className="bg-slate-50/80">
+                            <th className="py-3 px-5 text-slate-500 font-semibold text-xs uppercase tracking-wider border-b border-slate-200">File Name</th>
+                            <th className="py-3 px-5 text-slate-500 font-semibold text-xs uppercase tracking-wider border-b border-slate-200">Uploaded At</th>
+                            <th className="py-3 px-5 text-slate-500 font-semibold text-xs uppercase tracking-wider border-b border-slate-200 text-right w-40">Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody className="bg-white divide-y divide-slate-100">
+                          {modalFiles.map((file) => (
+                            <tr key={file.id} className="hover:bg-slate-50/60 transition-colors">
+                              <td className="py-3 px-5">
+                                <div className="flex items-center gap-3">
+                                  <div className="p-2 bg-indigo-50 text-indigo-500 rounded-lg">
+                                    <FileText size={16} />
+                                  </div>
+                                  <span className="font-medium text-slate-700 truncate max-w-sm" title={file.name}>
+                                    {file.name}
+                                  </span>
+                                </div>
+                              </td>
+                              <td className="py-3 px-5 text-sm text-slate-500 font-medium whitespace-nowrap">
+                                {file.upload_time ? new Date(file.upload_time).toLocaleString() : "-"}
+                              </td>
+                              <td className="py-3 px-5 text-right">
                                 <button
-                                  className="btn-view"
+                                  className="p-1.5 text-indigo-500 hover:bg-indigo-50 rounded-lg transition-colors mr-1 focus:ring-2 focus:ring-indigo-200 outline-none"
                                   onClick={() => handleViewFile(file)}
                                   aria-label={`View ${file.name}`}
+                                  title="View File"
                                 >
-                                  View
+                                  <Eye size={18} />
                                 </button>
                                 <button
-                                  className="btn-delete"
+                                  className="p-1.5 text-rose-500 hover:bg-rose-50 rounded-lg transition-colors focus:ring-2 focus:ring-rose-200 outline-none"
                                   onClick={() => handleDeleteFile(file.id)}
                                   aria-label={`Delete ${file.name}`}
+                                  title="Delete File"
                                 >
-                                  <Trash2 size={14} /> Delete
+                                  <Trash2 size={18} />
                                 </button>
-                              </div>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
                   )}
                 </>
               )}
+            </div>
+            <div className="px-6 py-4 border-t border-slate-100 bg-slate-50/50 flex justify-end">
+              <button className="px-5 py-2.5 bg-white border border-slate-200 rounded-xl text-slate-600 font-medium hover:bg-slate-50 hover:text-slate-900 transition-colors shadow-sm" onClick={closeProjectModal}>
+                Close
+              </button>
             </div>
           </div>
         </div>
@@ -713,65 +746,74 @@ const ProjectManagementPage = () => {
       {/* Edit Project Modal */}
       {editModalOpen && (
         <div
-          className="modal-overlay"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm animate-in fade-in duration-200"
           onClick={(e) => {
             if (e.target === e.currentTarget) closeEditModal();
           }}
         >
           <div
-            className="modal-content"
+            className="bg-white rounded-3xl shadow-2xl w-full max-w-xl overflow-hidden transform transition-all animate-in zoom-in-95 duration-200 border border-slate-100"
             role="dialog"
             aria-modal="true"
             aria-label={`Edit project ${editingProject?.name || ""}`}
           >
-            <div className="modal-toolbar">
-              <div className="modal-title">
-                <h3>Edit Project</h3>
-                <div className="subtitle modal-meta">{editingProject?.name}</div>
+            <div className="px-6 py-5 border-b border-slate-100 flex justify-between items-center bg-slate-50/80">
+              <div>
+                <h3 className="text-xl font-bold text-slate-800 tracking-tight">Edit Project</h3>
+                <div className="text-sm font-medium text-slate-500 mt-0.5">{editingProject?.name}</div>
               </div>
-              <div className="toolbar-actions">
-                <button className="modal-close-btn" onClick={closeEditModal}>Close</button>
-              </div>
+              <button className="text-slate-400 hover:text-slate-600 hover:bg-slate-200/50 p-2 rounded-xl transition-colors" onClick={closeEditModal}>
+                <X size={20} />
+              </button>
             </div>
 
-            <div className="modal-body">
-              <form onSubmit={handleEditSave}>
-                <label style={{ fontSize: 13, color: "#334155", marginBottom: 6 }}>Project name</label>
-                <input
-                  name="name"
-                  value={editForm.name}
-                  onChange={handleEditChange}
-                  required
-                  style={{ width: "100%", marginBottom: 10, padding: "8px 10px", borderRadius: 8, border: "1px solid #e6eef6" }}
-                />
+            <div className="p-6">
+              <form onSubmit={handleEditSave} className="space-y-5">
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1.5">Project Name</label>
+                  <input
+                    name="name"
+                    value={editForm.name}
+                    onChange={handleEditChange}
+                    required
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50/50 hover:bg-slate-50 focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium shadow-sm"
+                  />
+                </div>
 
-                <label style={{ fontSize: 13, color: "#334155", marginBottom: 6 }}>Description</label>
-                <textarea
-                  name="description"
-                  value={editForm.description}
-                  onChange={handleEditChange}
-                  style={{ width: "100%", minHeight: 100, marginBottom: 10, padding: "8px 10px", borderRadius: 8, border: "1px solid #e6eef6" }}
-                />
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1.5">Description</label>
+                  <textarea
+                    name="description"
+                    value={editForm.description}
+                    onChange={handleEditChange}
+                    rows="4"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50/50 hover:bg-slate-50 focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium shadow-sm resize-none"
+                  />
+                </div>
 
-                <label style={{ fontSize: 13, color: "#334155", marginBottom: 6 }}>Status</label>
-                <select
-                  name="status"
-                  value={editForm.status}
-                  onChange={handleEditChange}
-                  style={{ width: "100%", marginBottom: 12, padding: "8px 10px", borderRadius: 8, border: "1px solid #e6eef6" }}
-                >
-                  <option value="ONGOING">Ongoing</option>
-                  <option value="ON_HOLD">On Hold</option>
-                  <option value="CANCELLED">Cancelled</option>
-                  <option value="COMPLETED">Completed</option>
-                </select>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1.5">Status</label>
+                  <select
+                    name="status"
+                    value={editForm.status}
+                    onChange={handleEditChange}
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50/50 hover:bg-slate-50 focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium appearance-none shadow-sm cursor-pointer"
+                  >
+                    <option value="ONGOING">Ongoing</option>
+                    <option value="ON_HOLD">On Hold</option>
+                    <option value="CANCELLED">Cancelled</option>
+                    <option value="COMPLETED">Completed</option>
+                  </select>
+                </div>
 
-                {editError && <p className="form-message error">{editError}</p>}
-                {editSuccess && <p className="form-message success">{editSuccess}</p>}
+                {editError && <div className="p-3 bg-rose-50 text-rose-600 rounded-xl text-sm font-medium border border-rose-200">{editError}</div>}
+                {editSuccess && <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl text-sm font-medium border border-emerald-200">{editSuccess}</div>}
 
-                <div style={{ display: "flex", gap: 8, justifyContent: "flex-end", marginTop: 8 }}>
-                  <button type="button" className="modal-close-btn" onClick={closeEditModal} disabled={editLoading}>Cancel</button>
-                  <button type="submit" className="btn-view" disabled={editLoading}>
+                <div className="flex justify-end gap-3 mt-8 pt-5 border-t border-slate-100">
+                  <button type="button" className="px-6 py-2.5 text-slate-600 font-medium rounded-xl hover:bg-slate-100 transition-colors" onClick={closeEditModal} disabled={editLoading}>
+                    Cancel
+                  </button>
+                  <button type="submit" className="px-6 py-2.5 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 shadow-md shadow-indigo-600/20 hover:shadow-indigo-600/40 hover:-translate-y-0.5 transition-all disabled:opacity-70 disabled:hover:translate-y-0" disabled={editLoading}>
                     {editLoading ? "Saving..." : "Save Changes"}
                   </button>
                 </div>

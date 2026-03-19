@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo, useContext } from "react";
+import { API_BASE_URL } from "../config";
 import { UserContext } from "../Context/user.context";
 import {
   Search,
@@ -19,8 +20,7 @@ import {
   X, // Icon for Close
 } from "lucide-react";
 import { useNavigate} from "react-router-dom";
-import "../pages/Admin/InstituteAdmin.css";
-import axios from "axios";
+
 import html2pdf from "html2pdf.js";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
@@ -92,11 +92,11 @@ const ReportManagement = () => {
     setIsReportsLoading(true);
     try {
       const [reportsRes, projectsRes] = await Promise.all([
-        fetch(`http://localhost:8000/reports/institute/${user.institute_id}`, {
+        fetch(`${API_BASE_URL}/reports/institute/${user.institute_id}`, {
           credentials: "include",
           method: "GET",
         }),
-        fetch(`http://localhost:8000/projects/institute/${user.institute_id}`, {
+        fetch(`${API_BASE_URL}/projects/institute/${user.institute_id}`, {
           credentials: "include",
           method: "GET",
         }),
@@ -130,7 +130,7 @@ const ReportManagement = () => {
       setIsFilesLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:8000/uploads/projects/${selectedProject}`,
+          `${API_BASE_URL}/uploads/projects/${selectedProject}`,
           {
             credentials: "include",
             method: "GET",
@@ -208,7 +208,7 @@ const ReportManagement = () => {
     e.stopPropagation();
     try {
       const res = await axios.get(
-        `http://localhost:8000/reports/template/${template.id}`,
+        `${API_BASE_URL}/reports/template/${template.id}`,
         {
           withCredentials: true,
           headers: { Accept: "application/json" },
@@ -260,7 +260,7 @@ const ReportManagement = () => {
 
     try {
       const axiosRes = await axios.post(
-        "http://localhost:8000/reports/create",
+        `${API_BASE_URL}/reports/create`,
         {
           project_id: selectedProject,
           source_file_ids: sourceFileIds,
@@ -300,7 +300,7 @@ const ReportManagement = () => {
     setViewError(null);
 
     try {
-      const res = await axios.get(`http://localhost:8000/reports/${reportId}`, {
+      const res = await axios.get(`${API_BASE_URL}/reports/${reportId}`, {
         withCredentials: true,
         headers: { Accept: "application/json" },
       });
@@ -331,7 +331,7 @@ const handleDownloadReport = async (report) => {
   setViewError(null);
 
   try {
-    const res = await axios.get(`http://localhost:8000/reports/${report.id}`, {
+    const res = await axios.get(`${API_BASE_URL}/reports/${report.id}`, {
       withCredentials: true,
       headers: { Accept: "application/json" },
     });
@@ -521,7 +521,7 @@ const handleDownloadReport = async (report) => {
     if (!window.confirm("Are you sure you want to delete this report?")) return;
     try {
       const res = await axios.delete(
-        `http://localhost:8000/reports/delete/${id}`,
+        `${API_BASE_URL}/reports/delete/${id}`,
         { withCredentials: true },
       );
       if (res.status >= 200 && res.status < 300) {
@@ -546,7 +546,7 @@ const handleDownloadReport = async (report) => {
       // Assuming your backend expects a POST to a /share endpoint with report_id and visibility
       // console.log("Publishing report", publishModalReport.id, "as", visibilityType);
       await axios.post(
-        `http://localhost:8000/reports/share`,
+        `${API_BASE_URL}/reports/share`,
         { 
           report_id: publishModalReport.id, 
           share_level: visibilityType, 
@@ -605,349 +605,410 @@ const handleDownloadReport = async (report) => {
   };
 
   return (
-    <div className="management-page">
-      <h1>Report Management</h1>
+    <div className="p-6 md:p-10 bg-slate-50 min-h-screen font-sans">
+      <div className="max-w-7xl mx-auto">
+        <header className="mb-8">
+          <h1 className="text-3xl font-bold text-slate-800 tracking-tight">Report Management</h1>
+          <p className="text-slate-500 mt-2 font-medium">Generate, publish, and manage comprehensive institutional reports</p>
+        </header>
 
-      <div className="tabs">
-        <button
-          onClick={() => setActiveTab("list")}
-          className={`tab-button ${activeTab === "list" ? "active" : ""}`}
-        >
-          <FileText size={16} /> All Reports
-        </button>
-        <button
-          onClick={() => setActiveTab("create")}
-          className={`tab-button ${activeTab === "create" ? "active" : ""}`}
-        >
-          <PlusCircle size={16} /> Create New Report
-        </button>
-      </div>
+        {/* TABS */}
+        <div className="flex space-x-1 bg-slate-200/50 p-1.5 rounded-2xl w-fit mb-8 border border-slate-200/50">
+          <button
+            onClick={() => setActiveTab("list")}
+            className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
+              activeTab === "list"
+                ? "bg-white text-indigo-600 shadow-sm"
+                : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
+            }`}
+          >
+            <FileText size={18} /> All Reports
+          </button>
+          <button
+            onClick={() => setActiveTab("create")}
+            className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
+              activeTab === "create"
+                ? "bg-white text-indigo-600 shadow-sm"
+                : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
+            }`}
+          >
+            <PlusCircle size={18} /> Create New Report
+          </button>
+        </div>
 
-      <div className="tab-content">
-        {/* LIST VIEW */}
-        {activeTab === "list" && (
-          <div className="list-view">
-            <div className="list-controls">
-              <div className="search-bar">
-                <Search size={20} />
-                <input
-                  type="text"
-                  placeholder="Search by report title..."
-                  value={reportSearchTerm}
-                  onChange={(e) => setReportSearchTerm(e.target.value)}
-                />
+        <div className="transition-all duration-300">
+          {/* LIST VIEW */}
+          {activeTab === "list" && (
+            <div className="animate-in fade-in duration-300 slide-in-from-bottom-2">
+              <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
+                <div className="relative w-full md:w-96">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+                  <input
+                    type="text"
+                    placeholder="Search by report title..."
+                    value={reportSearchTerm}
+                    onChange={(e) => setReportSearchTerm(e.target.value)}
+                    className="w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm font-medium placeholder:font-normal placeholder:text-slate-400"
+                  />
+                </div>
               </div>
-            </div>
-            {isReportsLoading && <p>Loading reports...</p>}
-            {reportsError && (
-              <p className="form-message error">{reportsError}</p>
-            )}
-            {viewError && <p className="form-message error">{viewError}</p>}
 
-            {!isReportsLoading && !reportsError && (
-              <table className="data-table ia-data-table">
-                <thead>
-                  <tr>
-                    <th>Report Title</th>
-                    <th>Project</th>
-                    <th>Date Generated</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredReports.length > 0 ? (
-                    filteredReports.map((report) => (
-                      <tr key={report.id}>
-                        {/* CLICKABLE TITLE & VISIBILITY BADGE */}
-                        <td className="report-title-cell">
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
-                            <span
-                              className="clickable-title"
-                              onClick={() => handleOpenComments(report)}
-                              title="Click to view comments"
-                            >
-                              <MessageSquare size={14} className="title-icon" />
-                              {report.file_name}
-                            </span>
-                            <span 
-                              style={{
-                                fontSize: '0.7rem',
-                                padding: '2px 8px',
-                                borderRadius: '12px',
-                                fontWeight: '600',
-                                textTransform: 'uppercase',
-                                ...getVisibilityBadgeStyle(report.share)
-                              }}
-                            >
-                              {report.share || 'Private'}
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          {projects.find((p) => p.id === report.project_id)
-                            ?.name || "N/A"}
-                        </td>
-                        <td>{new Date(report.created_at).toLocaleString()}</td>
-                        <td className="actions-cell">
-                          {/* View Button */}
-                          <button
-                            className="action-button view"
-                            onClick={() => handleViewReport(report.id)}
-                            disabled={isViewingReportId === report.id}
-                            title="View PDF"
-                          >
-                            <Eye size={16} />
-                          </button>
-                          <button className="action-button view" onClick={() => handleOpenEdit(report)} title="Live Edit Report">
-                            <Edit size={16} />
-                          </button>
+              {isReportsLoading && (
+                <div className="flex justify-center items-center py-12 text-slate-500">
+                  <Loader2 className="animate-spin text-indigo-500 mr-3" size={32} />
+                  <span className="font-medium text-lg">Loading reports...</span>
+                </div>
+              )}
+              {reportsError && <div className="bg-rose-50 text-rose-600 p-4 rounded-xl border border-rose-200 font-medium my-6">{reportsError}</div>}
+              {viewError && <div className="bg-rose-50 text-rose-600 p-4 rounded-xl border border-rose-200 font-medium my-6">{viewError}</div>}
 
-                          {/* Publish Button */}
-                          <button
-                            className="action-button publish"
-                            onClick={() => handleOpenPublishModal(report)}
-                            title="Publish Report"
-                          >
-                            <Share2 size={16} />
-                          </button>
+              {!isReportsLoading && !reportsError && (
+                <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left border-collapse">
+                      <thead>
+                        <tr className="bg-slate-50/80">
+                          <th className="py-4 px-6 text-slate-500 font-semibold text-sm border-b border-slate-100">Report Title</th>
+                          <th className="py-4 px-6 text-slate-500 font-semibold text-sm border-b border-slate-100">Project</th>
+                          <th className="py-4 px-6 text-slate-500 font-semibold text-sm border-b border-slate-100">Date Generated</th>
+                          <th className="py-4 px-6 text-slate-500 font-semibold text-sm border-b border-slate-100 text-right w-56">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-slate-100 text-sm">
+                        {filteredReports.length > 0 ? (
+                          filteredReports.map((report) => (
+                            <tr key={report.id} className="hover:bg-slate-50/80 transition-colors group">
+                              <td className="py-4 px-6 border-b border-slate-50">
+                                <div className="flex items-center gap-3 flex-wrap">
+                                  <button
+                                    className="flex items-center gap-2 font-bold text-slate-800 hover:text-indigo-600 transition-colors focus:outline-none text-left"
+                                    onClick={() => handleOpenComments(report)}
+                                    title="Click to view comments"
+                                  >
+                                    <MessageSquare size={16} className="text-slate-400 group-hover:text-indigo-500 transition-colors shrink-0" />
+                                    <span>{report.file_name}</span>
+                                  </button>
+                                  <span
+                                    className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase"
+                                    style={getVisibilityBadgeStyle(report.share)}
+                                  >
+                                    {report.share || 'Private'}
+                                  </span>
+                                </div>
+                              </td>
+                              <td className="py-4 px-6 border-b border-slate-50 text-slate-600 font-medium">
+                                {projects.find((p) => p.id === report.project_id)?.name || "N/A"}
+                              </td>
+                              <td className="py-4 px-6 border-b border-slate-50 text-slate-600 font-medium whitespace-nowrap">
+                                {new Date(report.created_at).toLocaleString()}
+                              </td>
+                              <td className="py-4 px-6 border-b border-slate-50 text-right whitespace-nowrap">
+                                <button
+                                  className="p-1.5 text-indigo-500 hover:bg-indigo-50 rounded-lg transition-colors mr-1 focus:ring-2 focus:ring-indigo-200 outline-none disabled:opacity-50"
+                                  onClick={() => handleViewReport(report.id)}
+                                  disabled={isViewingReportId === report.id}
+                                  title="View PDF"
+                                >
+                                  <Eye size={18} />
+                                </button>
+                                <button 
+                                  className="p-1.5 text-indigo-500 hover:bg-indigo-50 rounded-lg transition-colors mr-1 focus:ring-2 focus:ring-indigo-200 outline-none" 
+                                  onClick={() => handleOpenEdit(report)} 
+                                  title="Live Edit Report"
+                                >
+                                  <Edit size={18} />
+                                </button>
 
-                          {/* Download Button */}
-                          <button
-                            className="action-button view"
-                            onClick={() => handleDownloadReport(report)}
-                            disabled={isDownloadingReportId === report.id}
-                            title="Download Report"
-                          >
-                            {isDownloadingReportId === report.id ? (
-                              <Loader2 size={16} className="spinner" />
-                            ) : (
-                              <Download size={16} />
-                            )}
-                          </button>
+                                <button
+                                  className="p-1.5 text-indigo-500 hover:bg-indigo-50 rounded-lg transition-colors mr-1 focus:ring-2 focus:ring-indigo-200 outline-none"
+                                  onClick={() => handleOpenPublishModal(report)}
+                                  title="Publish Report"
+                                >
+                                  <Share2 size={18} />
+                                </button>
 
-                          {/* Delete Button */}
-                          <button
-                            className="action-button delete"
-                            onClick={() => handleDelete(report.id)}
-                            title="Delete Report"
-                          >
-                            <Trash2 size={16} />
-                          </button>
-                        </td>
-                      </tr>
-                    ))
-                  ) : (
-                    <tr>
-                      <td colSpan="5">No reports found.</td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
-            )}
-          </div>
-        )}
+                                <button
+                                  className="p-1.5 text-indigo-500 hover:bg-indigo-50 rounded-lg transition-colors mr-1 focus:ring-2 focus:ring-indigo-200 outline-none disabled:opacity-50"
+                                  onClick={() => handleDownloadReport(report)}
+                                  disabled={isDownloadingReportId === report.id}
+                                  title="Download Report"
+                                >
+                                  {isDownloadingReportId === report.id ? <Loader2 size={18} className="animate-spin" /> : <Download size={18} />}
+                                </button>
 
-        {/* CREATE VIEW */}
-        {activeTab === "create" && (
-          <div className="create-report-view">
-            <div className="ia-form">
-              <label>1. Select a Project</label>
-              <select
-                value={selectedProject}
-                onChange={(e) => setSelectedProject(e.target.value)}
-              >
-                <option value="" disabled>
-                  Choose a project...
-                </option>
-                {projects.map((p) => (
-                  <option key={p.id} value={p.id}>
-                    {p.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="ia-form">
-              <label>Report Name *</label>
-              <input
-                type="text"
-                placeholder="Enter report name"
-                value={reportName}
-                onChange={(e) => setReportName(e.target.value)}
-              />
-            </div>
-            <div className="ia-form">
-              <label>Description</label>
-              <textarea
-                rows={2}
-                value={reportDescription}
-                onChange={(e) => setReportDescription(e.target.value)}
-              />
-            </div>
-
-            {selectedProject && (
-              <>
-                <div className="template-selection-panel">
-                  <label className="panel-label">2. Select Template</label>
-                  <div className="template-grid">
-                    {REPORT_TEMPLATES.map((tpl) => (
-                      <div
-                        key={tpl.id}
-                        className={`template-card ${selectedTemplate === tpl.id ? "selected" : ""}`}
-                        onClick={() => setSelectedTemplate(tpl.id)}
-                      >
-                        <div className="template-card-header">
-                          <div className="template-icon">
-                            <Layout size={20} />
-                          </div>
-                          {selectedTemplate === tpl.id && (
-                            <CheckCircle size={18} className="check-icon" />
-                          )}
-                        </div>
-                        <div className="template-info">
-                          <h4>{tpl.name}</h4>
-                          <p>{tpl.description}</p>
-                        </div>
-                        <div className="template-actions">
-                          <button
-                            className="template-view-btn"
-                            onClick={(e) => handleTemplateView(e, tpl)}
-                          >
-                            <Eye size={14} /> View Sample
-                          </button>
-                        </div>
-                      </div>
-                    ))}
+                                <button
+                                  className="p-1.5 text-rose-500 hover:bg-rose-50 rounded-lg transition-colors focus:ring-2 focus:ring-rose-200 outline-none"
+                                  onClick={() => handleDelete(report.id)}
+                                  title="Delete Report"
+                                >
+                                  <Trash2 size={18} />
+                                </button>
+                              </td>
+                            </tr>
+                          ))
+                        ) : (
+                          <tr>
+                            <td colSpan="4" className="py-16 text-center text-slate-500">
+                              <div className="flex flex-col items-center justify-center gap-3">
+                                <FileText className="w-12 h-12 text-slate-200" />
+                                <p className="text-lg">No reports found.</p>
+                                <p className="text-sm text-slate-400 mt-1">Adjust your search or create a new report.</p>
+                              </div>
+                            </td>
+                          </tr>
+                        )}
+                      </tbody>
+                    </table>
                   </div>
                 </div>
+              )}
+            </div>
+          )}
 
-                <div className="file-selection-panel">
-                  <label className="panel-label">3. Select Files</label>
-                  <div className="list-controls">
-                    <div className="search-bar">
-                      <Search size={20} />
-                      <input
-                        type="text"
-                        placeholder="Search files..."
-                        value={fileSearchTerm}
-                        onChange={(e) => setFileSearchTerm(e.target.value)}
-                      />
-                    </div>
-                    <div className="filter-bar">
-                      <Filter size={20} />
+          {/* CREATE VIEW */}
+          {activeTab === "create" && (
+            <div className="animate-in fade-in duration-300 slide-in-from-bottom-2 grid grid-cols-1 lg:grid-cols-12 gap-8">
+              <div className="lg:col-span-4 space-y-6">
+                <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+                  <h3 className="text-lg font-bold text-slate-800 mb-5 pb-3 border-b border-slate-100">Report Details</h3>
+                  <div className="space-y-5">
+                    <div>
+                      <label className="block text-sm font-medium text-slate-700 mb-1.5">1. Select a Project <span className="text-rose-500">*</span></label>
                       <select
-                        value={fileFilterDept}
-                        onChange={(e) => setFileFilterDept(e.target.value)}
+                        value={selectedProject}
+                        onChange={(e) => setSelectedProject(e.target.value)}
+                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm font-medium appearance-none cursor-pointer text-slate-700"
                       >
-                        <option value="all">All Depts</option>
-                        {uniqueDepartments.map((d) => (
-                          <option key={d.id} value={d.id}>
-                            {d.name}
-                          </option>
+                        <option value="" disabled>Choose a project...</option>
+                        {projects.map((p) => (
+                          <option key={p.id} value={p.id}>{p.name}</option>
                         ))}
                       </select>
                     </div>
-                  </div>
-                  <div className="file-selection-list">
-                    <div className="file-selection-header">
+
+                    <div>
+                      <label className="block text-sm font-medium text-slate-700 mb-1.5">Report Name <span className="text-rose-500">*</span></label>
                       <input
-                        type="checkbox"
-                        onChange={handleSelectAll}
-                        checked={
-                          filteredAndSearchedFiles.length > 0 &&
-                          selectedFileIds.size ===
-                            filteredAndSearchedFiles.length
-                        }
+                        type="text"
+                        placeholder="Enter report name"
+                        value={reportName}
+                        onChange={(e) => setReportName(e.target.value)}
+                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm font-medium placeholder:font-normal placeholder:text-slate-400"
                       />
-                      <label>Select All</label>
                     </div>
-                    {filteredAndSearchedFiles.map((file) => (
-                      <div key={file.id} className="file-selection-item">
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-slate-700 mb-1.5">Description</label>
+                      <textarea
+                        rows={3}
+                        placeholder="Brief summary..."
+                        value={reportDescription}
+                        onChange={(e) => setReportDescription(e.target.value)}
+                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm font-medium placeholder:font-normal placeholder:text-slate-400 resize-none"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {selectedProject && (
+                  <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+                    <h3 className="text-lg font-bold text-slate-800 mb-5 pb-3 border-b border-slate-100">2. Select Template</h3>
+                    <div className="grid grid-cols-1 gap-4">
+                      {REPORT_TEMPLATES.map((tpl) => (
+                        <div
+                          key={tpl.id}
+                          className={`relative border-2 rounded-xl p-4 cursor-pointer transition-all duration-200 group flex flex-col ${
+                            selectedTemplate === tpl.id
+                              ? "border-indigo-500 bg-indigo-50/50 shadow-sm"
+                              : "border-slate-200 hover:border-indigo-300 hover:shadow-sm"
+                          }`}
+                          onClick={() => setSelectedTemplate(tpl.id)}
+                        >
+                          <div className="flex justify-between items-start mb-2">
+                            <div className={`p-2 rounded-lg ${selectedTemplate === tpl.id ? 'bg-indigo-100/50 text-indigo-600' : 'bg-slate-100 text-slate-500 group-hover:bg-indigo-50 group-hover:text-indigo-500'} transition-colors`}>
+                              <Layout size={20} />
+                            </div>
+                            {selectedTemplate === tpl.id && (
+                              <CheckCircle size={20} className="text-indigo-600 bg-white rounded-full absolute top-4 right-4 animate-in zoom-in duration-200" />
+                            )}
+                          </div>
+                          <div>
+                            <h4 className={`font-bold transition-colors ${selectedTemplate === tpl.id ? 'text-indigo-900' : 'text-slate-800'}`}>{tpl.name}</h4>
+                            <p className="text-xs text-slate-500 mt-1 mb-4 leading-relaxed line-clamp-2">{tpl.description}</p>
+                          </div>
+                          <div className="mt-auto pt-3 border-t border-slate-100">
+                            <button
+                              className="text-xs font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-1.5 transition-colors"
+                              onClick={(e) => handleTemplateView(e, tpl)}
+                            >
+                              <Eye size={14} /> View Sample
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {selectedProject && (
+                <div className="lg:col-span-8">
+                  <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8 h-full flex flex-col">
+                    <div className="flex justify-between items-center mb-6 pb-3 border-b border-slate-100">
+                      <h3 className="text-lg font-bold text-slate-800">3. Select Files to Include</h3>
+                      <div className="bg-indigo-50 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        {selectedFileIds.size} Selected
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                      <div className="relative flex-1">
+                        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+                        <input
+                          type="text"
+                          placeholder="Search files..."
+                          value={fileSearchTerm}
+                          onChange={(e) => setFileSearchTerm(e.target.value)}
+                          className="w-full pl-11 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-sm font-medium"
+                        />
+                      </div>
+                      <div className="relative w-full sm:w-48 group">
+                        <Filter className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-500 transition-colors pointer-events-none" size={18} />
+                        <select
+                          value={fileFilterDept}
+                          onChange={(e) => setFileFilterDept(e.target.value)}
+                          className="w-full pl-11 pr-10 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-sm font-medium appearance-none cursor-pointer"
+                        >
+                          <option value="all">All Departments</option>
+                          {uniqueDepartments.map((d) => (
+                            <option key={d.id} value={d.id}>{d.name}</option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+
+                    <div className="bg-slate-50 rounded-xl border border-slate-200 p-1 mb-6 flex-1 overflow-hidden flex flex-col min-h-[400px]">
+                      <div className="flex items-center px-4 py-3 bg-slate-100/50 border-b border-slate-200 rounded-t-xl gap-3">
                         <input
                           type="checkbox"
-                          checked={selectedFileIds.has(file.id)}
-                          onChange={() => handleFileSelection(file.id)}
+                          onChange={handleSelectAll}
+                          checked={filteredAndSearchedFiles.length > 0 && selectedFileIds.size === filteredAndSearchedFiles.length}
+                          className="w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500"
                         />
-                        <label className="file-details">
-                          <span className="file-name">{file.name}</span>
-                          <span className="file-meta">
-                            <span>
-                              By: <strong>{file.faculty_name}</strong>
-                            </span>
-                          </span>
-                        </label>
+                        <label className="text-sm font-semibold text-slate-700 select-none cursor-pointer" onClick={handleSelectAll}>Select All Visible</label>
                       </div>
-                    ))}
+                      
+                      <div className="flex-1 overflow-y-auto w-full">
+                        {filteredAndSearchedFiles.length === 0 ? (
+                           <div className="flex flex-col items-center justify-center h-full text-slate-500 min-h-[300px]">
+                              <FileText className="w-10 h-10 text-slate-300 mb-2" />
+                              <p>No project files found matching filters.</p>
+                           </div>
+                        ) : (
+                          <div className="divide-y divide-slate-100">
+                            {filteredAndSearchedFiles.map((file) => (
+                              <label key={file.id} className="flex items-start p-4 hover:bg-white transition-colors cursor-pointer group">
+                                <div className="mt-0.5">
+                                  <input
+                                    type="checkbox"
+                                    checked={selectedFileIds.has(file.id)}
+                                    onChange={() => handleFileSelection(file.id)}
+                                    className="w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500"
+                                  />
+                                </div>
+                                <div className="ml-3 flex-1 min-w-0">
+                                  <div className="flex items-center gap-2 mb-1">
+                                    <FileText size={16} className={`${selectedFileIds.has(file.id) ? 'text-indigo-500' : 'text-slate-400 group-hover:text-slate-500'} transition-colors shrink-0`} />
+                                    <span className={`text-sm font-medium block truncate ${selectedFileIds.has(file.id) ? 'text-indigo-900' : 'text-slate-700'}`}>
+                                      {file.name}
+                                    </span>
+                                  </div>
+                                  <div className="text-xs text-slate-500 flex items-center gap-1.5">
+                                    <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-600 font-medium">{file.department_name || "General"}</span>
+                                    <span>•</span>
+                                    <span>By <span className="font-medium text-slate-700">{file.faculty_name}</span></span>
+                                  </div>
+                                </div>
+                              </label>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-auto pt-4 border-t border-slate-100">
+                      <div className="flex-1">
+                        {generationMessage && (
+                          <div className={`text-sm font-medium px-4 py-2 rounded-lg ${
+                            generationMessage.type === 'error' ? 'bg-rose-50 text-rose-600 border border-rose-100' : 'bg-emerald-50 text-emerald-600 border border-emerald-100'
+                          }`}>
+                            {generationMessage.text}
+                          </div>
+                        )}
+                      </div>
+                      <button
+                        onClick={handleGenerateReport}
+                        disabled={isGenerating || selectedFileIds.size === 0 || !selectedTemplate}
+                        className="w-full sm:w-auto px-8 py-3.5 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 shadow-md shadow-indigo-600/20 hover:shadow-indigo-600/40 transition-all disabled:opacity-50 disabled:hover:translate-y-0 disabled:shadow-none flex items-center justify-center gap-2"
+                      >
+                        {isGenerating ? <><Loader2 size={18} className="animate-spin" /> Generating...</> : <><Layout size={18} /> Generate Analytics Report</>}
+                      </button>
+                    </div>
+
                   </div>
-                  {generationMessage && (
-                    <p className={`form-message ${generationMessage.type}`}>
-                      {generationMessage.text}
-                    </p>
-                  )}
-                  <button
-                    onClick={handleGenerateReport}
-                    className="generate-button"
-                    disabled={
-                      isGenerating ||
-                      selectedFileIds.size === 0 ||
-                      !selectedTemplate
-                    }
-                  >
-                    {isGenerating ? "Generating..." : "Generate Report"}
-                  </button>
                 </div>
-              </>
-            )}
-          </div>
-        )}
+              )}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* --- MODAL: PUBLISH OPTIONS --- */}
       {publishModalReport && (
         <div
-          className="modal-overlay"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm animate-in fade-in duration-200"
           onClick={() => setPublishModalReport(null)}
         >
           <div
-            className="modal-content small-modal"
+            className="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all animate-in zoom-in-95 duration-200 border border-slate-100"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="modal-header">
-              <h3>Publish Report</h3>
+            <div className="px-6 py-5 border-b border-slate-100 flex justify-between items-center bg-slate-50/80">
+              <h3 className="text-xl font-bold text-slate-800 tracking-tight">Report Visibility</h3>
               <button
-                className="close-btn"
+                className="text-slate-400 hover:text-slate-600 hover:bg-slate-200/50 p-2 rounded-xl transition-colors"
                 onClick={() => setPublishModalReport(null)}
               >
                 <X size={20} />
               </button>
             </div>
-            <div className="modal-body">
-              <p>
-                Choose where to publish{" "}
-                <strong>{publishModalReport.file_name}</strong>:
+            <div className="p-6">
+              <p className="text-slate-600 font-medium mb-5">
+                Choose access level for <strong className="text-slate-800">"{publishModalReport.file_name}"</strong>:
               </p>
-              <div className="publish-options">
+              <div className="space-y-3">
                 <button
-                  className="publish-option-btn"
+                  className="w-full text-left p-4 rounded-2xl border-2 border-slate-100 hover:border-sky-300 hover:bg-sky-50 transition-all group flex gap-4 items-center focus:outline-none focus:ring-4 focus:ring-sky-500/10"
                   onClick={() => handlePublishAction("shared")}
                 >
-                  <div className="p-icon">
+                  <div className="p-3 bg-sky-100 text-sky-600 rounded-xl group-hover:bg-sky-200 group-hover:text-sky-700 transition-colors">
                     <Users size={24} />
                   </div>
-                  <div className="p-info">
-                    <h4>To Stakeholders (Shared)</h4>
-                    <span>Visible to internal faculty & admin</span>
+                  <div>
+                    <h4 className="font-bold text-slate-800 text-lg group-hover:text-sky-900 transition-colors">Shared Access</h4>
+                    <span className="text-sm text-slate-500 font-medium">Visible to internal faculty & administrators</span>
                   </div>
                 </button>
                 <button
-                  className="publish-option-btn"
+                  className="w-full text-left p-4 rounded-2xl border-2 border-slate-100 hover:border-emerald-300 hover:bg-emerald-50 transition-all group flex gap-4 items-center focus:outline-none focus:ring-4 focus:ring-emerald-500/10"
                   onClick={() => handlePublishAction("public")}
                 >
-                  <div className="p-icon">
+                  <div className="p-3 bg-emerald-100 text-emerald-600 rounded-xl group-hover:bg-emerald-200 group-hover:text-emerald-700 transition-colors">
                     <Globe size={24} />
                   </div>
-                  <div className="p-info">
-                    <h4>Globally (Public)</h4>
-                    <span>Visible to public & institute website</span>
+                  <div>
+                    <h4 className="font-bold text-slate-800 text-lg group-hover:text-emerald-900 transition-colors">Public Access</h4>
+                    <span className="text-sm text-slate-500 font-medium">Available globally on the public institute website</span>
                   </div>
                 </button>
               </div>
@@ -959,44 +1020,54 @@ const handleDownloadReport = async (report) => {
       {/* --- MODAL: COMMENTS VIEW --- */}
       {commentsModalReport && (
         <div
-          className="modal-overlay"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm animate-in fade-in duration-200"
           onClick={() => setCommentsModalReport(null)}
         >
           <div
-            className="modal-content medium-modal"
+            className="bg-white rounded-3xl shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col overflow-hidden transform transition-all animate-in zoom-in-95 duration-200 border border-slate-100"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="modal-header">
-              <h3>Report Comments</h3>
+            <div className="px-6 py-5 border-b border-slate-100 flex justify-between items-start bg-slate-50/80">
+              <div>
+                <h3 className="text-xl font-bold text-slate-800 tracking-tight flex items-center gap-2"><MessageSquare size={22} className="text-indigo-500" /> Report Comments</h3>
+                <div className="text-sm font-medium text-slate-500 mt-1">Report: <strong className="text-slate-700">{commentsModalReport.file_name}</strong></div>
+              </div>
               <button
-                className="close-btn"
+                className="text-slate-400 hover:text-slate-600 hover:bg-slate-200/50 p-2 rounded-xl transition-colors"
                 onClick={() => setCommentsModalReport(null)}
               >
                 <X size={20} />
               </button>
             </div>
-            <div className="modal-sub-header">
-              Report: <strong>{commentsModalReport.file_name}</strong>
-            </div>
-            <div className="modal-body comments-body">
+            
+            <div className="p-6 flex-1 overflow-y-auto bg-slate-50">
               {reportComments.length > 0 ? (
-                <div className="comments-list">
+                <div className="space-y-4">
                   {reportComments.map((comment) => (
-                    <div key={comment.id} className="comment-card">
-                      <div className="comment-header">
-                        <span className="comment-user">{comment.user}</span>
-                        <span className="comment-dept">({comment.dept})</span>
-                        <span className="comment-date">{comment.date}</span>
+                    <div key={comment.id} className="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                      <div className="flex justify-between items-start mb-2">
+                        <div>
+                          <span className="font-bold text-slate-800 block text-[15px]">{comment.user}</span>
+                          <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">{comment.dept}</span>
+                        </div>
+                        <span className="text-xs font-medium text-slate-400 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">{comment.date}</span>
                       </div>
-                      <div className="comment-text">{comment.text}</div>
+                      <div className="text-slate-600 leading-relaxed text-[15px] mt-2 bg-slate-50/50 p-3 rounded-xl border border-slate-50">{comment.text}</div>
                     </div>
                   ))}
                 </div>
               ) : (
-                <p className="no-comments">
-                  No comments available for this report.
-                </p>
+                <div className="flex flex-col items-center justify-center py-16 text-center">
+                  <MessageSquare className="w-16 h-16 text-slate-200 mb-4" />
+                  <h4 className="text-lg font-bold text-slate-700 mb-1">No comments yet</h4>
+                  <p className="text-slate-500">There are no comments available for this report.</p>
+                </div>
               )}
+            </div>
+            <div className="px-6 py-4 border-t border-slate-100 bg-white flex justify-end">
+              <button className="px-6 py-2.5 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200 transition-colors" onClick={() => setCommentsModalReport(null)}>
+                Close
+              </button>
             </div>
           </div>
         </div>

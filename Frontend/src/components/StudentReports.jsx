@@ -7,9 +7,9 @@ import {
   Download,
   Loader
 } from "lucide-react";
-import '../pages/Student/Student.css';
+
 import { UserContext } from '../Context/user.context';
-import axios from "axios";
+import { API_BASE_URL } from '../config';
 import html2pdf from "html2pdf.js";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
@@ -33,7 +33,7 @@ const StudentReports = () => {
       
       setIsLoading(true);
       try {
-        const response = await fetch(`http://localhost:8000/reports/institute/${user.institute_id}`, { 
+        const response = await fetch(`${API_BASE_URL}/reports/institute/${user.institute_id}`, { 
           credentials: 'include' 
         });
 
@@ -63,12 +63,18 @@ const StudentReports = () => {
   const handleViewPdf = async (reportId) => {
     setIsProcessingId(`view-${reportId}`);
     try {
-      const res = await axios.get(`http://localhost:8000/reports/${reportId}`, {
-        withCredentials: true,
+      const response = await fetch(`${API_BASE_URL}/reports/${reportId}`, {
+        credentials: "include",
         headers: { Accept: "application/json" },
       });
 
-      const html = res.data.html_report;
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.detail || `Request failed with status ${response.status}`);
+      }
+
+      const resData = await response.json();
+      const html = resData.html_report;
       if (html) {
         const blob = new Blob([html], { type: "text/html" });
         const url = URL.createObjectURL(blob);
@@ -77,7 +83,7 @@ const StudentReports = () => {
       }
       throw new Error("No viewable report content returned from server.");
     } catch (err) {
-      alert("Error opening report: " + (err.response?.data?.detail || err.message));
+      alert("Error opening report: " + err.message);
     } finally {
       setIsProcessingId(null);
     }
@@ -88,13 +94,18 @@ const StudentReports = () => {
     setIsProcessingId(`download-${report.id}`);
 
     try {
-      const res = await axios.get(`http://localhost:8000/reports/${report.id}`, {
-        withCredentials: true,
+      const response = await fetch(`${API_BASE_URL}/reports/${report.id}`, {
+        credentials: "include",
         headers: { Accept: "application/json" },
       });
 
-      const data = res.data;
-      const html = data.html_report;
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.detail || `Request failed with status ${response.status}`);
+      }
+
+      const resData = await response.json();
+      const html = resData.html_report;
 
       if (!html) {
         throw new Error("No downloadable report content returned from server.");
@@ -260,88 +271,107 @@ const StudentReports = () => {
       document.body.removeChild(iframe);
 
     } catch (err) {
-      alert("Error downloading report: " + (err.response?.data?.detail || err.message));
+      alert("Error downloading report: " + err.message);
     } finally {
       setIsProcessingId(null);
     }
   };
 
   return (
-    <div className="student-layout">
-      <div className="student-content">
+    <div className="p-6 md:p-10 bg-slate-50 min-h-screen font-sans">
+      <div className="max-w-7xl mx-auto">
         
-        <div className="page-header">
-          <h1>Institute Reports</h1>
-          <p>Access and download official documents released by the institute.</p>
-        </div>
+        {/* Page Header */}
+        <header className="mb-8 md:mb-10 animate-in fade-in slide-in-from-bottom-2 duration-500 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-bold text-slate-800 tracking-tight">Institute Reports</h1>
+            <p className="text-slate-500 mt-2 font-medium">Access and download official documents released by the institute.</p>
+          </div>
 
-        {/* SEARCH */}
-        <div className="list-controls">
-          <div className="search-bar">
-            <Search size={20} color="#64748b" />
+          {/* SEARCH */}
+          <div className="relative w-full md:w-80">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
             <input 
               type="text" 
               placeholder="Search reports..." 
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm font-medium placeholder:font-normal placeholder:text-slate-400"
             />
           </div>
-        </div>
+        </header>
 
         {/* Loading / Error States */}
         {isLoading ? (
-          <div style={{display: 'flex', alignItems: 'center', gap: 10, color: '#64748b', padding: '2rem'}}>
-            <Loader className="spinner" size={24} /> Fetching institute reports...
+          <div className="flex flex-col items-center justify-center h-64 bg-white rounded-3xl border border-slate-100 shadow-sm animate-in fade-in duration-500">
+            <div className="w-10 h-10 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin mb-4"></div>
+            <p className="text-slate-500 font-medium">Fetching institute reports...</p>
           </div>
         ) : error ? (
-          <div className="form-message error" style={{color: 'red', marginBottom: '1rem'}}>{error}</div>
+          <div className="bg-rose-50 border border-rose-200 text-rose-600 px-6 py-4 rounded-xl font-medium shadow-sm flex items-start gap-3">
+             <svg className="w-5 h-5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+             {error}
+          </div>
         ) : (
           /* REPORTS GRID */
-          <div className="student-reports-grid">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-100 fill-mode-both">
             {filteredReports.length > 0 ? (
               filteredReports.map((report) => (
-                <div key={report.id} className="student-report-card">
-                  <div className="report-header">
-                    <div className="icon-wrapper active">
-                      <FileText size={28} />
-                    </div>
-                    {/* Public Badge */}
-                    <span className="contribution-badge" style={{background:'#dcfce7', color:'#16a34a', border:'none', textTransform: 'capitalize'}}>
-                      {report.visibility || 'Public'}
-                    </span>
-                  </div>
+                <div key={report.id} className="bg-white rounded-2xl shadow-sm hover:shadow-md border border-slate-100 transition-all duration-300 overflow-hidden flex flex-col group hover:-translate-y-1">
                   
-                  <div className="report-body">
-                    <h3>{report.file_name || report.title || `Report #${report.id}`}</h3>
-                    <p className="report-desc">{report.report_desc || report.description || "No description provided for this report."}</p>
-                    <div className="report-meta">
-                      <Calendar size={14} /> {report.created_at ? new Date(report.created_at).toLocaleDateString() : "Date unavailable"}
+                  <div className="p-6 flex-1 flex flex-col gap-4">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
+                        <FileText size={24} />
+                      </div>
+                      <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-50 text-emerald-600 border border-emerald-100">
+                        {report.visibility || 'Public'}
+                      </span>
+                    </div>
+                    
+                    <div>
+                      <h3 className="font-bold text-slate-800 text-lg leading-tight line-clamp-2 mb-2" title={report.file_name || report.title || `Report #${report.id}`}>
+                        {report.file_name || report.title || `Report #${report.id}`}
+                      </h3>
+                      <p className="text-slate-500 text-sm font-medium line-clamp-3 leading-relaxed">
+                        {report.report_desc || report.description || "No description provided for this report."}
+                      </p>
                     </div>
                   </div>
 
-                  <div className="report-footer">
+                  <div className="px-6 py-4 bg-slate-50/50 border-t border-slate-100 flex items-center justify-between text-sm">
+                    <div className="flex items-center gap-2 text-slate-500 font-medium">
+                      <Calendar size={14} className="text-slate-400" /> 
+                      {report.created_at ? new Date(report.created_at).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : "Date unavailable"}
+                    </div>
+                  </div>
+                  
+                  <div className="px-6 pb-6 pt-2 bg-slate-50/50 flex gap-3">
                     <button 
-                      className="action-btn view" 
+                      className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-indigo-50 text-indigo-600 font-semibold rounded-xl hover:bg-indigo-100 transition-colors focus:ring-2 focus:ring-indigo-200 outline-none disabled:opacity-50" 
                       onClick={() => handleViewPdf(report.id)}
                       disabled={isProcessingId === `view-${report.id}`}
                     >
-                      {isProcessingId === `view-${report.id}` ? <Loader className="spinner" size={16} /> : <Eye size={16} />}
+                      {isProcessingId === `view-${report.id}` ? <Loader className="animate-spin" size={18} /> : <Eye size={18} />}
                       View
                     </button>
                     
                     <button 
-                      className="action-btn view" 
+                      className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200 transition-colors focus:ring-2 focus:ring-slate-200 outline-none disabled:opacity-50" 
                       onClick={() => handleDownloadReport(report)}
                       disabled={isProcessingId === `download-${report.id}`}
                     >
-                      {isProcessingId === `download-${report.id}` ? <Loader className="spinner" size={16} /> : <Download size={16} />} 
+                      {isProcessingId === `download-${report.id}` ? <Loader className="animate-spin" size={18} /> : <Download size={18} />} 
                       Download
                     </button>
                   </div>
                 </div>
               ))
             ) : (
-              <p style={{ color: '#64748b', gridColumn: '1 / -1' }}>No public reports found at this time.</p>
+              <div className="col-span-full py-16 text-center text-slate-500 bg-white rounded-3xl border border-slate-100 shadow-sm">
+                <FileText className="mx-auto mb-4 text-slate-200 w-12 h-12" />
+                <p className="font-medium text-lg text-slate-400">No public reports found at this time.</p>
+              </div>
             )}
           </div>
         )}
