@@ -3,7 +3,6 @@ import { UserContext } from '../../Context/user.context';
 import { useNavigate } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import FacultySidebar from '../../components/FacultySidebar';
-import './InstituteFaculty.css'; // New dedicated CSS file
 import Logout_Modal from '../../components/Logout_Modal';
 
 const InstituteFaculty = () => {
@@ -19,9 +18,9 @@ const InstituteFaculty = () => {
   };
   return (
     <>
-    <div className="faculty-layout">
+    <div className="flex flex-col md:flex-row h-screen overflow-hidden bg-slate-50">
       <FacultySidebar onLogoutClick={() => setIsModalOpen(true)} />
-      <main className="faculty-content">
+      <main className="flex-1 h-full overflow-y-auto w-full p-4 md:p-8">
         <Outlet />
       </main>
     </div>

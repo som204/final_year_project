@@ -5,10 +5,14 @@ import { UserProvider } from "./Context/user.context";
 import { BrowserRouter } from "react-router-dom";
 
 
+import { NotificationProvider } from "./Context/notification.context";
+
 function App() {
   return (
     <UserProvider>
-      <UserRoutes />
+      <NotificationProvider>
+        <UserRoutes />
+      </NotificationProvider>
     </UserProvider>
   );
 }

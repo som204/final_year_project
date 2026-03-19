@@ -12,6 +12,7 @@ if TYPE_CHECKING:
     from .user_models import User
     from .institute_models import Institute
     from .dataUpload_models import DataUploaded
+    from .notification_models import Notification
 
 
 # ========================
@@ -41,6 +42,7 @@ class Department(Base):
     institute: Mapped["Institute"] = relationship(back_populates="departments")
     users: Mapped[List["User"]] = relationship(back_populates="department")
     data_uploads: Mapped[List["DataUploaded"]] = relationship(back_populates="department")
+    notifications: Mapped[List["Notification"]] = relationship(back_populates="department")
 
     def __repr__(self) -> str:
         return f"Department(id={self.id}, name='{self.name}', code='{self.code}')"

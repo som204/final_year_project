@@ -10,6 +10,7 @@ from Models.dataUpload_models import DataUploaded
 from Models.project_models import Project
 from Models.report_models import Report
 from Models.comment_models import ReportComment
+from Models.notification_models import Notification, NotificationRecipient
 
 
 

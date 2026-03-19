@@ -16,6 +16,7 @@ if TYPE_CHECKING:
     from .department_models import Department
     from .dataUpload_models import DataUploaded
     from .project_models import Project
+    from .notification_models import Notification
 
 # ========================
 # Institute Model
@@ -48,3 +49,4 @@ class Institute(Base):
     back_populates="institute",
     cascade="all, delete-orphan"
 )
+    notifications: Mapped[List["Notification"]] = relationship(back_populates="institute")

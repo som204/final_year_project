@@ -2,6 +2,10 @@ import chromadb
 import hashlib
 import os
 import sys
+import torch
+
+# Optimize CPU usage
+torch.set_num_threads(4)  # adjust based on your CPU
 
 # Add project root to path
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -9,28 +13,47 @@ project_root = os.path.dirname(current_dir)
 sys.path.append(project_root)
 
 from langchain_chroma import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
-# --- THIS IS THE FIX ---
-# The import path for the retriever has been updated to the correct location
+from sentence_transformers import SentenceTransformer
 from langchain_classic.retrievers import ContextualCompressionRetriever
 from langchain_cohere import CohereRerank
 
 from config import VECTOR_STORES_BASE_DIR, COHERE_API_KEY
+#testing
+os.environ["TRANSFORMERS_OFFLINE"] = "1"
+os.environ["HF_DATASETS_OFFLINE"] = "1"
+MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "models", "all-MiniLM-L6-v2")
+
+# 🚀 FAST EMBEDDING CLASS (NO HF WRAPPER)
+class FastEmbedding:
+    def __init__(self):
+        self.model = SentenceTransformer(
+            os.path.abspath(MODEL_DIR),  # auto-download + cache
+            device="cpu"         # change to "cuda" if GPU available
+        )
+
+    def embed_documents(self, texts):
+        return self.model.encode(
+            texts,
+            batch_size=32,               # 🔥 speed boost
+            show_progress_bar=False,
+            normalize_embeddings=True
+        ).tolist()
+
+    def embed_query(self, text):
+        return self.model.encode(
+            text,
+            normalize_embeddings=True
+        ).tolist()
+
 
 class VectorStoreManager:
     """
     Manages multiple, per-institute ChromaDB vector stores with efficient, cached clients.
     """
+
     def __init__(self):
-        # Initialize the embedding model once to be reused.
-        model_name = "sentence-transformers/all-MiniLM-L6-v2"
-        model_kwargs = {'device': 'cpu'}
-        encode_kwargs = {'normalize_embeddings': True}
-        self.embeddings = HuggingFaceEmbeddings(
-            model_name=model_name,
-            model_kwargs=model_kwargs,
-            encode_kwargs=encode_kwargs
-        )
+        # ✅ Use fast embedding instead of HuggingFaceEmbeddings
+        self.embeddings = FastEmbedding()
         self.clients = {}
 
     def _get_institute_path(self, institute_id: int) -> str:
@@ -72,14 +95,17 @@ class VectorStoreManager:
     def add_documents(self, documents, file_hash: str, institute_id: int, project_id: int):
         client = self._get_client(institute_id)
         collection_name = self._get_project_collection_name(project_id)
+
         for doc in documents:
             doc.metadata["file_hash"] = file_hash
+
         Chroma.from_documents(
             documents=documents,
             embedding=self.embeddings,
             client=client,
             collection_name=collection_name
         )
+
         print(f"✅ Added {len(documents)} chunks to collection '{collection_name}' for institute '{institute_id}'")
 
     def get_retriever(self, institute_id: int, project_id: int):
@@ -88,27 +114,28 @@ class VectorStoreManager:
         """
         client = self._get_client(institute_id)
         collection_name = self._get_project_collection_name(project_id)
-        
-        # 1. Create the base retriever
+
+        # 🔍 Base retriever
         base_vector_store = Chroma(
             client=client,
             collection_name=collection_name,
             embedding_function=self.embeddings,
         )
+
         base_retriever = base_vector_store.as_retriever(search_kwargs={"k": 10})
 
-        # 2. Create the reranker compressor
+        # 🧠 Reranker
         compressor = CohereRerank(
             cohere_api_key=COHERE_API_KEY,
             model="rerank-english-v3.0",
             top_n=3
         )
 
-        # 3. Create the final Contextual Compression Retriever
+        # ⚡ Final retriever
         compression_retriever = ContextualCompressionRetriever(
             base_compressor=compressor,
             base_retriever=base_retriever
         )
-        
+
         print("-> Efficient Contextual Compression Retriever initialized.")
         return compression_retriever

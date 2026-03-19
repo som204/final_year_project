@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom'; 
+import { API_BASE_URL } from '../config';
 
 
 export const UserContext = createContext(null);
@@ -40,7 +41,7 @@ export const UserProvider = ({ children }) => {
     // Function to handle user logout
     const logout = async () => {
         try {
-            const res= await fetch('http://localhost:8000/user/logout', { method: 'GET', credentials: 'include' });
+            const res= await fetch(`${API_BASE_URL}/user/logout`, { method: 'GET', credentials: 'include' });
             if(res.ok){
                 Cookies.remove('authUser');
                 Cookies.remove('authToken');

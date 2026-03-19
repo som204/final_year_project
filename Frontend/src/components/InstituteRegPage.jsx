@@ -1,6 +1,7 @@
 // src/pages/InstituteManagementPage.jsx
 import React, { useState, useEffect, useMemo } from 'react';
-import '../pages/Super Admin/SuperAdmin.css'; // Your existing CSS file
+import { API_BASE_URL } from '../config';
+
 import {
   Search, Filter, Building, Code, MapPin, Mail,
   Phone, User, AtSign, AlertCircle, CheckCircle2
@@ -40,7 +41,7 @@ const InstituteManagementPage = () => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('http://localhost:8000/institute/all', {
+      const response = await fetch(`${API_BASE_URL}/institute/all`, {
         credentials: 'include',
         method: 'GET',
       });
@@ -88,7 +89,7 @@ const InstituteManagementPage = () => {
     setFormError(null);
     setFormSuccess(null);
     try {
-      const response = await fetch('http://localhost:8000/institute/create', {
+      const response = await fetch(`${API_BASE_URL}/institute/create`, {
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
@@ -159,7 +160,7 @@ const InstituteManagementPage = () => {
     setEditSuccess(null);
     console.log(editForm)
     try {
-      const response = await fetch(`http://localhost:8000/institute/update/${editingInstitute.id}`, {
+      const response = await fetch(`${API_BASE_URL}/institute/update/${editingInstitute.id}`, {
         method: 'PUT',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
@@ -186,7 +187,7 @@ const InstituteManagementPage = () => {
     if (!window.confirm('Are you sure you want to delete this institute? This action cannot be undone.')) return;
 
     try {
-      const resp = await fetch(`http://localhost:8000/institute/${instId}`, {
+      const resp = await fetch(`${API_BASE_URL}/institute/${instId}`, {
         method: 'DELETE',
         credentials: 'include',
       });
@@ -203,265 +204,396 @@ const InstituteManagementPage = () => {
   };
 
   return (
-    <div className="management-page">
-      <h1>Institute Management</h1>
+    <div className="p-6 md:p-10 bg-slate-50 min-h-screen font-sans">
+      <div className="max-w-7xl mx-auto">
+        <header className="mb-8 md:mb-10">
+          <h1 className="text-3xl font-bold text-slate-800 tracking-tight">Institute Management</h1>
+          <p className="text-slate-500 mt-2 font-medium">Manage and register educational institutes</p>
+        </header>
 
-      {/* Tab Navigation */}
-      <div className="tabs">
-        <button onClick={() => setActiveTab('list')} className={`tab-button ${activeTab === 'list' ? 'active' : ''}`}>
-          Institute List
-        </button>
-        <button onClick={() => setActiveTab('create')} className={`tab-button ${activeTab === 'create' ? 'active' : ''}`}>
-          Create New
-        </button>
-      </div>
+        {/* Tab Navigation */}
+        <div className="flex space-x-1 mb-8 bg-slate-200/50 p-1.5 rounded-2xl w-fit">
+          <button 
+            onClick={() => setActiveTab('list')} 
+            className={`px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 ${
+              activeTab === 'list' 
+                ? 'bg-white text-indigo-600 shadow-sm ring-1 ring-slate-900/5' 
+                : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'
+            }`}
+          >
+            Institute List
+          </button>
+          <button 
+            onClick={() => setActiveTab('create')} 
+            className={`px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 ${
+              activeTab === 'create' 
+                ? 'bg-white text-indigo-600 shadow-sm ring-1 ring-slate-900/5' 
+                : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'
+            }`}
+          >
+            Create New
+          </button>
+        </div>
 
-      <div className="tab-content">
-        {/* LIST VIEW */}
-        {activeTab === 'list' && (
-          <div className="list-view">
-            <div className="list-controls">
-              <div className="search-bar">
-                <Search size={20} />
-                <input
-                  type="text"
-                  placeholder="Search by name or code..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
+        <div className="tab-content transition-all duration-300">
+          {/* LIST VIEW */}
+          {activeTab === 'list' && (
+            <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                <div className="relative w-full md:w-96">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+                  <input
+                    type="text"
+                    placeholder="Search by name or code..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm font-medium placeholder:font-normal placeholder:text-slate-400"
+                  />
+                </div>
+                <div className="relative w-full md:w-64">
+                  <Filter className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+                  <select 
+                    value={filterStatus} 
+                    onChange={(e) => setFilterStatus(e.target.value)}
+                    className="w-full pl-12 pr-10 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm font-medium appearance-none cursor-pointer text-slate-700"
+                  >
+                    <option value="all">All Statuses</option>
+                    <option value="approved">Approved</option>
+                    <option value="pending">Pending Approval</option>
+                  </select>
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                    <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                  </div>
+                </div>
               </div>
-              <div className="filter-bar">
-                <Filter size={20} />
-                <select value={filterStatus} onChange={(e) => setFilterStatus(e.target.value)}>
-                  <option value="all">All Statuses</option>
-                  <option value="approved">Approved</option>
-                  <option value="pending">Pending Approval</option>
-                </select>
-              </div>
+
+              {isLoading && (
+                 <div className="flex items-center justify-center p-12 text-slate-500">
+                   <div className="animate-spin mr-3 text-indigo-600 w-6 h-6 border-b-2 border-indigo-600 rounded-full"></div>
+                   <span className="font-medium">Loading institutes...</span>
+                 </div>
+              )}
+              {error && <div className="bg-rose-50 border border-rose-200 text-rose-600 px-4 py-3 rounded-xl mb-6 font-medium flex items-center gap-3"><AlertCircle size={18}/> {error}</div>}
+              
+              {!isLoading && !error && (
+                <>
+                  {/* DESKTOP TABLE */}
+                  <div className="hidden md:block bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-left border-collapse">
+                        <thead>
+                          <tr>
+                            <th className="py-4 px-6 bg-slate-50/50 text-slate-500 font-semibold text-sm border-b border-slate-100 whitespace-nowrap">Name</th>
+                            <th className="py-4 px-6 bg-slate-50/50 text-slate-500 font-semibold text-sm border-b border-slate-100 whitespace-nowrap">Code</th>
+                            <th className="py-4 px-6 bg-slate-50/50 text-slate-500 font-semibold text-sm border-b border-slate-100 whitespace-nowrap">Contact Email</th>
+                            <th className="py-4 px-6 bg-slate-50/50 text-slate-500 font-semibold text-sm border-b border-slate-100 whitespace-nowrap">Status</th>
+                            <th className="py-4 px-6 bg-slate-50/50 text-slate-500 font-semibold text-sm border-b border-slate-100 text-right whitespace-nowrap">Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody className="text-sm">
+                          {filteredInstitutes.length > 0 ? (
+                            filteredInstitutes.map(inst => (
+                              <tr key={inst.id} className="hover:bg-slate-50/80 transition-colors group">
+                                <td className="py-4 px-6 border-b border-slate-50 font-bold text-slate-800 whitespace-nowrap">{inst.name}</td>
+                                <td className="py-4 px-6 border-b border-slate-50 text-slate-600 font-medium whitespace-nowrap">
+                                  <span className="inline-flex py-1 px-3 rounded-lg bg-slate-100 text-slate-600 text-xs tracking-widest">{inst.code}</span>
+                                </td>
+                                <td className="py-4 px-6 border-b border-slate-50 text-slate-600 whitespace-nowrap">{inst.contact_email}</td>
+                                <td className="py-4 px-6 border-b border-slate-50 whitespace-nowrap">
+                                  <span className={`inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-bold uppercase tracking-wider ${inst.is_approved ? 'bg-emerald-50 text-emerald-600 border border-emerald-200' : 'bg-amber-50 text-amber-600 border border-amber-200'}`}>
+                                    {inst.is_approved ? 'Approved' : 'Pending'}
+                                  </span>
+                                </td>
+                                <td className="py-4 px-6 border-b border-slate-50 text-right whitespace-nowrap">
+                                  <button 
+                                    className="p-2 text-indigo-500 hover:bg-indigo-50 rounded-lg transition-colors mr-2 focus:ring-2 focus:ring-indigo-200 outline-none font-medium text-sm" 
+                                    onClick={() => openEditModal(inst)}
+                                    title="Edit"
+                                  >
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                                  </button>
+                                  <button 
+                                    className="p-2 text-rose-500 hover:bg-rose-50 rounded-lg transition-colors focus:ring-2 focus:ring-rose-200 outline-none font-medium text-sm disabled:opacity-50" 
+                                    onClick={() => handleDeleteInstitute(inst.id)}
+                                    title="Delete"
+                                  >
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                  </button>
+                                </td>
+                              </tr>
+                            ))
+                          ) : (
+                            <tr>
+                              <td colSpan="5" className="py-12 text-center text-slate-500">
+                                <div className="flex flex-col items-center justify-center gap-3">
+                                  <Search className="w-10 h-10 text-slate-200" />
+                                  <p>No institutes found matching your criteria.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          )}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  {/* MOBILE CARD VIEW */}
+                  <div className="md:hidden flex flex-col gap-4">
+                    {filteredInstitutes.length > 0 ? (
+                      filteredInstitutes.map((inst) => (
+                        <div key={inst.id} className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex flex-col gap-4 relative">
+                          <div className="flex flex-col gap-1 pr-16 border-b border-slate-100 pb-3">
+                            <h3 className="font-bold text-slate-800 text-lg leading-tight">{inst.name}</h3>
+                            <span className="text-xs font-medium text-slate-400 mt-1 tracking-widest uppercase">{inst.code}</span>
+                            <div className="absolute top-5 right-5">
+                               <span className={`inline-block w-3 h-3 rounded-full ${inst.is_approved ? 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]' : 'bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.5)]'}`}></span>
+                            </div>
+                          </div>
+                          
+                          <div className="flex flex-col gap-2 text-sm text-slate-600 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <div className="flex flex-col gap-0.5 break-all">
+                              <span className="text-slate-400 font-medium text-xs uppercase tracking-wider">Contact Email</span>
+                              <span className="font-medium text-slate-700">{inst.contact_email}</span>
+                            </div>
+                            <div className="flex justify-between items-center mt-2 border-t border-slate-200 pt-3">
+                               <span className="text-slate-400 font-medium text-xs uppercase tracking-wider">Status</span>
+                               <span className={`font-bold text-xs uppercase tracking-wider ${inst.is_approved ? 'text-emerald-600' : 'text-amber-600'}`}>
+                                 {inst.is_approved ? 'Approved' : 'Pending'}
+                               </span>
+                            </div>
+                          </div>
+                          <div className="flex justify-between gap-3 pt-2">
+                              <button 
+                                className="flex-1 flex justify-center items-center gap-2 py-2.5 text-indigo-600 bg-indigo-50 border border-indigo-100 hover:bg-indigo-100 rounded-xl transition-colors font-medium text-sm" 
+                                onClick={() => openEditModal(inst)}
+                              >
+                                Edit
+                              </button>
+                              <button 
+                                className="flex-1 flex justify-center items-center gap-2 py-2.5 text-rose-600 bg-rose-50 border border-rose-100 hover:bg-rose-100 rounded-xl transition-colors font-medium text-sm" 
+                                onClick={() => handleDeleteInstitute(inst.id)}
+                              >
+                                Delete
+                              </button>
+                          </div>
+                        </div>
+                      ))
+                    ) : (
+                      <div className="p-10 text-center text-slate-500 bg-white rounded-2xl border border-slate-100">
+                        <Search className="mx-auto mb-3 text-slate-200 w-12 h-12" />
+                        <p className="font-medium">No institutes found.</p>
+                      </div>
+                    )}
+                  </div>
+                </>
+              )}
             </div>
-
-            {isLoading && <p>Loading institutes...</p>}
-            {error && <p className="error-message">{error}</p>}
-            {!isLoading && !error && (
-              <table className="data-table">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Code</th>
-                    <th>Contact Email</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredInstitutes.length > 0 ? (
-                    filteredInstitutes.map(inst => (
-                      <tr key={inst.id}>
-                        <td>{inst.name}</td>
-                        <td>{inst.code}</td>
-                        <td>{inst.contact_email}</td>
-                        <td>
-                          <span className={`status-badge ${inst.is_approved ? 'approved' : 'pending'}`}>
-                            {inst.is_approved ? 'Approved' : 'Pending'}
-                          </span>
-                        </td>
-                        <td className="actions-cell">
-                          <button className="action-button edit" onClick={() => openEditModal(inst)}>Edit</button>
-                          <button className="action-button delete" onClick={() => handleDeleteInstitute(inst.id)}>Delete</button>
-                        </td>
-                      </tr>
-                    ))
-                  ) : (
-                    <tr>
-                      <td colSpan="5">No institutes found matching your criteria.</td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
-            )}
-          </div>
-        )}
+          )}
 
         {/* CREATE VIEW */}
         {activeTab === 'create' && (
-          <form onSubmit={handleFormSubmit} className="institute-reg-form">
-            <div className="form-section">
-              <h3>Institute Details</h3>
-              <div className="form-row">
-                <div className="input-group">
-                  <label htmlFor="name">Institute Name</label>
-                  <Building size={18} className="input-icon" />
-                  <input type="text" id="name" name="name" placeholder="e.g., Global Institute" value={formData.name} onChange={handleFormChange} required />
+          <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
+            <form onSubmit={handleFormSubmit} className="space-y-8 max-w-4xl">
+              
+              {/* Institute Details Section */}
+              <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+                <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+                  <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
+                    <Building size={20} />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-800">Institute Details</h3>
                 </div>
-                <div className="input-group">
-                  <label htmlFor="code">Institute Code</label>
-                  <Code size={18} className="input-icon" />
-                  <input type="text" id="code" name="code" placeholder="e.g., GIT" value={formData.code} onChange={handleFormChange} required />
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5" htmlFor="name">Institute Name</label>
+                    <div className="relative">
+                      <Building size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+                      <input type="text" id="name" name="name" placeholder="e.g., Global Institute" value={formData.name} onChange={handleFormChange} required className="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50 hover:bg-white focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium shadow-sm" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5" htmlFor="code">Institute Code</label>
+                    <div className="relative">
+                      <Code size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+                      <input type="text" id="code" name="code" placeholder="e.g., GIT" value={formData.code} onChange={handleFormChange} required className="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50 hover:bg-white focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium shadow-sm uppercase placeholder:normal-case" />
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="input-group">
-                <label htmlFor="address">Full Address</label>
-                <MapPin size={18} className="input-icon" />
-                <input type="text" id="address" name="address" placeholder="123 University Lane, City, State" value={formData.address} onChange={handleFormChange} required />
-              </div>
-              <div className="form-row">
-                <div className="input-group">
-                  <label htmlFor="contact_email">Contact Email</label>
-                  <Mail size={18} className="input-icon" />
-                  <input type="email" id="contact_email" name="contact_email" placeholder="contact@institute.edu" value={formData.contact_email} onChange={handleFormChange} required />
-                </div>
-                <div className="input-group">
-                  <label htmlFor="contact_phone">Contact Phone</label>
-                  <Phone size={18} className="input-icon" />
-                  <input type="tel" id="contact_phone" name="contact_phone" placeholder="+91 12345 67890" value={formData.contact_phone} onChange={handleFormChange} required />
-                </div>
-              </div>
-              <div className="toggle-group">
-                <label htmlFor="is_approved">Approve Institute Immediately</label>
-                <label className="toggle-switch">
-                  <input type="checkbox" id="is_approved" name="is_approved" checked={formData.is_approved} onChange={handleFormChange} />
-                  <span className="slider"></span>
-                </label>
-              </div>
-            </div>
 
-            <div className="form-section">
-              <h3>Primary Admin Account</h3>
-              <div className="input-group">
-                <label htmlFor="admin_name">Admin Full Name</label>
-                <User size={18} className="input-icon" />
-                <input type="text" id="admin_name" name="admin_name" placeholder="e.g., Dr. Jane Smith" value={formData.admin_name} onChange={handleFormChange} required />
-              </div>
-              <div className="form-row">
-                <div className="input-group">
-                  <label htmlFor="admin_email">Admin Account Email</label>
-                  <AtSign size={18} className="input-icon" />
-                  <input type="email" id="admin_email" name="admin_email" placeholder="admin@institute.edu" value={formData.admin_email} onChange={handleFormChange} required />
+                <div className="mt-6">
+                  <label className="block text-sm font-medium text-slate-700 mb-1.5" htmlFor="address">Full Address</label>
+                  <div className="relative">
+                    <MapPin size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+                    <input type="text" id="address" name="address" placeholder="123 University Lane, City, State" value={formData.address} onChange={handleFormChange} required className="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50 hover:bg-white focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium shadow-sm" />
+                  </div>
                 </div>
-                <div className="input-group">
-                  <label htmlFor="admin_phone">Admin Phone</label>
-                  <Phone size={18} className="input-icon" />
-                  <input type="tel" id="admin_phone" name="admin_phone" placeholder="+91 09876 54321" value={formData.admin_phone} onChange={handleFormChange} required />
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5" htmlFor="contact_email">Contact Email</label>
+                    <div className="relative">
+                      <Mail size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+                      <input type="email" id="contact_email" name="contact_email" placeholder="contact@institute.edu" value={formData.contact_email} onChange={handleFormChange} required className="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50 hover:bg-white focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium shadow-sm" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5" htmlFor="contact_phone">Contact Phone</label>
+                    <div className="relative">
+                      <Phone size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+                      <input type="tel" id="contact_phone" name="contact_phone" placeholder="+91 12345 67890" value={formData.contact_phone} onChange={handleFormChange} required className="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50 hover:bg-white focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium shadow-sm" />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-800">Approve Immediately</h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Allow login access instantly without manual approval</p>
+                  </div>
+                  <label className="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" id="is_approved" name="is_approved" checked={formData.is_approved} onChange={handleFormChange} className="sr-only peer" />
+                    <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                  </label>
                 </div>
               </div>
-            </div>
 
-            {formError && <p className="form-message error"><AlertCircle size={18} /> {formError}</p>}
-            {formSuccess && <p className="form-message success"><CheckCircle2 size={18} /> {formSuccess}</p>}
+              {/* Primary Admin Account Section */}
+              <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+                <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                    <User size={20} />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-800">Primary Admin Account</h3>
+                </div>
+                
+                <div className="mt-6">
+                  <label className="block text-sm font-medium text-slate-700 mb-1.5" htmlFor="admin_name">Admin Full Name</label>
+                  <div className="relative">
+                    <User size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+                    <input type="text" id="admin_name" name="admin_name" placeholder="e.g., Dr. Jane Smith" value={formData.admin_name} onChange={handleFormChange} required className="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50 hover:bg-white focus:bg-white focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all font-medium shadow-sm" />
+                  </div>
+                </div>
 
-            <button type="submit" className="button button-accent" disabled={formIsLoading}>
-              {formIsLoading ? 'Registering...' : 'Register Institute'}
-            </button>
-          </form>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5" htmlFor="admin_email">Admin Account Email</label>
+                    <div className="relative">
+                      <AtSign size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+                      <input type="email" id="admin_email" name="admin_email" placeholder="admin@institute.edu" value={formData.admin_email} onChange={handleFormChange} required className="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50 hover:bg-white focus:bg-white focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all font-medium shadow-sm" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5" htmlFor="admin_phone">Admin Phone</label>
+                    <div className="relative">
+                      <Phone size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+                      <input type="tel" id="admin_phone" name="admin_phone" placeholder="+91 09876 54321" value={formData.admin_phone} onChange={handleFormChange} required className="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50 hover:bg-white focus:bg-white focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all font-medium shadow-sm" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {formError && <div className="bg-rose-50 border border-rose-200 text-rose-600 px-4 py-3 rounded-xl font-medium flex items-center gap-3"><AlertCircle size={18} /> {formError}</div>}
+              {formSuccess && <div className="bg-emerald-50 border border-emerald-200 text-emerald-600 px-4 py-3 rounded-xl font-medium flex items-center gap-3"><CheckCircle2 size={18} /> {formSuccess}</div>}
+
+              <div className="pt-2">
+                <button type="submit" className="w-full md:w-auto px-10 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 hover:-translate-y-0.5 transition-all disabled:opacity-70 disabled:hover:translate-y-0 text-lg" disabled={formIsLoading}>
+                  {formIsLoading ? 'Registering...' : 'Complete Institute Registration'}
+                </button>
+              </div>
+            </form>
+          </div>
         )}
-      </div>
+        </div> {/* End tab-content */}
 
-      {/* Edit Institute Modal (same modal behavior as other pages) */}
+      </div> {/* End max-w-7xl mx-auto */}
+
+      {/* Edit Institute Modal */}
       {editModalOpen && (
-        <div
-          className="modal-overlay"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) closeEditModal();
-          }}
-        >
-          <div
-            className="modal-content"
-            role="dialog"
-            aria-modal="true"
-            aria-label={`Edit institute ${editingInstitute?.name || ''}`}
-          >
-            <div className="modal-toolbar">
-              <div className="modal-title">
-                <h3>Edit Institute</h3>
-                <div className="subtitle modal-meta">{editingInstitute?.name}</div>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200" onClick={() => closeEditModal()}>
+          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-2xl overflow-hidden transform transition-all animate-in zoom-in-95 duration-200 border border-slate-100 flex flex-col max-h-[90vh]" onClick={e => e.stopPropagation()}>
+            <div className="px-5 md:px-6 py-4 md:py-5 border-b border-slate-100 flex justify-between items-center bg-slate-50/80 shrink-0">
+              <div>
+                <h3 className="text-xl font-bold text-slate-800 tracking-tight">Edit Institute</h3>
+                <p className="text-sm font-medium text-slate-500 mt-0.5">{editingInstitute?.name}</p>
               </div>
-              <div className="toolbar-actions">
-                <button className="modal-close-btn" onClick={closeEditModal}>Close</button>
-              </div>
+              <button className="text-slate-400 hover:text-slate-600 transition-colors p-1" onClick={closeEditModal}>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+              </button>
             </div>
 
-            <div className="modal-body">
-              <form onSubmit={handleEditSave}>
-                <label style={{ fontSize: 13, color: "#334155", marginBottom: 6 }}>Institute Name</label>
-                <input
-                  name="name"
-                  value={editForm.name}
-                  onChange={handleEditChange}
-                  required
-                  style={{ width: "100%", marginBottom: 10, padding: "8px 10px", borderRadius: 8, border: "1px solid #e6eef6" }}
-                />
+            <div className="p-5 md:p-6 overflow-y-auto">
+              <form onSubmit={handleEditSave} className="space-y-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Institute Name</label>
+                    <input
+                      name="name"
+                      value={editForm.name}
+                      onChange={handleEditChange}
+                      required
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50/50 hover:bg-slate-50 focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium shadow-sm"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Institute Code</label>
+                    <input
+                      name="code"
+                      value={editForm.code}
+                      onChange={handleEditChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50/50 hover:bg-slate-50 focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium shadow-sm"
+                    />
+                  </div>
+                </div>
 
-                <label style={{ fontSize: 13, color: "#334155", marginBottom: 6 }}>Institute Code</label>
-                <input
-                  name="code"
-                  value={editForm.code}
-                  onChange={handleEditChange}
-                  style={{ width: "100%", marginBottom: 10, padding: "8px 10px", borderRadius: 8, border: "1px solid #e6eef6" }}
-                />
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1.5">Address</label>
+                  <input
+                    name="address"
+                    value={editForm.address}
+                    onChange={handleEditChange}
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50/50 hover:bg-slate-50 focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium shadow-sm"
+                  />
+                </div>
 
-                <label style={{ fontSize: 13, color: "#334155", marginBottom: 6 }}>Address</label>
-                <input
-                  name="address"
-                  value={editForm.address}
-                  onChange={handleEditChange}
-                  style={{ width: "100%", marginBottom: 10, padding: "8px 10px", borderRadius: 8, border: "1px solid #e6eef6" }}
-                />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Contact Email</label>
+                    <input
+                      name="contact_email"
+                      value={editForm.contact_email}
+                      onChange={handleEditChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50/50 hover:bg-slate-50 focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium shadow-sm"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Contact Phone</label>
+                    <input
+                      name="contact_phone"
+                      value={editForm.contact_phone}
+                      onChange={handleEditChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50/50 hover:bg-slate-50 focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium shadow-sm"
+                    />
+                  </div>
+                </div>
 
-                <label style={{ fontSize: 13, color: "#334155", marginBottom: 6 }}>Contact Email</label>
-                <input
-                  name="contact_email"
-                  value={editForm.contact_email}
-                  onChange={handleEditChange}
-                  style={{ width: "100%", marginBottom: 10, padding: "8px 10px", borderRadius: 8, border: "1px solid #e6eef6" }}
-                />
-
-                <label style={{ fontSize: 13, color: "#334155", marginBottom: 6 }}>Contact Phone</label>
-                <input
-                  name="contact_phone"
-                  value={editForm.contact_phone}
-                  onChange={handleEditChange}
-                  style={{ width: "100%", marginBottom: 10, padding: "8px 10px", borderRadius: 8, border: "1px solid #e6eef6" }}
-                />
-
-                {/* <h4 style={{ marginTop: 8 }}>Primary Admin</h4>
-                <label style={{ fontSize: 13, color: "#334155", marginBottom: 6 }}>Admin Name</label>
-                <input
-                  name="admin_name"
-                  value={editForm.admin_name}
-                  onChange={handleEditChange}
-                  style={{ width: "100%", marginBottom: 10, padding: "8px 10px", borderRadius: 8, border: "1px solid #e6eef6" }}
-                />
-
-                <label style={{ fontSize: 13, color: "#334155", marginBottom: 6 }}>Admin Email</label>
-                <input
-                  name="admin_email"
-                  value={editForm.admin_email}
-                  onChange={handleEditChange}
-                  style={{ width: "100%", marginBottom: 10, padding: "8px 10px", borderRadius: 8, border: "1px solid #e6eef6" }}
-                />
-
-                <label style={{ fontSize: 13, color: "#334155", marginBottom: 6 }}>Admin Phone</label>
-                <input
-                  name="admin_phone"
-                  value={editForm.admin_phone}
-                  onChange={handleEditChange}
-                  style={{ width: "100%", marginBottom: 10, padding: "8px 10px", borderRadius: 8, border: "1px solid #e6eef6" }}
-                /> */}
-
-                <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 6 }}>
-                  <label style={{ marginBottom: 0 }}>Approved</label>
-                  <label className="toggle-switch" style={{ marginBottom: 0 }}>
-                    <input type="checkbox" name="is_approved" checked={!!editForm.is_approved} onChange={handleEditChange} />
-                    <span className="slider"></span>
+                <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-100 mt-2">
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-800">Approved Status</h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Toggle approval state of the institute</p>
+                  </div>
+                  <label className="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" name="is_approved" checked={!!editForm.is_approved} onChange={handleEditChange} className="sr-only peer" />
+                    <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-emerald-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-500"></div>
                   </label>
                 </div>
 
-                {editError && <p className="form-message error">{editError}</p>}
-                {editSuccess && <p className="form-message success">{editSuccess}</p>}
+                {editError && <div className="bg-rose-50 border border-rose-200 text-rose-600 px-4 py-3 rounded-xl font-medium">{editError}</div>}
+                {editSuccess && <div className="bg-emerald-50 border border-emerald-200 text-emerald-600 px-4 py-3 rounded-xl font-medium">{editSuccess}</div>}
 
-                <div style={{ display: "flex", gap: 8, justifyContent: "flex-end", marginTop: 12 }}>
-                  <button type="button" className="modal-close-btn" onClick={closeEditModal} disabled={editLoading}>Cancel</button>
-                  <button type="submit" className="button button-accent" disabled={editLoading}>
+                <div className="flex justify-end gap-3 mt-8 pt-5 border-t border-slate-100">
+                  <button type="button" className="px-5 md:px-6 py-2.5 text-slate-600 font-medium rounded-xl hover:bg-slate-100 transition-colors w-full md:w-auto" onClick={closeEditModal} disabled={editLoading}>Cancel</button>
+                  <button type="submit" className="px-5 md:px-6 py-2.5 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 shadow-md shadow-indigo-600/20 hover:shadow-indigo-600/40 hover:-translate-y-0.5 transition-all w-full md:w-auto disabled:opacity-70 disabled:hover:translate-y-0" disabled={editLoading}>
                     {editLoading ? 'Saving...' : 'Save Changes'}
                   </button>
                 </div>

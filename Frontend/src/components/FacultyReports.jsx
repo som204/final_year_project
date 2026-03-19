@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { API_BASE_URL } from "../config";
 import { 
   FileText, 
   Search, 
@@ -10,9 +11,8 @@ import {
   User,
   Loader
 } from "lucide-react";
-import '../pages/Faculty/InstituteFaculty.css';
+
 import { UserContext } from '../Context/user.context';
-import axios from "axios";
 
 const FacultyReports = () => {
   const { user } = useContext(UserContext);
@@ -35,7 +35,7 @@ const FacultyReports = () => {
       
       setIsLoading(true);
       try {
-        const response = await fetch(`http://localhost:8000/reports/institute/${user.institute_id}`, { 
+        const response = await fetch(`${API_BASE_URL}/reports/institute/${user.institute_id}`, { 
           credentials: 'include' 
         });
 
@@ -72,7 +72,7 @@ const FacultyReports = () => {
     setIsSubmitting(true);
     try {
       // POST new comment to backend using report_id, user_id, and comment text
-      const response = await fetch(`http://localhost:8000/reports/comment`, {
+      const response = await fetch(`${API_BASE_URL}/reports/comment`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -128,7 +128,7 @@ const FacultyReports = () => {
     console.log("Attempting to view report with ID:", reportId);
     try {
       // Fetch the generated PDF from the backend
-      const res = await axios.get(`http://localhost:8000/reports/${reportId}`, {
+      const res = await axios.get(`${API_BASE_URL}/reports/${reportId}`, {
         withCredentials: true,
         headers: { Accept: "application/json" },
       });
@@ -147,129 +147,181 @@ const FacultyReports = () => {
   };
 
   return (
-    <div className="faculty-layout">
-      <div className="faculty-content">
-        <h1>Faculty Reports</h1>
-        <p className="page-subheading">View reports and submit your feedback.</p>
-
-        {/* Search Bar */}
-        <div className="list-controls">
-          <div className="search-bar">
-            <Search size={20} color="#6c757d" />
+    <div className="p-6 md:p-10 bg-slate-50 min-h-screen font-sans">
+      <div className="max-w-7xl mx-auto">
+        {/* Header Section */}
+        <header className="mb-8 md:mb-10 animate-in fade-in slide-in-from-bottom-2 duration-500 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-bold text-slate-800 tracking-tight">Faculty Reports</h1>
+            <p className="text-slate-500 mt-2 font-medium">View reports and submit your feedback.</p>
+          </div>
+          
+          {/* Search Bar */}
+          <div className="relative w-full md:w-80">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
             <input 
               type="text" 
               placeholder="Search reports..." 
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm font-medium placeholder:font-normal placeholder:text-slate-400"
             />
           </div>
-        </div>
+        </header>
 
         {/* Loading / Error States */}
-          {isLoading ? (
-            <div style={{display: 'flex', alignItems: 'center', gap: 10, color: '#6c757d', padding: '2rem'}}>
-              <Loader className="spinner" size={24} /> Loading reports...
-            </div>
-          ) : error ? (
-            <div className="form-message error">{error}</div>
-          ) : (
-            /* Reports Grid */
-            <div className="faculty-reports-grid">
-              {filteredReports.filter(r => r.share === 'shared' || r.share === 'public').length > 0 ? (
-                filteredReports
-            .filter(r => r.share === 'shared' || r.share === 'public')
-            .map((report) => (
-            <div key={report.id} className="faculty-report-card">
-              <div className="report-icon-wrapper">
-                <FileText size={32} color="#563D7C" />
+        {isLoading ? (
+          <div className="flex flex-col items-center justify-center h-64 bg-white rounded-3xl border border-slate-100 shadow-sm animate-in fade-in duration-500">
+            <div className="w-10 h-10 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin mb-4"></div>
+            <p className="text-slate-500 font-medium">Loading reports...</p>
+          </div>
+        ) : error ? (
+          <div className="bg-rose-50 border border-rose-200 text-rose-600 px-6 py-4 rounded-xl font-medium shadow-sm flex items-start gap-3">
+             <svg className="w-5 h-5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+             {error}
+          </div>
+        ) : (
+          /* Reports Grid */
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-100 fill-mode-both">
+            {filteredReports.filter(r => r.share === 'shared' || r.share === 'public').length > 0 ? (
+              filteredReports
+                .filter(r => r.share === 'shared' || r.share === 'public')
+                .map((report) => (
+                  <div key={report.id} className="bg-white rounded-2xl shadow-sm hover:shadow-md border border-slate-100 transition-all duration-300 overflow-hidden flex flex-col group hover:-translate-y-1">
+                    <div className="p-6 flex-1 flex flex-col gap-4">
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
+                          <FileText size={24} />
+                        </div>
+                        <div className="flex gap-2">
+                          <button 
+                            className="p-2 text-indigo-500 bg-indigo-50 hover:bg-indigo-600 hover:text-white rounded-lg transition-colors focus:ring-2 focus:ring-indigo-200 outline-none" 
+                            onClick={() => handleViewPdf(report.id)}
+                            title="View Report"
+                          >
+                            <Eye size={18} />
+                          </button>
+                          <button 
+                            className="p-2 text-emerald-600 bg-emerald-50 hover:bg-emerald-600 hover:text-white rounded-lg transition-colors focus:ring-2 focus:ring-emerald-200 outline-none" 
+                            onClick={() => setSelectedReport(report)}
+                            title="Give Feedback"
+                          >
+                            <MessageSquare size={18} />
+                          </button>
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <h3 className="font-bold text-slate-800 text-lg leading-tight line-clamp-2" title={report.file_name || report.title || `Report #${report.id}`}>
+                          {report.file_name || report.title || `Report #${report.id}`}
+                        </h3>
+                      </div>
+                    </div>
+                    
+                    <div className="px-6 py-4 bg-slate-50/50 border-t border-slate-100 flex flex-col gap-2 text-sm text-slate-500 font-medium">
+                      <div className="flex items-center gap-2">
+                        <Calendar size={14} className="text-slate-400" />
+                        <span>{new Date(report.created_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                      </div>
+                      {report.author_name && (
+                        <div className="flex items-center gap-2 line-clamp-1" title={report.author_name}>
+                          <User size={14} className="text-slate-400" />
+                          <span>{report.author_name}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+              ))
+            ) : (
+              <div className="col-span-full py-16 text-center text-slate-500 bg-white rounded-3xl border border-slate-100 shadow-sm">
+                <FileText className="mx-auto mb-4 text-slate-200 w-12 h-12" />
+                <p className="font-medium text-lg text-slate-400">No shared reports found.</p>
               </div>
-              <div className="report-details">
-                <h3>{report.file_name || report.title || `Report #${report.id}`}</h3>
-                <div className="report-meta">
-                  <span><Calendar size={14}/> {new Date(report.created_at).toLocaleDateString()}</span>
-                  {report.author_name && <span><User size={14}/> {report.author_name}</span>}
-                </div>
-              </div>
-              <div className="report-actions">
-                <button 
-                  className="icon-btn view-btn" 
-                  onClick={() => handleViewPdf(report.id)}
-                  title="View Report"
-                >
-                  <Eye size={18} />
-                </button>
-                <button 
-                  className="icon-btn comment-btn" 
-                  onClick={() => setSelectedReport(report)}
-                  title="Give Feedback"
-                >
-                  <MessageSquare size={18} />
-                </button>
-              </div>
-            </div>
-                ))
-              ) : (
-                <p style={{ color: '#6c757d', gridColumn: '1 / -1' }}>No reports found.</p>
-              )}
-            </div>
-          )}
+            )}
+          </div>
+        )}
 
-          {/* COMMENTS MODAL */}
+        {/* COMMENTS MODAL */}
         {selectedReport && (
-          <div className="modal-overlay" onClick={() => setSelectedReport(null)}>
-            <div className="modal-content faculty-modal" onClick={e => e.stopPropagation()}>
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200">
+            <div className="bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-200" onClick={e => e.stopPropagation()}>
               
-              <div className="modal-header">
-                <h3>My Feedback</h3>
-                <button className="close-btn" onClick={() => setSelectedReport(null)}>
+              {/* Modal Header */}
+              <div className="px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
+                <h3 className="text-lg font-bold text-slate-800">My Feedback</h3>
+                <button 
+                  className="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors focus:ring-2 focus:ring-slate-200 outline-none" 
+                  onClick={() => setSelectedReport(null)}
+                >
                   <X size={20} />
                 </button>
               </div>
 
-              <div className="modal-subheader">
-                Report: <strong>{selectedReport.file_name || selectedReport.title}</strong>
+              {/* Subheader */}
+              <div className="px-6 py-3 bg-indigo-50 border-b border-indigo-100/50">
+                <p className="text-sm font-medium text-indigo-800 break-all line-clamp-2">
+                  <span className="opacity-75 mr-1">Report:</span>
+                  <strong>{selectedReport.file_name || selectedReport.title}</strong>
+                </p>
               </div>
 
-              <div className="comments-body">
+              {/* Comments Body */}
+              <div className="flex-1 overflow-y-auto p-6 bg-slate-50/30">
                 {currentComments.length > 0 ? (
-                  <div className="comments-list">
+                  <div className="space-y-4">
                     {currentComments.map((comment, index) => (
-                      <div key={comment.id || index} className="comment-item">
-                        <div className="comment-header">
-                          <div className="user-info">
-                            <span className="comment-author">{comment.user?.full_name || "You"}</span>
-                            <span className="comment-dept">{comment.user?.department?.name || "N/A"}</span>
+                      <div key={comment.id || index} className="bg-white border border-slate-100 rounded-xl p-4 shadow-sm relative">
+                        {/* Tail pointer effect */}
+                        <div className="absolute -left-2 top-4 border-[6px] border-transparent border-r-white z-10 w-0 h-0 filter drop-shadow-[-1px_0px_1px_rgba(0,0,0,0.02)]"></div>
+                        <div className="absolute -left-2.5 top-4 border-[6px] border-transparent border-r-slate-100 w-0 h-0"></div>
+                        
+                        <div className="flex justify-between items-start mb-2 gap-4">
+                          <div>
+                            <span className="font-bold text-slate-800 text-sm">{comment.user?.full_name || "You"}</span>
+                            <span className="text-xs text-slate-500 ml-2 font-medium bg-slate-100 px-2 py-0.5 rounded-full">{comment.user?.department?.name || "N/A"}</span>
                           </div>
-                          <span className="comment-time">
-                            {comment.created_at ? new Date(comment.created_at).toLocaleString() : "Just now"}
+                          <span className="text-xs text-slate-400 font-medium shrink-0">
+                            {comment.created_at ? new Date(comment.created_at).toLocaleString([], { dateStyle: 'short', timeStyle: 'short' }) : "Just now"}
                           </span>
                         </div>
-                        <div className="comment-content">
+                        <div className="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">
                           {comment.comment || comment.comment_text || comment.text}
                         </div>
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <div className="no-comments">
-                    <MessageSquare size={48} strokeWidth={1} />
-                    <p>You haven't submitted any feedback for this report yet.</p>
+                  <div className="py-12 flex flex-col items-center justify-center text-center text-slate-500">
+                    <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4">
+                      <MessageSquare size={32} className="text-slate-300" />
+                    </div>
+                    <p className="font-medium text-slate-600">You haven't submitted any feedback yet.</p>
+                    <p className="text-sm text-slate-400 mt-1">Add your comments below.</p>
                   </div>
                 )}
               </div>
 
-              <div className="comment-input-area">
-                <input 
-                  type="text" 
-                  placeholder="Type your feedback here..."
-                  value={newComment}
-                  onChange={(e) => setNewComment(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleAddComment()}
-                  disabled={isSubmitting}
-                />
-                <button onClick={handleAddComment} className="send-btn" disabled={isSubmitting}>
-                  {isSubmitting ? <Loader className="spinner" size={18} /> : <Send size={18} />}
-                </button>
+              {/* Input Area */}
+              <div className="p-4 bg-white border-t border-slate-100">
+                <div className="flex gap-3">
+                  <input 
+                    type="text" 
+                    placeholder="Type your feedback here..."
+                    value={newComment}
+                    onChange={(e) => setNewComment(e.target.value)}
+                    onKeyDown={(e) => e.key === 'Enter' && handleAddComment()}
+                    disabled={isSubmitting}
+                    className="flex-1 px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-sm font-medium placeholder:font-normal placeholder:text-slate-400 disabled:opacity-70 disabled:bg-slate-100"
+                  />
+                  <button 
+                    onClick={handleAddComment} 
+                    disabled={isSubmitting || !newComment.trim()}
+                    className="px-5 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition-colors flex items-center justify-center shrink-0 shadow-sm shadow-indigo-600/20 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? <Loader className="animate-spin" size={20} /> : <Send size={20} className="mr-1 -ml-1.5" /> }
+                    <span className="font-semibold ml-1 hidden sm:inline">Send</span>
+                  </button>
+                </div>
               </div>
 
             </div>

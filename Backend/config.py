@@ -4,6 +4,9 @@ from pydantic import SecretStr
 
 load_dotenv()
 
+
+
+
 # --- API Keys ---
 api=os.getenv("GOOGLE_API_KEY")
 GOOGLE_API_KEY = SecretStr(api) if api else None

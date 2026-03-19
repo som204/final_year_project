@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     from .dataUpload_models import DataUploaded
     from .report_models import Report
     from .comment_models import ReportComment
+    from .notification_models import Notification, NotificationRecipient
 
 import bcrypt
 
@@ -65,6 +66,12 @@ class User(Base):
     back_populates="user",
     cascade="all, delete-orphan"
 )
+    sent_notifications: Mapped[List["Notification"]] = relationship(
+        back_populates="sender", cascade="all, delete-orphan"
+    )
+    notification_receipts: Mapped[List["NotificationRecipient"]] = relationship(
+        back_populates="user", cascade="all, delete-orphan"
+    )
 
 
     @hybrid_property

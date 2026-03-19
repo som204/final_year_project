@@ -15,8 +15,6 @@ import {
   Building2,
   AlertCircle
 } from "lucide-react";
-import './Student.css';
-
 
 const Student = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,9 +29,9 @@ const Student = () => {
     };
   return (
      <>
-    <div className="student-layout">
+    <div className="flex flex-col md:flex-row h-screen overflow-hidden bg-slate-50">
       <StudentSidebar onLogoutClick={() => setIsModalOpen(true)} />
-      <main className="student-content">
+      <main className="flex-1 h-full overflow-y-auto w-full p-4 md:p-8">
         <Outlet />
       </main>
     </div>

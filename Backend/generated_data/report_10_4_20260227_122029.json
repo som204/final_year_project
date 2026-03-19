@@ -1,0 +1,513 @@
+{
+    "final_report_data": {
+        "metadata": {
+            "generated_at": "2026-02-27T12:19:14.998995",
+            "institute_id": 4,
+            "project_id": 10,
+            "report_name": "Internship report",
+            "report_description": "",
+            "report_type": "internship_report",
+            "version": 1,
+            "format": "html",
+            "language": "en"
+        },
+        "title": "Internship Report",
+        "report_type": "internship_report",
+        "period": "Multiple periods, 2018-2024",
+        "organization": "N/A (Compilation of student reports)",
+        "executive_summary": "This internship report provides a comprehensive overview of student experiences, projects, and skill development across diverse technical roles and companies, offering insights into industry practices and personal growth. It highlights significant contributions in areas such as Full Stack Development, Data Science, Machine Learning, and Web Development, undertaken with a wide array of providers from startups to major corporations like L&T and J.P. Morgan, typically spanning 1 to 6+ months.",
+        "kpis": [
+            {
+                "metric": "Total Internships Documented",
+                "value": "69+",
+                "category": "Overall Engagement",
+                "trend": "stable",
+                "icon": "\ud83d\udcca"
+            },
+            {
+                "metric": "Number of Unique Internship Providers",
+                "value": "35+",
+                "category": "Diversity",
+                "trend": "stable",
+                "icon": "\ud83d\udcca"
+            },
+            {
+                "metric": "Top Internship Domain",
+                "value": "Web Development (e.g., Full Stack, Frontend, Backend)",
+                "category": "Technical Focus",
+                "trend": "stable",
+                "icon": "\ud83d\udcca"
+            },
+            {
+                "metric": "Second Top Internship Domain",
+                "value": "Machine Learning/Data Science",
+                "category": "Technical Focus",
+                "trend": "stable",
+                "icon": "\ud83d\udcca"
+            },
+            {
+                "metric": "Average Internship Duration",
+                "value": "~2.5 months",
+                "category": "Engagement Metrics",
+                "trend": "stable",
+                "icon": "\ud83d\udcca"
+            },
+            {
+                "metric": "Range of Internship Durations",
+                "value": "1 month to 1 year",
+                "category": "Engagement Metrics",
+                "trend": "stable",
+                "icon": "\ud83d\udcca"
+            },
+            {
+                "metric": "Number of Distinct Technical Skills Gained",
+                "value": "15+",
+                "category": "Skill Development",
+                "trend": "stable",
+                "icon": "\ud83d\udcca"
+            }
+        ],
+        "sections": [
+            {
+                "title": "Executive Summary",
+                "content": "The internship program provided extensive practical exposure across a broad spectrum of technical domains, encompassing nearly 60 distinct internship experiences. A predominant focus was observed in Machine Learning, Artificial Intelligence, and Data Science, reflecting a significant industry trend. Concurrently, Web Development, including Full Stack, Frontend, and Backend roles, also featured prominently, alongside specialized areas such as Software Development Engineering, Mobile Application Development, and Cyber Security.\n\nThese experiences were facilitated by approximately 30 diverse organizations, ranging from agile startups like Darzee and Snackbae to established enterprises such as Larsen & Toubro and Indian Oil Corporation Limited, as well as academic institutions like IIT Roorkee and virtual programs from JPMORGAN CHASE &CO. Key contributions included developing a \"Vendor Invoice Management on eVIDIT\" system, implementing \"Cloud-Storage Enabled Data Analytics for IoT Systems in Smart Agriculture,\" and engaging in \"Software Engineering Virtual Experience\" tasks involving financial data feeds and data visualization. These roles fostered the development of specific technical proficiencies in Node.js, ReactJS, Python, and Java, alongside broader competencies in data analysis, system design, and application development. Internship durations varied from focused 6-week and 8-week programs, frequently offered by Internshala, to extended engagements lasting up to 6 months and even a year, providing varied depths of immersion.\n\nThe collective insights from these internships highlight a robust industry demand for data-driven solutions and comprehensive development skills. Exposure to a wide array of corporate cultures and operational scales, from innovative startups to large-scale virtual programs, provided invaluable understanding of diverse industry practices and technological ecosystems. Students actively engaged in real-world problem-solving, contributing to projects such as Android application development and ethical hacking, thereby enhancing their technical adaptability and practical application of theoretical knowledge. This hands-on engagement is instrumental in fostering critical thinking and preparing students for future professional challenges and career trajectories within the rapidly evolving technology landscape.",
+                "priority": 1,
+                "category": "General"
+            },
+            {
+                "title": "Internship Experience Overview",
+                "content": "The internship experiences detailed herein encompass a diverse range of technical disciplines, primarily facilitated by Internshala and JPMORGAN CHASE & CO. The majority of these engagements, specifically those conducted through Internshala, were structured as intensive 6-week programs, with one notable instance in Ethical Hacking extending to 8 weeks. These structured durations, such as the Android App Development internship from May 1st to June 12th, 2020, and Machine Learning with Python from April 27th to June 8th, 2020, provided concentrated periods for skill acquisition. In contrast, the JPMORGAN CHASE & CO. Software Engineering Virtual Experience commenced in May 2020, offering a specialized virtual format from a leading global financial institution, distinct from the broader training platform provided by Internshala.\n\nResponsibilities undertaken by the interns were directly aligned with the specified training topics, indicating a hands-on approach to practical skill development. The JPMORGAN CHASE & CO. virtual experience involved critical tasks such as establishing financial data feeds, frontend web development, and data visualization using Perspective, reflecting direct application within a corporate financial technology environment. Similarly, Internshala participants engaged in focused development and analytical tasks across various domains. This included practical application in Android App Development, implementation of algorithms in Machine Learning with Python, and data analysis within Data Science roles. These activities inherently involved coding, problem-solving, and project-based learning, designed to build foundational and advanced technical competencies.\n\nThese internships collectively represent a strategic alignment with contemporary technological demands, providing practical exposure that significantly complements academic curricula in computer science, data science, and software engineering. The selection of specialized topics such as Machine Learning, Data Science, and Software Engineering demonstrates a proactive effort to acquire industry-relevant skills, bridging theoretical knowledge with practical application. Undertaken predominantly during May and June 2020, these experiences served as a crucial period for intensive skill enhancement and professional development, preparing students for future career challenges in a rapidly evolving technological landscape by offering real-world context to their academic pursuits.",
+                "priority": 2,
+                "category": "General"
+            },
+            {
+                "title": "Key Projects and Contributions",
+                "content": "The internships provided extensive opportunities for engagement in significant technical projects across various domains. Contributions spanned full-stack development, with roles such as \"Full Stack Developer\" at Darzee for a six-month period (March 1, 2024 - August 31, 2024) and \"SDE Intern (Full Stack)\" at Breakview Studios over two months (August 2, 2022 - October 2, 2022). Specialized development efforts included \"Backend Developer\" at RBW Solutions Private Limited for two months (July 17, 2024 - September 15, 2024) and \"Frontend Developer Intern\" at Snackbae for a similar duration (May 28, 2024 - July 27, 2024), indicating focused work on specific architectural layers of software systems.\n\nA strong emphasis was placed on the application of contemporary programming languages and frameworks. Node.js was a key technology, utilized by a \"Node.js Developer Intern\" at InnoByte Services for one month (June 25, 2024 - July 25, 2024) and for \"Backend Development using Nodejs\" at Intugine Technologies Pvt. Ltd. over an extended period (July 11, 2022 - June 30, 2023). Frontend contributions frequently involved ReactJS, as demonstrated by the \"Front-end Developer using ReactJS, integrate with NodeJS backends\" role at TGH Technologies Pvt Ltd (July 25, 2022 - August 25, 2022). Java development was a core activity for the \"AICTE OIB-SIP internship in Java Development\" at OASIS INFOBYTE (August 15, 2024 - September 20, 2024), while Python was extensively applied in machine learning and data science roles across multiple organizations, including Internshala, Ardent AI, and UPSKILL.\n\nContributions extended into specialized and impactful areas, often involving data-driven solutions. Data analysis and machine learning projects were prevalent, with interns serving as \"Data Analyst Intern\" at OZIBOOK for two months (March 7, 2024 - May 7, 2024) and engaging in \"Machine Learning\" internships for durations of six to eight weeks at Internshala. More complex engagements included \"Cloud-Storage Enabled Data Analytics for IoT Systems in Smart Agriculture\" at the Indian Institute of Technology, Roorkee (June 1, 2024 - June 30, 2024), and \"Vendor Invoice Management on eVIDIT\" at Indian Oil Corporation Limited (June 15, 2024 - July 25, 2024). These projects highlight the application of analytical and development skills to address specific business or research challenges, with durations indicating focused effort on defined objectives.\n\nBeyond core development, interns also contributed to critical areas like cybersecurity and advanced analytics. An \"Ethical Hacking and Cyber Security\" internship at Ardent Computech Pvt. Ltd. (June 5, 2024 - July 5, 2024) focused on security protocols, while \"Digital and Data Analytics\" at Larsen & Toubro (L&T) (June 3, 2024 - July 25, 2024) involved leveraging data for strategic insights. The \"Software Engineering Virtual Experience\" at JPMORGAN CHASE &CO. in May 2020, specifically involved \"Establishing Financial Data Feeds, Frontend Web Development, Data Visualization with Perspective,\" showcasing a comprehensive approach to financial technology solutions. These experiences collectively underscore a broad engagement with industry-relevant projects, applying diverse methodologies and technologies to achieve tangible outcomes within their respective internship durations.",
+                "priority": 3,
+                "category": "General"
+            },
+            {
+                "title": "Skills Development and Learning Outcomes",
+                "content": "The internship experiences provided a robust platform for the acquisition and enhancement of a diverse array of technical skills. Students engaged in specialized roles such as Full Stack Development, Backend Development, Node.js Development, and Frontend Development, indicating a strong focus on web and application development paradigms. For instance, Aryan Gupta undertook a 6-month Full Stack Developer role at Darzee, while Yash Chokhani served as a Backend Developer for two months at RBW Solutions Private Limited, and Rohit Kumar Gupta completed a two-month Frontend Developer internship at Snackbae. Furthermore, significant exposure was gained in data-centric fields, including Data Analytics (e.g., Prabhat Kumar at OZIBOOK for two months), Machine Learning (e.g., Soumyadeep Singha at Internship Studio for over a month, and multiple students at Internshala for 6-8 weeks), and Digital and Data Analytics (Srijan Kumar at Larsen & Toubro). Specialized areas like Ethical Hacking and Cyber Security (Bidisa Patra at Ardent Computech Pvt. Ltd.) and Cloud-Storage Enabled Data Analytics for IoT Systems (Ananya Roy at IIT Roorkee) also featured prominently, demonstrating a broad technical learning landscape.\n\nThese internships directly contributed to the students' learning objectives by transitioning theoretical knowledge into practical application within real-world professional environments. The duration of these engagements, ranging from one month (e.g., InnoByte Services Node.js Developer Intern) to several months (e.g., Darzee Full Stack Developer for 6 months, Revirt Space SDE Intern for 4 months), allowed for sustained immersion in industry practices. Students were tasked with applying concepts learned in academic settings to solve actual business problems, thereby solidifying their understanding of development methodologies, data processing, and system architecture. The variety of topics, from Java Development (Shiwang Raj at OASIS INFOBYTE) to Vendor Invoice Management (Govind Kumar at Indian Oil Corporation Limited), ensured a comprehensive and adaptable learning experience, preparing them for diverse roles in the technology sector.\n\nWhile specific project details are not enumerated, the nature of the internship topics inherently required the application of problem-solving and critical thinking skills. Roles such as Full Stack Developer, Backend Developer, Data Analyst, and Machine Learning engineer necessitate analytical approaches to identify issues, design solutions, debug code, and optimize performance. For example, developing a Node.js backend or managing vendor invoices on eVIDIT would involve troubleshooting integration challenges, optimizing data flows, and ensuring system reliability. Although not explicitly detailed in the provided context, the collaborative environments typical of these professional settings would have fostered essential soft skills such as communication, teamwork, adaptability, and time management, which are crucial for successful project execution and professional growth. The exposure to different organizational structures, from startups like Darzee to established corporations like Larsen & Toubro and Indian Oil Corporation Limited, further cultivated adaptability and professional conduct.",
+                "priority": 4,
+                "category": "General"
+            },
+            {
+                "title": "Company and Industry Insights",
+                "content": "The internship providers represent a diverse cross-section of the industry, ranging from large public sector undertakings like Indian Oil Corporation Limited and established engineering conglomerates such as Larsen & Toubro (L&T), to specialized technology firms including RBW Solutions Private Limited, InnoByte Services, and Intugine Technologies Pvt. Ltd. The prevalence of online training platforms like Internshala and Oasis Infobyte also indicates a significant segment of structured, often remote, learning and project-based engagement. While specific details on internal company culture or operational practices are not explicitly provided, the variety of organizations and internship durations\u2014from one-month engagements (e.g., Oasis Infobyte) to six-month roles (e.g., Darzee) and even a year-long commitment (Intugine Technologies Pvt. Ltd.)\u2014suggests a spectrum of work environments, from highly structured corporate settings to more agile, project-focused startup cultures.\n\nAnalysis of the internship topics reveals several prominent industry trends. Data Science, Machine Learning, and Artificial Intelligence are highly prevalent, with numerous students undertaking roles such as \"Data Analyst Intern\" (OZIBOOK), \"Machine Learning\" (Internshala, Internship Studio), \"AI Data Science and ML using Python\" (Ardent), and \"Cloud-Storage Enabled Data Analytics for IoT Systems in Smart Agriculture\" (Indian Institute of Technology, Roorkee). This indicates a significant and sustained industry demand for data-driven insights, predictive analytics, and intelligent automation across various sectors.\n\nConcurrently, web development remains a core area of focus, encompassing \"Full Stack Developer\" (Darzee, Breakview Studios), \"Backend Developer\" (RBW Solutions, Intugine Technologies), \"Frontend Developer Intern\" (Snackbae, Bytelearn), and specialized roles like \"Node.js Developer Intern\" (InnoByte Services) and \"Front-end Developer using ReactJS, integrate with NodeJS backends\" (TGH Technologies Pvt Ltd). Emerging fields such as \"Ethical Hacking and Cyber Security\" (Ardent Computech Pvt. Ltd.) and \"Industrial Internet of Things\" (KernelSphere) also feature, highlighting the industry's evolving needs in digital security and interconnected systems. The consistent demand across these technical domains points towards a future driven by robust digital infrastructure, intelligent systems, and secure data environments.\n\nThe diverse range of internship topics directly correlates with theoretical knowledge acquired in academic settings, demonstrating a clear application of classroom learning to practical industry challenges. For instance, students engaged in \"Backend Development using Nodejs\" or \"Frontend Developer using ReactJS\" apply principles of software engineering, data structures, and web architecture. Similarly, those in \"Data Science\" or \"Machine Learning\" roles leverage statistical modeling, algorithms, and programming concepts. The practical implementation of these theories, whether in developing a \"Note making Application\" (EUPHORIA GENX) or managing \"Vendor Invoice Management on eVIDIT\" (Indian Oil Corporation Limited), illustrates the translation of academic understanding into tangible industry solutions and operational improvements, effectively bridging the gap between theoretical frameworks and real-world problem-solving.",
+                "priority": 5,
+                "category": "General"
+            },
+            {
+                "title": "Challenges Faced and Future Implications",
+                "content": "The provided data primarily outlines the scope and duration of various internships, such as Aryan Gupta's six-month tenure as a Full Stack Developer at Darzee (March 1 - August 31, 2024) or Yash Chokhani's two-month Backend Developer role at RBW Solutions Private Limited (July 17 - September 15, 2024). While specific challenges encountered by individual interns are not detailed, the diverse technical domains, including Node.js Development (Yash Chokhani, InnoByte Services), Data Analytics (Prabhat Kumar, OZIBOOK; Srijan Kumar, L&T Digital and Data Analytics), and AI/Machine Learning (Soumyadeep Singha, Internship Studio; Ananya Roy, IIT Roorkee), inherently suggest potential hurdles. These could range from adapting to unfamiliar technology stacks and complex project requirements to integrating new features within existing systems, especially given varying durations from one month (e.g., Pemba Dorgey Bhutia, Oasis Infobyte, Web Development) to several months.\n\nIn the absence of individual reflections, the breadth of internship topics indicates significant opportunities for personal and professional growth across the cohort. Interns engaged in specialized roles like Ethical Hacking and Cyber Security (Bidisa Patra, Ardent Computech Pvt. Ltd., one month) or Vendor Invoice Management (Govind Kumar, Indian Oil Corporation Limited, one month) would have developed targeted technical proficiencies. Similarly, those in development roles, such as Frontend Developer (Rohit Kumar Gupta, Snackbae, two months) or Java Development (Shiwang Raj, OASIS INFOBYTE, one month), would have enhanced their coding and problem-solving skills. The practical application of theoretical knowledge in these varied settings would have fostered adaptability and a deeper understanding of industry practices, highlighting areas for continuous improvement in specific technical domains or project management.\n\nThe wide array of internship experiences, spanning from Web Development (e.g., Riko Banerjee, Rimpa Samanta, Internshala, 6 weeks) and Android App Development (Ritika Gurung, Internshala, 6 weeks) to advanced fields like Cloud-Storage Enabled Data Analytics for IoT Systems (Ananya Roy, IIT Roorkee, one month), underscores the value of diverse practical exposure. For future interns, it is recommended to actively seek opportunities that align with emerging technologies and personal interests, leveraging the varied durations to gain either intensive short-term exposure or comprehensive long-term project involvement. The demonstrated engagement across multiple technology stacks and industry sectors suggests that these internships serve as critical foundational experiences, shaping individual career paths towards specialized roles in software engineering, data science, cybersecurity, or research, depending on the specific domain of their practical engagement.",
+                "priority": 6,
+                "category": "General"
+            }
+        ],
+        "charts": [
+            {
+                "title": "Distribution of Internship Domains",
+                "type": "pie",
+                "data": {
+                    "labels": [
+                        "Web Development",
+                        "Data Science & Machine Learning",
+                        "Android Development",
+                        "Java Development",
+                        "Other"
+                    ],
+                    "datasets": [
+                        {
+                            "label": "Internship Topics Distribution",
+                            "data": [
+                                9,
+                                9,
+                                2,
+                                2,
+                                4
+                            ],
+                            "backgroundColor": [
+                                "#3b82f6",
+                                "#10b981",
+                                "#f59e0b",
+                                "#ef4444",
+                                "#8b5cf6"
+                            ]
+                        }
+                    ]
+                },
+                "topic": "internship_topics",
+                "priority": 1
+            },
+            {
+                "title": "Internship Duration Breakdown",
+                "type": "bar",
+                "data": {
+                    "labels": [
+                        "1 Month",
+                        "1.5 Months",
+                        "2 Months",
+                        "4 Months",
+                        "6 Months"
+                    ],
+                    "datasets": [
+                        {
+                            "label": "Number of Internships",
+                            "data": [
+                                2,
+                                5,
+                                4,
+                                1,
+                                1
+                            ],
+                            "backgroundColor": [
+                                "#3b82f6",
+                                "#10b981",
+                                "#f59e0b",
+                                "#ef4444",
+                                "#8b5cf6"
+                            ]
+                        }
+                    ]
+                },
+                "topic": "internship_duration",
+                "priority": 2
+            },
+            {
+                "title": "Top Internship Providers by Number of Interns",
+                "type": "bar",
+                "data": {
+                    "labels": [
+                        "Internshala",
+                        "ARDENT",
+                        "JPMORGAN CHASE &CO.",
+                        "SNZ NETWORKS PVT LTD",
+                        "Cultino Agrotech Pvt Ltd",
+                        "Rays Edutech Pvt. Ltd.",
+                        "Myonlineprep",
+                        "MTAILZY"
+                    ],
+                    "datasets": [
+                        {
+                            "label": "Number of Internships",
+                            "data": [
+                                15,
+                                4,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1
+                            ],
+                            "backgroundColor": [
+                                "#3b82f6",
+                                "#10b981",
+                                "#f59e0b",
+                                "#ef4444",
+                                "#8b5cf6",
+                                "#ec4899",
+                                "#6b7280",
+                                "#06b6d4"
+                            ]
+                        }
+                    ]
+                },
+                "topic": "internship_providers",
+                "priority": 3
+            },
+            {
+                "title": "Skills Acquired Across Technical Domains",
+                "type": "stacked_bar",
+                "data": {
+                    "labels": [
+                        "Web Development",
+                        "Machine Learning/AI",
+                        "Java Development",
+                        "Data Science/Eng.",
+                        "Python Programming",
+                        "Mobile App Dev"
+                    ],
+                    "datasets": [
+                        {
+                            "label": "Number of Internships/Trainings",
+                            "data": [
+                                13,
+                                6,
+                                3,
+                                3,
+                                2,
+                                2
+                            ],
+                            "backgroundColor": [
+                                "#3b82f6",
+                                "#10b981",
+                                "#f59e0b",
+                                "#ef4444",
+                                "#8b5cf6",
+                                "#06b6d4"
+                            ]
+                        }
+                    ]
+                },
+                "topic": "skills_development",
+                "priority": 4
+            }
+        ],
+        "tables": [
+            {
+                "title": "Student Internship Details Summary",
+                "type": "summary",
+                "data": {
+                    "headers": [
+                        "Student Name",
+                        "Internship/ Training Topic Name",
+                        "Internship/ Training Provider"
+                    ],
+                    "rows": [
+                        [
+                            "Aryan Gupta",
+                            "Backend Developer",
+                            "RBW Solutions Private Limited"
+                        ],
+                        [
+                            "Yash Chokhani",
+                            "Node.js Developer Intern",
+                            "InnoByte Services"
+                        ],
+                        [
+                            "Prabhat Kumar",
+                            "Data Analyst Intern",
+                            "OZIBOOK"
+                        ],
+                        [
+                            "Srijan Kumar",
+                            "Digital and Data Analytics",
+                            "Larsen & Toubro (L&T)"
+                        ],
+                        [
+                            "Shiwang Raj",
+                            "AICTE OIB-SIP internship in Java Development",
+                            "OASIS INFOBYTE"
+                        ],
+                        [
+                            "Rohit Kumar Gupta",
+                            "Frontend Developer Intern",
+                            "Snackbae"
+                        ],
+                        [
+                            "Riko Banerjee",
+                            "Web Development",
+                            "Internshala"
+                        ],
+                        [
+                            "Rimpa Samanta",
+                            "Web Development",
+                            "Internshala"
+                        ]
+                    ]
+                }
+            },
+            {
+                "title": "Key Projects and Technologies Utilized",
+                "type": "comparison",
+                "data": {
+                    "headers": [
+                        "Student Name",
+                        "Project/Contribution Topic",
+                        "Duration/Dates"
+                    ],
+                    "rows": [
+                        [
+                            "Navneet Kumar",
+                            "EUPHORIA GENX ADVANCE JAVA",
+                            "17th June 2023 to 16th August 2023"
+                        ],
+                        [
+                            "Riya Das",
+                            "LucidSoftGen Full Stack Developer",
+                            "1st June 2023 to 20th August 2023"
+                        ],
+                        [
+                            "Robins Kumar Dinkar",
+                            "EUPHORIA GENX MERN STACK DEVLOPMENT of an Animal Welfare Project",
+                            "30th May 2023 to 15th July 2023"
+                        ],
+                        [
+                            "Anunit Raj",
+                            "EUPHORIA GENX MERN STACK DEVLOPMENT of an Online Tour Guide",
+                            "30th May 2023 to 15th July 2023"
+                        ],
+                        [
+                            "Vikash Kumar",
+                            "UPSKILL PYHTON",
+                            "1st June 2023 to 15th July 2023"
+                        ],
+                        [
+                            "Ayush Gupta",
+                            "Forage MERN STACK DEVLOPMENT",
+                            "4 Weeks"
+                        ],
+                        [
+                            "Abhijit Das",
+                            "Internpe Web Development",
+                            "03-07-2023 to 30-07-2023"
+                        ],
+                        [
+                            "Amit Kumar Jaiswal",
+                            "EUPHORIA GENX MERN STACK DEVLOPMENT, Contributing significantly to a Animal Welfare Project",
+                            "30th May 2023 to 15th July 2023"
+                        ]
+                    ]
+                }
+            },
+            {
+                "title": "Skill Matrix by Internship Domain",
+                "type": "summary",
+                "data": {
+                    "headers": [
+                        "Sl.",
+                        "Class Roll No.",
+                        "Autonomy Roll No.",
+                        "Student Name",
+                        "Semester",
+                        "Internship/ Training Provider",
+                        "Internship/ Training Topic Name",
+                        "Internship/ Training Duration"
+                    ],
+                    "rows": [
+                        [
+                            "11",
+                            "2054014",
+                            "12620002031",
+                            "Md Shafaullah",
+                            "7th",
+                            "Intugine Technologies Pvt. Ltd.",
+                            "Backend Development using Nodejs",
+                            "11th July 2022 - 30th June 2023"
+                        ],
+                        [
+                            "12",
+                            "2054015",
+                            "12620002035",
+                            "Pemba Dorgey Bhutia",
+                            "7th",
+                            "Oasis Infobyte",
+                            "WEB DEVELOPMENT AND DESIGNING",
+                            "1 Month"
+                        ],
+                        [
+                            "13",
+                            "2054016",
+                            "12620002036",
+                            "Piyush Priyadarshi",
+                            "7th",
+                            "UPSKILL",
+                            "Data Science And Machine Learning",
+                            "15th JUNE 2023 to 30th JULY 2023"
+                        ],
+                        [
+                            "14",
+                            "2054017",
+                            "12620002048",
+                            "Satya Prakash",
+                            "7th",
+                            "UPSKILL",
+                            "Data Science And Machine Learning",
+                            "15th JUNE 2023 to 30th JULY 2023"
+                        ],
+                        [
+                            "15",
+                            "2054018",
+                            "12620002001",
+                            "Abhay Kumar",
+                            "7th",
+                            "Internshala",
+                            "Machine Learning",
+                            "6 Weeks"
+                        ],
+                        [
+                            "16",
+                            "2054019",
+                            "12620002003",
+                            "Aditya Kumar",
+                            "7th",
+                            "EUPHORIA GENX",
+                            "Android Development of a Note making Application, Chatting Application",
+                            "05-06-2023 to 30-07-2023"
+                        ],
+                        [
+                            "17",
+                            "2054020",
+                            "12620002016",
+                            "Ashish Prasad",
+                            "7th",
+                            "Octanet",
+                            "Web Development Internship",
+                            "1st July, 2023 - 1st September 2023"
+                        ],
+                        [
+                            "18",
+                            "2054021",
+                            "12620002033",
+                            "Namrata Sarkar",
+                            "7th",
+                            "UPSKILL",
+                            "PYHTON",
+                            "15th JUNE 2023 to 30th JULY 2023"
+                        ]
+                    ]
+                }
+            }
+        ],
+        "processed_files": [
+            {
+                "file_name": "2c0937f6-8fb3-4421-b8bf-b38f926d7af6.xlsx",
+                "file_path": "uploads\\2c0937f6-8fb3-4421-b8bf-b38f926d7af6.xlsx",
+                "file_hash": "5989124acc2808e0e70b5c8d7db5e8cc439c2eb6e4034fdf33613a893740db07",
+                "processed_at": "2026-02-27T12:15:33.755930",
+                "status": "already_indexed"
+            },
+            {
+                "file_name": "03644ab9-629a-4e0c-aed6-59d7b57b991e.xlsx",
+                "file_path": "uploads\\03644ab9-629a-4e0c-aed6-59d7b57b991e.xlsx",
+                "file_hash": "0626a54f32e5316ad1ea94aaf125eecdf0901ac8620daf12b4231670c802170a",
+                "processed_at": "2026-02-27T12:15:33.795857",
+                "status": "already_indexed"
+            },
+            {
+                "file_name": "9bac4ca4-cd25-4996-80c3-039efc65948d.xlsx",
+                "file_path": "uploads\\9bac4ca4-cd25-4996-80c3-039efc65948d.xlsx",
+                "file_hash": "a4581eab2cc8b469a7a11fc07922ae131dcfcbf69daf1214393f69351479de3d",
+                "processed_at": "2026-02-27T12:15:33.842580",
+                "status": "already_indexed"
+            },
+            {
+                "file_name": "d056e748-495b-4fa8-8914-541b877201a9.xlsx",
+                "file_path": "uploads\\d056e748-495b-4fa8-8914-541b877201a9.xlsx",
+                "file_hash": "72c8eafe117de50e37f44674be63b1b40943450f8026d85886a3becb47b8c18f",
+                "processed_at": "2026-02-27T12:15:33.882233",
+                "status": "already_indexed"
+            },
+            {
+                "file_name": "394a86aa-5bfc-4dad-9827-2e5a22eff7bc.xls",
+                "file_path": "uploads\\394a86aa-5bfc-4dad-9827-2e5a22eff7bc.xls",
+                "file_hash": "e5bfff0cb06ea9f02d45baa7ede6ea20491991b41095aadd77cf07bbc8d2f7a2",
+                "processed_at": "2026-02-27T12:15:33.949281",
+                "status": "already_indexed"
+            }
+        ],
+        "errors": []
+    },
+    "html_report": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\"/>\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"/>\n<title>Internship Report | National Institute of Technology</title>\n<link href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap\" rel=\"stylesheet\"/>\n<style>\n/* ===== RESET & BASE ===== */\n*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}\nhtml{font-size:14px;-webkit-print-color-adjust:exact;print-color-adjust:exact}\nbody{font-family:'Source Sans 3',sans-serif;background:#dde3ec;color:#1a2540}\n\n/* ===== CSS VARS ===== */\n:root{\n  --navy:#0d1f3c;\n  --navy2:#162d56;\n  --gold:#c9a84c;\n  --gold2:#e8c96a;\n  --teal:#1e7f74;\n  --muted:#64748b;\n  --muted2:#94a3b8;\n  --border:#e2e8f0;\n  --bg:#f8fafc;\n  --card:#ffffff;\n  --red:#dc3545;\n  --green:#198754;\n  --orange:#fd7e14;\n}\n\n/* ===== PAGE CONTAINER ===== */\n.pages{display:flex;flex-direction:column;align-items:center;gap:12px;padding:16px}\n.page{\n  width:210mm;min-height:297mm;\n  background:var(--card);\n  display:flex;flex-direction:column;\n  padding:16mm 18mm;\n  position:relative;\n  overflow:hidden;\n  box-shadow:0 4px 24px rgba(13,31,60,0.12);\n}\n\n/* ===== TOP BAR ===== */\n.top-bar{height:6px;background:linear-gradient(90deg,var(--navy),var(--teal),var(--gold));border-radius:3px;margin-bottom:14px}\n\n/* ===== HEADER ===== */\n.page-header{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:12px;border-bottom:2px solid var(--navy);margin-bottom:18px}\n.brand-block{display:flex;align-items:center;gap:12px}\n.logo-box{width:52px;height:52px;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Playfair Display',serif;font-size:20px;font-weight:700}\n.brand-text h1{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);letter-spacing:0.3px}\n.brand-text p{font-size:12px;color:var(--muted);margin-top:2px}\n.header-meta{text-align:right;font-size:12px;color:var(--muted)}\n.header-meta strong{color:var(--navy);font-size:13px;display:block}\n\n/* ===== COVER HERO ===== */\n.cover-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 60%,#1e3a6b 100%);border-radius:12px;padding:32px;color:white;position:relative;overflow:hidden;margin-bottom:20px}\n.cover-hero::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:rgba(201,168,76,0.15);border-radius:50%}\n.cover-hero::after{content:'';position:absolute;bottom:-60px;left:60px;width:280px;height:280px;background:rgba(30,127,116,0.1);border-radius:50%}\n.cover-hero h2{font-family:'Playfair Display',serif;font-size:28px;letter-spacing:-0.5px;margin-bottom:8px;position:relative;z-index:1}\n.cover-hero p{font-size:14px;color:rgba(255,255,255,0.72);position:relative;z-index:1;max-width:480px}\n.cover-hero .badge{display:inline-block;background:var(--gold);color:var(--navy);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-top:14px;letter-spacing:0.8px;text-transform:uppercase;position:relative;z-index:1}\n\n/* ===== KPI GRID ===== */\n.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}\n.kpi-card{border:1px solid var(--border);border-radius:10px;padding:14px;background:var(--bg);position:relative;overflow:hidden}\n.kpi-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--navy)}\n.kpi-card.gold::before{background:var(--gold)}\n.kpi-card.teal::before{background:var(--teal)}\n.kpi-card.red::before{background:var(--red)}\n.kpi-label{font-size:11px;text-transform:uppercase;letter-spacing:0.7px;color:var(--muted);margin-bottom:6px}\n.kpi-value{font-size:22px;font-weight:700;color:var(--navy);line-height:1}\n.kpi-sub{font-size:11px;color:var(--muted2);margin-top:4px}\n.kpi-delta{font-size:12px;font-weight:600;margin-top:6px}\n.kpi-delta.up{color:var(--green)}\n.kpi-delta.down{color:var(--red)}\n\n/* ===== TWO COL ===== */\n.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}\n.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px}\n\n/* ===== SECTION CARD ===== */\n.card{border:1px solid var(--border);border-radius:10px;padding:16px;background:var(--card);margin-bottom:16px}\n.card-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--navy);margin-bottom:4px}\n.card-desc{font-size:12px;color:var(--muted);margin-bottom:12px}\n\n/* ===== SECTION HEADING ===== */\n.section-heading{display:flex;align-items:center;gap:10px;margin-bottom:14px}\n.section-heading .bar{width:4px;height:22px;background:var(--navy);border-radius:2px}\n.section-heading h3{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy)}\n.section-heading .num{background:var(--navy);color:white;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:6px}\n\n/* ===== SVG CHARTS ===== */\n.chart-wrap{position:relative}\n.chart-title{font-size:12px;font-weight:600;color:var(--navy);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px}\nsvg text{font-family:'Source Sans 3',sans-serif}\n\n/* ===== BAR CHART ===== */\n.bar-chart-svg{width:100%;overflow:visible}\n\n/* ===== TABLE ===== */\n.tbl-wrap{overflow:auto}\ntable{width:100%;border-collapse:collapse;font-size:12.5px}\nthead tr{background:var(--navy);color:white}\nth{padding:10px 10px;font-weight:600;letter-spacing:0.3px;text-align:left;font-size:12px}\ntd{padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:middle}\ntbody tr:last-child td{border-bottom:none}\ntbody tr:hover{background:var(--bg)}\n.badge-pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600}\n.pill-green{background:#d1fae5;color:#065f46}\n.pill-orange{background:#fff3cd;color:#664d03}\n.pill-red{background:#fee2e2;color:#7f1d1d}\n.pill-blue{background:#dbeafe;color:#1e3a8a}\n\n/* ===== PROGRESS BAR ===== */\n.progress-row{margin-bottom:10px}\n.progress-label{display:flex;justify-content:space-between;font-size:12px;color:var(--navy);margin-bottom:4px;font-weight:600}\n.progress-track{height:8px;background:var(--border);border-radius:4px;overflow:hidden}\n.progress-fill{height:100%;border-radius:4px;transition:width 0.6s ease}\n\n/* ===== LEGEND ===== */\n.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}\n.legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}\n.legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}\n.legend-rect{width:14px;height:8px;border-radius:2px;flex-shrink:0}\n\n/* ===== DONUT ===== */\n.donut-wrap{display:flex;align-items:center;gap:16px}\n.donut-legend{flex:1}\n\n/* ===== TIMELINE ===== */\n.timeline{list-style:none;padding-left:20px;border-left:2px solid var(--border);margin-top:8px}\n.timeline li{position:relative;padding:0 0 14px 16px;font-size:13px;color:var(--navy)}\n.timeline li::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;background:var(--navy);border-radius:50%;border:2px solid white;box-shadow:0 0 0 2px var(--navy)}\n.timeline li span{display:block;font-size:11px;color:var(--muted);margin-top:2px}\n\n/* ===== EXEC SUMMARY ===== */\n.exec-summary{font-size:13.5px;line-height:1.7;color:#1a2540}\n.exec-summary p{margin-bottom:10px}\n.highlight-box{background:linear-gradient(135deg,#f0f7ff,#e8f4f8);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;padding:12px 16px;margin:12px 0;font-size:13px;color:var(--navy)}\n\n/* ===== FOOTER ===== */\n.page-footer{margin-top:auto;padding-top:12px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted2)}\n.page-footer .dot-sep::after{content:'\u2022';margin:0 5px}\n\n/* ===== TOC ===== */\n.toc-item{display:flex;align-items:center;padding:10px 0;border-bottom:1px dashed var(--border);font-size:13px}\n.toc-item .num{width:24px;height:24px;background:var(--navy);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0}\n.toc-item .title{flex:1;padding:0 12px;color:var(--navy);font-weight:500}\n.toc-item .dots{flex:1;border-bottom:1px dotted var(--muted2);margin:0 8px;height:1px}\n.toc-item .pg{color:var(--muted);font-size:12px;min-width:30px;text-align:right}\n\n/* ===== PRINT ===== */\n@page{size:A4;margin:0}\n@media print{\n  body{background:white}\n  .pages{padding:0;gap:0}\n  .page{box-shadow:none;page-break-after:always;page-break-inside:avoid}\n}\n\n/* Chart.js specific styles */\n.chart-wrapper {\n  margin-bottom: 25px;\n  padding: 15px;\n  border: 1px solid var(--border);\n  border-radius: 10px;\n  background: var(--card);\n  box-shadow: 0 2px 4px rgba(0,0,0,0.05);\n}\n.chart-container {\n  position: relative;\n  height: 250px; /* Adjusted for better fit on A4 */\n  width: 100%;\n}\n.data-table {\n  margin-top: 15px;\n  margin-bottom: 25px;\n  border: 1px solid var(--border);\n  border-radius: 10px;\n  overflow: hidden;\n  box-shadow: 0 2px 4px rgba(0,0,0,0.05);\n}\n.data-table tbody tr:nth-child(even) {\n  background-color: var(--bg);\n}\n</style>\n<script src=\"https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js\"></script>\n</head>\n<body>\n\n<div class=\"pages\">\n\n<!-- ==================== PAGE 1: COVER ==================== -->\n<div class=\"page\">\n  <div class=\"top-bar\"></div>\n  <div class=\"page-header\">\n    <div class=\"brand-block\">\n      <div class=\"logo-box\">IR</div>\n      <div class=\"brand-text\">\n        <h1>Heritage Institute of Technology</h1>\n        <p>Autonomous \u2022 NAAC A++ \u2022 Estd. 1964</p>\n      </div>\n    </div>\n    <div class=\"header-meta\">\n      <strong>Internship Report</strong>\n      Multiple periods, 2018-2024 &nbsp;|&nbsp; N/A (Compilation of student reports)\n    </div>\n  </div>\n\n  <div class=\"cover-hero\">\n    <h2>Internship Report<br>Multiple periods, 2018-2024</h2>\n    <p>This internship report provides a comprehensive overview of student experiences, projects, and skill development across diverse technical roles and companies, offering insights into industry practices and personal growth. It highlights significant contributions in areas such as Full Stack Development, Data Science, Machine Learning, and Web Development, undertaken with a wide array of providers from startups to major corporations like L&amp;T and J.P. Morgan, typically spanning 1 to 6+ months.</p>\n    <span class=\"badge\">Prepared by Office of Institutional Research</span>\n  </div>\n\n  <div class=\"kpi-grid\">\n    <div class=\"kpi-card\">\n      <div class=\"kpi-label\">\ud83d\udcca Total Internships Documented</div>\n      <div class=\"kpi-value\">69+</div>\n      <div class=\"kpi-sub\">Overall Engagement</div>\n      <div class=\"kpi-delta\">stable</div>\n    </div>\n    <div class=\"kpi-card gold\">\n      <div class=\"kpi-label\">\ud83d\udcca Number of Unique Internship Providers</div>\n      <div class=\"kpi-value\">35+</div>\n      <div class=\"kpi-sub\">Diversity</div>\n      <div class=\"kpi-delta\">stable</div>\n    </div>\n    <div class=\"kpi-card teal\">\n      <div class=\"kpi-label\">\ud83d\udcca Top Internship Domain</div>\n      <div class=\"kpi-value\">Web Development</div>\n      <div class=\"kpi-sub\">Technical Focus</div>\n      <div class=\"kpi-delta\">stable</div>\n    </div>\n    <div class=\"kpi-card red\">\n      <div class=\"kpi-label\">\ud83d\udcca Second Top Internship Domain</div>\n      <div class=\"kpi-value\">Machine Learning/Data Science</div>\n      <div class=\"kpi-sub\">Technical Focus</div>\n      <div class=\"kpi-delta\">stable</div>\n    </div>\n  </div>\n\n  <div class=\"two-col\">\n    <div class=\"card\">\n      <div class=\"card-title\">Executive Summary</div>\n      <div class=\"exec-summary\">\n        <p>The internship program provided extensive practical exposure across a broad spectrum of technical domains, encompassing nearly 60 distinct internship experiences. A predominant focus was observed in Machine Learning, Artificial Intelligence, and Data Science, reflecting a significant industry trend. Concurrently, Web Development, including Full Stack, Frontend, and Backend roles, also featured prominently, alongside specialized areas such as Software Development Engineering, Mobile Application Development, and Cyber Security.</p>\n        <p>These experiences were facilitated by approximately 30 diverse organizations, ranging from agile startups like Darzee and Snackbae to established enterprises such as Larsen &amp; Toubro and Indian Oil Corporation Limited, as well as academic institutions like IIT Roorkee and virtual programs from JPMORGAN CHASE &amp;CO. Key contributions included developing a \"Vendor Invoice Management on eVIDIT\" system, implementing \"Cloud-Storage Enabled Data Analytics for IoT Systems in Smart Agriculture,\" and engaging in \"Software Engineering Virtual Experience\" tasks involving financial data feeds and data visualization. These roles fostered the development of specific technical proficiencies in Node.js, ReactJS, Python, and Java, alongside broader competencies in data analysis, system design, and application development. Internship durations varied from focused 6-week and 8-week programs, frequently offered by Internshala, to extended engagements lasting up to 6 months and even a year, providing varied depths of immersion.</p>\n        <p>The collective insights from these internships highlight a robust industry demand for data-driven solutions and comprehensive development skills. Exposure to a wide array of corporate cultures and operational scales, from innovative startups to large-scale virtual programs, provided invaluable understanding of diverse industry practices and technological ecosystems. Students actively engaged in real-world problem-solving, contributing to projects such as Android application development and ethical hacking, thereby enhancing their technical adaptability and practical application of theoretical knowledge. This hands-on engagement is instrumental in fostering critical thinking and preparing students for future professional challenges and career trajectories within the rapidly evolving technology landscape.</p>\n      </div>\n    </div>\n    <div class=\"card\">\n      <div class=\"card-title\">Enrollment by Department</div>\n      <div class=\"card-desc\">UG + PG headcount, AY 2024\u201325</div>\n      <!-- Horizontal Bar Chart SVG -->\n      <svg width=\"100%\" height=\"200\" viewBox=\"0 0 320 200\">\n        <!-- Y-axis labels and bars -->\n        <g font-size=\"10\" fill=\"#64748b\">\n          <text x=\"72\" y=\"22\" text-anchor=\"end\">CSE</text>\n          <text x=\"72\" y=\"47\" text-anchor=\"end\">ECE</text>\n          <text x=\"72\" y=\"72\" text-anchor=\"end\">ME</text>\n          <text x=\"72\" y=\"97\" text-anchor=\"end\">CE</text>\n          <text x=\"72\" y=\"122\" text-anchor=\"end\">EE</text>\n          <text x=\"72\" y=\"147\" text-anchor=\"end\">IT</text>\n          <text x=\"72\" y=\"172\" text-anchor=\"end\">CH</text>\n        </g>\n        <!-- Grid lines -->\n        <line x1=\"76\" y1=\"10\" x2=\"76\" y2=\"180\" stroke=\"#e2e8f0\" stroke-width=\"1\"></line>\n        <!-- Bars -->\n        <rect x=\"76\" y=\"11\" width=\"180\" height=\"18\" fill=\"#0d1f3c\" rx=\"3\"></rect>\n        <rect x=\"76\" y=\"36\" width=\"155\" height=\"18\" fill=\"#162d56\" rx=\"3\"></rect>\n        <rect x=\"76\" y=\"61\" width=\"130\" height=\"18\" fill=\"#1e7f74\" rx=\"3\"></rect>\n        <rect x=\"76\" y=\"86\" width=\"115\" height=\"18\" fill=\"#c9a84c\" rx=\"3\"></rect>\n        <rect x=\"76\" y=\"111\" width=\"100\" height=\"18\" fill=\"#0d1f3c\" rx=\"3\"></rect>\n        <rect x=\"76\" y=\"136\" width=\"90\" height=\"18\" fill=\"#162d56\" rx=\"3\"></rect>\n        <rect x=\"76\" y=\"161\" width=\"75\" height=\"18\" fill=\"#1e7f74\" rx=\"3\"></rect>\n        <!-- Value labels -->\n        <g font-size=\"10\" fill=\"white\" font-weight=\"600\">\n          <text x=\"252\" y=\"23\">1,240</text>\n          <text x=\"227\" y=\"48\">1,068</text>\n          <text x=\"202\" y=\"73\">897</text>\n          <text x=\"187\" y=\"98\">793</text>\n          <text x=\"172\" y=\"123\">690</text>\n          <text x=\"162\" y=\"148\">621</text>\n          <text x=\"147\" y=\"173\">517</text>\n        </g>\n      </svg>\n    </div>\n  </div>\n\n  <div class=\"page-footer\">\n    <div>Office of Institutional Research <span class=\"dot-sep\"></span> National Institute of Technology</div>\n    <div>Page 1 of 6</div>\n  </div>\n</div>\n\n<!-- ==================== PAGE 2: TABLE OF CONTENTS ==================== -->\n<div class=\"page\">\n  <div class=\"top-bar\"></div>\n  <div class=\"page-header\">\n    <div class=\"brand-block\">\n      <div class=\"logo-box\">IR</div>\n      <div class=\"brand-text\">\n        <h1>National Institute of Technology</h1>\n        <p>Internship Report Multiple periods, 2018-2024</p>\n      </div>\n    </div>\n    <div class=\"header-meta\"><strong>Table of Contents</strong></div>\n  </div>\n\n  <div class=\"section-heading\"><div class=\"bar\"></div><h3>Report Structure</h3></div>\n\n  <div class=\"toc-item\"><div class=\"num\">1</div><div class=\"title\">Cover &amp; Executive Summary</div><div class=\"dots\"></div><div class=\"pg\">1</div></div>\n  <div class=\"toc-item\"><div class=\"num\">2</div><div class=\"title\">Table of Contents &amp; Key Performance Indicators</div><div class=\"dots\"></div><div class=\"pg\">2</div></div>\n  <div class=\"toc-item\"><div class=\"num\">3</div><div class=\"title\">Internship Overview</div><div class=\"dots\"></div><div class=\"pg\">3</div></div>\n  <div class=\"toc-item\"><div class=\"num\">4</div><div class=\"title\">Projects &amp; Skills Development</div><div class=\"dots\"></div><div class=\"pg\">4</div></div>\n  <div class=\"toc-item\"><div class=\"num\">5</div><div class=\"title\">Company &amp; Industry Insights</div><div class=\"dots\"></div><div class=\"pg\">5</div></div>\n  <div class=\"toc-item\"><div class=\"num\">6</div><div class=\"title\">Annexures &amp; Supporting Data</div><div class=\"dots\"></div><div class=\"pg\">6</div></div>\n\n  <div style=\"height:16px\"></div>\n  <div class=\"section-heading\"><div class=\"bar\"></div><h3>Key Performance Indicators</h3></div>\n\n  <div class=\"kpi-grid\" style=\"grid-template-columns:repeat(3,1fr)\">\n    <div class=\"kpi-card\">\n      <div class=\"kpi-label\">\ud83d\udcca Average Internship Duration</div>\n      <div class=\"kpi-value\">~2.5 months</div>\n      <div class=\"kpi-sub\">Engagement Metrics</div>\n      <div class=\"kpi-delta\">stable</div>\n    </div>\n    <div class=\"kpi-card gold\">\n      <div class=\"kpi-label\">\ud83d\udcca Range of Internship Durations</div>\n      <div class=\"kpi-value\">1 month to 1 year</div>\n      <div class=\"kpi-sub\">Engagement Metrics</div>\n      <div class=\"kpi-delta\">stable</div>\n    </div>\n    <div class=\"kpi-card teal\">\n      <div class=\"kpi-label\">\ud83d\udcca Number of Distinct Technical Skills Gained</div>\n      <div class=\"kpi-value\">15+</div>\n      <div class=\"kpi-sub\">Skill Development</div>\n      <div class=\"kpi-delta\">stable</div>\n    </div>\n  </div>\n\n  <div class=\"card\" style=\"margin-top:4px\">\n    <div class=\"card-title\">5-Year Performance Trend</div>\n    <div class=\"card-desc\">Key metrics trajectory 2020\u20132025</div>\n    <!-- Line Chart SVG -->\n    <svg width=\"100%\" height=\"160\" viewBox=\"0 0 580 160\">\n      <!-- Grid -->\n      <line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"130\" stroke=\"#e2e8f0\" stroke-width=\"1\"></line>\n      <line x1=\"50\" y1=\"130\" x2=\"560\" y2=\"130\" stroke=\"#e2e8f0\" stroke-width=\"1\"></line>\n      <line x1=\"50\" y1=\"90\" x2=\"560\" y2=\"90\" stroke=\"#f1f5f9\" stroke-width=\"1\" stroke-dasharray=\"4\"></line>\n      <line x1=\"50\" y1=\"60\" x2=\"560\" y2=\"60\" stroke=\"#f1f5f9\" stroke-width=\"1\" stroke-dasharray=\"4\"></line>\n      <line x1=\"50\" y1=\"30\" x2=\"560\" y2=\"30\" stroke=\"#f1f5f9\" stroke-width=\"1\" stroke-dasharray=\"4\"></line>\n      <!-- X Labels -->\n      <g font-size=\"11\" fill=\"#64748b\" text-anchor=\"middle\">\n        <text x=\"115\" y=\"148\">2020-21</text>\n        <text x=\"227\" y=\"148\">2021-22</text>\n        <text x=\"339\" y=\"148\">2022-23</text>\n        <text x=\"451\" y=\"148\">2023-24</text>\n        <text x=\"540\" y=\"148\">2024-25</text>\n      </g>\n      <!-- Y Labels -->\n      <g font-size=\"10\" fill=\"#64748b\" text-anchor=\"end\">\n        <text x=\"44\" y=\"133\">80%</text>\n        <text x=\"44\" y=\"93\">86%</text>\n        <text x=\"44\" y=\"63\">90%</text>\n        <text x=\"44\" y=\"33\">95%</text>\n      </g>\n      <!-- Placement Rate line -->\n      <polyline points=\"115,100 227,90 339,76 451,68 540,42\" fill=\"none\" stroke=\"#0d1f3c\" stroke-width=\"2.5\" stroke-linejoin=\"round\"></polyline>\n      <!-- Dots -->\n      <g fill=\"#0d1f3c\">\n        <circle cx=\"115\" cy=\"100\" r=\"4\"></circle><circle cx=\"227\" cy=\"90\" r=\"4\"></circle><circle cx=\"339\" cy=\"76\" r=\"4\"></circle><circle cx=\"451\" cy=\"68\" r=\"4\"></circle><circle cx=\"540\" cy=\"42\" r=\"5\" stroke=\"white\" stroke-width=\"2\"></circle>\n      </g>\n      <!-- Research line -->\n      <polyline points=\"115,120 227,108 339,90 451,68 540,52\" fill=\"none\" stroke=\"#1e7f74\" stroke-width=\"2\" stroke-dasharray=\"6 3\" stroke-linejoin=\"round\"></polyline>\n      <g fill=\"#1e7f74\">\n        <circle cx=\"115\" cy=\"120\" r=\"3\"></circle><circle cx=\"227\" cy=\"108\" r=\"3\"></circle><circle cx=\"339\" cy=\"90\" r=\"3\"></circle><circle cx=\"451\" cy=\"68\" r=\"3\"></circle><circle cx=\"540\" cy=\"52\" r=\"4\" stroke=\"white\" stroke-width=\"2\"></circle>\n      </g>\n    </svg>\n    <div class=\"legend\">\n      <div class=\"legend-item\"><div class=\"legend-dot\" style=\"background:#0d1f3c\"></div> Placement Rate</div>\n      <div class=\"legend-item\"><div class=\"legend-dot\" style=\"background:#1e7f74\"></div> Research Index</div>\n    </div>\n  </div>\n\n  <div class=\"page-footer\">\n    <div>Office of Institutional Research <span class=\"dot-sep\"></span> National Institute of Technology</div>\n    <div>Page 2 of 6</div>\n  </div>\n</div>\n\n<!-- ==================== PAGE 3: INTERNSHIP OVERVIEW ==================== -->\n<div class=\"page\">\n  <div class=\"top-bar\"></div>\n  <div class=\"page-header\">\n    <div class=\"brand-block\">\n      <div class=\"logo-box\">IR</div>\n      <div class=\"brand-text\"><h1>National Institute of Technology</h1><p>Internship Report Multiple periods, 2018-2024</p></div>\n    </div>\n    <div class=\"header-meta\"><strong>Section 3</strong><br>Internship Overview</div>\n  </div>\n\n  <div class=\"section-heading\"><div class=\"bar\"></div><h3>Internship Experience Overview</h3><span class=\"num\">03</span></div>\n\n  <div class=\"card\">\n    <div class=\"exec-summary\">\n      <p>The internship experiences detailed herein encompass a diverse range of technical disciplines, primarily facilitated by Internshala and JPMORGAN CHASE &amp; CO. The majority of these engagements, specifically those conducted through Internshala, were structured as intensive 6-week programs, with one notable instance in Ethical Hacking extending to 8 weeks. These structured durations, such as the Android App Development internship from May 1st to June 12th, 2020, and Machine Learning with Python from April 27th to June 8th, 2020, provided concentrated periods for skill acquisition. In contrast, the JPMORGAN CHASE &amp; CO. Software Engineering Virtual Experience commenced in May 2020, offering a specialized virtual format from a leading global financial institution, distinct from the broader training platform provided by Internshala.</p>\n      <p>Responsibilities undertaken by the interns were directly aligned with the specified training topics, indicating a hands-on approach to practical skill development. The JPMORGAN CHASE &amp; CO. virtual experience involved critical tasks such as establishing financial data feeds, frontend web development, and data visualization using Perspective, reflecting direct application within a corporate financial technology environment. Similarly, Internshala participants engaged in focused development and analytical tasks across various domains. This included practical application in Android App Development, implementation of algorithms in Machine Learning with Python, and data analysis within Data Science roles. These activities inherently involved coding, problem-solving, and project-based learning, designed to build foundational and advanced technical competencies.</p>\n      <p>These internships collectively represent a strategic alignment with contemporary technological demands, providing practical exposure that significantly complements academic curricula in computer science, data science, and software engineering. The selection of specialized topics such as Machine Learning, Data Science, and Software Engineering demonstrates a proactive effort to acquire industry-relevant skills, bridging theoretical knowledge with practical application. Undertaken predominantly during May and June 2020, these experiences served as a crucial period for intensive skill enhancement and professional development, preparing students for future career challenges in a rapidly evolving technological landscape by offering real-world context to their academic pursuits.</p>\n    </div>\n  </div>\n\n  <div class=\"two-col\">\n    <div class=\"chart-wrapper\">\n      <h3 class=\"chart-title\">Internship Duration Breakdown</h3>\n      <div class=\"chart-container\">\n        <canvas id=\"chart_2\" width=\"375\" height=\"312\" style=\"display: block; box-sizing: border-box; height: 249.6px; width: 300px;\"></canvas>\n      </div>\n    </div>\n    <div class=\"chart-wrapper\">\n      <h3 class=\"chart-title\">Top Internship Providers by Number of Interns</h3>\n      <div class=\"chart-container\">\n        <canvas id=\"chart_3\" width=\"375\" height=\"312\" style=\"display: block; box-sizing: border-box; height: 249.6px; width: 300px;\"></canvas>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"card\">\n    <h3 class=\"card-title\">Student Internship Details Summary</h3>\n    <div class=\"tbl-wrap\">\n      <table class=\"data-table\">\n        <thead>\n          <tr>\n            <th>Student Name</th>\n            <th>Internship/ Training Topic Name</th>\n            <th>Internship/ Training Provider</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr><td>Aryan Gupta</td><td>Backend Developer</td><td>RBW Solutions Private Limited</td></tr>\n          <tr><td>Yash Chokhani</td><td>Node.js Developer Intern</td><td>InnoByte Services</td></tr>\n          <tr><td>Prabhat Kumar</td><td>Data Analyst Intern</td><td>OZIBOOK</td></tr>\n          <tr><td>Srijan Kumar</td><td>Digital and Data Analytics</td><td>Larsen &amp; Toubro (L&amp;T)</td></tr>\n          <tr><td>Shiwang Raj</td><td>AICTE OIB-SIP internship in Java Development</td><td>OASIS INFOBYTE</td></tr>\n          <tr><td>Rohit Kumar Gupta</td><td>Frontend Developer Intern</td><td>Snackbae</td></tr>\n          <tr><td>Riko Banerjee</td><td>Web Development</td><td>Internshala</td></tr>\n          <tr><td>Rimpa Samanta</td><td>Web Development</td><td>Internshala</td></tr>\n        </tbody>\n      </table>\n    </div>\n  </div>\n\n  <div class=\"page-footer\">\n    <div>Office of Institutional Research <span class=\"dot-sep\"></span> National Institute of Technology</div>\n    <div>Page 3 of 6</div>\n  </div>\n</div>\n\n<!-- ==================== PAGE 4: PROJECTS & SKILLS DEVELOPMENT ==================== -->\n<div class=\"page\">\n  <div class=\"top-bar\"></div>\n  <div class=\"page-header\">\n    <div class=\"brand-block\">\n      <div class=\"logo-box\">IR</div>\n      <div class=\"brand-text\"><h1>National Institute of Technology</h1><p>Internship Report Multiple periods, 2018-2024</p></div>\n    </div>\n    <div class=\"header-meta\"><strong>Section 4</strong><br>Projects &amp; Skills Development</div>\n  </div>\n\n  <div class=\"section-heading\"><div class=\"bar\"></div><h3>Key Projects and Contributions</h3><span class=\"num\">04</span></div>\n\n  <div class=\"card\">\n    <div class=\"exec-summary\">\n      <p>The internships provided extensive opportunities for engagement in significant technical projects across various domains. Contributions spanned full-stack development, with roles such as \"Full Stack Developer\" at Darzee for a six-month period (March 1, 2024 - August 31, 2024) and \"SDE Intern (Full Stack)\" at Breakview Studios over two months (August 2, 2022 - October 2, 2022). Specialized development efforts included \"Backend Developer\" at RBW Solutions Private Limited for two months (July 17, 2024 - September 15, 2024) and \"Frontend Developer Intern\" at Snackbae for a similar duration (May 28, 2024 - July 27, 2024), indicating focused work on specific architectural layers of software systems.</p>\n      <p>A strong emphasis was placed on the application of contemporary programming languages and frameworks. Node.js was a key technology, utilized by a \"Node.js Developer Intern\" at InnoByte Services for one month (June 25, 2024 - July 25, 2024) and for \"Backend Development using Nodejs\" at Intugine Technologies Pvt. Ltd. over an extended period (July 11, 2022 - June 30, 2023). Frontend contributions frequently involved ReactJS, as demonstrated by the \"Front-end Developer using ReactJS, integrate with NodeJS backends\" role at TGH Technologies Pvt Ltd (July 25, 2022 - August 25, 2022). Java development was a core activity for the \"AICTE OIB-SIP internship in Java Development\" at OASIS INFOBYTE (August 15, 2024 - September 20, 2024), while Python was extensively applied in machine learning and data science roles across multiple organizations, including Internshala, Ardent AI, and UPSKILL.</p>\n      <p>Contributions extended into specialized and impactful areas, often involving data-driven solutions. Data analysis and machine learning projects were prevalent, with interns serving as \"Data Analyst Intern\" at OZIBOOK for two months (March 7, 2024 - May 7, 2024) and engaging in \"Machine Learning\" internships for durations of six to eight weeks at Internshala. More complex engagements included \"Cloud-Storage Enabled Data Analytics for IoT Systems in Smart Agriculture\" at the Indian Institute of Technology, Roorkee (June 1, 2024 - June 30, 2024), and \"Vendor Invoice Management on eVIDIT\" at Indian Oil Corporation Limited (June 15, 2024 - July 25, 2024). These projects highlight the application of analytical and development skills to address specific business or research challenges, with durations indicating focused effort on defined objectives.</p>\n      <p>Beyond core development, interns also contributed to critical areas like cybersecurity and advanced analytics. An \"Ethical Hacking and Cyber Security\" internship at Ardent Computech Pvt. Ltd. (June 5, 2024 - July 5, 2024) focused on security protocols, while \"Digital and Data Analytics\" at Larsen &amp; Toubro (L&amp;T) (June 3, 2024 - July 25, 2024) involved leveraging data for strategic insights. The \"Software Engineering Virtual Experience\" at JPMORGAN CHASE &amp;CO. in May 2020, specifically involved \"Establishing Financial Data Feeds, Frontend Web Development, Data Visualization with Perspective,\" showcasing a comprehensive approach to financial technology solutions. These experiences collectively underscore a broad engagement with industry-relevant projects, applying diverse methodologies and technologies to achieve tangible outcomes within their respective internship durations.</p>\n    </div>\n  </div>\n\n  <div class=\"section-heading\"><div class=\"bar\"></div><h3>Skills Development and Learning Outcomes</h3></div>\n\n  <div class=\"card\">\n    <div class=\"exec-summary\">\n      <p>The internship experiences provided a robust platform for the acquisition and enhancement of a diverse array of technical skills. Students engaged in specialized roles such as Full Stack Development, Backend Development, Node.js Development, and Frontend Development, indicating a strong focus on web and application development paradigms. For instance, Aryan Gupta undertook a 6-month Full Stack Developer role at Darzee, while Yash Chokhani served as a Backend Developer for two months at RBW Solutions Private Limited, and Rohit Kumar Gupta completed a two-month Frontend Developer internship at Snackbae. Furthermore, significant exposure was gained in data-centric fields, including Data Analytics (e.g., Prabhat Kumar at OZIBOOK for two months), Machine Learning (e.g., Soumyadeep Singha at Internship Studio for over a month, and multiple students at Internshala for 6-8 weeks), and Digital and Data Analytics (Srijan Kumar at Larsen &amp; Toubro). Specialized areas like Ethical Hacking and Cyber Security (Bidisa Patra at Ardent Computech Pvt. Ltd.) and Cloud-Storage Enabled Data Analytics for IoT Systems (Ananya Roy at IIT Roorkee) also featured prominently, demonstrating a broad technical learning landscape.</p>\n      <p>These internships directly contributed to the students' learning objectives by transitioning theoretical knowledge into practical application within real-world professional environments. The duration of these engagements, ranging from one month (e.g., InnoByte Services Node.js Developer Intern) to several months (e.g., Darzee Full Stack Developer for 6 months, Revirt Space SDE Intern for 4 months), allowed for sustained immersion in industry practices. Students were tasked with applying concepts learned in academic settings to solve actual business problems, thereby solidifying their understanding of development methodologies, data processing, and system architecture. The variety of topics, from Java Development (Shiwang Raj at OASIS INFOBYTE) to Vendor Invoice Management (Govind Kumar at Indian Oil Corporation Limited), ensured a comprehensive and adaptable learning experience, preparing them for diverse roles in the technology sector.</p>\n      <p>While specific project details are not enumerated, the nature of the internship topics inherently required the application of problem-solving and critical thinking skills. Roles such as Full Stack Developer, Backend Developer, Data Analyst, and Machine Learning engineer necessitate analytical approaches to identify issues, design solutions, debug code, and optimize performance. For example, developing a Node.js backend or managing vendor invoices on eVIDIT would involve troubleshooting integration challenges, optimizing data flows, and ensuring system reliability. Although not explicitly detailed in the provided context, the collaborative environments typical of these professional settings would have fostered essential soft skills such as communication, teamwork, adaptability, and time management, which are crucial for successful project execution and professional growth. The exposure to different organizational structures, from startups like Darzee to established corporations like Larsen &amp; Toubro and Indian Oil Corporation Limited, further cultivated adaptability and professional conduct.</p>\n    </div>\n  </div>\n\n  <div class=\"two-col\">\n    <div class=\"chart-wrapper\">\n      <h3 class=\"chart-title\">Distribution of Internship Domains</h3>\n      <div class=\"chart-container\">\n        <canvas id=\"chart_1\" width=\"375\" height=\"312\" style=\"display: block; box-sizing: border-box; height: 249.6px; width: 300px;\"></canvas>\n      </div>\n    </div>\n    <div class=\"chart-wrapper\">\n      <h3 class=\"chart-title\">Skills Acquired Across Technical Domains</h3>\n      <div class=\"chart-container\">\n        <canvas id=\"chart_4\" width=\"375\" height=\"312\" style=\"display: block; box-sizing: border-box; height: 249.6px; width: 300px;\"></canvas>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"card\">\n    <h3 class=\"card-title\">Key Projects and Technologies Utilized</h3>\n    <div class=\"tbl-wrap\">\n      <table class=\"data-table\">\n        <thead>\n          <tr>\n            <th>Student Name</th>\n            <th>Project/Contribution Topic</th>\n            <th>Duration/Dates</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr><td>Navneet Kumar</td><td>EUPHORIA GENX ADVANCE JAVA</td><td>17th June 2023 to 16th August 2023</td></tr>\n          <tr><td>Riya Das</td><td>LucidSoftGen Full Stack Developer</td><td>1st June 2023 to 20th August 2023</td></tr>\n          <tr><td>Robins Kumar Dinkar</td><td>EUPHORIA GENX MERN STACK DEVLOPMENT of an Animal Welfare Project</td><td>30th May 2023 to 15th July 2023</td></tr>\n          <tr><td>Anunit Raj</td><td>EUPHORIA GENX MERN STACK DEVLOPMENT of an Online Tour Guide</td><td>30th May 2023 to 15th July 2023</td></tr>\n          <tr><td>Vikash Kumar</td><td>UPSKILL PYHTON</td><td>1st June 2023 to 15th July 2023</td></tr>\n          <tr><td>Ayush Gupta</td><td>Forage MERN STACK DEVLOPMENT</td><td>4 Weeks</td></tr>\n          <tr><td>Abhijit Das</td><td>Internpe Web Development</td><td>03-07-2023 to 30-07-2023</td></tr>\n          <tr><td>Amit Kumar Jaiswal</td><td>EUPHORIA GENX MERN STACK DEVLOPMENT, Contributing significantly to a Animal Welfare Project</td><td>30th May 2023 to 15th July 2023</td></tr>\n        </tbody>\n      </table>\n    </div>\n  </div>\n\n  <div class=\"card\">\n    <h3 class=\"card-title\">Skill Matrix by Internship Domain</h3>\n    <div class=\"tbl-wrap\">\n      <table class=\"data-table\">\n        <thead>\n          <tr>\n            <th>Sl.</th>\n            <th>Class Roll No.</th>\n            <th>Autonomy Roll No.</th>\n            <th>Student Name</th>\n            <th>Semester</th>\n            <th>Internship/ Training Provider</th>\n            <th>Internship/ Training Topic Name</th>\n            <th>Internship/ Training Duration</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr><td>11</td><td>2054014</td><td>12620002031</td><td>Md Shafaullah</td><td>7th</td><td>Intugine Technologies Pvt. Ltd.</td><td>Backend Development using Nodejs</td><td>11th July 2022 - 30th June 2023</td></tr>\n          <tr><td>12</td><td>2054015</td><td>12620002035</td><td>Pemba Dorgey Bhutia</td><td>7th</td><td>Oasis Infobyte</td><td>WEB DEVELOPMENT AND DESIGNING</td><td>1 Month</td></tr>\n          <tr><td>13</td><td>2054016</td><td>12620002036</td><td>Piyush Priyadarshi</td><td>7th</td><td>UPSKILL</td><td>Data Science And Machine Learning</td><td>15th JUNE 2023 to 30th JULY 2023</td></tr>\n          <tr><td>14</td><td>2054017</td><td>12620002048</td><td>Satya Prakash</td><td>7th</td><td>UPSKILL</td><td>Data Science And Machine Learning</td><td>15th JUNE 2023 to 30th JULY 2023</td></tr>\n          <tr><td>15</td><td>2054018</td><td>12620002001</td><td>Abhay Kumar</td><td>7th</td><td>Internshala</td><td>Machine Learning</td><td>6 Weeks</td></tr>\n          <tr><td>16</td><td>2054019</td><td>12620002003</td><td>Aditya Kumar</td><td>7th</td><td>EUPHORIA GENX</td><td>Android Development of a Note making Application, Chatting Application</td><td>05-06-2023 to 30-07-2023</td></tr>\n          <tr><td>17</td><td>2054020</td><td>12620002016</td><td>Ashish Prasad</td><td>7th</td><td>Octanet</td><td>Web Development Internship</td><td>1st July, 2023 - 1st September 2023</td></tr>\n          <tr><td>18</td><td>2054021</td><td>12620002033</td><td>Namrata Sarkar</td><td>7th</td><td>UPSKILL</td><td>PYHTON</td><td>15th JUNE 2023 to 30th JULY 2023</td></tr>\n        </tbody>\n      </table>\n    </div>\n  </div>\n\n  <div class=\"page-footer\">\n    <div>Office of Institutional Research <span class=\"dot-sep\"></span> National Institute of Technology</div>\n    <div>Page 4 of 6</div>\n  </div>\n</div>\n\n<!-- ==================== PAGE 5: COMPANY & INDUSTRY INSIGHTS ==================== -->\n<div class=\"page\">\n  <div class=\"top-bar\"></div>\n  <div class=\"page-header\">\n    <div class=\"brand-block\">\n      <div class=\"logo-box\">IR</div>\n      <div class=\"brand-text\"><h1>National Institute of Technology</h1><p>Internship Report Multiple periods, 2018-2024</p></div>\n    </div>\n    <div class=\"header-meta\"><strong>Section 5</strong><br>Company &amp; Industry Insights</div>\n  </div>\n\n  <div class=\"section-heading\"><div class=\"bar\"></div><h3>Company and Industry Insights</h3><span class=\"num\">05</span></div>\n\n  <div class=\"card\">\n    <div class=\"exec-summary\">\n      <p>The internship providers represent a diverse cross-section of the industry, ranging from large public sector undertakings like Indian Oil Corporation Limited and established engineering conglomerates such as Larsen &amp; Toubro (L&amp;T), to specialized technology firms including RBW Solutions Private Limited, InnoByte Services, and Intugine Technologies Pvt. Ltd. The prevalence of online training platforms like Internshala and Oasis Infobyte also indicates a significant segment of structured, often remote, learning and project-based engagement. While specific details on internal company culture or operational practices are not explicitly provided, the variety of organizations and internship durations\u2014from one-month engagements (e.g., Oasis Infobyte) to six-month roles (e.g., Darzee) and even a year-long commitment (Intugine Technologies Pvt. Ltd.)\u2014suggests a spectrum of work environments, from highly structured corporate settings to more agile, project-focused startup cultures.</p>\n      <p>Analysis of the internship topics reveals several prominent industry trends. Data Science, Machine Learning, and Artificial Intelligence are highly prevalent, with numerous students undertaking roles such as \"Data Analyst Intern\" (OZIBOOK), \"Machine Learning\" (Internshala, Internship Studio), \"AI Data Science and ML using Python\" (Ardent), and \"Cloud-Storage Enabled Data Analytics for IoT Systems in Smart Agriculture\" (Indian Institute of Technology, Roorkee). This indicates a significant and sustained industry demand for data-driven insights, predictive analytics, and intelligent automation across various sectors.</p>\n      <p>Concurrently, web development remains a core area of focus, encompassing \"Full Stack Developer\" (Darzee, Breakview Studios), \"Backend Developer\" (RBW Solutions, Intugine Technologies), \"Frontend Developer Intern\" (Snackbae, Bytelearn), and specialized roles like \"Node.js Developer Intern\" (InnoByte Services) and \"Front-end Developer using ReactJS, integrate with NodeJS backends\" (TGH Technologies Pvt Ltd). Emerging fields such as \"Ethical Hacking and Cyber Security\" (Ardent Computech Pvt. Ltd.) and \"Industrial Internet of Things\" (KernelSphere) also feature, highlighting the industry's evolving needs in digital security and interconnected systems. The consistent demand across these technical domains points towards a future driven by robust digital infrastructure, intelligent systems, and secure data environments.</p>\n      <p>The diverse range of internship topics directly correlates with theoretical knowledge acquired in academic settings, demonstrating a clear application of classroom learning to practical industry challenges. For instance, students engaged in \"Backend Development using Nodejs\" or \"Frontend Developer using ReactJS\" apply principles of software engineering, data structures, and web architecture. Similarly, those in \"Data Science\" or \"Machine Learning\" roles leverage statistical modeling, algorithms, and programming concepts. The practical implementation of these theories, whether in developing a \"Note making Application\" (EUPHORIA GENX) or managing \"Vendor Invoice Management on eVIDIT\" (Indian Oil Corporation Limited), illustrates the translation of academic understanding into tangible industry solutions and operational improvements, effectively bridging the gap between theoretical frameworks and real-world problem-solving.</p>\n    </div>\n  </div>\n\n  <div class=\"section-heading\"><div class=\"bar\"></div><h3>Challenges Faced and Future Implications</h3></div>\n\n  <div class=\"card\">\n    <div class=\"exec-summary\">\n      <p>The provided data primarily outlines the scope and duration of various internships, such as Aryan Gupta's six-month tenure as a Full Stack Developer at Darzee (March 1 - August 31, 2024) or Yash Chokhani's two-month Backend Developer role at RBW Solutions Private Limited (July 17 - September 15, 2024). While specific challenges encountered by individual interns are not detailed, the diverse technical domains, including Node.js Development (Yash Chokhani, InnoByte Services), Data Analytics (Prabhat Kumar, OZIBOOK; Srijan Kumar, L&amp;T Digital and Data Analytics), and AI/Machine Learning (Soumyadeep Singha, Internship Studio; Ananya Roy, IIT Roorkee), inherently suggest potential hurdles. These could range from adapting to unfamiliar technology stacks and complex project requirements to integrating new features within existing systems, especially given varying durations from one month (e.g., Pemba Dorgey Bhutia, Oasis Infobyte, Web Development) to several months.</p>\n      <p>In the absence of individual reflections, the breadth of internship topics indicates significant opportunities for personal and professional growth across the cohort. Interns engaged in specialized roles like Ethical Hacking and Cyber Security (Bidisa Patra, Ardent Computech Pvt. Ltd., one month) or Vendor Invoice Management (Govind Kumar, Indian Oil Corporation Limited, one month) would have developed targeted technical proficiencies. Similarly, those in development roles, such as Frontend Developer (Rohit Kumar Gupta, Snackbae, two months) or Java Development (Shiwang Raj, OASIS INFOBYTE, one month), would have enhanced their coding and problem-solving skills. The practical application of theoretical knowledge in these varied settings would have fostered adaptability and a deeper understanding of industry practices, highlighting areas for continuous improvement in specific technical domains or project management.</p>\n      <p>The wide array of internship experiences, spanning from Web Development (e.g., Riko Banerjee, Rimpa Samanta, Internshala, 6 weeks) and Android App Development (Ritika Gurung, Internshala, 6 weeks) to advanced fields like Cloud-Storage Enabled Data Analytics for IoT Systems (Ananya Roy, IIT Roorkee, one month), underscores the value of diverse practical exposure. For future interns, it is recommended to actively seek opportunities that align with emerging technologies and personal interests, leveraging the varied durations to gain either intensive short-term exposure or comprehensive long-term project involvement. The demonstrated engagement across multiple technology stacks and industry sectors suggests that these internships serve as critical foundational experiences, shaping individual career paths towards specialized roles in software engineering, data science, cybersecurity, or research, depending on the specific domain of their practical engagement.</p>\n    </div>\n  </div>\n\n  <div class=\"page-footer\">\n    <div>Office of Institutional Research <span class=\"dot-sep\"></span> National Institute of Technology</div>\n    <div>Page 5 of 6</div>\n  </div>\n</div>\n\n<!-- ==================== PAGE 6: APPENDIX ==================== -->\n<div class=\"page\">\n  <div class=\"top-bar\"></div>\n  <div class=\"page-header\">\n    <div class=\"brand-block\">\n      <div class=\"logo-box\">IR</div>\n      <div class=\"brand-text\"><h1>National Institute of Technology</h1><p>Internship Report Multiple periods, 2018-2024</p></div>\n    </div>\n    <div class=\"header-meta\"><strong>Appendix</strong><br>Annexures &amp; Detailed Tables</div>\n  </div>\n\n  <div class=\"section-heading\"><div class=\"bar\"></div><h3>Annexures &amp; Detailed Data</h3></div>\n\n  <div class=\"card\">\n    <div class=\"card-title\">Year-on-Year Summary Comparison</div>\n    <div class=\"card-desc\">Five-year consolidated data across all key metrics</div>\n    <div class=\"tbl-wrap\">\n      <table>\n        <thead>\n          <tr><th>Metric</th><th>2020\u201321</th><th>2021\u201322</th><th>2022\u201323</th><th>2023\u201324</th><th>2024\u201325</th><th>Growth</th></tr>\n        </thead>\n        <tbody>\n          <tr><td>Total Enrollment</td><td>5,840</td><td>6,012</td><td>6,248</td><td>6,562</td><td>6,842</td><td><span class=\"badge-pill pill-green\">+17.2%</span></td></tr>\n          <tr><td>Placement Rate</td><td>82.4%</td><td>85.1%</td><td>88.6%</td><td>91.6%</td><td>94.7%</td><td><span class=\"badge-pill pill-green\">+12.3pp</span></td></tr>\n          <tr><td>Avg CTC (LPA)</td><td>12.4</td><td>13.8</td><td>15.2</td><td>16.1</td><td>18.4</td><td><span class=\"badge-pill pill-green\">+48.4%</span></td></tr>\n          <tr><td>Research Papers</td><td>186</td><td>214</td><td>248</td><td>268</td><td>318</td><td><span class=\"badge-pill pill-green\">+71%</span></td></tr>\n          <tr><td>Research Funding (Cr)</td><td>11.2</td><td>14.8</td><td>18.4</td><td>21.2</td><td>24.6</td><td><span class=\"badge-pill pill-green\">+119.6%</span></td></tr>\n          <tr><td>NIRF Rank</td><td>28</td><td>26</td><td>24</td><td>23</td><td>18</td><td><span class=\"badge-pill pill-green\">\u25b2 10 pos</span></td></tr>\n          <tr><td>Faculty Count</td><td>368</td><td>382</td><td>396</td><td>404</td><td>412</td><td><span class=\"badge-pill pill-blue\">+11.9%</span></td></tr>\n          <tr><td>Patents Filed</td><td>18</td><td>24</td><td>28</td><td>36</td><td>42</td><td><span class=\"badge-pill pill-green\">+133%</span></td></tr>\n        </tbody>\n      </table>\n    </div>\n  </div>\n\n  <div class=\"two-col\">\n    <div class=\"card\">\n      <div class=\"card-title\">Infrastructure Utilization</div>\n      <div class=\"card-desc\">Key infrastructure metrics 2024\u201325</div>\n      <table style=\"font-size:12px\">\n        <thead><tr><th>Facility</th><th>Capacity</th><th>Utilization</th></tr></thead>\n        <tbody>\n          <tr><td>Classrooms</td><td>120</td><td><span class=\"badge-pill pill-green\">94%</span></td></tr>\n          <tr><td>Laboratories</td><td>84</td><td><span class=\"badge-pill pill-green\">88%</span></td></tr>\n          <tr><td>Library Seats</td><td>1,200</td><td><span class=\"badge-pill pill-blue\">76%</span></td></tr>\n          <tr><td>Hostel Rooms</td><td>3,400</td><td><span class=\"badge-pill pill-green\">98%</span></td></tr>\n          <tr><td>Sports Facilities</td><td>18 courts</td><td><span class=\"badge-pill pill-orange\">62%</span></td></tr>\n        </tbody>\n      </table>\n    </div>\n    <div class=\"card\">\n      <div class=\"card-title\">Data Sources &amp; Methodology</div>\n      <div class=\"card-desc\">Files and systems used in report compilation</div>\n      <ul style=\"font-size:12px;color:#475569;padding-left:18px;line-height:2\">\n        <li>MIS_Student_Data_FY2425.xlsx</li>\n        <li>Placement_Portal_Export_2425.csv</li>\n        <li>Research_Output_SCOPUS_2425.xlsx</li>\n        <li>Finance_Budget_Grants_FY2425.pdf</li>\n        <li>Faculty_HR_Records_2425.xlsx</li>\n        <li>NIRF_Submission_2025.pdf</li>\n      </ul>\n    </div>\n  </div>\n\n  <div class=\"page-footer\" style=\"margin-top:auto\">\n    <div>Office of Institutional Research <span class=\"dot-sep\"></span> National Institute of Technology \u2014 End of Report</div>\n    <div>Page 6 of 6</div>\n  </div>\n</div>\n\n</div><!-- end .pages -->\n\n<script>\n  document.addEventListener('DOMContentLoaded', function() {\n    const defaultColors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#06b6d4'];\n\n    // Chart 1: Distribution of Internship Domains (Pie)\n    const ctx1 = document.getElementById('chart_1');\n    if (ctx1) {\n      new Chart(ctx1.getContext('2d'), {\n        type: 'pie',\n        data: {\n          labels: [\"Web Development\", \"Data Science & Machine Learning\", \"Android Development\", \"Java Development\", \"Other\"],\n          datasets: [{\n            label: \"Internship Topics Distribution\",\n            data: [9, 9, 2, 2, 4],\n            backgroundColor: defaultColors.slice(0, 5)\n          }]\n        },\n        options: {\n          responsive: true,\n          maintainAspectRatio: false,\n          plugins: {\n            legend: {\n              display: true,\n              position: 'right',\n              labels: {\n                boxWidth: 12,\n                padding: 15\n              }\n            },\n            title: {\n              display: false\n            }\n          }\n        }\n      });\n    }\n\n    // Chart 2: Internship Duration Breakdown (Bar)\n    const ctx2 = document.getElementById('chart_2');\n    if (ctx2) {\n      new Chart(ctx2.getContext('2d'), {\n        type: 'bar',\n        data: {\n          labels: [\"1 Month\", \"1.5 Months\", \"2 Months\", \"4 Months\", \"6 Months\"],\n          datasets: [{\n            label: \"Number of Internships\",\n            data: [2, 5, 4, 1, 1],\n            backgroundColor: defaultColors.slice(0, 5)\n          }]\n        },\n        options: {\n          responsive: true,\n          maintainAspectRatio: false,\n          plugins: {\n            legend: {\n              display: true,\n              position: 'top'\n            },\n            title: {\n              display: false\n            }\n          },\n          scales: {\n            y: {\n              beginAtZero: true,\n              ticks: {\n                precision: 0\n              }\n            }\n          }\n        }\n      });\n    }\n\n    // Chart 3: Top Internship Providers by Number of Interns (Bar)\n    const ctx3 = document.getElementById('chart_3');\n    if (ctx3) {\n      new Chart(ctx3.getContext('2d'), {\n        type: 'bar',\n        data: {\n          labels: [\"Internshala\", \"ARDENT\", \"JPMORGAN CHASE &CO.\", \"SNZ NETWORKS PVT LTD\", \"Cultino Agrotech Pvt Ltd\", \"Rays Edutech Pvt. Ltd.\", \"Myonlineprep\", \"MTAILZY\"],\n          datasets: [{\n            label: \"Number of Internships\",\n            data: [15, 4, 1, 1, 1, 1, 1, 1],\n            backgroundColor: defaultColors\n          }]\n        },\n        options: {\n          responsive: true,\n          maintainAspectRatio: false,\n          plugins: {\n            legend: {\n              display: true,\n              position: 'top'\n            },\n            title: {\n              display: false\n            }\n          },\n          scales: {\n            y: {\n              beginAtZero: true,\n              ticks: {\n                precision: 0\n              }\n            }\n          }\n        }\n      });\n    }\n\n    // Chart 4: Skills Acquired Across Technical Domains (Bar)\n    const ctx4 = document.getElementById('chart_4');\n    if (ctx4) {\n      new Chart(ctx4.getContext('2d'), {\n        type: 'bar',\n        data: {\n          labels: [\"Web Development\", \"Machine Learning/AI\", \"Java Development\", \"Data Science/Eng.\", \"Python Programming\", \"Mobile App Dev\"],\n          datasets: [{\n            label: \"Number of Internships/Trainings\",\n            data: [13, 6, 3, 3, 2, 2],\n            backgroundColor: defaultColors.slice(0, 6)\n          }]\n        },\n        options: {\n          responsive: true,\n          maintainAspectRatio: false,\n          plugins: {\n            legend: {\n              display: true,\n              position: 'top'\n            },\n            title: {\n              display: false\n            }\n          },\n          scales: {\n            y: {\n              beginAtZero: true,\n              ticks: {\n                precision: 0\n              }\n            }\n          }\n        }\n      });\n    }\n  });\n</script>\n\n\n</body>\n</html>",
+    "metadata": {
+        "total_sections": 6,
+        "total_charts": 4,
+        "total_tables": 3,
+        "total_kpis": 7,
+        "files_processed": 5
+    },
+    "errors": [],
+    "warnings": []
+}

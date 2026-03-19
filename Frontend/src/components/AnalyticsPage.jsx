@@ -1,5 +1,6 @@
 // src/pages/AnalyticsPageDynamicUI.jsx
-import React, { useEffect, useState, useContext, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef, useContext } from "react";
+import { API_BASE_URL } from "../config";
 import { UserContext } from "../Context/user.context";
 import { Bar, Pie, Doughnut, Line } from "react-chartjs-2";
 import {
@@ -28,7 +29,7 @@ import {
   AlignLeft
 } from "lucide-react";
 
-import "../pages/Admin/InstituteAdmin.css"; 
+ 
 
 // Register ChartJS components
 ChartJS.register(
@@ -162,38 +163,39 @@ const SummaryBar = ({ metadata = {}, title, onRefresh, onDownloadJson, onCopyMet
     { label: "Files", value: metadata.files_processed },
   ];
   return (
-    <div className="summary-bar" style={{ alignItems: "center" }}>
-      <div className="summary-left" style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-        <h2 className="page-title">{title ?? metadata.report_name ?? "Report Analytics"}</h2>
-        <div className="page-subtitle">
-           {metadata.institute_id ? `Institute ID: ${metadata.institute_id}` : ""} 
+    <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+      <div className="flex flex-col gap-1.5">
+        <h2 className="text-2xl font-bold text-slate-800 tracking-tight">{title ?? metadata.report_name ?? "Report Analytics"}</h2>
+        <div className="text-sm font-medium text-slate-500 bg-slate-50 px-3 py-1 w-fit rounded-lg border border-slate-100 hidden sm:block">
+           {metadata.institute_id ? `Institute: ${metadata.institute_id}` : ""} 
            {metadata.report_type ? ` • ${metadata.report_type}` : ""}
         </div>
       </div>
 
-      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-        <div className="summary-stats" style={{ display: "flex", gap: 12 }}>
+      <div className="flex flex-col sm:flex-row items-center gap-6">
+        <div className="flex gap-4 sm:gap-6 bg-slate-50 px-5 py-3 rounded-xl border border-slate-100">
           {items.map((it, i) => (
-            <div key={i} className="summary-stat">
-              <div className="summary-stat-value">{safe(it.value, "-")}</div>
-              <div className="summary-stat-label">{it.label}</div>
+            <div key={i} className="flex flex-col items-center">
+              <div className="text-xl font-bold text-indigo-600">{safe(it.value, "-")}</div>
+              <div className="text-xs font-semibold text-slate-500 uppercase tracking-wide">{it.label}</div>
             </div>
           ))}
-          <div className="summary-stat small">
-            <div className="summary-stat-value">{formatTS(time)}</div>
-            <div className="summary-stat-label">Generated</div>
+          <div className="w-px bg-slate-200"></div>
+          <div className="flex flex-col items-center justify-center text-center">
+            <div className="text-sm font-semibold text-slate-700">{formatTS(time).split(',')[0]}</div>
+            <div className="text-[10px] font-bold text-emerald-500 uppercase tracking-widest mt-0.5">Generated</div>
           </div>
         </div>
 
-        <div style={{ display: "flex", gap: 8, alignItems: "center", marginLeft: 8 }}>
-          <button title="Refresh" onClick={onRefresh} className="button" style={{ padding: "8px 10px" }}>
-            <RefreshCw size={16} />
+        <div className="flex gap-2">
+          <button title="Refresh" onClick={onRefresh} className="p-2.5 bg-white border border-slate-200 text-slate-600 hover:text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 rounded-xl transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
+            <RefreshCw size={18} />
           </button>
-          <button title="Download JSON" onClick={onDownloadJson} className="button" style={{ padding: "8px 10px" }}>
-            <Download size={16} />
+          <button title="Download JSON" onClick={onDownloadJson} className="p-2.5 bg-white border border-slate-200 text-slate-600 hover:text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 rounded-xl transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
+            <Download size={18} />
           </button>
-          <button title="Copy metadata" onClick={onCopyMeta} className="button" style={{ padding: "8px 10px" }}>
-            <Copy size={16} />
+          <button title="Copy metadata" onClick={onCopyMeta} className="p-2.5 bg-white border border-slate-200 text-slate-600 hover:text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 rounded-xl transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
+            <Copy size={18} />
           </button>
         </div>
       </div>
@@ -204,17 +206,32 @@ const SummaryBar = ({ metadata = {}, title, onRefresh, onDownloadJson, onCopyMet
 const KPIGrid = ({ kpis = [], collapsed = false }) => {
   if (collapsed || !kpis || !kpis.length) return null;
   return (
-    <div className="kpi-grid" style={{ marginBottom: 16 }}>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 mt-2">
       {kpis.map((k, idx) => {
         const label = k.metric ?? k.label ?? k.name ?? "KPI";
         const value = k.value ?? k.val ?? "-";
+        
+        // Map category to a specific color profile
+        let bgColor = "bg-indigo-100", textColor = "text-indigo-600";
+        if (k.category?.toLowerCase?.().includes("financial")) { bgColor = "bg-emerald-100"; textColor = "text-emerald-600"; }
+        else if (k.category?.toLowerCase?.().includes("student")) { bgColor = "bg-blue-100"; textColor = "text-blue-600"; }
+        else if (k.category?.toLowerCase?.().includes("faculty")) { bgColor = "bg-violet-100"; textColor = "text-violet-600"; }
+
         return (
-          <div className="ia-stat-card kpi-card" key={idx}>
-            <div className={`ia-stat-card-icon ${mapCategoryToIconClass(k.category)}`}>{k.icon ?? "📊"}</div>
-            <div className="ia-stat-card-info">
-              <p className="kpi-label">{label}</p>
-              <div className="kpi-value">{String(value)}</div>
-              {k.trend && <div className="kpi-trend">{String(k.trend)}</div>}
+          <div key={idx} className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 flex flex-col justify-between hover:shadow-md hover:border-indigo-100 transition-all group">
+            <div className="flex justify-between items-start mb-4">
+              <div className={`p-3 rounded-xl ${bgColor} ${textColor} group-hover:scale-110 transition-transform`}>
+                {k.icon ?? <BarChart3 size={24} />}
+              </div>
+              {k.trend && (
+                <div className={`text-xs font-bold px-2.5 py-1 rounded-full ${String(k.trend).includes('-') || String(k.trend).toLowerCase().includes('down') ? 'bg-rose-50 text-rose-600' : 'bg-emerald-50 text-emerald-600'}`}>
+                  {String(k.trend)}
+                </div>
+              )}
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-slate-500 mb-1 line-clamp-1" title={label}>{label}</p>
+              <div className="text-3xl font-black text-slate-800 tracking-tight">{String(value)}</div>
             </div>
           </div>
         );
@@ -262,28 +279,68 @@ const ReportTable = ({ table, pageSize = 5 }) => {
   };
 
   return (
-    <div className="ia-recent-activity table-panel" style={{ marginTop: 18 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h3 className="table-title">{table.title ?? "Table"}</h3>
-        <div style={{ display: "flex", gap: 8 }}>
-          <button className="button" title="Download CSV" onClick={onDownload}><FileText size={16} /></button>
+    <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden mb-8">
+      <div className="px-6 py-5 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+        <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2">
+          <AlignLeft size={20} className="text-indigo-500" />
+          {table.title ?? "Data Table"}
+        </h3>
+        <div className="flex gap-2">
+          <button 
+            className="flex items-center gap-2 px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-semibold text-slate-600 hover:text-indigo-600 hover:border-indigo-200 transition-colors shadow-sm" 
+            title="Download CSV" 
+            onClick={onDownload}
+          >
+            <FileText size={16} /> <span className="hidden sm:inline">Export</span>
+          </button>
         </div>
       </div>
-      <div className="table-wrap">
-        <table className="ia-data-table">
+      <div className="overflow-x-auto">
+        <table className="w-full text-left border-collapse min-w-[800px]">
           <thead>
-            <tr>{headers.map((h, i) => <th key={i}>{h}</th>)}</tr>
+            <tr className="bg-slate-50/80">
+              {headers.map((h, i) => (
+                <th key={i} className="py-4 px-6 text-slate-500 font-semibold text-sm border-b border-slate-100">{h}</th>
+              ))}
+            </tr>
           </thead>
-          <tbody>
-            {pageRows.map((r, ri) => <tr key={ri}>{r.map((cell, ci) => <td key={ci}>{cell}</td>)}</tr>)}
+          <tbody className="divide-y divide-slate-100 text-sm">
+            {pageRows.map((r, ri) => (
+              <tr key={ri} className="hover:bg-slate-50/50 transition-colors">
+                {r.map((cell, ci) => (
+                  <td key={ci} className="py-3 px-6 text-slate-600 font-medium">{cell}</td>
+                ))}
+              </tr>
+            ))}
+            {pageRows.length === 0 && (
+              <tr>
+                <td colSpan={headers.length || 1} className="py-8 text-center text-slate-400 font-medium">No data rows</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
       {pageCount > 1 && (
-        <div style={{ display: "flex", gap: 8, justifyContent: "flex-end", marginTop: 8 }}>
-          <button className="button" onClick={() => setPage((p) => Math.max(1, p - 1))} disabled={page === 1}>Prev</button>
-          <div style={{ alignSelf: "center" }}>{page} / {pageCount}</div>
-          <button className="button" onClick={() => setPage((p) => Math.min(pageCount, p + 1))} disabled={page === pageCount}>Next</button>
+        <div className="px-6 py-4 bg-slate-50/50 border-t border-slate-100 flex items-center justify-between">
+          <span className="text-sm font-semibold text-slate-500">
+            Page {page} of {pageCount}
+          </span>
+          <div className="flex gap-2">
+            <button 
+              className="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-semibold text-slate-600 hover:text-indigo-600 hover:border-indigo-200 transition-colors disabled:opacity-50 disabled:hover:text-slate-600 disabled:hover:border-slate-200 shadow-sm"
+              onClick={() => setPage((p) => Math.max(1, p - 1))} 
+              disabled={page === 1}
+            >
+              Prev
+            </button>
+            <button 
+              className="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-semibold text-slate-600 hover:text-indigo-600 hover:border-indigo-200 transition-colors disabled:opacity-50 disabled:hover:text-slate-600 disabled:hover:border-slate-200 shadow-sm"
+              onClick={() => setPage((p) => Math.min(pageCount, p + 1))} 
+              disabled={page === pageCount}
+            >
+              Next
+            </button>
+          </div>
         </div>
       )}
     </div>
@@ -297,18 +354,20 @@ const ReportSection = ({ section }) => {
   const isLong = content.length > 300;
   
   return (
-    <div className="ia-recent-activity" style={{ marginTop: 18, padding: 16 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-            <AlignLeft size={18} className="icon-blue" />
-            <h3 className="table-title" style={{ margin: 0 }}>{section.title || "Section"}</h3>
+    <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 mb-8 mt-4">
+        <div className="flex items-center gap-3 mb-4 pb-3 border-b border-slate-100">
+            <div className="p-2 bg-blue-50 text-blue-600 rounded-lg">
+              <AlignLeft size={20} />
+            </div>
+            <h3 className="text-lg font-bold text-slate-800 tracking-tight">{section.title || "Section"}</h3>
         </div>
-        <div style={{ lineHeight: 1.6, color: "#334155", whiteSpace: "pre-wrap" }}>
+        <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed font-medium">
             {isLong && !expanded ? `${content.substring(0, 300)}...` : content}
         </div>
         {isLong && (
             <button 
                 onClick={() => setExpanded(!expanded)} 
-                style={{ marginTop: 8, background: "none", border: "none", color: "#3b82f6", cursor: "pointer", padding: 0, fontSize: 13 }}
+                className="mt-4 text-sm font-bold text-indigo-600 hover:text-indigo-800 transition-colors focus:outline-none"
             >
                 {expanded ? "Show Less" : "Read More"}
             </button>
@@ -325,17 +384,19 @@ const Modal = ({ open, onClose, title, children }) => {
   }, [open, onClose]);
   if (!open) return null;
   return (
-    <div style={{
-      position: "fixed", inset: 0, background: "rgba(3,7,18,0.5)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 9999
-    }}>
-      <div style={{ width: "90%", maxWidth: 900, background: "#fff", borderRadius: 12, padding: 18, boxShadow: "0 10px 30px rgba(0,0,0,0.25)" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-          <h3 style={{ margin: 0 }}>{title}</h3>
-          <div style={{ display: "flex", gap: 8 }}>
-            <button className="button" onClick={onClose}>Close</button>
-          </div>
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200">
+      <div className="bg-white rounded-3xl shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col overflow-hidden transform transition-all animate-in zoom-in-95 duration-200 border border-slate-100">
+        <div className="px-6 py-5 border-b border-slate-100 flex justify-between items-center bg-slate-50/80">
+          <h3 className="text-xl font-bold text-slate-800 tracking-tight">{title}</h3>
+          <button
+            className="text-slate-400 hover:text-slate-600 hover:bg-slate-200/50 p-2 rounded-xl transition-colors focus:outline-none"
+            onClick={onClose}
+          >
+            <AlertCircle size={20} className="hidden" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
         </div>
-        <div style={{ maxHeight: "70vh", overflow: "auto" }}>{children}</div>
+        <div className="p-6 overflow-y-auto bg-slate-50/30 flex-1">{children}</div>
       </div>
     </div>
   );
@@ -349,7 +410,6 @@ const AnalyticsPage = () => {
   const { user, token } = useContext(UserContext);
   
   // --- Configuration ---
-  const API_BASE_URL = "http://localhost:8000"; 
 
   // --- State ---
   const [report, setReport] = useState(null); 
@@ -531,80 +591,97 @@ const AnalyticsPage = () => {
 
   // --- Render Content ---
   const renderContent = () => {
-    if (loading) return <div className="info-card"><div className="spinner" /> Loading report data...</div>;
-    if (error) return <div className="info-card error"><AlertCircle className="icon" /> {error}</div>;
+    if (loading) return (
+      <div className="flex flex-col items-center justify-center p-16 bg-white rounded-2xl shadow-sm border border-slate-100 mt-6">
+        <div className="animate-spin text-indigo-500 mb-4 inline-block w-8 h-8 border-4 border-current border-t-transparent rounded-full" />
+        <span className="text-lg font-bold text-slate-700">Loading comprehensive analytics...</span>
+      </div>
+    );
+    if (error) return (
+      <div className="bg-rose-50 text-rose-600 p-6 rounded-2xl border border-rose-200 font-medium mt-6 flex flex-col items-center justify-center">
+        <AlertCircle className="mb-3 w-10 h-10 text-rose-400" />
+        <span className="text-lg">{error}</span>
+      </div>
+    );
     
     if (!report) {
       return (
-        <div className="info-card empty-state">
-          <BarChart3 className="info-card-icon" />
-          <h3 className="info-card-title">No Report Selected</h3>
-          <p className="info-card-subtitle">Please select a report from the dropdown.</p>
+        <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-16 flex flex-col items-center justify-center text-center mt-6 h-[400px]">
+          <BarChart3 className="w-20 h-20 text-indigo-100 mb-6" />
+          <h3 className="text-2xl font-bold text-slate-800 mb-2">No Report Selected</h3>
+          <p className="text-slate-500 font-medium max-w-md">Please select a report from the dropdown above to view its detailed analytics dashboard.</p>
         </div>
       );
     }
 
     if ((!kpis.length) && (!charts.length) && (!tables.length) && (!sections.length)) {
       return (
-        <div className="info-card empty-state">
-          <AlertCircle className="info-card-icon" />
-          <h3 className="info-card-title">Empty Data</h3>
-          <p className="info-card-subtitle">The selected report contains no analytics data.</p>
+        <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-16 flex flex-col items-center justify-center text-center mt-6 h-[400px]">
+          <AlertCircle className="w-20 h-20 text-slate-200 mb-6" />
+          <h3 className="text-2xl font-bold text-slate-800 mb-2">Empty Data</h3>
+          <p className="text-slate-500 font-medium max-w-md">The selected report contains no specific analytics data nodes.</p>
         </div>
       );
     }
 
     return (
-      <>
+      <div className="animate-in fade-in duration-500 pt-2">
         {/* Toolbar */}
-        <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 12 }}>
-          <label style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer", userSelect: "none" }}>
-            <input type="checkbox" checked={kpiCollapsed} onChange={() => setKpiCollapsed(v => !v)} />
-            <span>Hide KPIs</span>
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 pt-4 border-t border-slate-200/60">
+          <label className="flex items-center gap-3 cursor-pointer user-select-none group text-slate-600 font-semibold hover:text-indigo-600 transition-colors">
+            <div className="relative flex items-center justify-center">
+              <input type="checkbox" checked={kpiCollapsed} onChange={() => setKpiCollapsed(v => !v)} className="peer sr-only" />
+              <div className="w-10 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+            </div>
+            <span>Hide KPI Summary</span>
           </label>
 
-          <div style={{ marginLeft: "auto", display: "flex", gap: 8 }}>
+          <div className="flex flex-wrap gap-3">
             <input
-              placeholder="Search..."
+              placeholder="Search charts & tables..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #ddd", minWidth: 240 }}
+              className="px-4 py-2 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all font-medium sm:w-64 shadow-sm"
             />
-            <button className="button" title="Refresh Data" onClick={handleRefresh}><RefreshCw size={16} /></button>
-            <button className="button" title="Download JSON" onClick={handleDownloadJSON}><Download size={16} /></button>
           </div>
         </div>
 
         {/* Content */}
         <KPIGrid kpis={kpis} collapsed={kpiCollapsed} />
 
-        {/* Sections: Executive Summary first */}
-        {/* {filteredSections.length > 0 && (
-            <div style={{ marginBottom: 20 }}>
-                {filteredSections.filter(s => s.title === "Executive Summary").map((s, i) => (
-                    <ReportSection key={`exec-${i}`} section={s} />
-                ))}
-            </div>
-        )} */}
+        {/* Sections: Executive Summary */}
+        {filteredSections.length > 0 && (
+          <div className="mb-8">
+            {filteredSections.filter(s => s.title === "Executive Summary").map((s, i) => (
+                <ReportSection key={`exec-${i}`} section={s} />
+            ))}
+          </div>
+        )}
 
         {/* Charts Grid */}
         {filteredCharts.length > 0 && (
-          <div className="analytics-grid improved-grid" style={{ marginBottom: 12 }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
             {filteredCharts.map((c, i) => (
-              <div key={i} className="chart-widget card-elevated" style={{ position: "relative" }}>
-                <div className="widget-header">
-                  <div className="chart-icon">{pickIconForChart(c.title)}</div>
-                  <div className="widget-title-wrap">
-                    <h4 className="widget-title">{c.title ?? `Chart ${i + 1}`}</h4>
-                    {c.topic && <div className="widget-subtitle">{c.topic}</div>}
+              <div key={i} className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden flex flex-col group hover:shadow-md hover:border-indigo-100 transition-all">
+                <div className="px-6 py-5 border-b border-slate-100 bg-slate-50/50 flex gap-4 items-center">
+                  <div className="p-3 bg-white rounded-xl shadow-sm border border-slate-100 text-indigo-500 group-hover:bg-indigo-50 group-hover:border-indigo-100 transition-colors">
+                    {pickIconForChart(c.title)}
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-slate-800 text-lg tracking-tight">{c.title ?? `Chart ${i + 1}`}</h4>
+                    {c.topic && <div className="text-sm font-semibold text-slate-500 mt-1 uppercase tracking-wide">{c.topic}</div>}
                   </div>
                 </div>
-                <div className="chart-area">
+                <div className="p-6 bg-white min-h-[300px] flex-1">
                   <DynamicChart chartObj={c} />
                 </div>
-                <div style={{ display: "flex", gap: 8, marginTop: 8, justifyContent: "flex-end" }}>
-                  <button className="button" onClick={() => openDrilldown(c)} title="View Details">Drill down</button>
-                  <button className="button" onClick={() => downloadChartDatasetCSV(c)} title="Download CSV"><FileText size={14} /></button>
+                <div className="px-6 py-4 border-t border-slate-100 bg-slate-50/50 flex justify-end gap-3">
+                  <button className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm font-bold text-slate-600 hover:text-indigo-600 hover:border-indigo-200 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20" onClick={() => openDrilldown(c)} title="View full details and raw data">
+                    <BarChart3 size={16} /> Drill down
+                  </button>
+                  <button className="flex items-center gap-2 px-4 py-2 bg-indigo-50 border border-indigo-100 rounded-lg text-sm font-bold text-indigo-600 hover:bg-indigo-600 hover:text-white transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20" onClick={() => downloadChartDatasetCSV(c)} title="Download underlying data as CSV">
+                    <Download size={16} /> Export
+                  </button>
                 </div>
               </div>
             ))}
@@ -615,32 +692,44 @@ const AnalyticsPage = () => {
         {filteredTables.map((t, i) => <ReportTable key={i} table={t} />)}
 
         {/* Other Sections */}
-        {/* {filteredSections.filter(s => s.title !== "Executive Summary").map((s, i) => (
+        {filteredSections.filter(s => s.title !== "Executive Summary").map((s, i) => (
              <ReportSection key={`sec-${i}`} section={s} />
-        ))} */}
+        ))}
 
         {/* Drilldown Modal */}
-        <Modal open={drilldown.open} onClose={closeDrilldown} title={drilldown.chart?.title ?? "Chart details"}>
+        <Modal open={drilldown.open} onClose={closeDrilldown} title={drilldown.chart?.title ?? "Chart Analysis"}>
           {drilldown.meta ? (
-            <div>
-              <p style={{ color: "#555", marginBottom: 12 }}>{drilldown.chart?.topic}</p>
+            <div className="flex flex-col gap-8 pb-4">
+              <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                <div className="text-sm font-bold text-indigo-600 uppercase tracking-wider mb-2">Subject Area</div>
+                <p className="text-slate-700 font-medium text-lg leading-relaxed">{drilldown.chart?.topic || "General Analysis"}</p>
+              </div>
               
-              <div style={{ marginBottom: 20 }}>
-                <h4 style={{ marginBottom: 8 }}>Preview</h4>
-                <div style={{ minHeight: 240 }}><DynamicChart chartObj={drilldown.chart} /></div>
+              <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                <div className="flex justify-between items-center mb-6 border-b border-slate-100 pb-4">
+                  <h4 className="text-lg font-bold text-slate-800 flex items-center gap-2"><BarChart3 size={20} className="text-indigo-500" /> Visualization</h4>
+                </div>
+                <div className="min-h-[350px]"><DynamicChart chartObj={drilldown.chart} /></div>
               </div>
 
-              <div>
-                <h4 style={{ marginBottom: 8 }}>Raw Data</h4>
-                <div style={{ overflowX: "auto", border: "1px solid #eee", borderRadius: 8 }}>
-                  <table className="ia-data-table" style={{ minWidth: 600, margin: 0 }}>
+              <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                <div className="flex justify-between items-center mb-6 border-b border-slate-100 pb-4">
+                  <h4 className="text-lg font-bold text-slate-800 flex items-center gap-2"><AlignLeft size={20} className="text-indigo-500" /> Source Data</h4>
+                  <button className="flex items-center gap-2 px-4 py-2 bg-indigo-50 border border-indigo-100 rounded-lg text-sm font-bold text-indigo-600 hover:bg-indigo-600 hover:text-white transition-all shadow-sm focus:outline-none" onClick={() => downloadChartDatasetCSV(drilldown.chart)}>
+                    <Download size={16} /> Download CSV
+                  </button>
+                </div>
+                <div className="overflow-x-auto rounded-xl border border-slate-200">
+                  <table className="w-full text-left border-collapse min-w-[600px]">
                     <thead>
-                      <tr>
-                        <th>Label</th>
-                        {drilldown.meta.data.datasets.map((ds, idx) => <th key={idx}>{ds.label}</th>)}
+                      <tr className="bg-slate-100/80">
+                        <th className="py-3 px-5 text-slate-600 font-bold text-sm border-b border-slate-200">Category / Label</th>
+                        {drilldown.meta.data.datasets.map((ds, idx) => (
+                          <th key={idx} className="py-3 px-5 text-slate-600 font-bold text-sm border-b border-slate-200">{ds.label}</th>
+                        ))}
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="divide-y divide-slate-100 text-sm">
                       {(() => {
                         const labels = drilldown.meta.data.labels ?? [];
                         const dsList = drilldown.meta.data.datasets;
@@ -648,9 +737,9 @@ const AnalyticsPage = () => {
                         const maxLen = Math.max(labels.length, ...dsList.map(ds => ds.data.length));
                         for (let r = 0; r < maxLen; r++) {
                           rows.push(
-                            <tr key={r}>
-                              <td>{labels[r] ?? ""}</td>
-                              {dsList.map((ds, ci) => <td key={ci}>{safe(ds.data[r], "")}</td>)}
+                            <tr key={r} className="hover:bg-slate-50/80 transition-colors">
+                              <td className="py-3 px-5 font-semibold text-slate-700">{labels[r] ?? ""}</td>
+                              {dsList.map((ds, ci) => <td key={ci} className="py-3 px-5 text-slate-600 font-medium">{safe(ds.data[r], "")}</td>)}
                             </tr>
                           );
                         }
@@ -659,63 +748,58 @@ const AnalyticsPage = () => {
                     </tbody>
                   </table>
                 </div>
-                <div style={{ marginTop: 12 }}>
-                  <button className="button" onClick={() => downloadChartDatasetCSV(drilldown.chart)}>Download CSV</button>
-                </div>
               </div>
             </div>
           ) : (
-            <div className="info-card">No data preview available</div>
+            <div className="p-10 text-center text-slate-500 font-medium text-lg">No extended data preview available for this node.</div>
           )}
         </Modal>
-      </>
+      </div>
     );
   };
 
   return (
-    <div className="analytics-page ui-refined">
-      <h1 className="analytics-title">Report Analytics Dashboard</h1>
+    <div className="p-6 md:p-10 bg-slate-50 min-h-screen font-sans">
+      <div className="max-w-7xl mx-auto">
+        <header className="mb-8">
+          <h1 className="text-3xl font-bold text-slate-800 tracking-tight">Report Analytics Dashboard</h1>
+          <p className="text-slate-500 mt-2 font-medium">Deep dive into institutional data and generated metric insights</p>
+        </header>
 
-      {/* Report Selector */}
-      <div style={{ margin: "12px 0 18px 0", display: "flex", gap: 12, alignItems: "center" }}>
-        <label style={{ fontWeight: 600, color: "#334155" }}>Select Report:</label>
-        <select
-          value={selectedReportKey}
-          onChange={handleSelectReport}
-          className="project-selector"
-          style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #ddd", minWidth: 320 }}
-          disabled={loading && !reportsList.length}
-        >
-          {reportsList.length === 0 && <option value="">{loading ? "Loading..." : "No reports found"}</option>}
-          {reportsList.map(r => <option key={r.key} value={r.key}>{r.title}</option>)}
-        </select>
-      </div>
-
-      <SummaryBar
-        metadata={metadata}
-        title={finalData.title}
-        onRefresh={handleRefresh}
-        onDownloadJson={handleDownloadJSON}
-        onCopyMeta={handleCopyMeta}
-        time={finalData.metadata?.generated_at}
-      />
-
-      <div className="page-content">
-        <div className="selector-row">
-          <div className="selector-left">
-            <div className="widget-header small">
-              <FolderKanban className="widget-icon" />
-              <div>
-                <div className="widget-title-small">Report</div>
-                <div className="widget-subtitle-small">
-                    {finalData.title || finalData.report_name || "Report Details"}
-                </div>
+        {/* Report Selector Header Area */}
+        <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 mb-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="flex-1">
+            <label className="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wide">Target Data Source</label>
+            <div className="relative max-w-lg">
+              <FolderKanban className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+              <select
+                value={selectedReportKey}
+                onChange={handleSelectReport}
+                className="w-full pl-11 pr-10 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all font-semibold text-slate-800 appearance-none cursor-pointer"
+                disabled={loading && !reportsList.length}
+              >
+                {reportsList.length === 0 && <option value="">{loading ? "Loading reports..." : "No reports found"}</option>}
+                {reportsList.map(r => <option key={r.key} value={r.key}>{r.title}</option>)}
+              </select>
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </div>
             </div>
           </div>
         </div>
 
-        {renderContent()}
+        <SummaryBar
+          metadata={metadata}
+          title={finalData.title}
+          onRefresh={handleRefresh}
+          onDownloadJson={handleDownloadJSON}
+          onCopyMeta={handleCopyMeta}
+          time={finalData.metadata?.generated_at}
+        />
+
+        <div className="animate-in slide-in-from-bottom-2 duration-500">
+          {renderContent()}
+        </div>
       </div>
     </div>
   );

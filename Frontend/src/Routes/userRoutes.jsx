@@ -28,6 +28,8 @@ import StudentReports from '../components/StudentReports';
 import StudentUpload from '../components/StudentUpload';
 import StudentManagement from '../components/StudentManagement';
 import FullPageEditor from '../components/FullPageEditor';
+import NotificationList from '../pages/Notifications/NotificationList';
+import NotificationCreate from '../pages/Notifications/NotificationCreate';
 // import UserManagementPage from '../components/UserManagementPage';
 
 // Import your user-related pages/components
@@ -47,6 +49,8 @@ const UserRoutes = () => (
               <Route path="register-institute" element={<InstituteRegPage />} />
               <Route path="departments" element={<DepartmentManagementSuperAdmin />} />
               <Route path="users" element={<UserManagementSuperAdmin />} />
+              <Route path="notifications" element={<NotificationList />} />
+              <Route path="notifications/create" element={<NotificationCreate />} />
               
             </Route>
             <Route path="/institute-admin" element={<InstituteAdminLayout />}>
@@ -58,6 +62,8 @@ const UserRoutes = () => (
               <Route path="project" element={<ProjectManagementPage />} />
               <Route path="report" element={<ReportManagement />} />
               <Route path="analyse" element={<AnalyticsPage/>} />
+              <Route path="notifications" element={<NotificationList />} />
+              <Route path="notifications/create" element={<NotificationCreate />} />
              
             </Route>
             <Route path="/faculty" element={<FacultyLayout />}>
@@ -65,12 +71,15 @@ const UserRoutes = () => (
               <Route path="dashboard" element={<FacultyDashboard />} />
               <Route path="upload-data" element={<DataUploadPage />} />
               <Route path="reports" element={<FacultyReports />} />
+              <Route path="notifications" element={<NotificationList />} />
+              <Route path="notifications/create" element={<NotificationCreate />} />
             </Route>
             <Route path="/student" element={<Student />}>
               <Route index element={<Navigate to="dashboard" />} />
               <Route path="dashboard" element={<StudentDashboard />} />
               <Route path="reports" element={<StudentReports />} />
               <Route path="upload" element={<StudentUpload />} />
+              <Route path="notifications" element={<NotificationList />} />
             </Route>   
         </Route>
         <Route path="*" element={<Login/>} />

@@ -1,8 +1,9 @@
 // src/pages/DepartmentManagementSuperAdmin.jsx
 import React, { useState, useEffect, useMemo, useContext } from 'react';
+import { API_BASE_URL } from '../config';
 import { UserContext } from '../Context/user.context';
 import { Search, Filter, Edit, Trash2, Loader, AlertCircle } from 'lucide-react';
-import '../pages/Super Admin/SuperAdmin.css'; // Reusing the Super Admin CSS
+
 
 const DepartmentManagementSuperAdmin = () => {
   // State for departments, institutes, and UI controls
@@ -37,8 +38,8 @@ const DepartmentManagementSuperAdmin = () => {
     setError(null);
     try {
       const [deptsRes, institutesRes] = await Promise.all([
-        fetch('http://localhost:8000/department/all', { credentials: 'include', method: 'GET' }),
-        fetch('http://localhost:8000/institute/all', { credentials: 'include', method: 'GET' })
+        fetch(`${API_BASE_URL}/department/all`, { credentials: 'include', method: 'GET' }),
+        fetch(`${API_BASE_URL}/institute/all`, { credentials: 'include', method: 'GET' })
       ]);
 
       if (!deptsRes.ok || !institutesRes.ok) {
@@ -78,7 +79,7 @@ const DepartmentManagementSuperAdmin = () => {
   const handleDeptDelete = async (deptId) => {
     if (!window.confirm('Are you sure you want to delete this department?')) return;
     try {
-      const response = await fetch(`http://localhost:8000/department/${deptId}`, {
+      const response = await fetch(`${API_BASE_URL}/department/${deptId}`, {
         method: 'DELETE',
         credentials: 'include',
         headers: token ? { Authorization: `Bearer ${token}` } : undefined,
@@ -130,7 +131,7 @@ const DepartmentManagementSuperAdmin = () => {
     setEditSuccess(null);
 
     try {
-      const resp = await fetch(`http://localhost:8000/department/${editingDept.id}`, {
+      const resp = await fetch(`${API_BASE_URL}/department/${editingDept.id}`, {
         method: 'PUT',
         credentials: 'include',
         headers: {
@@ -160,104 +161,194 @@ const DepartmentManagementSuperAdmin = () => {
   if (error) return <p className="form-message error"><AlertCircle /> {error}</p>;
 
   return (
-    <div className="management-page">
-      <h1>Global Department Management</h1>
+    <div className="p-6 md:p-10 bg-slate-50 min-h-screen font-sans">
+      <div className="max-w-7xl mx-auto">
+        <header className="mb-8 md:mb-10">
+          <h1 className="text-3xl font-bold text-slate-800 tracking-tight">Global Department Management</h1>
+          <p className="text-slate-500 mt-2 font-medium">Manage departments across all registered institutes</p>
+        </header>
 
-      <div className="list-view">
-        <div className="list-controls">
-          <div className="search-bar">
-            <Search size={20} />
-            <input
-              type="text"
-              placeholder="Search by name or code..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
+        <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+            <div className="relative w-full md:w-96">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+              <input
+                type="text"
+                placeholder="Search by name or code..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm font-medium placeholder:font-normal placeholder:text-slate-400"
+              />
+            </div>
+            
+            <div className="relative w-full md:w-64">
+              <Filter className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+              <select 
+                value={filterInstitute} 
+                onChange={(e) => setFilterInstitute(e.target.value)}
+                className="w-full pl-12 pr-10 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm font-medium appearance-none cursor-pointer text-slate-700"
+              >
+                <option value="all">All Institutes</option>
+                {institutes.map(inst => <option key={inst.id} value={inst.id}>{inst.name}</option>)}
+              </select>
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+              </div>
+            </div>
           </div>
 
-          <div className="filter-bar">
-            <Filter size={20} />
-            <select value={filterInstitute} onChange={(e) => setFilterInstitute(e.target.value)}>
-              <option value="all">All Institutes</option>
-              {institutes.map(inst => <option key={inst.id} value={inst.id}>{inst.name}</option>)}
-            </select>
+          {/* DESKTOP TABLE */}
+          <div className="hidden md:block bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr>
+                    <th className="py-4 px-6 bg-slate-50/50 text-slate-500 font-semibold text-sm border-b border-slate-100 whitespace-nowrap">Department Name</th>
+                    <th className="py-4 px-6 bg-slate-50/50 text-slate-500 font-semibold text-sm border-b border-slate-100 whitespace-nowrap">Code</th>
+                    <th className="py-4 px-6 bg-slate-50/50 text-slate-500 font-semibold text-sm border-b border-slate-100 whitespace-nowrap">Institute</th>
+                    <th className="py-4 px-6 bg-slate-50/50 text-slate-500 font-semibold text-sm border-b border-slate-100 text-right whitespace-nowrap">Actions</th>
+                  </tr>
+                </thead>
+                <tbody className="text-sm">
+                  {filteredDepartments.length > 0 ? (
+                    filteredDepartments.map(dept => (
+                      <tr key={dept.id} className="hover:bg-slate-50/80 transition-colors group">
+                        <td className="py-4 px-6 border-b border-slate-50 font-bold text-slate-800 whitespace-nowrap">{dept.name}</td>
+                        <td className="py-4 px-6 border-b border-slate-50 text-slate-600 font-medium whitespace-nowrap">
+                           <span className="inline-flex py-1 px-3 rounded-lg bg-slate-100 text-slate-600 text-xs tracking-widest">{dept.code}</span>
+                        </td>
+                        <td className="py-4 px-6 border-b border-slate-50 text-slate-600 whitespace-nowrap">{dept.institute_name || 'N/A'}</td>
+                        <td className="py-4 px-6 border-b border-slate-50 text-right whitespace-nowrap">
+                          <button 
+                            className="p-2 text-indigo-500 hover:bg-indigo-50 rounded-lg transition-colors mr-2 focus:ring-2 focus:ring-indigo-200 outline-none" 
+                            title="Edit" 
+                            onClick={() => openEditModal(dept)}
+                          >
+                            <Edit size={18} />
+                          </button>
+                          <button 
+                            className="p-2 text-rose-500 hover:bg-rose-50 rounded-lg transition-colors focus:ring-2 focus:ring-rose-200 outline-none disabled:opacity-50" 
+                            title="Delete" 
+                            onClick={() => handleDeptDelete(dept.id)}
+                          >
+                            <Trash2 size={18} />
+                          </button>
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="4" className="py-12 text-center text-slate-500">
+                        <div className="flex flex-col items-center justify-center gap-3">
+                          <Search className="w-10 h-10 text-slate-200" />
+                          <p>No departments found.</p>
+                        </div>
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* MOBILE CARD VIEW */}
+          <div className="md:hidden flex flex-col gap-4">
+            {filteredDepartments.length > 0 ? (
+              filteredDepartments.map((dept) => (
+                <div key={dept.id} className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex flex-col gap-4 relative">
+                  <div className="flex flex-col gap-1 pr-16">
+                    <h3 className="font-bold text-slate-800 text-lg leading-tight">{dept.name}</h3>
+                    <span className="text-xs font-medium text-slate-400 mt-1 tracking-widest uppercase">{dept.code}</span>
+                  </div>
+                  <div className="flex flex-col gap-2 text-sm text-slate-600 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                    <div className="flex flex-col gap-0.5 break-all">
+                      <span className="text-slate-400 font-medium text-xs uppercase">Institute</span>
+                      <span className="font-medium text-slate-700">{dept.institute_name || 'N/A'}</span>
+                    </div>
+                  </div>
+                  <div className="flex justify-between gap-3 pt-2 border-t border-slate-50">
+                    <button 
+                        className="flex-1 flex justify-center items-center gap-2 py-2.5 text-indigo-600 bg-indigo-50 border border-indigo-100 hover:bg-indigo-100 rounded-xl transition-colors font-medium text-sm" 
+                        onClick={() => openEditModal(dept)}
+                      >
+                        <Edit size={16} /> Edit
+                      </button>
+                      <button 
+                        className="flex-1 flex justify-center items-center gap-2 py-2.5 text-rose-600 bg-rose-50 border border-rose-100 hover:bg-rose-100 rounded-xl transition-colors font-medium text-sm disabled:opacity-50" 
+                        onClick={() => handleDeptDelete(dept.id)}
+                      >
+                        <Trash2 size={16} /> Delete
+                      </button>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="p-10 text-center text-slate-500 bg-white rounded-2xl border border-slate-100">
+                <Search className="mx-auto mb-3 text-slate-200 w-12 h-12" />
+                <p className="font-medium">No departments found.</p>
+              </div>
+            )}
           </div>
         </div>
-
-        <table className="data-table">
-          <thead>
-            <tr><th>Department Name</th><th>Code</th><th>Institute</th><th>Actions</th></tr>
-          </thead>
-          <tbody>
-            {filteredDepartments.map(dept => (
-              <tr key={dept.id}>
-                <td>{dept.name}</td>
-                <td>{dept.code}</td>
-                <td>{dept.institute_name || 'N/A'}</td>
-                <td className="actions-cell">
-                  <button className="action-button edit" onClick={() => openEditModal(dept)}><Edit size={16} /></button>
-                  <button className="action-button delete" onClick={() => handleDeptDelete(dept.id)}><Trash2 size={16} /></button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
       </div>
 
       {/* Edit modal */}
       {editModalOpen && (
-        <div
-          className="modal-overlay"
-          onClick={(e) => { if (e.target === e.currentTarget) closeEditModal(); }}
-        >
-          <div className="modal-content" role="dialog" aria-modal="true" aria-label={`Edit department ${editingDept?.name || ''}`}>
-            <div className="modal-toolbar">
-              <div className="modal-title">
-                <h3>Edit Department</h3>
-                <div className="subtitle modal-meta">{editingDept?.name}</div>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200" onClick={() => closeEditModal()}>
+          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-xl overflow-hidden transform transition-all animate-in zoom-in-95 duration-200 border border-slate-100 flex flex-col max-h-[90vh]" onClick={e => e.stopPropagation()}>
+            <div className="px-5 md:px-6 py-4 md:py-5 border-b border-slate-100 flex justify-between items-center bg-slate-50/80 shrink-0">
+              <div>
+                <h3 className="text-xl font-bold text-slate-800 tracking-tight">Edit Department</h3>
+                <p className="text-sm font-medium text-slate-500 mt-0.5">{editingDept?.name}</p>
               </div>
-              <div className="toolbar-actions">
-                <button className="modal-close-btn" onClick={closeEditModal}>Close</button>
-              </div>
+              <button className="text-slate-400 hover:text-slate-600 transition-colors p-1" onClick={closeEditModal}>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+              </button>
             </div>
 
-            <div className="modal-body">
-              <form onSubmit={handleEditSave}>
-                <label style={{ fontSize: 13, color: "#334155", marginBottom: 6 }}>Department Name</label>
-                <input
-                  name="name"
-                  value={editForm.name}
-                  onChange={handleEditChange}
-                  required
-                  style={{ width: "100%", marginBottom: 10, padding: "8px 10px", borderRadius: 8, border: "1px solid #e6eef6" }}
-                />
+            <div className="p-5 md:p-6 overflow-y-auto">
+              <form onSubmit={handleEditSave} className="space-y-5">
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1.5">Department Name</label>
+                  <input
+                    name="name"
+                    value={editForm.name}
+                    onChange={handleEditChange}
+                    required
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50/50 hover:bg-slate-50 focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium shadow-sm"
+                  />
+                </div>
 
-                <label style={{ fontSize: 13, color: "#334155", marginBottom: 6 }}>Department Code</label>
-                <input
-                  name="code"
-                  value={editForm.code}
-                  onChange={handleEditChange}
-                  style={{ width: "100%", marginBottom: 10, padding: "8px 10px", borderRadius: 8, border: "1px solid #e6eef6" }}
-                />
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1.5">Department Code</label>
+                  <input
+                    name="code"
+                    value={editForm.code}
+                    onChange={handleEditChange}
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50/50 hover:bg-slate-50 focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium shadow-sm"
+                  />
+                </div>
 
-                <label style={{ fontSize: 13, color: "#334155", marginBottom: 6 }}>Institute</label>
-                <select
-                  name="institute_id"
-                  value={editForm.institute_id}
-                  onChange={handleEditChange}
-                  required
-                  style={{ width: "100%", marginBottom: 10, padding: "8px 10px", borderRadius: 8, border: "1px solid #e6eef6" }}
-                >
-                  <option value="" disabled>Select institute</option>
-                  {institutes.map(inst => <option key={inst.id} value={inst.id}>{inst.name}</option>)}
-                </select>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1.5">Institute</label>
+                  <select
+                    name="institute_id"
+                    value={editForm.institute_id}
+                    onChange={handleEditChange}
+                    required
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-700 bg-slate-50/50 hover:bg-slate-50 focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium appearance-none shadow-sm cursor-pointer"
+                  >
+                    <option value="" disabled>Select institute</option>
+                    {institutes.map(inst => <option key={inst.id} value={inst.id}>{inst.name}</option>)}
+                  </select>
+                </div>
 
-                {editError && <p className="form-message error">{editError}</p>}
-                {editSuccess && <p className="form-message success">{editSuccess}</p>}
+                {editError && <div className="bg-rose-50 border border-rose-200 text-rose-600 px-4 py-3 rounded-xl font-medium">{editError}</div>}
+                {editSuccess && <div className="bg-emerald-50 border border-emerald-200 text-emerald-600 px-4 py-3 rounded-xl font-medium">{editSuccess}</div>}
 
-                <div style={{ display: "flex", gap: 8, justifyContent: "flex-end", marginTop: 12 }}>
-                  <button type="button" className="modal-close-btn" onClick={closeEditModal} disabled={editLoading}>Cancel</button>
-                  <button type="submit" className="button button-accent" disabled={editLoading}>
+                <div className="flex justify-end gap-3 mt-8 pt-5 border-t border-slate-100">
+                  <button type="button" className="px-5 md:px-6 py-2.5 text-slate-600 font-medium rounded-xl hover:bg-slate-100 transition-colors w-full md:w-auto" onClick={closeEditModal} disabled={editLoading}>Cancel</button>
+                  <button type="submit" className="px-5 md:px-6 py-2.5 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 shadow-md shadow-indigo-600/20 hover:shadow-indigo-600/40 hover:-translate-y-0.5 transition-all w-full md:w-auto disabled:opacity-70 disabled:hover:translate-y-0" disabled={editLoading}>
                     {editLoading ? 'Saving...' : 'Save Changes'}
                   </button>
                 </div>
